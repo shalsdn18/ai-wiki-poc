@@ -18,11 +18,11 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Generate Wiki from new mock sources
+      - name: Generate provider Wikis from official sources
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.7-flash' }}
-        run: python -m engine.wiki_poc
+        run: python -m engine.real_wiki
       - name: Commit generated Wiki when changed
         run: |
           if git diff --quiet -- wiki/; then exit 0; fi

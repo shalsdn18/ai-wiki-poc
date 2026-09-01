@@ -4,7 +4,8 @@
 
 ## 설계 경계
 
-- `collectors/`: 현재는 공개 가능한 가상 데이터만 반환합니다.
+- `collectors/mock_collector.py`: 네트워크 없는 테스트용 가상 데이터를 반환합니다.
+- `collectors/real_collector.py`: OpenAI 공식 News RSS, Google 공식 Gemini Blog RSS, Anthropic Newsroom에서 최신 공개 항목을 공급자별로 수집합니다.
 - `engine/schemas.py`: `SourceRecord`와 `WikiUpdatePayload` 계약을 분리합니다.
 - `engine/wiki_poc.py`: SHA-256 Delta Gate, Semantic Validation, 상태 병합, Markdown 렌더링을 담당합니다.
 - `wiki/`: 생성된 Markdown만 저장합니다. `seen_hashes`와 병합 상태는 Markdown Frontmatter에 있습니다.
@@ -28,10 +29,10 @@ pip install -r requirements.txt
 ```bash
 export GEMINI_API_KEY="..."
 export GEMINI_MODEL="gemini-3.7-flash"
-python -m engine.wiki_poc
+python -m engine.real_wiki
 ```
 
-동일 mock source를 다시 실행하면 `seen_hashes`에서 감지되어 Gemini API를 호출하지 않습니다.
+각 collector는 독립적으로 실패를 처리하므로 한 공식 소스의 네트워크 장애가 다른 소스 수집을 막지 않습니다. 결과는 `wiki/openai.md`, `wiki/gemini.md`, `wiki/claude.md`에 각각 저장됩니다. 동일 Source를 다시 실행하면 `seen_hashes`에서 감지되어 Gemini API를 호출하지 않습니다.
 
 ## 테스트
 
