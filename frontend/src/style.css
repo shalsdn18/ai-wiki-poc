@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'Manrope', sans-serif; color: #e2e8f0; background: #07111f; font-synthesis: none; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 15% 0%, #12304a 0, transparent 35%), radial-gradient(circle at 90% 20%, #103b3b 0, transparent 28%), #07111f; }
+h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.06em; font-weight: 800; color: #f8fafc; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .16em; color: #67e8f9; }
+.panel { border: 1px solid rgba(148,163,184,.16); border-radius: 1.25rem; background: rgba(15,31,49,.76); box-shadow: 0 24px 70px rgba(0,0,0,.2); backdrop-filter: blur(16px); }
+.stat-card { padding: 1.2rem 1.35rem; display: flex; flex-direction: column; gap: .55rem; }
+.stat-card span { color: #64748b; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.stat-card strong { color: #f8fafc; font-size: 2rem; letter-spacing: -.05em; }
+input { min-width: 0; flex: 1; border-radius: .75rem; border: 1px solid rgba(148,163,184,.18); background: rgba(2,8,23,.55); padding: .7rem .85rem; color: #e2e8f0; outline: none; }
+input:focus { border-color: #22d3ee; box-shadow: 0 0 0 3px rgba(34,211,238,.12); }
+button { cursor: pointer; border: 0; border-radius: .7rem; background: #22d3ee; padding: .7rem .95rem; color: #06202b; font-weight: 700; }
+.note-row { width: 100%; border: 1px solid transparent; background: rgba(2,8,23,.24); padding: .85rem 1rem; color: inherit; }
+.note-row:hover, .note-row.selected { border-color: rgba(34,211,238,.32); background: rgba(34,211,238,.08); }
+.prose h2 { margin: 0; color: #f8fafc; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: -.05em; }
+.prose h3 { margin-top: 2rem; color: #cbd5e1; font-size: 1rem; }
+.prose p, .prose li { color: #a8b6c9; line-height: 1.8; }
+.prose ul { padding-left: 1.2rem; }

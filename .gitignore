@@ -151,6 +151,8 @@ activemq-data/
 .env
 .envrc
 .obsidian_import_state.json
+cache.db
+vectors.db
 .venv
 env/
 venv/

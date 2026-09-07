@@ -4,6 +4,7 @@ from pathlib import Path
 from engine.obsidian_import import (
     category_hint,
     discover_markdown,
+    import_file,
     import_vault,
     load_import_state,
 )
@@ -317,3 +318,38 @@ def test_import_does_not_record_document_after_retry_failure(tmp_path, monkeypat
     assert (stats.processed, stats.failed) == (0, 1)
     assert delays == [30.0, 60.0]
     assert load_import_state(state)["documents"] == {}
+
+
+def test_import_file_processes_only_target_and_skips_unchanged(tmp_path, monkeypatch):
+    vault = _single_note(tmp_path)
+    monkeypatch.setenv("OBSIDIAN_VAULT_PATH", str(vault))
+    other = vault / "other.md"
+    other.write_text("# Other\nContent", encoding="utf-8")
+    state = tmp_path / "state.json"
+    wiki = tmp_path / "wiki"
+    classifier = FakeClassifier()
+
+    first = import_file(vault / "note.md", classifier, wiki, state, delay_seconds=0)
+    second = import_file(vault / "note.md", classifier, wiki, state, delay_seconds=0)
+
+    assert (first.processed, first.skipped) == (1, 0)
+    assert (second.processed, second.skipped) == (0, 1)
+    assert classifier.calls == 1
+    assert set(load_import_state(state)["documents"]) == {"note.md"}
+    assert not (wiki / "misc" / "index.md").read_text(encoding="utf-8").count("## Other")
+
+
+def test_import_file_uses_llm_cache_before_classifier(tmp_path, monkeypatch):
+    vault = _single_note(tmp_path)
+    cached_file = vault / "cached.md"
+    cached_file.write_text("# Note\nContent", encoding="utf-8")
+    monkeypatch.setenv("OBSIDIAN_VAULT_PATH", str(vault))
+    classifier = FakeClassifier()
+    cache_path = tmp_path / "cache.db"
+
+    first = import_file(vault / "note.md", classifier, tmp_path / "wiki", tmp_path / "state.json", cache_path=cache_path)
+    second = import_file(cached_file, classifier, tmp_path / "wiki", tmp_path / "state.json", cache_path=cache_path)
+
+    assert (first.gemini_calls, second.gemini_calls) == (1, 0)
+    assert classifier.calls == 1
+    assert second.processed == 1

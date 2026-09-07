@@ -1,5 +1,7 @@
 # AI Wiki PoC v1.1
 
+[![CI](/actions/workflows/ci.yml/badge.svg)](/actions/workflows/ci.yml)
+
 시간에 따라 들어오는 Source 중 처음 보는 content만 Gemini에 전달하고, 구조화된 분석 결과를 Python이 결정론적인 Markdown Wiki로 렌더링하는 최소 PoC입니다.
 
 ## 설계 경계
@@ -85,5 +87,106 @@ title: Optional title
 ```bash
 python -m engine.inbox_wiki
 ```
+
+## Dashboard
+
+Run the FastAPI server and the React dashboard in separate terminals:
+
+```powershell
+uvicorn app:app --reload
+cd frontend
+npm install
+npm run dev
+```
+
+The dashboard uses `http://localhost:8000` by default. Set
+`VITE_API_BASE_URL` in `frontend/.env.local` when the API runs elsewhere.
+
+## Semantic search
+
+Semantic indexing uses the local Ollama embedding API. Install and run the
+selected embedding model before importing:
+
+```powershell
+ollama pull bge-m3
+```
+
+`POST /import` synchronizes changed Markdown files into `vectors.db` and
+removes vectors for deleted files. Query semantic matches with
+`GET /semantic-search?q=...`. Set `EMBEDDING_MODEL` to `nomic-embed-text` if
+that model is preferred.
+
+The API also exposes `POST /chat` with a JSON body such as
+`{"question":"What does the vault say about retrieval?"}`. It retrieves the
+five closest indexed documents, builds a grounded context prompt, and returns
+the answer with source IDs and similarity scores. The Dashboard's RAG Chat
+panel opens those sources in the Markdown preview.
+
+## News Collector Agent
+
+The News Agent collects official OpenAI, Google AI, Anthropic, and Ollama
+updates every 30 minutes. New entries are written as Markdown into the
+Obsidian vault's `Inbox/` directory, where the existing Watchdog importer can
+process them.
+
+Run one collection cycle:
+
+```powershell
+python -m engine.news_agent --once
+```
+
+Run continuously:
+
+```powershell
+python -m engine.news_agent
+```
+
+Seen URLs are stored in `news_agent.db`, so the same article is never written
+twice. Feed failures are retried with exponential backoff and do not stop the
+other sources.
+
+## Unified import pipeline
+
+All single-file imports use the same pipeline: `import_file()` updates the
+Wiki, cache, and state first, then `update_vector()` synchronizes embeddings
+and removes vectors for deleted documents. Watchdog calls `run_pipeline()` for
+changed files, and `POST /import` runs the same pipeline for each discovered
+Markdown file.
+
+## Docker
+
+Copy `.env.example` to `.env` when local secrets or settings need to be
+customized, then start the complete stack:
+
+```powershell
+docker compose up --build
+```
+
+The backend is available at `http://localhost:8000`, the dashboard at
+`http://localhost:5173`, and Ollama at `http://localhost:11434`. Wiki, cache,
+state, and Ollama model data are persisted in `wiki/`, `cache/`, `state/`, and
+`ollama/` respectively. Health checks are enabled for all application
+services.
+
+## MCP Server
+
+The MCP server exposes the existing FastAPI API over stdio. Start the API
+first, then configure an MCP client with the following command:
+
+```json
+{
+  "mcpServers": {
+    "ai-wiki": {
+      "command": "C:\\Users\\your-name\\Desktop\\My project\\ai-wiki-poc\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "mcp_server.server"],
+      "env": {"AI_WIKI_API_URL": "http://localhost:8000"}
+    }
+  }
+}
+```
+
+The same stdio configuration can be registered in Claude Desktop, Cursor, or
+another MCP-compatible client. Available tools are `search_notes`,
+`ask_wiki`, `recent_notes`, `stats`, and `import_now`.
 
 성공한 자료의 URL identity, content hash, 입력 파일명, 처리 시각은 `inbox/.processed.json`에 기록됩니다. 동일 URL 또는 동일 content는 Gemini를 다시 호출하지 않으며, 실패한 자료는 processed 상태로 기록되지 않습니다. 내부 source ID와 content hash는 category Wiki 본문에 렌더링하지 않습니다.

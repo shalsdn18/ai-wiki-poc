@@ -17,6 +17,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 import engine.config
+from engine.cache import DEFAULT_CACHE_PATH, get_cached_payload, save_cached_payload
 from engine.inbox_wiki import (
     DEFAULT_WIKI_ROOT,
     GeminiInboxClassifier,
@@ -187,7 +188,7 @@ def _retry_delay_from_error(exc: Exception) -> float:
 
 
 def _classify_with_retry(
-    classifier: GeminiInboxClassifier,
+    classifier: GeminiInboxClassifier | None,
     source: SourceRecord,
     category_hint: KnowledgeCategory | None,
     max_retries: int,
@@ -211,6 +212,129 @@ def _classify_with_retry(
     raise AssertionError("retry loop exited unexpectedly")
 
 
+def process_markdown_file(
+    path: Path,
+    vault_path: Path,
+    state: dict,
+    classifier: GeminiInboxClassifier,
+    wiki_root: Path,
+    state_path: Path,
+    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    delay_seconds: float = 0.0,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    delay_before: bool = False,
+    cache_path: Path = DEFAULT_CACHE_PATH,
+) -> ImportStats:
+    """Process one Markdown file and persist the updated import state."""
+    source, relative_path, content_hash = _source_from_file(path, vault_path)
+    previous = state["documents"].get(relative_path)
+    if previous and previous.get("content_hash") == content_hash:
+        return ImportStats(read_markdown=1, skipped=1)
+    model = getattr(classifier, "_model", None) or os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
+    payload = get_cached_payload(content_hash, model, cache_path)
+    gemini_calls = 0
+    if payload is None:
+        classifier = classifier or GeminiInboxClassifier()
+        if delay_before:
+            time.sleep(delay_seconds)
+        hint = category_hint(Path(relative_path))
+        payload = _classify_with_retry(classifier, source, hint, max_retries)
+        save_cached_payload(content_hash, model, payload, cache_path)
+        gemini_calls = 1
+    processed_at = now().astimezone(timezone.utc).isoformat()
+    entry = {
+        "source_id": source.source_id,
+        "source_url": None,
+        "input_filename": path.name,
+        "source_file": str(path),
+        "relative_path": relative_path,
+        "processed_at": processed_at,
+        **payload.model_dump(mode="json"),
+    }
+    category_path = _category_path(wiki_root, payload.primary_category)
+    entries = [
+        item
+        for item in _load_category_entries(category_path)
+        if item["source_id"] != source.source_id
+    ]
+    entries.append(entry)
+    category_path.parent.mkdir(parents=True, exist_ok=True)
+    category_path.write_text(
+        _render_category(payload.primary_category, entries),
+        encoding="utf-8",
+        newline="\n",
+    )
+    state["documents"][relative_path] = {
+        "source_id": source.source_id,
+        "source_type": "obsidian",
+        "source_file": str(path),
+        "relative_path": relative_path,
+        "content_hash": content_hash,
+        "processed_at": processed_at,
+        "primary_category": payload.primary_category,
+    }
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(
+        json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    return ImportStats(read_markdown=1, gemini_calls=gemini_calls, processed=1)
+
+
+def _resolve_vault_path(vault_path: Path | None) -> Path:
+    configured_value = os.environ.get("OBSIDIAN_VAULT_PATH")
+    if vault_path is None and not configured_value:
+        raise RuntimeError("OBSIDIAN_VAULT_PATH is required")
+    configured_path = (vault_path or Path(configured_value or "")).expanduser().resolve()
+    if not configured_path.is_dir():
+        raise RuntimeError(f"Obsidian Vault directory does not exist: {configured_path}")
+    return configured_path
+
+
+def import_file(
+    path: Path,
+    classifier: GeminiInboxClassifier | None = None,
+    wiki_root: Path = DEFAULT_WIKI_ROOT,
+    state_path: Path = DEFAULT_STATE_PATH,
+    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    delay_seconds: float | None = None,
+    max_retries: int | None = None,
+    cache_path: Path | None = None,
+) -> ImportStats:
+    """Import exactly one Markdown file using the incremental state."""
+    configured_path = _resolve_vault_path(None)
+    target = path.expanduser().resolve()
+    if target.parent == configured_path or configured_path in target.parents:
+        pass
+    else:
+        raise ValueError(f"File is outside the Obsidian Vault: {path}")
+    if target.suffix.casefold() != ".md":
+        raise ValueError(f"Not a Markdown file: {path}")
+    state = load_import_state(state_path)
+    resolved_delay = _setting_float(
+        os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS") if delay_seconds is None else str(delay_seconds),
+        DEFAULT_DELAY_SECONDS,
+    )
+    resolved_retries = _setting_int(
+        os.environ.get("OBSIDIAN_IMPORT_MAX_RETRIES") if max_retries is None else str(max_retries),
+        DEFAULT_MAX_RETRIES,
+    )
+    resolved_cache_path = cache_path or state_path.parent / DEFAULT_CACHE_PATH.name
+    return process_markdown_file(
+        target,
+        configured_path,
+        state,
+        classifier,
+        wiki_root,
+        state_path,
+        now,
+        resolved_delay,
+        resolved_retries,
+        cache_path=resolved_cache_path,
+    )
+
+
 def import_vault(
     classifier: GeminiInboxClassifier | None = None,
     vault_path: Path | None = None,
@@ -219,13 +343,9 @@ def import_vault(
     now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
     delay_seconds: float | None = None,
     max_retries: int | None = None,
+    cache_path: Path | None = None,
 ) -> ImportStats:
-    configured_value = os.environ.get("OBSIDIAN_VAULT_PATH")
-    if vault_path is None and not configured_value:
-        raise RuntimeError("OBSIDIAN_VAULT_PATH is required")
-    configured_path = (vault_path or Path(configured_value or "")).expanduser().resolve()
-    if not configured_path.is_dir():
-        raise RuntimeError(f"Obsidian Vault directory does not exist: {configured_path}")
+    configured_path = _resolve_vault_path(vault_path)
 
     state = load_import_state(state_path)
     delay_seconds = _setting_float(
@@ -236,67 +356,30 @@ def import_vault(
         os.environ.get("OBSIDIAN_IMPORT_MAX_RETRIES") if max_retries is None else str(max_retries),
         DEFAULT_MAX_RETRIES,
     )
+    resolved_cache_path = cache_path or state_path.parent / DEFAULT_CACHE_PATH.name
     shared_classifier = classifier
     read_count = calls = processed = skipped = failed = 0
     for path in discover_markdown(configured_path):
-        read_count += 1
         try:
-            source, relative_path, content_hash = _source_from_file(path, configured_path)
-            previous = state["documents"].get(relative_path)
-            if previous and previous.get("content_hash") == content_hash:
-                skipped += 1
-                continue
             if shared_classifier is None:
                 shared_classifier = GeminiInboxClassifier()
-            if calls:
-                time.sleep(delay_seconds)
-            calls += 1
-            hint = category_hint(Path(relative_path))
-            payload = _classify_with_retry(
+            result = process_markdown_file(
+                path,
+                configured_path,
+                state,
                 shared_classifier,
-                source,
-                hint,
+                wiki_root,
+                state_path,
+                now,
+                delay_seconds,
                 max_retries,
+                delay_before=calls > 0,
+                cache_path=resolved_cache_path,
             )
-            processed_at = now().astimezone(timezone.utc).isoformat()
-            entry = {
-                "source_id": source.source_id,
-                "source_url": None,
-                "input_filename": path.name,
-                "source_file": str(path),
-                "relative_path": relative_path,
-                "processed_at": processed_at,
-                **payload.model_dump(mode="json"),
-            }
-            category_path = _category_path(wiki_root, payload.primary_category)
-            entries = [
-                item
-                for item in _load_category_entries(category_path)
-                if item["source_id"] != source.source_id
-            ]
-            entries.append(entry)
-            category_path.parent.mkdir(parents=True, exist_ok=True)
-            category_path.write_text(
-                _render_category(payload.primary_category, entries),
-                encoding="utf-8",
-                newline="\n",
-            )
-            state["documents"][relative_path] = {
-                "source_id": source.source_id,
-                "source_type": "obsidian",
-                "source_file": str(path),
-                "relative_path": relative_path,
-                "content_hash": content_hash,
-                "processed_at": processed_at,
-                "primary_category": payload.primary_category,
-            }
-            state_path.parent.mkdir(parents=True, exist_ok=True)
-            state_path.write_text(
-                json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-                encoding="utf-8",
-                newline="\n",
-            )
-            processed += 1
+            read_count += result.read_markdown
+            calls += result.gemini_calls
+            processed += result.processed
+            skipped += result.skipped
         except Exception as exc:
             failed += 1
             LOGGER.error("Obsidian document %s failed and was not marked processed: %s", path, exc)
