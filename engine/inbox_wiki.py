@@ -23,6 +23,9 @@ DEFAULT_INBOX = Path("inbox")
 DEFAULT_WIKI_ROOT = Path("wiki")
 DEFAULT_STATE = DEFAULT_INBOX / ".processed.json"
 CATEGORIES: tuple[KnowledgeCategory, ...] = ("ai", "investment", "philosophy", "misc")
+_SUSPICIOUS_MOJIBAKE = re.compile(r"[\ufffdÃÂÐÑ]|(?:ì|ë|ê|í|ï»¿)[\x80-\xff]")
+_JSON_FIELD_FRAGMENT = re.compile(r'[`{}]|"(?:title|summary|key_facts|topic|primary_category)"\s*:')
+_REPEATED_TOKEN = re.compile(r"(.)\1{4,}")
 
 
 class InboxClassifier(Protocol):
@@ -46,6 +49,14 @@ class GeminiInboxClassifier:
     ) -> InboxKnowledgePayload:
         from google.genai import types
 
+        korean_instruction = ""
+        if re.search(r"[가-힣]", source.content):
+            korean_instruction = (
+                "The source is Korean. Write title, summary, key_facts, and topic in natural Korean. "
+                "Do not distort the meaning of the source, and do not generate translation-like or "
+                "garbled strings. Product names, technical terms, and proper nouns may retain their "
+                "original spelling. "
+            )
         prompt = (
             "Classify and extract the supplied personal knowledge source. "
             "primary_category must be exactly one of ai, investment, philosophy, misc. "
@@ -54,6 +65,7 @@ class GeminiInboxClassifier:
             "related_topics list. Return structured data only, not Markdown. "
             f"The source path suggests category_hint={category_hint!r}; treat it only as a hint "
             "and independently validate the final categories.\n\n"
+            + korean_instruction
             + json.dumps(source.model_dump(mode="json"), ensure_ascii=False, indent=2)
         )
         response = self._client.models.generate_content(
@@ -80,7 +92,10 @@ def normalize_url(value: str) -> str:
         raise ValueError(f"Invalid source_url: {value}")
     host = (parts.hostname or "").lower()
     port = parts.port
-    if port and not ((parts.scheme.lower() == "http" and port == 80) or (parts.scheme.lower() == "https" and port == 443)):
+    if port and not (
+        (parts.scheme.lower() == "http" and port == 80)
+        or (parts.scheme.lower() == "https" and port == 443)
+    ):
         host = f"{host}:{port}"
     path = parts.path.rstrip("/") or "/"
     query = urlencode(sorted(parse_qsl(parts.query, keep_blank_values=True)))
@@ -102,7 +117,7 @@ def _parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
         if ":" not in line:
             raise ValueError(f"Invalid frontmatter line: {line}")
         key, value = line.split(":", 1)
-        metadata[key.strip()] = value.strip().strip('"\'')
+        metadata[key.strip()] = value.strip().strip("\"'")
     return metadata, "\n".join(lines[end + 1 :]).strip()
 
 
@@ -138,13 +153,15 @@ def load_processed_state(path: Path = DEFAULT_STATE) -> dict:
         return _empty_processed_state()
     state = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(state.get("processed_sources"), dict):
-        raise ValueError(f"Invalid processed state: {path}")
+        raise TypeError(f"Invalid processed state: {path}")
     return state
 
 
 def _is_duplicate(state: dict, source_id: str, content_hash: str) -> bool:
     sources = state["processed_sources"]
-    return source_id in sources or any(item.get("content_hash") == content_hash for item in sources.values())
+    return source_id in sources or any(
+        item.get("content_hash") == content_hash for item in sources.values()
+    )
 
 
 def _category_path(root: Path, category: KnowledgeCategory) -> Path:
@@ -166,13 +183,19 @@ def _load_category_entries(path: Path) -> list[dict]:
 
 def _render_category(category: KnowledgeCategory, entries: Sequence[dict]) -> str:
     ordered = sorted(entries, key=lambda item: (item["processed_at"], item["title"]), reverse=True)
-    frontmatter = json.dumps({"category": category, "entries": ordered}, ensure_ascii=False, indent=2, sort_keys=True)
+    frontmatter = json.dumps(
+        {"category": category, "entries": ordered}, ensure_ascii=False, indent=2, sort_keys=True
+    )
     sections = []
     for entry in ordered:
         facts = "\n".join(f"- {fact}" for fact in entry["key_facts"]) or "- _None._"
         tags = ", ".join(f"`{tag}`" for tag in entry["tags"]) or "_None_"
         related_topics = ", ".join(entry.get("related_topics", [])) or "_None_"
-        source = f"[{entry['source_url']}]({entry['source_url']})" if entry["source_url"] else "Local inbox document"
+        source = (
+            f"[{entry['source_url']}]({entry['source_url']})"
+            if entry["source_url"]
+            else "Local inbox document"
+        )
         sections.append(
             f"## {entry['title']}\n\n"
             f"{entry['summary']}\n\n"
@@ -198,7 +221,7 @@ def _validated_payload(payload: object, source_url: str | None) -> InboxKnowledg
     related_topics = list(
         dict.fromkeys(topic.strip() for topic in validated.related_topics if topic.strip())
     )
-    return validated.model_copy(
+    normalized = validated.model_copy(
         update={
             "categories": categories,
             "tags": tags,
@@ -207,6 +230,30 @@ def _validated_payload(payload: object, source_url: str | None) -> InboxKnowledg
             "source_url": source_url,
         }
     )
+    for field in ("title", "summary", "topic"):
+        value = getattr(normalized, field).strip()
+        if not value:
+            raise ValueError(f"{field} must not be empty")
+        if "\x00" in value or _SUSPICIOUS_MOJIBAKE.search(value):
+            raise ValueError(f"{field} contains suspicious encoding text")
+        if _JSON_FIELD_FRAGMENT.search(value) or _REPEATED_TOKEN.search(value):
+            raise ValueError(f"{field} contains malformed generated text")
+    for field, values in (
+        ("key_facts", normalized.key_facts),
+        ("tags", normalized.tags),
+        ("related_topics", normalized.related_topics),
+    ):
+        for value in values:
+            if (
+                not value.strip()
+                or _SUSPICIOUS_MOJIBAKE.search(value)
+                or _JSON_FIELD_FRAGMENT.search(value)
+                or _REPEATED_TOKEN.search(value)
+            ):
+                raise ValueError(f"{field} contains malformed generated text")
+    if normalized.primary_category not in normalized.categories:
+        raise ValueError("primary_category must also appear in categories")
+    return normalized
 
 
 def process_inbox(
@@ -238,10 +285,16 @@ def process_inbox(
                 **payload.model_dump(mode="json"),
             }
             category_path = _category_path(wiki_root, payload.primary_category)
-            entries = [item for item in _load_category_entries(category_path) if item["source_id"] != source.source_id]
+            entries = [
+                item
+                for item in _load_category_entries(category_path)
+                if item["source_id"] != source.source_id
+            ]
             entries.append(entry)
             category_path.parent.mkdir(parents=True, exist_ok=True)
-            category_path.write_text(_render_category(payload.primary_category, entries), encoding="utf-8", newline="\n")
+            category_path.write_text(
+                _render_category(payload.primary_category, entries), encoding="utf-8", newline="\n"
+            )
 
             state["processed_sources"][source.source_id] = {
                 "content_hash": content_hash,
@@ -251,7 +304,11 @@ def process_inbox(
                 "primary_category": payload.primary_category,
             }
             state_path.parent.mkdir(parents=True, exist_ok=True)
-            state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+            state_path.write_text(
+                json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             results[path.name] = "processed"
         except Exception as exc:
             LOGGER.error("Inbox item %s failed and was not marked processed: %s", path.name, exc)

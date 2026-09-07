@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import pytest
 from pydantic import ValidationError
 
-from engine.inbox_wiki import process_inbox
+from engine.inbox_wiki import _validated_payload, process_inbox
 from engine.schemas import InboxKnowledgePayload
 
 
@@ -103,9 +103,14 @@ def test_invalid_category_fails_validation_and_is_not_processed(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
     invalid = {
-        "title": "Bad", "summary": "Bad category", "key_facts": [],
-        "primary_category": "sports", "categories": ["sports"],
-        "tags": [], "importance": 3, "source_url": None,
+        "title": "Bad",
+        "summary": "Bad category",
+        "key_facts": [],
+        "primary_category": "sports",
+        "categories": ["sports"],
+        "tags": [],
+        "importance": 3,
+        "source_url": None,
     }
     result = process_inbox(FakeClassifier(invalid), inbox, wiki)
     assert result == {"item.md": "failed"}
@@ -115,9 +120,40 @@ def test_invalid_category_fails_validation_and_is_not_processed(tmp_path):
 def test_primary_category_missing_from_categories_is_invalid():
     with pytest.raises(ValidationError):
         InboxKnowledgePayload(
-            title="Mixed", summary="Summary", key_facts=[],
-            primary_category="ai", categories=["investment"], tags=[], importance=3,
+            title="Mixed",
+            summary="Summary",
+            key_facts=[],
+            primary_category="ai",
+            categories=["investment"],
+            tags=[],
+            importance=3,
         )
+
+
+def test_corrupted_korean_payload_is_rejected():
+    value = payload("ai").model_dump()
+    value["summary"] = "ìž˜ëª»ë'œ ì„¤ëª…"
+    with pytest.raises(ValueError, match="suspicious encoding"):
+        _validated_payload(value, None)
+
+
+def test_empty_summary_is_rejected():
+    value = payload("ai").model_dump()
+    value["summary"] = "   "
+    with pytest.raises(ValueError, match="summary"):
+        _validated_payload(value, None)
+
+
+def test_valid_korean_payload_is_accepted():
+    value = payload("ai").model_copy(
+        update={
+            "title": "생성형 AI 개요",
+            "summary": "생성형 AI의 핵심 개념을 설명합니다.",
+            "key_facts": ["모델은 문맥을 기반으로 응답을 생성합니다."],
+            "topic": "생성형 AI",
+        }
+    )
+    assert _validated_payload(value, None).title == "생성형 AI 개요"
 
 
 def test_gemini_failure_does_not_mark_processed(tmp_path):

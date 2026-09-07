@@ -44,9 +44,7 @@ EXCLUDED_DIRECTORIES = {
     "copilot",
     "ai_wiki",
 }
-EXCLUDED_MARKDOWN_NAMES = (
-    "readme.md",
-)
+EXCLUDED_MARKDOWN_NAMES = ("readme.md",)
 
 
 @dataclass(frozen=True)
@@ -137,7 +135,7 @@ def load_import_state(path: Path = DEFAULT_STATE_PATH) -> dict:
         return _empty_state()
     state = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(state.get("documents"), dict):
-        raise ValueError(f"Invalid Obsidian import state: {path}")
+        raise TypeError(f"Invalid Obsidian import state: {path}")
     return state
 
 
@@ -195,7 +193,9 @@ def _classify_with_retry(
 ) -> InboxKnowledgePayload:
     for attempt in range(max_retries + 1):
         try:
-            return _validated_payload(classifier.classify(source, category_hint=category_hint), None)
+            return _validated_payload(
+                classifier.classify(source, category_hint=category_hint), None
+            )
         except Exception as exc:
             status = _error_status(exc)
             if status not in {429, 503} or attempt >= max_retries:
@@ -224,14 +224,21 @@ def process_markdown_file(
     max_retries: int = DEFAULT_MAX_RETRIES,
     delay_before: bool = False,
     cache_path: Path = DEFAULT_CACHE_PATH,
+    force_reprocess: bool = False,
 ) -> ImportStats:
     """Process one Markdown file and persist the updated import state."""
     source, relative_path, content_hash = _source_from_file(path, vault_path)
     previous = state["documents"].get(relative_path)
-    if previous and previous.get("content_hash") == content_hash:
+    if previous and previous.get("content_hash") == content_hash and not force_reprocess:
         return ImportStats(read_markdown=1, skipped=1)
     model = getattr(classifier, "_model", None) or os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
     payload = get_cached_payload(content_hash, model, cache_path)
+    if payload is not None:
+        try:
+            payload = _validated_payload(payload, None)
+        except Exception:
+            LOGGER.warning("Ignoring invalid cached payload for %s", relative_path)
+            payload = None
     gemini_calls = 0
     if payload is None:
         classifier = classifier or GeminiInboxClassifier()
@@ -313,7 +320,11 @@ def import_file(
         raise ValueError(f"Not a Markdown file: {path}")
     state = load_import_state(state_path)
     resolved_delay = _setting_float(
-        os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS") if delay_seconds is None else str(delay_seconds),
+        (
+            os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS")
+            if delay_seconds is None
+            else str(delay_seconds)
+        ),
         DEFAULT_DELAY_SECONDS,
     )
     resolved_retries = _setting_int(
@@ -344,12 +355,17 @@ def import_vault(
     delay_seconds: float | None = None,
     max_retries: int | None = None,
     cache_path: Path | None = None,
+    rebuild_invalid: bool = False,
 ) -> ImportStats:
     configured_path = _resolve_vault_path(vault_path)
 
     state = load_import_state(state_path)
     delay_seconds = _setting_float(
-        os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS") if delay_seconds is None else str(delay_seconds),
+        (
+            os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS")
+            if delay_seconds is None
+            else str(delay_seconds)
+        ),
         DEFAULT_DELAY_SECONDS,
     )
     max_retries = _setting_int(
@@ -357,6 +373,7 @@ def import_vault(
         DEFAULT_MAX_RETRIES,
     )
     resolved_cache_path = cache_path or state_path.parent / DEFAULT_CACHE_PATH.name
+    invalid_source_ids = _invalid_source_ids(wiki_root) if rebuild_invalid else set()
     shared_classifier = classifier
     read_count = calls = processed = skipped = failed = 0
     for path in discover_markdown(configured_path):
@@ -375,6 +392,7 @@ def import_vault(
                 max_retries,
                 delay_before=calls > 0,
                 cache_path=resolved_cache_path,
+                force_reprocess=source_id_for_path(path, configured_path) in invalid_source_ids,
             )
             read_count += result.read_markdown
             calls += result.gemini_calls
@@ -386,18 +404,51 @@ def import_vault(
     return ImportStats(read_count, calls, processed, skipped, failed)
 
 
+def source_id_for_path(path: Path, vault_path: Path) -> str:
+    relative_path = path.relative_to(vault_path).as_posix()
+    return f"obsidian-{sha256(relative_path.casefold().encode('utf-8')).hexdigest()[:20]}"
+
+
+def _invalid_source_ids(wiki_root: Path) -> set[str]:
+    invalid: set[str] = set()
+    for category in ("ai", "investment", "philosophy", "misc"):
+        path = _category_path(wiki_root, category)  # type: ignore[arg-type]
+        try:
+            entries = _load_category_entries(path)
+        except (OSError, ValueError) as exc:
+            LOGGER.warning("Could not inspect Wiki index %s: %s", path, exc)
+            continue
+        for entry in entries:
+            try:
+                if entry.get("primary_category") != category:
+                    raise ValueError("Wiki index category does not match primary_category")
+                _validated_payload(entry, entry.get("source_url"))
+            except Exception as exc:
+                source_id = entry.get("source_id")
+                if source_id:
+                    invalid.add(source_id)
+                    LOGGER.warning("Invalid Wiki entry %s will be rebuilt: %s", source_id, exc)
+    return invalid
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wiki-root", type=Path, default=DEFAULT_WIKI_ROOT)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
     parser.add_argument("--delay-seconds", type=float, default=None)
     parser.add_argument("--max-retries", type=int, default=None)
+    parser.add_argument(
+        "--rebuild-invalid",
+        action="store_true",
+        help="Reclassify only source documents whose current Wiki payload is invalid",
+    )
     args = parser.parse_args()
     stats = import_vault(
         wiki_root=args.wiki_root,
         state_path=args.state,
         delay_seconds=args.delay_seconds,
         max_retries=args.max_retries,
+        rebuild_invalid=args.rebuild_invalid,
     )
     print(
         f"read={stats.read_markdown} gemini_calls={stats.gemini_calls} "

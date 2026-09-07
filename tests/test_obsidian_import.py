@@ -1,6 +1,9 @@
+import json
 from datetime import datetime, timezone
+from hashlib import sha256
 from pathlib import Path
 
+from engine import obsidian_import
 from engine.obsidian_import import (
     category_hint,
     discover_markdown,
@@ -8,7 +11,6 @@ from engine.obsidian_import import (
     import_vault,
     load_import_state,
 )
-from engine import obsidian_import
 from engine.schemas import InboxKnowledgePayload
 
 
@@ -275,7 +277,9 @@ def test_import_retries_429_using_retry_delay_and_processes(tmp_path, monkeypatc
     delays = []
     monkeypatch.setattr(obsidian_import.time, "sleep", delays.append)
     state = tmp_path / "state.json"
-    stats = import_vault(RetryClassifier(), _single_note(tmp_path), tmp_path / "wiki", state, delay_seconds=0)
+    stats = import_vault(
+        RetryClassifier(), _single_note(tmp_path), tmp_path / "wiki", state, delay_seconds=0
+    )
 
     assert (stats.processed, stats.failed) == (1, 0)
     assert delays == [7.0]
@@ -293,8 +297,12 @@ def test_import_retries_503_with_exponential_backoff(tmp_path, monkeypatch):
     delays = []
     monkeypatch.setattr(obsidian_import.time, "sleep", delays.append)
     stats = import_vault(
-        RetryClassifier(), _single_note(tmp_path), tmp_path / "wiki", tmp_path / "state.json",
-        delay_seconds=0, max_retries=3,
+        RetryClassifier(),
+        _single_note(tmp_path),
+        tmp_path / "wiki",
+        tmp_path / "state.json",
+        delay_seconds=0,
+        max_retries=3,
     )
 
     assert stats.processed == 1
@@ -311,8 +319,12 @@ def test_import_does_not_record_document_after_retry_failure(tmp_path, monkeypat
     monkeypatch.setattr(obsidian_import.time, "sleep", delays.append)
     state = tmp_path / "state.json"
     stats = import_vault(
-        FailingClassifier(), _single_note(tmp_path), tmp_path / "wiki", state,
-        delay_seconds=0, max_retries=2,
+        FailingClassifier(),
+        _single_note(tmp_path),
+        tmp_path / "wiki",
+        state,
+        delay_seconds=0,
+        max_retries=2,
     )
 
     assert (stats.processed, stats.failed) == (0, 1)
@@ -347,9 +359,101 @@ def test_import_file_uses_llm_cache_before_classifier(tmp_path, monkeypatch):
     classifier = FakeClassifier()
     cache_path = tmp_path / "cache.db"
 
-    first = import_file(vault / "note.md", classifier, tmp_path / "wiki", tmp_path / "state.json", cache_path=cache_path)
-    second = import_file(cached_file, classifier, tmp_path / "wiki", tmp_path / "state.json", cache_path=cache_path)
+    first = import_file(
+        vault / "note.md",
+        classifier,
+        tmp_path / "wiki",
+        tmp_path / "state.json",
+        cache_path=cache_path,
+    )
+    second = import_file(
+        cached_file, classifier, tmp_path / "wiki", tmp_path / "state.json", cache_path=cache_path
+    )
 
     assert (first.gemini_calls, second.gemini_calls) == (1, 0)
     assert classifier.calls == 1
     assert second.processed == 1
+
+
+def test_rebuild_invalid_reprocesses_only_invalid_entries_and_preserves_source_id(tmp_path):
+    vault = tmp_path / "Vault"
+    vault.mkdir()
+    valid_note = vault / "valid.md"
+    invalid_note = vault / "invalid.md"
+    valid_note.write_text("# 정상 문서\n정상 본문", encoding="utf-8")
+    invalid_note.write_text("# 잘못된 문서\n한글 본문", encoding="utf-8")
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+
+    def entry(source_id, relative_path, title, summary):
+        return {
+            "source_id": source_id,
+            "source_url": None,
+            "input_filename": Path(relative_path).name,
+            "source_file": str(vault / relative_path),
+            "relative_path": relative_path,
+            "processed_at": "2026-01-01T00:00:00+00:00",
+            "title": title,
+            "summary": summary,
+            "key_facts": ["사실"],
+            "primary_category": "misc",
+            "categories": ["misc"],
+            "tags": [],
+            "importance": 3,
+            "topic": title,
+            "related_topics": [],
+        }
+
+    from engine.obsidian_import import source_id_for_path
+
+    valid_id = source_id_for_path(valid_note, vault)
+    invalid_id = source_id_for_path(invalid_note, vault)
+    frontmatter = {
+        "category": "misc",
+        "entries": [
+            entry(valid_id, "valid.md", "정상 문서", "정상 요약"),
+            entry(invalid_id, "invalid.md", "invalid", "ìž˜ëª»ë'œ 요약"),
+        ],
+    }
+    (wiki / "misc").mkdir()
+    (wiki / "misc" / "index.md").write_text(
+        "---\n" + json.dumps(frontmatter, ensure_ascii=False, indent=2) + "\n---\n",
+        encoding="utf-8",
+    )
+    state_path = tmp_path / "state.json"
+    state_path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "documents": {
+                    name: {
+                        "source_id": source_id,
+                        "content_hash": sha256(
+                            path.read_text(encoding="utf-8").encode("utf-8")
+                        ).hexdigest(),
+                    }
+                    for name, path, source_id in (
+                        ("valid.md", valid_note, valid_id),
+                        ("invalid.md", invalid_note, invalid_id),
+                    )
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    classifier = FakeClassifier()
+    stats = import_vault(
+        classifier,
+        vault,
+        wiki,
+        state_path,
+        delay_seconds=0,
+        rebuild_invalid=True,
+    )
+
+    assert stats.processed == 1
+    assert stats.skipped == 1
+    assert classifier.calls == 1
+    rebuilt = json.loads((wiki / "misc" / "index.md").read_text(encoding="utf-8").split("---")[1])
+    ids = {item["source_id"] for item in rebuilt["entries"]}
+    assert {invalid_id, valid_id} <= ids
