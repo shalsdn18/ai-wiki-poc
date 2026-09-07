@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ```bash
 export GEMINI_API_KEY="..."
-export GEMINI_MODEL="gemini-3.7-flash"
+export GEMINI_MODEL="gemini-3.1-flash-lite"
 python -m engine.real_wiki
 ```
 
@@ -52,6 +52,19 @@ Vault는 읽기 전용 Source Provider로 처리됩니다. `.obsidian`, `.trash`
 $env:OBSIDIAN_VAULT_PATH="C:\Users\your-name\Documents\MyVault"
 python -m engine.obsidian_import
 ```
+
+For a full Vault import on the Gemini free tier, the recommended settings are:
+
+```dotenv
+GEMINI_MODEL=gemini-3.1-flash-lite
+OBSIDIAN_IMPORT_DELAY_SECONDS=5
+OBSIDIAN_IMPORT_MAX_RETRIES=3
+```
+
+The same settings can be overridden for one run with `--delay-seconds` and
+`--max-retries`. Unchanged documents are skipped without a Gemini call. HTTP
+429 responses use the provider retry delay when available, and HTTP 503
+responses retry after 30, 60, and 120 seconds.
 
 상태는 Vault가 아니라 프로젝트 루트의 `.obsidian_import_state.json`에 저장됩니다. 동일 relative path의 content hash가 그대로이면 Gemini를 호출하지 않고, 내용이 바뀌면 다시 분류합니다. `AI`, `투자`, `철학` 같은 폴더명은 category hint로만 전달되며 최종 분류는 Gemini Structured Output과 Pydantic validation으로 결정됩니다.
 

@@ -9,71 +9,62 @@
       "importance": 4,
       "input_filename": "임베디드 HMI 및 제어 GUI 설계 지침.md",
       "key_facts": [
-        "Guidelines for designing embedded HMI and control GUIs to overcome ambiguity of flat interfaces.",
-        "Emphasizes applying physical affordance (skeuomorphism) and limited color hierarchy to prevent human operational errors.",
-        "Outlines design principles: physical affordance, restricted color palettes, and structured grid/information hierarchy.",
-        "Compares function-only GUIs with affordance-driven HMIs, showing benefits in reducing cognitive load and error rates.",
-        "Details implementation steps including visual-physical control loop synchronization (<50ms), error-proofing color rules, and FSM-based modular layout."
+        "물리적 어포던스(Skeuomorphic GUI)를 적용하여 사용자 오작동율을 최소화함",
+        "LVGL 위젯 사용 시 50ms 이내의 시각-물리 제어 루프 동기화 권장",
+        "긴급 정지 및 위험 트리거에는 오렌지색(#FF5A00)을 사용하여 시각적 위계 설정",
+        "중요 제어 명령은 Long-Press 또는 2단계 확인 시퀀스를 의무화하여 오입력 차단",
+        "소프트웨어 FSM 상태에 따라 유효하지 않은 제어 버튼을 비활성화하여 화면 복잡도 제어"
       ],
       "primary_category": "misc",
-      "processed_at": "2026-09-02T03:13:14.267013+00:00",
+      "processed_at": "2026-09-07T01:37:42.322412+00:00",
       "related_topics": [
-        "UI/UX Design",
-        "Human-Computer Interaction",
-        "Embedded Systems",
-        "Skeuomorphism",
-        "Affordance Theory",
-        "Industrial Design Principles",
-        "System Engineering",
-        "LVGL GUI Library"
+        "UI/UX 디자인 원칙",
+        "임베디드 시스템 제어",
+        "LVGL 그래픽 라이브러리",
+        "인간-기계 상호작용(HMI)",
+        "오작동 방지 설계"
       ],
       "relative_path": "임베디드 HMI 및 제어 GUI 설계 지침.md",
       "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\임베디드 HMI 및 제어 GUI 설계 지침.md",
       "source_id": "obsidian-40e0667c439c60ab60e2",
       "source_url": null,
-      "summary": "평면적(Flat) GUI가 주는 인지 모호성을 극복하고, 임베디드 디스플레이(LVGL 기반 TFT-LCD, 관제 대시보드)에서 물리적 조작감(Skeuomorphic Affordance)과 제한된 색상 위계를 적용하여 조작 오작동(Human Error)을 방지하는 GUI 설계 기준.",
+      "summary": "임베디드 시스템의 HMI 및 GUI 설계 시 디터 람스의 어포던스 원칙을 적용하여 인지 부하를 줄이고 오작동을 방지하는 가이드라인입니다. LVGL 기반의 물리적 조작감 구현, 색상 위계 규칙, 그리고 정보 밀도 최적화를 위한 FSM 연동 전략을 다룹니다.",
       "tags": [
-        "Embedded HMI",
-        "GUI Design",
-        "UI/UX",
-        "Affordance",
-        "Skeuomorphism",
+        "Embedded",
+        "HMI",
+        "UI-UX",
         "LVGL",
-        "System Design",
-        "Human Error Prevention",
-        "Control Systems"
+        "SystemDesign",
+        "Affordance"
       ],
       "title": "임베디드 HMI 및 제어 GUI 설계 지침",
-      "topic": "Embedded HMI and Control GUI Design Guidelines"
+      "topic": "임베디드 HMI 어포던스 설계"
     },
     {
       "categories": [
         "misc"
       ],
-      "importance": 4,
+      "importance": 3,
       "input_filename": "스마트폰 기반 엣지 서버 구축 사례 분석.md",
       "key_facts": [
-        "유휴 스마트폰을 활용한 ARM 기반 개인용 엣지 서버 구축 PoC 분석.",
-        "순정 Android 커널, Termux, chroot를 결합한 아키텍처 실험으로 실용성보다 기술적 한계 돌파에 초점.",
-        "스마트폰 엣지 서버는 운영 체제 환경, 연산 및 쿨링, 확장성, 치명적 리스크(배터리 스웰링 및 화재 위험) 면에서 중고 미니 PC/구형 데스크톱보다 열위.",
-        "서버 시스템의 핵심은 예측 가능성과 지속 가능한 I/O 처리이며, 스마트폰은 24시간 트래픽을 처리하는 서버 워크로드에 원천적으로 부적합.",
-        "본 사례는 잉여 자원을 활용하기 위한 실험적 프로젝트이며, 실용적이고 안정적인 개인 인프라 구축에는 중고 소형 폼팩터 PC가 최적의 선택지."
+        "스마트폰 기반 서버는 모바일 AP 구조상 지속적인 부하 처리에 부적합하며 스로틀링이 발생함.",
+        "chroot 방식을 통해 안드로이드 환경에서 리눅스 배포판을 구동할 수 있으나 보안 격리 수준이 낮음.",
+        "상시 전원 연결 시 배터리 스웰링 및 화재 위험이 존재하여 24/7 서버 운영에 치명적임.",
+        "실용적인 홈랩 구축을 위해서는 확장성과 안정성이 검증된 중고 미니 PC(USFF)가 권장됨."
       ],
       "primary_category": "misc",
-      "processed_at": "2026-09-02T03:13:04.755498+00:00",
+      "processed_at": "2026-09-07T01:37:34.407869+00:00",
       "related_topics": [
-        "Edge Computing",
-        "Self-hosting",
-        "Home Lab",
-        "ARM Architecture",
-        "System Design",
-        "Technical Debt"
+        "셀프 호스팅",
+        "홈랩",
+        "시스템 아키텍처",
+        "임베디드 시스템"
       ],
       "relative_path": "스마트폰 기반 엣지 서버 구축 사례 분석.md",
       "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\스마트폰 기반 엣지 서버 구축 사례 분석.md",
       "source_id": "obsidian-d5ba370fc3fa414228fa",
       "source_url": null,
-      "summary": "유휴 스마트폰을 활용하여 기존 클라우드를 대체하는 ARM 기반 개인용 엣지 서버 구축 사례 분석. 순정 Android 커널과 Termux, chroot를 결합한 형태의 아키텍처 실험(PoC)이며, 실용성보다는 기술적 한계 돌파에 초점을 맞춘 사례.",
+      "summary": "유휴 스마트폰을 활용하여 ARM 기반 엣지 서버를 구축하는 기술적 실험(PoC) 사례를 분석한 문서입니다. Termux와 chroot를 이용한 안드로이드 환경에서의 서버 운영 가능성을 검토하며, 하드웨어 제약과 화재 위험 등 실무적 한계를 지적하고 홈랩 구축을 위한 최적의 대안으로 중고 미니 PC를 제안합니다.",
       "tags": [
         "엣지컴퓨팅",
         "셀프호스팅",
@@ -82,43 +73,40 @@
         "시스템설계"
       ],
       "title": "스마트폰 기반 엣지 서버 구축 사례 분석",
-      "topic": "Smartphone Edge Server Feasibility Analysis"
+      "topic": "엣지 컴퓨팅"
     },
     {
       "categories": [
         "misc"
       ],
-      "importance": 4,
+      "importance": 3,
       "input_filename": "UI와 인간 중심 디자인.md",
       "key_facts": [
-        "UX(인간 중심 디자인)는 사용자의 전체적인 경험과 가치를 다루는 종합적 설계 방향입니다.",
-        "UI(사용자 인터페이스)는 사용자가 마주하는 시각적·물리적 접점입니다.",
-        "UI는 UX 목표를 달성하기 위한 하위 요소이며, UX는 UI를 포함하는 포괄적인 접근 방식입니다.",
-        "훌륭한 UI는 UX 목표 달성에 필수적이지만, UI 완성도가 곧바로 전체 UX의 우수성을 보장하지는 않습니다.",
-        "업계에서는 여전히 인간 중심 설계 접근을 'UX' 용어로 표현하는 경우가 많습니다."
+        "UI는 버튼, 레이아웃, 컬러 등 시각적 접점을 설계하는 역할을 합니다.",
+        "UX는 사용자의 니즈와 감정을 해결하는 종합적인 설계 방향을 제시합니다.",
+        "UI는 UX 목표를 달성하기 위한 필수적인 하위 요소입니다.",
+        "UI의 완성도가 곧바로 전체 UX의 우수성을 보장하지는 않습니다."
       ],
       "primary_category": "misc",
-      "processed_at": "2026-09-02T03:12:46.082610+00:00",
+      "processed_at": "2026-09-07T01:37:20.463662+00:00",
       "related_topics": [
-        "Human-Centered Design",
-        "User Interface",
-        "User Experience",
-        "Digital Product Development",
-        "Design Systems",
-        "Frontend Development"
+        "디자인 시스템",
+        "프론트엔드 개발",
+        "인간 중심 디자인",
+        "사용자 경험 설계"
       ],
       "relative_path": "UI와 인간 중심 디자인.md",
       "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\UI와 인간 중심 디자인.md",
       "source_id": "obsidian-7738c89a1e3a40dbe596",
       "source_url": null,
-      "summary": "이 문서는 디지털 제품 개발에서 UI(사용자 인터페이스)와 UX(사용자 경험)의 개념과 관계를 명확히 합니다. UX는 사용자의 전반적인 경험과 가치를 다루는 포괄적인 접근 방식이며, UI는 UX 목표를 시각적이고 물리적인 접점으로 구현하는 하위 수단임을 설명합니다. 훌륭한 UI가 UX 목표 달성에 필수적이지만, UI 완성도만으로 전체 UX의 우수성을 보장하지는 않는다고 강조합니다.",
+      "summary": "UI와 UX의 정의, 역할, 그리고 상호 관계를 비교 분석한 문서입니다. UX는 사용자의 전체적인 경험과 가치를 다루는 상위 개념이며, UI는 이를 시각적·물리적으로 구현하는 하위 수단임을 설명합니다.",
       "tags": [
         "design/ux",
         "ui",
         "development"
       ],
       "title": "UI와 인간 중심 디자인(UX)의 개념과 관계",
-      "topic": "UI/UX Design Fundamentals"
+      "topic": "UI와 UX의 개념적 차이와 상호 관계"
     },
     {
       "categories": [
@@ -127,29 +115,25 @@
       "importance": 3,
       "input_filename": "Rust 기반 Windows 네이티브 압축 툴.md",
       "key_facts": [
-        "OtterZip is a new open-source compression program.",
-        "It uses Rust for its core engine and C libraries (libdeflate, zstd, liblzma) for codecs.",
-        "The UI is developed natively with C# and WinUI.",
-        "It supports decompression for ZIP, 7z, RAR, TAR and compression for ZIP, 7z, tar.gz (with AES-256).",
-        "It is free and licensed under GPL-3.0.",
-        "Designed for minimal user intervention, without ads or payment prompts.",
-        "Integrates with Windows Explorer context menus and drag-and-drop.",
-        "A known issue exists with MSIX shell extension cold start delay after reboot."
+        "Built using Rust for core logic and C# WinUI for the interface.",
+        "Supports common formats like ZIP, 7z, RAR, and TAR.",
+        "Focuses on ad-free, background-oriented compression and extraction.",
+        "Licensed under GPL-3.0.",
+        "Currently experiencing minor cold-start latency issues with MSIX shell extensions."
       ],
       "primary_category": "misc",
-      "processed_at": "2026-09-02T01:21:40.712702+00:00",
+      "processed_at": "2026-09-07T01:37:13.360040+00:00",
       "related_topics": [
-        "File compression software",
-        "Open-source utilities",
-        "Windows shell extensions",
-        "Rust programming language",
+        "Rust programming",
+        "Windows Shell Extension",
+        "File compression algorithms",
         "WinUI development"
       ],
       "relative_path": "Rust 기반 Windows 네이티브 압축 툴.md",
       "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\Rust 기반 Windows 네이티브 압축 툴.md",
       "source_id": "obsidian-3b714873dfcabe7fe475",
       "source_url": null,
-      "summary": "OtterZip is a newly released open-source compression program built with Rust and WinUI, designed for Windows. It emphasizes minimal user intervention, no advertisements or payments, and seamless integration with Windows Explorer via context menus and drag-and-drop. It's suitable for users needing an efficient, ad-free background compression/decompression tool.",
+      "summary": "OtterZip is a new open-source, ad-free file compression tool for Windows built with Rust and WinUI, designed for minimal user intervention and seamless integration with Windows Explorer.",
       "tags": [
         "Tool/Compression",
         "OS/Windows",
@@ -158,38 +142,34 @@
         "WinUI"
       ],
       "title": "OtterZip",
-      "topic": "OtterZip open-source compression tool for Windows"
+      "topic": "Open-source Windows compression software"
     },
     {
       "categories": [
         "misc"
       ],
-      "importance": 4,
+      "importance": 3,
       "input_filename": "Ruby on Rails 하드 포크 프로젝트.md",
       "key_facts": [
-        "Ruby on Rails essential core modules (railties, activerecord) are undergoing a hard fork to create 'Amiko'.",
-        "The fork is primarily due to developer opposition to DHH's autocratic leadership and political views, not technical deficiencies.",
-        "Amiko's main goal is to provide 'boring and friendly' Long Term Support (LTS) with maximum Rails 8.x compatibility, rather than focusing on new feature development.",
-        "The project aims to establish a decentralized, rule-based community governance model, moving away from single leadership.",
-        "Maintenance efforts for Amiko are focused on minimal core areas to optimize resource consumption.",
-        "Amiko is positioned as an alternative to coexist with existing frameworks like Hanakai and Hanami, not to monopolize the ecosystem.",
-        "The project is currently in its early stages, and immediate migration for production-level applications is not recommended."
+        "Amiko는 Ruby on Rails의 핵심 모듈을 포크하여 커뮤니티 주도로 운영되는 대안 프레임워크입니다.",
+        "주요 원인은 DHH의 리더십과 정치적 세계관에 대한 커뮤니티의 반발입니다.",
+        "프로젝트의 핵심 목표는 Rails 8.x와의 높은 호환성을 유지하며 안정적인 유지보수를 제공하는 것입니다.",
+        "현재 초기 단계이며 프로덕션 환경 도입보다는 거버넌스 리스크를 고려하는 조직의 관찰 대상으로 적합합니다."
       ],
       "primary_category": "misc",
-      "processed_at": "2026-09-02T01:21:32.372528+00:00",
+      "processed_at": "2026-09-07T01:37:06.726411+00:00",
       "related_topics": [
         "Ruby on Rails",
-        "Web Framework Development",
-        "Open Source Governance",
-        "Software Ecosystems",
-        "Community-driven Projects",
-        "Long Term Support (LTS)"
+        "오픈소스 거버넌스",
+        "소프트웨어 유지보수",
+        "기술 부채",
+        "커뮤니티 주도 개발"
       ],
       "relative_path": "Ruby on Rails 하드 포크 프로젝트.md",
       "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\Ruby on Rails 하드 포크 프로젝트.md",
       "source_id": "obsidian-1203beb6aabb25a6d091",
       "source_url": null,
-      "summary": "GeekNews 동향에 따르면, Ruby on Rails 생태계 내 창시자(DHH)의 거버넌스에 반발한 개발자들이 커뮤니티 주도의 대안 프레임워크인 'Amiko'를 구축 중입니다. 신기능 개발보다 Rails 8.x 호환성을 극대화한 '지루하고 친근한' LTS(Long Term Support) 제공이 주 목적입니다.",
+      "summary": "Ruby on Rails의 창시자 DHH의 독단적 거버넌스에 반발하여 커뮤니티 주도로 시작된 하드 포크 프로젝트 'Amiko'에 대한 분석입니다. 신기능 추가보다는 Rails 8.x와의 호환성을 유지하며 안정적인 LTS를 제공하는 것을 목표로 합니다.",
       "tags": [
         "RubyOnRails",
         "Amiko",
@@ -198,46 +178,7 @@
         "Governance"
       ],
       "title": "Amiko: Ruby on Rails 하드 포크 프로젝트",
-      "topic": "Ruby on Rails Hard Fork and Governance"
-    },
-    {
-      "categories": [
-        "misc"
-      ],
-      "importance": 4,
-      "input_filename": "MOC_시스템 & 엔지니어링.md",
-      "key_facts": [
-        "Serves as a Map of Content (MOC) for System & Engineering topics.",
-        "Organizes notes on development frameworks, system/infrastructure construction, and embedded/HMI design.",
-        "Lists active notes on Ruby on Rails, Rust-based tools, UI/HMI design, and smartphone-based edge servers.",
-        "Includes a backlog for concepts like design system construction."
-      ],
-      "primary_category": "misc",
-      "processed_at": "2026-09-02T01:21:17.495616+00:00",
-      "related_topics": [
-        "Software Development",
-        "Infrastructure Architecture",
-        "Embedded Systems",
-        "Human-Machine Interface",
-        "Knowledge Organization"
-      ],
-      "relative_path": "MOC_시스템 & 엔지니어링.md",
-      "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\MOC_시스템 & 엔지니어링.md",
-      "source_id": "obsidian-3c27179d665a1f22ccc5",
-      "source_url": null,
-      "summary": "This document functions as a central hub for organizing personal knowledge notes related to various technical domains, including software development frameworks, system and infrastructure architecture, and embedded Human-Machine Interface (HMI) design. It outlines active projects and future concepts within these engineering fields.",
-      "tags": [
-        "MOC",
-        "System Engineering",
-        "Software Development",
-        "Infrastructure",
-        "Embedded Systems",
-        "HMI Design",
-        "Development Frameworks",
-        "Knowledge Management"
-      ],
-      "title": "MOC_시스템 & 엔지니어링",
-      "topic": "System and Engineering Knowledge Management"
+      "topic": "오픈소스 거버넌스 및 프레임워크 포크"
     }
   ]
 }
@@ -247,130 +188,102 @@
 
 ## 임베디드 HMI 및 제어 GUI 설계 지침
 
-평면적(Flat) GUI가 주는 인지 모호성을 극복하고, 임베디드 디스플레이(LVGL 기반 TFT-LCD, 관제 대시보드)에서 물리적 조작감(Skeuomorphic Affordance)과 제한된 색상 위계를 적용하여 조작 오작동(Human Error)을 방지하는 GUI 설계 기준.
+임베디드 시스템의 HMI 및 GUI 설계 시 디터 람스의 어포던스 원칙을 적용하여 인지 부하를 줄이고 오작동을 방지하는 가이드라인입니다. LVGL 기반의 물리적 조작감 구현, 색상 위계 규칙, 그리고 정보 밀도 최적화를 위한 FSM 연동 전략을 다룹니다.
 
 - Importance: 4/5
-- Topic: Embedded HMI and Control GUI Design Guidelines
-- Related topics: UI/UX Design, Human-Computer Interaction, Embedded Systems, Skeuomorphism, Affordance Theory, Industrial Design Principles, System Engineering, LVGL GUI Library
+- Topic: 임베디드 HMI 어포던스 설계
+- Related topics: UI/UX 디자인 원칙, 임베디드 시스템 제어, LVGL 그래픽 라이브러리, 인간-기계 상호작용(HMI), 오작동 방지 설계
 - Categories: misc
-- Tags: `Embedded HMI`, `GUI Design`, `UI/UX`, `Affordance`, `Skeuomorphism`, `LVGL`, `System Design`, `Human Error Prevention`, `Control Systems`
+- Tags: `Embedded`, `HMI`, `UI-UX`, `LVGL`, `SystemDesign`, `Affordance`
 - Source: Local inbox document
 - Input file: `임베디드 HMI 및 제어 GUI 설계 지침.md`
-- Processed at: 2026-09-02T03:13:14.267013+00:00
+- Processed at: 2026-09-07T01:37:42.322412+00:00
 
 ### Key Facts
 
-- Guidelines for designing embedded HMI and control GUIs to overcome ambiguity of flat interfaces.
-- Emphasizes applying physical affordance (skeuomorphism) and limited color hierarchy to prevent human operational errors.
-- Outlines design principles: physical affordance, restricted color palettes, and structured grid/information hierarchy.
-- Compares function-only GUIs with affordance-driven HMIs, showing benefits in reducing cognitive load and error rates.
-- Details implementation steps including visual-physical control loop synchronization (<50ms), error-proofing color rules, and FSM-based modular layout.
+- 물리적 어포던스(Skeuomorphic GUI)를 적용하여 사용자 오작동율을 최소화함
+- LVGL 위젯 사용 시 50ms 이내의 시각-물리 제어 루프 동기화 권장
+- 긴급 정지 및 위험 트리거에는 오렌지색(#FF5A00)을 사용하여 시각적 위계 설정
+- 중요 제어 명령은 Long-Press 또는 2단계 확인 시퀀스를 의무화하여 오입력 차단
+- 소프트웨어 FSM 상태에 따라 유효하지 않은 제어 버튼을 비활성화하여 화면 복잡도 제어
 
 ## 스마트폰 기반 엣지 서버 구축 사례 분석
 
-유휴 스마트폰을 활용하여 기존 클라우드를 대체하는 ARM 기반 개인용 엣지 서버 구축 사례 분석. 순정 Android 커널과 Termux, chroot를 결합한 형태의 아키텍처 실험(PoC)이며, 실용성보다는 기술적 한계 돌파에 초점을 맞춘 사례.
+유휴 스마트폰을 활용하여 ARM 기반 엣지 서버를 구축하는 기술적 실험(PoC) 사례를 분석한 문서입니다. Termux와 chroot를 이용한 안드로이드 환경에서의 서버 운영 가능성을 검토하며, 하드웨어 제약과 화재 위험 등 실무적 한계를 지적하고 홈랩 구축을 위한 최적의 대안으로 중고 미니 PC를 제안합니다.
 
-- Importance: 4/5
-- Topic: Smartphone Edge Server Feasibility Analysis
-- Related topics: Edge Computing, Self-hosting, Home Lab, ARM Architecture, System Design, Technical Debt
+- Importance: 3/5
+- Topic: 엣지 컴퓨팅
+- Related topics: 셀프 호스팅, 홈랩, 시스템 아키텍처, 임베디드 시스템
 - Categories: misc
 - Tags: `엣지컴퓨팅`, `셀프호스팅`, `PoC`, `스마트폰`, `시스템설계`
 - Source: Local inbox document
 - Input file: `스마트폰 기반 엣지 서버 구축 사례 분석.md`
-- Processed at: 2026-09-02T03:13:04.755498+00:00
+- Processed at: 2026-09-07T01:37:34.407869+00:00
 
 ### Key Facts
 
-- 유휴 스마트폰을 활용한 ARM 기반 개인용 엣지 서버 구축 PoC 분석.
-- 순정 Android 커널, Termux, chroot를 결합한 아키텍처 실험으로 실용성보다 기술적 한계 돌파에 초점.
-- 스마트폰 엣지 서버는 운영 체제 환경, 연산 및 쿨링, 확장성, 치명적 리스크(배터리 스웰링 및 화재 위험) 면에서 중고 미니 PC/구형 데스크톱보다 열위.
-- 서버 시스템의 핵심은 예측 가능성과 지속 가능한 I/O 처리이며, 스마트폰은 24시간 트래픽을 처리하는 서버 워크로드에 원천적으로 부적합.
-- 본 사례는 잉여 자원을 활용하기 위한 실험적 프로젝트이며, 실용적이고 안정적인 개인 인프라 구축에는 중고 소형 폼팩터 PC가 최적의 선택지.
+- 스마트폰 기반 서버는 모바일 AP 구조상 지속적인 부하 처리에 부적합하며 스로틀링이 발생함.
+- chroot 방식을 통해 안드로이드 환경에서 리눅스 배포판을 구동할 수 있으나 보안 격리 수준이 낮음.
+- 상시 전원 연결 시 배터리 스웰링 및 화재 위험이 존재하여 24/7 서버 운영에 치명적임.
+- 실용적인 홈랩 구축을 위해서는 확장성과 안정성이 검증된 중고 미니 PC(USFF)가 권장됨.
 
 ## UI와 인간 중심 디자인(UX)의 개념과 관계
 
-이 문서는 디지털 제품 개발에서 UI(사용자 인터페이스)와 UX(사용자 경험)의 개념과 관계를 명확히 합니다. UX는 사용자의 전반적인 경험과 가치를 다루는 포괄적인 접근 방식이며, UI는 UX 목표를 시각적이고 물리적인 접점으로 구현하는 하위 수단임을 설명합니다. 훌륭한 UI가 UX 목표 달성에 필수적이지만, UI 완성도만으로 전체 UX의 우수성을 보장하지는 않는다고 강조합니다.
+UI와 UX의 정의, 역할, 그리고 상호 관계를 비교 분석한 문서입니다. UX는 사용자의 전체적인 경험과 가치를 다루는 상위 개념이며, UI는 이를 시각적·물리적으로 구현하는 하위 수단임을 설명합니다.
 
-- Importance: 4/5
-- Topic: UI/UX Design Fundamentals
-- Related topics: Human-Centered Design, User Interface, User Experience, Digital Product Development, Design Systems, Frontend Development
+- Importance: 3/5
+- Topic: UI와 UX의 개념적 차이와 상호 관계
+- Related topics: 디자인 시스템, 프론트엔드 개발, 인간 중심 디자인, 사용자 경험 설계
 - Categories: misc
 - Tags: `design/ux`, `ui`, `development`
 - Source: Local inbox document
 - Input file: `UI와 인간 중심 디자인.md`
-- Processed at: 2026-09-02T03:12:46.082610+00:00
+- Processed at: 2026-09-07T01:37:20.463662+00:00
 
 ### Key Facts
 
-- UX(인간 중심 디자인)는 사용자의 전체적인 경험과 가치를 다루는 종합적 설계 방향입니다.
-- UI(사용자 인터페이스)는 사용자가 마주하는 시각적·물리적 접점입니다.
-- UI는 UX 목표를 달성하기 위한 하위 요소이며, UX는 UI를 포함하는 포괄적인 접근 방식입니다.
-- 훌륭한 UI는 UX 목표 달성에 필수적이지만, UI 완성도가 곧바로 전체 UX의 우수성을 보장하지는 않습니다.
-- 업계에서는 여전히 인간 중심 설계 접근을 'UX' 용어로 표현하는 경우가 많습니다.
+- UI는 버튼, 레이아웃, 컬러 등 시각적 접점을 설계하는 역할을 합니다.
+- UX는 사용자의 니즈와 감정을 해결하는 종합적인 설계 방향을 제시합니다.
+- UI는 UX 목표를 달성하기 위한 필수적인 하위 요소입니다.
+- UI의 완성도가 곧바로 전체 UX의 우수성을 보장하지는 않습니다.
 
 ## OtterZip
 
-OtterZip is a newly released open-source compression program built with Rust and WinUI, designed for Windows. It emphasizes minimal user intervention, no advertisements or payments, and seamless integration with Windows Explorer via context menus and drag-and-drop. It's suitable for users needing an efficient, ad-free background compression/decompression tool.
+OtterZip is a new open-source, ad-free file compression tool for Windows built with Rust and WinUI, designed for minimal user intervention and seamless integration with Windows Explorer.
 
 - Importance: 3/5
-- Topic: OtterZip open-source compression tool for Windows
-- Related topics: File compression software, Open-source utilities, Windows shell extensions, Rust programming language, WinUI development
+- Topic: Open-source Windows compression software
+- Related topics: Rust programming, Windows Shell Extension, File compression algorithms, WinUI development
 - Categories: misc
 - Tags: `Tool/Compression`, `OS/Windows`, `OpenSource`, `Rust`, `WinUI`
 - Source: Local inbox document
 - Input file: `Rust 기반 Windows 네이티브 압축 툴.md`
-- Processed at: 2026-09-02T01:21:40.712702+00:00
+- Processed at: 2026-09-07T01:37:13.360040+00:00
 
 ### Key Facts
 
-- OtterZip is a new open-source compression program.
-- It uses Rust for its core engine and C libraries (libdeflate, zstd, liblzma) for codecs.
-- The UI is developed natively with C# and WinUI.
-- It supports decompression for ZIP, 7z, RAR, TAR and compression for ZIP, 7z, tar.gz (with AES-256).
-- It is free and licensed under GPL-3.0.
-- Designed for minimal user intervention, without ads or payment prompts.
-- Integrates with Windows Explorer context menus and drag-and-drop.
-- A known issue exists with MSIX shell extension cold start delay after reboot.
+- Built using Rust for core logic and C# WinUI for the interface.
+- Supports common formats like ZIP, 7z, RAR, and TAR.
+- Focuses on ad-free, background-oriented compression and extraction.
+- Licensed under GPL-3.0.
+- Currently experiencing minor cold-start latency issues with MSIX shell extensions.
 
 ## Amiko: Ruby on Rails 하드 포크 프로젝트
 
-GeekNews 동향에 따르면, Ruby on Rails 생태계 내 창시자(DHH)의 거버넌스에 반발한 개발자들이 커뮤니티 주도의 대안 프레임워크인 'Amiko'를 구축 중입니다. 신기능 개발보다 Rails 8.x 호환성을 극대화한 '지루하고 친근한' LTS(Long Term Support) 제공이 주 목적입니다.
+Ruby on Rails의 창시자 DHH의 독단적 거버넌스에 반발하여 커뮤니티 주도로 시작된 하드 포크 프로젝트 'Amiko'에 대한 분석입니다. 신기능 추가보다는 Rails 8.x와의 호환성을 유지하며 안정적인 LTS를 제공하는 것을 목표로 합니다.
 
-- Importance: 4/5
-- Topic: Ruby on Rails Hard Fork and Governance
-- Related topics: Ruby on Rails, Web Framework Development, Open Source Governance, Software Ecosystems, Community-driven Projects, Long Term Support (LTS)
+- Importance: 3/5
+- Topic: 오픈소스 거버넌스 및 프레임워크 포크
+- Related topics: Ruby on Rails, 오픈소스 거버넌스, 소프트웨어 유지보수, 기술 부채, 커뮤니티 주도 개발
 - Categories: misc
 - Tags: `RubyOnRails`, `Amiko`, `Fork`, `WebFramework`, `Governance`
 - Source: Local inbox document
 - Input file: `Ruby on Rails 하드 포크 프로젝트.md`
-- Processed at: 2026-09-02T01:21:32.372528+00:00
+- Processed at: 2026-09-07T01:37:06.726411+00:00
 
 ### Key Facts
 
-- Ruby on Rails essential core modules (railties, activerecord) are undergoing a hard fork to create 'Amiko'.
-- The fork is primarily due to developer opposition to DHH's autocratic leadership and political views, not technical deficiencies.
-- Amiko's main goal is to provide 'boring and friendly' Long Term Support (LTS) with maximum Rails 8.x compatibility, rather than focusing on new feature development.
-- The project aims to establish a decentralized, rule-based community governance model, moving away from single leadership.
-- Maintenance efforts for Amiko are focused on minimal core areas to optimize resource consumption.
-- Amiko is positioned as an alternative to coexist with existing frameworks like Hanakai and Hanami, not to monopolize the ecosystem.
-- The project is currently in its early stages, and immediate migration for production-level applications is not recommended.
-
-## MOC_시스템 & 엔지니어링
-
-This document functions as a central hub for organizing personal knowledge notes related to various technical domains, including software development frameworks, system and infrastructure architecture, and embedded Human-Machine Interface (HMI) design. It outlines active projects and future concepts within these engineering fields.
-
-- Importance: 4/5
-- Topic: System and Engineering Knowledge Management
-- Related topics: Software Development, Infrastructure Architecture, Embedded Systems, Human-Machine Interface, Knowledge Organization
-- Categories: misc
-- Tags: `MOC`, `System Engineering`, `Software Development`, `Infrastructure`, `Embedded Systems`, `HMI Design`, `Development Frameworks`, `Knowledge Management`
-- Source: Local inbox document
-- Input file: `MOC_시스템 & 엔지니어링.md`
-- Processed at: 2026-09-02T01:21:17.495616+00:00
-
-### Key Facts
-
-- Serves as a Map of Content (MOC) for System & Engineering topics.
-- Organizes notes on development frameworks, system/infrastructure construction, and embedded/HMI design.
-- Lists active notes on Ruby on Rails, Rust-based tools, UI/HMI design, and smartphone-based edge servers.
-- Includes a backlog for concepts like design system construction.
+- Amiko는 Ruby on Rails의 핵심 모듈을 포크하여 커뮤니티 주도로 운영되는 대안 프레임워크입니다.
+- 주요 원인은 DHH의 리더십과 정치적 세계관에 대한 커뮤니티의 반발입니다.
+- 프로젝트의 핵심 목표는 Rails 8.x와의 높은 호환성을 유지하며 안정적인 유지보수를 제공하는 것입니다.
+- 현재 초기 단계이며 프로덕션 환경 도입보다는 거버넌스 리스크를 고려하는 조직의 관찰 대상으로 적합합니다.

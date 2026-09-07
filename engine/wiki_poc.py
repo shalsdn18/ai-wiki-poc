@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 from typing import Protocol, Sequence
 
+import engine.config
 from engine.schemas import SourceRecord, WikiUpdatePayload
 
 DEFAULT_MODEL = "gemini-3.7-flash"

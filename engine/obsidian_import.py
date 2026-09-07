@@ -8,6 +8,7 @@ import logging
 import os
 import re
 import stat
+import time
 from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -15,6 +16,7 @@ from hashlib import sha256
 from pathlib import Path
 from urllib.parse import quote
 
+import engine.config
 from engine.inbox_wiki import (
     DEFAULT_WIKI_ROOT,
     GeminiInboxClassifier,
@@ -27,6 +29,8 @@ from engine.schemas import InboxKnowledgePayload, KnowledgeCategory, SourceRecor
 
 LOGGER = logging.getLogger(__name__)
 DEFAULT_STATE_PATH = Path(".obsidian_import_state.json")
+DEFAULT_DELAY_SECONDS = 5.0
+DEFAULT_MAX_RETRIES = 3
 EXCLUDED_DIRECTORIES = {
     ".agents",
     ".claude",
@@ -39,6 +43,9 @@ EXCLUDED_DIRECTORIES = {
     "copilot",
     "ai_wiki",
 }
+EXCLUDED_MARKDOWN_NAMES = (
+    "readme.md",
+)
 
 
 @dataclass(frozen=True)
@@ -72,7 +79,13 @@ def discover_markdown(vault_path: Path) -> Iterator[Path]:
             and not _is_reparse_directory(root_path / directory)
         )
         for filename in sorted(filenames):
-            if filename.lower().endswith(".md"):
+            lowered = filename.casefold()
+            if (
+                lowered.endswith(".md")
+                and lowered not in EXCLUDED_MARKDOWN_NAMES
+                and not lowered.startswith("moc_")
+                and not lowered.startswith("template")
+            ):
                 yield root_path / filename
 
 
@@ -91,7 +104,8 @@ def category_hint(relative_path: Path) -> KnowledgeCategory | None:
 
 
 def _source_from_file(path: Path, vault_path: Path) -> tuple[SourceRecord, str, str]:
-    content = path.read_text(encoding="utf-8")
+    # utf-8-sig accepts regular UTF-8 and strips an optional UTF-8 BOM.
+    content = path.read_text(encoding="utf-8-sig")
     if not content.strip():
         raise ValueError("Obsidian document is empty")
     relative_path = path.relative_to(vault_path).as_posix()
@@ -126,12 +140,85 @@ def load_import_state(path: Path = DEFAULT_STATE_PATH) -> dict:
     return state
 
 
+def _setting_float(value: str | None, default: float) -> float:
+    if value is None:
+        return default
+    try:
+        parsed = float(value)
+    except ValueError as exc:
+        raise ValueError(f"Invalid delay value: {value}") from exc
+    if parsed < 0:
+        raise ValueError(f"Delay must be non-negative: {value}")
+    return parsed
+
+
+def _setting_int(value: str | None, default: int) -> int:
+    if value is None:
+        return default
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise ValueError(f"Invalid retry count: {value}") from exc
+    if parsed < 0:
+        raise ValueError(f"Retry count must be non-negative: {value}")
+    return parsed
+
+
+def _error_status(exc: Exception) -> int | None:
+    for attribute in ("code", "status_code", "status"):
+        value = getattr(exc, attribute, None)
+        if isinstance(value, int):
+            return value
+    match = re.search(r"\b(429|503)\b", str(exc))
+    return int(match.group(1)) if match else None
+
+
+def _retry_delay_from_error(exc: Exception) -> float:
+    message = str(exc)
+    patterns = (
+        r"retryDelay[^0-9]*(\d+(?:\.\d+)?)\s*s?",
+        r"retryDelay[^0-9]*seconds[^0-9]*(\d+(?:\.\d+)?)",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, message, re.IGNORECASE)
+        if match:
+            return float(match.group(1))
+    return 60.0
+
+
+def _classify_with_retry(
+    classifier: GeminiInboxClassifier,
+    source: SourceRecord,
+    category_hint: KnowledgeCategory | None,
+    max_retries: int,
+) -> InboxKnowledgePayload:
+    for attempt in range(max_retries + 1):
+        try:
+            return _validated_payload(classifier.classify(source, category_hint=category_hint), None)
+        except Exception as exc:
+            status = _error_status(exc)
+            if status not in {429, 503} or attempt >= max_retries:
+                raise
+            delay = _retry_delay_from_error(exc) if status == 429 else 30.0 * (2**attempt)
+            LOGGER.warning(
+                "Gemini request returned %s; retrying in %.0f second(s) (attempt %s/%s)",
+                status,
+                delay,
+                attempt + 1,
+                max_retries,
+            )
+            time.sleep(delay)
+    raise AssertionError("retry loop exited unexpectedly")
+
+
 def import_vault(
     classifier: GeminiInboxClassifier | None = None,
     vault_path: Path | None = None,
     wiki_root: Path = DEFAULT_WIKI_ROOT,
     state_path: Path = DEFAULT_STATE_PATH,
     now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    delay_seconds: float | None = None,
+    max_retries: int | None = None,
 ) -> ImportStats:
     configured_value = os.environ.get("OBSIDIAN_VAULT_PATH")
     if vault_path is None and not configured_value:
@@ -141,6 +228,14 @@ def import_vault(
         raise RuntimeError(f"Obsidian Vault directory does not exist: {configured_path}")
 
     state = load_import_state(state_path)
+    delay_seconds = _setting_float(
+        os.environ.get("OBSIDIAN_IMPORT_DELAY_SECONDS") if delay_seconds is None else str(delay_seconds),
+        DEFAULT_DELAY_SECONDS,
+    )
+    max_retries = _setting_int(
+        os.environ.get("OBSIDIAN_IMPORT_MAX_RETRIES") if max_retries is None else str(max_retries),
+        DEFAULT_MAX_RETRIES,
+    )
     shared_classifier = classifier
     read_count = calls = processed = skipped = failed = 0
     for path in discover_markdown(configured_path):
@@ -153,11 +248,15 @@ def import_vault(
                 continue
             if shared_classifier is None:
                 shared_classifier = GeminiInboxClassifier()
+            if calls:
+                time.sleep(delay_seconds)
             calls += 1
             hint = category_hint(Path(relative_path))
-            payload: InboxKnowledgePayload = _validated_payload(
-                shared_classifier.classify(source, category_hint=hint),
-                None,
+            payload = _classify_with_retry(
+                shared_classifier,
+                source,
+                hint,
+                max_retries,
             )
             processed_at = now().astimezone(timezone.utc).isoformat()
             entry = {
@@ -208,8 +307,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wiki-root", type=Path, default=DEFAULT_WIKI_ROOT)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE_PATH)
+    parser.add_argument("--delay-seconds", type=float, default=None)
+    parser.add_argument("--max-retries", type=int, default=None)
     args = parser.parse_args()
-    stats = import_vault(wiki_root=args.wiki_root, state_path=args.state)
+    stats = import_vault(
+        wiki_root=args.wiki_root,
+        state_path=args.state,
+        delay_seconds=args.delay_seconds,
+        max_retries=args.max_retries,
+    )
     print(
         f"read={stats.read_markdown} gemini_calls={stats.gemini_calls} "
         f"processed={stats.processed} skipped={stats.skipped} failed={stats.failed}"

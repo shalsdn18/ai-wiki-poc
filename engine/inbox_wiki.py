@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Protocol
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
+import engine.config
 from engine.schemas import InboxKnowledgePayload, KnowledgeCategory, SourceRecord
 from engine.wiki_poc import DEFAULT_MODEL
 
