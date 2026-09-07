@@ -11,6 +11,8 @@ services:
       OBSIDIAN_IMPORT_STATE_PATH: /app/state/.obsidian_import_state.json
       OLLAMA_BASE_URL: http://ollama:11434
       VECTOR_DB_PATH: /app/cache/vectors.db
+      ENABLE_LOCAL_IMPORT: "true"
+      ENABLE_LOCAL_RAG: "true"
     ports:
       - "8000:8000"
     volumes:

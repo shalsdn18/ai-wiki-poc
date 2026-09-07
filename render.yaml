@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-wiki-api
+    runtime: docker
+    branch: main
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: WIKI_ROOT
+        value: /app/wiki
+      - key: ENABLE_LOCAL_IMPORT
+        value: "false"
+      - key: ENABLE_LOCAL_RAG
+        value: "false"
+      - key: CORS_ALLOW_ORIGINS
+        value: https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site
+      - key: GEMINI_API_KEY
+        sync: false

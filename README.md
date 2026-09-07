@@ -2,6 +2,13 @@
 
 [![CI](/actions/workflows/ci.yml/badge.svg)](/actions/workflows/ci.yml)
 
+## Current Runtime
+
+The project automatically loads a local `.env` through `python-dotenv` when
+the backend starts. SQLite LLM cache, SQLite vector storage, semantic search,
+and grounded RAG chat are implemented. The existing ChatGPT Site frontend is
+kept at `https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site`.
+
 시간에 따라 들어오는 Source 중 처음 보는 content만 Gemini에 전달하고, 구조화된 분석 결과를 Python이 결정론적인 Markdown Wiki로 렌더링하는 최소 PoC입니다.
 
 ## 설계 경계
@@ -188,5 +195,67 @@ first, then configure an MCP client with the following command:
 The same stdio configuration can be registered in Claude Desktop, Cursor, or
 another MCP-compatible client. Available tools are `search_notes`,
 `ask_wiki`, `recent_notes`, `stats`, and `import_now`.
+
+## External API Deployment
+
+Deploy the backend as an HTTPS service using the root `Dockerfile` and expose
+port `8000`. The ChatGPT Site is already configured as the default CORS origin:
+
+```text
+https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site
+```
+
+Additional origins can be supplied with the comma-separated
+`CORS_ALLOW_ORIGINS` environment variable. Set `GEMINI_API_KEY` only as a
+server-side secret in the deployment provider; never commit it to `.env` or
+the image. The `.env` file is loaded automatically for local runs, while
+production values should be injected by the hosting platform.
+
+The `/health` endpoint is safe for deployment probes. `/stats`, `/recent`,
+`/search`, and `/note/{id}` are cloud-safe read APIs backed by committed Wiki
+Markdown. `/import` is local-only and is disabled by default; enable it with
+`ENABLE_LOCAL_IMPORT=true` only when the backend can access the Obsidian Vault.
+`/semantic-search` and `/chat` are also local-only by default and require
+`ENABLE_LOCAL_RAG=true`, Ollama, and the SQLite vector DB.
+
+The deployment split is:
+
+```text
+Cloud:
+ChatGPT Site
+  -> HTTPS FastAPI
+  -> committed wiki Markdown
+
+Local:
+Obsidian
+  -> Watchdog / Pipeline
+  -> Wiki
+  -> Vector DB / Ollama
+  -> GitHub push
+```
+
+For local development, use:
+
+```dotenv
+ENABLE_LOCAL_IMPORT=true
+ENABLE_LOCAL_RAG=true
+```
+
+### Render Deployment
+
+The repository includes a Render Blueprint in `render.yaml`. To deploy the
+cloud read API:
+
+1. Connect the GitHub repository to Render.
+2. Create a Blueprint using `render.yaml` and deploy the `main` branch.
+3. Add `GEMINI_API_KEY` as a Render secret; do not put its value in
+   `render.yaml` or commit it to the repository.
+4. After deployment, verify `https://<render-service>.onrender.com/health`.
+5. Use the generated HTTPS base URL as the API base URL for the existing
+   ChatGPT Site frontend.
+
+Render keeps `ENABLE_LOCAL_IMPORT=false` and `ENABLE_LOCAL_RAG=false`, so it
+does not require an Obsidian Vault, Ollama, or the local vector database.
+Only the committed Wiki Markdown read APIs are enabled in the cloud.
 
 성공한 자료의 URL identity, content hash, 입력 파일명, 처리 시각은 `inbox/.processed.json`에 기록됩니다. 동일 URL 또는 동일 content는 Gemini를 다시 호출하지 않으며, 실패한 자료는 processed 상태로 기록되지 않습니다. 내부 source ID와 content hash는 category Wiki 본문에 렌더링하지 않습니다.

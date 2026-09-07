@@ -48,11 +48,76 @@ def test_api_stats_recent_search_and_note(tmp_path, monkeypatch):
     assert client.get("/note/missing").status_code == 404
 
 
+def test_stats_works_without_import_state(tmp_path, monkeypatch):
+    _write_fixture(tmp_path, monkeypatch)
+    (tmp_path / "state.json").unlink()
+
+    response = TestClient(app.app).get("/stats")
+
+    assert response.status_code == 200
+    assert response.json()["documents"] == 1
+    assert response.json()["categories"]["ai"] == 1
+
+
+def test_health_reports_capabilities(monkeypatch):
+    monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
+    monkeypatch.setenv("ENABLE_LOCAL_RAG", "false")
+
+    response = TestClient(app.app).get("/health")
+
+    assert response.json() == {
+        "status": "ok",
+        "capabilities": {
+            "wiki_read": True,
+            "local_import": True,
+            "semantic_search": False,
+            "rag_chat": False,
+        },
+    }
+
+
+def test_import_is_disabled_by_default(monkeypatch):
+    monkeypatch.delenv("ENABLE_LOCAL_IMPORT", raising=False)
+
+    response = TestClient(app.app).post("/import")
+
+    assert response.status_code == 503
+    assert "ENABLE_LOCAL_IMPORT=true" in response.json()["detail"]
+
+
+def test_chatgpt_site_cors_is_allowed():
+    response = TestClient(app.app).options(
+        "/health",
+        headers={
+            "Origin": "https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == (
+        "https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site"
+    )
+
+
+def test_unknown_cors_origin_is_not_allowed():
+    response = TestClient(app.app).options(
+        "/health",
+        headers={
+            "Origin": "https://not-authorized.example",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+
+    assert "access-control-allow-origin" not in response.headers
+
+
 def test_api_import_delegates_to_existing_importer(tmp_path, monkeypatch):
     vault = tmp_path / "Vault"
     vault.mkdir()
     (vault / "note.md").write_text("# Note\nContent", encoding="utf-8")
     monkeypatch.setenv("OBSIDIAN_VAULT_PATH", str(vault))
+    monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
     calls = []
 
     def fake_pipeline(path):
@@ -68,6 +133,7 @@ def test_api_import_delegates_to_existing_importer(tmp_path, monkeypatch):
 
 
 def test_api_semantic_search(monkeypatch):
+    monkeypatch.setenv("ENABLE_LOCAL_RAG", "true")
     monkeypatch.setattr(
         app,
         "semantic_search",
@@ -83,6 +149,7 @@ def test_api_semantic_search(monkeypatch):
 
 
 def test_api_chat_uses_top_semantic_context_and_returns_sources(monkeypatch):
+    monkeypatch.setenv("ENABLE_LOCAL_RAG", "true")
     matches = [
         app.SemanticResult(f"Note {index}", 1 - index / 10, f"snippet {index}", f"source-{index}")
         for index in range(5)
@@ -108,3 +175,14 @@ def test_api_chat_uses_top_semantic_context_and_returns_sources(monkeypatch):
         "question": "What is relevant?",
         "context": "[source-0] Note 0\nFull document context\n\n[source-1] Note 1\nsnippet 1\n\n[source-2] Note 2\nsnippet 2\n\n[source-3] Note 3\nsnippet 3\n\n[source-4] Note 4\nsnippet 4",
     }
+
+
+def test_rag_endpoints_are_disabled_by_default(monkeypatch):
+    monkeypatch.delenv("ENABLE_LOCAL_RAG", raising=False)
+
+    semantic_response = TestClient(app.app).get("/semantic-search", params={"q": "meaning"})
+    chat_response = TestClient(app.app).post("/chat", json={"question": "meaning"})
+
+    assert semantic_response.status_code == 503
+    assert chat_response.status_code == 503
+    assert "ENABLE_LOCAL_RAG=true" in semantic_response.json()["detail"]

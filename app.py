@@ -8,20 +8,48 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 import engine.config
 from engine.inbox_wiki import CATEGORIES
-from engine.obsidian_import import ImportStats, discover_markdown, load_import_state
+from engine.obsidian_import import discover_markdown
 from engine.pipeline import PipelineStats, run_pipeline
 from engine.vector_store import DEFAULT_VECTOR_DB, SemanticResult, get_documents, semantic_search
 
 app = FastAPI(title="AI Wiki API", version="1.0.0")
 
+_default_cors_origins = {
+    "https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site",
+    "http://localhost:5173",
+}
+_configured_cors_origins = {
+    origin.strip() for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",") if origin.strip()
+}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=sorted(_default_cors_origins | _configured_cors_origins),
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+)
+
+
+def _enabled(name: str) -> bool:
+    return os.getenv(name, "false").strip().casefold() in {"1", "true", "yes", "on"}
+
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, object]:
+    return {
+        "status": "ok",
+        "capabilities": {
+            "wiki_read": True,
+            "local_import": _enabled("ENABLE_LOCAL_IMPORT"),
+            "semantic_search": _enabled("ENABLE_LOCAL_RAG"),
+            "rag_chat": _enabled("ENABLE_LOCAL_RAG"),
+        },
+    }
 
 
 class StatsResponse(BaseModel):
@@ -87,8 +115,8 @@ def _vector_db_path() -> Path:
     return Path(os.getenv("VECTOR_DB_PATH", "vectors.db"))
 
 
-def _entries() -> list[dict[str, Any]]:
-    result: list[dict[str, Any]] = []
+def _category_entries() -> dict[str, list[dict[str, Any]]]:
+    result: dict[str, list[dict[str, Any]]] = {}
     root = _wiki_root()
     for category in CATEGORIES:
         path = root / category / "index.md"
@@ -101,10 +129,15 @@ def _entries() -> list[dict[str, Any]]:
         if end < 0:
             continue
         try:
-            result.extend(json.loads(text[4:end]).get("entries", []))
+            entries = json.loads(text[4:end]).get("entries", [])
+            result[category] = entries if isinstance(entries, list) else []
         except (json.JSONDecodeError, TypeError, AttributeError):
             continue
     return result
+
+
+def _entries() -> list[dict[str, Any]]:
+    return [entry for entries in _category_entries().values() for entry in entries]
 
 
 def _note(entry: dict[str, Any]) -> NoteResponse:
@@ -123,13 +156,11 @@ def _note(entry: dict[str, Any]) -> NoteResponse:
 
 @app.get("/stats", response_model=StatsResponse)
 def stats() -> StatsResponse:
-    state = load_import_state(_state_path())
+    category_entries = _category_entries()
     counts = {category: 0 for category in CATEGORIES}
-    for document in state["documents"].values():
-        category = document.get("primary_category")
-        if category in counts:
-            counts[category] += 1
-    return StatsResponse(documents=len(state["documents"]), categories=counts)
+    for category, entries in category_entries.items():
+        counts[category] = len(entries)
+    return StatsResponse(documents=sum(counts.values()), categories=counts)
 
 
 @app.get("/recent", response_model=list[NoteResponse])
@@ -166,6 +197,11 @@ def note(note_id: str) -> NoteResponse:
 def semantic(
     q: str = Query(min_length=1), limit: int = Query(default=20, ge=1, le=100)
 ) -> list[SemanticSearchResponse]:
+    if not _enabled("ENABLE_LOCAL_RAG"):
+        raise HTTPException(
+            status_code=503,
+            detail="Semantic search is disabled. Set ENABLE_LOCAL_RAG=true for local RAG.",
+        )
     try:
         return [
             SemanticSearchResponse(**result.__dict__)
@@ -177,6 +213,11 @@ def semantic(
 
 @app.post("/import", response_model=ImportResponse)
 def run_import() -> ImportResponse:
+    if not _enabled("ENABLE_LOCAL_IMPORT"):
+        raise HTTPException(
+            status_code=503,
+            detail="Local import is disabled. Set ENABLE_LOCAL_IMPORT=true to enable it.",
+        )
     vault = _vault_path()
     totals = {
         field: 0 for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
@@ -214,6 +255,11 @@ def _generate_chat_answer(question: str, context: str) -> str:
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
+    if not _enabled("ENABLE_LOCAL_RAG"):
+        raise HTTPException(
+            status_code=503,
+            detail="RAG chat is disabled. Set ENABLE_LOCAL_RAG=true for local RAG.",
+        )
     vector_db = _vector_db_path()
     matches = semantic_search(request.question, vector_db, limit=5)
     documents = get_documents([match.id for match in matches], vector_db)
