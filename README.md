@@ -1,4 +1,4 @@
-# AI Wiki PoC v1.0
+# AI Wiki PoC v1.1
 
 시간에 따라 들어오는 Source 중 처음 보는 content만 Gemini에 전달하고, 구조화된 분석 결과를 Python이 결정론적인 Markdown Wiki로 렌더링하는 최소 PoC입니다.
 
@@ -43,3 +43,34 @@ pytest -q
 테스트는 Fake Analyzer를 사용해 API Key나 네트워크 없이 신규 Markdown 생성, Delta Gate, 잘못된 Source ID 제거, Recent Changes 최신 5개 제한을 검증합니다.
 
 GitHub Actions는 매일 00:17 UTC(09:17 KST)에 실행되며 수동 실행도 가능합니다. 저장소 Secret `GEMINI_API_KEY`를 등록해야 합니다.
+
+## Obsidian Vault import
+
+Vault는 읽기 전용 Source Provider로 처리됩니다. `.obsidian`, `.trash`, `attachments` 및 hidden directory를 제외한 모든 Markdown을 재귀적으로 읽습니다.
+
+```powershell
+$env:OBSIDIAN_VAULT_PATH="C:\Users\your-name\Documents\MyVault"
+python -m engine.obsidian_import
+```
+
+상태는 Vault가 아니라 프로젝트 루트의 `.obsidian_import_state.json`에 저장됩니다. 동일 relative path의 content hash가 그대로이면 Gemini를 호출하지 않고, 내용이 바뀌면 다시 분류합니다. `AI`, `투자`, `철학` 같은 폴더명은 category hint로만 전달되며 최종 분류는 Gemini Structured Output과 Pydantic validation으로 결정됩니다.
+
+## Personal knowledge inbox
+
+`inbox/`에 다음 형식의 Markdown 파일을 추가하면 Gemini가 `ai`, `investment`, `philosophy`, `misc` 중 하나를 primary category로 선택하고 `wiki/<category>/index.md`에 반영합니다.
+
+```markdown
+---
+type: article
+source_url: https://example.com/article
+title: Optional title
+---
+
+기사 내용 또는 저장한 텍스트
+```
+
+```bash
+python -m engine.inbox_wiki
+```
+
+성공한 자료의 URL identity, content hash, 입력 파일명, 처리 시각은 `inbox/.processed.json`에 기록됩니다. 동일 URL 또는 동일 content는 Gemini를 다시 호출하지 않으며, 실패한 자료는 processed 상태로 기록되지 않습니다. 내부 source ID와 content hash는 category Wiki 본문에 렌더링하지 않습니다.

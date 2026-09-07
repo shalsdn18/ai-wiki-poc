@@ -3,7 +3,11 @@
 from datetime import datetime
 from hashlib import sha256
 
-from pydantic import BaseModel, Field
+from typing import Literal
+
+from pydantic import BaseModel, Field, model_validator
+
+KnowledgeCategory = Literal["ai", "investment", "philosophy", "misc"]
 
 
 class SourceRecord(BaseModel):
@@ -13,6 +17,7 @@ class SourceRecord(BaseModel):
     url: str = Field(min_length=1)
     published_at: datetime
     source_tier: str = Field(min_length=1)
+    source_type: str | None = None
 
     @property
     def fingerprint(self) -> str:
@@ -27,3 +32,24 @@ class WikiUpdatePayload(BaseModel):
     new_changes: list[str] = Field(default_factory=list)
     history_summary: str
     used_source_ids: list[str] = Field(default_factory=list)
+
+
+class InboxKnowledgePayload(BaseModel):
+    """Structured classification/extraction result for a user inbox document."""
+
+    title: str = Field(min_length=1)
+    summary: str = Field(min_length=1)
+    key_facts: list[str] = Field(default_factory=list)
+    primary_category: KnowledgeCategory
+    categories: list[KnowledgeCategory] = Field(min_length=1)
+    tags: list[str] = Field(default_factory=list)
+    importance: int = Field(ge=1, le=5)
+    source_url: str | None = None
+    topic: str = Field(min_length=1)
+    related_topics: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def primary_category_must_be_in_categories(self) -> "InboxKnowledgePayload":
+        if self.primary_category not in self.categories:
+            raise ValueError("primary_category must also appear in categories")
+        return self
