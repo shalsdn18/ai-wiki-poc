@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively using coding agents to accelerate its AI research and is publicly addressing the challenges of AI alignment, with Jakub Pachocki calling for stronger safeguards and international coordination.",
+  "current_state": "OpenAI, AIRPPU, and WAN-IFRA have launched an AI program to support Ukrainian news organizations.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -55,15 +55,27 @@
         "openai-3784d7aba9718af9aa19"
       ],
       "summary": "OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination."
+    },
+    {
+      "published_at": "2026-09-07T00:00:00+00:00",
+      "source_ids": [
+        "openai-073b13b14ae0138b1424"
+      ],
+      "summary": "This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA."
     }
   ],
   "key_facts": [
-    "Jakub Pachocki of OpenAI reflects on increasingly capable AI and the challenge of keeping it aligned.",
-    "Pachocki calls for stronger safeguards and international coordination regarding AI.",
-    "OpenAI is using coding agents to reshape AI research internally.",
-    "Early data on coding agent usage, experiment velocity, task complexity, and research acceleration within OpenAI is being explored."
+    "The AI program aims to strengthen innovation, resilience, and independent journalism in Ukraine.",
+    "The initiative is a collaboration between OpenAI, AIRPPU, and WAN-IFRA."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-07T00:00:00+00:00",
+      "source_ids": [
+        "openai-073b13b14ae0138b1424"
+      ],
+      "summary": "OpenAI, AIRPPU, and WAN-IFRA launched an AI program."
+    },
     {
       "published_at": "2026-09-06T09:00:00+00:00",
       "source_ids": [
@@ -99,19 +111,10 @@
         "openai-39210f987919e80e66f6"
       ],
       "summary": "GPT-6 Astra is the first OpenAI model to achieve a Critical level of cybersecurity capability."
-    },
-    {
-      "published_at": "2026-09-03T13:15:00+00:00",
-      "source_ids": [
-        "openai-fc40ddafdd41e0cc6b8e",
-        "openai-9281d6906e8350b6fb5c",
-        "openai-325e9dcd840a97e90ffb",
-        "openai-39210f987919e80e66f6"
-      ],
-      "summary": "GPT-6 Astra has been released, demonstrating advanced capabilities in areas such as financial document review and game prototyping."
     }
   ],
   "seen_hashes": [
+    "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
@@ -138,22 +141,20 @@
 
 ## Current State
 
-OpenAI is actively using coding agents to accelerate its AI research and is publicly addressing the challenges of AI alignment, with Jakub Pachocki calling for stronger safeguards and international coordination.
+OpenAI, AIRPPU, and WAN-IFRA have launched an AI program to support Ukrainian news organizations.
 
 ## Key Facts
 
-- Jakub Pachocki of OpenAI reflects on increasingly capable AI and the challenge of keeping it aligned.
-- Pachocki calls for stronger safeguards and international coordination regarding AI.
-- OpenAI is using coding agents to reshape AI research internally.
-- Early data on coding agent usage, experiment velocity, task complexity, and research acceleration within OpenAI is being explored.
+- The AI program aims to strengthen innovation, resilience, and independent journalism in Ukraine.
+- The initiative is a collaboration between OpenAI, AIRPPU, and WAN-IFRA.
 
 ## Recent Changes
 
+- 2026-09-07T00:00:00+00:00 — OpenAI, AIRPPU, and WAN-IFRA launched an AI program. (sources: openai-073b13b14ae0138b1424)
 - 2026-09-06T09:00:00+00:00 — OpenAI has released information about the use of coding agents to accelerate AI research internally, including early data on their impact. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
 - 2026-09-06T09:00:00+00:00 — OpenAI has published reflections from Jakub Pachocki on AI alignment and the need for safeguards and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
 - 2026-09-03T13:15:00+00:00 — OpenAI has committed $1 billion to Daybreak for Frontline Defenders to enhance cyber AI access and support for essential services. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
 - 2026-09-03T13:15:00+00:00 — GPT-6 Astra is the first OpenAI model to achieve a Critical level of cybersecurity capability. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
-- 2026-09-03T13:15:00+00:00 — GPT-6 Astra has been released, demonstrating advanced capabilities in areas such as financial document review and game prototyping. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
 
 ## History Log
 
@@ -163,3 +164,4 @@ OpenAI is actively using coding agents to accelerate its AI research and is publ
 - 2026-09-03T13:15:00+00:00 — OpenAI has recently announced a new initiative, Daybreak for Frontline Defenders, and released GPT-6 Astra, a highly capable model that has achieved a Critical level of cybersecurity capability and shown strong performance in various applications. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
 - 2026-09-03T11:00:00+00:00 — OpenAI officially introduced GPT-6 Astra on September 3, 2026. (sources: openai-039a4975e102cb538c36)
 - 2026-09-06T09:00:00+00:00 — OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
+- 2026-09-07T00:00:00+00:00 — This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA. (sources: openai-073b13b14ae0138b1424)
