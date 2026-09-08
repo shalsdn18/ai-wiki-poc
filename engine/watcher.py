@@ -6,6 +6,7 @@ import argparse
 import logging
 import os
 import threading
+import time
 from pathlib import Path
 from queue import Empty, Queue
 
@@ -13,10 +14,12 @@ from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 
 import engine.config
+from engine.git_sync import GitSyncQueue
 from engine.pipeline import run_pipeline
 
 LOGGER = logging.getLogger(__name__)
 DEBOUNCE_SECONDS = 1.0
+EMPTY_FILE_RETRY_DELAYS = (0.5, 1.0, 2.0)
 IGNORED_PARTS = {"wiki", ".git", ".obsidian"}
 
 
@@ -32,6 +35,24 @@ def _should_watch(path: Path, vault_path: Path) -> bool:
         and ".obsidian_import_state.json" not in parts
         and not parts & IGNORED_PARTS
     )
+
+
+def _wait_for_processable_file(
+    path: Path,
+    retry_delays: tuple[float, ...] = EMPTY_FILE_RETRY_DELAYS,
+) -> bool:
+    """Wait briefly for Obsidian to finish creating a Markdown file."""
+    for attempt in range(len(retry_delays) + 1):
+        try:
+            if path.stat().st_size > 0 and path.read_text(encoding="utf-8-sig").strip():
+                return True
+        except FileNotFoundError:
+            LOGGER.debug("Markdown file disappeared before import: %s", path)
+            return False
+        if attempt < len(retry_delays):
+            time.sleep(retry_delays[attempt])
+    LOGGER.warning("Skipping empty Markdown file after retries: %s", path)
+    return False
 
 
 class ObsidianEventHandler(FileSystemEventHandler):
@@ -53,12 +74,14 @@ class ObsidianEventHandler(FileSystemEventHandler):
         self._worker: threading.Thread | None = None
         self._stop_event = threading.Event()
         self._lock = threading.Lock()
+        self._git_sync = GitSyncQueue()
 
     def start(self) -> None:
         self._worker = threading.Thread(
             target=self._run, name="obsidian-import-worker", daemon=True
         )
         self._worker.start()
+        self._git_sync.start()
 
     def on_created(self, event: FileSystemEvent) -> None:
         self._changed(event)
@@ -109,15 +132,25 @@ class ObsidianEventHandler(FileSystemEventHandler):
                 self._queue.task_done()
 
     def _import(self, path: Path) -> None:
+        if not _wait_for_processable_file(path):
+            return
         LOGGER.info("Import started...")
         try:
             stats = run_pipeline(path)
+            self._git_sync.request()
             LOGGER.info(
                 "Import finished... read=%s processed=%s failed=%s",
                 stats.read_markdown,
                 stats.processed,
                 stats.failed,
             )
+        except FileNotFoundError:
+            LOGGER.debug("Markdown file disappeared before pipeline completed: %s", path)
+        except ValueError as exc:
+            if str(exc) == "Obsidian document is empty":
+                LOGGER.warning("Skipping empty Markdown file: %s", path)
+                return
+            LOGGER.exception("Import finished... failed")
         except Exception:
             LOGGER.exception("Import finished... failed")
 
@@ -131,6 +164,7 @@ class ObsidianEventHandler(FileSystemEventHandler):
         self._stop_event.set()
         if self._worker is not None:
             self._worker.join()
+        self._git_sync.stop(flush=True)
 
 
 def watch_vault(

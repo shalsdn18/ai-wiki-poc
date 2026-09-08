@@ -234,6 +234,22 @@ Obsidian
   -> GitHub push
 ```
 
+When local Git sync is explicitly enabled, successful Pipeline runs enqueue a
+debounced Wiki sync. A single worker combines short-lived changes into one
+commit and pushes only `wiki/` to `origin/main`:
+
+```dotenv
+GIT_SYNC_ENABLED=false
+GIT_SYNC_DEBOUNCE_SECONDS=30
+```
+
+Set `GIT_SYNC_ENABLED=true` only on the local machine that owns the push
+credentials. The sync uses the existing Git credential helper and never stores
+tokens or passwords. If `origin/main` is ahead or diverged, or if the Git
+operation is unsafe, synchronization stops without automatic merge, conflict
+resolution, reset, or deletion. Local Wiki changes and failed commits remain
+available for the next retry.
+
 For local development, use:
 
 ```dotenv
