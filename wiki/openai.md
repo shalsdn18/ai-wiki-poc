@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI, AIRPPU, and WAN-IFRA have launched an AI program to support Ukrainian news organizations.",
+  "current_state": "OpenAI has announced new product capabilities, a scientific breakthrough, and a research grant program.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -62,62 +62,87 @@
         "openai-073b13b14ae0138b1424"
       ],
       "summary": "This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA."
+    },
+    {
+      "published_at": "2026-09-08T17:00:00+00:00",
+      "source_ids": [
+        "openai-503e9c2326e78f3e5469",
+        "openai-a00fc889a2dd293b4204",
+        "openai-1dcea8b0f8acab144d94",
+        "openai-2c827cba158d2f26e6e9",
+        "openai-7948c39493cbd65ea48c"
+      ],
+      "summary": "OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications."
     }
   ],
   "key_facts": [
-    "The AI program aims to strengthen innovation, resilience, and independent journalism in Ukraine.",
-    "The initiative is a collaboration between OpenAI, AIRPPU, and WAN-IFRA."
+    "An MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
+    "ChatGPT Images 2.5 has been introduced to help turn ideas, sketches, and reference photos into more personalized, polished images.",
+    "OpenAI is sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
+    "OpenAI launched a $5 million grant program to support independent research on how generative AI affects teen development, well-being, and safety.",
+    "More capable and affordable AI is expected to expand the work people and businesses can accomplish, making growth more economical."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-08T17:00:00+00:00",
+      "source_ids": [
+        "openai-503e9c2326e78f3e5469",
+        "openai-a00fc889a2dd293b4204",
+        "openai-1dcea8b0f8acab144d94",
+        "openai-2c827cba158d2f26e6e9",
+        "openai-7948c39493cbd65ea48c"
+      ],
+      "summary": "Release of an AI-generated solution to the Navier–Stokes Millennium Prize Problem."
+    },
+    {
+      "published_at": "2026-09-08T17:00:00+00:00",
+      "source_ids": [
+        "openai-503e9c2326e78f3e5469",
+        "openai-a00fc889a2dd293b4204",
+        "openai-1dcea8b0f8acab144d94",
+        "openai-2c827cba158d2f26e6e9",
+        "openai-7948c39493cbd65ea48c"
+      ],
+      "summary": "Launch of a $5 million grant program for research on AI and teen development."
+    },
+    {
+      "published_at": "2026-09-08T17:00:00+00:00",
+      "source_ids": [
+        "openai-503e9c2326e78f3e5469",
+        "openai-a00fc889a2dd293b4204",
+        "openai-1dcea8b0f8acab144d94",
+        "openai-2c827cba158d2f26e6e9",
+        "openai-7948c39493cbd65ea48c"
+      ],
+      "summary": "Introduction of ChatGPT Images 2.5."
+    },
+    {
+      "published_at": "2026-09-08T17:00:00+00:00",
+      "source_ids": [
+        "openai-503e9c2326e78f3e5469",
+        "openai-a00fc889a2dd293b4204",
+        "openai-1dcea8b0f8acab144d94",
+        "openai-2c827cba158d2f26e6e9",
+        "openai-7948c39493cbd65ea48c"
+      ],
+      "summary": "Demonstration of GPT-5.6 Sol with Codex in autonomous quantum computing experiments."
+    },
     {
       "published_at": "2026-09-07T00:00:00+00:00",
       "source_ids": [
         "openai-073b13b14ae0138b1424"
       ],
       "summary": "OpenAI, AIRPPU, and WAN-IFRA launched an AI program."
-    },
-    {
-      "published_at": "2026-09-06T09:00:00+00:00",
-      "source_ids": [
-        "openai-e0f75446731d598ce3aa",
-        "openai-3784d7aba9718af9aa19"
-      ],
-      "summary": "OpenAI has released information about the use of coding agents to accelerate AI research internally, including early data on their impact."
-    },
-    {
-      "published_at": "2026-09-06T09:00:00+00:00",
-      "source_ids": [
-        "openai-e0f75446731d598ce3aa",
-        "openai-3784d7aba9718af9aa19"
-      ],
-      "summary": "OpenAI has published reflections from Jakub Pachocki on AI alignment and the need for safeguards and international coordination."
-    },
-    {
-      "published_at": "2026-09-03T13:15:00+00:00",
-      "source_ids": [
-        "openai-fc40ddafdd41e0cc6b8e",
-        "openai-9281d6906e8350b6fb5c",
-        "openai-325e9dcd840a97e90ffb",
-        "openai-39210f987919e80e66f6"
-      ],
-      "summary": "OpenAI has committed $1 billion to Daybreak for Frontline Defenders to enhance cyber AI access and support for essential services."
-    },
-    {
-      "published_at": "2026-09-03T13:15:00+00:00",
-      "source_ids": [
-        "openai-fc40ddafdd41e0cc6b8e",
-        "openai-9281d6906e8350b6fb5c",
-        "openai-325e9dcd840a97e90ffb",
-        "openai-39210f987919e80e66f6"
-      ],
-      "summary": "GPT-6 Astra is the first OpenAI model to achieve a Critical level of cybersecurity capability."
     }
   ],
   "seen_hashes": [
+    "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
+    "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
+    "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
@@ -125,6 +150,7 @@
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
+    "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
@@ -132,6 +158,7 @@
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
+    "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959"
   ]
 }
@@ -141,20 +168,23 @@
 
 ## Current State
 
-OpenAI, AIRPPU, and WAN-IFRA have launched an AI program to support Ukrainian news organizations.
+OpenAI has announced new product capabilities, a scientific breakthrough, and a research grant program.
 
 ## Key Facts
 
-- The AI program aims to strengthen innovation, resilience, and independent journalism in Ukraine.
-- The initiative is a collaboration between OpenAI, AIRPPU, and WAN-IFRA.
+- An MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.
+- ChatGPT Images 2.5 has been introduced to help turn ideas, sketches, and reference photos into more personalized, polished images.
+- OpenAI is sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.
+- OpenAI launched a $5 million grant program to support independent research on how generative AI affects teen development, well-being, and safety.
+- More capable and affordable AI is expected to expand the work people and businesses can accomplish, making growth more economical.
 
 ## Recent Changes
 
+- 2026-09-08T17:00:00+00:00 — Release of an AI-generated solution to the Navier–Stokes Millennium Prize Problem. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
+- 2026-09-08T17:00:00+00:00 — Launch of a $5 million grant program for research on AI and teen development. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
+- 2026-09-08T17:00:00+00:00 — Introduction of ChatGPT Images 2.5. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
+- 2026-09-08T17:00:00+00:00 — Demonstration of GPT-5.6 Sol with Codex in autonomous quantum computing experiments. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
 - 2026-09-07T00:00:00+00:00 — OpenAI, AIRPPU, and WAN-IFRA launched an AI program. (sources: openai-073b13b14ae0138b1424)
-- 2026-09-06T09:00:00+00:00 — OpenAI has released information about the use of coding agents to accelerate AI research internally, including early data on their impact. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
-- 2026-09-06T09:00:00+00:00 — OpenAI has published reflections from Jakub Pachocki on AI alignment and the need for safeguards and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
-- 2026-09-03T13:15:00+00:00 — OpenAI has committed $1 billion to Daybreak for Frontline Defenders to enhance cyber AI access and support for essential services. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
-- 2026-09-03T13:15:00+00:00 — GPT-6 Astra is the first OpenAI model to achieve a Critical level of cybersecurity capability. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
 
 ## History Log
 
@@ -165,3 +195,4 @@ OpenAI, AIRPPU, and WAN-IFRA have launched an AI program to support Ukrainian ne
 - 2026-09-03T11:00:00+00:00 — OpenAI officially introduced GPT-6 Astra on September 3, 2026. (sources: openai-039a4975e102cb538c36)
 - 2026-09-06T09:00:00+00:00 — OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
 - 2026-09-07T00:00:00+00:00 — This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA. (sources: openai-073b13b14ae0138b1424)
+- 2026-09-08T17:00:00+00:00 — OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
