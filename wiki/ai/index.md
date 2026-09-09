@@ -4,6 +4,42 @@
   "entries": [
     {
       "categories": [
+        "ai",
+        "investment"
+      ],
+      "importance": 4,
+      "input_filename": "엔비디아 차세대 AI PC 및 RTX 스파크 분석.md",
+      "key_facts": [
+        "RTX 스파크는 TSMC 3nm 공정으로 제작되며 700억 개의 트랜지스터와 1 PFLOPS 연산 성능을 제공함",
+        "블랙웰 RTX GPU와 그레이스 CPU가 결합된 아키텍처로 600GB/s의 대역폭을 지원함",
+        "128GB 통합 메모리를 탑재한 프리미엄 노트북 및 미니 PC 형태로 출시 예정",
+        "데이터센터 중심의 AI 시장 지배력을 B2C 엣지 디바이스로 확장하려는 전략을 보유함"
+      ],
+      "primary_category": "ai",
+      "processed_at": "2026-09-09T00:38:31.023625+00:00",
+      "related_topics": [
+        "온디바이스 AI",
+        "블랙웰 아키텍처",
+        "엣지 컴퓨팅",
+        "반도체 산업"
+      ],
+      "relative_path": "엔비디아 차세대 AI PC 및 RTX 스파크 분석.md",
+      "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\엔비디아 차세대 AI PC 및 RTX 스파크 분석.md",
+      "source_id": "obsidian-25e0e506eb6feaf41379",
+      "source_url": null,
+      "summary": "엔비디아와 마이크로소프트가 협력하여 출시하는 차세대 AI PC의 하드웨어 사양과 RTX 스파크 칩셋의 기술적 특징, 그리고 온디바이스 AI 시장으로의 확장 전략을 분석한 내용입니다.",
+      "tags": [
+        "Nvidia",
+        "AIPC",
+        "EdgeAI",
+        "Hardware",
+        "Invest"
+      ],
+      "title": "엔비디아 차세대 AI PC 및 RTX 스파크 분석",
+      "topic": "엔비디아 RTX 스파크 기반 차세대 AI PC 시장 전략"
+    },
+    {
+      "categories": [
         "ai"
       ],
       "importance": 4,
@@ -440,6 +476,26 @@
 ---
 
 # Ai Knowledge Wiki
+
+## 엔비디아 차세대 AI PC 및 RTX 스파크 분석
+
+엔비디아와 마이크로소프트가 협력하여 출시하는 차세대 AI PC의 하드웨어 사양과 RTX 스파크 칩셋의 기술적 특징, 그리고 온디바이스 AI 시장으로의 확장 전략을 분석한 내용입니다.
+
+- Importance: 4/5
+- Topic: 엔비디아 RTX 스파크 기반 차세대 AI PC 시장 전략
+- Related topics: 온디바이스 AI, 블랙웰 아키텍처, 엣지 컴퓨팅, 반도체 산업
+- Categories: ai, investment
+- Tags: `Nvidia`, `AIPC`, `EdgeAI`, `Hardware`, `Invest`
+- Source: Local inbox document
+- Input file: `엔비디아 차세대 AI PC 및 RTX 스파크 분석.md`
+- Processed at: 2026-09-09T00:38:31.023625+00:00
+
+### Key Facts
+
+- RTX 스파크는 TSMC 3nm 공정으로 제작되며 700억 개의 트랜지스터와 1 PFLOPS 연산 성능을 제공함
+- 블랙웰 RTX GPU와 그레이스 CPU가 결합된 아키텍처로 600GB/s의 대역폭을 지원함
+- 128GB 통합 메모리를 탑재한 프리미엄 노트북 및 미니 PC 형태로 출시 예정
+- 데이터센터 중심의 AI 시장 지배력을 B2C 엣지 디바이스로 확장하려는 전략을 보유함
 
 ## [Study] 차세대 전이중 음성 AI 아키텍처 및 GPT-Live 저지연 최적화
 
