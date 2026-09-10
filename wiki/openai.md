@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has announced new product capabilities, a scientific breakthrough, and a research grant program.",
+  "current_state": "OpenAI has released a new, more capable AI model for business, GPT-6 Astra, while simultaneously strengthening its governance and safety efforts by appointing Paul Christiano to its Foundation Board and Safety and Security Committee, and advocating for robust AI policy and safety standards.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -73,16 +73,50 @@
         "openai-7948c39493cbd65ea48c"
       ],
       "summary": "OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications."
+    },
+    {
+      "published_at": "2026-09-09T17:00:00+00:00",
+      "source_ids": [
+        "openai-3eb3e9557eb7038ef8ad",
+        "openai-a7c183de5112de4747c2",
+        "openai-333ccaae81484d3a4e17"
+      ],
+      "summary": "OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy."
     }
   ],
   "key_facts": [
-    "An MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
-    "ChatGPT Images 2.5 has been introduced to help turn ideas, sketches, and reference photos into more personalized, polished images.",
-    "OpenAI is sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
-    "OpenAI launched a $5 million grant program to support independent research on how generative AI affects teen development, well-being, and safety.",
-    "More capable and affordable AI is expected to expand the work people and businesses can accomplish, making growth more economical."
+    "Paul Christiano, an expert in AI alignment, safety, and standards, has joined the OpenAI Foundation Board and its Safety and Security Committee.",
+    "Chris Lehane of OpenAI is advocating for stronger AI safety evidence, shared standards, and durable policy action.",
+    "OpenAI has released GPT-6 Astra, its most capable model for business, featuring advanced reasoning, computer use, and stronger writing and design judgment."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-09T17:00:00+00:00",
+      "source_ids": [
+        "openai-3eb3e9557eb7038ef8ad",
+        "openai-a7c183de5112de4747c2",
+        "openai-333ccaae81484d3a4e17"
+      ],
+      "summary": "Paul Christiano has been appointed to the OpenAI Foundation Board and its Safety and Security Committee."
+    },
+    {
+      "published_at": "2026-09-09T17:00:00+00:00",
+      "source_ids": [
+        "openai-3eb3e9557eb7038ef8ad",
+        "openai-a7c183de5112de4747c2",
+        "openai-333ccaae81484d3a4e17"
+      ],
+      "summary": "OpenAI is publicly advocating for stronger AI safety policies and standards."
+    },
+    {
+      "published_at": "2026-09-09T17:00:00+00:00",
+      "source_ids": [
+        "openai-3eb3e9557eb7038ef8ad",
+        "openai-a7c183de5112de4747c2",
+        "openai-333ccaae81484d3a4e17"
+      ],
+      "summary": "OpenAI has launched GPT-6 Astra, a new, more capable AI model for business."
+    },
     {
       "published_at": "2026-09-08T17:00:00+00:00",
       "source_ids": [
@@ -104,38 +138,10 @@
         "openai-7948c39493cbd65ea48c"
       ],
       "summary": "Launch of a $5 million grant program for research on AI and teen development."
-    },
-    {
-      "published_at": "2026-09-08T17:00:00+00:00",
-      "source_ids": [
-        "openai-503e9c2326e78f3e5469",
-        "openai-a00fc889a2dd293b4204",
-        "openai-1dcea8b0f8acab144d94",
-        "openai-2c827cba158d2f26e6e9",
-        "openai-7948c39493cbd65ea48c"
-      ],
-      "summary": "Introduction of ChatGPT Images 2.5."
-    },
-    {
-      "published_at": "2026-09-08T17:00:00+00:00",
-      "source_ids": [
-        "openai-503e9c2326e78f3e5469",
-        "openai-a00fc889a2dd293b4204",
-        "openai-1dcea8b0f8acab144d94",
-        "openai-2c827cba158d2f26e6e9",
-        "openai-7948c39493cbd65ea48c"
-      ],
-      "summary": "Demonstration of GPT-5.6 Sol with Codex in autonomous quantum computing experiments."
-    },
-    {
-      "published_at": "2026-09-07T00:00:00+00:00",
-      "source_ids": [
-        "openai-073b13b14ae0138b1424"
-      ],
-      "summary": "OpenAI, AIRPPU, and WAN-IFRA launched an AI program."
     }
   ],
   "seen_hashes": [
+    "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
@@ -150,6 +156,7 @@
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
+    "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
@@ -159,7 +166,8 @@
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
-    "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959"
+    "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
+    "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882"
   ]
 }
 ---
@@ -168,23 +176,21 @@
 
 ## Current State
 
-OpenAI has announced new product capabilities, a scientific breakthrough, and a research grant program.
+OpenAI has released a new, more capable AI model for business, GPT-6 Astra, while simultaneously strengthening its governance and safety efforts by appointing Paul Christiano to its Foundation Board and Safety and Security Committee, and advocating for robust AI policy and safety standards.
 
 ## Key Facts
 
-- An MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.
-- ChatGPT Images 2.5 has been introduced to help turn ideas, sketches, and reference photos into more personalized, polished images.
-- OpenAI is sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.
-- OpenAI launched a $5 million grant program to support independent research on how generative AI affects teen development, well-being, and safety.
-- More capable and affordable AI is expected to expand the work people and businesses can accomplish, making growth more economical.
+- Paul Christiano, an expert in AI alignment, safety, and standards, has joined the OpenAI Foundation Board and its Safety and Security Committee.
+- Chris Lehane of OpenAI is advocating for stronger AI safety evidence, shared standards, and durable policy action.
+- OpenAI has released GPT-6 Astra, its most capable model for business, featuring advanced reasoning, computer use, and stronger writing and design judgment.
 
 ## Recent Changes
 
+- 2026-09-09T17:00:00+00:00 — Paul Christiano has been appointed to the OpenAI Foundation Board and its Safety and Security Committee. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
+- 2026-09-09T17:00:00+00:00 — OpenAI is publicly advocating for stronger AI safety policies and standards. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
+- 2026-09-09T17:00:00+00:00 — OpenAI has launched GPT-6 Astra, a new, more capable AI model for business. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
 - 2026-09-08T17:00:00+00:00 — Release of an AI-generated solution to the Navier–Stokes Millennium Prize Problem. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
 - 2026-09-08T17:00:00+00:00 — Launch of a $5 million grant program for research on AI and teen development. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
-- 2026-09-08T17:00:00+00:00 — Introduction of ChatGPT Images 2.5. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
-- 2026-09-08T17:00:00+00:00 — Demonstration of GPT-5.6 Sol with Codex in autonomous quantum computing experiments. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
-- 2026-09-07T00:00:00+00:00 — OpenAI, AIRPPU, and WAN-IFRA launched an AI program. (sources: openai-073b13b14ae0138b1424)
 
 ## History Log
 
@@ -196,3 +202,4 @@ OpenAI has announced new product capabilities, a scientific breakthrough, and a 
 - 2026-09-06T09:00:00+00:00 — OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
 - 2026-09-07T00:00:00+00:00 — This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA. (sources: openai-073b13b14ae0138b1424)
 - 2026-09-08T17:00:00+00:00 — OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
+- 2026-09-09T17:00:00+00:00 — OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
