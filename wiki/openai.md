@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is expanding its AI offerings and access across various sectors, including financial services and government, while also introducing new tools and APIs for data analysis and agent development.",
+  "current_state": "GPT-6 Astra is being utilized by Perplexity for operational tasks and by Cognition to enhance Devin's software testing, while OpenAI's Habitat storage platform now serves 1 billion ChatGPT users.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -93,12 +93,53 @@
         "openai-b32e9b847135398762b9"
       ],
       "summary": "Recent developments from OpenAI include the introduction of specialized ChatGPT versions for financial services and data analysis, a new Agents API for cloud agent development, and expanded AI access for US government entities. Additionally, existing technologies like Codex and ChatGPT are being applied in scientific research for antimicrobial discovery."
+    },
+    {
+      "published_at": "2026-09-14T00:00:00+00:00",
+      "source_ids": [
+        "openai-968c32634dc2a1cb83f0",
+        "openai-4aeb82da9975e2f5f564",
+        "openai-46fcf5bb7b99520f1816"
+      ],
+      "summary": "OpenAI evolved Habitat from a Python library into a globally distributed storage platform."
     }
   ],
   "key_facts": [
-    "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates."
+    "Perplexity uses GPT-6 Astra to write communications, change software, and monitor production systems.",
+    "Perplexity checks in much less frequently with Astra than with earlier models.",
+    "Cognition employs GPT-6 Astra to improve Devin's ability to test software and show that it works.",
+    "GPT-6 Astra aims to help engineers review less code and ship more.",
+    "OpenAI's Habitat storage platform serves 1 billion ChatGPT users.",
+    "Habitat handles 22 million requests per second."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-14T00:00:00+00:00",
+      "source_ids": [
+        "openai-968c32634dc2a1cb83f0",
+        "openai-4aeb82da9975e2f5f564",
+        "openai-46fcf5bb7b99520f1816"
+      ],
+      "summary": "Perplexity has integrated GPT-6 Astra, leading to reduced check-in frequency for various operations."
+    },
+    {
+      "published_at": "2026-09-14T00:00:00+00:00",
+      "source_ids": [
+        "openai-968c32634dc2a1cb83f0",
+        "openai-4aeb82da9975e2f5f564",
+        "openai-46fcf5bb7b99520f1816"
+      ],
+      "summary": "OpenAI's Habitat storage platform has scaled to support 1 billion ChatGPT users."
+    },
+    {
+      "published_at": "2026-09-14T00:00:00+00:00",
+      "source_ids": [
+        "openai-968c32634dc2a1cb83f0",
+        "openai-4aeb82da9975e2f5f564",
+        "openai-46fcf5bb7b99520f1816"
+      ],
+      "summary": "Cognition is using GPT-6 Astra to enhance Devin's software testing capabilities."
+    },
     {
       "published_at": "2026-09-10T16:00:00+00:00",
       "source_ids": [
@@ -120,37 +161,6 @@
         "openai-b32e9b847135398762b9"
       ],
       "summary": "OpenAI introduced the Agents API, a managed service powered by the Codex harness, for building and launching cloud agents with orchestration, long-running sessions, and tool use."
-    },
-    {
-      "published_at": "2026-09-10T16:00:00+00:00",
-      "source_ids": [
-        "openai-39842fa0b34b37cbe3f7",
-        "openai-6a886414536a09e3da65",
-        "openai-0bb946f0c421538942e4",
-        "openai-3802aa15c4b6ae22021a",
-        "openai-b32e9b847135398762b9"
-      ],
-      "summary": "OpenAI introduced a Data agent in ChatGPT Work, enabling users to connect company data, uncover insights, and build interactive dashboards using natural language."
-    },
-    {
-      "published_at": "2026-09-10T16:00:00+00:00",
-      "source_ids": [
-        "openai-39842fa0b34b37cbe3f7",
-        "openai-6a886414536a09e3da65",
-        "openai-0bb946f0c421538942e4",
-        "openai-3802aa15c4b6ae22021a",
-        "openai-b32e9b847135398762b9"
-      ],
-      "summary": "OpenAI and GSA are expanding AI access and cyber defense support for eligible federal, state, local, and tribal governments, offering $0 license fees and 50% off usage."
-    },
-    {
-      "published_at": "2026-09-09T17:00:00+00:00",
-      "source_ids": [
-        "openai-3eb3e9557eb7038ef8ad",
-        "openai-a7c183de5112de4747c2",
-        "openai-333ccaae81484d3a4e17"
-      ],
-      "summary": "Paul Christiano has been appointed to the OpenAI Foundation Board and its Safety and Security Committee."
     }
   ],
   "seen_hashes": [
@@ -167,6 +177,7 @@
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
+    "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
@@ -174,8 +185,10 @@
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
+    "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
+    "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
@@ -194,19 +207,24 @@
 
 ## Current State
 
-OpenAI is expanding its AI offerings and access across various sectors, including financial services and government, while also introducing new tools and APIs for data analysis and agent development.
+GPT-6 Astra is being utilized by Perplexity for operational tasks and by Cognition to enhance Devin's software testing, while OpenAI's Habitat storage platform now serves 1 billion ChatGPT users.
 
 ## Key Facts
 
-- César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates.
+- Perplexity uses GPT-6 Astra to write communications, change software, and monitor production systems.
+- Perplexity checks in much less frequently with Astra than with earlier models.
+- Cognition employs GPT-6 Astra to improve Devin's ability to test software and show that it works.
+- GPT-6 Astra aims to help engineers review less code and ship more.
+- OpenAI's Habitat storage platform serves 1 billion ChatGPT users.
+- Habitat handles 22 million requests per second.
 
 ## Recent Changes
 
+- 2026-09-14T00:00:00+00:00 — Perplexity has integrated GPT-6 Astra, leading to reduced check-in frequency for various operations. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
+- 2026-09-14T00:00:00+00:00 — OpenAI's Habitat storage platform has scaled to support 1 billion ChatGPT users. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
+- 2026-09-14T00:00:00+00:00 — Cognition is using GPT-6 Astra to enhance Devin's software testing capabilities. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
 - 2026-09-10T16:00:00+00:00 — OpenAI launched ChatGPT for Financial Services, which combines built-in financial data with GPT-6 Astra for research, modeling, and client-ready materials. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
 - 2026-09-10T16:00:00+00:00 — OpenAI introduced the Agents API, a managed service powered by the Codex harness, for building and launching cloud agents with orchestration, long-running sessions, and tool use. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
-- 2026-09-10T16:00:00+00:00 — OpenAI introduced a Data agent in ChatGPT Work, enabling users to connect company data, uncover insights, and build interactive dashboards using natural language. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
-- 2026-09-10T16:00:00+00:00 — OpenAI and GSA are expanding AI access and cyber defense support for eligible federal, state, local, and tribal governments, offering $0 license fees and 50% off usage. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
-- 2026-09-09T17:00:00+00:00 — Paul Christiano has been appointed to the OpenAI Foundation Board and its Safety and Security Committee. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
 
 ## History Log
 
@@ -220,3 +238,4 @@ OpenAI is expanding its AI offerings and access across various sectors, includin
 - 2026-09-08T17:00:00+00:00 — OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
 - 2026-09-09T17:00:00+00:00 — OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
 - 2026-09-10T16:00:00+00:00 — Recent developments from OpenAI include the introduction of specialized ChatGPT versions for financial services and data analysis, a new Agents API for cloud agent development, and expanded AI access for US government entities. Additionally, existing technologies like Codex and ChatGPT are being applied in scientific research for antimicrobial discovery. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
+- 2026-09-14T00:00:00+00:00 — OpenAI evolved Habitat from a Python library into a globally distributed storage platform. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
