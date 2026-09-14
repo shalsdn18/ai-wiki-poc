@@ -119,3 +119,21 @@ def test_valid_markdown_imports_and_requests_git_sync(tmp_path, monkeypatch):
     handler._import(path)
     assert imported == [path]
     assert syncs == [True]
+
+
+def test_vector_failure_status_does_not_block_git_sync(tmp_path, monkeypatch):
+    path = tmp_path / "Vault" / "note.md"
+    path.parent.mkdir(parents=True)
+    path.write_text("# Note\nContent", encoding="utf-8")
+    syncs = []
+    monkeypatch.setattr(
+        watcher,
+        "run_pipeline",
+        lambda value: SimpleNamespace(
+            failed=0, vector_status="unavailable", read_markdown=1, processed=1
+        ),
+    )
+    handler = _handler(tmp_path)
+    monkeypatch.setattr(handler._git_sync, "request", lambda: syncs.append(True))
+    handler._import(path)
+    assert syncs == [True]

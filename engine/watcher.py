@@ -13,7 +13,6 @@ from queue import Empty, Queue
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 
-import engine.config
 from engine.git_sync import GitSyncQueue
 from engine.pipeline import run_pipeline
 
@@ -137,7 +136,8 @@ class ObsidianEventHandler(FileSystemEventHandler):
         LOGGER.info("Import started...")
         try:
             stats = run_pipeline(path)
-            self._git_sync.request()
+            if stats is None or getattr(stats, "failed", 0) == 0:
+                self._git_sync.request()
             LOGGER.info(
                 "Import finished... read=%s processed=%s failed=%s",
                 stats.read_markdown,
