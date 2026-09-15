@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "GPT-6 Astra is being utilized by Perplexity for operational tasks and by Cognition to enhance Devin's software testing, while OpenAI's Habitat storage platform now serves 1 billion ChatGPT users.",
+  "current_state": "Fyxer is an AI executive assistant that organizes inboxes and drafts emails in each user's voice.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -102,17 +102,36 @@
         "openai-46fcf5bb7b99520f1816"
       ],
       "summary": "OpenAI evolved Habitat from a Python library into a globally distributed storage platform."
+    },
+    {
+      "published_at": "2026-09-14T12:00:00+00:00",
+      "source_ids": [
+        "openai-7f82d995c515e5ba429e"
+      ],
+      "summary": "Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice."
     }
   ],
   "key_facts": [
-    "Perplexity uses GPT-6 Astra to write communications, change software, and monitor production systems.",
-    "Perplexity checks in much less frequently with Astra than with earlier models.",
-    "Cognition employs GPT-6 Astra to improve Devin's ability to test software and show that it works.",
-    "GPT-6 Astra aims to help engineers review less code and ship more.",
-    "OpenAI's Habitat storage platform serves 1 billion ChatGPT users.",
-    "Habitat handles 22 million requests per second."
+    "Fyxer utilizes OpenAI models.",
+    "The system incorporates fine-tuning, memory, and real user feedback.",
+    "Fyxer's primary functions include organizing inboxes and drafting emails.",
+    "Emails are drafted to match each user's individual voice."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-14T12:00:00+00:00",
+      "source_ids": [
+        "openai-7f82d995c515e5ba429e"
+      ],
+      "summary": "The assistant uses OpenAI models, fine-tuning, memory, and real user feedback."
+    },
+    {
+      "published_at": "2026-09-14T12:00:00+00:00",
+      "source_ids": [
+        "openai-7f82d995c515e5ba429e"
+      ],
+      "summary": "Fyxer has developed an AI executive assistant that people trust."
+    },
     {
       "published_at": "2026-09-14T00:00:00+00:00",
       "source_ids": [
@@ -139,28 +158,6 @@
         "openai-46fcf5bb7b99520f1816"
       ],
       "summary": "Cognition is using GPT-6 Astra to enhance Devin's software testing capabilities."
-    },
-    {
-      "published_at": "2026-09-10T16:00:00+00:00",
-      "source_ids": [
-        "openai-39842fa0b34b37cbe3f7",
-        "openai-6a886414536a09e3da65",
-        "openai-0bb946f0c421538942e4",
-        "openai-3802aa15c4b6ae22021a",
-        "openai-b32e9b847135398762b9"
-      ],
-      "summary": "OpenAI launched ChatGPT for Financial Services, which combines built-in financial data with GPT-6 Astra for research, modeling, and client-ready materials."
-    },
-    {
-      "published_at": "2026-09-10T16:00:00+00:00",
-      "source_ids": [
-        "openai-39842fa0b34b37cbe3f7",
-        "openai-6a886414536a09e3da65",
-        "openai-0bb946f0c421538942e4",
-        "openai-3802aa15c4b6ae22021a",
-        "openai-b32e9b847135398762b9"
-      ],
-      "summary": "OpenAI introduced the Agents API, a managed service powered by the Codex harness, for building and launching cloud agents with orchestration, long-running sessions, and tool use."
     }
   ],
   "seen_hashes": [
@@ -183,6 +180,7 @@
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
+    "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
@@ -207,24 +205,22 @@
 
 ## Current State
 
-GPT-6 Astra is being utilized by Perplexity for operational tasks and by Cognition to enhance Devin's software testing, while OpenAI's Habitat storage platform now serves 1 billion ChatGPT users.
+Fyxer is an AI executive assistant that organizes inboxes and drafts emails in each user's voice.
 
 ## Key Facts
 
-- Perplexity uses GPT-6 Astra to write communications, change software, and monitor production systems.
-- Perplexity checks in much less frequently with Astra than with earlier models.
-- Cognition employs GPT-6 Astra to improve Devin's ability to test software and show that it works.
-- GPT-6 Astra aims to help engineers review less code and ship more.
-- OpenAI's Habitat storage platform serves 1 billion ChatGPT users.
-- Habitat handles 22 million requests per second.
+- Fyxer utilizes OpenAI models.
+- The system incorporates fine-tuning, memory, and real user feedback.
+- Fyxer's primary functions include organizing inboxes and drafting emails.
+- Emails are drafted to match each user's individual voice.
 
 ## Recent Changes
 
+- 2026-09-14T12:00:00+00:00 — The assistant uses OpenAI models, fine-tuning, memory, and real user feedback. (sources: openai-7f82d995c515e5ba429e)
+- 2026-09-14T12:00:00+00:00 — Fyxer has developed an AI executive assistant that people trust. (sources: openai-7f82d995c515e5ba429e)
 - 2026-09-14T00:00:00+00:00 — Perplexity has integrated GPT-6 Astra, leading to reduced check-in frequency for various operations. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
 - 2026-09-14T00:00:00+00:00 — OpenAI's Habitat storage platform has scaled to support 1 billion ChatGPT users. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
 - 2026-09-14T00:00:00+00:00 — Cognition is using GPT-6 Astra to enhance Devin's software testing capabilities. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
-- 2026-09-10T16:00:00+00:00 — OpenAI launched ChatGPT for Financial Services, which combines built-in financial data with GPT-6 Astra for research, modeling, and client-ready materials. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
-- 2026-09-10T16:00:00+00:00 — OpenAI introduced the Agents API, a managed service powered by the Codex harness, for building and launching cloud agents with orchestration, long-running sessions, and tool use. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
 
 ## History Log
 
@@ -239,3 +235,4 @@ GPT-6 Astra is being utilized by Perplexity for operational tasks and by Cogniti
 - 2026-09-09T17:00:00+00:00 — OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
 - 2026-09-10T16:00:00+00:00 — Recent developments from OpenAI include the introduction of specialized ChatGPT versions for financial services and data analysis, a new Agents API for cloud agent development, and expanded AI access for US government entities. Additionally, existing technologies like Codex and ChatGPT are being applied in scientific research for antimicrobial discovery. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
 - 2026-09-14T00:00:00+00:00 — OpenAI evolved Habitat from a Python library into a globally distributed storage platform. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
+- 2026-09-14T12:00:00+00:00 — Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice. (sources: openai-7f82d995c515e5ba429e)

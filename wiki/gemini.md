@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "The Gemini app is now available for Windows.",
+  "current_state": "DevFest 2026 has been announced by Google Developer Groups.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -50,12 +50,29 @@
         "gemini-ca11f5a155cee3a9b930"
       ],
       "summary": "The Gemini app, which was previously not available on Windows, has now been released for the platform."
+    },
+    {
+      "published_at": "2026-09-14T16:00:00+00:00",
+      "source_ids": [
+        "gemini-fd1baec08311b505543d"
+      ],
+      "summary": "DevFest is a recurring event, as indicated by the phrase \"DevFest is back\"."
     }
   ],
   "key_facts": [
-    "Gemini is now available on Windows."
+    "DevFest 2026 is an event organized by Google Developer Groups.",
+    "The announcement includes an invitation to \"Join us!\".",
+    "The event is promoted with an animation featuring text and icons.",
+    "The announcement was published on September 14, 2026."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-14T16:00:00+00:00",
+      "source_ids": [
+        "gemini-fd1baec08311b505543d"
+      ],
+      "summary": "Google Developer Groups have announced DevFest 2026."
+    },
     {
       "published_at": "2026-09-10T16:00:00+00:00",
       "source_ids": [
@@ -83,15 +100,6 @@
         "gemini-9ec50e5febe2af86d959"
       ],
       "summary": "Lyria 3.5 is now available in the Gemini API."
-    },
-    {
-      "published_at": "2026-09-02T15:40:00+00:00",
-      "source_ids": [
-        "gemini-445c9f3e3d31d26692ad",
-        "gemini-ef239918f16e14829b0f",
-        "gemini-9dceaf4a590f3244f3de"
-      ],
-      "summary": "Partnership between MrBeast and Gemini."
     }
   ],
   "seen_hashes": [
@@ -106,6 +114,7 @@
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
+    "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2"
   ]
@@ -116,19 +125,22 @@
 
 ## Current State
 
-The Gemini app is now available for Windows.
+DevFest 2026 has been announced by Google Developer Groups.
 
 ## Key Facts
 
-- Gemini is now available on Windows.
+- DevFest 2026 is an event organized by Google Developer Groups.
+- The announcement includes an invitation to "Join us!".
+- The event is promoted with an animation featuring text and icons.
+- The announcement was published on September 14, 2026.
 
 ## Recent Changes
 
+- 2026-09-14T16:00:00+00:00 — Google Developer Groups have announced DevFest 2026. (sources: gemini-fd1baec08311b505543d)
 - 2026-09-10T16:00:00+00:00 — The Gemini app has been released for Windows. (sources: gemini-ca11f5a155cee3a9b930)
 - 2026-09-09T16:00:00+00:00 — Gemini is highlighted for its capabilities in streamlining administrative chores. (sources: gemini-8a1d2f52404f044bff9a)
 - 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini app. (sources: gemini-9ec50e5febe2af86d959)
 - 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini API. (sources: gemini-9ec50e5febe2af86d959)
-- 2026-09-02T15:40:00+00:00 — Partnership between MrBeast and Gemini. (sources: gemini-445c9f3e3d31d26692ad, gemini-ef239918f16e14829b0f, gemini-9dceaf4a590f3244f3de)
 
 ## History Log
 
@@ -138,3 +150,4 @@ The Gemini app is now available for Windows.
 - 2026-09-04T16:00:00+00:00 — This is the initial announcement regarding the availability of Lyria 3.5 in the Gemini app and API. (sources: gemini-9ec50e5febe2af86d959)
 - 2026-09-09T16:00:00+00:00 — A blog post published on 2026-09-09 by Google's official Gemini blog promotes Gemini's utility for administrative tasks. (sources: gemini-8a1d2f52404f044bff9a)
 - 2026-09-10T16:00:00+00:00 — The Gemini app, which was previously not available on Windows, has now been released for the platform. (sources: gemini-ca11f5a155cee3a9b930)
+- 2026-09-14T16:00:00+00:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (sources: gemini-fd1baec08311b505543d)
