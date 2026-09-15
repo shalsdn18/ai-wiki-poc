@@ -5,6 +5,43 @@
     {
       "categories": [
         "ai",
+        "misc"
+      ],
+      "importance": 3,
+      "input_filename": "Chat On Steroids 분석 및 실무 효용성 평가.md",
+      "key_facts": [
+        "Chat On Steroids는 Chrome 자동화와 MCP를 통해 ChatGPT 웹 세션을 로컬 파일 및 셸과 연결함",
+        "별도의 API 종량제 비용 없이 ChatGPT Plus/Pro 정액 구독 내에서 모델 추론을 활용함",
+        "웹 세션의 메시지 턴 제한(Rate Limit)으로 인해 장기적인 코딩 워크플로우에는 부적합함",
+        "웹 자동화 방식은 DOM 변경에 취약하며 보안상 Prompt Injection 위험이 존재함",
+        "지속적인 개발에는 Cursor나 Aider와 같은 API 기반 도구가 생산성 및 안정성 측면에서 우위에 있음"
+      ],
+      "primary_category": "ai",
+      "processed_at": "2026-09-15T01:01:45.892972+00:00",
+      "related_topics": [
+        "Model Context Protocol",
+        "AI 코딩 에이전트",
+        "웹 자동화",
+        "LLM 비용 최적화"
+      ],
+      "relative_path": "Chat On Steroids 분석 및 실무 효용성 평가.md",
+      "source_file": "C:\\Users\\netvision\\Desktop\\옵시디언\\MyBrain\\Chat On Steroids 분석 및 실무 효용성 평가.md",
+      "source_id": "obsidian-a8fc17482889d9da6103",
+      "source_url": null,
+      "summary": "ChatGPT 웹 인터페이스를 로컬 환경과 연결하는 오픈소스 도구인 'Chat On Steroids'의 기술적 구조, 장단점, 그리고 실무 활용 가능성을 분석한 문서입니다. 웹 세션 기반의 자동화 방식이 가진 한계와 비용 효율성을 평가하며, 지속적인 개발보다는 단발성 작업에 적합하다는 결론을 제시합니다.",
+      "tags": [
+        "ai",
+        "agent",
+        "chatgpt",
+        "mcp",
+        "automation"
+      ],
+      "title": "Chat On Steroids 개요 및 기술 검토",
+      "topic": "Chat On Steroids의 기술적 효용성 및 한계 분석"
+    },
+    {
+      "categories": [
+        "ai",
         "investment"
       ],
       "importance": 4,
@@ -476,6 +513,27 @@
 ---
 
 # Ai Knowledge Wiki
+
+## Chat On Steroids 개요 및 기술 검토
+
+ChatGPT 웹 인터페이스를 로컬 환경과 연결하는 오픈소스 도구인 'Chat On Steroids'의 기술적 구조, 장단점, 그리고 실무 활용 가능성을 분석한 문서입니다. 웹 세션 기반의 자동화 방식이 가진 한계와 비용 효율성을 평가하며, 지속적인 개발보다는 단발성 작업에 적합하다는 결론을 제시합니다.
+
+- Importance: 3/5
+- Topic: Chat On Steroids의 기술적 효용성 및 한계 분석
+- Related topics: Model Context Protocol, AI 코딩 에이전트, 웹 자동화, LLM 비용 최적화
+- Categories: ai, misc
+- Tags: `ai`, `agent`, `chatgpt`, `mcp`, `automation`
+- Source: Local inbox document
+- Input file: `Chat On Steroids 분석 및 실무 효용성 평가.md`
+- Processed at: 2026-09-15T01:01:45.892972+00:00
+
+### Key Facts
+
+- Chat On Steroids는 Chrome 자동화와 MCP를 통해 ChatGPT 웹 세션을 로컬 파일 및 셸과 연결함
+- 별도의 API 종량제 비용 없이 ChatGPT Plus/Pro 정액 구독 내에서 모델 추론을 활용함
+- 웹 세션의 메시지 턴 제한(Rate Limit)으로 인해 장기적인 코딩 워크플로우에는 부적합함
+- 웹 자동화 방식은 DOM 변경에 취약하며 보안상 Prompt Injection 위험이 존재함
+- 지속적인 개발에는 Cursor나 Aider와 같은 API 기반 도구가 생산성 및 안정성 측면에서 우위에 있음
 
 ## 엔비디아 차세대 AI PC 및 RTX 스파크 분석
 
