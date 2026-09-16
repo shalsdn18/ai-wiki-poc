@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "DevFest 2026 has been announced by Google Developer Groups.",
+  "current_state": "Gemini is expanding its model offerings with the introduction of Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, and is being highlighted for practical applications such as assisting with household chores.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -57,15 +57,45 @@
         "gemini-fd1baec08311b505543d"
       ],
       "summary": "DevFest is a recurring event, as indicated by the phrase \"DevFest is back\"."
+    },
+    {
+      "published_at": "2026-09-15T17:00:00+00:00",
+      "source_ids": [
+        "gemini-25823e681aab7b46b522",
+        "gemini-72b56895324eb8ab7790"
+      ],
+      "summary": "Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs."
     }
   ],
   "key_facts": [
-    "DevFest 2026 is an event organized by Google Developer Groups.",
-    "The announcement includes an invitation to \"Join us!\".",
-    "The event is promoted with an animation featuring text and icons.",
-    "The announcement was published on September 14, 2026."
+    "Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking models have been introduced.",
+    "Gemini can be utilized to assist with household chores, including providing guidance on how to fix a broken doorknob."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-15T17:00:00+00:00",
+      "source_ids": [
+        "gemini-25823e681aab7b46b522",
+        "gemini-72b56895324eb8ab7790"
+      ],
+      "summary": "Promotion of Gemini's utility for tackling household chores."
+    },
+    {
+      "published_at": "2026-09-15T17:00:00+00:00",
+      "source_ids": [
+        "gemini-25823e681aab7b46b522",
+        "gemini-72b56895324eb8ab7790"
+      ],
+      "summary": "Introduction of Gemini 3.8 Live."
+    },
+    {
+      "published_at": "2026-09-15T17:00:00+00:00",
+      "source_ids": [
+        "gemini-25823e681aab7b46b522",
+        "gemini-72b56895324eb8ab7790"
+      ],
+      "summary": "Introduction of Gemini 3.8 Live Extended Thinking."
+    },
     {
       "published_at": "2026-09-14T16:00:00+00:00",
       "source_ids": [
@@ -79,36 +109,17 @@
         "gemini-ca11f5a155cee3a9b930"
       ],
       "summary": "The Gemini app has been released for Windows."
-    },
-    {
-      "published_at": "2026-09-09T16:00:00+00:00",
-      "source_ids": [
-        "gemini-8a1d2f52404f044bff9a"
-      ],
-      "summary": "Gemini is highlighted for its capabilities in streamlining administrative chores."
-    },
-    {
-      "published_at": "2026-09-04T16:00:00+00:00",
-      "source_ids": [
-        "gemini-9ec50e5febe2af86d959"
-      ],
-      "summary": "Lyria 3.5 is now available in the Gemini app."
-    },
-    {
-      "published_at": "2026-09-04T16:00:00+00:00",
-      "source_ids": [
-        "gemini-9ec50e5febe2af86d959"
-      ],
-      "summary": "Lyria 3.5 is now available in the Gemini API."
     }
   ],
   "seen_hashes": [
     "03626549a59abf648ee59163b3b8acbf66c36513cb1e76d6e277bc044c926e30",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
+    "1b78aea5c3a7de7a7f3d82fd60d26c390cbbd186e1964ed55ae0fa4abb6152c4",
     "205edede835e230f47bd9b48c99c2872a996df5ce983d0853dd693ad8122d2e1",
     "25a006db28eb2cb6b57ad593e2de393aff31ddddde30c531cd65191f0a3eb10c",
     "319df7fecd10f82839948a83de55440289ded38a0c05115f792220c51f439f74",
+    "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
@@ -125,22 +136,20 @@
 
 ## Current State
 
-DevFest 2026 has been announced by Google Developer Groups.
+Gemini is expanding its model offerings with the introduction of Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, and is being highlighted for practical applications such as assisting with household chores.
 
 ## Key Facts
 
-- DevFest 2026 is an event organized by Google Developer Groups.
-- The announcement includes an invitation to "Join us!".
-- The event is promoted with an animation featuring text and icons.
-- The announcement was published on September 14, 2026.
+- Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking models have been introduced.
+- Gemini can be utilized to assist with household chores, including providing guidance on how to fix a broken doorknob.
 
 ## Recent Changes
 
+- 2026-09-15T17:00:00+00:00 — Promotion of Gemini's utility for tackling household chores. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
+- 2026-09-15T17:00:00+00:00 — Introduction of Gemini 3.8 Live. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
+- 2026-09-15T17:00:00+00:00 — Introduction of Gemini 3.8 Live Extended Thinking. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 - 2026-09-14T16:00:00+00:00 — Google Developer Groups have announced DevFest 2026. (sources: gemini-fd1baec08311b505543d)
 - 2026-09-10T16:00:00+00:00 — The Gemini app has been released for Windows. (sources: gemini-ca11f5a155cee3a9b930)
-- 2026-09-09T16:00:00+00:00 — Gemini is highlighted for its capabilities in streamlining administrative chores. (sources: gemini-8a1d2f52404f044bff9a)
-- 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini app. (sources: gemini-9ec50e5febe2af86d959)
-- 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini API. (sources: gemini-9ec50e5febe2af86d959)
 
 ## History Log
 
@@ -151,3 +160,4 @@ DevFest 2026 has been announced by Google Developer Groups.
 - 2026-09-09T16:00:00+00:00 — A blog post published on 2026-09-09 by Google's official Gemini blog promotes Gemini's utility for administrative tasks. (sources: gemini-8a1d2f52404f044bff9a)
 - 2026-09-10T16:00:00+00:00 — The Gemini app, which was previously not available on Windows, has now been released for the platform. (sources: gemini-ca11f5a155cee3a9b930)
 - 2026-09-14T16:00:00+00:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (sources: gemini-fd1baec08311b505543d)
+- 2026-09-15T17:00:00+00:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
