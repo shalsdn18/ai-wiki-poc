@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively expanding its initiatives across various sectors, including model safety, user education, advertising, business analytics, and economic research into AI's impact on work.",
+  "current_state": "OpenAI is expanding its offerings in the legal sector with new platforms and tools.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -120,16 +120,37 @@
         "openai-7d2872733a614740ea67"
       ],
       "summary": "OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce."
+    },
+    {
+      "published_at": "2026-09-17T12:00:00+00:00",
+      "source_ids": [
+        "openai-d22acfa5d0cc1d093c4a",
+        "openai-192794312f979cbd50ee"
+      ],
+      "summary": "OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes."
     }
   ],
   "key_facts": [
-    "OpenAI has released a framework for tracking, investigating, and disclosing model misalignment, along with six reports on unexpected model behavior.",
-    "OpenAI and AARP are partnering to offer free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities.",
-    "OpenAI is exploring new AI-powered advertising experiences, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
-    "ChatGPT Work and Codex analytics are available to help teams understand AI usage, spend, identify training needs, and connect adoption to business outcomes.",
-    "New OpenAI Economic Research indicates that workers are using AI beyond traditional roles and integrating new activities into their work."
+    "Cooley developed GO Public using ChatGPT Work to integrate intelligence into the IPO process, helping lawyers identify issues sooner and concentrate their judgment.",
+    "OpenAI for Law, also known as Astra for Law, provides advanced AI capabilities for the legal field, custom firm workflows, integrated legal data sources, and robust controls for confidential client information."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-17T12:00:00+00:00",
+      "source_ids": [
+        "openai-d22acfa5d0cc1d093c4a",
+        "openai-192794312f979cbd50ee"
+      ],
+      "summary": "OpenAI has introduced OpenAI for Law (Astra for Law), a new offering tailored for the legal industry."
+    },
+    {
+      "published_at": "2026-09-17T12:00:00+00:00",
+      "source_ids": [
+        "openai-d22acfa5d0cc1d093c4a",
+        "openai-192794312f979cbd50ee"
+      ],
+      "summary": "Cooley has launched GO Public, an application built with ChatGPT Work to enhance the IPO process."
+    },
     {
       "published_at": "2026-09-16T17:00:00+00:00",
       "source_ids": [
@@ -162,28 +183,6 @@
         "openai-7d2872733a614740ea67"
       ],
       "summary": "OpenAI launched free ChatGPT workshops for older adults in partnership with AARP."
-    },
-    {
-      "published_at": "2026-09-16T17:00:00+00:00",
-      "source_ids": [
-        "openai-f3899afd4d6a0a2de479",
-        "openai-b0366f9850a9d166d4a5",
-        "openai-6ac27c68838b29eeea89",
-        "openai-4410122683c569258d5a",
-        "openai-7d2872733a614740ea67"
-      ],
-      "summary": "OpenAI is developing new AI-powered advertising experiences, such as Sponsored Agents and integrations with HubSpot and Shopify."
-    },
-    {
-      "published_at": "2026-09-16T17:00:00+00:00",
-      "source_ids": [
-        "openai-f3899afd4d6a0a2de479",
-        "openai-b0366f9850a9d166d4a5",
-        "openai-6ac27c68838b29eeea89",
-        "openai-4410122683c569258d5a",
-        "openai-7d2872733a614740ea67"
-      ],
-      "summary": "OpenAI introduced a framework for reporting model misalignment and disclosed six related reports."
     }
   ],
   "seen_hashes": [
@@ -197,6 +196,7 @@
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
+    "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
@@ -222,6 +222,7 @@
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
+    "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
@@ -236,23 +237,20 @@
 
 ## Current State
 
-OpenAI is actively expanding its initiatives across various sectors, including model safety, user education, advertising, business analytics, and economic research into AI's impact on work.
+OpenAI is expanding its offerings in the legal sector with new platforms and tools.
 
 ## Key Facts
 
-- OpenAI has released a framework for tracking, investigating, and disclosing model misalignment, along with six reports on unexpected model behavior.
-- OpenAI and AARP are partnering to offer free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities.
-- OpenAI is exploring new AI-powered advertising experiences, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.
-- ChatGPT Work and Codex analytics are available to help teams understand AI usage, spend, identify training needs, and connect adoption to business outcomes.
-- New OpenAI Economic Research indicates that workers are using AI beyond traditional roles and integrating new activities into their work.
+- Cooley developed GO Public using ChatGPT Work to integrate intelligence into the IPO process, helping lawyers identify issues sooner and concentrate their judgment.
+- OpenAI for Law, also known as Astra for Law, provides advanced AI capabilities for the legal field, custom firm workflows, integrated legal data sources, and robust controls for confidential client information.
 
 ## Recent Changes
 
+- 2026-09-17T12:00:00+00:00 — OpenAI has introduced OpenAI for Law (Astra for Law), a new offering tailored for the legal industry. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
+- 2026-09-17T12:00:00+00:00 — Cooley has launched GO Public, an application built with ChatGPT Work to enhance the IPO process. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
 - 2026-09-16T17:00:00+00:00 — OpenAI published new economic research on how workers are adopting AI for new activities. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 - 2026-09-16T17:00:00+00:00 — OpenAI provides ChatGPT Work and Codex analytics to connect AI usage to business value. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 - 2026-09-16T17:00:00+00:00 — OpenAI launched free ChatGPT workshops for older adults in partnership with AARP. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
-- 2026-09-16T17:00:00+00:00 — OpenAI is developing new AI-powered advertising experiences, such as Sponsored Agents and integrations with HubSpot and Shopify. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
-- 2026-09-16T17:00:00+00:00 — OpenAI introduced a framework for reporting model misalignment and disclosed six related reports. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 
 ## History Log
 
@@ -269,3 +267,4 @@ OpenAI is actively expanding its initiatives across various sectors, including m
 - 2026-09-14T00:00:00+00:00 — OpenAI evolved Habitat from a Python library into a globally distributed storage platform. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
 - 2026-09-14T12:00:00+00:00 — Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice. (sources: openai-7f82d995c515e5ba429e)
 - 2026-09-16T17:00:00+00:00 — OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
+- 2026-09-17T12:00:00+00:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
