@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is expanding its offerings in the legal sector with new platforms and tools.",
+  "current_state": "OpenAI has introduced the Australian Youth Safety Blueprint.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -128,13 +128,28 @@
         "openai-192794312f979cbd50ee"
       ],
       "summary": "OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes."
+    },
+    {
+      "published_at": "2026-09-18T12:00:00+00:00",
+      "source_ids": [
+        "openai-a00923bf4ddda7153647"
+      ],
+      "summary": "This is a new initiative by OpenAI focusing on youth safety in AI."
     }
   ],
   "key_facts": [
-    "Cooley developed GO Public using ChatGPT Work to integrate intelligence into the IPO process, helping lawyers identify issues sooner and concentrate their judgment.",
-    "OpenAI for Law, also known as Astra for Law, provides advanced AI capabilities for the legal field, custom firm workflows, integrated legal data sources, and robust controls for confidential client information."
+    "The Australian Youth Safety Blueprint is a six-pillar roadmap.",
+    "Its purpose is to create safer AI experiences.",
+    "The blueprint aims to protect and empower young people."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-18T12:00:00+00:00",
+      "source_ids": [
+        "openai-a00923bf4ddda7153647"
+      ],
+      "summary": "OpenAI introduced the Australian Youth Safety Blueprint."
+    },
     {
       "published_at": "2026-09-17T12:00:00+00:00",
       "source_ids": [
@@ -172,20 +187,10 @@
         "openai-7d2872733a614740ea67"
       ],
       "summary": "OpenAI provides ChatGPT Work and Codex analytics to connect AI usage to business value."
-    },
-    {
-      "published_at": "2026-09-16T17:00:00+00:00",
-      "source_ids": [
-        "openai-f3899afd4d6a0a2de479",
-        "openai-b0366f9850a9d166d4a5",
-        "openai-6ac27c68838b29eeea89",
-        "openai-4410122683c569258d5a",
-        "openai-7d2872733a614740ea67"
-      ],
-      "summary": "OpenAI launched free ChatGPT workshops for older adults in partnership with AARP."
     }
   ],
   "seen_hashes": [
+    "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
@@ -237,20 +242,21 @@
 
 ## Current State
 
-OpenAI is expanding its offerings in the legal sector with new platforms and tools.
+OpenAI has introduced the Australian Youth Safety Blueprint.
 
 ## Key Facts
 
-- Cooley developed GO Public using ChatGPT Work to integrate intelligence into the IPO process, helping lawyers identify issues sooner and concentrate their judgment.
-- OpenAI for Law, also known as Astra for Law, provides advanced AI capabilities for the legal field, custom firm workflows, integrated legal data sources, and robust controls for confidential client information.
+- The Australian Youth Safety Blueprint is a six-pillar roadmap.
+- Its purpose is to create safer AI experiences.
+- The blueprint aims to protect and empower young people.
 
 ## Recent Changes
 
+- 2026-09-18T12:00:00+00:00 — OpenAI introduced the Australian Youth Safety Blueprint. (sources: openai-a00923bf4ddda7153647)
 - 2026-09-17T12:00:00+00:00 — OpenAI has introduced OpenAI for Law (Astra for Law), a new offering tailored for the legal industry. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
 - 2026-09-17T12:00:00+00:00 — Cooley has launched GO Public, an application built with ChatGPT Work to enhance the IPO process. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
 - 2026-09-16T17:00:00+00:00 — OpenAI published new economic research on how workers are adopting AI for new activities. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 - 2026-09-16T17:00:00+00:00 — OpenAI provides ChatGPT Work and Codex analytics to connect AI usage to business value. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
-- 2026-09-16T17:00:00+00:00 — OpenAI launched free ChatGPT workshops for older adults in partnership with AARP. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 
 ## History Log
 
@@ -268,3 +274,4 @@ OpenAI is expanding its offerings in the legal sector with new platforms and too
 - 2026-09-14T12:00:00+00:00 — Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice. (sources: openai-7f82d995c515e5ba429e)
 - 2026-09-16T17:00:00+00:00 — OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 - 2026-09-17T12:00:00+00:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
+- 2026-09-18T12:00:00+00:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (sources: openai-a00923bf4ddda7153647)
