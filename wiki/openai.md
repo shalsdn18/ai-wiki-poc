@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has introduced the Australian Youth Safety Blueprint.",
+  "current_state": "OpenAI is actively expanding its initiatives across various fronts, including AI safety, practical skill development, and application of its models (GPT-5.6, GPT-6 Astra) by partners, while also establishing advisory groups.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -135,58 +135,81 @@
         "openai-a00923bf4ddda7153647"
       ],
       "summary": "This is a new initiative by OpenAI focusing on youth safety in AI."
+    },
+    {
+      "published_at": "2026-09-21T12:00:00+00:00",
+      "source_ids": [
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
+      ],
+      "summary": "OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data."
     }
   ],
   "key_facts": [
-    "The Australian Youth Safety Blueprint is a six-pillar roadmap.",
-    "Its purpose is to create safer AI experiences.",
-    "The blueprint aims to protect and empower young people."
+    "OpenAI established an independent Advisory Group on Mathematics and AI to guide the review and communication of emerging AI results.",
+    "Higgsfield AI uses GPT-6 Astra to make video ad creation easier for small businesses and bring new creative tools to market faster.",
+    "OpenAI is advocating for shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+    "OpenAI Academy expanded with new learning paths for employees, developers, leaders, educators, and students to build practical AI skills.",
+    "V7 utilizes GPT-5.6 to enable AI agents to use scattered company files as context for complex, source-linked work."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-09-18T12:00:00+00:00",
+      "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
-        "openai-a00923bf4ddda7153647"
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
       ],
-      "summary": "OpenAI introduced the Australian Youth Safety Blueprint."
+      "summary": "V7 implemented GPT-5.6 to give AI agents institutional memory from company files."
     },
     {
-      "published_at": "2026-09-17T12:00:00+00:00",
+      "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
-        "openai-d22acfa5d0cc1d093c4a",
-        "openai-192794312f979cbd50ee"
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
       ],
-      "summary": "OpenAI has introduced OpenAI for Law (Astra for Law), a new offering tailored for the legal industry."
+      "summary": "OpenAI outlined a path to shared global AI standards for safety."
     },
     {
-      "published_at": "2026-09-17T12:00:00+00:00",
+      "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
-        "openai-d22acfa5d0cc1d093c4a",
-        "openai-192794312f979cbd50ee"
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
       ],
-      "summary": "Cooley has launched GO Public, an application built with ChatGPT Work to enhance the IPO process."
+      "summary": "OpenAI formed an independent Advisory Group on Mathematics and AI."
     },
     {
-      "published_at": "2026-09-16T17:00:00+00:00",
+      "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
-        "openai-f3899afd4d6a0a2de479",
-        "openai-b0366f9850a9d166d4a5",
-        "openai-6ac27c68838b29eeea89",
-        "openai-4410122683c569258d5a",
-        "openai-7d2872733a614740ea67"
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
       ],
-      "summary": "OpenAI published new economic research on how workers are adopting AI for new activities."
+      "summary": "OpenAI Academy expanded its learning paths."
     },
     {
-      "published_at": "2026-09-16T17:00:00+00:00",
+      "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
-        "openai-f3899afd4d6a0a2de479",
-        "openai-b0366f9850a9d166d4a5",
-        "openai-6ac27c68838b29eeea89",
-        "openai-4410122683c569258d5a",
-        "openai-7d2872733a614740ea67"
+        "openai-08ffdb24bebd9aa2ffda",
+        "openai-8fe4474fdbb9c4c46a22",
+        "openai-10538c022345675d1abd",
+        "openai-2f8d9b98fc157bb338d3",
+        "openai-d2871d486c61275aa183"
       ],
-      "summary": "OpenAI provides ChatGPT Work and Codex analytics to connect AI usage to business value."
+      "summary": "Higgsfield AI launched new video features with GPT-6 Astra."
     }
   ],
   "seen_hashes": [
@@ -209,6 +232,7 @@
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
+    "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
@@ -220,12 +244,16 @@
     "8ad52c468c36a20b124eafea6c66c151ed1d78f945fd64c94ad0d0931e7a181d",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
+    "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
+    "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
+    "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
+    "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
@@ -242,21 +270,23 @@
 
 ## Current State
 
-OpenAI has introduced the Australian Youth Safety Blueprint.
+OpenAI is actively expanding its initiatives across various fronts, including AI safety, practical skill development, and application of its models (GPT-5.6, GPT-6 Astra) by partners, while also establishing advisory groups.
 
 ## Key Facts
 
-- The Australian Youth Safety Blueprint is a six-pillar roadmap.
-- Its purpose is to create safer AI experiences.
-- The blueprint aims to protect and empower young people.
+- OpenAI established an independent Advisory Group on Mathematics and AI to guide the review and communication of emerging AI results.
+- Higgsfield AI uses GPT-6 Astra to make video ad creation easier for small businesses and bring new creative tools to market faster.
+- OpenAI is advocating for shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.
+- OpenAI Academy expanded with new learning paths for employees, developers, leaders, educators, and students to build practical AI skills.
+- V7 utilizes GPT-5.6 to enable AI agents to use scattered company files as context for complex, source-linked work.
 
 ## Recent Changes
 
-- 2026-09-18T12:00:00+00:00 — OpenAI introduced the Australian Youth Safety Blueprint. (sources: openai-a00923bf4ddda7153647)
-- 2026-09-17T12:00:00+00:00 — OpenAI has introduced OpenAI for Law (Astra for Law), a new offering tailored for the legal industry. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
-- 2026-09-17T12:00:00+00:00 — Cooley has launched GO Public, an application built with ChatGPT Work to enhance the IPO process. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
-- 2026-09-16T17:00:00+00:00 — OpenAI published new economic research on how workers are adopting AI for new activities. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
-- 2026-09-16T17:00:00+00:00 — OpenAI provides ChatGPT Work and Codex analytics to connect AI usage to business value. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
+- 2026-09-21T12:00:00+00:00 — V7 implemented GPT-5.6 to give AI agents institutional memory from company files. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-21T12:00:00+00:00 — OpenAI outlined a path to shared global AI standards for safety. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-21T12:00:00+00:00 — OpenAI formed an independent Advisory Group on Mathematics and AI. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-21T12:00:00+00:00 — OpenAI Academy expanded its learning paths. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-21T12:00:00+00:00 — Higgsfield AI launched new video features with GPT-6 Astra. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
 
 ## History Log
 
@@ -275,3 +305,4 @@ OpenAI has introduced the Australian Youth Safety Blueprint.
 - 2026-09-16T17:00:00+00:00 — OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
 - 2026-09-17T12:00:00+00:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
 - 2026-09-18T12:00:00+00:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (sources: openai-a00923bf4ddda7153647)
+- 2026-09-21T12:00:00+00:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
