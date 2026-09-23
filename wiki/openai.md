@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively expanding its initiatives across various fronts, including AI safety, practical skill development, and application of its models (GPT-5.6, GPT-6 Astra) by partners, while also establishing advisory groups.",
+  "current_state": "OpenAI has introduced new GPT-6 models, Sol and Luna, along with GPT-6 Astra, and enhanced prompt caching for GPT-6, while also publishing principles for third-party AI safety assessments.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -146,16 +146,66 @@
         "openai-d2871d486c61275aa183"
       ],
       "summary": "OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data."
+    },
+    {
+      "published_at": "2026-09-22T21:00:00+00:00",
+      "source_ids": [
+        "openai-f9027d80e820682e90d7",
+        "openai-73461b3e97af0d93277a",
+        "openai-3fcefd9c665fb2c24849",
+        "openai-60efaf744a4d6c2c20e9"
+      ],
+      "summary": "OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards."
     }
   ],
   "key_facts": [
-    "OpenAI established an independent Advisory Group on Mathematics and AI to guide the review and communication of emerging AI results.",
-    "Higgsfield AI uses GPT-6 Astra to make video ad creation easier for small businesses and bring new creative tools to market faster.",
-    "OpenAI is advocating for shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
-    "OpenAI Academy expanded with new learning paths for employees, developers, leaders, educators, and students to build practical AI skills.",
-    "V7 utilizes GPT-5.6 to enable AI agents to use scattered company files as context for complex, source-linked work."
+    "OpenAI introduced GPT-6 Sol and Luna models, offering frontier intelligence with varying capability and cost balances.",
+    "GPT-6 Astra enabled Parallel's agents to halve research time and cost for labor-market data compared to prior models.",
+    "GPT-6 features improved prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls.",
+    "These prompt caching improvements in GPT-6 reduce latency and costs.",
+    "OpenAI outlined priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-22T21:00:00+00:00",
+      "source_ids": [
+        "openai-f9027d80e820682e90d7",
+        "openai-73461b3e97af0d93277a",
+        "openai-3fcefd9c665fb2c24849",
+        "openai-60efaf744a4d6c2c20e9"
+      ],
+      "summary": "OpenAI published priorities and principles for third-party AI safety assessments."
+    },
+    {
+      "published_at": "2026-09-22T21:00:00+00:00",
+      "source_ids": [
+        "openai-f9027d80e820682e90d7",
+        "openai-73461b3e97af0d93277a",
+        "openai-3fcefd9c665fb2c24849",
+        "openai-60efaf744a4d6c2c20e9"
+      ],
+      "summary": "OpenAI introduced GPT-6 Sol and Luna models."
+    },
+    {
+      "published_at": "2026-09-22T21:00:00+00:00",
+      "source_ids": [
+        "openai-f9027d80e820682e90d7",
+        "openai-73461b3e97af0d93277a",
+        "openai-3fcefd9c665fb2c24849",
+        "openai-60efaf744a4d6c2c20e9"
+      ],
+      "summary": "GPT-6 now includes improved prompt caching features."
+    },
+    {
+      "published_at": "2026-09-22T21:00:00+00:00",
+      "source_ids": [
+        "openai-f9027d80e820682e90d7",
+        "openai-73461b3e97af0d93277a",
+        "openai-3fcefd9c665fb2c24849",
+        "openai-60efaf744a4d6c2c20e9"
+      ],
+      "summary": "GPT-6 Astra demonstrated its ability to cut research time and cost in half for labor-market data."
+    },
     {
       "published_at": "2026-09-21T12:00:00+00:00",
       "source_ids": [
@@ -166,50 +216,6 @@
         "openai-d2871d486c61275aa183"
       ],
       "summary": "V7 implemented GPT-5.6 to give AI agents institutional memory from company files."
-    },
-    {
-      "published_at": "2026-09-21T12:00:00+00:00",
-      "source_ids": [
-        "openai-08ffdb24bebd9aa2ffda",
-        "openai-8fe4474fdbb9c4c46a22",
-        "openai-10538c022345675d1abd",
-        "openai-2f8d9b98fc157bb338d3",
-        "openai-d2871d486c61275aa183"
-      ],
-      "summary": "OpenAI outlined a path to shared global AI standards for safety."
-    },
-    {
-      "published_at": "2026-09-21T12:00:00+00:00",
-      "source_ids": [
-        "openai-08ffdb24bebd9aa2ffda",
-        "openai-8fe4474fdbb9c4c46a22",
-        "openai-10538c022345675d1abd",
-        "openai-2f8d9b98fc157bb338d3",
-        "openai-d2871d486c61275aa183"
-      ],
-      "summary": "OpenAI formed an independent Advisory Group on Mathematics and AI."
-    },
-    {
-      "published_at": "2026-09-21T12:00:00+00:00",
-      "source_ids": [
-        "openai-08ffdb24bebd9aa2ffda",
-        "openai-8fe4474fdbb9c4c46a22",
-        "openai-10538c022345675d1abd",
-        "openai-2f8d9b98fc157bb338d3",
-        "openai-d2871d486c61275aa183"
-      ],
-      "summary": "OpenAI Academy expanded its learning paths."
-    },
-    {
-      "published_at": "2026-09-21T12:00:00+00:00",
-      "source_ids": [
-        "openai-08ffdb24bebd9aa2ffda",
-        "openai-8fe4474fdbb9c4c46a22",
-        "openai-10538c022345675d1abd",
-        "openai-2f8d9b98fc157bb338d3",
-        "openai-d2871d486c61275aa183"
-      ],
-      "summary": "Higgsfield AI launched new video features with GPT-6 Astra."
     }
   ],
   "seen_hashes": [
@@ -218,12 +224,15 @@
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
+    "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
     "22bd57692b02f313139613df5f9cdde452bbfd9ab61ef9c081d39ad1e8ed86ac",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
+    "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
+    "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
@@ -256,6 +265,7 @@
     "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
+    "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
@@ -270,23 +280,23 @@
 
 ## Current State
 
-OpenAI is actively expanding its initiatives across various fronts, including AI safety, practical skill development, and application of its models (GPT-5.6, GPT-6 Astra) by partners, while also establishing advisory groups.
+OpenAI has introduced new GPT-6 models, Sol and Luna, along with GPT-6 Astra, and enhanced prompt caching for GPT-6, while also publishing principles for third-party AI safety assessments.
 
 ## Key Facts
 
-- OpenAI established an independent Advisory Group on Mathematics and AI to guide the review and communication of emerging AI results.
-- Higgsfield AI uses GPT-6 Astra to make video ad creation easier for small businesses and bring new creative tools to market faster.
-- OpenAI is advocating for shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.
-- OpenAI Academy expanded with new learning paths for employees, developers, leaders, educators, and students to build practical AI skills.
-- V7 utilizes GPT-5.6 to enable AI agents to use scattered company files as context for complex, source-linked work.
+- OpenAI introduced GPT-6 Sol and Luna models, offering frontier intelligence with varying capability and cost balances.
+- GPT-6 Astra enabled Parallel's agents to halve research time and cost for labor-market data compared to prior models.
+- GPT-6 features improved prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls.
+- These prompt caching improvements in GPT-6 reduce latency and costs.
+- OpenAI outlined priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards.
 
 ## Recent Changes
 
+- 2026-09-22T21:00:00+00:00 — OpenAI published priorities and principles for third-party AI safety assessments. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
+- 2026-09-22T21:00:00+00:00 — OpenAI introduced GPT-6 Sol and Luna models. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
+- 2026-09-22T21:00:00+00:00 — GPT-6 now includes improved prompt caching features. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
+- 2026-09-22T21:00:00+00:00 — GPT-6 Astra demonstrated its ability to cut research time and cost in half for labor-market data. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
 - 2026-09-21T12:00:00+00:00 — V7 implemented GPT-5.6 to give AI agents institutional memory from company files. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
-- 2026-09-21T12:00:00+00:00 — OpenAI outlined a path to shared global AI standards for safety. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
-- 2026-09-21T12:00:00+00:00 — OpenAI formed an independent Advisory Group on Mathematics and AI. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
-- 2026-09-21T12:00:00+00:00 — OpenAI Academy expanded its learning paths. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
-- 2026-09-21T12:00:00+00:00 — Higgsfield AI launched new video features with GPT-6 Astra. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
 
 ## History Log
 
@@ -306,3 +316,4 @@ OpenAI is actively expanding its initiatives across various fronts, including AI
 - 2026-09-17T12:00:00+00:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
 - 2026-09-18T12:00:00+00:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (sources: openai-a00923bf4ddda7153647)
 - 2026-09-21T12:00:00+00:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-22T21:00:00+00:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
