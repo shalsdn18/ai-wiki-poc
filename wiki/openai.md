@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has introduced new GPT-6 models, Sol and Luna, along with GPT-6 Astra, and enhanced prompt caching for GPT-6, while also publishing principles for third-party AI safety assessments.",
+  "current_state": "OpenAI is engaged in multiple activities, including celebrating the two-year anniversary of its Academy, extending cyber defense support to Ukraine, and its CEO addressing the UN Security Council on AI safety. Furthermore, new applications of GPT-6 Astra are emerging in the legal and video editing sectors.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -156,66 +156,81 @@
         "openai-60efaf744a4d6c2c20e9"
       ],
       "summary": "OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards."
+    },
+    {
+      "published_at": "2026-09-23T16:00:00+00:00",
+      "source_ids": [
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
+      ],
+      "summary": "On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements."
     }
   ],
   "key_facts": [
-    "OpenAI introduced GPT-6 Sol and Luna models, offering frontier intelligence with varying capability and cost balances.",
-    "GPT-6 Astra enabled Parallel's agents to halve research time and cost for labor-market data compared to prior models.",
-    "GPT-6 features improved prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls.",
-    "These prompt caching improvements in GPT-6 reduce latency and costs.",
-    "OpenAI outlined priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards."
+    "OpenAI Academy has reached its two-year milestone, expanding AI skills to more communities.",
+    "OpenAI extended access to its Daybreak program to the Government of Ukraine for cyber defense of civilian infrastructure.",
+    "OpenAI CEO Sam Altman delivered remarks to the United Nations Security Council, discussing AI safety, human control, and international cooperation.",
+    "Harvey is utilizing GPT-6 Astra to produce more structured and context-aware legal documents.",
+    "invideo is using GPT-6 Astra to improve color correction and grading threefold and produce 50 custom effects in one day."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-09-22T21:00:00+00:00",
+      "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
-        "openai-f9027d80e820682e90d7",
-        "openai-73461b3e97af0d93277a",
-        "openai-3fcefd9c665fb2c24849",
-        "openai-60efaf744a4d6c2c20e9"
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
       ],
-      "summary": "OpenAI published priorities and principles for third-party AI safety assessments."
+      "summary": "Sam Altman addressed the UN Security Council."
     },
     {
-      "published_at": "2026-09-22T21:00:00+00:00",
+      "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
-        "openai-f9027d80e820682e90d7",
-        "openai-73461b3e97af0d93277a",
-        "openai-3fcefd9c665fb2c24849",
-        "openai-60efaf744a4d6c2c20e9"
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
       ],
-      "summary": "OpenAI introduced GPT-6 Sol and Luna models."
+      "summary": "OpenAI extended its Daybreak program access to Ukraine."
     },
     {
-      "published_at": "2026-09-22T21:00:00+00:00",
+      "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
-        "openai-f9027d80e820682e90d7",
-        "openai-73461b3e97af0d93277a",
-        "openai-3fcefd9c665fb2c24849",
-        "openai-60efaf744a4d6c2c20e9"
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
       ],
-      "summary": "GPT-6 now includes improved prompt caching features."
+      "summary": "OpenAI Academy marked its second anniversary."
     },
     {
-      "published_at": "2026-09-22T21:00:00+00:00",
+      "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
-        "openai-f9027d80e820682e90d7",
-        "openai-73461b3e97af0d93277a",
-        "openai-3fcefd9c665fb2c24849",
-        "openai-60efaf744a4d6c2c20e9"
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
       ],
-      "summary": "GPT-6 Astra demonstrated its ability to cut research time and cost in half for labor-market data."
+      "summary": "GPT-6 Astra is now being used by invideo for video editing enhancements."
     },
     {
-      "published_at": "2026-09-21T12:00:00+00:00",
+      "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
-        "openai-08ffdb24bebd9aa2ffda",
-        "openai-8fe4474fdbb9c4c46a22",
-        "openai-10538c022345675d1abd",
-        "openai-2f8d9b98fc157bb338d3",
-        "openai-d2871d486c61275aa183"
+        "openai-52e46e8371e1f69996c0",
+        "openai-9328fa400dd37e6b9e77",
+        "openai-347b65ce144a221e189c",
+        "openai-52b80abd4e046c041ffb",
+        "openai-f2ff7f76056120414cf0"
       ],
-      "summary": "V7 implemented GPT-5.6 to give AI agents institutional memory from company files."
+      "summary": "GPT-6 Astra is now being used by Harvey for legal document creation."
     }
   ],
   "seen_hashes": [
@@ -231,8 +246,10 @@
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
+    "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
+    "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
@@ -241,6 +258,7 @@
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
+    "65322153b065b705eb6e93782347927c97a5bd1bb3bf0c44d476a4ef9322e8af",
     "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
@@ -262,6 +280,8 @@
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
+    "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
+    "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
     "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
@@ -280,23 +300,23 @@
 
 ## Current State
 
-OpenAI has introduced new GPT-6 models, Sol and Luna, along with GPT-6 Astra, and enhanced prompt caching for GPT-6, while also publishing principles for third-party AI safety assessments.
+OpenAI is engaged in multiple activities, including celebrating the two-year anniversary of its Academy, extending cyber defense support to Ukraine, and its CEO addressing the UN Security Council on AI safety. Furthermore, new applications of GPT-6 Astra are emerging in the legal and video editing sectors.
 
 ## Key Facts
 
-- OpenAI introduced GPT-6 Sol and Luna models, offering frontier intelligence with varying capability and cost balances.
-- GPT-6 Astra enabled Parallel's agents to halve research time and cost for labor-market data compared to prior models.
-- GPT-6 features improved prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls.
-- These prompt caching improvements in GPT-6 reduce latency and costs.
-- OpenAI outlined priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards.
+- OpenAI Academy has reached its two-year milestone, expanding AI skills to more communities.
+- OpenAI extended access to its Daybreak program to the Government of Ukraine for cyber defense of civilian infrastructure.
+- OpenAI CEO Sam Altman delivered remarks to the United Nations Security Council, discussing AI safety, human control, and international cooperation.
+- Harvey is utilizing GPT-6 Astra to produce more structured and context-aware legal documents.
+- invideo is using GPT-6 Astra to improve color correction and grading threefold and produce 50 custom effects in one day.
 
 ## Recent Changes
 
-- 2026-09-22T21:00:00+00:00 — OpenAI published priorities and principles for third-party AI safety assessments. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
-- 2026-09-22T21:00:00+00:00 — OpenAI introduced GPT-6 Sol and Luna models. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
-- 2026-09-22T21:00:00+00:00 — GPT-6 now includes improved prompt caching features. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
-- 2026-09-22T21:00:00+00:00 — GPT-6 Astra demonstrated its ability to cut research time and cost in half for labor-market data. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
-- 2026-09-21T12:00:00+00:00 — V7 implemented GPT-5.6 to give AI agents institutional memory from company files. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026-09-23T16:00:00+00:00 — Sam Altman addressed the UN Security Council. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026-09-23T16:00:00+00:00 — OpenAI extended its Daybreak program access to Ukraine. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026-09-23T16:00:00+00:00 — OpenAI Academy marked its second anniversary. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026-09-23T16:00:00+00:00 — GPT-6 Astra is now being used by invideo for video editing enhancements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026-09-23T16:00:00+00:00 — GPT-6 Astra is now being used by Harvey for legal document creation. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 
 ## History Log
 
@@ -317,3 +337,4 @@ OpenAI has introduced new GPT-6 models, Sol and Luna, along with GPT-6 Astra, an
 - 2026-09-18T12:00:00+00:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (sources: openai-a00923bf4ddda7153647)
 - 2026-09-21T12:00:00+00:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
 - 2026-09-22T21:00:00+00:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
+- 2026-09-23T16:00:00+00:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
