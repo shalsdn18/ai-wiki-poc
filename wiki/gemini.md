@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini is expanding its capabilities with new Connected Apps and new text-to-speech models.",
+  "current_state": "Gemini 3.8 Live with Live Avatar has been introduced.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -73,14 +73,26 @@
         "gemini-c99106a5c97c0f2896ac"
       ],
       "summary": "Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities."
+    },
+    {
+      "published_at": "2026-09-24T15:30:00+00:00",
+      "source_ids": [
+        "gemini-ca359f02283ba7260ef5"
+      ],
+      "summary": "This source announces the introduction of Gemini 3.8 Live with Live Avatar."
     }
   ],
   "key_facts": [
-    "Gemini is adding new Connected Apps.",
-    "New Connected Apps include Adobe, Airtable, Linear, and Peloton.",
-    "Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS."
+    "Gemini 3.8 Live with Live Avatar is being introduced."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-24T15:30:00+00:00",
+      "source_ids": [
+        "gemini-ca359f02283ba7260ef5"
+      ],
+      "summary": "The introduction of Gemini 3.8 Live with Live Avatar."
+    },
     {
       "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
@@ -112,14 +124,6 @@
         "gemini-72b56895324eb8ab7790"
       ],
       "summary": "Introduction of Gemini 3.8 Live."
-    },
-    {
-      "published_at": "2026-09-15T17:00:00+00:00",
-      "source_ids": [
-        "gemini-25823e681aab7b46b522",
-        "gemini-72b56895324eb8ab7790"
-      ],
-      "summary": "Introduction of Gemini 3.8 Live Extended Thinking."
     }
   ],
   "seen_hashes": [
@@ -139,6 +143,7 @@
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
+    "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2"
   ]
@@ -149,21 +154,19 @@
 
 ## Current State
 
-Gemini is expanding its capabilities with new Connected Apps and new text-to-speech models.
+Gemini 3.8 Live with Live Avatar has been introduced.
 
 ## Key Facts
 
-- Gemini is adding new Connected Apps.
-- New Connected Apps include Adobe, Airtable, Linear, and Peloton.
-- Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS.
+- Gemini 3.8 Live with Live Avatar is being introduced.
 
 ## Recent Changes
 
+- 2026-09-24T15:30:00+00:00 — The introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
 - 2026-09-23T16:00:00+00:00 — New Connected Apps are rolling out to Gemini, including Adobe, Airtable, Linear, and Peloton. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 - 2026-09-23T16:00:00+00:00 — Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 - 2026-09-15T17:00:00+00:00 — Promotion of Gemini's utility for tackling household chores. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 - 2026-09-15T17:00:00+00:00 — Introduction of Gemini 3.8 Live. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
-- 2026-09-15T17:00:00+00:00 — Introduction of Gemini 3.8 Live Extended Thinking. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 
 ## History Log
 
@@ -176,3 +179,4 @@ Gemini is expanding its capabilities with new Connected Apps and new text-to-spe
 - 2026-09-14T16:00:00+00:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (sources: gemini-fd1baec08311b505543d)
 - 2026-09-15T17:00:00+00:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 - 2026-09-23T16:00:00+00:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
+- 2026-09-24T15:30:00+00:00 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
