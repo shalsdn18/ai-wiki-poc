@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is engaged in multiple activities, including celebrating the two-year anniversary of its Academy, extending cyber defense support to Ukraine, and its CEO addressing the UN Security Council on AI safety. Furthermore, new applications of GPT-6 Astra are emerging in the legal and video editing sectors.",
+  "current_state": "Proaction utilizes Codex, GPT-Live-1, and GPT-6 Astra to build, operate, and sell modern fleet management solutions.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -167,16 +167,42 @@
         "openai-f2ff7f76056120414cf0"
       ],
       "summary": "On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements."
+    },
+    {
+      "published_at": "2026-09-25T19:00:00+00:00",
+      "source_ids": [
+        "openai-9de028fbe46cac8b155a"
+      ],
+      "summary": "Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency."
     }
   ],
   "key_facts": [
-    "OpenAI Academy has reached its two-year milestone, expanding AI skills to more communities.",
-    "OpenAI extended access to its Daybreak program to the Government of Ukraine for cyber defense of civilian infrastructure.",
-    "OpenAI CEO Sam Altman delivered remarks to the United Nations Security Council, discussing AI safety, human control, and international cooperation.",
-    "Harvey is utilizing GPT-6 Astra to produce more structured and context-aware legal documents.",
-    "invideo is using GPT-6 Astra to improve color correction and grading threefold and produce 50 custom effects in one day."
+    "Proaction has boosted sales by 60% with the help of Codex, GPT-Live-1, and GPT-6 Astra.",
+    "Proaction has saved over 75 hours by using Codex, GPT-Live-1, and GPT-6 Astra.",
+    "The adoption of these technologies enables Proaction to manage fleet operations faster."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-25T19:00:00+00:00",
+      "source_ids": [
+        "openai-9de028fbe46cac8b155a"
+      ],
+      "summary": "Proaction has realized savings of more than 75 hours."
+    },
+    {
+      "published_at": "2026-09-25T19:00:00+00:00",
+      "source_ids": [
+        "openai-9de028fbe46cac8b155a"
+      ],
+      "summary": "Proaction has implemented Codex, GPT-Live-1, and GPT-6 Astra into its operations."
+    },
+    {
+      "published_at": "2026-09-25T19:00:00+00:00",
+      "source_ids": [
+        "openai-9de028fbe46cac8b155a"
+      ],
+      "summary": "Proaction has achieved a 60% increase in sales."
+    },
     {
       "published_at": "2026-09-23T16:00:00+00:00",
       "source_ids": [
@@ -198,39 +224,6 @@
         "openai-f2ff7f76056120414cf0"
       ],
       "summary": "OpenAI extended its Daybreak program access to Ukraine."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "openai-52e46e8371e1f69996c0",
-        "openai-9328fa400dd37e6b9e77",
-        "openai-347b65ce144a221e189c",
-        "openai-52b80abd4e046c041ffb",
-        "openai-f2ff7f76056120414cf0"
-      ],
-      "summary": "OpenAI Academy marked its second anniversary."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "openai-52e46e8371e1f69996c0",
-        "openai-9328fa400dd37e6b9e77",
-        "openai-347b65ce144a221e189c",
-        "openai-52b80abd4e046c041ffb",
-        "openai-f2ff7f76056120414cf0"
-      ],
-      "summary": "GPT-6 Astra is now being used by invideo for video editing enhancements."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "openai-52e46e8371e1f69996c0",
-        "openai-9328fa400dd37e6b9e77",
-        "openai-347b65ce144a221e189c",
-        "openai-52b80abd4e046c041ffb",
-        "openai-f2ff7f76056120414cf0"
-      ],
-      "summary": "GPT-6 Astra is now being used by Harvey for legal document creation."
     }
   ],
   "seen_hashes": [
@@ -265,6 +258,7 @@
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "7a3b160516d339624806bb902f8da225cabf550e6a464a5e11f3db58fad4fc7d",
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
+    "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
     "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
@@ -300,23 +294,21 @@
 
 ## Current State
 
-OpenAI is engaged in multiple activities, including celebrating the two-year anniversary of its Academy, extending cyber defense support to Ukraine, and its CEO addressing the UN Security Council on AI safety. Furthermore, new applications of GPT-6 Astra are emerging in the legal and video editing sectors.
+Proaction utilizes Codex, GPT-Live-1, and GPT-6 Astra to build, operate, and sell modern fleet management solutions.
 
 ## Key Facts
 
-- OpenAI Academy has reached its two-year milestone, expanding AI skills to more communities.
-- OpenAI extended access to its Daybreak program to the Government of Ukraine for cyber defense of civilian infrastructure.
-- OpenAI CEO Sam Altman delivered remarks to the United Nations Security Council, discussing AI safety, human control, and international cooperation.
-- Harvey is utilizing GPT-6 Astra to produce more structured and context-aware legal documents.
-- invideo is using GPT-6 Astra to improve color correction and grading threefold and produce 50 custom effects in one day.
+- Proaction has boosted sales by 60% with the help of Codex, GPT-Live-1, and GPT-6 Astra.
+- Proaction has saved over 75 hours by using Codex, GPT-Live-1, and GPT-6 Astra.
+- The adoption of these technologies enables Proaction to manage fleet operations faster.
 
 ## Recent Changes
 
+- 2026-09-25T19:00:00+00:00 — Proaction has realized savings of more than 75 hours. (sources: openai-9de028fbe46cac8b155a)
+- 2026-09-25T19:00:00+00:00 — Proaction has implemented Codex, GPT-Live-1, and GPT-6 Astra into its operations. (sources: openai-9de028fbe46cac8b155a)
+- 2026-09-25T19:00:00+00:00 — Proaction has achieved a 60% increase in sales. (sources: openai-9de028fbe46cac8b155a)
 - 2026-09-23T16:00:00+00:00 — Sam Altman addressed the UN Security Council. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 - 2026-09-23T16:00:00+00:00 — OpenAI extended its Daybreak program access to Ukraine. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
-- 2026-09-23T16:00:00+00:00 — OpenAI Academy marked its second anniversary. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
-- 2026-09-23T16:00:00+00:00 — GPT-6 Astra is now being used by invideo for video editing enhancements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
-- 2026-09-23T16:00:00+00:00 — GPT-6 Astra is now being used by Harvey for legal document creation. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 
 ## History Log
 
@@ -338,3 +330,4 @@ OpenAI is engaged in multiple activities, including celebrating the two-year ann
 - 2026-09-21T12:00:00+00:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
 - 2026-09-22T21:00:00+00:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
 - 2026-09-23T16:00:00+00:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026-09-25T19:00:00+00:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (sources: openai-9de028fbe46cac8b155a)
