@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Proaction utilizes Codex, GPT-Live-1, and GPT-6 Astra to build, operate, and sell modern fleet management solutions.",
+  "current_state": "OpenAI has issued an apology for incidents involving Australian government websites and committed to strengthening Australia's cyber defenses. The company is also expanding the Lenfest AI Collaborative and Fellowship Program with significant funding and support. Additionally, OpenAI is seeking new participants for its Codex Originals program and has showcased GPT-6 Astra's improved performance in completing a tax workbook.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -174,56 +174,73 @@
         "openai-9de028fbe46cac8b155a"
       ],
       "summary": "Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency."
+    },
+    {
+      "published_at": "2026-09-28T19:00:00+00:00",
+      "source_ids": [
+        "openai-50d71cd52400f551c336",
+        "openai-0adf5bb2a473897d1252",
+        "openai-833e9419a34f8836dc9d",
+        "openai-eb674100bb687fff7643"
+      ],
+      "summary": "OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement."
     }
   ],
   "key_facts": [
-    "Proaction has boosted sales by 60% with the help of Codex, GPT-Live-1, and GPT-6 Astra.",
-    "Proaction has saved over 75 hours by using Codex, GPT-Live-1, and GPT-6 Astra.",
-    "The adoption of these technologies enables Proaction to manage fleet operations faster."
+    "OpenAI apologized for incidents involving Australian government websites.",
+    "OpenAI will provide stronger safeguards and support to strengthen Australia’s cyber defences.",
+    "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+    "OpenAI is collecting stories from users of Codex for the next chapter of the Codex Originals program.",
+    "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol.",
+    "GPT-6 Astra demonstrates a stronger understanding of user intent, increasing confidence in its real-world use."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-28T19:00:00+00:00",
+      "source_ids": [
+        "openai-50d71cd52400f551c336",
+        "openai-0adf5bb2a473897d1252",
+        "openai-833e9419a34f8836dc9d",
+        "openai-eb674100bb687fff7643"
+      ],
+      "summary": "The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI."
+    },
+    {
+      "published_at": "2026-09-28T19:00:00+00:00",
+      "source_ids": [
+        "openai-50d71cd52400f551c336",
+        "openai-0adf5bb2a473897d1252",
+        "openai-833e9419a34f8836dc9d",
+        "openai-eb674100bb687fff7643"
+      ],
+      "summary": "OpenAI is outlining stronger safeguards and support to strengthen Australia’s cyber defences."
+    },
+    {
+      "published_at": "2026-09-28T19:00:00+00:00",
+      "source_ids": [
+        "openai-50d71cd52400f551c336",
+        "openai-0adf5bb2a473897d1252",
+        "openai-833e9419a34f8836dc9d",
+        "openai-eb674100bb687fff7643"
+      ],
+      "summary": "OpenAI is actively seeking new participants for the Codex Originals program."
+    },
+    {
+      "published_at": "2026-09-28T19:00:00+00:00",
+      "source_ids": [
+        "openai-50d71cd52400f551c336",
+        "openai-0adf5bb2a473897d1252",
+        "openai-833e9419a34f8836dc9d",
+        "openai-eb674100bb687fff7643"
+      ],
+      "summary": "GPT-6 Astra has demonstrated significant performance improvements and better user intent understanding compared to GPT-5.6 Sol."
+    },
     {
       "published_at": "2026-09-25T19:00:00+00:00",
       "source_ids": [
         "openai-9de028fbe46cac8b155a"
       ],
       "summary": "Proaction has realized savings of more than 75 hours."
-    },
-    {
-      "published_at": "2026-09-25T19:00:00+00:00",
-      "source_ids": [
-        "openai-9de028fbe46cac8b155a"
-      ],
-      "summary": "Proaction has implemented Codex, GPT-Live-1, and GPT-6 Astra into its operations."
-    },
-    {
-      "published_at": "2026-09-25T19:00:00+00:00",
-      "source_ids": [
-        "openai-9de028fbe46cac8b155a"
-      ],
-      "summary": "Proaction has achieved a 60% increase in sales."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "openai-52e46e8371e1f69996c0",
-        "openai-9328fa400dd37e6b9e77",
-        "openai-347b65ce144a221e189c",
-        "openai-52b80abd4e046c041ffb",
-        "openai-f2ff7f76056120414cf0"
-      ],
-      "summary": "Sam Altman addressed the UN Security Council."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "openai-52e46e8371e1f69996c0",
-        "openai-9328fa400dd37e6b9e77",
-        "openai-347b65ce144a221e189c",
-        "openai-52b80abd4e046c041ffb",
-        "openai-f2ff7f76056120414cf0"
-      ],
-      "summary": "OpenAI extended its Daybreak program access to Ukraine."
     }
   ],
   "seen_hashes": [
@@ -238,6 +255,8 @@
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
+    "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
+    "37ee240f0bfaeb80acf714fc33f5801f6a7147b42d541406a2649ea503f862c9",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
@@ -283,9 +302,11 @@
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
+    "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
-    "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882"
+    "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
+    "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277"
   ]
 }
 ---
@@ -294,21 +315,24 @@
 
 ## Current State
 
-Proaction utilizes Codex, GPT-Live-1, and GPT-6 Astra to build, operate, and sell modern fleet management solutions.
+OpenAI has issued an apology for incidents involving Australian government websites and committed to strengthening Australia's cyber defenses. The company is also expanding the Lenfest AI Collaborative and Fellowship Program with significant funding and support. Additionally, OpenAI is seeking new participants for its Codex Originals program and has showcased GPT-6 Astra's improved performance in completing a tax workbook.
 
 ## Key Facts
 
-- Proaction has boosted sales by 60% with the help of Codex, GPT-Live-1, and GPT-6 Astra.
-- Proaction has saved over 75 hours by using Codex, GPT-Live-1, and GPT-6 Astra.
-- The adoption of these technologies enables Proaction to manage fleet operations faster.
+- OpenAI apologized for incidents involving Australian government websites.
+- OpenAI will provide stronger safeguards and support to strengthen Australia’s cyber defences.
+- OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.
+- OpenAI is collecting stories from users of Codex for the next chapter of the Codex Originals program.
+- GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol.
+- GPT-6 Astra demonstrates a stronger understanding of user intent, increasing confidence in its real-world use.
 
 ## Recent Changes
 
+- 2026-09-28T19:00:00+00:00 — The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026-09-28T19:00:00+00:00 — OpenAI is outlining stronger safeguards and support to strengthen Australia’s cyber defences. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026-09-28T19:00:00+00:00 — OpenAI is actively seeking new participants for the Codex Originals program. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026-09-28T19:00:00+00:00 — GPT-6 Astra has demonstrated significant performance improvements and better user intent understanding compared to GPT-5.6 Sol. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
 - 2026-09-25T19:00:00+00:00 — Proaction has realized savings of more than 75 hours. (sources: openai-9de028fbe46cac8b155a)
-- 2026-09-25T19:00:00+00:00 — Proaction has implemented Codex, GPT-Live-1, and GPT-6 Astra into its operations. (sources: openai-9de028fbe46cac8b155a)
-- 2026-09-25T19:00:00+00:00 — Proaction has achieved a 60% increase in sales. (sources: openai-9de028fbe46cac8b155a)
-- 2026-09-23T16:00:00+00:00 — Sam Altman addressed the UN Security Council. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
-- 2026-09-23T16:00:00+00:00 — OpenAI extended its Daybreak program access to Ukraine. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 
 ## History Log
 
@@ -331,3 +355,4 @@ Proaction utilizes Codex, GPT-Live-1, and GPT-6 Astra to build, operate, and sel
 - 2026-09-22T21:00:00+00:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
 - 2026-09-23T16:00:00+00:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 - 2026-09-25T19:00:00+00:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (sources: openai-9de028fbe46cac8b155a)
+- 2026-09-28T19:00:00+00:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)

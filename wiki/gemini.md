@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini 3.8 Live with Live Avatar has been introduced.",
+  "current_state": "Gemini is being utilized by developers for digital 3D visualization projects and by a grocer for catering services.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -80,12 +80,37 @@
         "gemini-ca359f02283ba7260ef5"
       ],
       "summary": "This source announces the introduction of Gemini 3.8 Live with Live Avatar."
+    },
+    {
+      "published_at": "2026-09-28T16:00:00+00:00",
+      "source_ids": [
+        "gemini-5c384dea4f4cf7660e99",
+        "gemini-61017449abab71d17b6d"
+      ],
+      "summary": "Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services."
     }
   ],
   "key_facts": [
-    "Gemini 3.8 Live with Live Avatar is being introduced."
+    "Gemini 3.8 Flash is used by builders for digital 3D visualization projects, such as globe satellite maps, dinosaur skeleton models, and mechanical transmission diagrams.",
+    "Edy's Grocer uses Gemini to cater for 200 guests."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-28T16:00:00+00:00",
+      "source_ids": [
+        "gemini-5c384dea4f4cf7660e99",
+        "gemini-61017449abab71d17b6d"
+      ],
+      "summary": "Edy's Grocer is using Gemini for catering services for 200 guests."
+    },
+    {
+      "published_at": "2026-09-28T16:00:00+00:00",
+      "source_ids": [
+        "gemini-5c384dea4f4cf7660e99",
+        "gemini-61017449abab71d17b6d"
+      ],
+      "summary": "Builders are creating digital 3D visualization projects with Gemini 3.8 Flash."
+    },
     {
       "published_at": "2026-09-24T15:30:00+00:00",
       "source_ids": [
@@ -108,22 +133,6 @@
         "gemini-c99106a5c97c0f2896ac"
       ],
       "summary": "Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS."
-    },
-    {
-      "published_at": "2026-09-15T17:00:00+00:00",
-      "source_ids": [
-        "gemini-25823e681aab7b46b522",
-        "gemini-72b56895324eb8ab7790"
-      ],
-      "summary": "Promotion of Gemini's utility for tackling household chores."
-    },
-    {
-      "published_at": "2026-09-15T17:00:00+00:00",
-      "source_ids": [
-        "gemini-25823e681aab7b46b522",
-        "gemini-72b56895324eb8ab7790"
-      ],
-      "summary": "Introduction of Gemini 3.8 Live."
     }
   ],
   "seen_hashes": [
@@ -132,10 +141,12 @@
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
     "1b78aea5c3a7de7a7f3d82fd60d26c390cbbd186e1964ed55ae0fa4abb6152c4",
     "205edede835e230f47bd9b48c99c2872a996df5ce983d0853dd693ad8122d2e1",
+    "232ac1ecf683baf142febc1f331fb5ee1760f425f41e8c832357a01a5acbf6f2",
     "25a006db28eb2cb6b57ad593e2de393aff31ddddde30c531cd65191f0a3eb10c",
     "319df7fecd10f82839948a83de55440289ded38a0c05115f792220c51f439f74",
     "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
+    "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
@@ -154,19 +165,20 @@
 
 ## Current State
 
-Gemini 3.8 Live with Live Avatar has been introduced.
+Gemini is being utilized by developers for digital 3D visualization projects and by a grocer for catering services.
 
 ## Key Facts
 
-- Gemini 3.8 Live with Live Avatar is being introduced.
+- Gemini 3.8 Flash is used by builders for digital 3D visualization projects, such as globe satellite maps, dinosaur skeleton models, and mechanical transmission diagrams.
+- Edy's Grocer uses Gemini to cater for 200 guests.
 
 ## Recent Changes
 
+- 2026-09-28T16:00:00+00:00 — Edy's Grocer is using Gemini for catering services for 200 guests. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
+- 2026-09-28T16:00:00+00:00 — Builders are creating digital 3D visualization projects with Gemini 3.8 Flash. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
 - 2026-09-24T15:30:00+00:00 — The introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
 - 2026-09-23T16:00:00+00:00 — New Connected Apps are rolling out to Gemini, including Adobe, Airtable, Linear, and Peloton. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 - 2026-09-23T16:00:00+00:00 — Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
-- 2026-09-15T17:00:00+00:00 — Promotion of Gemini's utility for tackling household chores. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
-- 2026-09-15T17:00:00+00:00 — Introduction of Gemini 3.8 Live. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 
 ## History Log
 
@@ -180,3 +192,4 @@ Gemini 3.8 Live with Live Avatar has been introduced.
 - 2026-09-15T17:00:00+00:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
 - 2026-09-23T16:00:00+00:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 - 2026-09-24T15:30:00+00:00 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
+- 2026-09-28T16:00:00+00:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
