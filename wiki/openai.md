@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has issued an apology for incidents involving Australian government websites and committed to strengthening Australia's cyber defenses. The company is also expanding the Lenfest AI Collaborative and Fellowship Program with significant funding and support. Additionally, OpenAI is seeking new participants for its Codex Originals program and has showcased GPT-6 Astra's improved performance in completing a tax workbook.",
+  "current_state": "OpenAI has recently announced several significant updates, including the introduction of new AI models like GPT-6.1 Sol and GPT-6 Astra, the launch of proactive AI assistants called \"dots,\" and the publication of early guidelines for safety cases in frontier AI training. These announcements were largely made around DevDay 2026.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -184,17 +184,66 @@
         "openai-eb674100bb687fff7643"
       ],
       "summary": "OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement."
+    },
+    {
+      "published_at": "2026-09-29T10:00:00+00:00",
+      "source_ids": [
+        "openai-d6b9f5e651b1891e950e",
+        "openai-6071f63e21f6425413eb",
+        "openai-dec620cb7225d2434a9b",
+        "openai-2fc54b690d7b20a2e143"
+      ],
+      "summary": "OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called \"dots.\" Concurrently, the company also published early guidelines for ensuring safety in frontier AI training."
     }
   ],
   "key_facts": [
-    "OpenAI apologized for incidents involving Australian government websites.",
-    "OpenAI will provide stronger safeguards and support to strengthen Australia’s cyber defences.",
-    "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
-    "OpenAI is collecting stories from users of Codex for the next chapter of the Codex Originals program.",
-    "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol.",
-    "GPT-6 Astra demonstrates a stronger understanding of user intent, increasing confidence in its real-world use."
+    "GPT-6.1 Sol offers near-Astra intelligence for coding, computer use, and professional work.",
+    "GPT-6.1 Sol is priced at one-fifth of Astra's standard API input and output token prices.",
+    "OpenAI DevDay 2026 featured over 20 announcements, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
+    "Dots by OpenAI are proactive assistants designed to work across complex projects and everyday tasks.",
+    "OpenAI released early guidelines for safety cases in frontier AI training, covering technical safeguards, operational practices, and investigating misalignment incidents."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-09-29T10:00:00+00:00",
+      "source_ids": [
+        "openai-d6b9f5e651b1891e950e",
+        "openai-6071f63e21f6425413eb",
+        "openai-dec620cb7225d2434a9b",
+        "openai-2fc54b690d7b20a2e143"
+      ],
+      "summary": "Release of early guidelines for safety cases in frontier AI training."
+    },
+    {
+      "published_at": "2026-09-29T10:00:00+00:00",
+      "source_ids": [
+        "openai-d6b9f5e651b1891e950e",
+        "openai-6071f63e21f6425413eb",
+        "openai-dec620cb7225d2434a9b",
+        "openai-2fc54b690d7b20a2e143"
+      ],
+      "summary": "Introduction of GPT-6.1 Sol, a new AI model."
+    },
+    {
+      "published_at": "2026-09-29T10:00:00+00:00",
+      "source_ids": [
+        "openai-d6b9f5e651b1891e950e",
+        "openai-6071f63e21f6425413eb",
+        "openai-dec620cb7225d2434a9b",
+        "openai-2fc54b690d7b20a2e143"
+      ],
+      "summary": "Introduction of \"dots,\" proactive AI assistants."
+    },
+    {
+      "published_at": "2026-09-29T10:00:00+00:00",
+      "source_ids": [
+        "openai-d6b9f5e651b1891e950e",
+        "openai-6071f63e21f6425413eb",
+        "openai-dec620cb7225d2434a9b",
+        "openai-2fc54b690d7b20a2e143"
+      ],
+      "summary": "Announcement of GPT-6 Astra and other updates at DevDay 2026."
+    },
     {
       "published_at": "2026-09-28T19:00:00+00:00",
       "source_ids": [
@@ -204,49 +253,13 @@
         "openai-eb674100bb687fff7643"
       ],
       "summary": "The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI."
-    },
-    {
-      "published_at": "2026-09-28T19:00:00+00:00",
-      "source_ids": [
-        "openai-50d71cd52400f551c336",
-        "openai-0adf5bb2a473897d1252",
-        "openai-833e9419a34f8836dc9d",
-        "openai-eb674100bb687fff7643"
-      ],
-      "summary": "OpenAI is outlining stronger safeguards and support to strengthen Australia’s cyber defences."
-    },
-    {
-      "published_at": "2026-09-28T19:00:00+00:00",
-      "source_ids": [
-        "openai-50d71cd52400f551c336",
-        "openai-0adf5bb2a473897d1252",
-        "openai-833e9419a34f8836dc9d",
-        "openai-eb674100bb687fff7643"
-      ],
-      "summary": "OpenAI is actively seeking new participants for the Codex Originals program."
-    },
-    {
-      "published_at": "2026-09-28T19:00:00+00:00",
-      "source_ids": [
-        "openai-50d71cd52400f551c336",
-        "openai-0adf5bb2a473897d1252",
-        "openai-833e9419a34f8836dc9d",
-        "openai-eb674100bb687fff7643"
-      ],
-      "summary": "GPT-6 Astra has demonstrated significant performance improvements and better user intent understanding compared to GPT-5.6 Sol."
-    },
-    {
-      "published_at": "2026-09-25T19:00:00+00:00",
-      "source_ids": [
-        "openai-9de028fbe46cac8b155a"
-      ],
-      "summary": "Proaction has realized savings of more than 75 hours."
     }
   ],
   "seen_hashes": [
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
+    "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
@@ -282,6 +295,7 @@
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
     "8ad52c468c36a20b124eafea6c66c151ed1d78f945fd64c94ad0d0931e7a181d",
+    "8c03cb9aa30759adcacca7f99dc89771050a03d48826a74f409b48810a219d5e",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
@@ -306,7 +320,9 @@
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
-    "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277"
+    "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
+    "f4e8f2cb9187d027e6529329f0206b5ab53c81b7a10ba3d5cc0b90335709ae62",
+    "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72"
   ]
 }
 ---
@@ -315,24 +331,23 @@
 
 ## Current State
 
-OpenAI has issued an apology for incidents involving Australian government websites and committed to strengthening Australia's cyber defenses. The company is also expanding the Lenfest AI Collaborative and Fellowship Program with significant funding and support. Additionally, OpenAI is seeking new participants for its Codex Originals program and has showcased GPT-6 Astra's improved performance in completing a tax workbook.
+OpenAI has recently announced several significant updates, including the introduction of new AI models like GPT-6.1 Sol and GPT-6 Astra, the launch of proactive AI assistants called "dots," and the publication of early guidelines for safety cases in frontier AI training. These announcements were largely made around DevDay 2026.
 
 ## Key Facts
 
-- OpenAI apologized for incidents involving Australian government websites.
-- OpenAI will provide stronger safeguards and support to strengthen Australia’s cyber defences.
-- OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.
-- OpenAI is collecting stories from users of Codex for the next chapter of the Codex Originals program.
-- GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol.
-- GPT-6 Astra demonstrates a stronger understanding of user intent, increasing confidence in its real-world use.
+- GPT-6.1 Sol offers near-Astra intelligence for coding, computer use, and professional work.
+- GPT-6.1 Sol is priced at one-fifth of Astra's standard API input and output token prices.
+- OpenAI DevDay 2026 featured over 20 announcements, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.
+- Dots by OpenAI are proactive assistants designed to work across complex projects and everyday tasks.
+- OpenAI released early guidelines for safety cases in frontier AI training, covering technical safeguards, operational practices, and investigating misalignment incidents.
 
 ## Recent Changes
 
+- 2026-09-29T10:00:00+00:00 — Release of early guidelines for safety cases in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
+- 2026-09-29T10:00:00+00:00 — Introduction of GPT-6.1 Sol, a new AI model. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
+- 2026-09-29T10:00:00+00:00 — Introduction of "dots," proactive AI assistants. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
+- 2026-09-29T10:00:00+00:00 — Announcement of GPT-6 Astra and other updates at DevDay 2026. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
 - 2026-09-28T19:00:00+00:00 — The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
-- 2026-09-28T19:00:00+00:00 — OpenAI is outlining stronger safeguards and support to strengthen Australia’s cyber defences. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
-- 2026-09-28T19:00:00+00:00 — OpenAI is actively seeking new participants for the Codex Originals program. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
-- 2026-09-28T19:00:00+00:00 — GPT-6 Astra has demonstrated significant performance improvements and better user intent understanding compared to GPT-5.6 Sol. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
-- 2026-09-25T19:00:00+00:00 — Proaction has realized savings of more than 75 hours. (sources: openai-9de028fbe46cac8b155a)
 
 ## History Log
 
@@ -356,3 +371,4 @@ OpenAI has issued an apology for incidents involving Australian government websi
 - 2026-09-23T16:00:00+00:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
 - 2026-09-25T19:00:00+00:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (sources: openai-9de028fbe46cac8b155a)
 - 2026-09-28T19:00:00+00:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026-09-29T10:00:00+00:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
