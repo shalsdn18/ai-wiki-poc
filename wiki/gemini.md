@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini is being utilized by developers for digital 3D visualization projects and by a grocer for catering services.",
+  "current_state": "Gemini is expanding its capabilities with new features and models, including Guided Vision for accessibility, the Gemini 4 Argon model, and skills to automate tasks.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -88,13 +88,50 @@
         "gemini-61017449abab71d17b6d"
       ],
       "summary": "Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services."
+    },
+    {
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "source_ids": [
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
+      ],
+      "summary": "Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality."
     }
   ],
   "key_facts": [
-    "Gemini 3.8 Flash is used by builders for digital 3D visualization projects, such as globe satellite maps, dinosaur skeleton models, and mechanical transmission diagrams.",
-    "Edy's Grocer uses Gemini to cater for 200 guests."
+    "Guided Vision is a new feature in Gemini Live designed for accessibility.",
+    "Gemini 4 Argon is introduced as the next era of frontier intelligence.",
+    "Gemini now includes skills to help automate repetitive tasks."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "source_ids": [
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
+      ],
+      "summary": "The Gemini 4 Argon model has been launched."
+    },
+    {
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "source_ids": [
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
+      ],
+      "summary": "Skills are now available in Gemini to automate tasks."
+    },
+    {
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "source_ids": [
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
+      ],
+      "summary": "Guided Vision has been introduced in Gemini Live."
+    },
     {
       "published_at": "2026-09-28T16:00:00+00:00",
       "source_ids": [
@@ -110,29 +147,6 @@
         "gemini-61017449abab71d17b6d"
       ],
       "summary": "Builders are creating digital 3D visualization projects with Gemini 3.8 Flash."
-    },
-    {
-      "published_at": "2026-09-24T15:30:00+00:00",
-      "source_ids": [
-        "gemini-ca359f02283ba7260ef5"
-      ],
-      "summary": "The introduction of Gemini 3.8 Live with Live Avatar."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "gemini-b29526b4a6c66a1651e3",
-        "gemini-c99106a5c97c0f2896ac"
-      ],
-      "summary": "New Connected Apps are rolling out to Gemini, including Adobe, Airtable, Linear, and Peloton."
-    },
-    {
-      "published_at": "2026-09-23T16:00:00+00:00",
-      "source_ids": [
-        "gemini-b29526b4a6c66a1651e3",
-        "gemini-c99106a5c97c0f2896ac"
-      ],
-      "summary": "Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS."
     }
   ],
   "seen_hashes": [
@@ -151,12 +165,15 @@
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
+    "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
-    "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2"
+    "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
+    "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
+    "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172"
   ]
 }
 ---
@@ -165,20 +182,21 @@
 
 ## Current State
 
-Gemini is being utilized by developers for digital 3D visualization projects and by a grocer for catering services.
+Gemini is expanding its capabilities with new features and models, including Guided Vision for accessibility, the Gemini 4 Argon model, and skills to automate tasks.
 
 ## Key Facts
 
-- Gemini 3.8 Flash is used by builders for digital 3D visualization projects, such as globe satellite maps, dinosaur skeleton models, and mechanical transmission diagrams.
-- Edy's Grocer uses Gemini to cater for 200 guests.
+- Guided Vision is a new feature in Gemini Live designed for accessibility.
+- Gemini 4 Argon is introduced as the next era of frontier intelligence.
+- Gemini now includes skills to help automate repetitive tasks.
 
 ## Recent Changes
 
+- 2026-10-01T16:00:00+00:00 — The Gemini 4 Argon model has been launched. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-10-01T16:00:00+00:00 — Skills are now available in Gemini to automate tasks. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-10-01T16:00:00+00:00 — Guided Vision has been introduced in Gemini Live. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
 - 2026-09-28T16:00:00+00:00 — Edy's Grocer is using Gemini for catering services for 200 guests. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
 - 2026-09-28T16:00:00+00:00 — Builders are creating digital 3D visualization projects with Gemini 3.8 Flash. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
-- 2026-09-24T15:30:00+00:00 — The introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
-- 2026-09-23T16:00:00+00:00 — New Connected Apps are rolling out to Gemini, including Adobe, Airtable, Linear, and Peloton. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
-- 2026-09-23T16:00:00+00:00 — Gemini is introducing 3.8 Flash TTS and 3.8 Flash-Lite TTS. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 
 ## History Log
 
@@ -193,3 +211,4 @@ Gemini is being utilized by developers for digital 3D visualization projects and
 - 2026-09-23T16:00:00+00:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
 - 2026-09-24T15:30:00+00:00 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
 - 2026-09-28T16:00:00+00:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
+- 2026-10-01T16:00:00+00:00 — Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)

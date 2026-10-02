@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has recently announced several significant updates, including the introduction of new AI models like GPT-6.1 Sol and GPT-6 Astra, the launch of proactive AI assistants called \"dots,\" and the publication of early guidelines for safety cases in frontier AI training. These announcements were largely made around DevDay 2026.",
+  "current_state": "OpenAI is actively expanding the application of its AI technologies across various business sectors, including retail and small businesses, while simultaneously enhancing its security measures against adversarial attacks. The company is also emphasizing the role of advanced AI in streamlining routine work to drive economic progress.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -194,71 +194,88 @@
         "openai-2fc54b690d7b20a2e143"
       ],
       "summary": "OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called \"dots.\" Concurrently, the company also published early guidelines for ensuring safety in frontier AI training."
+    },
+    {
+      "published_at": "2026-10-01T17:00:00+00:00",
+      "source_ids": [
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
+      ],
+      "summary": "Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress."
     }
   ],
   "key_facts": [
-    "GPT-6.1 Sol offers near-Astra intelligence for coding, computer use, and professional work.",
-    "GPT-6.1 Sol is priced at one-fifth of Astra's standard API input and output token prices.",
-    "OpenAI DevDay 2026 featured over 20 announcements, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
-    "Dots by OpenAI are proactive assistants designed to work across complex projects and everyday tasks.",
-    "OpenAI released early guidelines for safety cases in frontier AI training, covering technical safeguards, operational practices, and investigating misalignment incidents."
+    "Albertsons Companies is utilizing ChatGPT Enterprise and the OpenAI API to improve team efficiency and customer experience.",
+    "The Den, a social club, has adopted ChatGPT Work, saving 10-15 hours weekly on tasks like grant applications and liquor-license materials.",
+    "OpenAI has partnered with America's SBDC to provide hands-on AI training and local support for small businesses.",
+    "OpenAI successfully disrupted a coordinated campaign to extract protected model reasoning and is strengthening its defenses against adversarial distillation.",
+    "OpenAI suggests that advanced AI's most significant impact may be on routine work, influencing the economy and the pace of progress through execution."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-09-29T10:00:00+00:00",
+      "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
-        "openai-d6b9f5e651b1891e950e",
-        "openai-6071f63e21f6425413eb",
-        "openai-dec620cb7225d2434a9b",
-        "openai-2fc54b690d7b20a2e143"
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
       ],
-      "summary": "Release of early guidelines for safety cases in frontier AI training."
+      "summary": "The Den has implemented ChatGPT Work, leading to significant time savings in administrative processes."
     },
     {
-      "published_at": "2026-09-29T10:00:00+00:00",
+      "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
-        "openai-d6b9f5e651b1891e950e",
-        "openai-6071f63e21f6425413eb",
-        "openai-dec620cb7225d2434a9b",
-        "openai-2fc54b690d7b20a2e143"
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
       ],
-      "summary": "Introduction of GPT-6.1 Sol, a new AI model."
+      "summary": "OpenAI recently disrupted a model-distillation campaign and is reinforcing its security protocols."
     },
     {
-      "published_at": "2026-09-29T10:00:00+00:00",
+      "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
-        "openai-d6b9f5e651b1891e950e",
-        "openai-6071f63e21f6425413eb",
-        "openai-dec620cb7225d2434a9b",
-        "openai-2fc54b690d7b20a2e143"
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
       ],
-      "summary": "Introduction of \"dots,\" proactive AI assistants."
+      "summary": "OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development."
     },
     {
-      "published_at": "2026-09-29T10:00:00+00:00",
+      "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
-        "openai-d6b9f5e651b1891e950e",
-        "openai-6071f63e21f6425413eb",
-        "openai-dec620cb7225d2434a9b",
-        "openai-2fc54b690d7b20a2e143"
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
       ],
-      "summary": "Announcement of GPT-6 Astra and other updates at DevDay 2026."
+      "summary": "OpenAI has initiated a partnership with America's SBDC to offer AI training and support to small businesses."
     },
     {
-      "published_at": "2026-09-28T19:00:00+00:00",
+      "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
-        "openai-50d71cd52400f551c336",
-        "openai-0adf5bb2a473897d1252",
-        "openai-833e9419a34f8836dc9d",
-        "openai-eb674100bb687fff7643"
+        "openai-b8087b88cb63ae7fc829",
+        "openai-637d3dfa247fa816a4c4",
+        "openai-2167384f51e2a4466793",
+        "openai-90249c2a3882c6d31b88",
+        "openai-061338e668ed697490e5"
       ],
-      "summary": "The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI."
+      "summary": "Albertsons Companies has begun integrating ChatGPT Enterprise and the OpenAI API into its operations."
     }
   ],
   "seen_hashes": [
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
+    "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
     "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
@@ -271,6 +288,7 @@
     "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
     "37ee240f0bfaeb80acf714fc33f5801f6a7147b42d541406a2649ea503f862c9",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
+    "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
@@ -283,7 +301,9 @@
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
+    "6435c17b701b1041cc77f5d0353c4bc8d38231335d631af44f00fc678a5c11a0",
     "65322153b065b705eb6e93782347927c97a5bd1bb3bf0c44d476a4ef9322e8af",
+    "6fe7d823014da5dcee2c89f28077228be748e10441d59b2c8d4c035086ce7fbc",
     "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
@@ -318,6 +338,7 @@
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
+    "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
@@ -331,23 +352,23 @@
 
 ## Current State
 
-OpenAI has recently announced several significant updates, including the introduction of new AI models like GPT-6.1 Sol and GPT-6 Astra, the launch of proactive AI assistants called "dots," and the publication of early guidelines for safety cases in frontier AI training. These announcements were largely made around DevDay 2026.
+OpenAI is actively expanding the application of its AI technologies across various business sectors, including retail and small businesses, while simultaneously enhancing its security measures against adversarial attacks. The company is also emphasizing the role of advanced AI in streamlining routine work to drive economic progress.
 
 ## Key Facts
 
-- GPT-6.1 Sol offers near-Astra intelligence for coding, computer use, and professional work.
-- GPT-6.1 Sol is priced at one-fifth of Astra's standard API input and output token prices.
-- OpenAI DevDay 2026 featured over 20 announcements, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.
-- Dots by OpenAI are proactive assistants designed to work across complex projects and everyday tasks.
-- OpenAI released early guidelines for safety cases in frontier AI training, covering technical safeguards, operational practices, and investigating misalignment incidents.
+- Albertsons Companies is utilizing ChatGPT Enterprise and the OpenAI API to improve team efficiency and customer experience.
+- The Den, a social club, has adopted ChatGPT Work, saving 10-15 hours weekly on tasks like grant applications and liquor-license materials.
+- OpenAI has partnered with America's SBDC to provide hands-on AI training and local support for small businesses.
+- OpenAI successfully disrupted a coordinated campaign to extract protected model reasoning and is strengthening its defenses against adversarial distillation.
+- OpenAI suggests that advanced AI's most significant impact may be on routine work, influencing the economy and the pace of progress through execution.
 
 ## Recent Changes
 
-- 2026-09-29T10:00:00+00:00 — Release of early guidelines for safety cases in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
-- 2026-09-29T10:00:00+00:00 — Introduction of GPT-6.1 Sol, a new AI model. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
-- 2026-09-29T10:00:00+00:00 — Introduction of "dots," proactive AI assistants. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
-- 2026-09-29T10:00:00+00:00 — Announcement of GPT-6 Astra and other updates at DevDay 2026. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
-- 2026-09-28T19:00:00+00:00 — The Lenfest AI Collaborative and Fellowship Program is being expanded with new funding and support from OpenAI. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026-10-01T17:00:00+00:00 — The Den has implemented ChatGPT Work, leading to significant time savings in administrative processes. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026-10-01T17:00:00+00:00 — OpenAI recently disrupted a model-distillation campaign and is reinforcing its security protocols. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026-10-01T17:00:00+00:00 — OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026-10-01T17:00:00+00:00 — OpenAI has initiated a partnership with America's SBDC to offer AI training and support to small businesses. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026-10-01T17:00:00+00:00 — Albertsons Companies has begun integrating ChatGPT Enterprise and the OpenAI API into its operations. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 
 ## History Log
 
@@ -372,3 +393,4 @@ OpenAI has recently announced several significant updates, including the introdu
 - 2026-09-25T19:00:00+00:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (sources: openai-9de028fbe46cac8b155a)
 - 2026-09-28T19:00:00+00:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
 - 2026-09-29T10:00:00+00:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
+- 2026-10-01T17:00:00+00:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
