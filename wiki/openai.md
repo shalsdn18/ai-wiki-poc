@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively expanding the application of its AI technologies across various business sectors, including retail and small businesses, while simultaneously enhancing its security measures against adversarial attacks. The company is also emphasizing the role of advanced AI in streamlining routine work to drive economic progress.",
+  "current_state": "OpenAI has released a guide for the GPT-6 family and Chatham Financial is leveraging OpenAI models to enhance its capital markets operations.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -205,16 +205,38 @@
         "openai-061338e668ed697490e5"
       ],
       "summary": "Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress."
+    },
+    {
+      "published_at": "2026-10-02T16:15:00+00:00",
+      "source_ids": [
+        "openai-c38af6e5cae43e23a64c",
+        "openai-882596cbc7639eb42bf2"
+      ],
+      "summary": "OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization."
     }
   ],
   "key_facts": [
-    "Albertsons Companies is utilizing ChatGPT Enterprise and the OpenAI API to improve team efficiency and customer experience.",
-    "The Den, a social club, has adopted ChatGPT Work, saving 10-15 hours weekly on tasks like grant applications and liquor-license materials.",
-    "OpenAI has partnered with America's SBDC to provide hands-on AI training and local support for small businesses.",
-    "OpenAI successfully disrupted a coordinated campaign to extract protected model reasoning and is strengthening its defenses against adversarial distillation.",
-    "OpenAI suggests that advanced AI's most significant impact may be on routine work, influencing the economy and the pace of progress through execution."
+    "OpenAI published a guide for startups on how to choose and utilize GPT-6 models, tune reasoning, improve prompts, coordinate tools, and prepare workflows.",
+    "Chatham Financial uses OpenAI's Codex and GPT-5.6 to build technology and redesign workflows.",
+    "Chatham Financial reduced trade validation time from 30 minutes to under 4 minutes using OpenAI's models."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-02T16:15:00+00:00",
+      "source_ids": [
+        "openai-c38af6e5cae43e23a64c",
+        "openai-882596cbc7639eb42bf2"
+      ],
+      "summary": "OpenAI released a model guide for the GPT-6 family, aimed at helping startups with practical application and workflow integration."
+    },
+    {
+      "published_at": "2026-10-02T16:15:00+00:00",
+      "source_ids": [
+        "openai-c38af6e5cae43e23a64c",
+        "openai-882596cbc7639eb42bf2"
+      ],
+      "summary": "Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process."
+    },
     {
       "published_at": "2026-10-01T17:00:00+00:00",
       "source_ids": [
@@ -247,28 +269,6 @@
         "openai-061338e668ed697490e5"
       ],
       "summary": "OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development."
-    },
-    {
-      "published_at": "2026-10-01T17:00:00+00:00",
-      "source_ids": [
-        "openai-b8087b88cb63ae7fc829",
-        "openai-637d3dfa247fa816a4c4",
-        "openai-2167384f51e2a4466793",
-        "openai-90249c2a3882c6d31b88",
-        "openai-061338e668ed697490e5"
-      ],
-      "summary": "OpenAI has initiated a partnership with America's SBDC to offer AI training and support to small businesses."
-    },
-    {
-      "published_at": "2026-10-01T17:00:00+00:00",
-      "source_ids": [
-        "openai-b8087b88cb63ae7fc829",
-        "openai-637d3dfa247fa816a4c4",
-        "openai-2167384f51e2a4466793",
-        "openai-90249c2a3882c6d31b88",
-        "openai-061338e668ed697490e5"
-      ],
-      "summary": "Albertsons Companies has begun integrating ChatGPT Enterprise and the OpenAI API into its operations."
     }
   ],
   "seen_hashes": [
@@ -282,6 +282,7 @@
     "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
     "22bd57692b02f313139613df5f9cdde452bbfd9ab61ef9c081d39ad1e8ed86ac",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
+    "264fe298791a212010758fa180003ed4e9f798079c3039607494e90c3a12f9eb",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
@@ -309,6 +310,7 @@
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "7a3b160516d339624806bb902f8da225cabf550e6a464a5e11f3db58fad4fc7d",
+    "7b0998feb986630c353ea69fc70f9eae3419419719ce9571158a4083031e1a8a",
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
     "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
     "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
@@ -352,23 +354,21 @@
 
 ## Current State
 
-OpenAI is actively expanding the application of its AI technologies across various business sectors, including retail and small businesses, while simultaneously enhancing its security measures against adversarial attacks. The company is also emphasizing the role of advanced AI in streamlining routine work to drive economic progress.
+OpenAI has released a guide for the GPT-6 family and Chatham Financial is leveraging OpenAI models to enhance its capital markets operations.
 
 ## Key Facts
 
-- Albertsons Companies is utilizing ChatGPT Enterprise and the OpenAI API to improve team efficiency and customer experience.
-- The Den, a social club, has adopted ChatGPT Work, saving 10-15 hours weekly on tasks like grant applications and liquor-license materials.
-- OpenAI has partnered with America's SBDC to provide hands-on AI training and local support for small businesses.
-- OpenAI successfully disrupted a coordinated campaign to extract protected model reasoning and is strengthening its defenses against adversarial distillation.
-- OpenAI suggests that advanced AI's most significant impact may be on routine work, influencing the economy and the pace of progress through execution.
+- OpenAI published a guide for startups on how to choose and utilize GPT-6 models, tune reasoning, improve prompts, coordinate tools, and prepare workflows.
+- Chatham Financial uses OpenAI's Codex and GPT-5.6 to build technology and redesign workflows.
+- Chatham Financial reduced trade validation time from 30 minutes to under 4 minutes using OpenAI's models.
 
 ## Recent Changes
 
+- 2026-10-02T16:15:00+00:00 — OpenAI released a model guide for the GPT-6 family, aimed at helping startups with practical application and workflow integration. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
+- 2026-10-02T16:15:00+00:00 — Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
 - 2026-10-01T17:00:00+00:00 — The Den has implemented ChatGPT Work, leading to significant time savings in administrative processes. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 - 2026-10-01T17:00:00+00:00 — OpenAI recently disrupted a model-distillation campaign and is reinforcing its security protocols. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 - 2026-10-01T17:00:00+00:00 — OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
-- 2026-10-01T17:00:00+00:00 — OpenAI has initiated a partnership with America's SBDC to offer AI training and support to small businesses. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
-- 2026-10-01T17:00:00+00:00 — Albertsons Companies has begun integrating ChatGPT Enterprise and the OpenAI API into its operations. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 
 ## History Log
 
@@ -394,3 +394,4 @@ OpenAI is actively expanding the application of its AI technologies across vario
 - 2026-09-28T19:00:00+00:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
 - 2026-09-29T10:00:00+00:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
 - 2026-10-01T17:00:00+00:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026-10-02T16:15:00+00:00 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
