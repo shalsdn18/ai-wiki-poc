@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has released a guide for the GPT-6 family and Chatham Financial is leveraging OpenAI models to enhance its capital markets operations.",
+  "current_state": "OpenAI is introducing new advertising formats in ChatGPT and addressing text watermarking under EU rules.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -213,14 +213,46 @@
         "openai-882596cbc7639eb42bf2"
       ],
       "summary": "OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization."
+    },
+    {
+      "published_at": "2026-10-05T15:00:00+00:00",
+      "source_ids": [
+        "openai-d2b5b29b4c8155256199",
+        "openai-2d8e70fb45cef7470a5b"
+      ],
+      "summary": "OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations."
     }
   ],
   "key_facts": [
-    "OpenAI published a guide for startups on how to choose and utilize GPT-6 models, tune reasoning, improve prompts, coordinate tools, and prepare workflows.",
-    "Chatham Financial uses OpenAI's Codex and GPT-5.6 to build technology and redesign workflows.",
-    "Chatham Financial reduced trade validation time from 30 minutes to under 4 minutes using OpenAI's models."
+    "OpenAI is developing an approach to text watermarking in compliance with EU rules, with initial access for researchers.",
+    "OpenAI has introduced a new visual ad format in ChatGPT.",
+    "OpenAI is expanding measurement tools, attribution partnerships, and brand suitability for advertisers."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-05T15:00:00+00:00",
+      "source_ids": [
+        "openai-d2b5b29b4c8155256199",
+        "openai-2d8e70fb45cef7470a5b"
+      ],
+      "summary": "OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers."
+    },
+    {
+      "published_at": "2026-10-05T15:00:00+00:00",
+      "source_ids": [
+        "openai-d2b5b29b4c8155256199",
+        "openai-2d8e70fb45cef7470a5b"
+      ],
+      "summary": "Measurement tools, attribution partnerships, and brand suitability for advertisers have been expanded."
+    },
+    {
+      "published_at": "2026-10-05T15:00:00+00:00",
+      "source_ids": [
+        "openai-d2b5b29b4c8155256199",
+        "openai-2d8e70fb45cef7470a5b"
+      ],
+      "summary": "A new visual ad format has been introduced in ChatGPT."
+    },
     {
       "published_at": "2026-10-02T16:15:00+00:00",
       "source_ids": [
@@ -236,39 +268,6 @@
         "openai-882596cbc7639eb42bf2"
       ],
       "summary": "Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process."
-    },
-    {
-      "published_at": "2026-10-01T17:00:00+00:00",
-      "source_ids": [
-        "openai-b8087b88cb63ae7fc829",
-        "openai-637d3dfa247fa816a4c4",
-        "openai-2167384f51e2a4466793",
-        "openai-90249c2a3882c6d31b88",
-        "openai-061338e668ed697490e5"
-      ],
-      "summary": "The Den has implemented ChatGPT Work, leading to significant time savings in administrative processes."
-    },
-    {
-      "published_at": "2026-10-01T17:00:00+00:00",
-      "source_ids": [
-        "openai-b8087b88cb63ae7fc829",
-        "openai-637d3dfa247fa816a4c4",
-        "openai-2167384f51e2a4466793",
-        "openai-90249c2a3882c6d31b88",
-        "openai-061338e668ed697490e5"
-      ],
-      "summary": "OpenAI recently disrupted a model-distillation campaign and is reinforcing its security protocols."
-    },
-    {
-      "published_at": "2026-10-01T17:00:00+00:00",
-      "source_ids": [
-        "openai-b8087b88cb63ae7fc829",
-        "openai-637d3dfa247fa816a4c4",
-        "openai-2167384f51e2a4466793",
-        "openai-90249c2a3882c6d31b88",
-        "openai-061338e668ed697490e5"
-      ],
-      "summary": "OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development."
     }
   ],
   "seen_hashes": [
@@ -304,6 +303,7 @@
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
     "6435c17b701b1041cc77f5d0353c4bc8d38231335d631af44f00fc678a5c11a0",
     "65322153b065b705eb6e93782347927c97a5bd1bb3bf0c44d476a4ef9322e8af",
+    "68c690783cb6c4a253cedadebed57c7021fbd07c74f77bd66cc902d36beb71d5",
     "6fe7d823014da5dcee2c89f28077228be748e10441d59b2c8d4c035086ce7fbc",
     "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
@@ -335,6 +335,7 @@
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
+    "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
@@ -354,21 +355,21 @@
 
 ## Current State
 
-OpenAI has released a guide for the GPT-6 family and Chatham Financial is leveraging OpenAI models to enhance its capital markets operations.
+OpenAI is introducing new advertising formats in ChatGPT and addressing text watermarking under EU rules.
 
 ## Key Facts
 
-- OpenAI published a guide for startups on how to choose and utilize GPT-6 models, tune reasoning, improve prompts, coordinate tools, and prepare workflows.
-- Chatham Financial uses OpenAI's Codex and GPT-5.6 to build technology and redesign workflows.
-- Chatham Financial reduced trade validation time from 30 minutes to under 4 minutes using OpenAI's models.
+- OpenAI is developing an approach to text watermarking in compliance with EU rules, with initial access for researchers.
+- OpenAI has introduced a new visual ad format in ChatGPT.
+- OpenAI is expanding measurement tools, attribution partnerships, and brand suitability for advertisers.
 
 ## Recent Changes
 
+- 2026-10-05T15:00:00+00:00 — OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
+- 2026-10-05T15:00:00+00:00 — Measurement tools, attribution partnerships, and brand suitability for advertisers have been expanded. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
+- 2026-10-05T15:00:00+00:00 — A new visual ad format has been introduced in ChatGPT. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
 - 2026-10-02T16:15:00+00:00 — OpenAI released a model guide for the GPT-6 family, aimed at helping startups with practical application and workflow integration. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
 - 2026-10-02T16:15:00+00:00 — Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
-- 2026-10-01T17:00:00+00:00 — The Den has implemented ChatGPT Work, leading to significant time savings in administrative processes. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
-- 2026-10-01T17:00:00+00:00 — OpenAI recently disrupted a model-distillation campaign and is reinforcing its security protocols. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
-- 2026-10-01T17:00:00+00:00 — OpenAI has released new insights regarding the importance of advanced AI in routine work for future economic development. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 
 ## History Log
 
@@ -395,3 +396,4 @@ OpenAI has released a guide for the GPT-6 family and Chatham Financial is levera
 - 2026-09-29T10:00:00+00:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
 - 2026-10-01T17:00:00+00:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 - 2026-10-02T16:15:00+00:00 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
+- 2026-10-05T15:00:00+00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
