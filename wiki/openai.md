@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is introducing new advertising formats in ChatGPT and addressing text watermarking under EU rules.",
+  "current_state": "OpenAI is actively expanding its partnerships and research, focusing on applying AI to enterprise solutions, quantitative research, mathematics, and professional computer use.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -221,14 +221,65 @@
         "openai-2d8e70fb45cef7470a5b"
       ],
       "summary": "OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations."
+    },
+    {
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "source_ids": [
+        "openai-2896758265cec81d9589",
+        "openai-ebb413cc5359756bf923",
+        "openai-00427e47df5ef3064509",
+        "openai-f57eff9c23a4454b476b"
+      ],
+      "summary": "OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use."
     }
   ],
   "key_facts": [
-    "OpenAI is developing an approach to text watermarking in compliance with EU rules, with initial access for researchers.",
-    "OpenAI has introduced a new visual ad format in ChatGPT.",
-    "OpenAI is expanding measurement tools, attribution partnerships, and brand suitability for advertisers."
+    "OpenAI and Atlassian are expanding their partnership to connect frontier models with enterprise knowledge for team work.",
+    "Jump Trading is using OpenAI to scale quantitative research through AI workflows that combine multiple data sources with human review.",
+    "OpenAI has published new results on open problems in mathematics from an internal frontier model, sharing Lean proof formalizations and research details on GitHub.",
+    "OpenAI and Ironclad are collaborating to train and evaluate AI agents on complex contracting workflows to advance computer use for professional work."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "source_ids": [
+        "openai-2896758265cec81d9589",
+        "openai-ebb413cc5359756bf923",
+        "openai-00427e47df5ef3064509",
+        "openai-f57eff9c23a4454b476b"
+      ],
+      "summary": "OpenAI published new results in mathematics."
+    },
+    {
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "source_ids": [
+        "openai-2896758265cec81d9589",
+        "openai-ebb413cc5359756bf923",
+        "openai-00427e47df5ef3064509",
+        "openai-f57eff9c23a4454b476b"
+      ],
+      "summary": "OpenAI partnered with Ironclad to advance computer use with AI agents."
+    },
+    {
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "source_ids": [
+        "openai-2896758265cec81d9589",
+        "openai-ebb413cc5359756bf923",
+        "openai-00427e47df5ef3064509",
+        "openai-f57eff9c23a4454b476b"
+      ],
+      "summary": "OpenAI expanded its partnership with Atlassian."
+    },
+    {
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "source_ids": [
+        "openai-2896758265cec81d9589",
+        "openai-ebb413cc5359756bf923",
+        "openai-00427e47df5ef3064509",
+        "openai-f57eff9c23a4454b476b"
+      ],
+      "summary": "Jump Trading began using OpenAI to scale quantitative research."
+    },
     {
       "published_at": "2026-10-05T15:00:00+00:00",
       "source_ids": [
@@ -236,41 +287,10 @@
         "openai-2d8e70fb45cef7470a5b"
       ],
       "summary": "OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers."
-    },
-    {
-      "published_at": "2026-10-05T15:00:00+00:00",
-      "source_ids": [
-        "openai-d2b5b29b4c8155256199",
-        "openai-2d8e70fb45cef7470a5b"
-      ],
-      "summary": "Measurement tools, attribution partnerships, and brand suitability for advertisers have been expanded."
-    },
-    {
-      "published_at": "2026-10-05T15:00:00+00:00",
-      "source_ids": [
-        "openai-d2b5b29b4c8155256199",
-        "openai-2d8e70fb45cef7470a5b"
-      ],
-      "summary": "A new visual ad format has been introduced in ChatGPT."
-    },
-    {
-      "published_at": "2026-10-02T16:15:00+00:00",
-      "source_ids": [
-        "openai-c38af6e5cae43e23a64c",
-        "openai-882596cbc7639eb42bf2"
-      ],
-      "summary": "OpenAI released a model guide for the GPT-6 family, aimed at helping startups with practical application and workflow integration."
-    },
-    {
-      "published_at": "2026-10-02T16:15:00+00:00",
-      "source_ids": [
-        "openai-c38af6e5cae43e23a64c",
-        "openai-882596cbc7639eb42bf2"
-      ],
-      "summary": "Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process."
     }
   ],
   "seen_hashes": [
+    "0045c1c78b9c2e9af11bca6c8aa443067038ed194639cbc741716651d8b432e6",
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
@@ -290,6 +310,7 @@
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
+    "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
@@ -318,6 +339,7 @@
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
     "8ad52c468c36a20b124eafea6c66c151ed1d78f945fd64c94ad0d0931e7a181d",
     "8c03cb9aa30759adcacca7f99dc89771050a03d48826a74f409b48810a219d5e",
+    "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
@@ -328,6 +350,7 @@
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
+    "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
     "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
@@ -355,21 +378,22 @@
 
 ## Current State
 
-OpenAI is introducing new advertising formats in ChatGPT and addressing text watermarking under EU rules.
+OpenAI is actively expanding its partnerships and research, focusing on applying AI to enterprise solutions, quantitative research, mathematics, and professional computer use.
 
 ## Key Facts
 
-- OpenAI is developing an approach to text watermarking in compliance with EU rules, with initial access for researchers.
-- OpenAI has introduced a new visual ad format in ChatGPT.
-- OpenAI is expanding measurement tools, attribution partnerships, and brand suitability for advertisers.
+- OpenAI and Atlassian are expanding their partnership to connect frontier models with enterprise knowledge for team work.
+- Jump Trading is using OpenAI to scale quantitative research through AI workflows that combine multiple data sources with human review.
+- OpenAI has published new results on open problems in mathematics from an internal frontier model, sharing Lean proof formalizations and research details on GitHub.
+- OpenAI and Ironclad are collaborating to train and evaluate AI agents on complex contracting workflows to advance computer use for professional work.
 
 ## Recent Changes
 
+- 2026-10-06T16:00:00+00:00 — OpenAI published new results in mathematics. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
+- 2026-10-06T16:00:00+00:00 — OpenAI partnered with Ironclad to advance computer use with AI agents. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
+- 2026-10-06T16:00:00+00:00 — OpenAI expanded its partnership with Atlassian. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
+- 2026-10-06T16:00:00+00:00 — Jump Trading began using OpenAI to scale quantitative research. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
 - 2026-10-05T15:00:00+00:00 — OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
-- 2026-10-05T15:00:00+00:00 — Measurement tools, attribution partnerships, and brand suitability for advertisers have been expanded. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
-- 2026-10-05T15:00:00+00:00 — A new visual ad format has been introduced in ChatGPT. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
-- 2026-10-02T16:15:00+00:00 — OpenAI released a model guide for the GPT-6 family, aimed at helping startups with practical application and workflow integration. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
-- 2026-10-02T16:15:00+00:00 — Chatham Financial has successfully integrated OpenAI's Codex and GPT-5.6, significantly improving the efficiency of their trade validation process. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
 
 ## History Log
 
@@ -397,3 +421,4 @@ OpenAI is introducing new advertising formats in ChatGPT and addressing text wat
 - 2026-10-01T17:00:00+00:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
 - 2026-10-02T16:15:00+00:00 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
 - 2026-10-05T15:00:00+00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
+- 2026-10-06T16:00:00+00:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
