@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively expanding its partnerships and research, focusing on applying AI to enterprise solutions, quantitative research, mathematics, and professional computer use.",
+  "current_state": "OpenAI is expanding its AI applications for enterprise efficiency, creative content generation, and educational support for teens, while also actively disrupting AI-enabled influence operations.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -231,62 +231,81 @@
         "openai-f57eff9c23a4454b476b"
       ],
       "summary": "OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use."
+    },
+    {
+      "published_at": "2026-10-08T16:00:00+00:00",
+      "source_ids": [
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
+      ],
+      "summary": "OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations."
     }
   ],
   "key_facts": [
-    "OpenAI and Atlassian are expanding their partnership to connect frontier models with enterprise knowledge for team work.",
-    "Jump Trading is using OpenAI to scale quantitative research through AI workflows that combine multiple data sources with human review.",
-    "OpenAI has published new results on open problems in mathematics from an internal frontier model, sharing Lean proof formalizations and research details on GitHub.",
-    "OpenAI and Ironclad are collaborating to train and evaluate AI agents on complex contracting workflows to advance computer use for professional work."
+    "Oracle uses ChatGPT Work and Codex to streamline workflows in recruiting, engineering, and operations, reducing work from days to minutes.",
+    "LegalOn reduced estimated daily Codex costs by 65% while maintaining development speed by strategically matching Astra, Sol, and Luna to tasks.",
+    "Pollo AI leverages GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 to help creators turn ideas into detailed images and cinematic video ads.",
+    "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
+    "ChatGPT for Teens will introduce College Planner to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-10-06T16:00:00+00:00",
+      "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
-        "openai-2896758265cec81d9589",
-        "openai-ebb413cc5359756bf923",
-        "openai-00427e47df5ef3064509",
-        "openai-f57eff9c23a4454b476b"
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
       ],
-      "summary": "OpenAI published new results in mathematics."
+      "summary": "Pollo AI is using GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 for creative campaign generation."
     },
     {
-      "published_at": "2026-10-06T16:00:00+00:00",
+      "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
-        "openai-2896758265cec81d9589",
-        "openai-ebb413cc5359756bf923",
-        "openai-00427e47df5ef3064509",
-        "openai-f57eff9c23a4454b476b"
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
       ],
-      "summary": "OpenAI partnered with Ironclad to advance computer use with AI agents."
+      "summary": "Oracle adopted ChatGPT Work and Codex to turn specialist knowledge into fast, repeatable workflows."
     },
     {
-      "published_at": "2026-10-06T16:00:00+00:00",
+      "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
-        "openai-2896758265cec81d9589",
-        "openai-ebb413cc5359756bf923",
-        "openai-00427e47df5ef3064509",
-        "openai-f57eff9c23a4454b476b"
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
       ],
-      "summary": "OpenAI expanded its partnership with Atlassian."
+      "summary": "OpenAI disrupted two AI-enabled influence operations."
     },
     {
-      "published_at": "2026-10-06T16:00:00+00:00",
+      "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
-        "openai-2896758265cec81d9589",
-        "openai-ebb413cc5359756bf923",
-        "openai-00427e47df5ef3064509",
-        "openai-f57eff9c23a4454b476b"
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
       ],
-      "summary": "Jump Trading began using OpenAI to scale quantitative research."
+      "summary": "LegalOn achieved a 65% reduction in daily Codex costs."
     },
     {
-      "published_at": "2026-10-05T15:00:00+00:00",
+      "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
-        "openai-d2b5b29b4c8155256199",
-        "openai-2d8e70fb45cef7470a5b"
+        "openai-db7b9e6fe248e3146f87",
+        "openai-855092fba1df7e8a668b",
+        "openai-45d6a2b79938283a07ca",
+        "openai-d9e485b409fe8517ac6e",
+        "openai-661f64ddb5f472a2675e"
       ],
-      "summary": "OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers."
+      "summary": "College Planner, flashcards, quizzes, and a teen AI council are coming to ChatGPT for Teens."
     }
   ],
   "seen_hashes": [
@@ -311,6 +330,7 @@
     "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
+    "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
@@ -347,6 +367,7 @@
     "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
     "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
+    "ab7c4914332df1d16fac5827f6e61dc697a1c891f5ec6cafcfc8af95c63edec3",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
@@ -355,12 +376,14 @@
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
     "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
     "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
+    "c1d7114bbfc38d3b425085fc94225bb06c09977e14f6054efca349182b339596",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
+    "d4e053651431703f8108110f9eb4a3b41411c1c7c37d95da0ba56441c133c1f9",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
@@ -369,6 +392,7 @@
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
     "f4e8f2cb9187d027e6529329f0206b5ab53c81b7a10ba3d5cc0b90335709ae62",
+    "fc2fed5c6a1e07a24f916ab4fa8d1f4d60fb73d96e3dad3fa3012f743c058b3e",
     "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72"
   ]
 }
@@ -378,22 +402,23 @@
 
 ## Current State
 
-OpenAI is actively expanding its partnerships and research, focusing on applying AI to enterprise solutions, quantitative research, mathematics, and professional computer use.
+OpenAI is expanding its AI applications for enterprise efficiency, creative content generation, and educational support for teens, while also actively disrupting AI-enabled influence operations.
 
 ## Key Facts
 
-- OpenAI and Atlassian are expanding their partnership to connect frontier models with enterprise knowledge for team work.
-- Jump Trading is using OpenAI to scale quantitative research through AI workflows that combine multiple data sources with human review.
-- OpenAI has published new results on open problems in mathematics from an internal frontier model, sharing Lean proof formalizations and research details on GitHub.
-- OpenAI and Ironclad are collaborating to train and evaluate AI agents on complex contracting workflows to advance computer use for professional work.
+- Oracle uses ChatGPT Work and Codex to streamline workflows in recruiting, engineering, and operations, reducing work from days to minutes.
+- LegalOn reduced estimated daily Codex costs by 65% while maintaining development speed by strategically matching Astra, Sol, and Luna to tasks.
+- Pollo AI leverages GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 to help creators turn ideas into detailed images and cinematic video ads.
+- OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.
+- ChatGPT for Teens will introduce College Planner to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.
 
 ## Recent Changes
 
-- 2026-10-06T16:00:00+00:00 — OpenAI published new results in mathematics. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
-- 2026-10-06T16:00:00+00:00 — OpenAI partnered with Ironclad to advance computer use with AI agents. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
-- 2026-10-06T16:00:00+00:00 — OpenAI expanded its partnership with Atlassian. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
-- 2026-10-06T16:00:00+00:00 — Jump Trading began using OpenAI to scale quantitative research. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
-- 2026-10-05T15:00:00+00:00 — OpenAI is approaching text watermarking under EU rules, detailing where watermarks apply, how detection works, and why access starts with researchers. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
+- 2026-10-08T16:00:00+00:00 — Pollo AI is using GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 for creative campaign generation. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026-10-08T16:00:00+00:00 — Oracle adopted ChatGPT Work and Codex to turn specialist knowledge into fast, repeatable workflows. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026-10-08T16:00:00+00:00 — OpenAI disrupted two AI-enabled influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026-10-08T16:00:00+00:00 — LegalOn achieved a 65% reduction in daily Codex costs. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026-10-08T16:00:00+00:00 — College Planner, flashcards, quizzes, and a teen AI council are coming to ChatGPT for Teens. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 
 ## History Log
 
@@ -422,3 +447,4 @@ OpenAI is actively expanding its partnerships and research, focusing on applying
 - 2026-10-02T16:15:00+00:00 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
 - 2026-10-05T15:00:00+00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
 - 2026-10-06T16:00:00+00:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
+- 2026-10-08T16:00:00+00:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
