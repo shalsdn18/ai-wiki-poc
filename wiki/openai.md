@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is expanding its AI applications for enterprise efficiency, creative content generation, and educational support for teens, while also actively disrupting AI-enabled influence operations.",
+  "current_state": "Sophos and Asana have achieved significant operational improvements by integrating OpenAI's AI models.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -242,16 +242,38 @@
         "openai-661f64ddb5f472a2675e"
       ],
       "summary": "OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations."
+    },
+    {
+      "published_at": "2026-10-09T07:00:00+00:00",
+      "source_ids": [
+        "openai-570fe3204556675e8dd9",
+        "openai-9bf93d58cc35db9987f8"
+      ],
+      "summary": "Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements."
     }
   ],
   "key_facts": [
-    "Oracle uses ChatGPT Work and Codex to streamline workflows in recruiting, engineering, and operations, reducing work from days to minutes.",
-    "LegalOn reduced estimated daily Codex costs by 65% while maintaining development speed by strategically matching Astra, Sol, and Luna to tasks.",
-    "Pollo AI leverages GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 to help creators turn ideas into detailed images and cinematic video ads.",
-    "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
-    "ChatGPT for Teens will introduce College Planner to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
+    "Sophos reduced cyber-threat investigation time by 96% using OpenAI's Daybreak.",
+    "Sophos automated 52% of MDR cases while preserving human oversight.",
+    "Asana made its browser agent 76x cheaper and 5x faster in tests using GPT-6 Astra in Codex."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-09T07:00:00+00:00",
+      "source_ids": [
+        "openai-570fe3204556675e8dd9",
+        "openai-9bf93d58cc35db9987f8"
+      ],
+      "summary": "Sophos adopted OpenAI's Daybreak to enhance cyber-threat investigation and MDR case automation."
+    },
+    {
+      "published_at": "2026-10-09T07:00:00+00:00",
+      "source_ids": [
+        "openai-570fe3204556675e8dd9",
+        "openai-9bf93d58cc35db9987f8"
+      ],
+      "summary": "Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed."
+    },
     {
       "published_at": "2026-10-08T16:00:00+00:00",
       "source_ids": [
@@ -284,28 +306,6 @@
         "openai-661f64ddb5f472a2675e"
       ],
       "summary": "OpenAI disrupted two AI-enabled influence operations."
-    },
-    {
-      "published_at": "2026-10-08T16:00:00+00:00",
-      "source_ids": [
-        "openai-db7b9e6fe248e3146f87",
-        "openai-855092fba1df7e8a668b",
-        "openai-45d6a2b79938283a07ca",
-        "openai-d9e485b409fe8517ac6e",
-        "openai-661f64ddb5f472a2675e"
-      ],
-      "summary": "LegalOn achieved a 65% reduction in daily Codex costs."
-    },
-    {
-      "published_at": "2026-10-08T16:00:00+00:00",
-      "source_ids": [
-        "openai-db7b9e6fe248e3146f87",
-        "openai-855092fba1df7e8a668b",
-        "openai-45d6a2b79938283a07ca",
-        "openai-d9e485b409fe8517ac6e",
-        "openai-661f64ddb5f472a2675e"
-      ],
-      "summary": "College Planner, flashcards, quizzes, and a teen AI council are coming to ChatGPT for Teens."
     }
   ],
   "seen_hashes": [
@@ -373,6 +373,7 @@
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
+    "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
     "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
     "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
@@ -388,6 +389,7 @@
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
+    "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
@@ -402,23 +404,21 @@
 
 ## Current State
 
-OpenAI is expanding its AI applications for enterprise efficiency, creative content generation, and educational support for teens, while also actively disrupting AI-enabled influence operations.
+Sophos and Asana have achieved significant operational improvements by integrating OpenAI's AI models.
 
 ## Key Facts
 
-- Oracle uses ChatGPT Work and Codex to streamline workflows in recruiting, engineering, and operations, reducing work from days to minutes.
-- LegalOn reduced estimated daily Codex costs by 65% while maintaining development speed by strategically matching Astra, Sol, and Luna to tasks.
-- Pollo AI leverages GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 to help creators turn ideas into detailed images and cinematic video ads.
-- OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.
-- ChatGPT for Teens will introduce College Planner to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.
+- Sophos reduced cyber-threat investigation time by 96% using OpenAI's Daybreak.
+- Sophos automated 52% of MDR cases while preserving human oversight.
+- Asana made its browser agent 76x cheaper and 5x faster in tests using GPT-6 Astra in Codex.
 
 ## Recent Changes
 
+- 2026-10-09T07:00:00+00:00 — Sophos adopted OpenAI's Daybreak to enhance cyber-threat investigation and MDR case automation. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
+- 2026-10-09T07:00:00+00:00 — Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
 - 2026-10-08T16:00:00+00:00 — Pollo AI is using GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 for creative campaign generation. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 - 2026-10-08T16:00:00+00:00 — Oracle adopted ChatGPT Work and Codex to turn specialist knowledge into fast, repeatable workflows. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 - 2026-10-08T16:00:00+00:00 — OpenAI disrupted two AI-enabled influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
-- 2026-10-08T16:00:00+00:00 — LegalOn achieved a 65% reduction in daily Codex costs. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
-- 2026-10-08T16:00:00+00:00 — College Planner, flashcards, quizzes, and a teen AI council are coming to ChatGPT for Teens. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 
 ## History Log
 
@@ -448,3 +448,4 @@ OpenAI is expanding its AI applications for enterprise efficiency, creative cont
 - 2026-10-05T15:00:00+00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
 - 2026-10-06T16:00:00+00:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
 - 2026-10-08T16:00:00+00:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026-10-09T07:00:00+00:00 — Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
