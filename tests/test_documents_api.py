@@ -11,15 +11,15 @@ from engine import document_store
 def _client(tmp_path, monkeypatch):
     document_store._configured_store.cache_clear()
     monkeypatch.setenv("DOCUMENTS_ROOT", str(tmp_path / "documents"))
+    monkeypatch.setenv("DOCUMENT_STORAGE_BACKEND", "local")
     password = "local-test-password"
     salt = "pytest-salt"
     digest = hashlib.pbkdf2_hmac("sha256", password.encode(), salt.encode(), 600_000)
-    monkeypatch.setattr(
-        app,
-        "_password_hash",
+    monkeypatch.setenv(
+        "APP_PASSWORD_HASH",
         f"pbkdf2_sha256$600000${salt}${base64.urlsafe_b64encode(digest).decode('ascii')}",
     )
-    monkeypatch.setattr(app, "_session_secret", b"test-only-session-secret-with-extra-length")
+    monkeypatch.setenv("SESSION_SECRET", "test-only-session-secret-with-extra-length")
     monkeypatch.setattr(app, "_production", False)
     client = TestClient(app.app)
     client.headers.update({"Origin": "http://testserver", "X-CSRF-Protection": "1"})

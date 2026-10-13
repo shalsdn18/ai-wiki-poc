@@ -137,12 +137,11 @@ def test_r2_storage_errors_map_to_503_and_missing_objects_to_404(monkeypatch):
     password = "test-only-password"
     salt = "test-salt"
     digest = hashlib.pbkdf2_hmac("sha256", password.encode(), salt.encode(), 600_000)
-    monkeypatch.setattr(
-        app,
-        "_password_hash",
+    monkeypatch.setenv(
+        "APP_PASSWORD_HASH",
         f"pbkdf2_sha256$600000${salt}${base64.urlsafe_b64encode(digest).decode('ascii')}",
     )
-    monkeypatch.setattr(app, "_session_secret", b"test-only-session-secret-with-extra-length")
+    monkeypatch.setenv("SESSION_SECRET", "test-only-session-secret-with-extra-length")
     monkeypatch.setattr(app, "_production", False)
     client = FakeS3Client()
     store = R2Store(client, "private-notes")

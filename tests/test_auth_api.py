@@ -14,12 +14,11 @@ CSRF_HEADERS = {"Origin": ORIGIN, "X-CSRF-Protection": "1"}
 def _configure_auth(monkeypatch, production=False):
     salt = "fixed-test-salt"
     digest = hashlib.pbkdf2_hmac("sha256", PASSWORD.encode(), salt.encode(), 600_000)
-    monkeypatch.setattr(
-        app,
-        "_password_hash",
+    monkeypatch.setenv(
+        "APP_PASSWORD_HASH",
         f"pbkdf2_sha256$600000${salt}${base64.urlsafe_b64encode(digest).decode('ascii')}",
     )
-    monkeypatch.setattr(app, "_session_secret", b"test-only-signing-secret-with-extra-length")
+    monkeypatch.setenv("SESSION_SECRET", "test-only-signing-secret-with-extra-length")
     monkeypatch.setattr(app, "_production", production)
 
 
@@ -102,10 +101,26 @@ def test_logout_invalidates_session_and_requires_csrf(monkeypatch):
 
 
 def test_auth_fails_closed_when_secrets_are_not_configured(monkeypatch):
-    monkeypatch.setattr(app, "_password_hash", "")
-    monkeypatch.setattr(app, "_session_secret", b"")
+    monkeypatch.delenv("APP_PASSWORD_HASH", raising=False)
+    monkeypatch.delenv("SESSION_SECRET", raising=False)
     client = TestClient(app.app)
 
     assert client.get("/auth/status").json() == {"authenticated": False, "configured": False}
     assert client.get("/documents").status_code == 503
     assert client.post("/login", json={"password": PASSWORD}, headers=CSRF_HEADERS).status_code == 503
+
+
+def test_auth_status_reads_environment_loaded_after_app_import(monkeypatch):
+    """Runner-provided env-file values remain visible even after app was imported."""
+    salt = "runner-env-salt"
+    digest = hashlib.pbkdf2_hmac("sha256", PASSWORD.encode(), salt.encode(), 600_000)
+    monkeypatch.setenv(
+        "APP_PASSWORD_HASH",
+        f"pbkdf2_sha256$600000${salt}${base64.urlsafe_b64encode(digest).decode('ascii')}",
+    )
+    monkeypatch.setenv("SESSION_SECRET", "runner-env-session-secret-with-sufficient-length")
+
+    response = TestClient(app.app).get("/auth/status")
+
+    assert response.status_code == 200
+    assert response.json() == {"authenticated": False, "configured": True}

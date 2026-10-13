@@ -28,8 +28,6 @@ app = FastAPI(title="AI Wiki API", version="1.0.0")
 _production = os.getenv("APP_ENV", "development").strip().casefold() == "production"
 _session_cookie_name = "ai_wiki_session"
 _session_ttl_seconds = 60 * 60 * 24 * 7
-_password_hash = os.getenv("APP_PASSWORD_HASH", "").strip()
-_session_secret = os.getenv("SESSION_SECRET", "").encode("utf-8")
 
 _default_cors_origins = {
     "https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site",
@@ -52,13 +50,22 @@ def _enabled(name: str) -> bool:
 
 
 def _auth_configured() -> bool:
-    return bool(_password_hash and len(_session_secret) >= 32)
+    return bool(_password_hash() and len(_session_secret()) >= 32)
+
+
+def _password_hash() -> str:
+    """Read auth configuration when used so environment loaded by the runner is current."""
+    return os.getenv("APP_PASSWORD_HASH", "").strip()
+
+
+def _session_secret() -> bytes:
+    return os.getenv("SESSION_SECRET", "").encode("utf-8")
 
 
 def _verify_password(password: str) -> bool:
     """Verify a PBKDF2-SHA256 value encoded as pbkdf2_sha256$rounds$salt$digest."""
     try:
-        algorithm, rounds_text, salt, expected = _password_hash.split("$", 3)
+        algorithm, rounds_text, salt, expected = _password_hash().split("$", 3)
         rounds = int(rounds_text)
         if algorithm != "pbkdf2_sha256" or rounds < 100_000 or not salt or not expected:
             return False
@@ -72,7 +79,7 @@ def _verify_password(password: str) -> bool:
 
 def _session_signature(payload: str) -> str:
     return base64.urlsafe_b64encode(
-        hmac.new(_session_secret, payload.encode("ascii"), hashlib.sha256).digest()
+        hmac.new(_session_secret(), payload.encode("ascii"), hashlib.sha256).digest()
     ).decode("ascii")
 
 
@@ -83,7 +90,7 @@ def _new_session() -> str:
 
 
 def _valid_session(value: str | None) -> bool:
-    if not value or not _session_secret:
+    if not value or not _session_secret():
         return False
     try:
         expires_text, nonce, signature = value.split(".", 2)
