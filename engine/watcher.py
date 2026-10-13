@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import errno
 import logging
 import os
 import threading
@@ -20,6 +21,68 @@ LOGGER = logging.getLogger(__name__)
 DEBOUNCE_SECONDS = 1.0
 EMPTY_FILE_RETRY_DELAYS = (0.5, 1.0, 2.0)
 IGNORED_PARTS = {"wiki", ".git", ".obsidian"}
+LOCK_PATH = Path(".watcher.lock")
+
+
+class SingleInstanceLock:
+    """Process-wide lock backed by an OS-locked file handle."""
+
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self._handle = None
+
+    def acquire(self) -> bool:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self._handle = self.path.open("a+b")
+        self._handle.seek(0)
+        self._handle.write(b"0")
+        self._handle.flush()
+        self._handle.seek(0)
+        try:
+            if os.name == "nt":
+                import msvcrt
+
+                msvcrt.locking(self._handle.fileno(), msvcrt.LK_NBLCK, 1)
+            else:
+                import fcntl
+
+                fcntl.flock(self._handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError as exc:
+            self._handle.close()
+            self._handle = None
+            if getattr(exc, "errno", None) not in {
+                errno.EACCES,
+                errno.EAGAIN,
+                errno.EDEADLK,
+            }:
+                raise
+            return False
+        return True
+
+    def release(self) -> None:
+        if self._handle is None:
+            return
+        try:
+            if os.name == "nt":
+                import msvcrt
+
+                self._handle.seek(0)
+                msvcrt.locking(self._handle.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                import fcntl
+
+                fcntl.flock(self._handle.fileno(), fcntl.LOCK_UN)
+        finally:
+            self._handle.close()
+            self._handle = None
+
+    def __enter__(self) -> SingleInstanceLock:  # noqa: PYI034
+        if not self.acquire():
+            raise RuntimeError("AI Wiki watcher is already running.")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
+        self.release()
 
 
 def _should_watch(path: Path, vault_path: Path) -> bool:
@@ -176,20 +239,26 @@ def watch_vault(
     if not configured.is_dir():
         raise RuntimeError(f"Obsidian Vault directory does not exist: {configured}")
     configured = configured.resolve()
-    handler = ObsidianEventHandler(configured, wiki_root, state_path)
-    handler.start()
-    observer = Observer()
-    observer.schedule(handler, str(configured), recursive=True)
-    observer.start()
-    LOGGER.info("Watching... %s", configured)
     try:
-        observer.join()
-    except KeyboardInterrupt:
-        LOGGER.info("Stopping watcher...")
-    finally:
-        handler.stop()
-        observer.stop()
-        observer.join()
+        with SingleInstanceLock(LOCK_PATH):
+            handler = ObsidianEventHandler(configured, wiki_root, state_path)
+            handler.start()
+            observer = Observer()
+            observer.schedule(handler, str(configured), recursive=True)
+            observer.start()
+            LOGGER.info("Watching... %s", configured)
+            try:
+                observer.join()
+            except KeyboardInterrupt:
+                LOGGER.info("Stopping watcher...")
+            finally:
+                handler.stop()
+                observer.stop()
+                observer.join()
+    except RuntimeError as exc:
+        if str(exc) != "AI Wiki watcher is already running.":
+            raise
+        print(str(exc))
 
 
 def main() -> int:

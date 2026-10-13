@@ -3,6 +3,44 @@ from types import SimpleNamespace
 from engine import watcher
 
 
+def test_single_instance_lock_rejects_second_process_handle(tmp_path):
+    first = watcher.SingleInstanceLock(tmp_path / ".watcher.lock")
+    second = watcher.SingleInstanceLock(tmp_path / ".watcher.lock")
+    assert first.acquire()
+    assert not second.acquire()
+    second.release()
+    first.release()
+
+
+def test_single_instance_lock_released_after_normal_shutdown(tmp_path):
+    path = tmp_path / ".watcher.lock"
+    with watcher.SingleInstanceLock(path):
+        assert path.exists()
+        assert not watcher.SingleInstanceLock(path).acquire()
+    replacement = watcher.SingleInstanceLock(path)
+    assert replacement.acquire()
+    replacement.release()
+
+
+def test_stale_lock_file_is_recoverable(tmp_path):
+    path = tmp_path / ".watcher.lock"
+    path.write_bytes(b"stale")
+    lock = watcher.SingleInstanceLock(path)
+    assert lock.acquire()
+    lock.release()
+
+
+def test_unexpected_shutdown_does_not_permanently_block_future_start(tmp_path):
+    path = tmp_path / ".watcher.lock"
+    first = watcher.SingleInstanceLock(path)
+    assert first.acquire()
+    first._handle.close()
+    first._handle = None
+    replacement = watcher.SingleInstanceLock(path)
+    assert replacement.acquire()
+    replacement.release()
+
+
 def _handler(tmp_path):
     vault = tmp_path / "Vault"
     vault.mkdir(exist_ok=True)
