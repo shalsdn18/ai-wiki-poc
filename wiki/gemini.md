@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "The Gemini app is now available for Windows.",
+  "current_state": "Google announced AI updates in September 2026.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -50,64 +50,135 @@
         "gemini-ca11f5a155cee3a9b930"
       ],
       "summary": "The Gemini app, which was previously not available on Windows, has now been released for the platform."
+    },
+    {
+      "published_at": "2026-09-14T16:00:00+00:00",
+      "source_ids": [
+        "gemini-fd1baec08311b505543d"
+      ],
+      "summary": "DevFest is a recurring event, as indicated by the phrase \"DevFest is back\"."
+    },
+    {
+      "published_at": "2026-09-15T17:00:00+00:00",
+      "source_ids": [
+        "gemini-25823e681aab7b46b522",
+        "gemini-72b56895324eb8ab7790"
+      ],
+      "summary": "Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs."
+    },
+    {
+      "published_at": "2026-09-23T16:00:00+00:00",
+      "source_ids": [
+        "gemini-b29526b4a6c66a1651e3",
+        "gemini-c99106a5c97c0f2896ac"
+      ],
+      "summary": "Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities."
+    },
+    {
+      "published_at": "2026-09-24T15:30:00+00:00",
+      "source_ids": [
+        "gemini-ca359f02283ba7260ef5"
+      ],
+      "summary": "This source announces the introduction of Gemini 3.8 Live with Live Avatar."
+    },
+    {
+      "published_at": "2026-09-28T16:00:00+00:00",
+      "source_ids": [
+        "gemini-5c384dea4f4cf7660e99",
+        "gemini-61017449abab71d17b6d"
+      ],
+      "summary": "Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services."
+    },
+    {
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "source_ids": [
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
+      ],
+      "summary": "Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality."
+    },
+    {
+      "published_at": "2026-10-02T15:00:00+00:00",
+      "source_ids": [
+        "gemini-aacb8ca8a4a96bc0cfec"
+      ],
+      "summary": "Google regularly provides updates on its AI developments, with the latest being announced in September 2026."
     }
   ],
   "key_facts": [
-    "Gemini is now available on Windows."
+    "A video was released showing the September AI updates."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-09-10T16:00:00+00:00",
+      "published_at": "2026-10-02T15:00:00+00:00",
       "source_ids": [
-        "gemini-ca11f5a155cee3a9b930"
+        "gemini-aacb8ca8a4a96bc0cfec"
       ],
-      "summary": "The Gemini app has been released for Windows."
+      "summary": "Google announced new AI updates in September 2026."
     },
     {
-      "published_at": "2026-09-09T16:00:00+00:00",
+      "published_at": "2026-10-01T16:00:00+00:00",
       "source_ids": [
-        "gemini-8a1d2f52404f044bff9a"
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
       ],
-      "summary": "Gemini is highlighted for its capabilities in streamlining administrative chores."
+      "summary": "The Gemini 4 Argon model has been launched."
     },
     {
-      "published_at": "2026-09-04T16:00:00+00:00",
+      "published_at": "2026-10-01T16:00:00+00:00",
       "source_ids": [
-        "gemini-9ec50e5febe2af86d959"
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
       ],
-      "summary": "Lyria 3.5 is now available in the Gemini app."
+      "summary": "Skills are now available in Gemini to automate tasks."
     },
     {
-      "published_at": "2026-09-04T16:00:00+00:00",
+      "published_at": "2026-10-01T16:00:00+00:00",
       "source_ids": [
-        "gemini-9ec50e5febe2af86d959"
+        "gemini-e8e0bfab56ba1a2c98e0",
+        "gemini-8a18dee8ca8f941c5640",
+        "gemini-ce1c239287a2847282fe"
       ],
-      "summary": "Lyria 3.5 is now available in the Gemini API."
+      "summary": "Guided Vision has been introduced in Gemini Live."
     },
     {
-      "published_at": "2026-09-02T15:40:00+00:00",
+      "published_at": "2026-09-28T16:00:00+00:00",
       "source_ids": [
-        "gemini-445c9f3e3d31d26692ad",
-        "gemini-ef239918f16e14829b0f",
-        "gemini-9dceaf4a590f3244f3de"
+        "gemini-5c384dea4f4cf7660e99",
+        "gemini-61017449abab71d17b6d"
       ],
-      "summary": "Partnership between MrBeast and Gemini."
+      "summary": "Edy's Grocer is using Gemini for catering services for 200 guests."
     }
   ],
   "seen_hashes": [
     "03626549a59abf648ee59163b3b8acbf66c36513cb1e76d6e277bc044c926e30",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
+    "1b78aea5c3a7de7a7f3d82fd60d26c390cbbd186e1964ed55ae0fa4abb6152c4",
     "205edede835e230f47bd9b48c99c2872a996df5ce983d0853dd693ad8122d2e1",
+    "232ac1ecf683baf142febc1f331fb5ee1760f425f41e8c832357a01a5acbf6f2",
     "25a006db28eb2cb6b57ad593e2de393aff31ddddde30c531cd65191f0a3eb10c",
     "319df7fecd10f82839948a83de55440289ded38a0c05115f792220c51f439f74",
+    "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
+    "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
+    "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
+    "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
+    "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
+    "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
+    "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
+    "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
-    "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2"
+    "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
+    "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
+    "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172"
   ]
 }
 ---
@@ -116,19 +187,19 @@
 
 ## Current State
 
-The Gemini app is now available for Windows.
+Google announced AI updates in September 2026.
 
 ## Key Facts
 
-- Gemini is now available on Windows.
+- A video was released showing the September AI updates.
 
 ## Recent Changes
 
-- 2026-09-10T16:00:00+00:00 — The Gemini app has been released for Windows. (sources: gemini-ca11f5a155cee3a9b930)
-- 2026-09-09T16:00:00+00:00 — Gemini is highlighted for its capabilities in streamlining administrative chores. (sources: gemini-8a1d2f52404f044bff9a)
-- 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini app. (sources: gemini-9ec50e5febe2af86d959)
-- 2026-09-04T16:00:00+00:00 — Lyria 3.5 is now available in the Gemini API. (sources: gemini-9ec50e5febe2af86d959)
-- 2026-09-02T15:40:00+00:00 — Partnership between MrBeast and Gemini. (sources: gemini-445c9f3e3d31d26692ad, gemini-ef239918f16e14829b0f, gemini-9dceaf4a590f3244f3de)
+- 2026-10-02T15:00:00+00:00 — Google announced new AI updates in September 2026. (sources: gemini-aacb8ca8a4a96bc0cfec)
+- 2026-10-01T16:00:00+00:00 — The Gemini 4 Argon model has been launched. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-10-01T16:00:00+00:00 — Skills are now available in Gemini to automate tasks. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-10-01T16:00:00+00:00 — Guided Vision has been introduced in Gemini Live. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-09-28T16:00:00+00:00 — Edy's Grocer is using Gemini for catering services for 200 guests. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
 
 ## History Log
 
@@ -138,3 +209,10 @@ The Gemini app is now available for Windows.
 - 2026-09-04T16:00:00+00:00 — This is the initial announcement regarding the availability of Lyria 3.5 in the Gemini app and API. (sources: gemini-9ec50e5febe2af86d959)
 - 2026-09-09T16:00:00+00:00 — A blog post published on 2026-09-09 by Google's official Gemini blog promotes Gemini's utility for administrative tasks. (sources: gemini-8a1d2f52404f044bff9a)
 - 2026-09-10T16:00:00+00:00 — The Gemini app, which was previously not available on Windows, has now been released for the platform. (sources: gemini-ca11f5a155cee3a9b930)
+- 2026-09-14T16:00:00+00:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (sources: gemini-fd1baec08311b505543d)
+- 2026-09-15T17:00:00+00:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
+- 2026-09-23T16:00:00+00:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
+- 2026-09-24T15:30:00+00:00 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
+- 2026-09-28T16:00:00+00:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
+- 2026-10-01T16:00:00+00:00 — Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026-10-02T15:00:00+00:00 — Google regularly provides updates on its AI developments, with the latest being announced in September 2026. (sources: gemini-aacb8ca8a4a96bc0cfec)
