@@ -275,3 +275,9 @@ does not require an Obsidian Vault, Ollama, or the local vector database.
 Only the committed Wiki Markdown read APIs are enabled in the cloud.
 
 성공한 자료의 URL identity, content hash, 입력 파일명, 처리 시각은 `inbox/.processed.json`에 기록됩니다. 동일 URL 또는 동일 content는 Gemini를 다시 호출하지 않으며, 실패한 자료는 processed 상태로 기록되지 않습니다. 내부 source ID와 content hash는 category Wiki 본문에 렌더링하지 않습니다.
+
+### LAN and deployed frontend API configuration
+
+During local or LAN development, the frontend calls `/api` on the same host and Vite proxies requests to FastAPI at `http://127.0.0.1:8000`. Start the Vite server with `npm run dev` and FastAPI bound to `0.0.0.0:8000`; mobile browsers can use the PC's LAN URL without a per-device API URL or additional CORS origin. Set `VITE_DEV_API_TARGET` in `frontend/.env.local` only when the local API uses a different address.
+
+For a separately hosted production frontend, set `VITE_API_BASE_URL` to the API origin (for example, the Render service URL) before building. Add the deployed frontend origin to the API service's `CORS_ALLOW_ORIGINS` setting.

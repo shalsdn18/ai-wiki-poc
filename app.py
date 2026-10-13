@@ -3,21 +3,33 @@
 from __future__ import annotations
 
 import json
+import base64
+import hashlib
+import hmac
 import os
+import secrets
+import time
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 import engine.config
+from engine import document_store
 from engine.inbox_wiki import CATEGORIES
 from engine.obsidian_import import discover_markdown
 from engine.pipeline import PipelineStats, run_pipeline
 from engine.vector_store import DEFAULT_VECTOR_DB, SemanticResult, get_documents, semantic_search
 
 app = FastAPI(title="AI Wiki API", version="1.0.0")
+
+_production = os.getenv("APP_ENV", "development").strip().casefold() == "production"
+_session_cookie_name = "ai_wiki_session"
+_session_ttl_seconds = 60 * 60 * 24 * 7
+_password_hash = os.getenv("APP_PASSWORD_HASH", "").strip()
+_session_secret = os.getenv("SESSION_SECRET", "").encode("utf-8")
 
 _default_cors_origins = {
     "https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site",
@@ -29,14 +41,139 @@ _configured_cors_origins = {
 app.add_middleware(
     CORSMiddleware,
     allow_origins=sorted(_default_cors_origins | _configured_cors_origins),
-    allow_credentials=False,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
 
 def _enabled(name: str) -> bool:
     return os.getenv(name, "false").strip().casefold() in {"1", "true", "yes", "on"}
+
+
+def _auth_configured() -> bool:
+    return bool(_password_hash and len(_session_secret) >= 32)
+
+
+def _verify_password(password: str) -> bool:
+    """Verify a PBKDF2-SHA256 value encoded as pbkdf2_sha256$rounds$salt$digest."""
+    try:
+        algorithm, rounds_text, salt, expected = _password_hash.split("$", 3)
+        rounds = int(rounds_text)
+        if algorithm != "pbkdf2_sha256" or rounds < 100_000 or not salt or not expected:
+            return False
+        actual = hashlib.pbkdf2_hmac(
+            "sha256", password.encode("utf-8"), salt.encode("utf-8"), rounds
+        )
+        return hmac.compare_digest(base64.urlsafe_b64encode(actual).decode("ascii"), expected)
+    except (ValueError, TypeError, UnicodeError):
+        return False
+
+
+def _session_signature(payload: str) -> str:
+    return base64.urlsafe_b64encode(
+        hmac.new(_session_secret, payload.encode("ascii"), hashlib.sha256).digest()
+    ).decode("ascii")
+
+
+def _new_session() -> str:
+    expires_at = int(time.time()) + _session_ttl_seconds
+    payload = f"{expires_at}.{secrets.token_urlsafe(24)}"
+    return f"{payload}.{_session_signature(payload)}"
+
+
+def _valid_session(value: str | None) -> bool:
+    if not value or not _session_secret:
+        return False
+    try:
+        expires_text, nonce, signature = value.split(".", 2)
+        expires_at = int(expires_text)
+        payload = f"{expires_text}.{nonce}"
+        return (
+            expires_at >= int(time.time())
+            and hmac.compare_digest(_session_signature(payload), signature)
+        )
+    except (ValueError, TypeError):
+        return False
+
+
+def _request_origin(request: Request) -> str | None:
+    origin = request.headers.get("origin")
+    if origin:
+        return origin.rstrip("/")
+    referer = request.headers.get("referer")
+    if referer:
+        from urllib.parse import urlsplit
+
+        parsed = urlsplit(referer)
+        if parsed.scheme and parsed.netloc:
+            return f"{parsed.scheme}://{parsed.netloc}".rstrip("/")
+    return None
+
+
+def _require_same_origin(request: Request) -> None:
+    if request.headers.get("x-csrf-protection") != "1":
+        raise HTTPException(status_code=403, detail="CSRF protection header is required")
+    origin = _request_origin(request)
+    allowed = set(_default_cors_origins | _configured_cors_origins)
+    # The request's own origin supports a same-origin frontend deployment.
+    expected_origin = f"{request.url.scheme}://{request.headers.get('host', '')}".rstrip("/")
+    if origin and (origin in allowed or origin == expected_origin):
+        return
+    raise HTTPException(status_code=403, detail="Request origin is not allowed")
+
+
+def _require_document_session(request: Request) -> None:
+    if not _auth_configured():
+        raise HTTPException(status_code=503, detail="Document authentication is not configured")
+    if not _valid_session(request.cookies.get(_session_cookie_name)):
+        raise HTTPException(status_code=401, detail="Authentication required")
+
+
+class LoginRequest(BaseModel):
+    password: str = Field(min_length=1)
+
+
+@app.post("/login")
+def login(request: Request, credentials: LoginRequest, response: Response) -> dict[str, bool]:
+    if not _auth_configured():
+        raise HTTPException(status_code=503, detail="Document authentication is not configured")
+    _require_same_origin(request)
+    if not _verify_password(credentials.password):
+        raise HTTPException(status_code=401, detail="Invalid password")
+    response.set_cookie(
+        key=_session_cookie_name,
+        value=_new_session(),
+        max_age=_session_ttl_seconds,
+        httponly=True,
+        secure=_production,
+        samesite="none" if _production else "lax",
+        path="/",
+    )
+    return {"authenticated": True}
+
+
+@app.post("/logout")
+def logout(request: Request, response: Response) -> dict[str, bool]:
+    _require_same_origin(request)
+    response.delete_cookie(
+        key=_session_cookie_name,
+        path="/",
+        httponly=True,
+        secure=_production,
+        samesite="none" if _production else "lax",
+    )
+    return {"authenticated": False}
+
+
+@app.get("/auth/status")
+def auth_status(request: Request) -> dict[str, bool]:
+    if not _auth_configured():
+        return {"authenticated": False, "configured": False}
+    return {
+        "authenticated": _valid_session(request.cookies.get(_session_cookie_name)),
+        "configured": True,
+    }
 
 
 @app.get("/health")
@@ -97,6 +234,91 @@ class SemanticSearchResponse(BaseModel):
     score: float
     snippet: str
     id: str
+
+
+class DocumentWriteRequest(BaseModel):
+    title: str = Field(min_length=1)
+    content: str
+    tags: list[str] = Field(default_factory=list)
+
+
+class DocumentResponse(BaseModel):
+    id: str
+    title: str
+    content: str
+    tags: list[str]
+    path: str
+    content_hash: str
+    created_at: str
+    updated_at: str
+
+
+def _document_or_404(operation, *args):
+    try:
+        return operation(*args)
+    except (document_store.DocumentNotFoundError, document_store.InvalidDocumentIdError) as exc:
+        raise HTTPException(status_code=404, detail="Document not found") from exc
+    except document_store.DocumentStorageUnavailableError as exc:
+        raise HTTPException(status_code=503, detail="Document storage is temporarily unavailable") from exc
+
+
+def _document_storage_call(operation, *args):
+    try:
+        return operation(*args)
+    except document_store.DocumentStorageUnavailableError as exc:
+        raise HTTPException(status_code=503, detail="Document storage is temporarily unavailable") from exc
+
+
+@app.get("/documents", response_model=list[DocumentResponse])
+def documents(request: Request) -> list[DocumentResponse]:
+    _require_document_session(request)
+    items = _document_storage_call(document_store.list_documents)
+    return [DocumentResponse(**item) for item in items]
+
+
+@app.get("/documents/{document_id}", response_model=DocumentResponse)
+def get_document(document_id: str, request: Request) -> DocumentResponse:
+    _require_document_session(request)
+    item = _document_or_404(document_store.get_document, document_id)
+    return DocumentResponse(**item)
+
+
+@app.post(
+    "/documents",
+    response_model=DocumentResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_document(payload: DocumentWriteRequest, request: Request) -> DocumentResponse:
+    _require_same_origin(request)
+    _require_document_session(request)
+    item = _document_storage_call(
+        document_store.create_document, payload.title, payload.content, payload.tags
+    )
+    return DocumentResponse(**item)
+
+
+@app.put("/documents/{document_id}", response_model=DocumentResponse)
+def update_document(
+    document_id: str, payload: DocumentWriteRequest, request: Request
+) -> DocumentResponse:
+    _require_same_origin(request)
+    _require_document_session(request)
+    item = _document_or_404(
+        document_store.update_document,
+        document_id,
+        payload.title,
+        payload.content,
+        payload.tags,
+    )
+    return DocumentResponse(**item)
+
+
+@app.delete("/documents/{document_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_document(document_id: str, request: Request) -> Response:
+    _require_same_origin(request)
+    _require_document_session(request)
+    _document_or_404(document_store.delete_document, document_id)
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 def _state_path() -> Path:
