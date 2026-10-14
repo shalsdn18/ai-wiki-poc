@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Sophos and Asana have achieved significant operational improvements by integrating OpenAI's AI models.",
+  "current_state": "Higgsfield now enables creators to produce AI videos longer than 10 minutes, an increase from the previous 1-minute limit.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -250,14 +250,43 @@
         "openai-9bf93d58cc35db9987f8"
       ],
       "summary": "Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements."
+    },
+    {
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "source_ids": [
+        "openai-8d45898e533e591d4241"
+      ],
+      "summary": "Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations."
     }
   ],
   "key_facts": [
-    "Sophos reduced cyber-threat investigation time by 96% using OpenAI's Daybreak.",
-    "Sophos automated 52% of MDR cases while preserving human oversight.",
-    "Asana made its browser agent 76x cheaper and 5x faster in tests using GPT-6 Astra in Codex."
+    "Higgsfield extends AI video length from 1 minute to over 10 minutes.",
+    "It utilizes GPT-6 Astra for creating longer videos.",
+    "Precise visuals are achieved with GPT-Image-2.5.",
+    "Higgsfield also provides a pathway for voice filmmaking through GPT-Live."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "source_ids": [
+        "openai-8d45898e533e591d4241"
+      ],
+      "summary": "New capabilities include precise visuals via GPT-Image-2.5."
+    },
+    {
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "source_ids": [
+        "openai-8d45898e533e591d4241"
+      ],
+      "summary": "AI video creation length has been extended to over 10 minutes."
+    },
+    {
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "source_ids": [
+        "openai-8d45898e533e591d4241"
+      ],
+      "summary": "A path to voice filmmaking is introduced with GPT-Live."
+    },
     {
       "published_at": "2026-10-09T07:00:00+00:00",
       "source_ids": [
@@ -273,39 +302,6 @@
         "openai-9bf93d58cc35db9987f8"
       ],
       "summary": "Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed."
-    },
-    {
-      "published_at": "2026-10-08T16:00:00+00:00",
-      "source_ids": [
-        "openai-db7b9e6fe248e3146f87",
-        "openai-855092fba1df7e8a668b",
-        "openai-45d6a2b79938283a07ca",
-        "openai-d9e485b409fe8517ac6e",
-        "openai-661f64ddb5f472a2675e"
-      ],
-      "summary": "Pollo AI is using GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 for creative campaign generation."
-    },
-    {
-      "published_at": "2026-10-08T16:00:00+00:00",
-      "source_ids": [
-        "openai-db7b9e6fe248e3146f87",
-        "openai-855092fba1df7e8a668b",
-        "openai-45d6a2b79938283a07ca",
-        "openai-d9e485b409fe8517ac6e",
-        "openai-661f64ddb5f472a2675e"
-      ],
-      "summary": "Oracle adopted ChatGPT Work and Codex to turn specialist knowledge into fast, repeatable workflows."
-    },
-    {
-      "published_at": "2026-10-08T16:00:00+00:00",
-      "source_ids": [
-        "openai-db7b9e6fe248e3146f87",
-        "openai-855092fba1df7e8a668b",
-        "openai-45d6a2b79938283a07ca",
-        "openai-d9e485b409fe8517ac6e",
-        "openai-661f64ddb5f472a2675e"
-      ],
-      "summary": "OpenAI disrupted two AI-enabled influence operations."
     }
   ],
   "seen_hashes": [
@@ -372,6 +368,7 @@
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
+    "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
@@ -404,21 +401,22 @@
 
 ## Current State
 
-Sophos and Asana have achieved significant operational improvements by integrating OpenAI's AI models.
+Higgsfield now enables creators to produce AI videos longer than 10 minutes, an increase from the previous 1-minute limit.
 
 ## Key Facts
 
-- Sophos reduced cyber-threat investigation time by 96% using OpenAI's Daybreak.
-- Sophos automated 52% of MDR cases while preserving human oversight.
-- Asana made its browser agent 76x cheaper and 5x faster in tests using GPT-6 Astra in Codex.
+- Higgsfield extends AI video length from 1 minute to over 10 minutes.
+- It utilizes GPT-6 Astra for creating longer videos.
+- Precise visuals are achieved with GPT-Image-2.5.
+- Higgsfield also provides a pathway for voice filmmaking through GPT-Live.
 
 ## Recent Changes
 
+- 2026-10-13T12:00:00+00:00 — New capabilities include precise visuals via GPT-Image-2.5. (sources: openai-8d45898e533e591d4241)
+- 2026-10-13T12:00:00+00:00 — AI video creation length has been extended to over 10 minutes. (sources: openai-8d45898e533e591d4241)
+- 2026-10-13T12:00:00+00:00 — A path to voice filmmaking is introduced with GPT-Live. (sources: openai-8d45898e533e591d4241)
 - 2026-10-09T07:00:00+00:00 — Sophos adopted OpenAI's Daybreak to enhance cyber-threat investigation and MDR case automation. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
 - 2026-10-09T07:00:00+00:00 — Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
-- 2026-10-08T16:00:00+00:00 — Pollo AI is using GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5 for creative campaign generation. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
-- 2026-10-08T16:00:00+00:00 — Oracle adopted ChatGPT Work and Codex to turn specialist knowledge into fast, repeatable workflows. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
-- 2026-10-08T16:00:00+00:00 — OpenAI disrupted two AI-enabled influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 
 ## History Log
 
@@ -449,3 +447,4 @@ Sophos and Asana have achieved significant operational improvements by integrati
 - 2026-10-06T16:00:00+00:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
 - 2026-10-08T16:00:00+00:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 - 2026-10-09T07:00:00+00:00 — Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
+- 2026-10-13T12:00:00+00:00 — Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations. (sources: openai-8d45898e533e591d4241)
