@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './style.css'
 
 const configuredApiBase = import.meta.env.VITE_API_BASE_URL?.trim().replace(/\/+$/, '')
-const API = configuredApiBase || (import.meta.env.DEV ? '/api' : window.location.origin)
+const API = configuredApiBase || (import.meta.env.DEV ? '/api' : 'https://ai-wiki-poc.onrender.com')
 
 async function request(path, options = {}) {
   const response = await fetch(`${API}${path}`, {

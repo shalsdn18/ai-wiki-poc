@@ -106,8 +106,12 @@ npm install
 npm run dev
 ```
 
-The dashboard uses `http://localhost:8000` by default. Set
-`VITE_API_BASE_URL` in `frontend/.env.local` when the API runs elsewhere.
+The dashboard uses the Vite `/api` proxy in development (targeting
+`http://127.0.0.1:8000` by default). For a production build, set
+`VITE_API_BASE_URL=https://ai-wiki-poc.onrender.com`; this value is public and
+must contain no secrets. Add the deployed frontend's exact HTTPS origin to the
+Render API service's `CORS_ALLOW_ORIGINS` environment variable. The API uses
+credentialed CORS and production session cookies use `SameSite=None; Secure`.
 
 ## Semantic search
 

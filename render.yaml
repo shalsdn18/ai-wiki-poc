@@ -15,6 +15,6 @@ services:
       - key: ENABLE_LOCAL_RAG
         value: "false"
       - key: CORS_ALLOW_ORIGINS
-        value: https://ai-wiki-dashboard-minwoo.cheatmin.chatgpt.site
+        sync: false
       - key: GEMINI_API_KEY
         sync: false
