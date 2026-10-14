@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google announced AI updates in September 2026.",
+  "current_state": "Gemini 4 Argon is now available in the Google Gemini app for AI Pro and Ultra subscribers and for developers.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -104,12 +104,49 @@
         "gemini-aacb8ca8a4a96bc0cfec"
       ],
       "summary": "Google regularly provides updates on its AI developments, with the latest being announced in September 2026."
+    },
+    {
+      "published_at": "2026-10-13T18:00:00+00:00",
+      "source_ids": [
+        "gemini-0fb6a7bf6fd66852ffc3",
+        "gemini-c69ca328a70433eddd10",
+        "gemini-11e9f2eebcc1194bfc39"
+      ],
+      "summary": "Gemini 4 Argon has been released, offering frontier reasoning and agentic coding, and is now accessible to Google Gemini app subscribers and developers for various applications."
     }
   ],
   "key_facts": [
-    "A video was released showing the September AI updates."
+    "Gemini 4 Argon brings frontier reasoning and agentic coding.",
+    "Developers can use Gemini 4 Argon to build complex software and cybersecurity workflows."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-13T18:00:00+00:00",
+      "source_ids": [
+        "gemini-0fb6a7bf6fd66852ffc3",
+        "gemini-c69ca328a70433eddd10",
+        "gemini-11e9f2eebcc1194bfc39"
+      ],
+      "summary": "Google AI Pro and Ultra subscribers can now access Gemini 4 Argon."
+    },
+    {
+      "published_at": "2026-10-13T18:00:00+00:00",
+      "source_ids": [
+        "gemini-0fb6a7bf6fd66852ffc3",
+        "gemini-c69ca328a70433eddd10",
+        "gemini-11e9f2eebcc1194bfc39"
+      ],
+      "summary": "Gemini 4 Argon is now available in the Google Gemini app."
+    },
+    {
+      "published_at": "2026-10-13T18:00:00+00:00",
+      "source_ids": [
+        "gemini-0fb6a7bf6fd66852ffc3",
+        "gemini-c69ca328a70433eddd10",
+        "gemini-11e9f2eebcc1194bfc39"
+      ],
+      "summary": "Gemini 4 Argon is now available for developers."
+    },
     {
       "published_at": "2026-10-02T15:00:00+00:00",
       "source_ids": [
@@ -125,38 +162,13 @@
         "gemini-ce1c239287a2847282fe"
       ],
       "summary": "The Gemini 4 Argon model has been launched."
-    },
-    {
-      "published_at": "2026-10-01T16:00:00+00:00",
-      "source_ids": [
-        "gemini-e8e0bfab56ba1a2c98e0",
-        "gemini-8a18dee8ca8f941c5640",
-        "gemini-ce1c239287a2847282fe"
-      ],
-      "summary": "Skills are now available in Gemini to automate tasks."
-    },
-    {
-      "published_at": "2026-10-01T16:00:00+00:00",
-      "source_ids": [
-        "gemini-e8e0bfab56ba1a2c98e0",
-        "gemini-8a18dee8ca8f941c5640",
-        "gemini-ce1c239287a2847282fe"
-      ],
-      "summary": "Guided Vision has been introduced in Gemini Live."
-    },
-    {
-      "published_at": "2026-09-28T16:00:00+00:00",
-      "source_ids": [
-        "gemini-5c384dea4f4cf7660e99",
-        "gemini-61017449abab71d17b6d"
-      ],
-      "summary": "Edy's Grocer is using Gemini for catering services for 200 guests."
     }
   ],
   "seen_hashes": [
     "03626549a59abf648ee59163b3b8acbf66c36513cb1e76d6e277bc044c926e30",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
+    "132301249d811076bce85255753d9a5eb8e4f435965538f8d63e40fe65782e4d",
     "1b78aea5c3a7de7a7f3d82fd60d26c390cbbd186e1964ed55ae0fa4abb6152c4",
     "205edede835e230f47bd9b48c99c2872a996df5ce983d0853dd693ad8122d2e1",
     "232ac1ecf683baf142febc1f331fb5ee1760f425f41e8c832357a01a5acbf6f2",
@@ -167,6 +179,7 @@
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
+    "6ca33a117966ec71b773cbf35ff7d9a35f52c8e28a7e30d58d0f9e7082430dea",
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
@@ -178,7 +191,8 @@
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
     "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
-    "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172"
+    "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172",
+    "fc1da21d313c01663c99f490192fb014a1cc764e462fd08dc30978a8660ab741"
   ]
 }
 ---
@@ -187,19 +201,20 @@
 
 ## Current State
 
-Google announced AI updates in September 2026.
+Gemini 4 Argon is now available in the Google Gemini app for AI Pro and Ultra subscribers and for developers.
 
 ## Key Facts
 
-- A video was released showing the September AI updates.
+- Gemini 4 Argon brings frontier reasoning and agentic coding.
+- Developers can use Gemini 4 Argon to build complex software and cybersecurity workflows.
 
 ## Recent Changes
 
+- 2026-10-13T18:00:00+00:00 — Google AI Pro and Ultra subscribers can now access Gemini 4 Argon. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
+- 2026-10-13T18:00:00+00:00 — Gemini 4 Argon is now available in the Google Gemini app. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
+- 2026-10-13T18:00:00+00:00 — Gemini 4 Argon is now available for developers. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
 - 2026-10-02T15:00:00+00:00 — Google announced new AI updates in September 2026. (sources: gemini-aacb8ca8a4a96bc0cfec)
 - 2026-10-01T16:00:00+00:00 — The Gemini 4 Argon model has been launched. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
-- 2026-10-01T16:00:00+00:00 — Skills are now available in Gemini to automate tasks. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
-- 2026-10-01T16:00:00+00:00 — Guided Vision has been introduced in Gemini Live. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
-- 2026-09-28T16:00:00+00:00 — Edy's Grocer is using Gemini for catering services for 200 guests. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
 
 ## History Log
 
@@ -216,3 +231,4 @@ Google announced AI updates in September 2026.
 - 2026-09-28T16:00:00+00:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
 - 2026-10-01T16:00:00+00:00 — Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
 - 2026-10-02T15:00:00+00:00 — Google regularly provides updates on its AI developments, with the latest being announced in September 2026. (sources: gemini-aacb8ca8a4a96bc0cfec)
+- 2026-10-13T18:00:00+00:00 — Gemini 4 Argon has been released, offering frontier reasoning and agentic coding, and is now accessible to Google Gemini app subscribers and developers for various applications. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
