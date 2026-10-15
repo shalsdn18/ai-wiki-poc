@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Higgsfield now enables creators to produce AI videos longer than 10 minutes, an increase from the previous 1-minute limit.",
+  "current_state": "OpenAI's AI agents and models are being adopted across various sectors, including cybersecurity and applications beyond coding, demonstrating significant advancements in efficiency and capability.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -257,51 +257,81 @@
         "openai-8d45898e533e591d4241"
       ],
       "summary": "Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations."
+    },
+    {
+      "published_at": "2026-10-14T12:00:00+00:00",
+      "source_ids": [
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
+      ],
+      "summary": "Recent developments highlight the expanding application of OpenAI's AI agents and models. Companies like Amp are pushing agents beyond coding, while SentinelOne and Block are leveraging OpenAI technology to significantly enhance cybersecurity operations, reducing analysis times and accelerating threat response. Third Moment Research showcases the scalability of these agents, running thousands for extended durations. This indicates a growing trend of agentic AI adoption, particularly within the EU, demonstrating its increasing value across various enterprise functions."
     }
   ],
   "key_facts": [
-    "Higgsfield extends AI video length from 1 minute to over 10 minutes.",
-    "It utilizes GPT-6 Astra for creating longer videos.",
-    "Precise visuals are achieved with GPT-Image-2.5.",
-    "Higgsfield also provides a pathway for voice filmmaking through GPT-Live."
+    "Amp is utilizing OpenAI models like GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT to expand AI agent capabilities beyond traditional coding tasks.",
+    "SentinelOne has reduced malware analysis time from weeks to hours by integrating OpenAI Daybreak.",
+    "Third Moment Research is running 10,000 agents for over 36 hours using GPT-6 Astra, GPT-6.1 Sol, Codex, and Daybreak for cybersecurity applications.",
+    "Block is developing AI-powered security solutions with OpenAI technology, enabling quicker threat investigation and patch generation.",
+    "Agentic AI adoption is increasing among enterprises and small businesses within the EU."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-10-13T12:00:00+00:00",
+      "published_at": "2026-10-14T12:00:00+00:00",
       "source_ids": [
-        "openai-8d45898e533e591d4241"
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
       ],
-      "summary": "New capabilities include precise visuals via GPT-Image-2.5."
+      "summary": "There is a growing trend of agentic AI adoption across EU businesses."
     },
     {
-      "published_at": "2026-10-13T12:00:00+00:00",
+      "published_at": "2026-10-14T12:00:00+00:00",
       "source_ids": [
-        "openai-8d45898e533e591d4241"
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
       ],
-      "summary": "AI video creation length has been extended to over 10 minutes."
+      "summary": "Malware analysis processes are being drastically accelerated from weeks to hours using OpenAI technology."
     },
     {
-      "published_at": "2026-10-13T12:00:00+00:00",
+      "published_at": "2026-10-14T12:00:00+00:00",
       "source_ids": [
-        "openai-8d45898e533e591d4241"
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
       ],
-      "summary": "A path to voice filmmaking is introduced with GPT-Live."
+      "summary": "AI labs are demonstrating the ability to run a large number of agents (10,000) for extended periods (36+ hours)."
     },
     {
-      "published_at": "2026-10-09T07:00:00+00:00",
+      "published_at": "2026-10-14T12:00:00+00:00",
       "source_ids": [
-        "openai-570fe3204556675e8dd9",
-        "openai-9bf93d58cc35db9987f8"
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
       ],
-      "summary": "Sophos adopted OpenAI's Daybreak to enhance cyber-threat investigation and MDR case automation."
+      "summary": "AI is enhancing security operations by speeding up threat investigation and patch proposal."
     },
     {
-      "published_at": "2026-10-09T07:00:00+00:00",
+      "published_at": "2026-10-14T12:00:00+00:00",
       "source_ids": [
-        "openai-570fe3204556675e8dd9",
-        "openai-9bf93d58cc35db9987f8"
+        "openai-57c3309db5bedcdec4e0",
+        "openai-004cd593adabcd24c97d",
+        "openai-a8b8c31de898145e14c8",
+        "openai-94ee28b93f9d2d830319",
+        "openai-200a5d3dd39c6bfb7a20"
       ],
-      "summary": "Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed."
+      "summary": "AI agents are now being applied to tasks beyond code, expanding their utility."
     }
   ],
   "seen_hashes": [
@@ -329,6 +359,7 @@
     "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
+    "4b58459af7180df9bce090ffcc756d78ea1ce130bb5001623b56c5d70dd47fef",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
@@ -349,8 +380,10 @@
     "7a3b160516d339624806bb902f8da225cabf550e6a464a5e11f3db58fad4fc7d",
     "7b0998feb986630c353ea69fc70f9eae3419419719ce9571158a4083031e1a8a",
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
+    "7e2cea82fc626b90fef309e59b73e5270efaa62f50d402768d1089b7be5d92df",
     "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
     "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
+    "8740ad58255f90886ffa9f687077ed6d2e2b8d7c70bb86a33ebbf8ba827350a9",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
     "8a197542e3b2afd70b634594e89b29d89a33d33270b364da89563b4c309e2c17",
     "8ad52c468c36a20b124eafea6c66c151ed1d78f945fd64c94ad0d0931e7a181d",
@@ -358,8 +391,10 @@
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
+    "9e4b2c83a815aa182fe45c8a44cbb1859260f2fa6ae0e170f57bfacd62f0df4f",
     "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
+    "a25b8961522e5a113e822d8feffe947d2d0f0a7461fa6851343ce2bb799cb2c3",
     "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
     "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
@@ -401,22 +436,23 @@
 
 ## Current State
 
-Higgsfield now enables creators to produce AI videos longer than 10 minutes, an increase from the previous 1-minute limit.
+OpenAI's AI agents and models are being adopted across various sectors, including cybersecurity and applications beyond coding, demonstrating significant advancements in efficiency and capability.
 
 ## Key Facts
 
-- Higgsfield extends AI video length from 1 minute to over 10 minutes.
-- It utilizes GPT-6 Astra for creating longer videos.
-- Precise visuals are achieved with GPT-Image-2.5.
-- Higgsfield also provides a pathway for voice filmmaking through GPT-Live.
+- Amp is utilizing OpenAI models like GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT to expand AI agent capabilities beyond traditional coding tasks.
+- SentinelOne has reduced malware analysis time from weeks to hours by integrating OpenAI Daybreak.
+- Third Moment Research is running 10,000 agents for over 36 hours using GPT-6 Astra, GPT-6.1 Sol, Codex, and Daybreak for cybersecurity applications.
+- Block is developing AI-powered security solutions with OpenAI technology, enabling quicker threat investigation and patch generation.
+- Agentic AI adoption is increasing among enterprises and small businesses within the EU.
 
 ## Recent Changes
 
-- 2026-10-13T12:00:00+00:00 — New capabilities include precise visuals via GPT-Image-2.5. (sources: openai-8d45898e533e591d4241)
-- 2026-10-13T12:00:00+00:00 — AI video creation length has been extended to over 10 minutes. (sources: openai-8d45898e533e591d4241)
-- 2026-10-13T12:00:00+00:00 — A path to voice filmmaking is introduced with GPT-Live. (sources: openai-8d45898e533e591d4241)
-- 2026-10-09T07:00:00+00:00 — Sophos adopted OpenAI's Daybreak to enhance cyber-threat investigation and MDR case automation. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
-- 2026-10-09T07:00:00+00:00 — Asana integrated GPT-6 Astra in Codex to improve its browser agent's cost-efficiency and speed. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
+- 2026-10-14T12:00:00+00:00 — There is a growing trend of agentic AI adoption across EU businesses. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
+- 2026-10-14T12:00:00+00:00 — Malware analysis processes are being drastically accelerated from weeks to hours using OpenAI technology. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
+- 2026-10-14T12:00:00+00:00 — AI labs are demonstrating the ability to run a large number of agents (10,000) for extended periods (36+ hours). (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
+- 2026-10-14T12:00:00+00:00 — AI is enhancing security operations by speeding up threat investigation and patch proposal. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
+- 2026-10-14T12:00:00+00:00 — AI agents are now being applied to tasks beyond code, expanding their utility. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
 
 ## History Log
 
@@ -448,3 +484,4 @@ Higgsfield now enables creators to produce AI videos longer than 10 minutes, an 
 - 2026-10-08T16:00:00+00:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
 - 2026-10-09T07:00:00+00:00 — Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
 - 2026-10-13T12:00:00+00:00 — Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations. (sources: openai-8d45898e533e591d4241)
+- 2026-10-14T12:00:00+00:00 — Recent developments highlight the expanding application of OpenAI's AI agents and models. Companies like Amp are pushing agents beyond coding, while SentinelOne and Block are leveraging OpenAI technology to significantly enhance cybersecurity operations, reducing analysis times and accelerating threat response. Third Moment Research showcases the scalability of these agents, running thousands for extended durations. This indicates a growing trend of agentic AI adoption, particularly within the EU, demonstrating its increasing value across various enterprise functions. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
