@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is expanding its applications across various sectors, including academic research with the Rosalind Academic Plan, education with AI for Educators in Brazilian Portuguese, and legal services through the Agreement Analyzer developed with Sullivan & Cromwell.",
+  "current_state": "Itaú is implementing a generative AI strategy for its customers and employees in Brazil, utilizing a conversational interface (ia.i) and a governance platform (IARA). Stack Overflow for Agents has significantly increased signups and agent creation through its ChatGPT plugin.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -277,14 +277,40 @@
         "openai-94eadcab22c41e356a1d"
       ],
       "summary": "These recent announcements highlight OpenAI's ongoing efforts to integrate AI into diverse fields, including academic research, education, and legal services, through new programs, language expansions, and collaborative tool development."
+    },
+    {
+      "published_at": "2026-10-16T19:00:00+00:00",
+      "source_ids": [
+        "openai-9732b2763df5a67ab945",
+        "openai-9e63539289a31c8631b6"
+      ],
+      "summary": "Itaú is advancing its AI First strategy by deploying generative AI solutions like ia.i and IARA for its customer and employee base in Brazil's regulated sector. Separately, Stack Overflow for Agents has achieved significant user growth, tripling signups and increasing agent creation tenfold, largely due to its ChatGPT plugin."
     }
   ],
   "key_facts": [
-    "The Rosalind Academic Plan provides eligible academic labs with sponsored access to GPT-Rosalind and tools for life sciences research.",
-    "AI for Educators is now available in Brazilian Portuguese, featuring Study Mode to support active, step-by-step learning.",
-    "Sullivan & Cromwell collaborated with OpenAI to develop Agreement Analyzer, an AI tool designed to identify issues in draft legal agreements."
+    "Itaú applies its AI First strategy to customers and employees in Brazil's regulated financial sector.",
+    "Itaú uses \"ia.i\" as a conversational interface and \"IARA\" as a governance platform.",
+    "Stack Overflow for Agents was developed with Codex.",
+    "The ChatGPT plugin for Stack Overflow for Agents led to a 10x growth in agent creation.",
+    "The ChatGPT plugin for Stack Overflow for Agents tripled signups."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-16T19:00:00+00:00",
+      "source_ids": [
+        "openai-9732b2763df5a67ab945",
+        "openai-9e63539289a31c8631b6"
+      ],
+      "summary": "Stack Overflow for Agents has seen a tripling of signups and a 10x growth in agent creation, driven by its ChatGPT plugin."
+    },
+    {
+      "published_at": "2026-10-16T19:00:00+00:00",
+      "source_ids": [
+        "openai-9732b2763df5a67ab945",
+        "openai-9e63539289a31c8631b6"
+      ],
+      "summary": "Itaú is deploying generative AI solutions for its customer base and employees, including the conversational interface ia.i and the IARA governance platform."
+    },
     {
       "published_at": "2026-10-15T19:00:00+00:00",
       "source_ids": [
@@ -311,28 +337,6 @@
         "openai-94eadcab22c41e356a1d"
       ],
       "summary": "Availability of AI for Educators in Brazilian Portuguese."
-    },
-    {
-      "published_at": "2026-10-14T12:00:00+00:00",
-      "source_ids": [
-        "openai-57c3309db5bedcdec4e0",
-        "openai-004cd593adabcd24c97d",
-        "openai-a8b8c31de898145e14c8",
-        "openai-94ee28b93f9d2d830319",
-        "openai-200a5d3dd39c6bfb7a20"
-      ],
-      "summary": "There is a growing trend of agentic AI adoption across EU businesses."
-    },
-    {
-      "published_at": "2026-10-14T12:00:00+00:00",
-      "source_ids": [
-        "openai-57c3309db5bedcdec4e0",
-        "openai-004cd593adabcd24c97d",
-        "openai-a8b8c31de898145e14c8",
-        "openai-94ee28b93f9d2d830319",
-        "openai-200a5d3dd39c6bfb7a20"
-      ],
-      "summary": "Malware analysis processes are being drastically accelerated from weeks to hours using OpenAI technology."
     }
   ],
   "seen_hashes": [
@@ -349,6 +353,7 @@
     "22bd57692b02f313139613df5f9cdde452bbfd9ab61ef9c081d39ad1e8ed86ac",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
     "264fe298791a212010758fa180003ed4e9f798079c3039607494e90c3a12f9eb",
+    "28dfe1fc07b1686164cf6c6ecb2802cb3e0abde61e25422442e5a04d7e6f8537",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
@@ -367,6 +372,7 @@
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
+    "5628a918bade6a5b1d611ba386b7c82d0bcf66ed66a0e9af119fb3cc01d684c9",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
@@ -440,21 +446,23 @@
 
 ## Current State
 
-OpenAI is expanding its applications across various sectors, including academic research with the Rosalind Academic Plan, education with AI for Educators in Brazilian Portuguese, and legal services through the Agreement Analyzer developed with Sullivan & Cromwell.
+Itaú is implementing a generative AI strategy for its customers and employees in Brazil, utilizing a conversational interface (ia.i) and a governance platform (IARA). Stack Overflow for Agents has significantly increased signups and agent creation through its ChatGPT plugin.
 
 ## Key Facts
 
-- The Rosalind Academic Plan provides eligible academic labs with sponsored access to GPT-Rosalind and tools for life sciences research.
-- AI for Educators is now available in Brazilian Portuguese, featuring Study Mode to support active, step-by-step learning.
-- Sullivan & Cromwell collaborated with OpenAI to develop Agreement Analyzer, an AI tool designed to identify issues in draft legal agreements.
+- Itaú applies its AI First strategy to customers and employees in Brazil's regulated financial sector.
+- Itaú uses "ia.i" as a conversational interface and "IARA" as a governance platform.
+- Stack Overflow for Agents was developed with Codex.
+- The ChatGPT plugin for Stack Overflow for Agents led to a 10x growth in agent creation.
+- The ChatGPT plugin for Stack Overflow for Agents tripled signups.
 
 ## Recent Changes
 
+- 2026-10-16T19:00:00+00:00 — Stack Overflow for Agents has seen a tripling of signups and a 10x growth in agent creation, driven by its ChatGPT plugin. (sources: openai-9732b2763df5a67ab945, openai-9e63539289a31c8631b6)
+- 2026-10-16T19:00:00+00:00 — Itaú is deploying generative AI solutions for its customer base and employees, including the conversational interface ia.i and the IARA governance platform. (sources: openai-9732b2763df5a67ab945, openai-9e63539289a31c8631b6)
 - 2026-10-15T19:00:00+00:00 — Introduction of the Rosalind Academic Plan for academic life sciences research. (sources: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
 - 2026-10-15T19:00:00+00:00 — Development and introduction of Agreement Analyzer, an AI tool for legal agreement review. (sources: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
 - 2026-10-15T19:00:00+00:00 — Availability of AI for Educators in Brazilian Portuguese. (sources: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
-- 2026-10-14T12:00:00+00:00 — There is a growing trend of agentic AI adoption across EU businesses. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
-- 2026-10-14T12:00:00+00:00 — Malware analysis processes are being drastically accelerated from weeks to hours using OpenAI technology. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
 
 ## History Log
 
@@ -488,3 +496,4 @@ OpenAI is expanding its applications across various sectors, including academic 
 - 2026-10-13T12:00:00+00:00 — Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations. (sources: openai-8d45898e533e591d4241)
 - 2026-10-14T12:00:00+00:00 — Recent developments highlight the expanding application of OpenAI's AI agents and models. Companies like Amp are pushing agents beyond coding, while SentinelOne and Block are leveraging OpenAI technology to significantly enhance cybersecurity operations, reducing analysis times and accelerating threat response. Third Moment Research showcases the scalability of these agents, running thousands for extended durations. This indicates a growing trend of agentic AI adoption, particularly within the EU, demonstrating its increasing value across various enterprise functions. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
 - 2026-10-15T19:00:00+00:00 — These recent announcements highlight OpenAI's ongoing efforts to integrate AI into diverse fields, including academic research, education, and legal services, through new programs, language expansions, and collaborative tool development. (sources: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
+- 2026-10-16T19:00:00+00:00 — Itaú is advancing its AI First strategy by deploying generative AI solutions like ia.i and IARA for its customer and employee base in Brazil's regulated sector. Separately, Stack Overflow for Agents has achieved significant user growth, tripling signups and increasing agent creation tenfold, largely due to its ChatGPT plugin. (sources: openai-9732b2763df5a67ab945, openai-9e63539289a31c8631b6)
