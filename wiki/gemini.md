@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini can be used for styling outfits.",
+  "current_state": "Gemini is introducing new tools specifically designed for small business owners.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -127,13 +127,41 @@
         "gemini-d6e814ad2d3b10574fb7"
       ],
       "summary": "Gemini has introduced features that allow users to style outfits, including the ability to place various outfit items on a person."
+    },
+    {
+      "published_at": "2026-10-20T16:00:00+00:00",
+      "source_ids": [
+        "gemini-4fbdd2e8bf75634d9ab3"
+      ],
+      "summary": "Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation."
     }
   ],
   "key_facts": [
-    "Gemini offers features for styling outfits.",
-    "Users can ask Gemini to put a person into various outfit items."
+    "New tools for Gemini are being rolled out for small business owners.",
+    "The tools are designed to consolidate brand-specific functionalities in one place."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-20T16:00:00+00:00",
+      "source_ids": [
+        "gemini-4fbdd2e8bf75634d9ab3"
+      ],
+      "summary": "Users can create image styles tailored to their brand."
+    },
+    {
+      "published_at": "2026-10-20T16:00:00+00:00",
+      "source_ids": [
+        "gemini-4fbdd2e8bf75634d9ab3"
+      ],
+      "summary": "Gemini can be customized with various apps and skills."
+    },
+    {
+      "published_at": "2026-10-20T16:00:00+00:00",
+      "source_ids": [
+        "gemini-4fbdd2e8bf75634d9ab3"
+      ],
+      "summary": "Content creation is facilitated through the use of templates."
+    },
     {
       "published_at": "2026-10-19T16:00:00+00:00",
       "source_ids": [
@@ -147,29 +175,6 @@
         "gemini-d6e814ad2d3b10574fb7"
       ],
       "summary": "Gemini now includes capabilities for outfit styling."
-    },
-    {
-      "published_at": "2026-10-15T13:00:00+00:00",
-      "source_ids": [
-        "gemini-d84eb0687bc52748eed1"
-      ],
-      "summary": "Launch of a global cart user interface."
-    },
-    {
-      "published_at": "2026-10-15T13:00:00+00:00",
-      "source_ids": [
-        "gemini-d84eb0687bc52748eed1"
-      ],
-      "summary": "Introduction of an intelligent new shopping cart."
-    },
-    {
-      "published_at": "2026-10-13T18:00:00+00:00",
-      "source_ids": [
-        "gemini-0fb6a7bf6fd66852ffc3",
-        "gemini-c69ca328a70433eddd10",
-        "gemini-11e9f2eebcc1194bfc39"
-      ],
-      "summary": "Google AI Pro and Ultra subscribers can now access Gemini 4 Argon."
     }
   ],
   "seen_hashes": [
@@ -191,6 +196,7 @@
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
     "6ca33a117966ec71b773cbf35ff7d9a35f52c8e28a7e30d58d0f9e7082430dea",
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
+    "71dcf779c2201e303f5b6cfb2f582085d6a65e03a5ca0b9a85658599dc4ea51b",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
@@ -211,20 +217,20 @@
 
 ## Current State
 
-Gemini can be used for styling outfits.
+Gemini is introducing new tools specifically designed for small business owners.
 
 ## Key Facts
 
-- Gemini offers features for styling outfits.
-- Users can ask Gemini to put a person into various outfit items.
+- New tools for Gemini are being rolled out for small business owners.
+- The tools are designed to consolidate brand-specific functionalities in one place.
 
 ## Recent Changes
 
+- 2026-10-20T16:00:00+00:00 — Users can create image styles tailored to their brand. (sources: gemini-4fbdd2e8bf75634d9ab3)
+- 2026-10-20T16:00:00+00:00 — Gemini can be customized with various apps and skills. (sources: gemini-4fbdd2e8bf75634d9ab3)
+- 2026-10-20T16:00:00+00:00 — Content creation is facilitated through the use of templates. (sources: gemini-4fbdd2e8bf75634d9ab3)
 - 2026-10-19T16:00:00+00:00 — Users can interact with Gemini to apply different outfit items to a person. (sources: gemini-d6e814ad2d3b10574fb7)
 - 2026-10-19T16:00:00+00:00 — Gemini now includes capabilities for outfit styling. (sources: gemini-d6e814ad2d3b10574fb7)
-- 2026-10-15T13:00:00+00:00 — Launch of a global cart user interface. (sources: gemini-d84eb0687bc52748eed1)
-- 2026-10-15T13:00:00+00:00 — Introduction of an intelligent new shopping cart. (sources: gemini-d84eb0687bc52748eed1)
-- 2026-10-13T18:00:00+00:00 — Google AI Pro and Ultra subscribers can now access Gemini 4 Argon. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
 
 ## History Log
 
@@ -244,3 +250,4 @@ Gemini can be used for styling outfits.
 - 2026-10-13T18:00:00+00:00 — Gemini 4 Argon has been released, offering frontier reasoning and agentic coding, and is now accessible to Google Gemini app subscribers and developers for various applications. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
 - 2026-10-15T13:00:00+00:00 — The source announces the launch of an intelligent new shopping cart featuring a global user interface. (sources: gemini-d84eb0687bc52748eed1)
 - 2026-10-19T16:00:00+00:00 — Gemini has introduced features that allow users to style outfits, including the ability to place various outfit items on a person. (sources: gemini-d6e814ad2d3b10574fb7)
+- 2026-10-20T16:00:00+00:00 — Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation. (sources: gemini-4fbdd2e8bf75634d9ab3)
