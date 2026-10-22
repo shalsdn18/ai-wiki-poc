@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is expanding its AI applications across various industries, including restaurant operations, financial investment analysis, and life sciences R&D, and has acquired Orchestra Bio.",
+  "current_state": "OpenAI is actively expanding its product offerings and partnerships, including a significant expansion of ChatGPT Ads, integration with Google Cloud, and new initiatives for legal and cybersecurity applications.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -308,17 +308,71 @@
         "openai-1cfb6291fa158d05a5ba"
       ],
       "summary": "OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries."
+    },
+    {
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "source_ids": [
+        "openai-3f1a11956436b1673800",
+        "openai-39cad894cdd240fbe2db",
+        "openai-b1215e1aefc04c61e203",
+        "openai-95dedf578de78f3ec264",
+        "openai-de9db6f384cbc7887755"
+      ],
+      "summary": "Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment."
     }
   ],
   "key_facts": [
-    "An independent Schlotzsky’s and Cinnabon franchisee reduced cash reconciliation time by 94% and menu repricing time by 95% using ChatGPT Work.",
-    "The franchisee's workflow could free up $100K in cash flow.",
-    "Terminal X’s Eval Agent, powered by GPT-6.1 Sol, matches senior investor judgment 88.6%.",
-    "Terminal X’s Eval Agent catches 25% more deviances from a fund’s mandate.",
-    "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D.",
-    "The acquisition aims to help biopharma teams accelerate drug development and advance new treatments."
+    "ChatGPT Ads has expanded its availability to 26 new countries and has been utilized by over 100,000 advertisers.",
+    "OpenAI models and Codex workflows will be available on Google Cloud's Gemini Model Garden through the Google Cloud Marketplace.",
+    "AT&T's LegalEdge team is collaborating with OpenAI to improve access to legal knowledge and scale legal judgment.",
+    "OpenAI is working with distribution partners to ensure consistent safeguards and responsible access, guided by Usage Policies.",
+    "The \"Patch the Planet\" initiative has been launched to coordinate global responses to critical open-source vulnerabilities."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "source_ids": [
+        "openai-3f1a11956436b1673800",
+        "openai-39cad894cdd240fbe2db",
+        "openai-b1215e1aefc04c61e203",
+        "openai-95dedf578de78f3ec264",
+        "openai-de9db6f384cbc7887755"
+      ],
+      "summary": "OpenAI models and Codex workflows are being integrated into Google Cloud's Gemini Model Garden."
+    },
+    {
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "source_ids": [
+        "openai-3f1a11956436b1673800",
+        "openai-39cad894cdd240fbe2db",
+        "openai-b1215e1aefc04c61e203",
+        "openai-95dedf578de78f3ec264",
+        "openai-de9db6f384cbc7887755"
+      ],
+      "summary": "OpenAI has launched \"Patch the Planet\" to address critical open-source vulnerabilities."
+    },
+    {
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "source_ids": [
+        "openai-3f1a11956436b1673800",
+        "openai-39cad894cdd240fbe2db",
+        "openai-b1215e1aefc04c61e203",
+        "openai-95dedf578de78f3ec264",
+        "openai-de9db6f384cbc7887755"
+      ],
+      "summary": "ChatGPT Ads has expanded to 26 new countries."
+    },
+    {
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "source_ids": [
+        "openai-3f1a11956436b1673800",
+        "openai-39cad894cdd240fbe2db",
+        "openai-b1215e1aefc04c61e203",
+        "openai-95dedf578de78f3ec264",
+        "openai-de9db6f384cbc7887755"
+      ],
+      "summary": "AT&T is leveraging OpenAI to rethink its in-house legal work."
+    },
     {
       "published_at": "2026-10-20T10:00:00+00:00",
       "source_ids": [
@@ -327,38 +381,6 @@
         "openai-1cfb6291fa158d05a5ba"
       ],
       "summary": "Terminal X is leveraging GPT-6.1 Sol to enhance investment judgment and compliance."
-    },
-    {
-      "published_at": "2026-10-20T10:00:00+00:00",
-      "source_ids": [
-        "openai-1725d137aa3debc0d8ae",
-        "openai-aa8847d44cbae3328f3c",
-        "openai-1cfb6291fa158d05a5ba"
-      ],
-      "summary": "OpenAI has acquired Orchestra Bio."
-    },
-    {
-      "published_at": "2026-10-20T10:00:00+00:00",
-      "source_ids": [
-        "openai-1725d137aa3debc0d8ae",
-        "openai-aa8847d44cbae3328f3c",
-        "openai-1cfb6291fa158d05a5ba"
-      ],
-      "summary": "ChatGPT Work is being utilized by a franchisee to significantly reduce operational times and improve cash flow."
-    },
-    {
-      "published_at": "2026-10-19T12:00:00+00:00",
-      "source_ids": [
-        "openai-1dbe22633003a2af4fdd"
-      ],
-      "summary": "OpenAI is improving ChatGPT's performance in low-resource programming languages."
-    },
-    {
-      "published_at": "2026-10-19T12:00:00+00:00",
-      "source_ids": [
-        "openai-1dbe22633003a2af4fdd"
-      ],
-      "summary": "New evaluations have been introduced for software engineering, SQLite, and COBOL migration."
     }
   ],
   "seen_hashes": [
@@ -372,6 +394,7 @@
     "1b77faba4c30b58e82f2da3754c58acd99626bfc62578ea8c8406cc352932945",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
+    "227a520911d7cfe662bee6979159fb0c6b6b72ea48eb485669f6e92fce158e77",
     "22bd57692b02f313139613df5f9cdde452bbfd9ab61ef9c081d39ad1e8ed86ac",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
     "264fe298791a212010758fa180003ed4e9f798079c3039607494e90c3a12f9eb",
@@ -382,6 +405,7 @@
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
     "37ee240f0bfaeb80acf714fc33f5801f6a7147b42d541406a2649ea503f862c9",
+    "38778e26f8c935f631d92adb15f7d0fdca99fbb1a7b82119ad15359ca8cac840",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
@@ -424,12 +448,14 @@
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
+    "9b12f5bcdc9230c49a50baae037dbb81e606ae036219b6db7cfeeb6c6c4dff82",
     "9e4b2c83a815aa182fe45c8a44cbb1859260f2fa6ae0e170f57bfacd62f0df4f",
     "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
     "a25b8961522e5a113e822d8feffe947d2d0f0a7461fa6851343ce2bb799cb2c3",
     "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
+    "a714a8c6db9ff916dc060b2d218b6e1e3ca55479c6a675cc47a521d88acf9511",
     "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
     "ab7c4914332df1d16fac5827f6e61dc697a1c891f5ec6cafcfc8af95c63edec3",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
@@ -445,6 +471,7 @@
     "c1d7114bbfc38d3b425085fc94225bb06c09977e14f6054efca349182b339596",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
+    "cdb1f58bcbc6981aa685f3d301e1500d122a21b9f439ace0b50d7a3379094efe",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
@@ -473,24 +500,23 @@
 
 ## Current State
 
-OpenAI is expanding its AI applications across various industries, including restaurant operations, financial investment analysis, and life sciences R&D, and has acquired Orchestra Bio.
+OpenAI is actively expanding its product offerings and partnerships, including a significant expansion of ChatGPT Ads, integration with Google Cloud, and new initiatives for legal and cybersecurity applications.
 
 ## Key Facts
 
-- An independent Schlotzsky’s and Cinnabon franchisee reduced cash reconciliation time by 94% and menu repricing time by 95% using ChatGPT Work.
-- The franchisee's workflow could free up $100K in cash flow.
-- Terminal X’s Eval Agent, powered by GPT-6.1 Sol, matches senior investor judgment 88.6%.
-- Terminal X’s Eval Agent catches 25% more deviances from a fund’s mandate.
-- OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D.
-- The acquisition aims to help biopharma teams accelerate drug development and advance new treatments.
+- ChatGPT Ads has expanded its availability to 26 new countries and has been utilized by over 100,000 advertisers.
+- OpenAI models and Codex workflows will be available on Google Cloud's Gemini Model Garden through the Google Cloud Marketplace.
+- AT&T's LegalEdge team is collaborating with OpenAI to improve access to legal knowledge and scale legal judgment.
+- OpenAI is working with distribution partners to ensure consistent safeguards and responsible access, guided by Usage Policies.
+- The "Patch the Planet" initiative has been launched to coordinate global responses to critical open-source vulnerabilities.
 
 ## Recent Changes
 
+- 2026-10-21T21:00:00+00:00 — OpenAI models and Codex workflows are being integrated into Google Cloud's Gemini Model Garden. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
+- 2026-10-21T21:00:00+00:00 — OpenAI has launched "Patch the Planet" to address critical open-source vulnerabilities. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
+- 2026-10-21T21:00:00+00:00 — ChatGPT Ads has expanded to 26 new countries. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
+- 2026-10-21T21:00:00+00:00 — AT&T is leveraging OpenAI to rethink its in-house legal work. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
 - 2026-10-20T10:00:00+00:00 — Terminal X is leveraging GPT-6.1 Sol to enhance investment judgment and compliance. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
-- 2026-10-20T10:00:00+00:00 — OpenAI has acquired Orchestra Bio. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
-- 2026-10-20T10:00:00+00:00 — ChatGPT Work is being utilized by a franchisee to significantly reduce operational times and improve cash flow. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
-- 2026-10-19T12:00:00+00:00 — OpenAI is improving ChatGPT's performance in low-resource programming languages. (sources: openai-1dbe22633003a2af4fdd)
-- 2026-10-19T12:00:00+00:00 — New evaluations have been introduced for software engineering, SQLite, and COBOL migration. (sources: openai-1dbe22633003a2af4fdd)
 
 ## History Log
 
@@ -528,3 +554,4 @@ OpenAI is expanding its AI applications across various industries, including res
 - 2026-10-16T00:00:00+00:00 — Anant Kumar at Benefit Street Partners has implemented Codex to improve code review and follow-up efficiency, specifically for tools that compare loan valuations and analyze credit agreements. (sources: openai-b6756c0a180ee554226c)
 - 2026-10-19T12:00:00+00:00 — This is a new development from OpenAI regarding ChatGPT's capabilities. (sources: openai-1dbe22633003a2af4fdd)
 - 2026-10-20T10:00:00+00:00 — OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
+- 2026-10-21T21:00:00+00:00 — Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
