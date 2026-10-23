@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is actively expanding its product offerings and partnerships, including a significant expansion of ChatGPT Ads, integration with Google Cloud, and new initiatives for legal and cybersecurity applications.",
+  "current_state": "OpenAI has introduced a new Decisions API and provided clarification on its Forward Deployed Engineering (FDE) approach. Concurrently, Uber is expanding the use of ChatGPT Work to its employees.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -319,16 +319,50 @@
         "openai-de9db6f384cbc7887755"
       ],
       "summary": "Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment."
+    },
+    {
+      "published_at": "2026-10-22T19:00:00+00:00",
+      "source_ids": [
+        "openai-891b7e0bbf66f86d27b7",
+        "openai-6400feb681472530a689",
+        "openai-eda525050cea8fce4b13"
+      ],
+      "summary": "Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber."
     }
   ],
   "key_facts": [
-    "ChatGPT Ads has expanded its availability to 26 new countries and has been utilized by over 100,000 advertisers.",
-    "OpenAI models and Codex workflows will be available on Google Cloud's Gemini Model Garden through the Google Cloud Marketplace.",
-    "AT&T's LegalEdge team is collaborating with OpenAI to improve access to legal knowledge and scale legal judgment.",
-    "OpenAI is working with distribution partners to ensure consistent safeguards and responsible access, guided by Usage Policies.",
-    "The \"Patch the Planet\" initiative has been launched to coordinate global responses to critical open-source vulnerabilities."
+    "OpenAI launched the Decisions API, designed to enable fast, focused, low-cost decisions for applications.",
+    "OpenAI published information explaining the concept of Forward Deployed Engineering (FDE) within the company.",
+    "Uber is rolling out ChatGPT Work to over 30,000 employees to support tasks such as research, data analysis, presentation creation, and complex workflows."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-22T19:00:00+00:00",
+      "source_ids": [
+        "openai-891b7e0bbf66f86d27b7",
+        "openai-6400feb681472530a689",
+        "openai-eda525050cea8fce4b13"
+      ],
+      "summary": "Uber began rolling out ChatGPT Work to more than 30,000 employees."
+    },
+    {
+      "published_at": "2026-10-22T19:00:00+00:00",
+      "source_ids": [
+        "openai-891b7e0bbf66f86d27b7",
+        "openai-6400feb681472530a689",
+        "openai-eda525050cea8fce4b13"
+      ],
+      "summary": "OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company."
+    },
+    {
+      "published_at": "2026-10-22T19:00:00+00:00",
+      "source_ids": [
+        "openai-891b7e0bbf66f86d27b7",
+        "openai-6400feb681472530a689",
+        "openai-eda525050cea8fce4b13"
+      ],
+      "summary": "OpenAI announced the release of its Decisions API."
+    },
     {
       "published_at": "2026-10-21T21:00:00+00:00",
       "source_ids": [
@@ -350,37 +384,6 @@
         "openai-de9db6f384cbc7887755"
       ],
       "summary": "OpenAI has launched \"Patch the Planet\" to address critical open-source vulnerabilities."
-    },
-    {
-      "published_at": "2026-10-21T21:00:00+00:00",
-      "source_ids": [
-        "openai-3f1a11956436b1673800",
-        "openai-39cad894cdd240fbe2db",
-        "openai-b1215e1aefc04c61e203",
-        "openai-95dedf578de78f3ec264",
-        "openai-de9db6f384cbc7887755"
-      ],
-      "summary": "ChatGPT Ads has expanded to 26 new countries."
-    },
-    {
-      "published_at": "2026-10-21T21:00:00+00:00",
-      "source_ids": [
-        "openai-3f1a11956436b1673800",
-        "openai-39cad894cdd240fbe2db",
-        "openai-b1215e1aefc04c61e203",
-        "openai-95dedf578de78f3ec264",
-        "openai-de9db6f384cbc7887755"
-      ],
-      "summary": "AT&T is leveraging OpenAI to rethink its in-house legal work."
-    },
-    {
-      "published_at": "2026-10-20T10:00:00+00:00",
-      "source_ids": [
-        "openai-1725d137aa3debc0d8ae",
-        "openai-aa8847d44cbae3328f3c",
-        "openai-1cfb6291fa158d05a5ba"
-      ],
-      "summary": "Terminal X is leveraging GPT-6.1 Sol to enhance investment judgment and compliance."
     }
   ],
   "seen_hashes": [
@@ -390,6 +393,7 @@
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
     "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
+    "0bc370d842d0a2a612efa97faefd4e3974ec5e780fe8a34b57833918062b066d",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1b77faba4c30b58e82f2da3754c58acd99626bfc62578ea8c8406cc352932945",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
@@ -397,6 +401,7 @@
     "227a520911d7cfe662bee6979159fb0c6b6b72ea48eb485669f6e92fce158e77",
     "22bd57692b02f313139613df5f9cdde452bbfd9ab61ef9c081d39ad1e8ed86ac",
     "25920455f27cc292d5c0c51b433967f5eb1d8ea3eee35e561e5a058107cfacca",
+    "259a2243152e8a5ec288be2ba0d58a0a22fca199f80b39aff6cdc83039edb4a5",
     "264fe298791a212010758fa180003ed4e9f798079c3039607494e90c3a12f9eb",
     "28dfe1fc07b1686164cf6c6ecb2802cb3e0abde61e25422442e5a04d7e6f8537",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
@@ -421,6 +426,7 @@
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
     "5628a918bade6a5b1d611ba386b7c82d0bcf66ed66a0e9af119fb3cc01d684c9",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
+    "574b4d4c1ce3829da7135435072e7376d7a23d00e77d793f9b7262d1434ee105",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
@@ -500,23 +506,21 @@
 
 ## Current State
 
-OpenAI is actively expanding its product offerings and partnerships, including a significant expansion of ChatGPT Ads, integration with Google Cloud, and new initiatives for legal and cybersecurity applications.
+OpenAI has introduced a new Decisions API and provided clarification on its Forward Deployed Engineering (FDE) approach. Concurrently, Uber is expanding the use of ChatGPT Work to its employees.
 
 ## Key Facts
 
-- ChatGPT Ads has expanded its availability to 26 new countries and has been utilized by over 100,000 advertisers.
-- OpenAI models and Codex workflows will be available on Google Cloud's Gemini Model Garden through the Google Cloud Marketplace.
-- AT&T's LegalEdge team is collaborating with OpenAI to improve access to legal knowledge and scale legal judgment.
-- OpenAI is working with distribution partners to ensure consistent safeguards and responsible access, guided by Usage Policies.
-- The "Patch the Planet" initiative has been launched to coordinate global responses to critical open-source vulnerabilities.
+- OpenAI launched the Decisions API, designed to enable fast, focused, low-cost decisions for applications.
+- OpenAI published information explaining the concept of Forward Deployed Engineering (FDE) within the company.
+- Uber is rolling out ChatGPT Work to over 30,000 employees to support tasks such as research, data analysis, presentation creation, and complex workflows.
 
 ## Recent Changes
 
+- 2026-10-22T19:00:00+00:00 — Uber began rolling out ChatGPT Work to more than 30,000 employees. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
+- 2026-10-22T19:00:00+00:00 — OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
+- 2026-10-22T19:00:00+00:00 — OpenAI announced the release of its Decisions API. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
 - 2026-10-21T21:00:00+00:00 — OpenAI models and Codex workflows are being integrated into Google Cloud's Gemini Model Garden. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
 - 2026-10-21T21:00:00+00:00 — OpenAI has launched "Patch the Planet" to address critical open-source vulnerabilities. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
-- 2026-10-21T21:00:00+00:00 — ChatGPT Ads has expanded to 26 new countries. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
-- 2026-10-21T21:00:00+00:00 — AT&T is leveraging OpenAI to rethink its in-house legal work. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
-- 2026-10-20T10:00:00+00:00 — Terminal X is leveraging GPT-6.1 Sol to enhance investment judgment and compliance. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
 
 ## History Log
 
@@ -555,3 +559,4 @@ OpenAI is actively expanding its product offerings and partnerships, including a
 - 2026-10-19T12:00:00+00:00 — This is a new development from OpenAI regarding ChatGPT's capabilities. (sources: openai-1dbe22633003a2af4fdd)
 - 2026-10-20T10:00:00+00:00 — OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
 - 2026-10-21T21:00:00+00:00 — Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
+- 2026-10-22T19:00:00+00:00 — Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
