@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini is introducing new tools specifically designed for small business owners.",
+  "current_state": "Builders are actively creating projects with Gemini 4 Argon.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -134,13 +134,26 @@
         "gemini-4fbdd2e8bf75634d9ab3"
       ],
       "summary": "Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation."
+    },
+    {
+      "published_at": "2026-10-23T16:00:00+00:00",
+      "source_ids": [
+        "gemini-bcd96a08564411867142"
+      ],
+      "summary": "Gemini 4 Argon is a product that builders are using to create projects."
     }
   ],
   "key_facts": [
-    "New tools for Gemini are being rolled out for small business owners.",
-    "The tools are designed to consolidate brand-specific functionalities in one place."
+    "A collage showcases five different builds utilizing Gemini 4 Argon."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-23T16:00:00+00:00",
+      "source_ids": [
+        "gemini-bcd96a08564411867142"
+      ],
+      "summary": "Five builds with Gemini 4 Argon are being highlighted."
+    },
     {
       "published_at": "2026-10-20T16:00:00+00:00",
       "source_ids": [
@@ -168,13 +181,6 @@
         "gemini-d6e814ad2d3b10574fb7"
       ],
       "summary": "Users can interact with Gemini to apply different outfit items to a person."
-    },
-    {
-      "published_at": "2026-10-19T16:00:00+00:00",
-      "source_ids": [
-        "gemini-d6e814ad2d3b10574fb7"
-      ],
-      "summary": "Gemini now includes capabilities for outfit styling."
     }
   ],
   "seen_hashes": [
@@ -208,6 +214,7 @@
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
     "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
     "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172",
+    "e73e9f12bfe22a4cb06a5ba8177ee4e55a51d7e572241d4e07c36448c3259aed",
     "fc1da21d313c01663c99f490192fb014a1cc764e462fd08dc30978a8660ab741"
   ]
 }
@@ -217,20 +224,19 @@
 
 ## Current State
 
-Gemini is introducing new tools specifically designed for small business owners.
+Builders are actively creating projects with Gemini 4 Argon.
 
 ## Key Facts
 
-- New tools for Gemini are being rolled out for small business owners.
-- The tools are designed to consolidate brand-specific functionalities in one place.
+- A collage showcases five different builds utilizing Gemini 4 Argon.
 
 ## Recent Changes
 
+- 2026-10-23T16:00:00+00:00 — Five builds with Gemini 4 Argon are being highlighted. (sources: gemini-bcd96a08564411867142)
 - 2026-10-20T16:00:00+00:00 — Users can create image styles tailored to their brand. (sources: gemini-4fbdd2e8bf75634d9ab3)
 - 2026-10-20T16:00:00+00:00 — Gemini can be customized with various apps and skills. (sources: gemini-4fbdd2e8bf75634d9ab3)
 - 2026-10-20T16:00:00+00:00 — Content creation is facilitated through the use of templates. (sources: gemini-4fbdd2e8bf75634d9ab3)
 - 2026-10-19T16:00:00+00:00 — Users can interact with Gemini to apply different outfit items to a person. (sources: gemini-d6e814ad2d3b10574fb7)
-- 2026-10-19T16:00:00+00:00 — Gemini now includes capabilities for outfit styling. (sources: gemini-d6e814ad2d3b10574fb7)
 
 ## History Log
 
@@ -251,3 +257,4 @@ Gemini is introducing new tools specifically designed for small business owners.
 - 2026-10-15T13:00:00+00:00 — The source announces the launch of an intelligent new shopping cart featuring a global user interface. (sources: gemini-d84eb0687bc52748eed1)
 - 2026-10-19T16:00:00+00:00 — Gemini has introduced features that allow users to style outfits, including the ability to place various outfit items on a person. (sources: gemini-d6e814ad2d3b10574fb7)
 - 2026-10-20T16:00:00+00:00 — Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation. (sources: gemini-4fbdd2e8bf75634d9ab3)
+- 2026-10-23T16:00:00+00:00 — Gemini 4 Argon is a product that builders are using to create projects. (sources: gemini-bcd96a08564411867142)

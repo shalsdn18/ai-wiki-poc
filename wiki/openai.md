@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI has introduced a new Decisions API and provided clarification on its Forward Deployed Engineering (FDE) approach. Concurrently, Uber is expanding the use of ChatGPT Work to its employees.",
+  "current_state": "OpenAI is focused on enhancing its infrastructure for services like ChatGPT, strengthening the security of its frontier model training environments, and forging international partnerships to advance AI safety and security.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -328,14 +328,50 @@
         "openai-eda525050cea8fce4b13"
       ],
       "summary": "Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber."
+    },
+    {
+      "published_at": "2026-10-23T17:00:00+00:00",
+      "source_ids": [
+        "openai-ee4c22366ef7e7abd786",
+        "openai-f8c156dba7886826388b",
+        "openai-1a543055a02f9816518c"
+      ],
+      "summary": "These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives."
     }
   ],
   "key_facts": [
-    "OpenAI launched the Decisions API, designed to enable fast, focused, low-cost decisions for applications.",
-    "OpenAI published information explaining the concept of Forward Deployed Engineering (FDE) within the company.",
-    "Uber is rolling out ChatGPT Work to over 30,000 employees to support tasks such as research, data analysis, presentation creation, and complex workflows."
+    "OpenAI scaled Habitat to serve over 1 billion ChatGPT users, achieving 12x faster reads through reliable multi-tenancy, global caching, and Azure Cosmos DB.",
+    "OpenAI strengthened containment for frontier model training and evaluation, incorporating offline environments and high-compute red-teaming.",
+    "OpenAI partnered with Poland's NASK on AI safety, security, and technical research to bolster safeguards and support a resilient digital ecosystem."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-23T17:00:00+00:00",
+      "source_ids": [
+        "openai-ee4c22366ef7e7abd786",
+        "openai-f8c156dba7886826388b",
+        "openai-1a543055a02f9816518c"
+      ],
+      "summary": "OpenAI has implemented scaling improvements for Habitat, resulting in 12x faster reads for ChatGPT users."
+    },
+    {
+      "published_at": "2026-10-23T17:00:00+00:00",
+      "source_ids": [
+        "openai-ee4c22366ef7e7abd786",
+        "openai-f8c156dba7886826388b",
+        "openai-1a543055a02f9816518c"
+      ],
+      "summary": "New security measures have been introduced for frontier model training, including offline environments and high-compute red-teaming."
+    },
+    {
+      "published_at": "2026-10-23T17:00:00+00:00",
+      "source_ids": [
+        "openai-ee4c22366ef7e7abd786",
+        "openai-f8c156dba7886826388b",
+        "openai-1a543055a02f9816518c"
+      ],
+      "summary": "A new partnership has been established between OpenAI and Poland's NASK to collaborate on AI safety and security research."
+    },
     {
       "published_at": "2026-10-22T19:00:00+00:00",
       "source_ids": [
@@ -353,37 +389,6 @@
         "openai-eda525050cea8fce4b13"
       ],
       "summary": "OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company."
-    },
-    {
-      "published_at": "2026-10-22T19:00:00+00:00",
-      "source_ids": [
-        "openai-891b7e0bbf66f86d27b7",
-        "openai-6400feb681472530a689",
-        "openai-eda525050cea8fce4b13"
-      ],
-      "summary": "OpenAI announced the release of its Decisions API."
-    },
-    {
-      "published_at": "2026-10-21T21:00:00+00:00",
-      "source_ids": [
-        "openai-3f1a11956436b1673800",
-        "openai-39cad894cdd240fbe2db",
-        "openai-b1215e1aefc04c61e203",
-        "openai-95dedf578de78f3ec264",
-        "openai-de9db6f384cbc7887755"
-      ],
-      "summary": "OpenAI models and Codex workflows are being integrated into Google Cloud's Gemini Model Garden."
-    },
-    {
-      "published_at": "2026-10-21T21:00:00+00:00",
-      "source_ids": [
-        "openai-3f1a11956436b1673800",
-        "openai-39cad894cdd240fbe2db",
-        "openai-b1215e1aefc04c61e203",
-        "openai-95dedf578de78f3ec264",
-        "openai-de9db6f384cbc7887755"
-      ],
-      "summary": "OpenAI has launched \"Patch the Planet\" to address critical open-source vulnerabilities."
     }
   ],
   "seen_hashes": [
@@ -407,6 +412,7 @@
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "3006e2562ed6d9b0ab928737199eb7df315b3d61251113325a29287808cac940",
+    "32e75dfd7173585cca708dfb323e63df860f91fe82a2ba9f80f7431b00c20bac",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
     "37ee240f0bfaeb80acf714fc33f5801f6a7147b42d541406a2649ea503f862c9",
@@ -420,6 +426,7 @@
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4b58459af7180df9bce090ffcc756d78ea1ce130bb5001623b56c5d70dd47fef",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
+    "4b90a5b89b816077a0f4b6fa7641f1a463066e94eacf383c9088461628d20e11",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
@@ -495,6 +502,7 @@
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "ef79659560ea9899919398cb126cfad5e231b632fefd72f519f5dd67414a6970",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
+    "f1203858b890adf5adc2d2fb0c619c62f9ef8f07916dc1416021988a53019093",
     "f4e8f2cb9187d027e6529329f0206b5ab53c81b7a10ba3d5cc0b90335709ae62",
     "fc2fed5c6a1e07a24f916ab4fa8d1f4d60fb73d96e3dad3fa3012f743c058b3e",
     "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72"
@@ -506,21 +514,21 @@
 
 ## Current State
 
-OpenAI has introduced a new Decisions API and provided clarification on its Forward Deployed Engineering (FDE) approach. Concurrently, Uber is expanding the use of ChatGPT Work to its employees.
+OpenAI is focused on enhancing its infrastructure for services like ChatGPT, strengthening the security of its frontier model training environments, and forging international partnerships to advance AI safety and security.
 
 ## Key Facts
 
-- OpenAI launched the Decisions API, designed to enable fast, focused, low-cost decisions for applications.
-- OpenAI published information explaining the concept of Forward Deployed Engineering (FDE) within the company.
-- Uber is rolling out ChatGPT Work to over 30,000 employees to support tasks such as research, data analysis, presentation creation, and complex workflows.
+- OpenAI scaled Habitat to serve over 1 billion ChatGPT users, achieving 12x faster reads through reliable multi-tenancy, global caching, and Azure Cosmos DB.
+- OpenAI strengthened containment for frontier model training and evaluation, incorporating offline environments and high-compute red-teaming.
+- OpenAI partnered with Poland's NASK on AI safety, security, and technical research to bolster safeguards and support a resilient digital ecosystem.
 
 ## Recent Changes
 
+- 2026-10-23T17:00:00+00:00 — OpenAI has implemented scaling improvements for Habitat, resulting in 12x faster reads for ChatGPT users. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
+- 2026-10-23T17:00:00+00:00 — New security measures have been introduced for frontier model training, including offline environments and high-compute red-teaming. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
+- 2026-10-23T17:00:00+00:00 — A new partnership has been established between OpenAI and Poland's NASK to collaborate on AI safety and security research. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
 - 2026-10-22T19:00:00+00:00 — Uber began rolling out ChatGPT Work to more than 30,000 employees. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
 - 2026-10-22T19:00:00+00:00 — OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
-- 2026-10-22T19:00:00+00:00 — OpenAI announced the release of its Decisions API. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
-- 2026-10-21T21:00:00+00:00 — OpenAI models and Codex workflows are being integrated into Google Cloud's Gemini Model Garden. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
-- 2026-10-21T21:00:00+00:00 — OpenAI has launched "Patch the Planet" to address critical open-source vulnerabilities. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
 
 ## History Log
 
@@ -560,3 +568,4 @@ OpenAI has introduced a new Decisions API and provided clarification on its Forw
 - 2026-10-20T10:00:00+00:00 — OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
 - 2026-10-21T21:00:00+00:00 — Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
 - 2026-10-22T19:00:00+00:00 — Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
+- 2026-10-23T17:00:00+00:00 — These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
