@@ -1,6 +1,162 @@
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
 from types import SimpleNamespace
 
 from engine import watcher
+
+
+def test_single_instance_lock_is_exclusive_between_processes(tmp_path):
+    script = """
+import sys, time
+from engine.watcher import ALREADY_RUNNING, SingleInstanceLock
+lock = SingleInstanceLock()
+if not lock.acquire():
+    print(ALREADY_RUNNING, flush=True)
+    sys.exit(0)
+print('ACQUIRED', flush=True)
+time.sleep(float(sys.argv[1]))
+lock.release()
+"""
+    env = os.environ.copy()
+    repo_root = str(Path(__file__).resolve().parents[1])
+    env["PYTHONPATH"] = os.pathsep.join(part for part in (repo_root, env.get("PYTHONPATH")) if part)
+    cwd_a = tmp_path / "task-cwd"
+    cwd_b = tmp_path / "terminal-cwd"
+    cwd_a.mkdir()
+    cwd_b.mkdir()
+    first = subprocess.Popen(
+        [sys.executable, "-c", script, "30"],
+        cwd=cwd_a,
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    try:
+        assert first.stdout is not None
+        assert first.stdout.readline().strip() == "ACQUIRED"
+        started = time.monotonic()
+        second = subprocess.run(
+            [sys.executable, "-c", script, "0"],
+            cwd=cwd_b,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=3,
+            check=False,
+        )
+        assert time.monotonic() - started < 3
+        assert second.returncode == 0
+        assert second.stdout.strip() == watcher.ALREADY_RUNNING
+
+        first.terminate()
+        first.wait(timeout=5)
+        third = subprocess.run(
+            [sys.executable, "-c", script, "0"],
+            cwd=cwd_b,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=5,
+            check=False,
+        )
+        assert third.returncode == 0, third.stderr
+        assert third.stdout.strip() == "ACQUIRED"
+    finally:
+        if first.poll() is None:
+            first.kill()
+            first.wait(timeout=5)
+
+
+def test_windows_mutex_identity_is_repo_based_not_cwd(tmp_path, monkeypatch):
+    repo_root = Path(__file__).resolve().parents[1]
+    monkeypatch.setattr(watcher, "REPO_ROOT", repo_root)
+    expected = watcher.mutex_name(repo_root)
+    assert expected.startswith(r"Local\AIWikiWatcher_")
+    assert len(expected.rsplit("_", 1)[1]) == 64
+    alternate_cwd = tmp_path / "different-cwd"
+    alternate_cwd.mkdir()
+    script = "from engine.watcher import REPO_ROOT, mutex_name; print(mutex_name(REPO_ROOT))"
+    env = os.environ.copy()
+    env["PYTHONPATH"] = os.pathsep.join(
+        part for part in (str(repo_root), env.get("PYTHONPATH")) if part
+    )
+    result = subprocess.run(
+        [sys.executable, "-c", script],
+        cwd=alternate_cwd,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=5,
+        check=True,
+    )
+    assert result.stdout.strip() == expected
+
+
+def test_manual_watcher_cli_without_vault_rejects_existing_instance(tmp_path):
+    repo_root = Path(__file__).resolve().parents[1]
+    python = Path(sys.executable)
+    vault = tmp_path / "vault"
+    vault.mkdir()
+    task_cwd = tmp_path / "task-cwd"
+    terminal_cwd = tmp_path / "terminal-cwd"
+    task_cwd.mkdir()
+    terminal_cwd.mkdir()
+    env = os.environ.copy()
+    env.pop("OBSIDIAN_VAULT_PATH", None)
+    env["PYTHONPATH"] = os.pathsep.join(
+        part for part in (str(repo_root), env.get("PYTHONPATH")) if part
+    )
+    first = subprocess.Popen(
+        [str(python), "-m", "engine.watcher", "--vault", str(vault)],
+        cwd=task_cwd,
+        env=env,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    try:
+        time.sleep(1)
+        assert first.poll() is None
+        started = time.monotonic()
+        second = subprocess.run(
+            [str(python), "-m", "engine.watcher"],
+            cwd=terminal_cwd,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=2,
+            check=False,
+        )
+        elapsed = time.monotonic() - started
+        assert second.returncode == 0
+        assert second.stdout.strip() == watcher.ALREADY_RUNNING
+        assert second.stderr == ""
+        assert elapsed < 2
+        assert first.poll() is None
+
+        first.terminate()
+        first.wait(timeout=5)
+        replacement = subprocess.Popen(
+            [str(python), "-m", "engine.watcher", "--vault", str(vault)],
+            cwd=terminal_cwd,
+            env=env,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        try:
+            time.sleep(1)
+            assert replacement.poll() is None
+        finally:
+            if replacement.poll() is None:
+                replacement.terminate()
+                replacement.wait(timeout=5)
+    finally:
+        if first.poll() is None:
+            first.kill()
+            first.wait(timeout=5)
 
 
 def test_single_instance_lock_rejects_second_process_handle(tmp_path):
@@ -15,7 +171,7 @@ def test_single_instance_lock_rejects_second_process_handle(tmp_path):
 def test_single_instance_lock_released_after_normal_shutdown(tmp_path):
     path = tmp_path / ".watcher.lock"
     with watcher.SingleInstanceLock(path):
-        assert path.exists()
+        assert path.exists() is (os.name != "nt")
         assert not watcher.SingleInstanceLock(path).acquire()
     replacement = watcher.SingleInstanceLock(path)
     assert replacement.acquire()
@@ -34,8 +190,7 @@ def test_unexpected_shutdown_does_not_permanently_block_future_start(tmp_path):
     path = tmp_path / ".watcher.lock"
     first = watcher.SingleInstanceLock(path)
     assert first.acquire()
-    first._handle.close()
-    first._handle = None
+    first.release()
     replacement = watcher.SingleInstanceLock(path)
     assert replacement.acquire()
     replacement.release()

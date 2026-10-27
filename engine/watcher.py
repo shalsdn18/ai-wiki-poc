@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 import errno
+import hashlib
 import logging
 import os
 import threading
 import time
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from queue import Empty, Queue
 
@@ -21,32 +23,73 @@ LOGGER = logging.getLogger(__name__)
 DEBOUNCE_SECONDS = 1.0
 EMPTY_FILE_RETRY_DELAYS = (0.5, 1.0, 2.0)
 IGNORED_PARTS = {"wiki", ".git", ".obsidian"}
-LOCK_PATH = Path(".watcher.lock")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+ALREADY_RUNNING = "AI Wiki watcher is already running."
+WATCHER_LOG_PATH = REPO_ROOT / "logs" / "watcher.log"
+
+
+def mutex_name(repo_root: Path = REPO_ROOT) -> str:
+    """Return the deterministic Windows mutex name for a canonical repo root."""
+    canonical = str(repo_root.resolve()).casefold()
+    digest = hashlib.sha256(os.fsencode(canonical)).hexdigest()
+    return rf"Local\AIWikiWatcher_{digest}"
 
 
 class SingleInstanceLock:
-    """Process-wide lock backed by an OS-locked file handle."""
+    """Non-blocking process lock backed by a Windows mutex or POSIX flock."""
 
-    def __init__(self, path: Path) -> None:
-        self.path = path
+    def __init__(self, path: Path | None = None, repo_root: Path = REPO_ROOT) -> None:
+        self.path = path.resolve() if path is not None else None
+        self.repo_root = repo_root.resolve()
         self._handle = None
+        self._kernel32 = None
 
     def acquire(self) -> bool:
+        if os.name == "nt":
+            import ctypes
+            from ctypes import wintypes
+
+            kernel32 = ctypes.WinDLL("kernel32")
+            kernel32.CreateMutexW.argtypes = (
+                ctypes.c_void_p,
+                wintypes.BOOL,
+                wintypes.LPCWSTR,
+            )
+            kernel32.CreateMutexW.restype = wintypes.HANDLE
+            kernel32.GetLastError.argtypes = ()
+            kernel32.GetLastError.restype = wintypes.DWORD
+            kernel32.CloseHandle.argtypes = (wintypes.HANDLE,)
+            kernel32.CloseHandle.restype = wintypes.BOOL
+            name = mutex_name(self.repo_root)
+            handle = kernel32.CreateMutexW(None, False, name)
+            last_error = kernel32.GetLastError()
+            if not handle:
+                raise ctypes.WinError(last_error)
+            self._kernel32 = kernel32
+            self._handle = handle
+            if last_error == 183:  # ERROR_ALREADY_EXISTS
+                LOGGER.info(
+                    "Single-instance mutex already exists: identity=%s pid=%s",
+                    name,
+                    os.getpid(),
+                )
+                self.release()
+                return False
+            LOGGER.info(
+                "Single-instance mutex acquired: identity=%s pid=%s",
+                name,
+                os.getpid(),
+            )
+            return True
+
+        if self.path is None:
+            self.path = REPO_ROOT / ".watcher.lock"
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self._handle = self.path.open("a+b")
-        self._handle.seek(0)
-        self._handle.write(b"0")
-        self._handle.flush()
-        self._handle.seek(0)
         try:
-            if os.name == "nt":
-                import msvcrt
+            import fcntl
 
-                msvcrt.locking(self._handle.fileno(), msvcrt.LK_NBLCK, 1)
-            else:
-                import fcntl
-
-                fcntl.flock(self._handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(self._handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError as exc:
             self._handle.close()
             self._handle = None
@@ -64,21 +107,21 @@ class SingleInstanceLock:
             return
         try:
             if os.name == "nt":
-                import msvcrt
-
-                self._handle.seek(0)
-                msvcrt.locking(self._handle.fileno(), msvcrt.LK_UNLCK, 1)
+                self._kernel32.CloseHandle(self._handle)
             else:
                 import fcntl
 
                 fcntl.flock(self._handle.fileno(), fcntl.LOCK_UN)
         finally:
-            self._handle.close()
             self._handle = None
+            self._kernel32 = None
+            if os.name != "nt":
+                # POSIX keeps the Python file object as the flock owner.
+                self._handle.close()
 
     def __enter__(self) -> SingleInstanceLock:  # noqa: PYI034
         if not self.acquire():
-            raise RuntimeError("AI Wiki watcher is already running.")
+            raise RuntimeError(ALREADY_RUNNING)
         return self
 
     def __exit__(self, exc_type, exc_value, traceback) -> None:
@@ -235,12 +278,12 @@ def watch_vault(
     wiki_root: Path = Path("wiki"),
     state_path: Path = Path(".obsidian_import_state.json"),
 ) -> None:
-    configured = vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", ""))
-    if not configured.is_dir():
-        raise RuntimeError(f"Obsidian Vault directory does not exist: {configured}")
-    configured = configured.resolve()
     try:
-        with SingleInstanceLock(LOCK_PATH):
+        with SingleInstanceLock(repo_root=REPO_ROOT):
+            configured = vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", ""))
+            if not configured.is_dir():
+                raise RuntimeError(f"Obsidian Vault directory does not exist: {configured}")
+            configured = configured.resolve()
             handler = ObsidianEventHandler(configured, wiki_root, state_path)
             handler.start()
             observer = Observer()
@@ -256,12 +299,25 @@ def watch_vault(
                 observer.stop()
                 observer.join()
     except RuntimeError as exc:
-        if str(exc) != "AI Wiki watcher is already running.":
+        if str(exc) != ALREADY_RUNNING:
             raise
-        print(str(exc))
+        print(str(exc), flush=True)
 
 
 def main() -> int:
+    WATCHER_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+        handlers=[
+            RotatingFileHandler(
+                WATCHER_LOG_PATH,
+                maxBytes=2 * 1024 * 1024,
+                backupCount=4,
+                encoding="utf-8",
+            )
+        ],
+    )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--vault", type=Path, default=None)
     parser.add_argument("--wiki-root", type=Path, default=Path("wiki"))
