@@ -95,6 +95,25 @@ title: Optional title
 python -m engine.inbox_wiki
 ```
 
+## GitHub-first Knowledge API (Phase 1)
+
+The private `ai-wiki-knowledge` repository is the intended source of truth. For
+local use, clone it beside this app repository and set
+`KNOWLEDGE_ROOT=../ai-wiki-knowledge/knowledge`. The read-only filesystem
+adapter exposes authenticated `/knowledge/stats`, `/knowledge/recent`,
+`/knowledge/search`, and `/knowledge/note/{id}` routes. These routes reuse the
+existing login session and fail closed when authentication is not configured.
+The original public `/stats`, `/recent`, `/search`, and `/note/{id}` continue to
+read the app repository's existing `wiki/` output.
+
+Each knowledge Markdown file needs YAML frontmatter with `title`, `category`,
+`tags`, `created`, `updated`, and `visibility`. Categories are `ai`,
+`investment`, `philosophy`, and `misc`; visibility is `private` or `public`.
+Document IDs are SHA-256 hashes of repository-relative paths. The adapter does
+not write knowledge files or publish them. Render is not connected to the
+private repository in Phase 1; a later deployment step must provide a
+read-only local snapshot without putting credentials in the app repository.
+
 ## Dashboard
 
 Run the FastAPI server and the React dashboard in separate terminals:

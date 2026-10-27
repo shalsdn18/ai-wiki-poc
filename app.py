@@ -19,6 +19,13 @@ from pydantic import BaseModel, Field
 import engine.config
 from engine import document_store
 from engine.inbox_wiki import CATEGORIES
+from engine.knowledge_store import (
+    KnowledgeError,
+    KnowledgeNotFoundError,
+)
+from engine.knowledge_store import (
+    get_store as get_knowledge_store,
+)
 from engine.obsidian_import import discover_markdown
 from engine.pipeline import PipelineStats, run_pipeline
 from engine.vector_store import (
@@ -39,9 +46,7 @@ _default_cors_origins = {
     "http://localhost:5173",
 }
 _configured_cors_origins = {
-    origin.strip()
-    for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",")
-    if origin.strip()
+    origin.strip() for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",") if origin.strip()
 }
 app.add_middleware(
     CORSMiddleware,
@@ -79,9 +84,7 @@ def _verify_password(password: str) -> bool:
         actual = hashlib.pbkdf2_hmac(
             "sha256", password.encode("utf-8"), salt.encode("utf-8"), rounds
         )
-        return hmac.compare_digest(
-            base64.urlsafe_b64encode(actual).decode("ascii"), expected
-        )
+        return hmac.compare_digest(base64.urlsafe_b64encode(actual).decode("ascii"), expected)
     except (ValueError, TypeError, UnicodeError):
         return False
 
@@ -128,15 +131,11 @@ def _request_origin(request: Request) -> str | None:
 
 def _require_same_origin(request: Request) -> None:
     if request.headers.get("x-csrf-protection") != "1":
-        raise HTTPException(
-            status_code=403, detail="CSRF protection header is required"
-        )
+        raise HTTPException(status_code=403, detail="CSRF protection header is required")
     origin = _request_origin(request)
     allowed = set(_default_cors_origins | _configured_cors_origins)
     # The request's own origin supports a same-origin frontend deployment.
-    expected_origin = (
-        f"{request.url.scheme}://{request.headers.get('host', '')}".rstrip("/")
-    )
+    expected_origin = f"{request.url.scheme}://{request.headers.get('host', '')}".rstrip("/")
     if origin and (origin in allowed or origin == expected_origin):
         return
     raise HTTPException(status_code=403, detail="Request origin is not allowed")
@@ -144,9 +143,14 @@ def _require_same_origin(request: Request) -> None:
 
 def _require_document_session(request: Request) -> None:
     if not _auth_configured():
-        raise HTTPException(
-            status_code=503, detail="Document authentication is not configured"
-        )
+        raise HTTPException(status_code=503, detail="Document authentication is not configured")
+    if not _valid_session(request.cookies.get(_session_cookie_name)):
+        raise HTTPException(status_code=401, detail="Authentication required")
+
+
+def _require_knowledge_session(request: Request) -> None:
+    if not _auth_configured():
+        raise HTTPException(status_code=503, detail="Knowledge authentication is not configured")
     if not _valid_session(request.cookies.get(_session_cookie_name)):
         raise HTTPException(status_code=401, detail="Authentication required")
 
@@ -156,13 +160,9 @@ class LoginRequest(BaseModel):
 
 
 @app.post("/login")
-def login(
-    request: Request, credentials: LoginRequest, response: Response
-) -> dict[str, bool]:
+def login(request: Request, credentials: LoginRequest, response: Response) -> dict[str, bool]:
     if not _auth_configured():
-        raise HTTPException(
-            status_code=503, detail="Document authentication is not configured"
-        )
+        raise HTTPException(status_code=503, detail="Document authentication is not configured")
     _require_same_origin(request)
     if not _verify_password(credentials.password):
         raise HTTPException(status_code=401, detail="Invalid password")
@@ -278,6 +278,64 @@ class DocumentResponse(BaseModel):
     updated_at: str
 
 
+class KnowledgeResponse(BaseModel):
+    id: str
+    title: str
+    category: str
+    tags: list[str]
+    created: str
+    updated: str
+    visibility: str
+    source_url: str | None = None
+    content: str
+    relative_path: str
+
+
+def _knowledge_call(operation, *args):
+    try:
+        return operation(*args)
+    except KnowledgeNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Knowledge document not found") from exc
+    except KnowledgeError as exc:
+        raise HTTPException(status_code=503, detail="Knowledge repository is invalid") from exc
+    except OSError as exc:
+        raise HTTPException(status_code=503, detail="Knowledge repository is unavailable") from exc
+
+
+@app.get("/knowledge/stats", response_model=StatsResponse)
+def knowledge_stats(request: Request) -> StatsResponse:
+    _require_knowledge_session(request)
+    result = _knowledge_call(get_knowledge_store().stats)
+    return StatsResponse(**result)
+
+
+@app.get("/knowledge/recent", response_model=list[KnowledgeResponse])
+def knowledge_recent(
+    request: Request, limit: int = Query(default=10, ge=1, le=100)
+) -> list[KnowledgeResponse]:
+    _require_knowledge_session(request)
+    documents = _knowledge_call(get_knowledge_store().list_documents)
+    return [KnowledgeResponse(**item.as_dict()) for item in documents[:limit]]
+
+
+@app.get("/knowledge/search", response_model=list[KnowledgeResponse])
+def knowledge_search(
+    request: Request,
+    q: str = Query(min_length=1),
+    limit: int = Query(default=50, ge=1, le=100),
+) -> list[KnowledgeResponse]:
+    _require_knowledge_session(request)
+    documents = _knowledge_call(get_knowledge_store().search, q, limit)
+    return [KnowledgeResponse(**item.as_dict()) for item in documents]
+
+
+@app.get("/knowledge/note/{note_id}", response_model=KnowledgeResponse)
+def knowledge_note(note_id: str, request: Request) -> KnowledgeResponse:
+    _require_knowledge_session(request)
+    document = _knowledge_call(get_knowledge_store().get_document, note_id)
+    return KnowledgeResponse(**document.as_dict())
+
+
 def _document_or_404(operation, *args):
     try:
         return operation(*args)
@@ -320,9 +378,7 @@ def get_document(document_id: str, request: Request) -> DocumentResponse:
     response_model=DocumentResponse,
     status_code=status.HTTP_201_CREATED,
 )
-def create_document(
-    payload: DocumentWriteRequest, request: Request
-) -> DocumentResponse:
+def create_document(payload: DocumentWriteRequest, request: Request) -> DocumentResponse:
     _require_same_origin(request)
     _require_document_session(request)
     item = _document_storage_call(
@@ -421,9 +477,7 @@ def stats() -> StatsResponse:
 
 @app.get("/recent", response_model=list[NoteResponse])
 def recent(limit: int = Query(default=10, ge=1, le=100)) -> list[NoteResponse]:
-    entries = sorted(
-        _entries(), key=lambda item: item.get("processed_at", ""), reverse=True
-    )
+    entries = sorted(_entries(), key=lambda item: item.get("processed_at", ""), reverse=True)
     return [_note(entry) for entry in entries[:limit]]
 
 
@@ -473,9 +527,7 @@ def semantic(
             for result in semantic_search(q, _vector_db_path(), limit=limit)
         ]
     except OSError as exc:
-        raise HTTPException(
-            status_code=503, detail="Embedding service unavailable"
-        ) from exc
+        raise HTTPException(status_code=503, detail="Embedding service unavailable") from exc
 
 
 @app.post("/import", response_model=ImportResponse)
@@ -487,8 +539,7 @@ def run_import() -> ImportResponse:
         )
     vault = _vault_path()
     totals = {
-        field: 0
-        for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
+        field: 0 for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
     }
     for path in discover_markdown(vault):
         try:
@@ -537,8 +588,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     matches = semantic_search(request.question, vector_db, limit=5)
     documents = get_documents([match.id for match in matches], vector_db)
     context = "\n\n".join(
-        f"[{match.id}] {match.title}\n{documents.get(match.id, match.snippet)}"
-        for match in matches
+        f"[{match.id}] {match.title}\n{documents.get(match.id, match.snippet)}" for match in matches
     )
     try:
         answer = _generate_chat_answer(request.question, context)
@@ -547,7 +597,6 @@ def chat(request: ChatRequest) -> ChatResponse:
     return ChatResponse(
         answer=answer,
         sources=[
-            ChatSource(id=match.id, title=match.title, score=match.score)
-            for match in matches
+            ChatSource(id=match.id, title=match.title, score=match.score) for match in matches
         ],
     )
