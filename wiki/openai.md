@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI is focused on enhancing its infrastructure for services like ChatGPT, strengthening the security of its frontier model training environments, and forging international partnerships to advance AI safety and security.",
+  "current_state": "OpenAI는 다양한 산업 분야에서 자사 모델의 활용을 확장하고 있으며, 학술 커뮤니티와의 협력을 통해 과학적 이해를 증진하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -337,58 +337,81 @@
         "openai-1a543055a02f9816518c"
       ],
       "summary": "These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives."
+    },
+    {
+      "published_at": "2026-10-26T22:00:00+00:00",
+      "source_ids": [
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
+      ],
+      "summary": "OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다."
     }
   ],
   "key_facts": [
-    "OpenAI scaled Habitat to serve over 1 billion ChatGPT users, achieving 12x faster reads through reliable multi-tenancy, global caching, and Azure Cosmos DB.",
-    "OpenAI strengthened containment for frontier model training and evaluation, incorporating offline environments and high-compute red-teaming.",
-    "OpenAI partnered with Poland's NASK on AI safety, security, and technical research to bolster safeguards and support a resilient digital ecosystem."
+    "Greptile은 GPT-6 Astra, Daybreak, Codex를 사용하여 사용자 워크플로우 테스트, 보안 강화 및 재작업 감소에 활용합니다.",
+    "OpenAI는 Kakeya conjecture, Exponential Time Hypothesis, quantum chromodynamics에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구자들이 이를 검증하고 발전시킬 수 있도록 합니다.",
+    "CodeRabbit은 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안 위험을 조사하고, 보안 에이전트가 개발자의 검토 및 수정 제안을 돕습니다.",
+    "OpenAI Signals 데이터에 따르면 ChatGPT는 약 100개국에서 165가지 업무 활동에 사용되며, 시간이 지남에 따라 사용량이 변화하는 양상을 보입니다.",
+    "Fanatics는 OpenAI를 활용하여 'Shop the Look' 기능으로 팬들이 경기 당일 의상을 완성하도록 돕고 있으며, 약 30,000개의 MLB 제품 테스트에서 10% 더 높은 참여율을 보였습니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-10-23T17:00:00+00:00",
+      "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
-        "openai-ee4c22366ef7e7abd786",
-        "openai-f8c156dba7886826388b",
-        "openai-1a543055a02f9816518c"
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
       ],
-      "summary": "OpenAI has implemented scaling improvements for Habitat, resulting in 12x faster reads for ChatGPT users."
+      "summary": "OpenAI가 학술 커뮤니티와 협력하여 과학적 이해를 구축하기 위한 모델 결과를 공유했습니다."
     },
     {
-      "published_at": "2026-10-23T17:00:00+00:00",
+      "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
-        "openai-ee4c22366ef7e7abd786",
-        "openai-f8c156dba7886826388b",
-        "openai-1a543055a02f9816518c"
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
       ],
-      "summary": "New security measures have been introduced for frontier model training, including offline environments and high-compute red-teaming."
+      "summary": "Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다."
     },
     {
-      "published_at": "2026-10-23T17:00:00+00:00",
+      "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
-        "openai-ee4c22366ef7e7abd786",
-        "openai-f8c156dba7886826388b",
-        "openai-1a543055a02f9816518c"
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
       ],
-      "summary": "A new partnership has been established between OpenAI and Poland's NASK to collaborate on AI safety and security research."
+      "summary": "Fanatics가 OpenAI를 통해 팬 경험을 간소화하고 참여율을 높이는 새로운 방법을 도입했습니다."
     },
     {
-      "published_at": "2026-10-22T19:00:00+00:00",
+      "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
-        "openai-891b7e0bbf66f86d27b7",
-        "openai-6400feb681472530a689",
-        "openai-eda525050cea8fce4b13"
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
       ],
-      "summary": "Uber began rolling out ChatGPT Work to more than 30,000 employees."
+      "summary": "CodeRabbit이 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안을 강화했습니다."
     },
     {
-      "published_at": "2026-10-22T19:00:00+00:00",
+      "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
-        "openai-891b7e0bbf66f86d27b7",
-        "openai-6400feb681472530a689",
-        "openai-eda525050cea8fce4b13"
+        "openai-a9c488820a62ac4adcd9",
+        "openai-8eb6001a836a6e50b8fb",
+        "openai-7d972df501d01ba1f64a",
+        "openai-27334100e818b98514ff",
+        "openai-7e73eebe3e909303c4c5"
       ],
-      "summary": "OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company."
+      "summary": "ChatGPT의 업무 활용 범위가 전 세계적으로 확장되고 있음을 보여주는 데이터가 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -434,7 +457,9 @@
     "5628a918bade6a5b1d611ba386b7c82d0bcf66ed66a0e9af119fb3cc01d684c9",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
     "574b4d4c1ce3829da7135435072e7376d7a23d00e77d793f9b7262d1434ee105",
+    "5cf1939b69a9e8ac8fad4ac5a865b879c2ad772f1da2b42240d1df12f72c9718",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
+    "5ea94e4c4286a114581885473e04bf635cbaab0c1e61cf3ea7ccf8ff3f837ddb",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
     "6435c17b701b1041cc77f5d0353c4bc8d38231335d631af44f00fc678a5c11a0",
@@ -462,6 +487,7 @@
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "9b12f5bcdc9230c49a50baae037dbb81e606ae036219b6db7cfeeb6c6c4dff82",
+    "9df5b494bfb05b19513a2ffeee554d3023bf8ee974570091efa8f9693a013eb2",
     "9e4b2c83a815aa182fe45c8a44cbb1859260f2fa6ae0e170f57bfacd62f0df4f",
     "9f042a6d96995689b4797dda17aa565178df4690a2c1c497aa52f10bb82cb139",
     "a1d1a396127d4523a345183cbf147abe0eab5a71d9b73984d8e5005a08cbcd98",
@@ -486,6 +512,7 @@
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
     "cdb1f58bcbc6981aa685f3d301e1500d122a21b9f439ace0b50d7a3379094efe",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
+    "d1b894933eb5d1a9bec0326fd2dc41cefac13edc75a9651a5154a2afff65bc39",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
@@ -499,6 +526,7 @@
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
+    "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "ef79659560ea9899919398cb126cfad5e231b632fefd72f519f5dd67414a6970",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
@@ -512,60 +540,63 @@
 
 # AI Wiki
 
-## Current State
+## 현재 상태
 
-OpenAI is focused on enhancing its infrastructure for services like ChatGPT, strengthening the security of its frontier model training environments, and forging international partnerships to advance AI safety and security.
+OpenAI는 다양한 산업 분야에서 자사 모델의 활용을 확장하고 있으며, 학술 커뮤니티와의 협력을 통해 과학적 이해를 증진하고 있습니다.
 
-## Key Facts
+## 핵심 정보
 
-- OpenAI scaled Habitat to serve over 1 billion ChatGPT users, achieving 12x faster reads through reliable multi-tenancy, global caching, and Azure Cosmos DB.
-- OpenAI strengthened containment for frontier model training and evaluation, incorporating offline environments and high-compute red-teaming.
-- OpenAI partnered with Poland's NASK on AI safety, security, and technical research to bolster safeguards and support a resilient digital ecosystem.
+- Greptile은 GPT-6 Astra, Daybreak, Codex를 사용하여 사용자 워크플로우 테스트, 보안 강화 및 재작업 감소에 활용합니다.
+- OpenAI는 Kakeya conjecture, Exponential Time Hypothesis, quantum chromodynamics에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구자들이 이를 검증하고 발전시킬 수 있도록 합니다.
+- CodeRabbit은 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안 위험을 조사하고, 보안 에이전트가 개발자의 검토 및 수정 제안을 돕습니다.
+- OpenAI Signals 데이터에 따르면 ChatGPT는 약 100개국에서 165가지 업무 활동에 사용되며, 시간이 지남에 따라 사용량이 변화하는 양상을 보입니다.
+- Fanatics는 OpenAI를 활용하여 'Shop the Look' 기능으로 팬들이 경기 당일 의상을 완성하도록 돕고 있으며, 약 30,000개의 MLB 제품 테스트에서 10% 더 높은 참여율을 보였습니다.
 
-## Recent Changes
+## 최근 변경 사항
 
-- 2026-10-23T17:00:00+00:00 — OpenAI has implemented scaling improvements for Habitat, resulting in 12x faster reads for ChatGPT users. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
-- 2026-10-23T17:00:00+00:00 — New security measures have been introduced for frontier model training, including offline environments and high-compute red-teaming. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
-- 2026-10-23T17:00:00+00:00 — A new partnership has been established between OpenAI and Poland's NASK to collaborate on AI safety and security research. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
-- 2026-10-22T19:00:00+00:00 — Uber began rolling out ChatGPT Work to more than 30,000 employees. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
-- 2026-10-22T19:00:00+00:00 — OpenAI clarified the meaning of Forward Deployed Engineering (FDE) at the company. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
+- 2026년 10월 27일 07:00 — OpenAI가 학술 커뮤니티와 협력하여 과학적 이해를 구축하기 위한 모델 결과를 공유했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
+- 2026년 10월 27일 07:00 — Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
+- 2026년 10월 27일 07:00 — Fanatics가 OpenAI를 통해 팬 경험을 간소화하고 참여율을 높이는 새로운 방법을 도입했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
+- 2026년 10월 27일 07:00 — CodeRabbit이 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안을 강화했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
+- 2026년 10월 27일 07:00 — ChatGPT의 업무 활용 범위가 전 세계적으로 확장되고 있음을 보여주는 데이터가 공개되었습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 
-## History Log
+## 변경 이력
 
-- 2026-08-31T07:00:00+00:00 — Between August 27 and August 31, 2026, OpenAI announced research findings on ChatGPT's role in student critical thinking, an accelerator partnership in Thailand, the wind-down of its Cursor model contract following SpaceX's acquisition, the achievement of a $1 billion run rate for ChatGPT Ads, and public sector infrastructure adoption in Japan with Polimill. (sources: openai-0b5a688ac44522d68511, openai-8a7cdd78fd48385994a8, openai-b42ac281ecaf56c08abb, openai-cb1db0d5c74b6e9eeb89, openai-5c8d75ef9c12c0596113)
-- 2026-09-01T17:00:00+00:00 — Recent developments from OpenAI include the Astra model achieving a critical cybersecurity capability, the expansion of ChatGPT's connectivity to healthcare data, and the company's support for youth AI safety legislation in California. Additionally, AI-native companies are demonstrating the application of AI agents in various business workflows. (sources: openai-b0cbef382238cdd5b88d, openai-f2694bfa96c49e91da59, openai-c0364833b41073ca7c0e, openai-330fba64551db8b49d6a, openai-4862f3d2c68fb1ad680a)
-- 2026-09-02T12:00:00+00:00 — ATV Big Air Tour has implemented ChatGPT Work to improve operational efficiency across marketing, merchandising, and website development. (sources: openai-3bda12e16fd31e0e48f8)
-- 2026-09-03T13:15:00+00:00 — OpenAI has recently announced a new initiative, Daybreak for Frontline Defenders, and released GPT-6 Astra, a highly capable model that has achieved a Critical level of cybersecurity capability and shown strong performance in various applications. (sources: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
-- 2026-09-03T11:00:00+00:00 — OpenAI officially introduced GPT-6 Astra on September 3, 2026. (sources: openai-039a4975e102cb538c36)
-- 2026-09-06T09:00:00+00:00 — OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination. (sources: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
-- 2026-09-07T00:00:00+00:00 — This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA. (sources: openai-073b13b14ae0138b1424)
-- 2026-09-08T17:00:00+00:00 — OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications. (sources: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
-- 2026-09-09T17:00:00+00:00 — OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy. (sources: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
-- 2026-09-10T16:00:00+00:00 — Recent developments from OpenAI include the introduction of specialized ChatGPT versions for financial services and data analysis, a new Agents API for cloud agent development, and expanded AI access for US government entities. Additionally, existing technologies like Codex and ChatGPT are being applied in scientific research for antimicrobial discovery. (sources: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
-- 2026-09-14T00:00:00+00:00 — OpenAI evolved Habitat from a Python library into a globally distributed storage platform. (sources: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
-- 2026-09-14T12:00:00+00:00 — Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice. (sources: openai-7f82d995c515e5ba429e)
-- 2026-09-16T17:00:00+00:00 — OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce. (sources: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
-- 2026-09-17T12:00:00+00:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (sources: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
-- 2026-09-18T12:00:00+00:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (sources: openai-a00923bf4ddda7153647)
-- 2026-09-21T12:00:00+00:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (sources: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
-- 2026-09-22T21:00:00+00:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (sources: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
-- 2026-09-23T16:00:00+00:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (sources: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
-- 2026-09-25T19:00:00+00:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (sources: openai-9de028fbe46cac8b155a)
-- 2026-09-28T19:00:00+00:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (sources: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
-- 2026-09-29T10:00:00+00:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (sources: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
-- 2026-10-01T17:00:00+00:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (sources: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
-- 2026-10-02T16:15:00+00:00 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (sources: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
-- 2026-10-05T15:00:00+00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (sources: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
-- 2026-10-06T16:00:00+00:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (sources: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
-- 2026-10-08T16:00:00+00:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (sources: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
-- 2026-10-09T07:00:00+00:00 — Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements. (sources: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
-- 2026-10-13T12:00:00+00:00 — Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations. (sources: openai-8d45898e533e591d4241)
-- 2026-10-14T12:00:00+00:00 — Recent developments highlight the expanding application of OpenAI's AI agents and models. Companies like Amp are pushing agents beyond coding, while SentinelOne and Block are leveraging OpenAI technology to significantly enhance cybersecurity operations, reducing analysis times and accelerating threat response. Third Moment Research showcases the scalability of these agents, running thousands for extended durations. This indicates a growing trend of agentic AI adoption, particularly within the EU, demonstrating its increasing value across various enterprise functions. (sources: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
-- 2026-10-15T19:00:00+00:00 — These recent announcements highlight OpenAI's ongoing efforts to integrate AI into diverse fields, including academic research, education, and legal services, through new programs, language expansions, and collaborative tool development. (sources: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
-- 2026-10-16T19:00:00+00:00 — Itaú is advancing its AI First strategy by deploying generative AI solutions like ia.i and IARA for its customer and employee base in Brazil's regulated sector. Separately, Stack Overflow for Agents has achieved significant user growth, tripling signups and increasing agent creation tenfold, largely due to its ChatGPT plugin. (sources: openai-9732b2763df5a67ab945, openai-9e63539289a31c8631b6)
-- 2026-10-16T00:00:00+00:00 — Anant Kumar at Benefit Street Partners has implemented Codex to improve code review and follow-up efficiency, specifically for tools that compare loan valuations and analyze credit agreements. (sources: openai-b6756c0a180ee554226c)
-- 2026-10-19T12:00:00+00:00 — This is a new development from OpenAI regarding ChatGPT's capabilities. (sources: openai-1dbe22633003a2af4fdd)
-- 2026-10-20T10:00:00+00:00 — OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries. (sources: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
-- 2026-10-21T21:00:00+00:00 — Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment. (sources: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
-- 2026-10-22T19:00:00+00:00 — Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber. (sources: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
-- 2026-10-23T17:00:00+00:00 — These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives. (sources: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
+- 2026년 8월 31일 16:00 — Between August 27 and August 31, 2026, OpenAI announced research findings on ChatGPT's role in student critical thinking, an accelerator partnership in Thailand, the wind-down of its Cursor model contract following SpaceX's acquisition, the achievement of a $1 billion run rate for ChatGPT Ads, and public sector infrastructure adoption in Japan with Polimill. (출처: openai-0b5a688ac44522d68511, openai-8a7cdd78fd48385994a8, openai-b42ac281ecaf56c08abb, openai-cb1db0d5c74b6e9eeb89, openai-5c8d75ef9c12c0596113)
+- 2026년 9월 2일 02:00 — Recent developments from OpenAI include the Astra model achieving a critical cybersecurity capability, the expansion of ChatGPT's connectivity to healthcare data, and the company's support for youth AI safety legislation in California. Additionally, AI-native companies are demonstrating the application of AI agents in various business workflows. (출처: openai-b0cbef382238cdd5b88d, openai-f2694bfa96c49e91da59, openai-c0364833b41073ca7c0e, openai-330fba64551db8b49d6a, openai-4862f3d2c68fb1ad680a)
+- 2026년 9월 2일 21:00 — ATV Big Air Tour has implemented ChatGPT Work to improve operational efficiency across marketing, merchandising, and website development. (출처: openai-3bda12e16fd31e0e48f8)
+- 2026년 9월 3일 22:15 — OpenAI has recently announced a new initiative, Daybreak for Frontline Defenders, and released GPT-6 Astra, a highly capable model that has achieved a Critical level of cybersecurity capability and shown strong performance in various applications. (출처: openai-fc40ddafdd41e0cc6b8e, openai-9281d6906e8350b6fb5c, openai-325e9dcd840a97e90ffb, openai-39210f987919e80e66f6)
+- 2026년 9월 3일 20:00 — OpenAI officially introduced GPT-6 Astra on September 3, 2026. (출처: openai-039a4975e102cb538c36)
+- 2026년 9월 6일 18:00 — OpenAI has recently published insights into its internal research acceleration efforts using coding agents and reflections from Jakub Pachocki on the increasing capabilities of AI, emphasizing the need for alignment, safeguards, and international coordination. (출처: openai-e0f75446731d598ce3aa, openai-3784d7aba9718af9aa19)
+- 2026년 9월 7일 09:00 — This is a new program launched by OpenAI, AIRPPU, and WAN-IFRA. (출처: openai-073b13b14ae0138b1424)
+- 2026년 9월 9일 02:00 — OpenAI continues to advance AI technology, apply it to complex problems, and address its societal implications. (출처: openai-503e9c2326e78f3e5469, openai-a00fc889a2dd293b4204, openai-1dcea8b0f8acab144d94, openai-2c827cba158d2f26e6e9, openai-7948c39493cbd65ea48c)
+- 2026년 9월 10일 02:00 — OpenAI continues to advance its AI capabilities with new model releases while also focusing on AI safety, governance, and policy advocacy. (출처: openai-3eb3e9557eb7038ef8ad, openai-a7c183de5112de4747c2, openai-333ccaae81484d3a4e17)
+- 2026년 9월 11일 01:00 — Recent developments from OpenAI include the introduction of specialized ChatGPT versions for financial services and data analysis, a new Agents API for cloud agent development, and expanded AI access for US government entities. Additionally, existing technologies like Codex and ChatGPT are being applied in scientific research for antimicrobial discovery. (출처: openai-39842fa0b34b37cbe3f7, openai-6a886414536a09e3da65, openai-0bb946f0c421538942e4, openai-3802aa15c4b6ae22021a, openai-b32e9b847135398762b9)
+- 2026년 9월 14일 09:00 — OpenAI evolved Habitat from a Python library into a globally distributed storage platform. (출처: openai-968c32634dc2a1cb83f0, openai-4aeb82da9975e2f5f564, openai-46fcf5bb7b99520f1816)
+- 2026년 9월 14일 21:00 — Fyxer has developed an AI executive assistant that leverages OpenAI models, fine-tuning, memory, and user feedback to manage inboxes and draft emails in a personalized voice. (출처: openai-7f82d995c515e5ba429e)
+- 2026년 9월 17일 02:00 — OpenAI has recently announced multiple new developments on September 16, 2026, covering model safety, community engagement, commercial applications, and insights into AI's impact on the workforce. (출처: openai-f3899afd4d6a0a2de479, openai-b0366f9850a9d166d4a5, openai-6ac27c68838b29eeea89, openai-4410122683c569258d5a, openai-7d2872733a614740ea67)
+- 2026년 9월 17일 21:00 — OpenAI is actively developing and releasing specialized AI solutions for the legal industry, aiming to improve efficiency and intelligence in legal processes. (출처: openai-d22acfa5d0cc1d093c4a, openai-192794312f979cbd50ee)
+- 2026년 9월 18일 21:00 — This is a new initiative by OpenAI focusing on youth safety in AI. (출처: openai-a00923bf4ddda7153647)
+- 2026년 9월 21일 21:00 — OpenAI has recently launched several new initiatives and partnerships. These include forming an independent Advisory Group on Mathematics and AI, expanding the OpenAI Academy with new learning paths, and advocating for global AI safety standards. Additionally, partners like Higgsfield AI are leveraging GPT-6 Astra for video ad creation, and V7 is using GPT-5.6 to enhance AI agents' ability to process company data. (출처: openai-08ffdb24bebd9aa2ffda, openai-8fe4474fdbb9c4c46a22, openai-10538c022345675d1abd, openai-2f8d9b98fc157bb338d3, openai-d2871d486c61275aa183)
+- 2026년 9월 23일 06:00 — OpenAI recently announced the introduction of new GPT-6 models, Sol and Luna, which provide frontier intelligence with different balances of capability and cost. GPT-6 Astra has been shown to reduce research time and cost by half for labor-market data. Additionally, GPT-6 incorporates improved prompt caching with features like higher cache hit rates and new diagnostics to reduce latency and costs. OpenAI also released guidelines for rigorous, secure, and independent third-party AI safety assessments of its frontier models and safeguards. (출처: openai-f9027d80e820682e90d7, openai-73461b3e97af0d93277a, openai-3fcefd9c665fb2c24849, openai-60efaf744a4d6c2c20e9)
+- 2026년 9월 24일 01:00 — On September 23, 2026, OpenAI announced the two-year anniversary of its Academy, extended its Daybreak program to Ukraine for cyber defense, and had CEO Sam Altman address the UN Security Council on AI safety. Additionally, new applications of GPT-6 Astra were highlighted, with Harvey using it for legal documents and invideo for video editing improvements. (출처: openai-52e46e8371e1f69996c0, openai-9328fa400dd37e6b9e77, openai-347b65ce144a221e189c, openai-52b80abd4e046c041ffb, openai-f2ff7f76056120414cf0)
+- 2026년 9월 26일 04:00 — Proaction has recently adopted Codex, GPT-Live-1, and GPT-6 Astra, leading to significant improvements in sales and operational efficiency. (출처: openai-9de028fbe46cac8b155a)
+- 2026년 9월 29일 04:00 — OpenAI continues to develop its AI models and programs, addressing past issues and expanding initiatives while also seeking community engagement. (출처: openai-50d71cd52400f551c336, openai-0adf5bb2a473897d1252, openai-833e9419a34f8836dc9d, openai-eb674100bb687fff7643)
+- 2026년 9월 29일 19:00 — OpenAI recently held its DevDay 2026, where it unveiled more than 20 new developments, including the advanced AI model GPT-6 Astra, the more cost-effective GPT-6.1 Sol, and proactive AI assistants called "dots." Concurrently, the company also published early guidelines for ensuring safety in frontier AI training. (출처: openai-d6b9f5e651b1891e950e, openai-6071f63e21f6425413eb, openai-dec620cb7225d2434a9b, openai-2fc54b690d7b20a2e143)
+- 2026년 10월 2일 02:00 — Recent developments from OpenAI include the adoption of its AI tools by businesses like Albertsons and The Den, a new partnership with America's SBDC to aid small businesses, and the disruption of a model-distillation campaign to enhance model security. OpenAI also shared insights on the importance of advanced AI in routine work for economic progress. (출처: openai-b8087b88cb63ae7fc829, openai-637d3dfa247fa816a4c4, openai-2167384f51e2a4466793, openai-90249c2a3882c6d31b88, openai-061338e668ed697490e5)
+- 2026년 10월 3일 01:15 — OpenAI continues to expand its offerings with new model guides and demonstrates real-world applications of its AI technology through customer success stories like Chatham Financial's workflow optimization. (출처: openai-c38af6e5cae43e23a64c, openai-882596cbc7639eb42bf2)
+- 2026년 10월 6일 00:00 — OpenAI is actively developing and implementing new features and policies, including advertising formats in ChatGPT and text watermarking in response to EU regulations. (출처: openai-d2b5b29b4c8155256199, openai-2d8e70fb45cef7470a5b)
+- 2026년 10월 7일 01:00 — OpenAI has recently announced several advancements and partnerships, including expanding its collaboration with Atlassian for enterprise solutions, enabling Jump Trading to scale quantitative research, publishing new results in mathematics, and partnering with Ironclad to advance AI agents for professional computer use. (출처: openai-2896758265cec81d9589, openai-ebb413cc5359756bf923, openai-00427e47df5ef3064509, openai-f57eff9c23a4454b476b)
+- 2026년 10월 9일 01:00 — OpenAI continues to develop and deploy its AI models for diverse applications, ranging from enterprise solutions and creative tools to educational support, while simultaneously addressing the misuse of AI for malicious purposes like influence operations. (출처: openai-db7b9e6fe248e3146f87, openai-855092fba1df7e8a668b, openai-45d6a2b79938283a07ca, openai-d9e485b409fe8517ac6e, openai-661f64ddb5f472a2675e)
+- 2026년 10월 9일 16:00 — Companies are increasingly leveraging OpenAI's advanced AI models to achieve substantial operational efficiencies and performance enhancements. (출처: openai-570fe3204556675e8dd9, openai-9bf93d58cc35db9987f8)
+- 2026년 10월 13일 21:00 — Higgsfield has been introduced as a platform that significantly enhances AI video creation capabilities, moving beyond previous limitations. (출처: openai-8d45898e533e591d4241)
+- 2026년 10월 14일 21:00 — Recent developments highlight the expanding application of OpenAI's AI agents and models. Companies like Amp are pushing agents beyond coding, while SentinelOne and Block are leveraging OpenAI technology to significantly enhance cybersecurity operations, reducing analysis times and accelerating threat response. Third Moment Research showcases the scalability of these agents, running thousands for extended durations. This indicates a growing trend of agentic AI adoption, particularly within the EU, demonstrating its increasing value across various enterprise functions. (출처: openai-57c3309db5bedcdec4e0, openai-004cd593adabcd24c97d, openai-a8b8c31de898145e14c8, openai-94ee28b93f9d2d830319, openai-200a5d3dd39c6bfb7a20)
+- 2026년 10월 16일 04:00 — These recent announcements highlight OpenAI's ongoing efforts to integrate AI into diverse fields, including academic research, education, and legal services, through new programs, language expansions, and collaborative tool development. (출처: openai-32165ee6af8945a5bd83, openai-a60f4a701f887ae8f46b, openai-94eadcab22c41e356a1d)
+- 2026년 10월 17일 04:00 — Itaú is advancing its AI First strategy by deploying generative AI solutions like ia.i and IARA for its customer and employee base in Brazil's regulated sector. Separately, Stack Overflow for Agents has achieved significant user growth, tripling signups and increasing agent creation tenfold, largely due to its ChatGPT plugin. (출처: openai-9732b2763df5a67ab945, openai-9e63539289a31c8631b6)
+- 2026년 10월 16일 09:00 — Anant Kumar at Benefit Street Partners has implemented Codex to improve code review and follow-up efficiency, specifically for tools that compare loan valuations and analyze credit agreements. (출처: openai-b6756c0a180ee554226c)
+- 2026년 10월 19일 21:00 — This is a new development from OpenAI regarding ChatGPT's capabilities. (출처: openai-1dbe22633003a2af4fdd)
+- 2026년 10월 20일 19:00 — OpenAI has recently expanded its reach through an acquisition in the life sciences sector and demonstrated the practical applications of its AI models, such as ChatGPT Work and GPT-6.1 Sol, in improving efficiency and decision-making in the restaurant and financial industries. (출처: openai-1725d137aa3debc0d8ae, openai-aa8847d44cbae3328f3c, openai-1cfb6291fa158d05a5ba)
+- 2026년 10월 22일 06:00 — Recent developments show OpenAI's continued focus on expanding its global reach, forging strategic cloud partnerships, and applying its AI capabilities to specialized domains like legal services and cybersecurity, while also emphasizing responsible deployment. (출처: openai-3f1a11956436b1673800, openai-39cad894cdd240fbe2db, openai-b1215e1aefc04c61e203, openai-95dedf578de78f3ec264, openai-de9db6f384cbc7887755)
+- 2026년 10월 23일 04:00 — Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber. (출처: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
+- 2026년 10월 24일 02:00 — These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives. (출처: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
+- 2026년 10월 27일 07:00 — OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)

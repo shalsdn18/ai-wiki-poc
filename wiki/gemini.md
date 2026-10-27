@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Builders are actively creating projects with Gemini 4 Argon.",
+  "current_state": "공식 Google Gemini 블로그 게시물에 따르면, 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유하고 있으며, 세 명의 젊은 성인이 노트북 화면을 보고 있는 모습이 묘사되었습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -141,10 +141,18 @@
         "gemini-bcd96a08564411867142"
       ],
       "summary": "Gemini 4 Argon is a product that builders are using to create projects."
+    },
+    {
+      "published_at": "2026-10-26T16:00:00+00:00",
+      "source_ids": [
+        "gemini-81ff42b19b35676c9f88"
+      ],
+      "summary": "이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다."
     }
   ],
   "key_facts": [
-    "A collage showcases five different builds utilizing Gemini 4 Argon."
+    "15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유합니다.",
+    "세 명의 젊은 성인이 노트북 화면을 보고 있습니다."
   ],
   "recent_changes": [
     {
@@ -185,6 +193,7 @@
   ],
   "seen_hashes": [
     "03626549a59abf648ee59163b3b8acbf66c36513cb1e76d6e277bc044c926e30",
+    "0615b82fc1c8ac95c6af73bca62266ffba278fc90b657f8d2f77e51f848c4319",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
     "1271c9e586091565823bd00c10965cb0e6f897e428aafcc8f132a0fe8d8025ea",
@@ -222,39 +231,41 @@
 
 # AI Wiki
 
-## Current State
+## 현재 상태
 
-Builders are actively creating projects with Gemini 4 Argon.
+공식 Google Gemini 블로그 게시물에 따르면, 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유하고 있으며, 세 명의 젊은 성인이 노트북 화면을 보고 있는 모습이 묘사되었습니다.
 
-## Key Facts
+## 핵심 정보
 
-- A collage showcases five different builds utilizing Gemini 4 Argon.
+- 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유합니다.
+- 세 명의 젊은 성인이 노트북 화면을 보고 있습니다.
 
-## Recent Changes
+## 최근 변경 사항
 
-- 2026-10-23T16:00:00+00:00 — Five builds with Gemini 4 Argon are being highlighted. (sources: gemini-bcd96a08564411867142)
-- 2026-10-20T16:00:00+00:00 — Users can create image styles tailored to their brand. (sources: gemini-4fbdd2e8bf75634d9ab3)
-- 2026-10-20T16:00:00+00:00 — Gemini can be customized with various apps and skills. (sources: gemini-4fbdd2e8bf75634d9ab3)
-- 2026-10-20T16:00:00+00:00 — Content creation is facilitated through the use of templates. (sources: gemini-4fbdd2e8bf75634d9ab3)
-- 2026-10-19T16:00:00+00:00 — Users can interact with Gemini to apply different outfit items to a person. (sources: gemini-d6e814ad2d3b10574fb7)
+- 2026년 10월 24일 01:00 — Five builds with Gemini 4 Argon are being highlighted. (출처: gemini-bcd96a08564411867142)
+- 2026년 10월 21일 01:00 — Users can create image styles tailored to their brand. (출처: gemini-4fbdd2e8bf75634d9ab3)
+- 2026년 10월 21일 01:00 — Gemini can be customized with various apps and skills. (출처: gemini-4fbdd2e8bf75634d9ab3)
+- 2026년 10월 21일 01:00 — Content creation is facilitated through the use of templates. (출처: gemini-4fbdd2e8bf75634d9ab3)
+- 2026년 10월 20일 01:00 — Users can interact with Gemini to apply different outfit items to a person. (출처: gemini-d6e814ad2d3b10574fb7)
 
-## History Log
+## 변경 이력
 
-- 2026-08-27T16:00:00+00:00 — Google expanded Gemini capabilities across developer APIs, desktop applications with macOS dictation, live voice productivity, dedicated transcription models, and Workspace educational tools. (sources: gemini-6ea4b2dafda1ebb5087f, gemini-905a61d3474651e104e6, gemini-6a6b776d837ad8b18ea7, gemini-7c81afa81614f7d1eee5, gemini-d6fbfa1a0a3014022b32)
-- 2026-09-01T20:45:00+00:00 — Recent announcements from August 2026, published on September 1, 2026, include updates to Gemini's capabilities and new offerings. (sources: gemini-e6646933ca959a5fc8d1, gemini-5cd085900610be52dabd)
-- 2026-09-02T15:40:00+00:00 — Recent announcements include the introduction of new Gemini models (3.8 Flash and 3.8 Flash Cyber), the launch of the Fairwind Program for cyber defense, and a partnership with MrBeast. (sources: gemini-445c9f3e3d31d26692ad, gemini-ef239918f16e14829b0f, gemini-9dceaf4a590f3244f3de)
-- 2026-09-04T16:00:00+00:00 — This is the initial announcement regarding the availability of Lyria 3.5 in the Gemini app and API. (sources: gemini-9ec50e5febe2af86d959)
-- 2026-09-09T16:00:00+00:00 — A blog post published on 2026-09-09 by Google's official Gemini blog promotes Gemini's utility for administrative tasks. (sources: gemini-8a1d2f52404f044bff9a)
-- 2026-09-10T16:00:00+00:00 — The Gemini app, which was previously not available on Windows, has now been released for the platform. (sources: gemini-ca11f5a155cee3a9b930)
-- 2026-09-14T16:00:00+00:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (sources: gemini-fd1baec08311b505543d)
-- 2026-09-15T17:00:00+00:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (sources: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
-- 2026-09-23T16:00:00+00:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (sources: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
-- 2026-09-24T15:30:00+00:00 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (sources: gemini-ca359f02283ba7260ef5)
-- 2026-09-28T16:00:00+00:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (sources: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
-- 2026-10-01T16:00:00+00:00 — Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality. (sources: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
-- 2026-10-02T15:00:00+00:00 — Google regularly provides updates on its AI developments, with the latest being announced in September 2026. (sources: gemini-aacb8ca8a4a96bc0cfec)
-- 2026-10-13T18:00:00+00:00 — Gemini 4 Argon has been released, offering frontier reasoning and agentic coding, and is now accessible to Google Gemini app subscribers and developers for various applications. (sources: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
-- 2026-10-15T13:00:00+00:00 — The source announces the launch of an intelligent new shopping cart featuring a global user interface. (sources: gemini-d84eb0687bc52748eed1)
-- 2026-10-19T16:00:00+00:00 — Gemini has introduced features that allow users to style outfits, including the ability to place various outfit items on a person. (sources: gemini-d6e814ad2d3b10574fb7)
-- 2026-10-20T16:00:00+00:00 — Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation. (sources: gemini-4fbdd2e8bf75634d9ab3)
-- 2026-10-23T16:00:00+00:00 — Gemini 4 Argon is a product that builders are using to create projects. (sources: gemini-bcd96a08564411867142)
+- 2026년 8월 28일 01:00 — Google expanded Gemini capabilities across developer APIs, desktop applications with macOS dictation, live voice productivity, dedicated transcription models, and Workspace educational tools. (출처: gemini-6ea4b2dafda1ebb5087f, gemini-905a61d3474651e104e6, gemini-6a6b776d837ad8b18ea7, gemini-7c81afa81614f7d1eee5, gemini-d6fbfa1a0a3014022b32)
+- 2026년 9월 2일 05:45 — Recent announcements from August 2026, published on September 1, 2026, include updates to Gemini's capabilities and new offerings. (출처: gemini-e6646933ca959a5fc8d1, gemini-5cd085900610be52dabd)
+- 2026년 9월 3일 00:40 — Recent announcements include the introduction of new Gemini models (3.8 Flash and 3.8 Flash Cyber), the launch of the Fairwind Program for cyber defense, and a partnership with MrBeast. (출처: gemini-445c9f3e3d31d26692ad, gemini-ef239918f16e14829b0f, gemini-9dceaf4a590f3244f3de)
+- 2026년 9월 5일 01:00 — This is the initial announcement regarding the availability of Lyria 3.5 in the Gemini app and API. (출처: gemini-9ec50e5febe2af86d959)
+- 2026년 9월 10일 01:00 — A blog post published on 2026-09-09 by Google's official Gemini blog promotes Gemini's utility for administrative tasks. (출처: gemini-8a1d2f52404f044bff9a)
+- 2026년 9월 11일 01:00 — The Gemini app, which was previously not available on Windows, has now been released for the platform. (출처: gemini-ca11f5a155cee3a9b930)
+- 2026년 9월 15일 01:00 — DevFest is a recurring event, as indicated by the phrase "DevFest is back". (출처: gemini-fd1baec08311b505543d)
+- 2026년 9월 16일 02:00 — Recent updates for Gemini include the launch of new models, Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking, alongside an emphasis on its practical applications for everyday tasks like household repairs. (출처: gemini-25823e681aab7b46b522, gemini-72b56895324eb8ab7790)
+- 2026년 9월 24일 01:00 — Gemini is continuously evolving, with recent updates focusing on expanding its ecosystem of connected applications and enhancing its text-to-speech capabilities. (출처: gemini-b29526b4a6c66a1651e3, gemini-c99106a5c97c0f2896ac)
+- 2026년 9월 25일 00:30 — This source announces the introduction of Gemini 3.8 Live with Live Avatar. (출처: gemini-ca359f02283ba7260ef5)
+- 2026년 9월 29일 01:00 — Recent applications of Gemini include its use by builders for digital 3D visualization projects with Gemini 3.8 Flash and by Edy's Grocer for catering services. (출처: gemini-5c384dea4f4cf7660e99, gemini-61017449abab71d17b6d)
+- 2026년 10월 2일 01:00 — Gemini is continuously evolving, with recent announcements focusing on new features and models to enhance user experience and functionality. (출처: gemini-e8e0bfab56ba1a2c98e0, gemini-8a18dee8ca8f941c5640, gemini-ce1c239287a2847282fe)
+- 2026년 10월 3일 00:00 — Google regularly provides updates on its AI developments, with the latest being announced in September 2026. (출처: gemini-aacb8ca8a4a96bc0cfec)
+- 2026년 10월 14일 03:00 — Gemini 4 Argon has been released, offering frontier reasoning and agentic coding, and is now accessible to Google Gemini app subscribers and developers for various applications. (출처: gemini-0fb6a7bf6fd66852ffc3, gemini-c69ca328a70433eddd10, gemini-11e9f2eebcc1194bfc39)
+- 2026년 10월 15일 22:00 — The source announces the launch of an intelligent new shopping cart featuring a global user interface. (출처: gemini-d84eb0687bc52748eed1)
+- 2026년 10월 20일 01:00 — Gemini has introduced features that allow users to style outfits, including the ability to place various outfit items on a person. (출처: gemini-d6e814ad2d3b10574fb7)
+- 2026년 10월 21일 01:00 — Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation. (출처: gemini-4fbdd2e8bf75634d9ab3)
+- 2026년 10월 24일 01:00 — Gemini 4 Argon is a product that builders are using to create projects. (출처: gemini-bcd96a08564411867142)
+- 2026년 10월 27일 01:00 — 이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다. (출처: gemini-81ff42b19b35676c9f88)
