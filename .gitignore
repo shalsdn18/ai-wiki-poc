@@ -220,3 +220,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Local-only application data and dependencies
+node_modules/
+*.db
+*.db-shm
+*.db-wal
+inbox/*.md
+inbox/.processed.json
+documents/*.md
+logs/
+*.sqlite
+*.sqlite3
+*.db-journal
+.env.local
+.env.*.local
