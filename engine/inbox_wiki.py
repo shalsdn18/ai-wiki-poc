@@ -15,6 +15,7 @@ from typing import Protocol
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
 import engine.config
+from engine.localization import category_label, format_datetime_ko
 from engine.schemas import InboxKnowledgePayload, KnowledgeCategory, SourceRecord
 from engine.wiki_poc import DEFAULT_MODEL
 
@@ -24,7 +25,9 @@ DEFAULT_WIKI_ROOT = Path("wiki")
 DEFAULT_STATE = DEFAULT_INBOX / ".processed.json"
 CATEGORIES: tuple[KnowledgeCategory, ...] = ("ai", "investment", "philosophy", "misc")
 _SUSPICIOUS_MOJIBAKE = re.compile(r"[\ufffdÃÂÐÑ]|(?:ì|ë|ê|í|ï»¿)[\x80-\xff]")
-_JSON_FIELD_FRAGMENT = re.compile(r'[`{}]|"(?:title|summary|key_facts|topic|primary_category)"\s*:')
+_JSON_FIELD_FRAGMENT = re.compile(
+    r'[`{}]|"(?:title|summary|key_facts|topic|primary_category)"\s*:'
+)
 _REPEATED_TOKEN = re.compile(r"(.)\1{4,}")
 
 
@@ -49,25 +52,7 @@ class GeminiInboxClassifier:
     ) -> InboxKnowledgePayload:
         from google.genai import types
 
-        korean_instruction = ""
-        if re.search(r"[가-힣]", source.content):
-            korean_instruction = (
-                "The source is Korean. Write title, summary, key_facts, and topic in natural Korean. "
-                "Do not distort the meaning of the source, and do not generate translation-like or "
-                "garbled strings. Product names, technical terms, and proper nouns may retain their "
-                "original spelling. "
-            )
-        prompt = (
-            "Classify and extract the supplied personal knowledge source. "
-            "primary_category must be exactly one of ai, investment, philosophy, misc. "
-            "categories may contain multiple values but must include primary_category. "
-            "importance is an integer from 1 to 5. Extract one concise topic and a "
-            "related_topics list. Return structured data only, not Markdown. "
-            f"The source path suggests category_hint={category_hint!r}; treat it only as a hint "
-            "and independently validate the final categories.\n\n"
-            + korean_instruction
-            + json.dumps(source.model_dump(mode="json"), ensure_ascii=False, indent=2)
-        )
+        prompt = _classification_prompt(source, category_hint)
         response = self._client.models.generate_content(
             model=self._model,
             contents=prompt,
@@ -80,6 +65,27 @@ class GeminiInboxClassifier:
         if response.parsed is not None:
             return InboxKnowledgePayload.model_validate(response.parsed)
         return InboxKnowledgePayload.model_validate_json(response.text)
+
+
+def _classification_prompt(
+    source: SourceRecord,
+    category_hint: KnowledgeCategory | None = None,
+) -> str:
+    """Build a stable Korean-output prompt without rewriting source metadata."""
+    return (
+        "Classify and extract the supplied personal knowledge source. Write all generated "
+        "natural-language output fields, including title, summary, key_facts, topic, "
+        "related_topics, and tags, in natural Korean (ko-KR), regardless of the source language. "
+        "Translate or summarize source meaning accurately without adding unsupported claims. "
+        "Keep the input source title, source_url, filenames, code, product names, model names, "
+        "API/RAG/LLM terms, and proper nouns as provided; do not rewrite or translate the source "
+        "itself. primary_category must be exactly one of ai, investment, philosophy, misc. "
+        "categories may contain multiple enum values but must include primary_category. "
+        "importance is an integer from 1 to 5. Return structured data only, not Markdown. "
+        f"The source path suggests category_hint={category_hint!r}; treat it only as a hint "
+        "and independently validate the final categories.\n\nSOURCE:\n"
+        + json.dumps(source.model_dump(mode="json"), ensure_ascii=False, indent=2)
+    )
 
 
 def normalize_url(value: str) -> str:
@@ -107,7 +113,9 @@ def _parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
     if not lines or lines[0].strip() != "---":
         return {}, text.strip()
     try:
-        end = next(index for index in range(1, len(lines)) if lines[index].strip() == "---")
+        end = next(
+            index for index in range(1, len(lines)) if lines[index].strip() == "---"
+        )
     except StopIteration as exc:
         raise ValueError("Unclosed inbox frontmatter") from exc
     metadata: dict[str, str] = {}
@@ -125,7 +133,9 @@ def read_inbox_source(path: Path) -> tuple[SourceRecord, str | None, str]:
     metadata, content = _parse_frontmatter(path.read_text(encoding="utf-8"))
     if not content:
         raise ValueError("Inbox document content is empty")
-    source_url = normalize_url(metadata["source_url"]) if metadata.get("source_url") else None
+    source_url = (
+        normalize_url(metadata["source_url"]) if metadata.get("source_url") else None
+    )
     content_hash = sha256(content.encode("utf-8")).hexdigest()
     identity = source_url or f"content:{content_hash}"
     source_id = f"inbox-{sha256(identity.encode('utf-8')).hexdigest()[:20]}"
@@ -182,44 +192,57 @@ def _load_category_entries(path: Path) -> list[dict]:
 
 
 def _render_category(category: KnowledgeCategory, entries: Sequence[dict]) -> str:
-    ordered = sorted(entries, key=lambda item: (item["processed_at"], item["title"]), reverse=True)
+    ordered = sorted(
+        entries, key=lambda item: (item["processed_at"], item["title"]), reverse=True
+    )
     frontmatter = json.dumps(
-        {"category": category, "entries": ordered}, ensure_ascii=False, indent=2, sort_keys=True
+        {"category": category, "entries": ordered},
+        ensure_ascii=False,
+        indent=2,
+        sort_keys=True,
     )
     sections = []
     for entry in ordered:
-        facts = "\n".join(f"- {fact}" for fact in entry["key_facts"]) or "- _None._"
-        tags = ", ".join(f"`{tag}`" for tag in entry["tags"]) or "_None_"
-        related_topics = ", ".join(entry.get("related_topics", [])) or "_None_"
+        facts = "\n".join(f"- {fact}" for fact in entry["key_facts"]) or "- _없음._"
+        tags = ", ".join(f"`{tag}`" for tag in entry["tags"]) or "_없음_"
+        related_topics = ", ".join(entry.get("related_topics", [])) or "_없음_"
         source = (
             f"[{entry['source_url']}]({entry['source_url']})"
             if entry["source_url"]
-            else "Local inbox document"
+            else "로컬 받은 편지함 문서"
         )
         sections.append(
             f"## {entry['title']}\n\n"
             f"{entry['summary']}\n\n"
-            f"- Importance: {entry['importance']}/5\n"
-            f"- Topic: {entry.get('topic', entry['title'])}\n"
-            f"- Related topics: {related_topics}\n"
-            f"- Categories: {', '.join(entry['categories'])}\n"
-            f"- Tags: {tags}\n"
-            f"- Source: {source}\n"
-            f"- Input file: `{entry['input_filename']}`\n"
-            f"- Processed at: {entry['processed_at']}\n\n"
-            f"### Key Facts\n\n{facts}"
+            f"- 중요도: {entry['importance']}/5\n"
+            f"- 주제: {entry.get('topic', entry['title'])}\n"
+            f"- 관련 주제: {related_topics}\n"
+            f"- 카테고리: {', '.join(category_label(category) for category in entry['categories'])}\n"
+            f"- 태그: {tags}\n"
+            f"- 출처: {source}\n"
+            f"- 입력 파일: `{entry['input_filename']}`\n"
+            f"- 처리 시각: {format_datetime_ko(entry['processed_at'])}\n\n"
+            f"### 핵심 정보\n\n{facts}"
         )
-    body = "\n\n".join(sections) if sections else "_No knowledge saved yet._"
-    return f"---\n{frontmatter}\n---\n\n# {category.title()} Knowledge Wiki\n\n{body}\n"
+    body = "\n\n".join(sections) if sections else "_아직 저장된 지식이 없습니다._"
+    return (
+        f"---\n{frontmatter}\n---\n\n# {category_label(category)} 지식 위키\n\n{body}\n"
+    )
 
 
-def _validated_payload(payload: object, source_url: str | None) -> InboxKnowledgePayload:
+def _validated_payload(
+    payload: object, source_url: str | None
+) -> InboxKnowledgePayload:
     validated = InboxKnowledgePayload.model_validate(payload)
     categories = list(dict.fromkeys(validated.categories))
     tags = list(dict.fromkeys(tag.strip() for tag in validated.tags if tag.strip()))
-    facts = list(dict.fromkeys(fact.strip() for fact in validated.key_facts if fact.strip()))
+    facts = list(
+        dict.fromkeys(fact.strip() for fact in validated.key_facts if fact.strip())
+    )
     related_topics = list(
-        dict.fromkeys(topic.strip() for topic in validated.related_topics if topic.strip())
+        dict.fromkeys(
+            topic.strip() for topic in validated.related_topics if topic.strip()
+        )
     )
     normalized = validated.model_copy(
         update={
@@ -293,7 +316,9 @@ def process_inbox(
             entries.append(entry)
             category_path.parent.mkdir(parents=True, exist_ok=True)
             category_path.write_text(
-                _render_category(payload.primary_category, entries), encoding="utf-8", newline="\n"
+                _render_category(payload.primary_category, entries),
+                encoding="utf-8",
+                newline="\n",
             )
 
             state["processed_sources"][source.source_id] = {
@@ -311,7 +336,9 @@ def process_inbox(
             )
             results[path.name] = "processed"
         except Exception as exc:
-            LOGGER.error("Inbox item %s failed and was not marked processed: %s", path.name, exc)
+            LOGGER.error(
+                "Inbox item %s failed and was not marked processed: %s", path.name, exc
+            )
             results[path.name] = "failed"
     return results
 

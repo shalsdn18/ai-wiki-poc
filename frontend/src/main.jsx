@@ -1,28 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { apiErrorMessage, categoryLabel, DEFAULT_LOCALE, formatDateTime, t } from './locale.js'
 import './style.css'
+
+document.documentElement.lang = DEFAULT_LOCALE
 
 const configuredApiBase = import.meta.env.VITE_API_BASE_URL?.trim().replace(/\/+$/, '')
 const API = configuredApiBase || (import.meta.env.DEV ? '/api' : 'https://ai-wiki-poc.onrender.com')
 
 async function request(path, options = {}) {
-  const response = await fetch(`${API}${path}`, {
-    ...options,
-    credentials: options.credentials || 'same-origin',
-  })
+  let response
+  try {
+    response = await fetch(`${API}${path}`, {
+      ...options,
+      credentials: options.credentials || 'same-origin',
+    })
+  } catch {
+    throw new Error(t('apiUnavailable'))
+  }
   if (!response.ok) {
-    let message = `${response.status}: ${response.statusText}`
+    let detail
     try {
       const body = await response.json()
-      if (body.detail) message = typeof body.detail === 'string' ? body.detail : JSON.stringify(body.detail)
+      detail = body.detail
     } catch { /* Keep the HTTP status message when the response is not JSON. */ }
-    throw new Error(message)
+    throw new Error(apiErrorMessage(detail, response.status))
   }
   if (response.status === 204) return null
   return response.json()
 }
 
-function Loading({ label = 'Loading' }) {
+function Loading({ label = t('loading') }) {
   return <p className="muted loading">{label}…</p>
 }
 
@@ -47,7 +55,7 @@ function renderInline(text, prefix) {
       pieces.push(<code key={`${prefix}-${match.index}`}>{token.slice(1, -1)}</code>)
     } else if (token.startsWith('![')) {
       const image = token.match(/^!\[([^\]]*)\]\(([^)]+)\)$/)
-      pieces.push(image ? <span key={`${prefix}-${match.index}`} className="muted">[Image: {image[1] || image[2]}]</span> : token)
+      pieces.push(image ? <span key={`${prefix}-${match.index}`} className="muted">[{t('image')}: {image[1] || image[2]}]</span> : token)
     } else if (token.startsWith('[')) {
       const link = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
       const href = link && safeLink(link[2])
@@ -127,17 +135,17 @@ function MarkdownPreview({ content }) {
     while (index < lines.length && lines[index].trim() && !/^\s{0,3}(#{1,6}\s|>|```|~~~|[-+*]\s+|\d+[.)]\s+)/.test(lines[index])) paragraph.push(lines[index++])
     blocks.push(<p key={`paragraph-${index}`}>{paragraph.map((part, i) => <React.Fragment key={i}>{i > 0 && <br />}{renderInline(part, `paragraph-${index}-${i}`)}</React.Fragment>)}</p>)
   }
-  return <article className="markdown-preview">{blocks.length ? blocks : <p className="muted">Nothing to preview yet.</p>}</article>
+  return <article className="markdown-preview">{blocks.length ? blocks : <p className="muted">{t('nothingToPreview')}</p>}</article>
 }
 
 function ConfirmationDialog({ title, message, confirmLabel, onCancel, onConfirm, danger = false }) {
   return (
     <div className="dialog-backdrop">
       <section className="confirmation-dialog" role="alertdialog" aria-modal="true" aria-labelledby="confirmation-title" aria-describedby="confirmation-message">
-        <p className="eyebrow">CONFIRM</p>
+        <p className="eyebrow">{t('confirm')}</p>
         <h2 id="confirmation-title">{title}</h2>
         <p id="confirmation-message" className="muted">{message}</p>
-        <div className="dialog-actions"><button type="button" className="button-secondary" onClick={onCancel}>Cancel</button><button type="button" className={danger ? 'button-danger' : ''} onClick={onConfirm}>{confirmLabel}</button></div>
+        <div className="dialog-actions"><button type="button" className="button-secondary" onClick={onCancel}>{t('cancel')}</button><button type="button" className={danger ? 'button-danger' : ''} onClick={onConfirm}>{confirmLabel}</button></div>
       </section>
     </div>
   )
@@ -147,10 +155,11 @@ function LegacyNotePreview({ note }) {
   const blocks = (note.summary || '').split(/\n{2,}/)
   return (
     <article className="markdown-preview">
-      <p className="eyebrow">{note.primary_category}</p>
+      <p className="eyebrow">{categoryLabel(note.primary_category)}</p>
       <h2>{note.title}</h2>
       {blocks.map((block, index) => <p key={index}>{block}</p>)}
-      {note.key_facts?.length > 0 && <><h3>Key facts</h3><ul>{note.key_facts.map(fact => <li key={fact}>{fact}</li>)}</ul></>}
+      {note.key_facts?.length > 0 && <><h3>{t('keyFacts')}</h3><ul>{note.key_facts.map(fact => <li key={fact}>{fact}</li>)}</ul></>}
+      {note.processed_at && <p className="muted">{formatDateTime(note.processed_at)}</p>}
       <p className="muted document-path">{note.relative_path}</p>
     </article>
   )
@@ -176,7 +185,7 @@ function DashboardScreen() {
       const [nextStats, nextRecent] = await Promise.all([request('/stats'), request('/recent')])
       setStats(nextStats)
       setRecent(nextRecent)
-    } catch (err) { setError(err.message || 'Unable to connect to the API') }
+    } catch (err) { setError(err.message || t('apiUnavailable')) }
     finally { setLoading(false) }
   }
   useEffect(() => {
@@ -189,17 +198,17 @@ function DashboardScreen() {
     event.preventDefault()
     if (!query.trim()) { setResults(null); return }
     try { setError(''); setResults(await request(`/search?q=${encodeURIComponent(query.trim())}`)) }
-    catch (err) { setError(err.message || 'Search failed') }
+    catch (err) { setError(err.message || t('searchFailed')) }
   }
   const openNote = async (note) => {
     try { setError(''); setSelected(await request(`/note/${encodeURIComponent(note.source_id || note.id)}`)) }
-    catch (err) { setError(err.message || 'Could not load note') }
+    catch (err) { setError(err.message || t('loadNoteFailed')) }
   }
   const semanticSearch = async (event) => {
     event.preventDefault()
     if (!semanticQuery.trim()) { setSemanticResults(null); return }
     try { setError(''); setSemanticResults(await request(`/semantic-search?q=${encodeURIComponent(semanticQuery.trim())}`)) }
-    catch (err) { setError(err.message || 'Semantic search failed') }
+    catch (err) { setError(err.message || t('semanticSearchFailed')) }
   }
   const chat = async (event) => {
     event.preventDefault()
@@ -213,7 +222,7 @@ function DashboardScreen() {
       })
       setChatAnswer(data.answer)
       setChatSources(data.sources)
-    } catch (err) { setError(err.message || 'Chat failed') }
+    } catch (err) { setError(err.message || t('chatFailed')) }
     finally { setChatLoading(false) }
   }
 
@@ -221,24 +230,24 @@ function DashboardScreen() {
   return (
     <div className="screen-content">
       <header className="page-heading">
-        <div><p className="eyebrow">AI WIKI / LIVE INDEX</p><h1>Knowledge dashboard</h1><p className="muted">A quiet place to find what your vault knows.</p></div>
-        <span className="live-indicator"><span />Auto-refreshing every 5 seconds</span>
+        <div><p className="eyebrow">{t('dashboardEyebrow')}</p><h1>{t('dashboardTitle')}</h1><p className="muted">{t('dashboardDescription')}</p></div>
+        <span className="live-indicator"><span />{t('autoRefresh')}</span>
       </header>
       {error && <div className="notice notice-error" role="alert">{error}</div>}
       <section className="stats-grid">
-        {['documents', 'ai', 'investment', 'philosophy'].map((key, index) => <div className="panel stat-card" key={key}><span>{index === 0 ? 'Indexed documents' : key}</span><strong>{loading ? '—' : index === 0 ? stats?.documents ?? 0 : stats?.categories?.[key] ?? 0}</strong></div>)}
+        {['documents', 'ai', 'investment', 'philosophy'].map((key, index) => <div className="panel stat-card" key={key}><span>{index === 0 ? t('indexedDocuments') : categoryLabel(key)}</span><strong>{loading ? '—' : index === 0 ? stats?.documents ?? 0 : stats?.categories?.[key] ?? 0}</strong></div>)}
       </section>
       <section className="dashboard-grid">
         <div className="panel dashboard-sidebar">
-          <form onSubmit={search} className="form-row"><input aria-label="Search notes" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search title, summary, tags…" /><button type="submit">Search</button></form>
-          <form onSubmit={semanticSearch} className="semantic-form"><p className="eyebrow">SEMANTIC SEARCH</p><div className="form-row"><input aria-label="Semantic search" value={semanticQuery} onChange={e => setSemanticQuery(e.target.value)} placeholder="Ask by meaning…" /><button type="submit">Find</button></div></form>
-          {semanticResults && <div className="result-group"><div className="group-heading"><p className="eyebrow">SIMILAR NOTES</p><button className="text-button" onClick={() => setSemanticResults(null)}>Clear</button></div>{semanticResults.length === 0 ? <p className="muted">No semantic matches.</p> : semanticResults.map(item => <button className="note-row" key={item.id} onClick={() => openNote(item)}><strong>{item.title}</strong><small>{Math.round(item.score * 100)}% match · {item.snippet}</small></button>)}</div>}
-          <div className="group-heading"><p className="eyebrow">{results ? 'SEARCH RESULTS' : 'RECENT DOCUMENTS'}</p>{results && <button className="text-button" onClick={() => setResults(null)}>Clear</button>}</div>
-          {loading ? <Loading label="Loading documents" /> : list.length === 0 ? <p className="muted">No documents found.</p> : list.map(note => <button className={`note-row ${selected?.source_id === note.source_id ? 'selected' : ''}`} key={note.source_id} onClick={() => openNote(note)}><strong>{note.title}</strong><small>{note.relative_path}</small></button>)}
+          <form onSubmit={search} className="form-row"><input aria-label={t('searchNotes')} value={query} onChange={e => setQuery(e.target.value)} placeholder={t('searchPlaceholder')} /><button type="submit">{t('search')}</button></form>
+          <form onSubmit={semanticSearch} className="semantic-form"><p className="eyebrow">{t('semanticSearch')}</p><div className="form-row"><input aria-label={t('semanticSearchAria')} value={semanticQuery} onChange={e => setSemanticQuery(e.target.value)} placeholder={t('askByMeaning')} /><button type="submit">{t('find')}</button></div></form>
+          {semanticResults && <div className="result-group"><div className="group-heading"><p className="eyebrow">{t('similarNotes')}</p><button className="text-button" onClick={() => setSemanticResults(null)}>{t('clear')}</button></div>{semanticResults.length === 0 ? <p className="muted">{t('noSemanticMatches')}</p> : semanticResults.map(item => <button className="note-row" key={item.id} onClick={() => openNote(item)}><strong>{item.title}</strong><small>{Math.round(item.score * 100)}% {t('match')} · {item.snippet}</small></button>)}</div>}
+          <div className="group-heading"><p className="eyebrow">{results ? t('searchResults') : t('recentDocuments')}</p>{results && <button className="text-button" onClick={() => setResults(null)}>{t('clear')}</button>}</div>
+          {loading ? <Loading label={t('loadingDocuments')} /> : list.length === 0 ? <p className="muted">{results ? t('noSearchResults') : t('noDocumentsFound')}</p> : list.map(note => <button className={`note-row ${selected?.source_id === note.source_id ? 'selected' : ''}`} key={note.source_id} onClick={() => openNote(note)}><strong>{note.title}</strong><small>{note.relative_path}{note.processed_at ? ` · ${formatDateTime(note.processed_at)}` : ''}</small></button>)}
         </div>
-        <div className="panel dashboard-preview">{selected ? <LegacyNotePreview note={selected} /> : <div className="empty-state"><span>↗</span><h2>Select a document</h2><p>Choose a note from the index to preview its contents.</p></div>}</div>
+        <div className="panel dashboard-preview">{selected ? <LegacyNotePreview note={selected} /> : <div className="empty-state"><span>↗</span><h2>{t('selectDocument')}</h2><p>{t('selectDocumentDescription')}</p></div>}</div>
       </section>
-      <section className="panel chat-panel"><p className="eyebrow">RAG CHAT</p><h2>Ask your knowledge base</h2><form onSubmit={chat} className="form-row chat-form"><input aria-label="Chat question" value={chatQuestion} onChange={e => setChatQuestion(e.target.value)} placeholder="Ask a question about your notes…" /><button type="submit" disabled={chatLoading}>{chatLoading ? 'Thinking…' : 'Ask'}</button></form>{chatAnswer && <div className="chat-result"><div className="answer-box">{chatAnswer}</div><div><p className="eyebrow">SOURCES</p>{chatSources.map(source => <button className="note-row" key={source.id} onClick={() => openNote(source)}><strong>{source.title}</strong><small>{Math.round(source.score * 100)}% match</small></button>)}</div></div>}</section>
+      <section className="panel chat-panel"><p className="eyebrow">{t('ragChat')}</p><h2>{t('askKnowledgeBase')}</h2><form onSubmit={chat} className="form-row chat-form"><input aria-label={t('chatQuestion')} value={chatQuestion} onChange={e => setChatQuestion(e.target.value)} placeholder={t('askAboutNotes')} /><button type="submit" disabled={chatLoading}>{chatLoading ? t('thinking') : t('ask')}</button></form>{chatAnswer && <div className="chat-result"><div className="answer-box">{chatAnswer}</div><div><p className="eyebrow">{t('sources')}</p>{chatSources.map(source => <button className="note-row" key={source.id} onClick={() => openNote(source)}><strong>{source.title}</strong><small>{Math.round(source.score * 100)}% {t('match')}</small></button>)}</div></div>}</section>
     </div>
   )
 }
@@ -266,7 +275,7 @@ function DocumentsScreen({ dirtyRef }) {
   const refreshDocuments = async () => {
     setLoading(true)
     try { setDocuments(await request('/documents', { credentials: 'include' })); setError('') }
-    catch (err) { setError(err.message || 'Could not load documents') }
+    catch (err) { setError(err.message || t('loadDocumentsFailed')) }
     finally { setLoading(false) }
   }
   useEffect(() => {
@@ -275,7 +284,7 @@ function DocumentsScreen({ dirtyRef }) {
         setAuthConfigured(result.configured)
         setAuthState(result.authenticated ? 'authenticated' : 'anonymous')
       })
-      .catch(err => { setAuthError(err.message || 'Could not check sign-in status'); setAuthState('anonymous') })
+      .catch(err => { setAuthError(err.message || t('checkSignInFailed')); setAuthState('anonymous') })
   }, [])
   useEffect(() => {
     if (authState === 'authenticated') refreshDocuments()
@@ -293,7 +302,7 @@ function DocumentsScreen({ dirtyRef }) {
       })
       setPassword('')
       setAuthState('authenticated')
-    } catch (err) { setAuthError(err.message || 'Sign in failed') }
+    } catch (err) { setAuthError(err.message || t('signInFailed')) }
     finally { setAuthBusy(false) }
   }
   const signOut = async () => {
@@ -308,7 +317,7 @@ function DocumentsScreen({ dirtyRef }) {
       setDocuments([])
       setActiveId(null)
       setBaseline(null)
-    } catch (err) { setAuthError(err.message || 'Sign out failed') }
+    } catch (err) { setAuthError(err.message || t('signOutFailed')) }
     finally { setAuthBusy(false) }
   }
 
@@ -319,7 +328,7 @@ function DocumentsScreen({ dirtyRef }) {
     setBaseline(JSON.stringify(blank))
     setMode('edit')
     setError('')
-    setStatus('New document')
+    setStatus(t('newDocument'))
   }
   const openNew = () => {
     if (dirty) { setConfirmation({ kind: 'new' }); return }
@@ -336,7 +345,7 @@ function DocumentsScreen({ dirtyRef }) {
       setBaseline(JSON.stringify(next))
       setActiveId(document.id)
       setMode('edit')
-    } catch (err) { setError(err.message || 'Could not load document') }
+    } catch (err) { setError(err.message || t('loadDocumentFailed')) }
     finally { setLoading(false) }
   }
   const openDocument = (id) => {
@@ -346,10 +355,10 @@ function DocumentsScreen({ dirtyRef }) {
   }
   const saveDocument = async (event) => {
     event.preventDefault()
-    if (!draft.title.trim()) { setError('Enter a title before saving.'); return }
+    if (!draft.title.trim()) { setError(t('enterTitle')); return }
     setSaving(true)
     setError('')
-    setStatus('Saving…')
+    setStatus(t('saving'))
     const payload = {
       title: draft.title.trim(), content: draft.content,
       tags: draft.tags.split(',').map(tag => tag.trim()).filter(Boolean),
@@ -367,10 +376,10 @@ function DocumentsScreen({ dirtyRef }) {
       setActiveId(saved.id)
       setDocuments(current => [saved, ...current.filter(item => item.id !== saved.id)]
         .sort((left, right) => right.updated_at.localeCompare(left.updated_at)))
-      setStatus('Saved successfully.')
+      setStatus(t('savedSuccessfully'))
     } catch (err) {
       setStatus('')
-      setError(err.message || 'Could not save document')
+      setError(err.message || t('saveDocumentFailed'))
     } finally { setSaving(false) }
   }
   const removeDocument = () => {
@@ -380,7 +389,7 @@ function DocumentsScreen({ dirtyRef }) {
   const performDelete = async () => {
     setSaving(true)
     setError('')
-    setStatus('Deleting…')
+    setStatus(t('deleting'))
     try {
       await request(`/documents/${encodeURIComponent(activeId)}`, {
         method: 'DELETE', credentials: 'include', headers: { 'X-CSRF-Protection': '1' },
@@ -390,10 +399,10 @@ function DocumentsScreen({ dirtyRef }) {
       const blank = { title: '', tags: '', content: '' }
       setDraft(blank)
       setBaseline(JSON.stringify(blank))
-      setStatus('Document deleted.')
+      setStatus(t('documentDeleted'))
     } catch (err) {
       setStatus('')
-      setError(err.message || 'Could not delete document')
+      setError(err.message || t('deleteDocumentFailed'))
     } finally { setSaving(false) }
   }
   const confirmAction = async () => {
@@ -405,43 +414,43 @@ function DocumentsScreen({ dirtyRef }) {
   }
 
   if (authState === 'checking') {
-    return <section className="panel auth-panel"><Loading label="Checking sign-in" /></section>
+    return <section className="panel auth-panel"><Loading label={t('loadingSignIn')} /></section>
   }
   if (!authConfigured) {
-    return <section className="panel auth-panel"><p className="eyebrow">PRIVATE DOCUMENTS</p><h1>Sign-in is not configured</h1><p className="muted">Set APP_PASSWORD_HASH and SESSION_SECRET on the API service, then restart it.</p>{authError && <p className="notice notice-error" role="alert">{authError}</p>}</section>
+    return <section className="panel auth-panel"><p className="eyebrow">{t('privateDocuments')}</p><h1>{t('signInNotConfigured')}</h1><p className="muted">{t('configureAuth')}</p>{authError && <p className="notice notice-error" role="alert">{authError}</p>}</section>
   }
   if (authState !== 'authenticated') {
-    return <section className="panel auth-panel"><p className="eyebrow">PRIVATE DOCUMENTS</p><h1>Sign in to your library</h1><form className="auth-form" onSubmit={signIn}><label className="field-label" htmlFor="document-password">Password</label><input id="document-password" type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /><button type="submit" disabled={authBusy}>{authBusy ? 'Signing in…' : 'Sign in'}</button></form>{authError && <p className="notice notice-error" role="alert">{authError}</p>}</section>
+    return <section className="panel auth-panel"><p className="eyebrow">{t('privateDocuments')}</p><h1>{t('signInToLibrary')}</h1><form className="auth-form" onSubmit={signIn}><label className="field-label" htmlFor="document-password">{t('password')}</label><input id="document-password" type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /><button type="submit" disabled={authBusy}>{authBusy ? t('signingIn') : t('signIn')}</button></form>{authError && <p className="notice notice-error" role="alert">{authError}</p>}</section>
   }
 
   return (
     <>
     <section className="documents-layout">
       <aside className="panel document-list-panel">
-        <div className="list-panel-heading"><div><p className="eyebrow">YOUR LIBRARY</p><h2>Documents</h2></div><div className="document-list-actions"><button className="button-secondary" onClick={signOut} disabled={authBusy}>Log out</button><button onClick={openNew}>New document</button></div></div>
-        {loading && documents.length === 0 ? <Loading label="Loading documents" /> : documents.length === 0 ? <p className="muted list-empty">No documents yet. Create your first note.</p> : <div className="document-list">{documents.map(document => <button className={`document-list-item ${document.id === activeId ? 'active' : ''}`} key={document.id} onClick={() => openDocument(document.id)}><strong>{document.title}</strong><small>{document.tags?.length ? document.tags.join(' · ') : 'No tags'}</small></button>)}</div>}
+        <div className="list-panel-heading"><div><p className="eyebrow">{t('yourLibrary')}</p><h2>{t('documents')}</h2></div><div className="document-list-actions"><button className="button-secondary" onClick={signOut} disabled={authBusy}>{t('logout')}</button><button onClick={openNew}>{t('newDocument')}</button></div></div>
+        {loading && documents.length === 0 ? <Loading label={t('loadingDocuments')} /> : documents.length === 0 ? <p className="muted list-empty">{t('noDocumentsYet')}</p> : <div className="document-list">{documents.map(document => <button className={`document-list-item ${document.id === activeId ? 'active' : ''}`} key={document.id} onClick={() => openDocument(document.id)}><strong>{document.title}</strong><small>{document.tags?.length ? document.tags.join(' · ') : t('noTags')}</small></button>)}</div>}
         {error && <p className="notice notice-error" role="alert">{error}</p>}
       </aside>
 
       <section className="panel editor-panel">
-        <div className="editor-heading"><div><p className="eyebrow">{activeId ? 'EDIT DOCUMENT' : 'NEW DOCUMENT'}</p><h2>{activeId ? 'Edit your note' : 'Write a note'}</h2></div>{dirty && <span className="dirty-indicator">Unsaved changes</span>}</div>
+        <div className="editor-heading"><div><p className="eyebrow">{activeId ? t('editDocument') : t('createDocument')}</p><h2>{activeId ? t('editNote') : t('writeNote')}</h2></div>{dirty && <span className="dirty-indicator">{t('unsavedChanges')}</span>}</div>
         <form onSubmit={saveDocument}>
-          <label className="field-label" htmlFor="document-title">Title</label>
-          <input id="document-title" className="editor-input" value={draft.title} onChange={event => { setDraft({ ...draft, title: event.target.value }); setStatus('') }} placeholder="A clear title for your note" required />
-          <label className="field-label" htmlFor="document-tags">Tags <span>(comma separated)</span></label>
-          <input id="document-tags" className="editor-input" value={draft.tags} onChange={event => { setDraft({ ...draft, tags: event.target.value }); setStatus('') }} placeholder="ideas, research, personal" />
+          <label className="field-label" htmlFor="document-title">{t('title')}</label>
+          <input id="document-title" className="editor-input" value={draft.title} onChange={event => { setDraft({ ...draft, title: event.target.value }); setStatus('') }} placeholder={t('titlePlaceholder')} required />
+          <label className="field-label" htmlFor="document-tags">{t('tags')} <span>({t('commaSeparated')})</span></label>
+          <input id="document-tags" className="editor-input" value={draft.tags} onChange={event => { setDraft({ ...draft, tags: event.target.value }); setStatus('') }} placeholder={t('tagsPlaceholder')} />
 
-          <div className="editor-toolbar"><div className="mode-switch" role="tablist" aria-label="Markdown editor mode"><button type="button" role="tab" aria-selected={mode === 'edit'} className={mode === 'edit' ? 'active' : ''} onClick={() => setMode('edit')}>Edit</button><button type="button" role="tab" aria-selected={mode === 'preview'} className={mode === 'preview' ? 'active' : ''} onClick={() => setMode('preview')}>Preview</button></div><span className="muted">Markdown</span></div>
-          {mode === 'edit' ? <textarea className="markdown-input" aria-label="Markdown content" value={draft.content} onChange={event => { setDraft({ ...draft, content: event.target.value }); setStatus('') }} placeholder={'# Start writing\n\nWrite in Markdown…'} spellCheck="false" /> : <div className="preview-surface"><MarkdownPreview content={draft.content} /></div>}
+          <div className="editor-toolbar"><div className="mode-switch" role="tablist" aria-label={t('markdownEditorMode')}><button type="button" role="tab" aria-selected={mode === 'edit'} className={mode === 'edit' ? 'active' : ''} onClick={() => setMode('edit')}>{t('edit')}</button><button type="button" role="tab" aria-selected={mode === 'preview'} className={mode === 'preview' ? 'active' : ''} onClick={() => setMode('preview')}>{t('preview')}</button></div><span className="muted">Markdown</span></div>
+          {mode === 'edit' ? <textarea className="markdown-input" aria-label={t('markdownContent')} value={draft.content} onChange={event => { setDraft({ ...draft, content: event.target.value }); setStatus('') }} placeholder={t('startWriting')} spellCheck="false" /> : <div className="preview-surface"><MarkdownPreview content={draft.content} /></div>}
 
-          <div className="editor-actions"><div className="save-feedback" aria-live="polite">{error && <span className="error-text">{error}</span>}{status && <span className={status.includes('success') || status.includes('deleted') ? 'success-text' : 'muted'}>{status}</span>}</div><div className="action-buttons">{activeId && <button type="button" className="button-danger" onClick={removeDocument} disabled={saving}>Delete</button>}<button type="submit" disabled={saving}>{saving ? 'Saving…' : 'Save document'}</button></div></div>
+          <div className="editor-actions"><div className="save-feedback" aria-live="polite">{error && <span className="error-text">{error}</span>}{status && <span className={status === t('savedSuccessfully') || status === t('documentDeleted') ? 'success-text' : 'muted'}>{status}</span>}</div><div className="action-buttons">{activeId && <button type="button" className="button-danger" onClick={removeDocument} disabled={saving}>{t('delete')}</button>}<button type="submit" disabled={saving}>{saving ? t('saving') : t('save')}</button></div></div>
         </form>
       </section>
     </section>
     {confirmation && <ConfirmationDialog
-      title={confirmation.kind === 'delete' ? 'Delete this document?' : 'Discard unsaved changes?'}
-      message={confirmation.kind === 'delete' ? `“${draft.title || 'Untitled'}” will be permanently deleted.` : 'Your latest edits have not been saved. Continue and discard them?'}
-      confirmLabel={confirmation.kind === 'delete' ? 'Delete document' : 'Discard changes'}
+      title={confirmation.kind === 'delete' ? t('deleteDocumentTitle') : t('discardUnsavedTitle')}
+      message={confirmation.kind === 'delete' ? t('deleteDocumentMessage').replace('{title}', draft.title || '제목 없음') : t('discardUnsavedMessage')}
+      confirmLabel={confirmation.kind === 'delete' ? t('deleteDocument') : t('discardChanges')}
       danger={confirmation.kind === 'delete'}
       onCancel={() => setConfirmation(null)}
       onConfirm={confirmAction}
@@ -461,9 +470,9 @@ function App() {
   return (
     <main className="app-shell">
       <div className="app-inner">
-        <header className="app-header"><a className="brand" href="#top" onClick={event => event.preventDefault()}><span className="brand-mark">W</span><span>AI Wiki</span></a><nav className="primary-nav" aria-label="Main navigation"><button className={screen === 'dashboard' ? 'active' : ''} onClick={() => navigate('dashboard')}>Dashboard</button><button className={screen === 'documents' ? 'active' : ''} onClick={() => navigate('documents')}>Documents</button></nav></header>
+        <header className="app-header"><a className="brand" href="#top" onClick={event => event.preventDefault()}><span className="brand-mark">W</span><span>AI Wiki</span></a><nav className="primary-nav" aria-label={t('navigation')}><button className={screen === 'dashboard' ? 'active' : ''} onClick={() => navigate('dashboard')}>{t('dashboard')}</button><button className={screen === 'documents' ? 'active' : ''} onClick={() => navigate('documents')}>{t('documents')}</button></nav></header>
         {screen === 'dashboard' ? <DashboardScreen /> : <DocumentsScreen dirtyRef={documentDirty} />}
-        {pendingScreen && <ConfirmationDialog title="Discard unsaved changes?" message="Your latest edits have not been saved. Leave this page and discard them?" confirmLabel="Discard changes" onCancel={() => setPendingScreen(null)} onConfirm={() => { setScreen(pendingScreen); setPendingScreen(null) }} />}
+        {pendingScreen && <ConfirmationDialog title={t('discardUnsavedTitle')} message={t('leaveAndDiscardMessage')} confirmLabel={t('discardChanges')} onCancel={() => setPendingScreen(null)} onConfirm={() => { setScreen(pendingScreen); setPendingScreen(null) }} />}
       </div>
     </main>
   )

@@ -18,6 +18,7 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree
 
 import engine.config
+from engine.localization import format_datetime_ko
 
 LOGGER = logging.getLogger(__name__)
 INTERVAL_SECONDS = 30 * 60
@@ -62,7 +63,9 @@ def _text(element: ElementTree.Element, names: tuple[str, ...]) -> str:
     return ""
 
 
-def parse_feed(data: bytes, provider: str, base_url: str, limit: int = 20) -> list[NewsItem]:
+def parse_feed(
+    data: bytes, provider: str, base_url: str, limit: int = 20
+) -> list[NewsItem]:
     root = ElementTree.fromstring(data)
     items: list[NewsItem] = []
     for element in root.iter():
@@ -81,7 +84,13 @@ def parse_feed(data: bytes, provider: str, base_url: str, limit: int = 20) -> li
         if not all((title, url, content, published)):
             continue
         items.append(
-            NewsItem(provider, title, url, re.sub(r"<[^>]+>", " ", content), _published(published))
+            NewsItem(
+                provider,
+                title,
+                url,
+                re.sub(r"<[^>]+>", " ", content),
+                _published(published),
+            )
         )
     return sorted(items, key=lambda item: item.published_at, reverse=True)[:limit]
 
@@ -103,7 +112,8 @@ def _source_id(url: str) -> str:
 
 def _already_seen(connection: sqlite3.Connection, url: str) -> bool:
     return (
-        connection.execute("SELECT 1 FROM seen_urls WHERE url = ?", (url,)).fetchone() is not None
+        connection.execute("SELECT 1 FROM seen_urls WHERE url = ?", (url,)).fetchone()
+        is not None
     )
 
 
@@ -111,7 +121,7 @@ def _markdown(item: NewsItem) -> str:
     return (
         f"---\nsource_url: {item.url}\nsource_type: news\nprovider: {item.provider}\n---\n\n"
         f"# {item.title}\n\n{item.content}\n\n"
-        f"Source: {item.url}\nPublished: {item.published_at.isoformat()}\n"
+        f"출처 URL: {item.url}\n게시 시각: {format_datetime_ko(item.published_at.isoformat())}\n"
     )
 
 
@@ -123,11 +133,17 @@ def collect_once(
     sleep=time.sleep,
 ) -> int:
     """Fetch feeds once and write only URLs not previously recorded."""
-    vault = (vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", ""))).expanduser().resolve()
+    vault = (
+        (vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", "")))
+        .expanduser()
+        .resolve()
+    )
     if not vault.is_dir():
         raise RuntimeError(f"Obsidian Vault directory does not exist: {vault}")
     inbox = vault / os.environ.get("NEWS_INBOX_SUBDIR", "Inbox")
-    resolved_db = db_path or Path(os.environ.get("NEWS_AGENT_DB_PATH", str(DEFAULT_DB_PATH)))
+    resolved_db = db_path or Path(
+        os.environ.get("NEWS_AGENT_DB_PATH", str(DEFAULT_DB_PATH))
+    )
     created = 0
     with _connect(resolved_db) as connection:
         for provider, url in FEEDS.items():
@@ -149,7 +165,11 @@ def collect_once(
 
                     items = [
                         NewsItem(
-                            item.source_tier, item.title, item.url, item.content, item.published_at
+                            item.source_tier,
+                            item.title,
+                            item.url,
+                            item.content,
+                            item.published_at,
                         )
                         for item in _parse_anthropic(data, 20)
                     ]
@@ -164,7 +184,9 @@ def collect_once(
                 source_id = _source_id(item.url)
                 filename = f"{item.published_at:%Y%m%d}-{source_id}.md"
                 inbox.mkdir(parents=True, exist_ok=True)
-                (inbox / filename).write_text(_markdown(item), encoding="utf-8", newline="\n")
+                (inbox / filename).write_text(
+                    _markdown(item), encoding="utf-8", newline="\n"
+                )
                 connection.execute(
                     "INSERT INTO seen_urls(url, source_id, seen_at) VALUES (?, ?, ?)",
                     (item.url, source_id, datetime.now(timezone.utc).isoformat()),

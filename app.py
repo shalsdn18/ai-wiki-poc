@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-import json
 import base64
 import hashlib
 import hmac
+import json
 import os
 import secrets
 import time
@@ -21,7 +21,12 @@ from engine import document_store
 from engine.inbox_wiki import CATEGORIES
 from engine.obsidian_import import discover_markdown
 from engine.pipeline import PipelineStats, run_pipeline
-from engine.vector_store import DEFAULT_VECTOR_DB, SemanticResult, get_documents, semantic_search
+from engine.vector_store import (
+    DEFAULT_VECTOR_DB,
+    SemanticResult,
+    get_documents,
+    semantic_search,
+)
 
 app = FastAPI(title="AI Wiki API", version="1.0.0")
 
@@ -34,7 +39,9 @@ _default_cors_origins = {
     "http://localhost:5173",
 }
 _configured_cors_origins = {
-    origin.strip() for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",") if origin.strip()
+    origin.strip()
+    for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",")
+    if origin.strip()
 }
 app.add_middleware(
     CORSMiddleware,
@@ -72,7 +79,9 @@ def _verify_password(password: str) -> bool:
         actual = hashlib.pbkdf2_hmac(
             "sha256", password.encode("utf-8"), salt.encode("utf-8"), rounds
         )
-        return hmac.compare_digest(base64.urlsafe_b64encode(actual).decode("ascii"), expected)
+        return hmac.compare_digest(
+            base64.urlsafe_b64encode(actual).decode("ascii"), expected
+        )
     except (ValueError, TypeError, UnicodeError):
         return False
 
@@ -96,9 +105,8 @@ def _valid_session(value: str | None) -> bool:
         expires_text, nonce, signature = value.split(".", 2)
         expires_at = int(expires_text)
         payload = f"{expires_text}.{nonce}"
-        return (
-            expires_at >= int(time.time())
-            and hmac.compare_digest(_session_signature(payload), signature)
+        return expires_at >= int(time.time()) and hmac.compare_digest(
+            _session_signature(payload), signature
         )
     except (ValueError, TypeError):
         return False
@@ -120,11 +128,15 @@ def _request_origin(request: Request) -> str | None:
 
 def _require_same_origin(request: Request) -> None:
     if request.headers.get("x-csrf-protection") != "1":
-        raise HTTPException(status_code=403, detail="CSRF protection header is required")
+        raise HTTPException(
+            status_code=403, detail="CSRF protection header is required"
+        )
     origin = _request_origin(request)
     allowed = set(_default_cors_origins | _configured_cors_origins)
     # The request's own origin supports a same-origin frontend deployment.
-    expected_origin = f"{request.url.scheme}://{request.headers.get('host', '')}".rstrip("/")
+    expected_origin = (
+        f"{request.url.scheme}://{request.headers.get('host', '')}".rstrip("/")
+    )
     if origin and (origin in allowed or origin == expected_origin):
         return
     raise HTTPException(status_code=403, detail="Request origin is not allowed")
@@ -132,7 +144,9 @@ def _require_same_origin(request: Request) -> None:
 
 def _require_document_session(request: Request) -> None:
     if not _auth_configured():
-        raise HTTPException(status_code=503, detail="Document authentication is not configured")
+        raise HTTPException(
+            status_code=503, detail="Document authentication is not configured"
+        )
     if not _valid_session(request.cookies.get(_session_cookie_name)):
         raise HTTPException(status_code=401, detail="Authentication required")
 
@@ -142,9 +156,13 @@ class LoginRequest(BaseModel):
 
 
 @app.post("/login")
-def login(request: Request, credentials: LoginRequest, response: Response) -> dict[str, bool]:
+def login(
+    request: Request, credentials: LoginRequest, response: Response
+) -> dict[str, bool]:
     if not _auth_configured():
-        raise HTTPException(status_code=503, detail="Document authentication is not configured")
+        raise HTTPException(
+            status_code=503, detail="Document authentication is not configured"
+        )
     _require_same_origin(request)
     if not _verify_password(credentials.password):
         raise HTTPException(status_code=401, detail="Invalid password")
@@ -263,17 +281,24 @@ class DocumentResponse(BaseModel):
 def _document_or_404(operation, *args):
     try:
         return operation(*args)
-    except (document_store.DocumentNotFoundError, document_store.InvalidDocumentIdError) as exc:
+    except (
+        document_store.DocumentNotFoundError,
+        document_store.InvalidDocumentIdError,
+    ) as exc:
         raise HTTPException(status_code=404, detail="Document not found") from exc
     except document_store.DocumentStorageUnavailableError as exc:
-        raise HTTPException(status_code=503, detail="Document storage is temporarily unavailable") from exc
+        raise HTTPException(
+            status_code=503, detail="Document storage is temporarily unavailable"
+        ) from exc
 
 
 def _document_storage_call(operation, *args):
     try:
         return operation(*args)
     except document_store.DocumentStorageUnavailableError as exc:
-        raise HTTPException(status_code=503, detail="Document storage is temporarily unavailable") from exc
+        raise HTTPException(
+            status_code=503, detail="Document storage is temporarily unavailable"
+        ) from exc
 
 
 @app.get("/documents", response_model=list[DocumentResponse])
@@ -295,7 +320,9 @@ def get_document(document_id: str, request: Request) -> DocumentResponse:
     response_model=DocumentResponse,
     status_code=status.HTTP_201_CREATED,
 )
-def create_document(payload: DocumentWriteRequest, request: Request) -> DocumentResponse:
+def create_document(
+    payload: DocumentWriteRequest, request: Request
+) -> DocumentResponse:
     _require_same_origin(request)
     _require_document_session(request)
     item = _document_storage_call(
@@ -394,7 +421,9 @@ def stats() -> StatsResponse:
 
 @app.get("/recent", response_model=list[NoteResponse])
 def recent(limit: int = Query(default=10, ge=1, le=100)) -> list[NoteResponse]:
-    entries = sorted(_entries(), key=lambda item: item.get("processed_at", ""), reverse=True)
+    entries = sorted(
+        _entries(), key=lambda item: item.get("processed_at", ""), reverse=True
+    )
     return [_note(entry) for entry in entries[:limit]]
 
 
@@ -407,7 +436,14 @@ def search(
     for entry in _entries():
         searchable = " ".join(
             str(entry.get(field, ""))
-            for field in ("title", "summary", "relative_path", "topic", "tags", "key_facts")
+            for field in (
+                "title",
+                "summary",
+                "relative_path",
+                "topic",
+                "tags",
+                "key_facts",
+            )
         )
         if query in searchable.casefold():
             matches.append(_note(entry))
@@ -437,7 +473,9 @@ def semantic(
             for result in semantic_search(q, _vector_db_path(), limit=limit)
         ]
     except OSError as exc:
-        raise HTTPException(status_code=503, detail="Embedding service unavailable") from exc
+        raise HTTPException(
+            status_code=503, detail="Embedding service unavailable"
+        ) from exc
 
 
 @app.post("/import", response_model=ImportResponse)
@@ -449,7 +487,8 @@ def run_import() -> ImportResponse:
         )
     vault = _vault_path()
     totals = {
-        field: 0 for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
+        field: 0
+        for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
     }
     for path in discover_markdown(vault):
         try:
@@ -471,15 +510,20 @@ def _generate_chat_answer(question: str, context: str) -> str:
     client = genai.Client(api_key=api_key)
     response = client.models.generate_content(
         model=os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite"),
-        contents=(
-            "Answer the question using only the supplied context. If the context "
-            "does not contain the answer, say that clearly. Be concise and cite "
-            "the relevant document titles in the answer.\n\n"
-            f"QUESTION:\n{question}\n\nCONTEXT:\n{context}"
-        ),
+        contents=_chat_prompt(question, context),
         config=types.GenerateContentConfig(temperature=0.2),
     )
     return response.text.strip()
+
+
+def _chat_prompt(question: str, context: str) -> str:
+    return (
+        "Answer in natural Korean (ko-KR), regardless of the language of the question or context. "
+        "Use only the supplied context. If it does not contain the answer, state that clearly. "
+        "Be concise and cite the relevant document titles exactly as written in the source; "
+        "preserve product names, model names, code, and technical terms.\n\n"
+        f"QUESTION:\n{question}\n\nCONTEXT:\n{context}"
+    )
 
 
 @app.post("/chat", response_model=ChatResponse)
@@ -493,7 +537,8 @@ def chat(request: ChatRequest) -> ChatResponse:
     matches = semantic_search(request.question, vector_db, limit=5)
     documents = get_documents([match.id for match in matches], vector_db)
     context = "\n\n".join(
-        f"[{match.id}] {match.title}\n{documents.get(match.id, match.snippet)}" for match in matches
+        f"[{match.id}] {match.title}\n{documents.get(match.id, match.snippet)}"
+        for match in matches
     )
     try:
         answer = _generate_chat_answer(request.question, context)
@@ -502,6 +547,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     return ChatResponse(
         answer=answer,
         sources=[
-            ChatSource(id=match.id, title=match.title, score=match.score) for match in matches
+            ChatSource(id=match.id, title=match.title, score=match.score)
+            for match in matches
         ],
     )

@@ -5,10 +5,12 @@ from __future__ import annotations
 import argparse
 import json
 import os
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Protocol, Sequence
+from typing import Protocol
 
 import engine.config
+from engine.localization import format_datetime_ko
 from engine.schemas import SourceRecord, WikiUpdatePayload
 
 DEFAULT_MODEL = "gemini-3.7-flash"
@@ -34,17 +36,7 @@ class GeminiAnalyzer:
     def analyze(self, sources: Sequence[SourceRecord]) -> WikiUpdatePayload:
         from google.genai import types
 
-        source_json = json.dumps(
-            [source.model_dump(mode="json") for source in sources],
-            ensure_ascii=False,
-            indent=2,
-        )
-        prompt = (
-            "Analyze only the supplied new sources. Return factual, concise fields "
-            "matching the response schema. Do not write Markdown. used_source_ids "
-            "must contain only source_id values present below.\n\n"
-            f"NEW SOURCES:\n{source_json}"
-        )
+        prompt = _analysis_prompt(sources)
         response = self._client.models.generate_content(
             model=self._model,
             contents=prompt,
@@ -59,8 +51,32 @@ class GeminiAnalyzer:
         return WikiUpdatePayload.model_validate_json(response.text)
 
 
+def _analysis_prompt(sources: Sequence[SourceRecord]) -> str:
+    source_json = json.dumps(
+        [source.model_dump(mode="json") for source in sources],
+        ensure_ascii=False,
+        indent=2,
+    )
+    return (
+        "Analyze only the supplied new sources. Write all generated natural-language fields, "
+        "including current_state, key_facts, new_changes, and history_summary, in natural "
+        "Korean (ko-KR), regardless of the source language. Translate or summarize accurately "
+        "without adding unsupported claims. Preserve original source titles, URLs, source_id "
+        "values, filenames, code, product and model names, and technical terms as provided; "
+        "do not rewrite source metadata. Return concise structured data matching the response "
+        "schema, not Markdown. used_source_ids must contain only source_id values present below.\n\n"
+        f"NEW SOURCES:\n{source_json}"
+    )
+
+
 def _empty_state() -> dict:
-    return {"seen_hashes": [], "current_state": "", "key_facts": [], "recent_changes": [], "history_log": []}
+    return {
+        "seen_hashes": [],
+        "current_state": "",
+        "key_facts": [],
+        "recent_changes": [],
+        "history_log": [],
+    }
 
 
 def load_state(path: Path) -> dict:
@@ -77,30 +93,36 @@ def load_state(path: Path) -> dict:
     return state
 
 
-def _render_list(items: Sequence[str], empty_text: str = "_None yet._") -> str:
+def _render_list(
+    items: Sequence[str], empty_text: str = "_아직 항목이 없습니다._"
+) -> str:
     return "\n".join(f"- {item}" for item in items) if items else empty_text
 
 
 def render_markdown(state: dict) -> str:
     frontmatter = json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True)
     recent = [
-        f"{entry['published_at']} — {entry['summary']} (sources: {', '.join(entry['source_ids'])})"
+        f"{format_datetime_ko(entry['published_at'])} — {entry['summary']} (출처: {', '.join(entry['source_ids'])})"
         for entry in state["recent_changes"]
     ]
     history = [
-        f"{entry['published_at']} — {entry['summary']} (sources: {', '.join(entry['source_ids'])})"
+        f"{format_datetime_ko(entry['published_at'])} — {entry['summary']} (출처: {', '.join(entry['source_ids'])})"
         for entry in state["history_log"]
     ]
     return (
-        f"---\n{frontmatter}\n---\n\n# AI Wiki\n\n## Current State\n\n"
-        f"{state['current_state'] or '_No state established yet._'}\n\n"
-        f"## Key Facts\n\n{_render_list(state['key_facts'])}\n\n"
-        f"## Recent Changes\n\n{_render_list(recent)}\n\n"
-        f"## History Log\n\n{_render_list(history)}\n"
+        f"---\n{frontmatter}\n---\n\n# AI Wiki\n\n## 현재 상태\n\n"
+        f"{state['current_state'] or '_아직 정리된 내용이 없습니다._'}\n\n"
+        f"## 핵심 정보\n\n{_render_list(state['key_facts'])}\n\n"
+        f"## 최근 변경 사항\n\n{_render_list(recent)}\n\n"
+        f"## 변경 이력\n\n{_render_list(history)}\n"
     )
 
 
-def run_pipeline(sources: Sequence[SourceRecord], analyzer: Analyzer, wiki_path: Path = DEFAULT_WIKI_PATH) -> bool:
+def run_pipeline(
+    sources: Sequence[SourceRecord],
+    analyzer: Analyzer,
+    wiki_path: Path = DEFAULT_WIKI_PATH,
+) -> bool:
     """Process new content and return True only when the Wiki was updated."""
     state = load_state(wiki_path)
     seen = set(state["seen_hashes"])
@@ -115,14 +137,20 @@ def run_pipeline(sources: Sequence[SourceRecord], analyzer: Analyzer, wiki_path:
 
     payload = analyzer.analyze(new_sources)
     valid_ids = {source.source_id for source in new_sources}
-    used_ids = list(dict.fromkeys(source_id for source_id in payload.used_source_ids if source_id in valid_ids))
+    used_ids = list(
+        dict.fromkeys(
+            source_id for source_id in payload.used_source_ids if source_id in valid_ids
+        )
+    )
     event_time = max(source.published_at for source in new_sources).isoformat()
     new_entries = [
         {"published_at": event_time, "summary": summary, "source_ids": used_ids}
         for summary in payload.new_changes
     ]
     merged_changes = state["recent_changes"] + new_entries
-    merged_changes.sort(key=lambda entry: (entry["published_at"], entry["summary"]), reverse=True)
+    merged_changes.sort(
+        key=lambda entry: (entry["published_at"], entry["summary"]), reverse=True
+    )
 
     state.update(
         seen_hashes=sorted(seen | {source.fingerprint for source in new_sources}),
@@ -131,7 +159,11 @@ def run_pipeline(sources: Sequence[SourceRecord], analyzer: Analyzer, wiki_path:
         recent_changes=merged_changes[:5],
     )
     state["history_log"].append(
-        {"published_at": event_time, "summary": payload.history_summary, "source_ids": used_ids}
+        {
+            "published_at": event_time,
+            "summary": payload.history_summary,
+            "source_ids": used_ids,
+        }
     )
     wiki_path.parent.mkdir(parents=True, exist_ok=True)
     wiki_path.write_text(render_markdown(state), encoding="utf-8", newline="\n")

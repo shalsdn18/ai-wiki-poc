@@ -4,8 +4,8 @@ from datetime import datetime, timezone
 import pytest
 from pydantic import ValidationError
 
-from engine.inbox_wiki import _validated_payload, process_inbox
-from engine.schemas import InboxKnowledgePayload
+from engine.inbox_wiki import _classification_prompt, _validated_payload, process_inbox
+from engine.schemas import InboxKnowledgePayload, SourceRecord
 
 
 class FakeClassifier:
@@ -36,7 +36,9 @@ def payload(primary, categories=None):
     )
 
 
-def write_inbox(root, name="item.md", url="https://example.com/article", body="Saved article text"):
+def write_inbox(
+    root, name="item.md", url="https://example.com/article", body="Saved article text"
+):
     root.mkdir(parents=True, exist_ok=True)
     path = root / name
     path.write_text(
@@ -55,15 +57,20 @@ def test_single_category_routes_to_category_wiki(category, tmp_path):
     assert result == {"item.md": "processed"}
     output = wiki / category / "index.md"
     assert output.exists()
-    assert f"# {category.title()} Knowledge Wiki" in output.read_text(encoding="utf-8")
+    labels = {"ai": "AI", "investment": "투자", "philosophy": "철학", "misc": "기타"}
+    text = output.read_text(encoding="utf-8")
+    assert f"# {labels[category]} 지식 위키" in text
+    assert f'"category": "{category}"' in text
 
 
 def test_ai_and_investment_keeps_one_primary_and_multiple_categories(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    process_inbox(FakeClassifier(payload("investment", ["investment", "ai"])), inbox, wiki)
+    process_inbox(
+        FakeClassifier(payload("investment", ["investment", "ai"])), inbox, wiki
+    )
     text = (wiki / "investment" / "index.md").read_text(encoding="utf-8")
-    assert "Categories: investment, ai" in text
+    assert "카테고리: 투자, AI" in text
     assert not (wiki / "ai" / "index.md").exists()
 
 
@@ -156,10 +163,50 @@ def test_valid_korean_payload_is_accepted():
     assert _validated_payload(value, None).title == "생성형 AI 개요"
 
 
+def test_classification_prompt_defaults_to_korean_and_preserves_source_metadata():
+    source = SourceRecord(
+        source_id="source-1",
+        title="Original English Source Title",
+        content="An English source with OpenAI and GPT-5 details.",
+        url="https://example.com/source",
+        published_at=datetime(2026, 9, 2, tzinfo=timezone.utc),
+        source_tier="official",
+    )
+    prompt = _classification_prompt(source)
+    assert "natural Korean (ko-KR), regardless of the source language" in prompt
+    assert "Original English Source Title" in prompt
+    assert "https://example.com/source" in prompt
+    assert "OpenAI and GPT-5" in prompt
+
+
+def test_wiki_display_uses_korean_labels_and_kst_without_changing_iso_metadata(
+    tmp_path,
+):
+    inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
+    write_inbox(inbox)
+    fixed = datetime(2026, 9, 2, 1, 2, 3, tzinfo=timezone.utc)
+    process_inbox(
+        FakeClassifier(payload("investment", ["investment", "ai"])),
+        inbox,
+        wiki,
+        now=lambda: fixed,
+    )
+    text = (wiki / "investment" / "index.md").read_text(encoding="utf-8")
+    state = json.loads((inbox / ".processed.json").read_text(encoding="utf-8"))
+    assert "## 핵심 정보" in text
+    assert "처리 시각: 2026년 9월 2일 10:02" in text
+    assert (
+        next(iter(state["processed_sources"].values()))["processed_at"]
+        == fixed.isoformat()
+    )
+
+
 def test_gemini_failure_does_not_mark_processed(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    result = process_inbox(FakeClassifier(error=RuntimeError("Gemini unavailable")), inbox, wiki)
+    result = process_inbox(
+        FakeClassifier(error=RuntimeError("Gemini unavailable")), inbox, wiki
+    )
     assert result == {"item.md": "failed"}
     assert not (inbox / ".processed.json").exists()
     assert not (wiki / "ai" / "index.md").exists()

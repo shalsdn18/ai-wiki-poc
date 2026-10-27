@@ -49,7 +49,9 @@ def test_collect_once_retries_failed_feed(tmp_path):
 
         delays = []
         assert (
-            news_agent.collect_once(vault, tmp_path / "news.db", fetch=fetch, sleep=delays.append)
+            news_agent.collect_once(
+                vault, tmp_path / "news.db", fetch=fetch, sleep=delays.append
+            )
             == 1
         )
         assert len(attempts) == 2
@@ -57,3 +59,11 @@ def test_collect_once_retries_failed_feed(tmp_path):
     finally:
         news_agent.FEEDS.clear()
         news_agent.FEEDS.update(original)
+
+
+def test_news_note_localizes_labels_and_date_but_preserves_source_title():
+    item = news_agent.parse_feed(RSS, "openai", "https://example.com/", limit=1)[0]
+    markdown = news_agent._markdown(item)
+    assert "# New AI release" in markdown
+    assert "출처 URL: https://example.com/new" in markdown
+    assert "게시 시각: 2026년 9월 1일 21:00" in markdown

@@ -6,6 +6,15 @@ import app
 from engine.pipeline import PipelineStats
 
 
+def test_chat_prompt_defaults_to_korean_and_preserves_source_titles():
+    prompt = app._chat_prompt(
+        "What is in the OpenAI note?", "[source-1] OpenAI API overview\nDetails"
+    )
+    assert "natural Korean (ko-KR)" in prompt
+    assert "cite the relevant document titles exactly as written" in prompt
+    assert "[source-1] OpenAI API overview" in prompt
+
+
 def _write_fixture(tmp_path, monkeypatch):
     state_path = tmp_path / "state.json"
     wiki_root = tmp_path / "wiki"
@@ -21,7 +30,9 @@ def _write_fixture(tmp_path, monkeypatch):
         "topic": "테스트 주제",
     }
     state_path.write_text(
-        json.dumps({"version": 1, "documents": {"AI/한글.md": entry}}, ensure_ascii=False),
+        json.dumps(
+            {"version": 1, "documents": {"AI/한글.md": entry}}, ensure_ascii=False
+        ),
         encoding="utf-8",
     )
     wiki_path = wiki_root / "ai" / "index.md"
@@ -43,7 +54,10 @@ def test_api_stats_recent_search_and_note(tmp_path, monkeypatch):
         "categories": {"ai": 1, "investment": 0, "philosophy": 0, "misc": 0},
     }
     assert client.get("/recent").json()[0]["title"] == "한글 노트"
-    assert client.get("/search", params={"q": "검색 가능한"}).json()[0]["source_id"] == "obsidian-1"
+    assert (
+        client.get("/search", params={"q": "검색 가능한"}).json()[0]["source_id"]
+        == "obsidian-1"
+    )
     assert client.get("/note/obsidian-1").json()["relative_path"] == "AI/한글.md"
     assert client.get("/note/missing").status_code == 404
 
@@ -122,7 +136,9 @@ def test_api_import_delegates_to_existing_importer(tmp_path, monkeypatch):
 
     def fake_pipeline(path):
         calls.append(path)
-        return PipelineStats(read_markdown=1, gemini_calls=1, processed=1, skipped=0, failed=0)
+        return PipelineStats(
+            read_markdown=1, gemini_calls=1, processed=1, skipped=0, failed=0
+        )
 
     monkeypatch.setattr(app, "run_pipeline", fake_pipeline)
     response = TestClient(app.app).post("/import")
@@ -137,7 +153,9 @@ def test_api_semantic_search(monkeypatch):
     monkeypatch.setattr(
         app,
         "semantic_search",
-        lambda query, db_path, limit: [app.SemanticResult("Note", 0.9, "snippet", "source-1")],
+        lambda query, db_path, limit: [
+            app.SemanticResult("Note", 0.9, "snippet", "source-1")
+        ],
     )
 
     response = TestClient(app.app).get("/semantic-search", params={"q": "meaning"})
@@ -151,7 +169,9 @@ def test_api_semantic_search(monkeypatch):
 def test_api_chat_uses_top_semantic_context_and_returns_sources(monkeypatch):
     monkeypatch.setenv("ENABLE_LOCAL_RAG", "true")
     matches = [
-        app.SemanticResult(f"Note {index}", 1 - index / 10, f"snippet {index}", f"source-{index}")
+        app.SemanticResult(
+            f"Note {index}", 1 - index / 10, f"snippet {index}", f"source-{index}"
+        )
         for index in range(5)
     ]
     captured = {}
@@ -180,7 +200,9 @@ def test_api_chat_uses_top_semantic_context_and_returns_sources(monkeypatch):
 def test_rag_endpoints_are_disabled_by_default(monkeypatch):
     monkeypatch.delenv("ENABLE_LOCAL_RAG", raising=False)
 
-    semantic_response = TestClient(app.app).get("/semantic-search", params={"q": "meaning"})
+    semantic_response = TestClient(app.app).get(
+        "/semantic-search", params={"q": "meaning"}
+    )
     chat_response = TestClient(app.app).post("/chat", json={"question": "meaning"})
 
     assert semantic_response.status_code == 503
