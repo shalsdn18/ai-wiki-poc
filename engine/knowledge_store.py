@@ -7,7 +7,7 @@ import os
 import re
 from dataclasses import dataclass
 from datetime import date, datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Protocol
 
 import yaml
@@ -29,6 +29,10 @@ class KnowledgeDocumentError(KnowledgeError):
 
 class KnowledgeNotFoundError(LookupError):
     """No document exists for the requested stable ID."""
+
+
+class KnowledgeUnavailableError(KnowledgeError):
+    """The configured knowledge source cannot provide a complete snapshot."""
 
 
 @dataclass(frozen=True)
@@ -68,6 +72,8 @@ class KnowledgeStore(Protocol):
 
     def stats(self, visibility: str | None = None) -> dict[str, Any]: ...
 
+    def health_status(self) -> dict[str, Any]: ...
+
 
 def _date_value(value: Any, field: str, relative_path: str) -> str:
     if isinstance(value, datetime):
@@ -82,12 +88,11 @@ def _date_value(value: Any, field: str, relative_path: str) -> str:
     raise KnowledgeDocumentError(f"Missing or invalid {field} in {relative_path}")
 
 
-def _parse_document(path: Path, root: Path) -> KnowledgeDocument:
-    try:
-        raw = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeError) as exc:
-        raise KnowledgeDocumentError(f"Could not read knowledge document: {path.name}") from exc
-    relative_path = path.relative_to(root).as_posix()
+def parse_markdown_document(relative_path: str, raw: str) -> KnowledgeDocument:
+    """Parse and validate a repository-relative Markdown document."""
+    relative = PurePosixPath(relative_path)
+    if relative.is_absolute() or not relative.parts or ".." in relative.parts:
+        raise KnowledgeDocumentError("Invalid repository-relative knowledge path")
     match = _FRONTMATTER.match(raw)
     if not match:
         raise KnowledgeDocumentError(f"Invalid YAML frontmatter in {relative_path}")
@@ -110,7 +115,7 @@ def _parse_document(path: Path, root: Path) -> KnowledgeDocument:
         raise KnowledgeDocumentError(f"Invalid title in {relative_path}")
     if category not in CATEGORIES:
         raise KnowledgeDocumentError(f"Invalid category in {relative_path}")
-    if path.relative_to(root).parts[0] != category:
+    if relative.parts[0] != category:
         raise KnowledgeDocumentError(f"Path category does not match metadata in {relative_path}")
     if visibility not in VISIBILITIES:
         raise KnowledgeDocumentError(f"Invalid visibility in {relative_path}")
@@ -119,7 +124,8 @@ def _parse_document(path: Path, root: Path) -> KnowledgeDocument:
     source_url = metadata.get("source_url")
     if source_url is not None and not isinstance(source_url, str):
         raise KnowledgeDocumentError(f"Invalid source_url in {relative_path}")
-    document_id = hashlib.sha256(relative_path.encode("utf-8")).hexdigest()
+    normalized_path = relative.as_posix()
+    document_id = hashlib.sha256(normalized_path.encode("utf-8")).hexdigest()
     return KnowledgeDocument(
         id=document_id,
         title=title.strip(),
@@ -130,8 +136,33 @@ def _parse_document(path: Path, root: Path) -> KnowledgeDocument:
         visibility=visibility,
         source_url=source_url,
         content=match.group(2).strip(),
-        relative_path=relative_path,
+        relative_path=normalized_path,
     )
+
+
+def _parse_document(path: Path, root: Path) -> KnowledgeDocument:
+    relative_path = path.relative_to(root).as_posix()
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        raise KnowledgeDocumentError("Could not read knowledge document") from exc
+    return parse_markdown_document(relative_path, raw)
+
+
+def search_documents(
+    documents: list[KnowledgeDocument], query: str, limit: int = 50
+) -> list[KnowledgeDocument]:
+    needle = query.strip().casefold()
+    if not needle:
+        raise KnowledgeError("Search query must not be empty")
+    matches = []
+    for document in documents:
+        searchable = " ".join(
+            (document.title, document.category, " ".join(document.tags), document.content)
+        )
+        if needle in searchable.casefold():
+            matches.append(document)
+    return matches[:limit]
 
 
 class FilesystemKnowledgeStore:
@@ -163,17 +194,7 @@ class FilesystemKnowledgeStore:
         raise KnowledgeNotFoundError(document_id)
 
     def search(self, query: str, limit: int = 50) -> list[KnowledgeDocument]:
-        needle = query.strip().casefold()
-        if not needle:
-            raise KnowledgeError("Search query must not be empty")
-        matches = []
-        for document in self.list_documents():
-            searchable = " ".join(
-                (document.title, document.category, " ".join(document.tags), document.content)
-            )
-            if needle in searchable.casefold():
-                matches.append(document)
-        return matches[:limit]
+        return search_documents(self.list_documents(), query, limit)
 
     def stats(self, visibility: str | None = None) -> dict[str, Any]:
         counts = {category: 0 for category in CATEGORIES}
@@ -182,7 +203,26 @@ class FilesystemKnowledgeStore:
             counts[document.category] += 1
         return {"documents": len(documents), "categories": counts}
 
+    def health_status(self) -> dict[str, Any]:
+        return {
+            "backend": "filesystem",
+            "status": "HEALTHY" if self.root.is_dir() else "UNAVAILABLE",
+            "ref": None,
+            "commit": None,
+            "last_refresh": None,
+            "malformed_documents": 0,
+        }
+
 
 def get_store(root: Path | str | None = None) -> KnowledgeStore:
     """Construct the configured adapter; callers depend only on KnowledgeStore."""
-    return FilesystemKnowledgeStore(root)
+    if root is not None:
+        return FilesystemKnowledgeStore(root)
+    backend = os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold()
+    if backend == "filesystem":
+        return FilesystemKnowledgeStore()
+    if backend == "github":
+        from engine.github_knowledge_store import get_github_store
+
+        return get_github_store()
+    raise KnowledgeError("Invalid knowledge store backend configuration")

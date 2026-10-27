@@ -22,6 +22,7 @@ from engine.inbox_wiki import CATEGORIES
 from engine.knowledge_store import (
     KnowledgeError,
     KnowledgeNotFoundError,
+    KnowledgeUnavailableError,
 )
 from engine.knowledge_store import (
     get_store as get_knowledge_store,
@@ -203,8 +204,24 @@ def auth_status(request: Request) -> dict[str, bool]:
 
 @app.get("/health")
 def health() -> dict[str, object]:
+    try:
+        knowledge_store = get_knowledge_store().health_status()
+    except KnowledgeError:
+        knowledge_store = {
+            "backend": os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold(),
+            "status": "UNAVAILABLE",
+            "ref": (
+                os.getenv("KNOWLEDGE_GITHUB_REF", "main")
+                if os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold() == "github"
+                else None
+            ),
+            "commit": None,
+            "last_refresh": None,
+            "malformed_documents": 0,
+        }
     return {
         "status": "ok",
+        "knowledge_store": knowledge_store,
         "capabilities": {
             "wiki_read": True,
             "local_import": _enabled("ENABLE_LOCAL_IMPORT"),
@@ -291,11 +308,16 @@ class KnowledgeResponse(BaseModel):
     relative_path: str
 
 
-def _knowledge_call(operation, *args):
+def _knowledge_call(operation_name: str, *args):
     try:
-        return operation(*args)
+        store = get_knowledge_store()
+        return getattr(store, operation_name)(*args)
     except KnowledgeNotFoundError as exc:
         raise HTTPException(status_code=404, detail="Knowledge document not found") from exc
+    except KnowledgeUnavailableError as exc:
+        raise HTTPException(
+            status_code=503, detail="Knowledge repository is temporarily unavailable"
+        ) from exc
     except KnowledgeError as exc:
         raise HTTPException(status_code=503, detail="Knowledge repository is invalid") from exc
     except OSError as exc:
@@ -305,7 +327,7 @@ def _knowledge_call(operation, *args):
 @app.get("/knowledge/stats", response_model=StatsResponse)
 def knowledge_stats(request: Request) -> StatsResponse:
     _require_knowledge_session(request)
-    result = _knowledge_call(get_knowledge_store().stats)
+    result = _knowledge_call("stats")
     return StatsResponse(**result)
 
 
@@ -314,7 +336,7 @@ def knowledge_recent(
     request: Request, limit: int = Query(default=10, ge=1, le=100)
 ) -> list[KnowledgeResponse]:
     _require_knowledge_session(request)
-    documents = _knowledge_call(get_knowledge_store().list_documents)
+    documents = _knowledge_call("list_documents")
     return [KnowledgeResponse(**item.as_dict()) for item in documents[:limit]]
 
 
@@ -325,14 +347,14 @@ def knowledge_search(
     limit: int = Query(default=50, ge=1, le=100),
 ) -> list[KnowledgeResponse]:
     _require_knowledge_session(request)
-    documents = _knowledge_call(get_knowledge_store().search, q, limit)
+    documents = _knowledge_call("search", q, limit)
     return [KnowledgeResponse(**item.as_dict()) for item in documents]
 
 
 @app.get("/knowledge/note/{note_id}", response_model=KnowledgeResponse)
 def knowledge_note(note_id: str, request: Request) -> KnowledgeResponse:
     _require_knowledge_session(request)
-    document = _knowledge_call(get_knowledge_store().get_document, note_id)
+    document = _knowledge_call("get_document", note_id)
     return KnowledgeResponse(**document.as_dict())
 
 

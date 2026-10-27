@@ -86,6 +86,14 @@ def test_health_reports_capabilities(monkeypatch):
 
     assert response.json() == {
         "status": "ok",
+        "knowledge_store": {
+            "backend": "filesystem",
+            "status": "UNAVAILABLE",
+            "ref": None,
+            "commit": None,
+            "last_refresh": None,
+            "malformed_documents": 0,
+        },
         "capabilities": {
             "wiki_read": True,
             "local_import": True,

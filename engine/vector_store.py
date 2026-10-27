@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import os
@@ -10,7 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from engine.obsidian_import import discover_markdown, load_import_state
+from engine.knowledge_store import KnowledgeStore
 
 DEFAULT_VECTOR_DB = Path("vectors.db")
 DEFAULT_EMBEDDING_MODEL = "bge-m3"
@@ -73,6 +74,8 @@ def sync_vault_vectors(
     model: str | None = None,
 ) -> int:
     """Index changed state documents and remove vectors no longer in the vault."""
+    from engine.obsidian_import import discover_markdown, load_import_state
+
     resolved_model = model or os.getenv("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL)
     state = load_import_state(state_path)
     state_by_path = state["documents"]
@@ -121,6 +124,51 @@ def sync_vault_vectors(
         connection.executemany(
             "DELETE FROM document_vectors WHERE id = ?",
             ((source_id,) for source_id in set(existing) - active_ids),
+        )
+    return indexed
+
+
+def sync_knowledge_vectors(
+    store: KnowledgeStore,
+    db_path: Path = Path("knowledge_vectors.db"),
+    model: str | None = None,
+) -> int:
+    """Rebuild a derived vector index from a KnowledgeStore without vault state."""
+    resolved_model = model or os.getenv("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL)
+    documents = store.list_documents()
+    active = {document.id: document for document in documents}
+    indexed = 0
+    with _connect(db_path) as connection:
+        existing = {
+            row[0]: (row[1], row[2])
+            for row in connection.execute("SELECT id, content_hash, model FROM document_vectors")
+        }
+        for document in documents:
+            content_hash = hashlib.sha256(document.content.encode("utf-8")).hexdigest()
+            if existing.get(document.id) == (content_hash, resolved_model):
+                continue
+            vector = embed(document.content, resolved_model)
+            connection.execute(
+                """INSERT INTO document_vectors
+                (id, content_hash, title, relative_path, content, vector_json, model, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'))
+                ON CONFLICT(id) DO UPDATE SET content_hash=excluded.content_hash,
+                    title=excluded.title, relative_path=excluded.relative_path, content=excluded.content,
+                    vector_json=excluded.vector_json, model=excluded.model, updated_at=excluded.updated_at""",
+                (
+                    document.id,
+                    content_hash,
+                    document.title,
+                    document.relative_path,
+                    document.content,
+                    json.dumps(vector),
+                    resolved_model,
+                ),
+            )
+            indexed += 1
+        connection.executemany(
+            "DELETE FROM document_vectors WHERE id = ?",
+            ((document_id,) for document_id in set(existing) - set(active)),
         )
     return indexed
 

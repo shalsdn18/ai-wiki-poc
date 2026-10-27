@@ -95,7 +95,7 @@ title: Optional title
 python -m engine.inbox_wiki
 ```
 
-## GitHub-first Knowledge API (Phase 1)
+## GitHub-first Knowledge API
 
 The private `ai-wiki-knowledge` repository is the intended source of truth. For
 local use, clone it beside this app repository and set
@@ -110,9 +110,40 @@ Each knowledge Markdown file needs YAML frontmatter with `title`, `category`,
 `tags`, `created`, `updated`, and `visibility`. Categories are `ai`,
 `investment`, `philosophy`, and `misc`; visibility is `private` or `public`.
 Document IDs are SHA-256 hashes of repository-relative paths. The adapter does
-not write knowledge files or publish them. Render is not connected to the
-private repository in Phase 1; a later deployment step must provide a
-read-only local snapshot without putting credentials in the app repository.
+not write knowledge files or publish them. Set `KNOWLEDGE_STORE_BACKEND=github`
+to use the read-only GitHub API adapter. It pins a complete in-memory snapshot
+to a resolved commit and refreshes the branch reference periodically. A failed
+refresh can serve the last complete snapshot as `STALE` for at most 900 seconds;
+without a usable snapshot, authenticated knowledge requests return 503. Render
+must receive GitHub App installation credentials as secrets; credentials are
+never placed in this repository or in a clone URL.
+
+The recommended credential provider mints short-lived installation tokens
+from `KNOWLEDGE_GITHUB_APP_ID`, `KNOWLEDGE_GITHUB_INSTALLATION_ID`, and
+`KNOWLEDGE_GITHUB_APP_PRIVATE_KEY`. Create the GitHub App with read-only
+Contents permission and install it only on `ai-wiki-knowledge`. App provisioning
+and Render secret wiring are operational follow-up steps; this phase does not
+change production settings.
+
+`visibility: public` only makes a note eligible for a later publish action.
+`engine/publish_policy.py` requires both that visibility and explicit selection;
+it does not write or publish anything. Existing public wiki APIs keep their
+current source and contract.
+
+### Documents and write path
+
+`/documents` remains its existing authenticated CRUD service. Phase 3 must
+define optimistic concurrency against a base commit SHA, conflict handling,
+commit messages, atomic writes, push failure behavior, and rollback before a
+Documents UI is connected to knowledge Markdown. No Git write capability is
+present in the GitHub reader.
+
+### Knowledge RAG boundary
+
+`engine.vector_store.sync_knowledge_vectors()` can build a separate derived
+`knowledge_vectors.db` from any `KnowledgeStore`. It does not require the
+Obsidian import state. Existing `/semantic-search`, `/chat`, and local RAG
+settings remain unchanged and disabled in Render.
 
 ## Dashboard
 

@@ -123,6 +123,62 @@ def test_authenticated_knowledge_api_can_read_private_document(tmp_path, monkeyp
     assert client.get(f"/knowledge/note/{document_id}").json()["content"] == "Private source text."
 
 
+def test_knowledge_api_does_not_fallback_to_public_wiki_when_private_source_is_unavailable(
+    monkeypatch,
+):
+    from engine.github_knowledge_store import GitHubKnowledgeStore
+
+    class FailedTransport:
+        def request_json(self, method, url, headers, body=None):
+            raise RuntimeError("private source token=must-not-appear")
+
+    class Credentials:
+        def get_token(self):
+            return "installation-token"
+
+    store = GitHubKnowledgeStore(
+        "owner",
+        "private",
+        "main",
+        credential_provider=Credentials(),
+        transport=FailedTransport(),
+    )
+    monkeypatch.setattr(app, "get_knowledge_store", lambda: store)
+    _configure_auth(monkeypatch)
+    client = TestClient(app.app)
+    assert (
+        client.post("/login", json={"password": PASSWORD}, headers=CSRF_HEADERS).status_code == 200
+    )
+
+    response = client.get("/knowledge/stats")
+
+    assert response.status_code == 503
+    assert "must-not-appear" not in response.text
+    assert "temporarily unavailable" in response.json()["detail"]
+
+
+def test_missing_github_credentials_produce_unavailable_not_server_error(monkeypatch):
+    monkeypatch.setenv("KNOWLEDGE_STORE_BACKEND", "github")
+    monkeypatch.setenv("KNOWLEDGE_GITHUB_OWNER", "owner")
+    monkeypatch.setenv("KNOWLEDGE_GITHUB_REPO", "private")
+    for name in (
+        "KNOWLEDGE_GITHUB_APP_ID",
+        "KNOWLEDGE_GITHUB_INSTALLATION_ID",
+        "KNOWLEDGE_GITHUB_APP_PRIVATE_KEY",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    _configure_auth(monkeypatch)
+    client = TestClient(app.app)
+    assert (
+        client.post("/login", json={"password": PASSWORD}, headers=CSRF_HEADERS).status_code == 200
+    )
+
+    response = client.get("/knowledge/stats")
+
+    assert response.status_code == 503
+    assert "temporarily unavailable" in response.json()["detail"]
+
+
 def test_document_mutations_require_csrf_header(tmp_path, monkeypatch):
     monkeypatch.setenv("DOCUMENTS_ROOT", str(tmp_path / "documents"))
     _configure_auth(monkeypatch)
