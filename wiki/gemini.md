@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "공식 Google Gemini 블로그 게시물에 따르면, 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유하고 있으며, 세 명의 젊은 성인이 노트북 화면을 보고 있는 모습이 묘사되었습니다.",
+  "current_state": "Gemini 4 Argon의 다양한 활용 사례가 소개되고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -148,13 +148,28 @@
         "gemini-81ff42b19b35676c9f88"
       ],
       "summary": "이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다."
+    },
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "gemini-6465e0c566e45f98f2ac"
+      ],
+      "summary": "2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다."
     }
   ],
   "key_facts": [
-    "15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유합니다.",
-    "세 명의 젊은 성인이 노트북 화면을 보고 있습니다."
+    "Gemini 4 Argon은 다양한 용도로 활용될 수 있는 제품입니다.",
+    "Gemini 4 Argon의 8가지 활용 사례가 공개되었습니다.",
+    "이 사례들은 Gemini 4 Argon의 다양한 사용법을 보여주는 콜라주 형태로 제시됩니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "gemini-6465e0c566e45f98f2ac"
+      ],
+      "summary": "Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다."
+    },
     {
       "published_at": "2026-10-23T16:00:00+00:00",
       "source_ids": [
@@ -182,13 +197,6 @@
         "gemini-4fbdd2e8bf75634d9ab3"
       ],
       "summary": "Content creation is facilitated through the use of templates."
-    },
-    {
-      "published_at": "2026-10-19T16:00:00+00:00",
-      "source_ids": [
-        "gemini-d6e814ad2d3b10574fb7"
-      ],
-      "summary": "Users can interact with Gemini to apply different outfit items to a person."
     }
   ],
   "seen_hashes": [
@@ -205,6 +213,7 @@
     "25a006db28eb2cb6b57ad593e2de393aff31ddddde30c531cd65191f0a3eb10c",
     "319df7fecd10f82839948a83de55440289ded38a0c05115f792220c51f439f74",
     "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
+    "43483c34fedc144e145b0b2ea70a2b945f84f388e7aadef8f15c226dcf7e9a75",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
@@ -233,20 +242,21 @@
 
 ## 현재 상태
 
-공식 Google Gemini 블로그 게시물에 따르면, 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유하고 있으며, 세 명의 젊은 성인이 노트북 화면을 보고 있는 모습이 묘사되었습니다.
+Gemini 4 Argon의 다양한 활용 사례가 소개되고 있습니다.
 
 ## 핵심 정보
 
-- 15명의 대학생들이 가장 좋아하는 Gemini 기능에 대해 공유합니다.
-- 세 명의 젊은 성인이 노트북 화면을 보고 있습니다.
+- Gemini 4 Argon은 다양한 용도로 활용될 수 있는 제품입니다.
+- Gemini 4 Argon의 8가지 활용 사례가 공개되었습니다.
+- 이 사례들은 Gemini 4 Argon의 다양한 사용법을 보여주는 콜라주 형태로 제시됩니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 28일 00:00 — Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
 - 2026년 10월 24일 01:00 — Five builds with Gemini 4 Argon are being highlighted. (출처: gemini-bcd96a08564411867142)
 - 2026년 10월 21일 01:00 — Users can create image styles tailored to their brand. (출처: gemini-4fbdd2e8bf75634d9ab3)
 - 2026년 10월 21일 01:00 — Gemini can be customized with various apps and skills. (출처: gemini-4fbdd2e8bf75634d9ab3)
 - 2026년 10월 21일 01:00 — Content creation is facilitated through the use of templates. (출처: gemini-4fbdd2e8bf75634d9ab3)
-- 2026년 10월 20일 01:00 — Users can interact with Gemini to apply different outfit items to a person. (출처: gemini-d6e814ad2d3b10574fb7)
 
 ## 변경 이력
 
@@ -269,3 +279,4 @@
 - 2026년 10월 21일 01:00 — Gemini has announced new tools for small business owners, focusing on brand customization, app integration, and content creation. (출처: gemini-4fbdd2e8bf75634d9ab3)
 - 2026년 10월 24일 01:00 — Gemini 4 Argon is a product that builders are using to create projects. (출처: gemini-bcd96a08564411867142)
 - 2026년 10월 27일 01:00 — 이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다. (출처: gemini-81ff42b19b35676c9f88)
+- 2026년 10월 28일 00:00 — 2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다. (출처: gemini-6465e0c566e45f98f2ac)

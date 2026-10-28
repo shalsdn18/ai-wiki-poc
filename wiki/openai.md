@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 다양한 산업 분야에서 자사 모델의 활용을 확장하고 있으며, 학술 커뮤니티와의 협력을 통해 과학적 이해를 증진하고 있습니다.",
+  "current_state": "OpenAI는 Oracle과의 파트너십을 확장하여 비즈니스 애플리케이션과 AI 에이전트를 ChatGPT에 통합하고 새로운 Oracle 제품을 지원합니다. 또한, Retell은 OpenAI 모델(GPT-6 Astra, Codex)을 활용하여 월 1억 건의 통화를 처리하며, Check Point는 OpenAI Daybreak를 통해 취약점 연구를 가속화하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -348,16 +348,53 @@
         "openai-7e73eebe3e909303c4c5"
       ],
       "summary": "OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다."
+    },
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "openai-1e3ebf94e41ebe19793b",
+        "openai-c417f8e3d39d0b893c07",
+        "openai-c44dc9ed271ff418b14a"
+      ],
+      "summary": "OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다."
     }
   ],
   "key_facts": [
-    "Greptile은 GPT-6 Astra, Daybreak, Codex를 사용하여 사용자 워크플로우 테스트, 보안 강화 및 재작업 감소에 활용합니다.",
-    "OpenAI는 Kakeya conjecture, Exponential Time Hypothesis, quantum chromodynamics에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구자들이 이를 검증하고 발전시킬 수 있도록 합니다.",
-    "CodeRabbit은 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안 위험을 조사하고, 보안 에이전트가 개발자의 검토 및 수정 제안을 돕습니다.",
-    "OpenAI Signals 데이터에 따르면 ChatGPT는 약 100개국에서 165가지 업무 활동에 사용되며, 시간이 지남에 따라 사용량이 변화하는 양상을 보입니다.",
-    "Fanatics는 OpenAI를 활용하여 'Shop the Look' 기능으로 팬들이 경기 당일 의상을 완성하도록 돕고 있으며, 약 30,000개의 MLB 제품 테스트에서 10% 더 높은 참여율을 보였습니다."
+    "Retell은 OpenAI 모델을 사용하여 월 1억 건의 통화를 지원합니다.",
+    "GPT-6 Astra는 Retell의 음성 에이전트 벤치마크에서 최고 성능을 보였습니다.",
+    "Codex는 Retell이 직원당 연간 160만 달러의 매출을 달성하는 데 기여했습니다.",
+    "OpenAI와 Oracle은 파트너십을 확장하여 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트를 통합하고 새로운 Oracle 제품을 지원할 예정입니다.",
+    "Check Point는 OpenAI Daybreak를 활용하여 새로운 보안 보호 기능 연구를 가속화합니다.",
+    "Daybreak는 Check Point 분석가들이 취약점 정보를 고객 방어 기능으로 더 빠르게 전환할 수 있도록 돕습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "openai-1e3ebf94e41ebe19793b",
+        "openai-c417f8e3d39d0b893c07",
+        "openai-c44dc9ed271ff418b14a"
+      ],
+      "summary": "Retell이 OpenAI 모델을 사용하여 월 1억 건의 통화를 처리하게 되었습니다."
+    },
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "openai-1e3ebf94e41ebe19793b",
+        "openai-c417f8e3d39d0b893c07",
+        "openai-c44dc9ed271ff418b14a"
+      ],
+      "summary": "OpenAI와 Oracle의 파트너십이 확장되어 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트가 통합될 예정입니다."
+    },
+    {
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "source_ids": [
+        "openai-1e3ebf94e41ebe19793b",
+        "openai-c417f8e3d39d0b893c07",
+        "openai-c44dc9ed271ff418b14a"
+      ],
+      "summary": "Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다."
+    },
     {
       "published_at": "2026-10-26T22:00:00+00:00",
       "source_ids": [
@@ -379,39 +416,6 @@
         "openai-7e73eebe3e909303c4c5"
       ],
       "summary": "Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다."
-    },
-    {
-      "published_at": "2026-10-26T22:00:00+00:00",
-      "source_ids": [
-        "openai-a9c488820a62ac4adcd9",
-        "openai-8eb6001a836a6e50b8fb",
-        "openai-7d972df501d01ba1f64a",
-        "openai-27334100e818b98514ff",
-        "openai-7e73eebe3e909303c4c5"
-      ],
-      "summary": "Fanatics가 OpenAI를 통해 팬 경험을 간소화하고 참여율을 높이는 새로운 방법을 도입했습니다."
-    },
-    {
-      "published_at": "2026-10-26T22:00:00+00:00",
-      "source_ids": [
-        "openai-a9c488820a62ac4adcd9",
-        "openai-8eb6001a836a6e50b8fb",
-        "openai-7d972df501d01ba1f64a",
-        "openai-27334100e818b98514ff",
-        "openai-7e73eebe3e909303c4c5"
-      ],
-      "summary": "CodeRabbit이 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안을 강화했습니다."
-    },
-    {
-      "published_at": "2026-10-26T22:00:00+00:00",
-      "source_ids": [
-        "openai-a9c488820a62ac4adcd9",
-        "openai-8eb6001a836a6e50b8fb",
-        "openai-7d972df501d01ba1f64a",
-        "openai-27334100e818b98514ff",
-        "openai-7e73eebe3e909303c4c5"
-      ],
-      "summary": "ChatGPT의 업무 활용 범위가 전 세계적으로 확장되고 있음을 보여주는 데이터가 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -503,6 +507,7 @@
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
+    "bc06389219fd2549b37626c6e43340c0a719b49b7c8a23f1f65a623f26243bd7",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
     "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
@@ -513,6 +518,7 @@
     "cdb1f58bcbc6981aa685f3d301e1500d122a21b9f439ace0b50d7a3379094efe",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
     "d1b894933eb5d1a9bec0326fd2dc41cefac13edc75a9651a5154a2afff65bc39",
+    "d1e0b89e34a843e87343fdd783ed56a84c48cbb9cbce13c10458d28ad212f780",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
     "d3ffbfaa015f733a0ad06036a11a20c42ff0d4b249ba1a9e7e98f6fc91f6886f",
     "d4da3fb595c5df829b6bc5b747a87dc7eaca4bc02dbab9abee80dd8be38b0b98",
@@ -524,6 +530,7 @@
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
+    "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
@@ -542,23 +549,24 @@
 
 ## 현재 상태
 
-OpenAI는 다양한 산업 분야에서 자사 모델의 활용을 확장하고 있으며, 학술 커뮤니티와의 협력을 통해 과학적 이해를 증진하고 있습니다.
+OpenAI는 Oracle과의 파트너십을 확장하여 비즈니스 애플리케이션과 AI 에이전트를 ChatGPT에 통합하고 새로운 Oracle 제품을 지원합니다. 또한, Retell은 OpenAI 모델(GPT-6 Astra, Codex)을 활용하여 월 1억 건의 통화를 처리하며, Check Point는 OpenAI Daybreak를 통해 취약점 연구를 가속화하고 있습니다.
 
 ## 핵심 정보
 
-- Greptile은 GPT-6 Astra, Daybreak, Codex를 사용하여 사용자 워크플로우 테스트, 보안 강화 및 재작업 감소에 활용합니다.
-- OpenAI는 Kakeya conjecture, Exponential Time Hypothesis, quantum chromodynamics에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구자들이 이를 검증하고 발전시킬 수 있도록 합니다.
-- CodeRabbit은 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안 위험을 조사하고, 보안 에이전트가 개발자의 검토 및 수정 제안을 돕습니다.
-- OpenAI Signals 데이터에 따르면 ChatGPT는 약 100개국에서 165가지 업무 활동에 사용되며, 시간이 지남에 따라 사용량이 변화하는 양상을 보입니다.
-- Fanatics는 OpenAI를 활용하여 'Shop the Look' 기능으로 팬들이 경기 당일 의상을 완성하도록 돕고 있으며, 약 30,000개의 MLB 제품 테스트에서 10% 더 높은 참여율을 보였습니다.
+- Retell은 OpenAI 모델을 사용하여 월 1억 건의 통화를 지원합니다.
+- GPT-6 Astra는 Retell의 음성 에이전트 벤치마크에서 최고 성능을 보였습니다.
+- Codex는 Retell이 직원당 연간 160만 달러의 매출을 달성하는 데 기여했습니다.
+- OpenAI와 Oracle은 파트너십을 확장하여 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트를 통합하고 새로운 Oracle 제품을 지원할 예정입니다.
+- Check Point는 OpenAI Daybreak를 활용하여 새로운 보안 보호 기능 연구를 가속화합니다.
+- Daybreak는 Check Point 분석가들이 취약점 정보를 고객 방어 기능으로 더 빠르게 전환할 수 있도록 돕습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 28일 00:00 — Retell이 OpenAI 모델을 사용하여 월 1억 건의 통화를 처리하게 되었습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
+- 2026년 10월 28일 00:00 — OpenAI와 Oracle의 파트너십이 확장되어 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트가 통합될 예정입니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
+- 2026년 10월 28일 00:00 — Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 - 2026년 10월 27일 07:00 — OpenAI가 학술 커뮤니티와 협력하여 과학적 이해를 구축하기 위한 모델 결과를 공유했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 - 2026년 10월 27일 07:00 — Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
-- 2026년 10월 27일 07:00 — Fanatics가 OpenAI를 통해 팬 경험을 간소화하고 참여율을 높이는 새로운 방법을 도입했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
-- 2026년 10월 27일 07:00 — CodeRabbit이 GPT-6.1 Sol을 사용하여 복잡한 코드베이스 전반의 보안을 강화했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
-- 2026년 10월 27일 07:00 — ChatGPT의 업무 활용 범위가 전 세계적으로 확장되고 있음을 보여주는 데이터가 공개되었습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 
 ## 변경 이력
 
@@ -600,3 +608,4 @@ OpenAI는 다양한 산업 분야에서 자사 모델의 활용을 확장하고 
 - 2026년 10월 23일 04:00 — Recent developments include OpenAI's introduction of a new API and an explanation of an internal engineering approach, alongside a significant enterprise adoption of ChatGPT Work by Uber. (출처: openai-891b7e0bbf66f86d27b7, openai-6400feb681472530a689, openai-eda525050cea8fce4b13)
 - 2026년 10월 24일 02:00 — These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives. (출처: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
 - 2026년 10월 27일 07:00 — OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
+- 2026년 10월 28일 00:00 — OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
