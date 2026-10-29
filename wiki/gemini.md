@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini 4 Argon의 다양한 활용 사례가 소개되고 있습니다.",
+  "current_state": "Google은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, XR 안경 및 연결된 앱 관리와 관련된 여러 업데이트를 발표했습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -155,48 +155,71 @@
         "gemini-6465e0c566e45f98f2ac"
       ],
       "summary": "2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다."
+    },
+    {
+      "published_at": "2026-10-28T18:00:00+00:00",
+      "source_ids": [
+        "gemini-f1b1625f67db9cc81d99",
+        "gemini-a92d7b7ef0e2da4d5922",
+        "gemini-370e028ff47ae5fef76a",
+        "gemini-a128891378e42ce095b4"
+      ],
+      "summary": "이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다."
     }
   ],
   "key_facts": [
-    "Gemini 4 Argon은 다양한 용도로 활용될 수 있는 제품입니다.",
-    "Gemini 4 Argon의 8가지 활용 사례가 공개되었습니다.",
-    "이 사례들은 Gemini 4 Argon의 다양한 사용법을 보여주는 콜라주 형태로 제시됩니다."
+    "Gemini 앱의 새로운 학생 허브에 몰입형 탐색 기능이 출시되었습니다.",
+    "Gemini 4 Carbon이 차세대 프론티어 모델로 소개되었습니다.",
+    "XREAL AURA라는 유선 XR 안경이 발표되었습니다.",
+    "Connected Apps를 한 곳에서 구축하고 관리할 수 있는 기능이 소개되었으며, Gemini와 연결된 Google 검색의 예시가 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-28T18:00:00+00:00",
+      "source_ids": [
+        "gemini-f1b1625f67db9cc81d99",
+        "gemini-a92d7b7ef0e2da4d5922",
+        "gemini-370e028ff47ae5fef76a",
+        "gemini-a128891378e42ce095b4"
+      ],
+      "summary": "차세대 모델인 Gemini 4 Carbon이 공개되었습니다."
+    },
+    {
+      "published_at": "2026-10-28T18:00:00+00:00",
+      "source_ids": [
+        "gemini-f1b1625f67db9cc81d99",
+        "gemini-a92d7b7ef0e2da4d5922",
+        "gemini-370e028ff47ae5fef76a",
+        "gemini-a128891378e42ce095b4"
+      ],
+      "summary": "XREAL AURA 유선 XR 안경이 출시되었습니다."
+    },
+    {
+      "published_at": "2026-10-28T18:00:00+00:00",
+      "source_ids": [
+        "gemini-f1b1625f67db9cc81d99",
+        "gemini-a92d7b7ef0e2da4d5922",
+        "gemini-370e028ff47ae5fef76a",
+        "gemini-a128891378e42ce095b4"
+      ],
+      "summary": "Gemini 앱의 학생 허브에 몰입형 탐색 기능이 추가되었습니다."
+    },
+    {
+      "published_at": "2026-10-28T18:00:00+00:00",
+      "source_ids": [
+        "gemini-f1b1625f67db9cc81d99",
+        "gemini-a92d7b7ef0e2da4d5922",
+        "gemini-370e028ff47ae5fef76a",
+        "gemini-a128891378e42ce095b4"
+      ],
+      "summary": "Connected Apps를 한 곳에서 관리하는 기능이 도입되었습니다."
+    },
     {
       "published_at": "2026-10-27T15:00:00+00:00",
       "source_ids": [
         "gemini-6465e0c566e45f98f2ac"
       ],
       "summary": "Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다."
-    },
-    {
-      "published_at": "2026-10-23T16:00:00+00:00",
-      "source_ids": [
-        "gemini-bcd96a08564411867142"
-      ],
-      "summary": "Five builds with Gemini 4 Argon are being highlighted."
-    },
-    {
-      "published_at": "2026-10-20T16:00:00+00:00",
-      "source_ids": [
-        "gemini-4fbdd2e8bf75634d9ab3"
-      ],
-      "summary": "Users can create image styles tailored to their brand."
-    },
-    {
-      "published_at": "2026-10-20T16:00:00+00:00",
-      "source_ids": [
-        "gemini-4fbdd2e8bf75634d9ab3"
-      ],
-      "summary": "Gemini can be customized with various apps and skills."
-    },
-    {
-      "published_at": "2026-10-20T16:00:00+00:00",
-      "source_ids": [
-        "gemini-4fbdd2e8bf75634d9ab3"
-      ],
-      "summary": "Content creation is facilitated through the use of templates."
     }
   ],
   "seen_hashes": [
@@ -218,19 +241,23 @@
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
+    "6290f120c907c4ef3cd0dbdb3232b3832a61542b88fea6550f907016673aab35",
     "6ca33a117966ec71b773cbf35ff7d9a35f52c8e28a7e30d58d0f9e7082430dea",
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
     "71dcf779c2201e303f5b6cfb2f582085d6a65e03a5ca0b9a85658599dc4ea51b",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
+    "90428287e7330dda1013088381e0035cd878f0020ba20bc9f71cbb464e22c6e5",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
+    "d149410c20ac0c3373c340018eb404e9a0d4def7d5b2446e545b861975aa4ee5",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
     "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
+    "e2885b8a993bc904afd97781e9e23a8f980fecfe83857a76d60570e3732563d8",
     "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172",
     "e73e9f12bfe22a4cb06a5ba8177ee4e55a51d7e572241d4e07c36448c3259aed",
     "fc1da21d313c01663c99f490192fb014a1cc764e462fd08dc30978a8660ab741"
@@ -242,21 +269,22 @@
 
 ## 현재 상태
 
-Gemini 4 Argon의 다양한 활용 사례가 소개되고 있습니다.
+Google은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, XR 안경 및 연결된 앱 관리와 관련된 여러 업데이트를 발표했습니다.
 
 ## 핵심 정보
 
-- Gemini 4 Argon은 다양한 용도로 활용될 수 있는 제품입니다.
-- Gemini 4 Argon의 8가지 활용 사례가 공개되었습니다.
-- 이 사례들은 Gemini 4 Argon의 다양한 사용법을 보여주는 콜라주 형태로 제시됩니다.
+- Gemini 앱의 새로운 학생 허브에 몰입형 탐색 기능이 출시되었습니다.
+- Gemini 4 Carbon이 차세대 프론티어 모델로 소개되었습니다.
+- XREAL AURA라는 유선 XR 안경이 발표되었습니다.
+- Connected Apps를 한 곳에서 구축하고 관리할 수 있는 기능이 소개되었으며, Gemini와 연결된 Google 검색의 예시가 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 29일 03:00 — 차세대 모델인 Gemini 4 Carbon이 공개되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
+- 2026년 10월 29일 03:00 — XREAL AURA 유선 XR 안경이 출시되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
+- 2026년 10월 29일 03:00 — Gemini 앱의 학생 허브에 몰입형 탐색 기능이 추가되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
+- 2026년 10월 29일 03:00 — Connected Apps를 한 곳에서 관리하는 기능이 도입되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 - 2026년 10월 28일 00:00 — Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
-- 2026년 10월 24일 01:00 — Five builds with Gemini 4 Argon are being highlighted. (출처: gemini-bcd96a08564411867142)
-- 2026년 10월 21일 01:00 — Users can create image styles tailored to their brand. (출처: gemini-4fbdd2e8bf75634d9ab3)
-- 2026년 10월 21일 01:00 — Gemini can be customized with various apps and skills. (출처: gemini-4fbdd2e8bf75634d9ab3)
-- 2026년 10월 21일 01:00 — Content creation is facilitated through the use of templates. (출처: gemini-4fbdd2e8bf75634d9ab3)
 
 ## 변경 이력
 
@@ -280,3 +308,4 @@ Gemini 4 Argon의 다양한 활용 사례가 소개되고 있습니다.
 - 2026년 10월 24일 01:00 — Gemini 4 Argon is a product that builders are using to create projects. (출처: gemini-bcd96a08564411867142)
 - 2026년 10월 27일 01:00 — 이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다. (출처: gemini-81ff42b19b35676c9f88)
 - 2026년 10월 28일 00:00 — 2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
+- 2026년 10월 29일 03:00 — 이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)

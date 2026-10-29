@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 Oracle과의 파트너십을 확장하여 비즈니스 애플리케이션과 AI 에이전트를 ChatGPT에 통합하고 새로운 Oracle 제품을 지원합니다. 또한, Retell은 OpenAI 모델(GPT-6 Astra, Codex)을 활용하여 월 1억 건의 통화를 처리하며, Check Point는 OpenAI Daybreak를 통해 취약점 연구를 가속화하고 있습니다.",
+  "current_state": "OpenAI는 기업 워크플로우 전반에 걸쳐 파트너십을 확장하고 있으며, AI 모델이 다양한 산업에서 활용되고 조직 구조에 통합될 가능성을 탐구하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -357,17 +357,41 @@
         "openai-c44dc9ed271ff418b14a"
       ],
       "summary": "OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다."
+    },
+    {
+      "published_at": "2026-10-28T13:15:00+00:00",
+      "source_ids": [
+        "openai-a395c7da350b5086cc15",
+        "openai-e2ed7680c50ae3f074e0",
+        "openai-709cc8e2bd467b791689"
+      ],
+      "summary": "OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다."
     }
   ],
   "key_facts": [
-    "Retell은 OpenAI 모델을 사용하여 월 1억 건의 통화를 지원합니다.",
-    "GPT-6 Astra는 Retell의 음성 에이전트 벤치마크에서 최고 성능을 보였습니다.",
-    "Codex는 Retell이 직원당 연간 160만 달러의 매출을 달성하는 데 기여했습니다.",
-    "OpenAI와 Oracle은 파트너십을 확장하여 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트를 통합하고 새로운 Oracle 제품을 지원할 예정입니다.",
-    "Check Point는 OpenAI Daybreak를 활용하여 새로운 보안 보호 기능 연구를 가속화합니다.",
-    "Daybreak는 Check Point 분석가들이 취약점 정보를 고객 방어 기능으로 더 빠르게 전환할 수 있도록 돕습니다."
+    "OpenAI와 ServiceNow는 기업 워크플로우 전반에 걸쳐 파트너십을 확장했습니다.",
+    "AI는 조직도에 통합될 수 있습니다.",
+    "Legora는 OpenAI 모델, ChatGPT, Codex를 사용하여 법률 업무를 위한 에이전트 운영 체제를 구축하고 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-28T13:15:00+00:00",
+      "source_ids": [
+        "openai-a395c7da350b5086cc15",
+        "openai-e2ed7680c50ae3f074e0",
+        "openai-709cc8e2bd467b791689"
+      ],
+      "summary": "OpenAI 모델과 에이전트가 ServiceNow에 통합되고, ServiceNow 워크플로우가 ChatGPT 및 Codex에 통합됩니다."
+    },
+    {
+      "published_at": "2026-10-28T13:15:00+00:00",
+      "source_ids": [
+        "openai-a395c7da350b5086cc15",
+        "openai-e2ed7680c50ae3f074e0",
+        "openai-709cc8e2bd467b791689"
+      ],
+      "summary": "Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다."
+    },
     {
       "published_at": "2026-10-27T15:00:00+00:00",
       "source_ids": [
@@ -394,28 +418,6 @@
         "openai-c44dc9ed271ff418b14a"
       ],
       "summary": "Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다."
-    },
-    {
-      "published_at": "2026-10-26T22:00:00+00:00",
-      "source_ids": [
-        "openai-a9c488820a62ac4adcd9",
-        "openai-8eb6001a836a6e50b8fb",
-        "openai-7d972df501d01ba1f64a",
-        "openai-27334100e818b98514ff",
-        "openai-7e73eebe3e909303c4c5"
-      ],
-      "summary": "OpenAI가 학술 커뮤니티와 협력하여 과학적 이해를 구축하기 위한 모델 결과를 공유했습니다."
-    },
-    {
-      "published_at": "2026-10-26T22:00:00+00:00",
-      "source_ids": [
-        "openai-a9c488820a62ac4adcd9",
-        "openai-8eb6001a836a6e50b8fb",
-        "openai-7d972df501d01ba1f64a",
-        "openai-27334100e818b98514ff",
-        "openai-7e73eebe3e909303c4c5"
-      ],
-      "summary": "Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다."
     }
   ],
   "seen_hashes": [
@@ -451,6 +453,7 @@
     "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
+    "4b13441179035d64e85063fee39cc3cc3bb4797ed55c0cdcd5cd08e8cd4de986",
     "4b58459af7180df9bce090ffcc756d78ea1ce130bb5001623b56c5d70dd47fef",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
     "4b90a5b89b816077a0f4b6fa7641f1a463066e94eacf383c9088461628d20e11",
@@ -474,6 +477,7 @@
     "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
     "72b868f81e9a91a0793acbfb1c60d0075f3b9936129837cb6b6414b4ea3554ac",
+    "7531a0ac830f04650e3208e3e43f3ea6504bca2e85383ce9ce924d84f53f61e4",
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "7a3b160516d339624806bb902f8da225cabf550e6a464a5e11f3db58fad4fc7d",
     "7b0998feb986630c353ea69fc70f9eae3419419719ce9571158a4083031e1a8a",
@@ -506,6 +510,7 @@
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
+    "b930a50cd24995813279fdc9e45c5c625fb2cf579ef3e09338f3ec19ca3a2609",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "bc06389219fd2549b37626c6e43340c0a719b49b7c8a23f1f65a623f26243bd7",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
@@ -549,24 +554,21 @@
 
 ## 현재 상태
 
-OpenAI는 Oracle과의 파트너십을 확장하여 비즈니스 애플리케이션과 AI 에이전트를 ChatGPT에 통합하고 새로운 Oracle 제품을 지원합니다. 또한, Retell은 OpenAI 모델(GPT-6 Astra, Codex)을 활용하여 월 1억 건의 통화를 처리하며, Check Point는 OpenAI Daybreak를 통해 취약점 연구를 가속화하고 있습니다.
+OpenAI는 기업 워크플로우 전반에 걸쳐 파트너십을 확장하고 있으며, AI 모델이 다양한 산업에서 활용되고 조직 구조에 통합될 가능성을 탐구하고 있습니다.
 
 ## 핵심 정보
 
-- Retell은 OpenAI 모델을 사용하여 월 1억 건의 통화를 지원합니다.
-- GPT-6 Astra는 Retell의 음성 에이전트 벤치마크에서 최고 성능을 보였습니다.
-- Codex는 Retell이 직원당 연간 160만 달러의 매출을 달성하는 데 기여했습니다.
-- OpenAI와 Oracle은 파트너십을 확장하여 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트를 통합하고 새로운 Oracle 제품을 지원할 예정입니다.
-- Check Point는 OpenAI Daybreak를 활용하여 새로운 보안 보호 기능 연구를 가속화합니다.
-- Daybreak는 Check Point 분석가들이 취약점 정보를 고객 방어 기능으로 더 빠르게 전환할 수 있도록 돕습니다.
+- OpenAI와 ServiceNow는 기업 워크플로우 전반에 걸쳐 파트너십을 확장했습니다.
+- AI는 조직도에 통합될 수 있습니다.
+- Legora는 OpenAI 모델, ChatGPT, Codex를 사용하여 법률 업무를 위한 에이전트 운영 체제를 구축하고 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 28일 22:15 — OpenAI 모델과 에이전트가 ServiceNow에 통합되고, ServiceNow 워크플로우가 ChatGPT 및 Codex에 통합됩니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
+- 2026년 10월 28일 22:15 — Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
 - 2026년 10월 28일 00:00 — Retell이 OpenAI 모델을 사용하여 월 1억 건의 통화를 처리하게 되었습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 - 2026년 10월 28일 00:00 — OpenAI와 Oracle의 파트너십이 확장되어 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트가 통합될 예정입니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 - 2026년 10월 28일 00:00 — Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
-- 2026년 10월 27일 07:00 — OpenAI가 학술 커뮤니티와 협력하여 과학적 이해를 구축하기 위한 모델 결과를 공유했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
-- 2026년 10월 27일 07:00 — Greptile이 GPT-6 Astra를 활용하여 코드 검토를 넘어선 버그 감지 기능을 도입했습니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 
 ## 변경 이력
 
@@ -609,3 +611,4 @@ OpenAI는 Oracle과의 파트너십을 확장하여 비즈니스 애플리케이
 - 2026년 10월 24일 02:00 — These developments highlight OpenAI's continuous efforts to improve the performance and security of its AI technologies and to collaborate with external entities on critical AI safety initiatives. (출처: openai-ee4c22366ef7e7abd786, openai-f8c156dba7886826388b, openai-1a543055a02f9816518c)
 - 2026년 10월 27일 07:00 — OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 - 2026년 10월 28일 00:00 — OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
+- 2026년 10월 28일 22:15 — OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
