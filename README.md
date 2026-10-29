@@ -97,10 +97,9 @@ python -m engine.inbox_wiki
 
 ## GitHub-first Knowledge API
 
-The private `ai-wiki-knowledge` repository is the intended source of truth. For
-local use, clone it beside this app repository and set
-`KNOWLEDGE_ROOT=../ai-wiki-knowledge/knowledge`. The read-only filesystem
-adapter exposes authenticated `/knowledge/stats`, `/knowledge/recent`,
+The read-only filesystem adapter can use a local Knowledge clone by setting
+`KNOWLEDGE_ROOT=../ai-wiki-knowledge/knowledge`. It exposes authenticated
+`/knowledge/stats`, `/knowledge/recent`,
 `/knowledge/search`, and `/knowledge/note/{id}` routes. These routes reuse the
 existing login session and fail closed when authentication is not configured.
 The original public `/stats`, `/recent`, `/search`, and `/note/{id}` continue to
@@ -109,9 +108,10 @@ read the app repository's existing `wiki/` output.
 Each knowledge Markdown file needs YAML frontmatter with `title`, `category`,
 `tags`, `created`, `updated`, and `visibility`. Categories are `ai`,
 `investment`, `philosophy`, and `misc`; visibility is `private` or `public`.
-Document IDs are SHA-256 hashes of repository-relative paths. The adapter does
-not write knowledge files or publish them. Set `KNOWLEDGE_STORE_BACKEND=github`
-to use the read-only GitHub API adapter. It pins a complete in-memory snapshot
+Documents without an explicit `document_id` use IDs derived from their
+repository-relative paths. Adapters do not write knowledge files or publish
+them. Set `KNOWLEDGE_STORE_BACKEND=github` to use the read-only GitHub API
+adapter. It pins a complete in-memory snapshot
 to a resolved commit and refreshes the branch reference periodically. A failed
 refresh can serve the last complete snapshot as `STALE` for at most 900 seconds;
 without a usable snapshot, authenticated knowledge requests return 503. Render
@@ -123,12 +123,26 @@ from `KNOWLEDGE_GITHUB_APP_ID`, `KNOWLEDGE_GITHUB_INSTALLATION_ID`, and
 `KNOWLEDGE_GITHUB_APP_PRIVATE_KEY`. Create the GitHub App with read-only
 Contents permission and install it only on `ai-wiki-knowledge`. App provisioning
 and Render secret wiring are operational follow-up steps; this phase does not
-change production settings.
+change production settings. GitHub mode remains available as a read-only
+migration/reference backend; the R2 backend is the target runtime storage.
 
 `visibility: public` only makes a note eligible for a later publish action.
 `engine/publish_policy.py` requires both that visibility and explicit selection;
 it does not write or publish anything. Existing public wiki APIs keep their
 current source and contract.
+
+### R2 Knowledge backend
+
+`KNOWLEDGE_STORE_BACKEND=r2` selects the read-only S3-compatible Knowledge
+adapter. Configure `KNOWLEDGE_R2_ENDPOINT_URL` (or `KNOWLEDGE_R2_ACCOUNT_ID`),
+`KNOWLEDGE_R2_BUCKET_NAME`, `KNOWLEDGE_R2_ACCESS_KEY_ID`, and
+`KNOWLEDGE_R2_SECRET_ACCESS_KEY` in the server environment; optional region,
+prefix, refresh, and stale-cache settings are documented in
+[`docs/r2-knowledge-phase-1.md`](docs/r2-knowledge-phase-1.md). The adapter
+reads immutable per-document revisions and manifests, while using a
+process-local temporary metadata/content cache. It adds no Knowledge write API
+and leaves the existing `/documents` R2 CRUD backend separate. Render settings
+are not changed by this phase.
 
 ### Documents and write path
 

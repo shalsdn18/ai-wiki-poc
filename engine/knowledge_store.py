@@ -125,7 +125,15 @@ def parse_markdown_document(relative_path: str, raw: str) -> KnowledgeDocument:
     if source_url is not None and not isinstance(source_url, str):
         raise KnowledgeDocumentError(f"Invalid source_url in {relative_path}")
     normalized_path = relative.as_posix()
-    document_id = hashlib.sha256(normalized_path.encode("utf-8")).hexdigest()
+    metadata_document_id = metadata.get("document_id")
+    if metadata_document_id is not None and (
+        not isinstance(metadata_document_id, str)
+        or not re.fullmatch(r"[a-f0-9]{32,64}", metadata_document_id)
+    ):
+        raise KnowledgeDocumentError(f"Invalid document_id in {relative_path}")
+    document_id = (
+        metadata_document_id or hashlib.sha256(normalized_path.encode("utf-8")).hexdigest()
+    )
     return KnowledgeDocument(
         id=document_id,
         title=title.strip(),
@@ -225,4 +233,8 @@ def get_store(root: Path | str | None = None) -> KnowledgeStore:
         from engine.github_knowledge_store import get_github_store
 
         return get_github_store()
+    if backend == "r2":
+        from engine.r2_knowledge_store import get_r2_knowledge_store
+
+        return get_r2_knowledge_store()
     raise KnowledgeError("Invalid knowledge store backend configuration")
