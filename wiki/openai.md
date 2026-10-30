@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 기업 워크플로우 전반에 걸쳐 파트너십을 확장하고 있으며, AI 모델이 다양한 산업에서 활용되고 조직 구조에 통합될 가능성을 탐구하고 있습니다.",
+  "current_state": "OpenAI는 AI 모델의 역량과 이점을 향상시키기 위한 업데이트된 Model Spec을 발표했으며, 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링 시스템을 사용하고 있습니다. 또한, Ropes & Gray와 협력하여 거래 실사를 위한 AI를 개발 중입니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -366,14 +366,50 @@
         "openai-709cc8e2bd467b791689"
       ],
       "summary": "OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다."
+    },
+    {
+      "published_at": "2026-10-29T17:00:00+00:00",
+      "source_ids": [
+        "openai-9349f418e7bc7ab45091",
+        "openai-0f01adb2acab0a67ba71",
+        "openai-d948735545c20cf30721"
+      ],
+      "summary": "OpenAI는 AI 개발 및 배포에 있어 안전과 유익성을 강조하며, 이를 위해 Model Spec을 업데이트하고 모델 오정렬 감지 시스템을 구축했습니다. 또한, 실제 적용 사례로 Ropes & Gray와의 협력을 통해 법률 분야에서 AI 활용을 모색하고 있습니다."
     }
   ],
   "key_facts": [
-    "OpenAI와 ServiceNow는 기업 워크플로우 전반에 걸쳐 파트너십을 확장했습니다.",
-    "AI는 조직도에 통합될 수 있습니다.",
-    "Legora는 OpenAI 모델, ChatGPT, Codex를 사용하여 법률 업무를 위한 에이전트 운영 체제를 구축하고 있습니다."
+    "OpenAI는 더 유능하고 유익한 AI를 안내하기 위한 5가지 핵심 가치를 담은 업데이트된 Model Spec을 발표했습니다.",
+    "OpenAI는 최첨단 모델의 오정렬 및 무단 에이전트 행동을 감지하기 위해 계층화된 모니터링을 사용합니다.",
+    "Ropes & Gray는 OpenAI와 협력하여 거래 실사를 위한 AI를 개발하고 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-29T17:00:00+00:00",
+      "source_ids": [
+        "openai-9349f418e7bc7ab45091",
+        "openai-0f01adb2acab0a67ba71",
+        "openai-d948735545c20cf30721"
+      ],
+      "summary": "Ropes & Gray는 OpenAI와 함께 거래 실사를 위한 AI를 개발 중이며, 변호사들은 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다."
+    },
+    {
+      "published_at": "2026-10-29T17:00:00+00:00",
+      "source_ids": [
+        "openai-9349f418e7bc7ab45091",
+        "openai-0f01adb2acab0a67ba71",
+        "openai-d948735545c20cf30721"
+      ],
+      "summary": "OpenAI는 사건이 확대되기 전에 대응자가 개입할 수 있도록 최첨단 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링을 사용합니다."
+    },
+    {
+      "published_at": "2026-10-29T17:00:00+00:00",
+      "source_ids": [
+        "openai-9349f418e7bc7ab45091",
+        "openai-0f01adb2acab0a67ba71",
+        "openai-d948735545c20cf30721"
+      ],
+      "summary": "OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다."
+    },
     {
       "published_at": "2026-10-28T13:15:00+00:00",
       "source_ids": [
@@ -391,33 +427,6 @@
         "openai-709cc8e2bd467b791689"
       ],
       "summary": "Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다."
-    },
-    {
-      "published_at": "2026-10-27T15:00:00+00:00",
-      "source_ids": [
-        "openai-1e3ebf94e41ebe19793b",
-        "openai-c417f8e3d39d0b893c07",
-        "openai-c44dc9ed271ff418b14a"
-      ],
-      "summary": "Retell이 OpenAI 모델을 사용하여 월 1억 건의 통화를 처리하게 되었습니다."
-    },
-    {
-      "published_at": "2026-10-27T15:00:00+00:00",
-      "source_ids": [
-        "openai-1e3ebf94e41ebe19793b",
-        "openai-c417f8e3d39d0b893c07",
-        "openai-c44dc9ed271ff418b14a"
-      ],
-      "summary": "OpenAI와 Oracle의 파트너십이 확장되어 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트가 통합될 예정입니다."
-    },
-    {
-      "published_at": "2026-10-27T15:00:00+00:00",
-      "source_ids": [
-        "openai-1e3ebf94e41ebe19793b",
-        "openai-c417f8e3d39d0b893c07",
-        "openai-c44dc9ed271ff418b14a"
-      ],
-      "summary": "Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다."
     }
   ],
   "seen_hashes": [
@@ -451,6 +460,7 @@
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
     "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
+    "4485911e5bff8a142bffb59dfefccf91f768ed7ba6e2531413530eb424fbe24b",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4b13441179035d64e85063fee39cc3cc3bb4797ed55c0cdcd5cd08e8cd4de986",
@@ -473,6 +483,7 @@
     "65322153b065b705eb6e93782347927c97a5bd1bb3bf0c44d476a4ef9322e8af",
     "68c690783cb6c4a253cedadebed57c7021fbd07c74f77bd66cc902d36beb71d5",
     "6d4b5435963ed5834446c905ecffdc9f523c8b8630467cbe5d445531e4d54bcb",
+    "6d9fb8113e3730b8a6bf95ce8d67d4f73348fbaf8a8de73f6270714658c0fd2e",
     "6fe7d823014da5dcee2c89f28077228be748e10441d59b2c8d4c035086ce7fbc",
     "6fecaaaca8e738a8ed2d8d77a41f6bf829286fd08002436adef8c793fd4d06c3",
     "718457804a7ea8e07b19509c42395fb9236e8320683a78004d319f11275d7df5",
@@ -534,6 +545,7 @@
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
+    "e23ad90c8ce1792be439c2bff042012a77702b8956910b97f8948b3c3c971a63",
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
@@ -554,21 +566,21 @@
 
 ## 현재 상태
 
-OpenAI는 기업 워크플로우 전반에 걸쳐 파트너십을 확장하고 있으며, AI 모델이 다양한 산업에서 활용되고 조직 구조에 통합될 가능성을 탐구하고 있습니다.
+OpenAI는 AI 모델의 역량과 이점을 향상시키기 위한 업데이트된 Model Spec을 발표했으며, 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링 시스템을 사용하고 있습니다. 또한, Ropes & Gray와 협력하여 거래 실사를 위한 AI를 개발 중입니다.
 
 ## 핵심 정보
 
-- OpenAI와 ServiceNow는 기업 워크플로우 전반에 걸쳐 파트너십을 확장했습니다.
-- AI는 조직도에 통합될 수 있습니다.
-- Legora는 OpenAI 모델, ChatGPT, Codex를 사용하여 법률 업무를 위한 에이전트 운영 체제를 구축하고 있습니다.
+- OpenAI는 더 유능하고 유익한 AI를 안내하기 위한 5가지 핵심 가치를 담은 업데이트된 Model Spec을 발표했습니다.
+- OpenAI는 최첨단 모델의 오정렬 및 무단 에이전트 행동을 감지하기 위해 계층화된 모니터링을 사용합니다.
+- Ropes & Gray는 OpenAI와 협력하여 거래 실사를 위한 AI를 개발하고 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 30일 02:00 — Ropes & Gray는 OpenAI와 함께 거래 실사를 위한 AI를 개발 중이며, 변호사들은 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
+- 2026년 10월 30일 02:00 — OpenAI는 사건이 확대되기 전에 대응자가 개입할 수 있도록 최첨단 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링을 사용합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
+- 2026년 10월 30일 02:00 — OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
 - 2026년 10월 28일 22:15 — OpenAI 모델과 에이전트가 ServiceNow에 통합되고, ServiceNow 워크플로우가 ChatGPT 및 Codex에 통합됩니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
 - 2026년 10월 28일 22:15 — Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
-- 2026년 10월 28일 00:00 — Retell이 OpenAI 모델을 사용하여 월 1억 건의 통화를 처리하게 되었습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
-- 2026년 10월 28일 00:00 — OpenAI와 Oracle의 파트너십이 확장되어 ChatGPT에 비즈니스 애플리케이션과 AI 에이전트가 통합될 예정입니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
-- 2026년 10월 28일 00:00 — Check Point가 OpenAI Daybreak를 활용하여 취약점 연구를 가속화하고 있습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 
 ## 변경 이력
 
@@ -612,3 +624,4 @@ OpenAI는 기업 워크플로우 전반에 걸쳐 파트너십을 확장하고 �
 - 2026년 10월 27일 07:00 — OpenAI는 최근 여러 분야에서 자사 기술의 적용 및 협력 사례를 발표했습니다. 여기에는 Greptile의 버그 감지, CodeRabbit의 코드 보안 강화, Fanatics의 팬 경험 개선과 같은 상업적 활용 사례가 포함됩니다. 또한, OpenAI는 Kakeya conjecture와 같은 과학적 난제에 대한 모델 결과를 학술 커뮤니티와 공유하며 연구 협력을 강조했습니다. ChatGPT의 전 세계적인 업무 활용 증가에 대한 데이터도 공개되어, OpenAI 기술이 다양한 산업과 연구 분야에 걸쳐 광범위하게 영향을 미치고 있음을 보여줍니다. (출처: openai-a9c488820a62ac4adcd9, openai-8eb6001a836a6e50b8fb, openai-7d972df501d01ba1f64a, openai-27334100e818b98514ff, openai-7e73eebe3e909303c4c5)
 - 2026년 10월 28일 00:00 — OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 - 2026년 10월 28일 22:15 — OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
+- 2026년 10월 30일 02:00 — OpenAI는 AI 개발 및 배포에 있어 안전과 유익성을 강조하며, 이를 위해 Model Spec을 업데이트하고 모델 오정렬 감지 시스템을 구축했습니다. 또한, 실제 적용 사례로 Ropes & Gray와의 협력을 통해 법률 분야에서 AI 활용을 모색하고 있습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)

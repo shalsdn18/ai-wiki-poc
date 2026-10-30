@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, XR 안경 및 연결된 앱 관리와 관련된 여러 업데이트를 발표했습니다.",
+  "current_state": "Gemini는 이제 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집할 수 있는 기능을 제공합니다. 또한 이력서 업데이트를 돕는 기능도 추가되었습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -165,15 +165,46 @@
         "gemini-a128891378e42ce095b4"
       ],
       "summary": "이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다."
+    },
+    {
+      "published_at": "2026-10-29T16:15:00+00:00",
+      "source_ids": [
+        "gemini-7ff097b88dbb7fb2e75d",
+        "gemini-e8b654ca9543c3054765"
+      ],
+      "summary": "최근 업데이트를 통해 Gemini는 문서 편집 및 이력서 작성 지원과 같은 새로운 기능을 통합하여 사용자에게 더 다양한 생산성 도구를 제공하고 있습니다."
     }
   ],
   "key_facts": [
-    "Gemini 앱의 새로운 학생 허브에 몰입형 탐색 기능이 출시되었습니다.",
-    "Gemini 4 Carbon이 차세대 프론티어 모델로 소개되었습니다.",
-    "XREAL AURA라는 유선 XR 안경이 발표되었습니다.",
-    "Connected Apps를 한 곳에서 구축하고 관리할 수 있는 기능이 소개되었으며, Gemini와 연결된 Google 검색의 예시가 있습니다."
+    "Gemini에서 PDF 또는 문서를 직접 생성, 편집 및 미리 볼 수 있습니다.",
+    "새로운 전체 화면 편집기를 사용하여 파일을 다듬을 수 있습니다.",
+    "Gemini를 사용하여 원시 메모를 영향력 있고 ATS 친화적인 이력서 항목으로 전환할 수 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-29T16:15:00+00:00",
+      "source_ids": [
+        "gemini-7ff097b88dbb7fb2e75d",
+        "gemini-e8b654ca9543c3054765"
+      ],
+      "summary": "파일을 다듬기 위한 새로운 전체 화면 편집기가 도입되었습니다."
+    },
+    {
+      "published_at": "2026-10-29T16:15:00+00:00",
+      "source_ids": [
+        "gemini-7ff097b88dbb7fb2e75d",
+        "gemini-e8b654ca9543c3054765"
+      ],
+      "summary": "이력서 업데이트를 위해 Gemini를 사용하여 메모를 이력서 항목으로 변환하는 기능이 제공됩니다."
+    },
+    {
+      "published_at": "2026-10-29T16:15:00+00:00",
+      "source_ids": [
+        "gemini-7ff097b88dbb7fb2e75d",
+        "gemini-e8b654ca9543c3054765"
+      ],
+      "summary": "Gemini 내에서 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집하는 기능이 추가되었습니다."
+    },
     {
       "published_at": "2026-10-28T18:00:00+00:00",
       "source_ids": [
@@ -193,38 +224,12 @@
         "gemini-a128891378e42ce095b4"
       ],
       "summary": "XREAL AURA 유선 XR 안경이 출시되었습니다."
-    },
-    {
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "source_ids": [
-        "gemini-f1b1625f67db9cc81d99",
-        "gemini-a92d7b7ef0e2da4d5922",
-        "gemini-370e028ff47ae5fef76a",
-        "gemini-a128891378e42ce095b4"
-      ],
-      "summary": "Gemini 앱의 학생 허브에 몰입형 탐색 기능이 추가되었습니다."
-    },
-    {
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "source_ids": [
-        "gemini-f1b1625f67db9cc81d99",
-        "gemini-a92d7b7ef0e2da4d5922",
-        "gemini-370e028ff47ae5fef76a",
-        "gemini-a128891378e42ce095b4"
-      ],
-      "summary": "Connected Apps를 한 곳에서 관리하는 기능이 도입되었습니다."
-    },
-    {
-      "published_at": "2026-10-27T15:00:00+00:00",
-      "source_ids": [
-        "gemini-6465e0c566e45f98f2ac"
-      ],
-      "summary": "Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다."
     }
   ],
   "seen_hashes": [
     "03626549a59abf648ee59163b3b8acbf66c36513cb1e76d6e277bc044c926e30",
     "0615b82fc1c8ac95c6af73bca62266ffba278fc90b657f8d2f77e51f848c4319",
+    "0717f46c5acd4ba389433fd6b8fbae54bd24065bccc098cb1dcf184dcbf948e2",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
     "1271c9e586091565823bd00c10965cb0e6f897e428aafcc8f132a0fe8d8025ea",
@@ -249,6 +254,7 @@
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "90428287e7330dda1013088381e0035cd878f0020ba20bc9f71cbb464e22c6e5",
+    "91b56b078f203bca809dfbced405ced142c3f13c463331bd2d561b0d3ecdbc53",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
@@ -269,22 +275,21 @@
 
 ## 현재 상태
 
-Google은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, XR 안경 및 연결된 앱 관리와 관련된 여러 업데이트를 발표했습니다.
+Gemini는 이제 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집할 수 있는 기능을 제공합니다. 또한 이력서 업데이트를 돕는 기능도 추가되었습니다.
 
 ## 핵심 정보
 
-- Gemini 앱의 새로운 학생 허브에 몰입형 탐색 기능이 출시되었습니다.
-- Gemini 4 Carbon이 차세대 프론티어 모델로 소개되었습니다.
-- XREAL AURA라는 유선 XR 안경이 발표되었습니다.
-- Connected Apps를 한 곳에서 구축하고 관리할 수 있는 기능이 소개되었으며, Gemini와 연결된 Google 검색의 예시가 있습니다.
+- Gemini에서 PDF 또는 문서를 직접 생성, 편집 및 미리 볼 수 있습니다.
+- 새로운 전체 화면 편집기를 사용하여 파일을 다듬을 수 있습니다.
+- Gemini를 사용하여 원시 메모를 영향력 있고 ATS 친화적인 이력서 항목으로 전환할 수 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 30일 01:15 — 파일을 다듬기 위한 새로운 전체 화면 편집기가 도입되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
+- 2026년 10월 30일 01:15 — 이력서 업데이트를 위해 Gemini를 사용하여 메모를 이력서 항목으로 변환하는 기능이 제공됩니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
+- 2026년 10월 30일 01:15 — Gemini 내에서 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집하는 기능이 추가되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 10월 29일 03:00 — 차세대 모델인 Gemini 4 Carbon이 공개되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 - 2026년 10월 29일 03:00 — XREAL AURA 유선 XR 안경이 출시되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
-- 2026년 10월 29일 03:00 — Gemini 앱의 학생 허브에 몰입형 탐색 기능이 추가되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
-- 2026년 10월 29일 03:00 — Connected Apps를 한 곳에서 관리하는 기능이 도입되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
-- 2026년 10월 28일 00:00 — Google Gemini 공식 블로그를 통해 Gemini 4 Argon의 8가지 활용 사례가 담긴 게시물이 새로 공개되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
 
 ## 변경 이력
 
@@ -309,3 +314,4 @@ Google은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, XR 안경 및
 - 2026년 10월 27일 01:00 — 이 정보는 2026년 10월 26일에 게시된 '15 college students share their favorite Gemini features'라는 제목의 공식 Google Gemini 블로그 게시물에서 발췌되었습니다. (출처: gemini-81ff42b19b35676c9f88)
 - 2026년 10월 28일 00:00 — 2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
 - 2026년 10월 29일 03:00 — 이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
+- 2026년 10월 30일 01:15 — 최근 업데이트를 통해 Gemini는 문서 편집 및 이력서 작성 지원과 같은 새로운 기능을 통합하여 사용자에게 더 다양한 생산성 도구를 제공하고 있습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
