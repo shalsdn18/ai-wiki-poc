@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 AI 모델의 역량과 이점을 향상시키기 위한 업데이트된 Model Spec을 발표했으며, 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링 시스템을 사용하고 있습니다. 또한, Ropes & Gray와 협력하여 거래 실사를 위한 AI를 개발 중입니다.",
+  "current_state": "OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 폭력 예방 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성 강조 등 여러 분야에서 활동하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -375,14 +375,41 @@
         "openai-d948735545c20cf30721"
       ],
       "summary": "OpenAI는 AI 개발 및 배포에 있어 안전과 유익성을 강조하며, 이를 위해 Model Spec을 업데이트하고 모델 오정렬 감지 시스템을 구축했습니다. 또한, 실제 적용 사례로 Ropes & Gray와의 협력을 통해 법률 분야에서 AI 활용을 모색하고 있습니다."
+    },
+    {
+      "published_at": "2026-10-30T09:30:00+00:00",
+      "source_ids": [
+        "openai-84abd1857de5dfd951d9",
+        "openai-a86d24c59c826150d16d",
+        "openai-574dbaf7fc8731e40575"
+      ],
+      "summary": "OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 안전 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성을 강조하는 등 다양한 정책 및 안전 관련 업데이트를 발표했습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 더 유능하고 유익한 AI를 안내하기 위한 5가지 핵심 가치를 담은 업데이트된 Model Spec을 발표했습니다.",
-    "OpenAI는 최첨단 모델의 오정렬 및 무단 에이전트 행동을 감지하기 위해 계층화된 모니터링을 사용합니다.",
-    "Ropes & Gray는 OpenAI와 협력하여 거래 실사를 위한 AI를 개발하고 있습니다."
+    "OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 것입니다.",
+    "OpenAI는 ChatGPT에서 폭력 예방을 강화하기 위해 보호 조치를 확대하고 조기 개입하며 공공 안전 보고에 대한 새로운 약속을 하고 있습니다.",
+    "OpenAI는 공정 사용이 AI 훈련과 혁신을 어떻게 지원하는지에 대한 창작자, 학자, 접근성 옹호자 및 법률 전문가들의 법원 서류 발췌문을 공유했습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-10-30T09:30:00+00:00",
+      "source_ids": [
+        "openai-84abd1857de5dfd951d9",
+        "openai-a86d24c59c826150d16d",
+        "openai-574dbaf7fc8731e40575"
+      ],
+      "summary": "OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 예정입니다."
+    },
+    {
+      "published_at": "2026-10-30T09:30:00+00:00",
+      "source_ids": [
+        "openai-84abd1857de5dfd951d9",
+        "openai-a86d24c59c826150d16d",
+        "openai-574dbaf7fc8731e40575"
+      ],
+      "summary": "ChatGPT에서 폭력 예방을 위한 보호 조치가 확대되고 조기 개입이 이루어지며 공공 안전 보고에 대한 새로운 약속이 추가되었습니다."
+    },
     {
       "published_at": "2026-10-29T17:00:00+00:00",
       "source_ids": [
@@ -409,24 +436,6 @@
         "openai-d948735545c20cf30721"
       ],
       "summary": "OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다."
-    },
-    {
-      "published_at": "2026-10-28T13:15:00+00:00",
-      "source_ids": [
-        "openai-a395c7da350b5086cc15",
-        "openai-e2ed7680c50ae3f074e0",
-        "openai-709cc8e2bd467b791689"
-      ],
-      "summary": "OpenAI 모델과 에이전트가 ServiceNow에 통합되고, ServiceNow 워크플로우가 ChatGPT 및 Codex에 통합됩니다."
-    },
-    {
-      "published_at": "2026-10-28T13:15:00+00:00",
-      "source_ids": [
-        "openai-a395c7da350b5086cc15",
-        "openai-e2ed7680c50ae3f074e0",
-        "openai-709cc8e2bd467b791689"
-      ],
-      "summary": "Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다."
     }
   ],
   "seen_hashes": [
@@ -453,6 +462,7 @@
     "32e75dfd7173585cca708dfb323e63df860f91fe82a2ba9f80f7431b00c20bac",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
+    "375e8c7c27106cc7dde8515b67f64d8ea524ec39d1c1adfdb8a24db05c19d0b1",
     "37ee240f0bfaeb80acf714fc33f5801f6a7147b42d541406a2649ea503f862c9",
     "38778e26f8c935f631d92adb15f7d0fdca99fbb1a7b82119ad15359ca8cac840",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
@@ -464,6 +474,7 @@
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
     "4b13441179035d64e85063fee39cc3cc3bb4797ed55c0cdcd5cd08e8cd4de986",
+    "4b460fb8393151b71252b179d9855afd9c3effcb0a10dee0d79f3aa5e8f0d66a",
     "4b58459af7180df9bce090ffcc756d78ea1ce130bb5001623b56c5d70dd47fef",
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
     "4b90a5b89b816077a0f4b6fa7641f1a463066e94eacf383c9088461628d20e11",
@@ -475,6 +486,7 @@
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
     "574b4d4c1ce3829da7135435072e7376d7a23d00e77d793f9b7262d1434ee105",
     "5cf1939b69a9e8ac8fad4ac5a865b879c2ad772f1da2b42240d1df12f72c9718",
+    "5d8c179f4be0e2066d5cd0cea0ca7c77af707e1b85bedc225adda1b08cf9e398",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "5ea94e4c4286a114581885473e04bf635cbaab0c1e61cf3ea7ccf8ff3f837ddb",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
@@ -566,21 +578,21 @@
 
 ## 현재 상태
 
-OpenAI는 AI 모델의 역량과 이점을 향상시키기 위한 업데이트된 Model Spec을 발표했으며, 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링 시스템을 사용하고 있습니다. 또한, Ropes & Gray와 협력하여 거래 실사를 위한 AI를 개발 중입니다.
+OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 폭력 예방 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성 강조 등 여러 분야에서 활동하고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 더 유능하고 유익한 AI를 안내하기 위한 5가지 핵심 가치를 담은 업데이트된 Model Spec을 발표했습니다.
-- OpenAI는 최첨단 모델의 오정렬 및 무단 에이전트 행동을 감지하기 위해 계층화된 모니터링을 사용합니다.
-- Ropes & Gray는 OpenAI와 협력하여 거래 실사를 위한 AI를 개발하고 있습니다.
+- OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 것입니다.
+- OpenAI는 ChatGPT에서 폭력 예방을 강화하기 위해 보호 조치를 확대하고 조기 개입하며 공공 안전 보고에 대한 새로운 약속을 하고 있습니다.
+- OpenAI는 공정 사용이 AI 훈련과 혁신을 어떻게 지원하는지에 대한 창작자, 학자, 접근성 옹호자 및 법률 전문가들의 법원 서류 발췌문을 공유했습니다.
 
 ## 최근 변경 사항
 
+- 2026년 10월 30일 18:30 — OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 예정입니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
+- 2026년 10월 30일 18:30 — ChatGPT에서 폭력 예방을 위한 보호 조치가 확대되고 조기 개입이 이루어지며 공공 안전 보고에 대한 새로운 약속이 추가되었습니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
 - 2026년 10월 30일 02:00 — Ropes & Gray는 OpenAI와 함께 거래 실사를 위한 AI를 개발 중이며, 변호사들은 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
 - 2026년 10월 30일 02:00 — OpenAI는 사건이 확대되기 전에 대응자가 개입할 수 있도록 최첨단 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링을 사용합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
 - 2026년 10월 30일 02:00 — OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
-- 2026년 10월 28일 22:15 — OpenAI 모델과 에이전트가 ServiceNow에 통합되고, ServiceNow 워크플로우가 ChatGPT 및 Codex에 통합됩니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
-- 2026년 10월 28일 22:15 — Legora는 OpenAI 모델을 활용하여 법률 워크플로우를 가속화하고 계약 분석을 확장하며 변호사들이 고부가가치 업무에 집중할 수 있도록 돕습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
 
 ## 변경 이력
 
@@ -625,3 +637,4 @@ OpenAI는 AI 모델의 역량과 이점을 향상시키기 위한 업데이트�
 - 2026년 10월 28일 00:00 — OpenAI는 최근 Oracle과의 파트너십 확장, Retell의 OpenAI 모델 활용, Check Point의 Daybreak를 통한 보안 연구 가속화 등 여러 새로운 협력 및 기술 적용 사례를 발표했습니다. (출처: openai-1e3ebf94e41ebe19793b, openai-c417f8e3d39d0b893c07, openai-c44dc9ed271ff418b14a)
 - 2026년 10월 28일 22:15 — OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
 - 2026년 10월 30일 02:00 — OpenAI는 AI 개발 및 배포에 있어 안전과 유익성을 강조하며, 이를 위해 Model Spec을 업데이트하고 모델 오정렬 감지 시스템을 구축했습니다. 또한, 실제 적용 사례로 Ropes & Gray와의 협력을 통해 법률 분야에서 AI 활용을 모색하고 있습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
+- 2026년 10월 30일 18:30 — OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 안전 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성을 강조하는 등 다양한 정책 및 안전 관련 업데이트를 발표했습니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
