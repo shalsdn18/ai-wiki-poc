@@ -42,6 +42,10 @@ class InvalidOperationalInput(OperationalStoreError):
     pass
 
 
+class KnowledgeRecordNotFound(OperationalStoreError):
+    pass
+
+
 class MigrationError(OperationalStoreError):
     pass
 
@@ -69,6 +73,8 @@ class WriteIntent:
     manifest_key: str
     state: str
     replay: bool = False
+    result_revision_id: str | None = None
+    content_hash: str = ""
 
 
 @dataclass(frozen=True)
@@ -159,12 +165,13 @@ def transition_job(state: str, target: str) -> str:
 
 def transition_intent(state: str, target: str) -> str:
     legal = {
-        "PREPARED": {"SOURCE_WRITTEN", "COMPLETE", "CONFLICT", "QUARANTINED"},
+        "PREPARED": {"SOURCE_WRITTEN", "COMPLETE", "CONFLICT", "QUARANTINED", "NOOP"},
         "SOURCE_WRITTEN": {"COMPLETE", "CONFLICT", "QUARANTINED"},
         "COMPLETE": {"COMMITTED", "CONFLICT", "QUARANTINED"},
         "COMMITTED": set(),
         "CONFLICT": set(),
         "QUARANTINED": set(),
+        "NOOP": set(),
     }
     if target not in legal.get(state, set()):
         raise InvalidOperationalInput("Illegal write intent state transition")
@@ -258,9 +265,6 @@ class PostgresOperationalStore:
     def reserve_intent(self, request: WriteRequest) -> WriteIntent:
         digest, metadata = validate_request(request)
         source_hash = hashlib.sha256(request.source_bytes).hexdigest()
-        intent_id = uuid.uuid4()
-        revision_id = uuid.uuid4().hex + uuid.uuid4().hex
-        source_key, manifest_key = object_keys(request.document_id, revision_id)
         conn = self.connection_factory()
         try:
             with conn.transaction(), conn.cursor() as cur:
@@ -270,7 +274,8 @@ class PostgresOperationalStore:
                 )
                 cur.execute(
                     "SELECT id, request_digest, document_id, revision_id, source_object_key, "
-                    "manifest_object_key, state FROM revision_write_intents WHERE idempotency_key=%s",
+                    "manifest_object_key, state, result_revision_id, content_hash "
+                    "FROM revision_write_intents WHERE idempotency_key=%s",
                     (request.idempotency_key,),
                 )
                 existing = cur.fetchone()
@@ -286,12 +291,18 @@ class PostgresOperationalStore:
                         existing[5],
                         existing[6],
                         True,
+                        existing[7],
+                        existing[8],
                     )
+                document_id = request.document_id
+                intent_id = uuid.uuid4()
+                revision_id = uuid.uuid4().hex + uuid.uuid4().hex
+                source_key, manifest_key = object_keys(document_id, revision_id)
                 cur.execute(
                     "INSERT INTO documents(id,title,category,visibility,source_url,state) "
                     "VALUES (%s,%s,%s,%s,%s,'PENDING') ON CONFLICT (id) DO NOTHING",
                     (
-                        request.document_id,
+                        document_id,
                         metadata["title"],
                         metadata["category"],
                         metadata["visibility"],
@@ -300,7 +311,7 @@ class PostgresOperationalStore:
                 )
                 cur.execute(
                     "SELECT current_revision_id,state FROM documents WHERE id=%s FOR UPDATE",
-                    (request.document_id,),
+                    (document_id,),
                 )
                 current = cur.fetchone()
                 if current is None:
@@ -317,7 +328,7 @@ class PostgresOperationalStore:
                         intent_id,
                         request.idempotency_key,
                         digest,
-                        request.document_id,
+                        document_id,
                         revision_id,
                         request.expected_current_revision_id,
                         source_key,
@@ -328,12 +339,13 @@ class PostgresOperationalStore:
                 )
             return WriteIntent(
                 intent_id,
-                request.document_id,
+                document_id,
                 revision_id,
                 digest,
                 source_key,
                 manifest_key,
                 "PREPARED",
+                content_hash=source_hash,
             )
         except (
             IdempotencyConflict,
@@ -344,6 +356,196 @@ class PostgresOperationalStore:
             raise
         except Exception:  # noqa: BLE001 - database errors may include query values
             raise OperationalStoreError("Could not reserve Knowledge write intent") from None
+        finally:
+            conn.close()
+
+    def get_intent_by_idempotency_key(
+        self, idempotency_key: str
+    ) -> tuple[WriteIntent, dict[str, Any]] | None:
+        if not idempotency_key or len(idempotency_key) > 200:
+            raise InvalidOperationalInput("Invalid idempotency key")
+        conn = self.connection_factory()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT id,request_digest,document_id,revision_id,source_object_key,"
+                    "manifest_object_key,state,result_revision_id,metadata_snapshot,content_hash "
+                    "FROM revision_write_intents WHERE idempotency_key=%s",
+                    (idempotency_key,),
+                )
+                row = cur.fetchone()
+            if row is None:
+                return None
+            metadata = row[8] if isinstance(row[8], dict) else json.loads(row[8])
+            return (
+                WriteIntent(
+                    row[0],
+                    row[2],
+                    row[3],
+                    row[1].strip(),
+                    row[4],
+                    row[5],
+                    row[6],
+                    True,
+                    row[7],
+                    row[9],
+                ),
+                metadata,
+            )
+        except (InvalidOperationalInput, OperationalStoreError):
+            raise
+        except Exception:  # noqa: BLE001 - database errors may contain private values
+            raise OperationalStoreError("Could not read Knowledge write intent") from None
+        finally:
+            conn.close()
+
+    def complete_noop(self, intent: WriteIntent) -> str:
+        """Record an idempotent update that exactly matches its active revision."""
+        if intent.document_id is None or not DOCUMENT_ID_RE.fullmatch(intent.document_id):
+            raise InvalidOperationalInput("Invalid no-op document identity")
+        conn = self.connection_factory()
+        result_revision_id: str | None = None
+        conflict = False
+        try:
+            with conn.transaction(), conn.cursor() as cur:
+                cur.execute(
+                    "SELECT document_id,revision_id,expected_current_revision_id,state,result_revision_id "
+                    "FROM revision_write_intents WHERE id=%s FOR UPDATE",
+                    (intent.id,),
+                )
+                row = cur.fetchone()
+                if row is None or (row[0], row[1]) != (intent.document_id, intent.revision_id):
+                    raise OperationalStoreError("Write intent identity mismatch")
+                if row[3] == "NOOP":
+                    result_revision_id = row[4]
+                elif row[3] == "CONFLICT":
+                    conflict = True
+                elif row[3] != "PREPARED" or not row[2]:
+                    raise InvalidOperationalInput("Write intent cannot complete as a no-op")
+                else:
+                    cur.execute(
+                        "SELECT current_revision_id,state FROM documents WHERE id=%s FOR UPDATE",
+                        (intent.document_id,),
+                    )
+                    document = cur.fetchone()
+                    if document is None or document[1] != "ACTIVE" or document[0] != row[2]:
+                        cur.execute(
+                            "UPDATE revision_write_intents SET state='CONFLICT',updated_at=now(),"
+                            "last_attempt_at=now(),attempt_count=attempt_count+1,"
+                            "safe_error_code='CAS_CONFLICT' WHERE id=%s",
+                            (intent.id,),
+                        )
+                        conflict = True
+                    else:
+                        transition_intent(row[3], "NOOP")
+                        cur.execute(
+                            "UPDATE revision_write_intents SET state='NOOP',result_revision_id=%s,"
+                            "updated_at=now(),last_attempt_at=now(),attempt_count=attempt_count+1,"
+                            "safe_error_code=NULL WHERE id=%s",
+                            (row[2], intent.id),
+                        )
+                        result_revision_id = row[2]
+            if conflict:
+                raise RevisionConflict("Current revision changed before no-op completion")
+            if not result_revision_id:
+                raise OperationalStoreError("No-op result is unavailable")
+            return result_revision_id
+        except (InvalidOperationalInput, RevisionConflict, OperationalStoreError):
+            raise
+        except Exception:  # noqa: BLE001 - database errors may contain private values
+            raise OperationalStoreError("Could not complete no-op Knowledge write") from None
+        finally:
+            conn.close()
+
+    def get_current_revision(self, document_id: str) -> dict[str, Any] | None:
+        if not DOCUMENT_ID_RE.fullmatch(document_id):
+            raise InvalidOperationalInput("Invalid document ID")
+        conn = self.connection_factory()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT d.id,d.current_revision_id,d.title,d.category,d.visibility,d.source_url,"
+                    "d.created_at,d.updated_at,r.content_hash,r.source_object_key,r.manifest_object_key,"
+                    "r.manifest_hash,r.mime_type,r.metadata_snapshot "
+                    "FROM documents d JOIN revisions r "
+                    "ON (r.document_id,r.revision_id)=(d.id,d.current_revision_id) "
+                    "WHERE d.id=%s AND d.state='ACTIVE'",
+                    (document_id,),
+                )
+                row = cur.fetchone()
+                if row is None:
+                    return None
+                cur.execute(
+                    "SELECT t.display_name FROM document_tags dt JOIN tags t ON t.id=dt.tag_id "
+                    "WHERE dt.document_id=%s ORDER BY t.normalized_name",
+                    (document_id,),
+                )
+                tags = [tag[0] for tag in cur.fetchall()]
+            metadata = row[13] if isinstance(row[13], dict) else json.loads(row[13])
+            return {
+                "id": row[0],
+                "current_revision_id": row[1],
+                "title": row[2],
+                "category": row[3],
+                "visibility": row[4],
+                "source_url": row[5],
+                "created_at": row[6],
+                "updated_at": row[7],
+                "content_hash": row[8],
+                "source_object_key": row[9],
+                "manifest_object_key": row[10],
+                "manifest_hash": row[11],
+                "mime_type": row[12],
+                "metadata_snapshot": metadata,
+                "tags": tags,
+            }
+        except (InvalidOperationalInput, OperationalStoreError):
+            raise
+        except Exception:  # noqa: BLE001 - database errors may contain private values
+            raise OperationalStoreError("Could not read current Knowledge revision") from None
+        finally:
+            conn.close()
+
+    def list_active_documents(self) -> list[dict[str, Any]]:
+        conn = self.connection_factory()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT d.id,d.current_revision_id,d.title,d.category,d.visibility,d.source_url,"
+                    "d.created_at,d.updated_at,r.content_hash,r.source_object_key,r.manifest_object_key,"
+                    "r.manifest_hash,r.mime_type,r.metadata_snapshot,COALESCE((SELECT array_agg(t.display_name "
+                    "ORDER BY t.normalized_name) FROM document_tags dt JOIN tags t ON t.id=dt.tag_id "
+                    "WHERE dt.document_id=d.id),'{}') FROM documents d JOIN revisions r "
+                    "ON (r.document_id,r.revision_id)=(d.id,d.current_revision_id) "
+                    "WHERE d.state='ACTIVE' ORDER BY d.updated_at DESC,d.id"
+                )
+                rows = cur.fetchall()
+            return [
+                {
+                    "id": row[0],
+                    "current_revision_id": row[1],
+                    "title": row[2],
+                    "category": row[3],
+                    "visibility": row[4],
+                    "source_url": row[5],
+                    "created_at": row[6],
+                    "updated_at": row[7],
+                    "content_hash": row[8],
+                    "source_object_key": row[9],
+                    "manifest_object_key": row[10],
+                    "manifest_hash": row[11],
+                    "mime_type": row[12],
+                    "metadata_snapshot": (
+                        row[13] if isinstance(row[13], dict) else json.loads(row[13])
+                    ),
+                    "tags": list(row[14]),
+                }
+                for row in rows
+            ]
+        except OperationalStoreError:
+            raise
+        except Exception:  # noqa: BLE001 - database errors may contain private values
+            raise OperationalStoreError("Could not list Knowledge documents") from None
         finally:
             conn.close()
 
@@ -403,12 +605,20 @@ class PostgresOperationalStore:
                     )
                 if state == "CONFLICT":
                     raise RevisionConflict("Write intent already conflicts with current revision")
+                if state in {"NOOP", "QUARANTINED"}:
+                    raise InvalidOperationalInput("Write intent is not finalizable")
+                if content_hash != intent.content_hash:
+                    raise InvalidOperationalInput("Durable write intent hash changed")
                 actual_hash = hashlib.sha256(verified.source_bytes).hexdigest()
                 manifest_hash = hashlib.sha256(verified.manifest_bytes).hexdigest()
                 metadata = (
                     metadata_json if isinstance(metadata_json, dict) else json.loads(metadata_json)
                 )
-                if actual_hash != content_hash or verified.manifest_schema_version != 1:
+                if actual_hash != content_hash:
+                    raise InvalidOperationalInput(
+                        "Verified R2 source hash does not match write intent"
+                    )
+                if verified.manifest_schema_version != 1:
                     raise InvalidOperationalInput("Verified R2 evidence does not match intent")
                 expected_prefix = f"knowledge/{doc_id}/revisions/{rev_id}/"
                 try:
@@ -453,11 +663,11 @@ class PostgresOperationalStore:
                 ):
                     raise InvalidOperationalInput("R2 source metadata does not match intent")
                 cur.execute(
-                    "SELECT current_revision_id FROM documents WHERE id=%s FOR UPDATE",
+                    "SELECT current_revision_id,state FROM documents WHERE id=%s FOR UPDATE",
                     (doc_id,),
                 )
                 doc = cur.fetchone()
-                if doc is None or doc[0] != expected:
+                if doc is None or doc[0] != expected or doc[1] not in {"PENDING", "ACTIVE"}:
                     raise RevisionConflict("Current revision changed before finalize")
                 if state not in {"PREPARED", "SOURCE_WRITTEN", "COMPLETE"}:
                     raise InvalidOperationalInput("Write intent is not finalizable")
@@ -530,25 +740,28 @@ class PostgresOperationalStore:
             status_conn = self.connection_factory()
             try:
                 with status_conn.transaction(), status_conn.cursor() as cur:
-                    cur.execute(
-                        "INSERT INTO revisions(document_id,revision_id,parent_revision_id,content_hash,byte_length,"
-                        "source_object_key,manifest_object_key,manifest_hash,mime_type,metadata_snapshot,"
-                        "manifest_schema_version,registered_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb,%s,now()) "
-                        "ON CONFLICT (document_id,revision_id) DO NOTHING",
-                        (
-                            doc_id,
-                            rev_id,
-                            expected,
-                            content_hash,
-                            len(verified.source_bytes),
-                            source_key,
-                            manifest_key,
-                            manifest_hash,
-                            mime_type or verified.mime_type,
-                            json.dumps(metadata, ensure_ascii=False),
-                            verified.manifest_schema_version,
-                        ),
-                    )
+                    cur.execute("SELECT state FROM documents WHERE id=%s FOR UPDATE", (doc_id,))
+                    current_state = cur.fetchone()
+                    if current_state and current_state[0] in {"PENDING", "ACTIVE"}:
+                        cur.execute(
+                            "INSERT INTO revisions(document_id,revision_id,parent_revision_id,content_hash,byte_length,"
+                            "source_object_key,manifest_object_key,manifest_hash,mime_type,metadata_snapshot,"
+                            "manifest_schema_version,registered_at) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb,%s,now()) "
+                            "ON CONFLICT (document_id,revision_id) DO NOTHING",
+                            (
+                                doc_id,
+                                rev_id,
+                                expected,
+                                content_hash,
+                                len(verified.source_bytes),
+                                source_key,
+                                manifest_key,
+                                manifest_hash,
+                                mime_type or verified.mime_type,
+                                json.dumps(metadata, ensure_ascii=False),
+                                verified.manifest_schema_version,
+                            ),
+                        )
                     cur.execute(
                         "UPDATE revision_write_intents SET state='CONFLICT',updated_at=now(),"
                         "last_attempt_at=now(),attempt_count=attempt_count+1,safe_error_code='CAS_CONFLICT' "
@@ -580,6 +793,15 @@ class PostgresOperationalStore:
                 row = cur.fetchone()
                 if row is None:
                     raise OperationalStoreError("Write intent not found")
+                if row[0] in {"CONFLICT", "QUARANTINED", "NOOP"}:
+                    raise InvalidOperationalInput("Write intent is terminal")
+                progress = {"PREPARED": 0, "SOURCE_WRITTEN": 1, "COMPLETE": 2, "COMMITTED": 3}
+                if (
+                    target_state in progress
+                    and row[0] in progress
+                    and progress[row[0]] >= progress[target_state]
+                ):
+                    return
                 transition_intent(row[0], target_state)
                 cur.execute(
                     "UPDATE revision_write_intents SET state=%s,updated_at=now(),last_attempt_at=now(),"
@@ -608,7 +830,13 @@ class PostgresOperationalStore:
                     (document_id, expected_current_revision_id),
                 )
                 if cur.rowcount != 1:
-                    raise RevisionConflict("Document changed or is unavailable")
+                    cur.execute(
+                        "SELECT state,current_revision_id FROM documents WHERE id=%s",
+                        (document_id,),
+                    )
+                    current = cur.fetchone()
+                    if current != ("DELETED", expected_current_revision_id):
+                        raise RevisionConflict("Document changed or is unavailable")
         except (InvalidOperationalInput, RevisionConflict):
             raise
         except Exception:  # noqa: BLE001 - database errors may contain private SQL values

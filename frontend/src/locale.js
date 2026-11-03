@@ -77,6 +77,14 @@ const messages = {
   title: '제목',
   titlePlaceholder: '제목을 입력하세요',
   tags: '태그',
+  category: '분류',
+  visibility: '표시 범위',
+  privateVisibility: '비공개',
+  publicMetadataOnly: '공개 메타데이터 (위키 게시 안 함)',
+  currentRevision: '현재 revision',
+  noChangesToSave: '저장할 변경 사항이 없습니다.',
+  knowledgeRevisionConflict: '다른 변경이 먼저 저장되었습니다. 최신 문서를 다시 불러와 주세요.',
+  idempotencyConflict: '같은 저장 요청 키가 다른 내용에 사용되었습니다. 다시 시도해 주세요.',
   commaSeparated: '쉼표로 구분',
   tagsPlaceholder: '아이디어, 조사, 개인',
   markdownEditorMode: 'Markdown 편집 모드',
@@ -125,6 +133,8 @@ const apiErrors = {
   'RAG chat is disabled. Set ENABLE_LOCAL_RAG=true for local RAG.': 'ragChatDisabled',
   'CSRF protection header is required': 'csrfRequired',
   'Request origin is not allowed': 'originNotAllowed',
+  'Expected current revision does not match': 'knowledgeRevisionConflict',
+  'Idempotency key was used with another request': 'idempotencyConflict',
 }
 
 const categories = {

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import os
 import threading
@@ -273,15 +274,21 @@ def test_migration_checksum_schema_constraints_and_immutability(pg_store):
 
     store, connect = pg_store
     assert migrate(connect) == []
-    migration_sql = (
-        Path(__file__).resolve().parents[2] / "migrations" / "001_phase_2a_operational_state.sql"
-    ).read_text(encoding="utf-8")
-    expected_checksum = hashlib.sha256(migration_sql.encode("utf-8")).hexdigest()
+    migration_paths = sorted(
+        (Path(__file__).resolve().parents[2] / "migrations").glob("[0-9][0-9][0-9]_*.sql")
+    )
+    expected_migrations = [
+        (
+            int(path.name.split("_", 1)[0]),
+            hashlib.sha256(path.read_text(encoding="utf-8").encode("utf-8")).hexdigest(),
+        )
+        for path in migration_paths
+    ]
     conn = connect()
     try:
         with conn.cursor() as cur:
             cur.execute("SELECT version,checksum FROM schema_migrations ORDER BY version")
-            assert [(row[0], row[1].strip()) for row in cur.fetchall()] == [(1, expected_checksum)]
+            assert [(row[0], row[1].strip()) for row in cur.fetchall()] == expected_migrations
             cur.execute(
                 "SELECT table_name FROM information_schema.tables "
                 "WHERE table_schema=current_schema() AND table_type='BASE TABLE'"
@@ -299,11 +306,24 @@ def test_migration_checksum_schema_constraints_and_immutability(pg_store):
                 "processing_attempts",
             } <= tables
             cur.execute(
+                "SELECT column_name FROM information_schema.columns "
+                "WHERE table_schema=current_schema() AND table_name='revision_write_intents'"
+            )
+            assert "result_revision_id" in {row[0] for row in cur.fetchall()}
+            cur.execute(
+                "SELECT pg_get_constraintdef(oid) FROM pg_constraint "
+                "WHERE conname='revision_write_intents_state_check'"
+            )
+            assert "NOOP" in cur.fetchone()[0]
+            cur.execute(
                 "SELECT conname FROM pg_constraint WHERE connamespace=current_schema()::regnamespace"
             )
             constraints = {row[0] for row in cur.fetchall()}
             assert "documents_current_revision_fk" in constraints
             assert "documents_current_indexed_revision_fk" in constraints
+            assert "revision_write_intents_result_revision_fk" in constraints
+            assert "revision_write_intents_result_state_check" in constraints
+            assert "revision_write_intents_state_check" in constraints
             cur.execute(
                 "SELECT tgname FROM pg_trigger WHERE tgrelid='revisions'::regclass AND NOT tgisinternal"
             )
@@ -441,6 +461,8 @@ def test_migration_checksum_schema_constraints_and_immutability(pg_store):
 
 
 def test_tombstone_retains_current_revision_without_external_storage(pg_store):
+    from engine.postgres_operational import RevisionConflict
+
     store, connect = pg_store
     doc_id = uuid.uuid4().hex + uuid.uuid4().hex
     intent = store.reserve_intent(_request(doc_id, "tombstone", None, "Keep", "content"))
@@ -448,7 +470,16 @@ def test_tombstone_retains_current_revision_without_external_storage(pg_store):
     store.finalize_verified_revision(
         intent, _verified(intent, "Keep", "content"), pipeline_fingerprint=fingerprint
     )
+    pending_update = store.reserve_intent(
+        _request(doc_id, "update-racing-tombstone", intent.revision_id, "Pending", "new content")
+    )
     store.tombstone_document(doc_id, intent.revision_id)
+    with pytest.raises(RevisionConflict):
+        store.finalize_verified_revision(
+            pending_update,
+            _verified(pending_update, "Pending", "new content"),
+            pipeline_fingerprint=fingerprint,
+        )
     conn = connect()
     try:
         with conn.cursor() as cur:
@@ -463,3 +494,311 @@ def test_tombstone_retains_current_revision_without_external_storage(pg_store):
             assert cur.fetchone()[0] == 1
     finally:
         conn.close()
+
+
+def test_concurrent_tombstone_and_finalize_never_reactivates_a_committed_tombstone(pg_store):
+    from concurrent.futures import ThreadPoolExecutor
+
+    from engine.postgres_operational import PostgresOperationalStore, RevisionConflict
+
+    store, connect = pg_store
+    document_id = uuid.uuid4().hex + uuid.uuid4().hex
+    first = store.reserve_intent(_request(document_id, "race-create", None, "First", "one"))
+    fingerprint = hashlib.sha256(b"tombstone-finalize-race").hexdigest()
+    store.finalize_verified_revision(
+        first, _verified(first, "First", "one"), pipeline_fingerprint=fingerprint
+    )
+    pending = store.reserve_intent(
+        _request(document_id, "race-update", first.revision_id, "Second", "two")
+    )
+    tracked_pids = set()
+    pid_lock = threading.Lock()
+
+    def tracked_connect():
+        connection = connect()
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT pg_backend_pid()")
+            pid = cursor.fetchone()[0]
+        connection.commit()
+        with pid_lock:
+            tracked_pids.add(pid)
+        return connection
+
+    concurrent_store = PostgresOperationalStore(tracked_connect)
+    barrier = threading.Barrier(2)
+
+    def tombstone():
+        barrier.wait()
+        try:
+            concurrent_store.tombstone_document(document_id, first.revision_id)
+            return "TOMBSTONE_COMMITTED"
+        except RevisionConflict:
+            return "TOMBSTONE_CONFLICT"
+
+    def finalize():
+        barrier.wait()
+        try:
+            concurrent_store.finalize_verified_revision(
+                pending,
+                _verified(pending, "Second", "two"),
+                pipeline_fingerprint=fingerprint,
+            )
+            return "FINALIZE_COMMITTED"
+        except RevisionConflict:
+            return "FINALIZE_CONFLICT"
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        outcomes = {pool.submit(tombstone), pool.submit(finalize)}
+        results = {future.result() for future in outcomes}
+    assert len(tracked_pids) >= 2
+    assert results in (
+        {"TOMBSTONE_COMMITTED", "FINALIZE_CONFLICT"},
+        {"FINALIZE_COMMITTED", "TOMBSTONE_CONFLICT"},
+    )
+
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT state,current_revision_id FROM documents WHERE id=%s", (document_id,)
+            )
+            state, current_revision_id = cur.fetchone()
+            cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (document_id,))
+            revision_count = cur.fetchone()[0]
+            cur.execute("SELECT count(*) FROM processing_jobs WHERE document_id=%s", (document_id,))
+            job_count = cur.fetchone()[0]
+            if "TOMBSTONE_COMMITTED" in results:
+                assert state == "DELETED"
+                assert current_revision_id == first.revision_id
+                assert revision_count == 1
+                assert job_count == 1
+            else:
+                assert state == "ACTIVE"
+                assert current_revision_id == pending.revision_id
+                assert revision_count == 2
+                assert job_count == 2
+    finally:
+        conn.close()
+
+
+class _ConditionalFailure(Exception):
+    def __init__(self):
+        self.response = {
+            "Error": {"Code": "PreconditionFailed"},
+            "ResponseMetadata": {"HTTPStatusCode": 412},
+        }
+        super().__init__("conditional write rejected")
+
+
+class _FakeR2:
+    supports_if_none_match = True
+
+    def __init__(self):
+        self.objects = {}
+        self.fail_put_suffix = None
+        self.corrupt_get_suffix = None
+
+    def put_object(self, *, Bucket, Key, Body, ContentType, IfNoneMatch):
+        assert Bucket == "test-bucket"
+        assert IfNoneMatch == "*"
+        if self.fail_put_suffix and Key.endswith(self.fail_put_suffix):
+            raise RuntimeError("injected R2 write failure")
+        if Key in self.objects:
+            raise _ConditionalFailure()
+        self.objects[Key] = bytes(Body)
+        return {}
+
+    def get_object(self, *, Bucket, Key):
+        assert Bucket == "test-bucket"
+        body = self.objects[Key]
+        if self.corrupt_get_suffix and Key.endswith(self.corrupt_get_suffix):
+            body += b"tampered"
+        return {"Body": io.BytesIO(body)}
+
+
+def test_knowledge_writer_create_update_noop_retry_and_tombstone(pg_store):
+    from engine.knowledge_writer import KnowledgeWriteInput, KnowledgeWriter
+    from engine.postgres_operational import RevisionConflict
+
+    store, connect = pg_store
+    writer = KnowledgeWriter(store, _FakeR2(), "test-bucket")
+    document_id = uuid.uuid4().hex + uuid.uuid4().hex
+    first_input = KnowledgeWriteInput(
+        "Canonical note",
+        "ai",
+        ["storage"],
+        "private",
+        "Revision one",
+        operation_date="2026-01-01",
+    )
+    first = writer.create_document(document_id, "writer-create-1", first_input)
+    assert first.operation_result == "CREATED"
+    assert first.current_revision_id == first.revision_id
+    assert first.processing_status == "QUEUED"
+    first_retry = writer.create_document(document_id, "writer-create-1", first_input)
+    assert first_retry.revision_id == first.revision_id
+    assert first_retry.processing_job_id == first.processing_job_id
+    from engine.postgres_operational import IdempotencyConflict
+
+    with pytest.raises(IdempotencyConflict):
+        writer.create_document(
+            document_id,
+            "writer-create-1",
+            KnowledgeWriteInput(
+                "Canonical note",
+                "ai",
+                ["storage"],
+                "private",
+                "different bytes",
+                operation_date="2026-01-01",
+            ),
+        )
+
+    second_input = KnowledgeWriteInput(
+        "Canonical note",
+        "ai",
+        ["storage"],
+        "private",
+        "Revision two",
+        operation_date="2026-01-02",
+    )
+    second = writer.update_document(document_id, first.revision_id, "writer-update-1", second_input)
+    assert second.operation_result == "UPDATED"
+    assert second.revision_id != first.revision_id
+    retry = writer.update_document(document_id, first.revision_id, "writer-update-1", second_input)
+    assert retry.revision_id == second.revision_id
+    assert retry.processing_job_id == second.processing_job_id
+
+    metadata_update = writer.update_document(
+        document_id,
+        second.revision_id,
+        "writer-metadata-1",
+        KnowledgeWriteInput(
+            "Canonical note",
+            "ai",
+            ["storage", "metadata"],
+            "private",
+            "Revision two",
+            operation_date="2026-01-03",
+        ),
+    )
+    assert metadata_update.operation_result == "UPDATED"
+    assert metadata_update.revision_id != second.revision_id
+
+    no_op = writer.update_document(
+        document_id,
+        metadata_update.revision_id,
+        "writer-noop-1",
+        KnowledgeWriteInput(
+            "Canonical note",
+            "ai",
+            ["storage", "metadata"],
+            "private",
+            "Revision two",
+            operation_date="2026-01-04",
+        ),
+    )
+    assert no_op.operation_result == "NOOP"
+    assert no_op.current_revision_id == metadata_update.revision_id
+    assert no_op.processing_job_id is None
+
+    with pytest.raises(RevisionConflict):
+        writer.update_document(document_id, first.revision_id, "writer-stale-1", second_input)
+    assert (
+        writer.delete_document(document_id, metadata_update.revision_id).operation_result
+        == "DELETED"
+    )
+    assert writer.list_documents() == []
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 3
+            cur.execute("SELECT count(*) FROM processing_jobs WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 3
+            cur.execute("SELECT state FROM documents WHERE id=%s", (document_id,))
+            assert cur.fetchone()[0] == "DELETED"
+    finally:
+        conn.close()
+
+
+@pytest.mark.parametrize("failure_suffix", ["/source.md", "/manifest.json"])
+def test_knowledge_writer_retries_partial_r2_write_with_same_revision(pg_store, failure_suffix):
+    from engine.knowledge_writer import KnowledgeWriteInput, KnowledgeWriter
+    from engine.r2_revision_objects import RevisionObjectUnavailable
+
+    store, _ = pg_store
+    r2 = _FakeR2()
+    writer = KnowledgeWriter(store, r2, "test-bucket")
+    document_id = uuid.uuid4().hex + uuid.uuid4().hex
+    request = KnowledgeWriteInput(
+        "Retryable write", "misc", [], "private", "retry me", operation_date="2026-01-01"
+    )
+    r2.fail_put_suffix = failure_suffix
+    with pytest.raises(RevisionObjectUnavailable):
+        writer.create_document(document_id, "retryable-r2-write", request)
+    intent_before, _ = store.get_intent_by_idempotency_key("retryable-r2-write")
+    r2.fail_put_suffix = None
+    completed = writer.create_document(document_id, "retryable-r2-write", request)
+    assert completed.revision_id == intent_before.revision_id
+    assert completed.processing_status == "QUEUED"
+
+
+@pytest.mark.parametrize("corrupt_suffix", ["/source.md", "/manifest.json"])
+def test_knowledge_writer_quarantines_readback_mismatch_without_finalize(pg_store, corrupt_suffix):
+    from engine.knowledge_writer import KnowledgeWriteInput, KnowledgeWriter
+    from engine.r2_revision_objects import RevisionObjectConflict
+
+    store, connect = pg_store
+    r2 = _FakeR2()
+    writer = KnowledgeWriter(store, r2, "test-bucket")
+    document_id = uuid.uuid4().hex + uuid.uuid4().hex
+    r2.corrupt_get_suffix = corrupt_suffix
+    with pytest.raises(RevisionObjectConflict):
+        writer.create_document(
+            document_id,
+            "readback-mismatch",
+            KnowledgeWriteInput("Mismatch", "misc", [], "private", "expected"),
+        )
+    intent, _ = store.get_intent_by_idempotency_key("readback-mismatch")
+    assert intent.state == "QUARANTINED"
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 0
+            cur.execute("SELECT state FROM documents WHERE id=%s", (document_id,))
+            assert cur.fetchone()[0] == "PENDING"
+    finally:
+        conn.close()
+
+
+def test_knowledge_writer_reuses_completed_r2_pair_after_finalize_failure(pg_store, monkeypatch):
+    from engine.knowledge_writer import KnowledgeWriteInput, KnowledgeWriter
+    from engine.postgres_operational import OperationalStoreError
+
+    store, _ = pg_store
+    r2 = _FakeR2()
+    writer = KnowledgeWriter(store, r2, "test-bucket")
+    document_id = uuid.uuid4().hex + uuid.uuid4().hex
+    request = KnowledgeWriteInput(
+        "Finalize retry", "misc", [], "private", "same revision", operation_date="2026-01-01"
+    )
+    original = store.finalize_verified_revision
+    calls = 0
+
+    def fail_once(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise OperationalStoreError("injected finalize failure")
+        return original(*args, **kwargs)
+
+    monkeypatch.setattr(store, "finalize_verified_revision", fail_once)
+    with pytest.raises(OperationalStoreError):
+        writer.create_document(document_id, "finalize-retry", request)
+    intent, _ = store.get_intent_by_idempotency_key("finalize-retry")
+    keys_after_failure = set(r2.objects)
+    result = writer.create_document(document_id, "finalize-retry", request)
+    assert result.revision_id == intent.revision_id
+    assert set(r2.objects) == keys_after_failure

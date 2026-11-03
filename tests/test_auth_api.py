@@ -90,6 +90,69 @@ def test_knowledge_api_requires_session_and_configured_auth(tmp_path, monkeypatc
     assert client.get("/knowledge/stats").status_code == 503
 
 
+def test_canonical_knowledge_write_requires_session_csrf_and_explicit_enable(monkeypatch):
+    _configure_auth(monkeypatch)
+    monkeypatch.setenv("KNOWLEDGE_WRITER_ENABLED", "true")
+    client = TestClient(app.app)
+    payload = {
+        "document_id": "a" * 64,
+        "title": "Private",
+        "category": "ai",
+        "tags": [],
+        "visibility": "public",
+        "content": "private source",
+    }
+    headers = {"Idempotency-Key": "api-write-1"}
+    assert (
+        client.post(
+            "/knowledge/documents", json=payload, headers={**headers, **CSRF_HEADERS}
+        ).status_code
+        == 401
+    )
+    client.post("/login", json={"password": PASSWORD}, headers=CSRF_HEADERS)
+    assert client.post("/knowledge/documents", json=payload, headers=headers).status_code == 403
+    response = client.post(
+        "/knowledge/documents", json=payload, headers={**headers, **CSRF_HEADERS}
+    )
+    assert response.status_code == 503
+    assert "knowledge" in response.json()["detail"].casefold()
+
+
+def test_canonical_knowledge_public_visibility_does_not_publish(monkeypatch):
+    from engine.knowledge_writer import KnowledgeWriteResult
+
+    _configure_auth(monkeypatch)
+    monkeypatch.setenv("KNOWLEDGE_WRITER_ENABLED", "true")
+    captured = {}
+
+    class Writer:
+        def create_document(self, document_id, idempotency_key, value):
+            captured.update(document_id=document_id, idempotency_key=idempotency_key, value=value)
+            return KnowledgeWriteResult(
+                document_id, "b" * 64, "b" * 64, "CREATED", "QUEUED", "test-job"
+            )
+
+    monkeypatch.setattr("engine.knowledge_writer.get_knowledge_writer", lambda: Writer())
+    client = TestClient(app.app)
+    client.post("/login", json={"password": PASSWORD}, headers=CSRF_HEADERS)
+    response = client.post(
+        "/knowledge/documents",
+        headers={**CSRF_HEADERS, "Idempotency-Key": "explicit-write"},
+        json={
+            "document_id": "a" * 64,
+            "title": "Public metadata",
+            "category": "ai",
+            "tags": [],
+            "visibility": "public",
+            "content": "not published by this API",
+        },
+    )
+    assert response.status_code == 201
+    assert response.json()["processing_status"] == "QUEUED"
+    assert captured["value"].visibility == "public"
+    assert captured["idempotency_key"] == "explicit-write"
+
+
 def test_authenticated_knowledge_api_can_read_private_document(tmp_path, monkeypatch):
     knowledge = tmp_path / "knowledge" / "ai"
     knowledge.mkdir(parents=True)

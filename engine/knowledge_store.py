@@ -47,6 +47,7 @@ class KnowledgeDocument:
     source_url: str | None
     content: str
     relative_path: str
+    current_revision_id: str | None = None
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -60,6 +61,7 @@ class KnowledgeDocument:
             "source_url": self.source_url,
             "content": self.content,
             "relative_path": self.relative_path,
+            "current_revision_id": self.current_revision_id,
         }
 
 

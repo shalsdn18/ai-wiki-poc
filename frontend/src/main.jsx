@@ -259,7 +259,8 @@ function DocumentsScreen({ dirtyRef }) {
   const [authError, setAuthError] = useState('')
   const [documents, setDocuments] = useState([])
   const [activeId, setActiveId] = useState(null)
-  const [draft, setDraft] = useState({ title: '', tags: '', content: '' })
+  const [currentRevision, setCurrentRevision] = useState(null)
+  const [draft, setDraft] = useState({ title: '', category: 'ai', visibility: 'private', tags: '', content: '' })
   const [baseline, setBaseline] = useState(null)
   const [mode, setMode] = useState('edit')
   const [loading, setLoading] = useState(true)
@@ -267,13 +268,16 @@ function DocumentsScreen({ dirtyRef }) {
   const [error, setError] = useState('')
   const [status, setStatus] = useState('')
   const [confirmation, setConfirmation] = useState(null)
+  const pendingWrite = useRef(null)
+  const draftDocumentId = useRef(null)
+  if (!draftDocumentId.current) draftDocumentId.current = crypto.randomUUID().replaceAll('-', '')
   const draftKey = JSON.stringify(draft)
   const dirty = baseline !== null && draftKey !== baseline
   dirtyRef.current = dirty
 
   const refreshDocuments = async () => {
     setLoading(true)
-    try { setDocuments(await request('/documents', { credentials: 'include' })); setError('') }
+    try { setDocuments(await request('/knowledge/documents', { credentials: 'include' })); setError('') }
     catch (err) { setError(err.message || t('loadDocumentsFailed')) }
     finally { setLoading(false) }
   }
@@ -322,7 +326,10 @@ function DocumentsScreen({ dirtyRef }) {
 
   const startNew = () => {
     setActiveId(null)
-    const blank = { title: '', tags: '', content: '' }
+    setCurrentRevision(null)
+    draftDocumentId.current = crypto.randomUUID().replaceAll('-', '')
+    pendingWrite.current = null
+    const blank = { title: '', category: 'ai', visibility: 'private', tags: '', content: '' }
     setDraft(blank)
     setBaseline(JSON.stringify(blank))
     setMode('edit')
@@ -338,11 +345,13 @@ function DocumentsScreen({ dirtyRef }) {
     setError('')
     setStatus('')
     try {
-      const document = await request(`/documents/${encodeURIComponent(id)}`, { credentials: 'include' })
-      const next = { title: document.title, tags: document.tags.join(', '), content: document.content }
+      const document = await request(`/knowledge/note/${encodeURIComponent(id)}`, { credentials: 'include' })
+      const next = { title: document.title, category: document.category, visibility: document.visibility, tags: document.tags.join(', '), content: document.content }
       setDraft(next)
       setBaseline(JSON.stringify(next))
       setActiveId(document.id)
+      setCurrentRevision(document.current_revision_id || null)
+      draftDocumentId.current = document.id
       setMode('edit')
     } catch (err) { setError(err.message || t('loadDocumentFailed')) }
     finally { setLoading(false) }
@@ -359,23 +368,30 @@ function DocumentsScreen({ dirtyRef }) {
     setError('')
     setStatus(t('saving'))
     const payload = {
-      title: draft.title.trim(), content: draft.content,
+      title: draft.title.trim(), category: draft.category, visibility: draft.visibility, content: draft.content,
       tags: draft.tags.split(',').map(tag => tag.trim()).filter(Boolean),
     }
+    const requestFingerprint = JSON.stringify({ id: activeId || draftDocumentId.current, revision: currentRevision, payload })
+    if (!pendingWrite.current || pendingWrite.current.fingerprint !== requestFingerprint) {
+      pendingWrite.current = { fingerprint: requestFingerprint, key: crypto.randomUUID() }
+    }
     try {
-      const saved = await request(activeId ? `/documents/${encodeURIComponent(activeId)}` : '/documents', {
+      const saved = await request(activeId ? `/knowledge/documents/${encodeURIComponent(activeId)}` : '/knowledge/documents', {
         method: activeId ? 'PUT' : 'POST',
         credentials: 'include',
-        headers: { 'Content-Type': 'application/json', 'X-CSRF-Protection': '1' },
-        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json', 'X-CSRF-Protection': '1', 'Idempotency-Key': pendingWrite.current.key },
+        body: JSON.stringify({ ...payload, document_id: activeId || draftDocumentId.current, expected_current_revision_id: activeId ? currentRevision : null }),
       })
-      const next = { title: saved.title, tags: saved.tags.join(', '), content: saved.content }
+      const document = await request(`/knowledge/note/${encodeURIComponent(saved.document_id)}`, { credentials: 'include' })
+      const next = { title: document.title, category: document.category, visibility: document.visibility, tags: document.tags.join(', '), content: document.content }
       setDraft(next)
       setBaseline(JSON.stringify(next))
-      setActiveId(saved.id)
-      setDocuments(current => [saved, ...current.filter(item => item.id !== saved.id)]
-        .sort((left, right) => right.updated_at.localeCompare(left.updated_at)))
-      setStatus(t('savedSuccessfully'))
+      setActiveId(saved.document_id)
+      setCurrentRevision(saved.current_revision_id)
+      draftDocumentId.current = saved.document_id
+      pendingWrite.current = null
+      setDocuments(current => [{ id: document.id, title: document.title, tags: document.tags, updated: document.updated }, ...current.filter(item => item.id !== document.id)])
+      setStatus(saved.operation_result === 'NOOP' ? t('noChangesToSave') : t('savedSuccessfully'))
     } catch (err) {
       setStatus('')
       setError(err.message || t('saveDocumentFailed'))
@@ -390,12 +406,14 @@ function DocumentsScreen({ dirtyRef }) {
     setError('')
     setStatus(t('deleting'))
     try {
-      await request(`/documents/${encodeURIComponent(activeId)}`, {
-        method: 'DELETE', credentials: 'include', headers: { 'X-CSRF-Protection': '1' },
+      await request(`/knowledge/documents/${encodeURIComponent(activeId)}`, {
+        method: 'DELETE', credentials: 'include', headers: { 'Content-Type': 'application/json', 'X-CSRF-Protection': '1' },
+        body: JSON.stringify({ expected_current_revision_id: currentRevision }),
       })
       setDocuments(current => current.filter(item => item.id !== activeId))
       setActiveId(null)
-      const blank = { title: '', tags: '', content: '' }
+      setCurrentRevision(null)
+      const blank = { title: '', category: 'ai', visibility: 'private', tags: '', content: '' }
       setDraft(blank)
       setBaseline(JSON.stringify(blank))
       setStatus(t('documentDeleted'))
@@ -436,6 +454,15 @@ function DocumentsScreen({ dirtyRef }) {
         <form onSubmit={saveDocument}>
           <label className="field-label" htmlFor="document-title">{t('title')}</label>
           <input id="document-title" className="editor-input" value={draft.title} onChange={event => { setDraft({ ...draft, title: event.target.value }); setStatus('') }} placeholder={t('titlePlaceholder')} required />
+          <label className="field-label" htmlFor="document-category">{t('category')}</label>
+          <select id="document-category" className="editor-input" value={draft.category} onChange={event => { setDraft({ ...draft, category: event.target.value }); setStatus('') }}>
+            <option value="ai">{categoryLabel('ai')}</option><option value="investment">{categoryLabel('investment')}</option><option value="philosophy">{categoryLabel('philosophy')}</option><option value="misc">{categoryLabel('misc')}</option>
+          </select>
+          <label className="field-label" htmlFor="document-visibility">{t('visibility')}</label>
+          <select id="document-visibility" className="editor-input" value={draft.visibility} onChange={event => { setDraft({ ...draft, visibility: event.target.value }); setStatus('') }}>
+            <option value="private">{t('privateVisibility')}</option><option value="public">{t('publicMetadataOnly')}</option>
+          </select>
+          {activeId && <p className="muted">{t('currentRevision')}: {currentRevision || '—'}</p>}
           <label className="field-label" htmlFor="document-tags">{t('tags')} <span>({t('commaSeparated')})</span></label>
           <input id="document-tags" className="editor-input" value={draft.tags} onChange={event => { setDraft({ ...draft, tags: event.target.value }); setStatus('') }} placeholder={t('tagsPlaceholder')} />
 

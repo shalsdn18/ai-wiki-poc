@@ -12,7 +12,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query, Request, Response, status
+from fastapi import FastAPI, Header, HTTPException, Query, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -203,14 +203,20 @@ def auth_status(request: Request) -> dict[str, bool]:
 @app.get("/health")
 def health() -> dict[str, object]:
     try:
-        knowledge_store = get_knowledge_store().health_status()
-    except KnowledgeError:
+        knowledge_store = _knowledge_runtime().health_status()
+    except Exception:  # noqa: BLE001 - health exposes state, not provider/DB error details
         knowledge_store = {
-            "backend": os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold(),
+            "backend": (
+                "postgres+r2"
+                if _enabled("KNOWLEDGE_WRITER_ENABLED")
+                else os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold()
+            ),
             "status": "UNAVAILABLE",
             "ref": (
                 os.getenv("KNOWLEDGE_GITHUB_REF", "main")
-                if os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold() == "github"
+                if not _enabled("KNOWLEDGE_WRITER_ENABLED")
+                and os.getenv("KNOWLEDGE_STORE_BACKEND", "filesystem").strip().casefold()
+                == "github"
                 else None
             ),
             "commit": None,
@@ -304,11 +310,54 @@ class KnowledgeResponse(BaseModel):
     source_url: str | None = None
     content: str
     relative_path: str
+    current_revision_id: str | None = None
+
+
+class KnowledgeWriteRequest(BaseModel):
+    document_id: str | None = None
+    title: str = Field(min_length=1, max_length=500)
+    category: str
+    tags: list[str] = Field(default_factory=list)
+    visibility: str = "private"
+    content: str
+    source_url: str | None = None
+    operation_date: str | None = None
+    expected_current_revision_id: str | None = None
+
+
+class KnowledgeWriteResponse(BaseModel):
+    document_id: str
+    revision_id: str | None
+    current_revision_id: str
+    operation_result: str
+    processing_status: str | None = None
+    processing_job_id: str | None = None
+
+
+class KnowledgeDeleteRequest(BaseModel):
+    expected_current_revision_id: str
+
+
+def _knowledge_runtime():
+    if _enabled("KNOWLEDGE_WRITER_ENABLED"):
+        try:
+            from engine.knowledge_writer import get_knowledge_writer
+
+            return get_knowledge_writer()
+        except Exception as exc:
+            from engine.knowledge_store import KnowledgeUnavailableError
+
+            if isinstance(exc, KnowledgeUnavailableError):
+                raise HTTPException(
+                    status_code=503, detail="Knowledge storage is unavailable"
+                ) from exc
+            raise HTTPException(status_code=503, detail="Knowledge writer is unavailable") from exc
+    return get_knowledge_store()
 
 
 def _knowledge_call(operation_name: str, *args):
     try:
-        store = get_knowledge_store()
+        store = _knowledge_runtime()
         return getattr(store, operation_name)(*args)
     except KnowledgeNotFoundError as exc:
         raise HTTPException(status_code=404, detail="Knowledge document not found") from exc
@@ -320,6 +369,143 @@ def _knowledge_call(operation_name: str, *args):
         raise HTTPException(status_code=503, detail="Knowledge repository is invalid") from exc
     except OSError as exc:
         raise HTTPException(status_code=503, detail="Knowledge repository is unavailable") from exc
+    except Exception as exc:
+        from engine.postgres_operational import OperationalStoreError
+        from engine.r2_revision_objects import RevisionObjectError
+
+        if isinstance(exc, (OperationalStoreError, RevisionObjectError)):
+            raise HTTPException(
+                status_code=503, detail="Knowledge storage is temporarily unavailable"
+            ) from exc
+        raise
+
+
+def _knowledge_write_call(operation, *args):
+    if not _enabled("KNOWLEDGE_WRITER_ENABLED"):
+        raise HTTPException(status_code=503, detail="Knowledge writer is not enabled")
+    try:
+        from engine.knowledge_store import KnowledgeError, KnowledgeNotFoundError
+        from engine.knowledge_writer import get_knowledge_writer
+        from engine.postgres_operational import (
+            IdempotencyConflict,
+            InvalidOperationalInput,
+            KnowledgeRecordNotFound,
+            OperationalStoreError,
+            RevisionConflict,
+        )
+        from engine.r2_revision_objects import RevisionObjectError
+
+        result = operation(get_knowledge_writer(), *args)
+        return KnowledgeWriteResponse(
+            document_id=result.document_id,
+            revision_id=result.revision_id,
+            current_revision_id=result.current_revision_id,
+            operation_result=result.operation_result,
+            processing_status=result.processing_status,
+            processing_job_id=result.processing_job_id,
+        )
+    except (IdempotencyConflict, RevisionConflict) as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except (KnowledgeRecordNotFound, KnowledgeNotFoundError) as exc:
+        raise HTTPException(status_code=404, detail="Knowledge document not found") from exc
+    except InvalidOperationalInput as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    except (OperationalStoreError, RevisionObjectError) as exc:
+        raise HTTPException(
+            status_code=503, detail="Knowledge write could not be completed"
+        ) from exc
+    except KnowledgeError as exc:
+        raise HTTPException(status_code=503, detail="Knowledge storage is unavailable") from exc
+
+
+def _write_create(writer, payload: KnowledgeWriteRequest, idempotency_key: str):
+    from engine.knowledge_writer import KnowledgeWriteInput
+
+    if not payload.document_id:
+        raise HTTPException(status_code=422, detail="document_id is required")
+    if payload.expected_current_revision_id is not None:
+        raise HTTPException(status_code=422, detail="Create cannot specify a current revision")
+    return writer.create_document(
+        payload.document_id,
+        idempotency_key,
+        KnowledgeWriteInput(
+            payload.title,
+            payload.category,
+            payload.tags,
+            payload.visibility,
+            payload.content,
+            payload.source_url,
+            payload.operation_date,
+        ),
+    )
+
+
+def _write_update(writer, document_id: str, payload: KnowledgeWriteRequest, idempotency_key: str):
+    from engine.knowledge_writer import KnowledgeWriteInput
+
+    if payload.document_id and payload.document_id != document_id:
+        raise HTTPException(status_code=422, detail="document_id does not match route")
+    if not payload.expected_current_revision_id:
+        raise HTTPException(status_code=422, detail="expected_current_revision_id is required")
+    return writer.update_document(
+        document_id,
+        payload.expected_current_revision_id,
+        idempotency_key,
+        KnowledgeWriteInput(
+            payload.title,
+            payload.category,
+            payload.tags,
+            payload.visibility,
+            payload.content,
+            payload.source_url,
+            payload.operation_date,
+        ),
+    )
+
+
+@app.get("/knowledge/documents", response_model=list[KnowledgeResponse])
+def list_knowledge_documents(request: Request) -> list[KnowledgeResponse]:
+    _require_knowledge_session(request)
+    documents = _knowledge_call("list_documents")
+    return [KnowledgeResponse(**item.as_dict()) for item in documents]
+
+
+@app.post("/knowledge/documents", response_model=KnowledgeWriteResponse, status_code=201)
+def create_knowledge_document(
+    payload: KnowledgeWriteRequest,
+    request: Request,
+    idempotency_key: str | None = Header(default=None, alias="Idempotency-Key"),
+):
+    _require_same_origin(request)
+    _require_knowledge_session(request)
+    if not idempotency_key:
+        raise HTTPException(status_code=400, detail="Idempotency-Key header is required")
+    return _knowledge_write_call(_write_create, payload, idempotency_key)
+
+
+@app.put("/knowledge/documents/{document_id}", response_model=KnowledgeWriteResponse)
+def update_knowledge_document(
+    document_id: str,
+    payload: KnowledgeWriteRequest,
+    request: Request,
+    idempotency_key: str | None = Header(default=None, alias="Idempotency-Key"),
+):
+    _require_same_origin(request)
+    _require_knowledge_session(request)
+    if not idempotency_key:
+        raise HTTPException(status_code=400, detail="Idempotency-Key header is required")
+    return _knowledge_write_call(_write_update, document_id, payload, idempotency_key)
+
+
+def _write_delete(writer, document_id: str, expected_current_revision_id: str):
+    return writer.delete_document(document_id, expected_current_revision_id)
+
+
+@app.delete("/knowledge/documents/{document_id}", response_model=KnowledgeWriteResponse)
+def delete_knowledge_document(document_id: str, payload: KnowledgeDeleteRequest, request: Request):
+    _require_same_origin(request)
+    _require_knowledge_session(request)
+    return _knowledge_write_call(_write_delete, document_id, payload.expected_current_revision_id)
 
 
 @app.get("/knowledge/stats", response_model=StatsResponse)
