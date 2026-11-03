@@ -5,6 +5,7 @@ import json
 import os
 import threading
 import uuid
+from pathlib import Path
 
 import pytest
 from psycopg.conninfo import conninfo_to_dict
@@ -16,7 +17,7 @@ pytestmark = pytest.mark.skipif(not TEST_DSN, reason="POSTGRES_TEST_DATABASE_URL
 
 @pytest.fixture
 def pg_store():
-    from engine.postgres_operational import PostgresOperationalStore, migrate
+    from engine.postgres_operational import MIGRATION_DIR, PostgresOperationalStore, migrate
 
     database_name = conninfo_to_dict(TEST_DSN).get("dbname", "").casefold()
     if "test" not in database_name:
@@ -34,7 +35,11 @@ def pg_store():
         return conn
 
     try:
-        migrate(connect)
+        expected_versions = [
+            int(path.name.split("_", 1)[0])
+            for path in sorted(MIGRATION_DIR.glob("[0-9][0-9][0-9]_*.sql"))
+        ]
+        assert migrate(connect) == expected_versions
         yield PostgresOperationalStore(connect), connect
     finally:
         with admin.cursor() as cur:
@@ -115,6 +120,25 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
     first_job = store.finalize_verified_revision(
         first_intent, _verified(first_intent, "First", "one"), pipeline_fingerprint=fingerprint
     )
+    assert (
+        store.finalize_verified_revision(
+            first_intent, _verified(first_intent, "First", "one"), pipeline_fingerprint=fingerprint
+        )
+        == first_job
+    )
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT current_revision_id FROM documents WHERE id=%s", (document_id,))
+            assert cur.fetchone()[0] == first_intent.revision_id
+            cur.execute("SELECT state FROM revision_write_intents WHERE id=%s", (first_intent.id,))
+            assert cur.fetchone()[0] == "COMMITTED"
+            cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 1
+            cur.execute("SELECT count(*) FROM processing_jobs WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 1
+    finally:
+        conn.close()
 
     # Force failure after revision/pointer writes have begun, at durable job
     # insertion, and prove PostgreSQL rolls the entire finalize transaction back.
@@ -134,6 +158,7 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
             )
     finally:
         conn.close()
+
     with pytest.raises(OperationalStoreError):
         store.finalize_verified_revision(
             rollback_intent,
@@ -146,6 +171,8 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
             cur.execute("SELECT current_revision_id FROM documents WHERE id=%s", (document_id,))
             assert cur.fetchone()[0] == first_intent.revision_id
             cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (document_id,))
+            assert cur.fetchone()[0] == 1
+            cur.execute("SELECT count(*) FROM processing_jobs WHERE document_id=%s", (document_id,))
             assert cur.fetchone()[0] == 1
             cur.execute(
                 "SELECT state FROM revision_write_intents WHERE id=%s", (rollback_intent.id,)
@@ -181,6 +208,25 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
     right = store.reserve_intent(_request(document_id, "update-right", base, "Right", "right"))
     barrier = threading.Barrier(2)
     outcomes = []
+    backend_pids = []
+    pid_lock = threading.Lock()
+    connection_barrier = threading.Barrier(2)
+    original_factory = store.connection_factory
+
+    def tracking_factory():
+        conn = original_factory()
+        with conn.cursor() as cur:
+            cur.execute("SELECT pg_backend_pid()")
+            pid = cur.fetchone()[0]
+        conn.commit()
+        with pid_lock:
+            backend_pids.append(pid)
+            race_connection = len(backend_pids) <= 2
+        if race_connection:
+            connection_barrier.wait(timeout=10)
+        return conn
+
+    store.connection_factory = tracking_factory
 
     def finalize(intent, title, body):
         barrier.wait()
@@ -202,6 +248,7 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
         thread.join(timeout=20)
     assert all(not thread.is_alive() for thread in threads)
     assert sorted(item[0] for item in outcomes) == ["conflict", "ok"]
+    assert len(set(backend_pids)) >= 2
     conn = connect()
     try:
         with conn.cursor() as cur:
@@ -216,6 +263,203 @@ def test_migrations_finalize_constraints_idempotency_and_cas_race(pg_store):
             cur.execute("SELECT state FROM revision_write_intents WHERE id=%s", (losing.id,))
             assert cur.fetchone()[0] == "CONFLICT"
             cur.execute("SELECT count(*) FROM processing_jobs WHERE id=%s", (first_job,))
+            assert cur.fetchone()[0] == 1
+    finally:
+        conn.close()
+
+
+def test_migration_checksum_schema_constraints_and_immutability(pg_store):
+    from engine.postgres_operational import migrate
+
+    store, connect = pg_store
+    assert migrate(connect) == []
+    migration_sql = (
+        Path(__file__).resolve().parents[2] / "migrations" / "001_phase_2a_operational_state.sql"
+    ).read_text(encoding="utf-8")
+    expected_checksum = hashlib.sha256(migration_sql.encode("utf-8")).hexdigest()
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT version,checksum FROM schema_migrations ORDER BY version")
+            assert [(row[0], row[1].strip()) for row in cur.fetchall()] == [(1, expected_checksum)]
+            cur.execute(
+                "SELECT table_name FROM information_schema.tables "
+                "WHERE table_schema=current_schema() AND table_type='BASE TABLE'"
+            )
+            tables = {row[0] for row in cur.fetchall()}
+            assert {
+                "schema_migrations",
+                "documents",
+                "revisions",
+                "revision_write_intents",
+                "tags",
+                "document_tags",
+                "relations",
+                "processing_jobs",
+                "processing_attempts",
+            } <= tables
+            cur.execute(
+                "SELECT conname FROM pg_constraint WHERE connamespace=current_schema()::regnamespace"
+            )
+            constraints = {row[0] for row in cur.fetchall()}
+            assert "documents_current_revision_fk" in constraints
+            assert "documents_current_indexed_revision_fk" in constraints
+            cur.execute(
+                "SELECT tgname FROM pg_trigger WHERE tgrelid='revisions'::regclass AND NOT tgisinternal"
+            )
+            assert {row[0] for row in cur.fetchall()} == {"revisions_immutable"}
+    finally:
+        conn.close()
+
+    doc_id = uuid.uuid4().hex + uuid.uuid4().hex
+    intent = store.reserve_intent(_request(doc_id, "immutability", None, "Immutable", "bytes"))
+    fingerprint = hashlib.sha256(b"pipeline-immutable").hexdigest()
+    store.finalize_verified_revision(
+        intent, _verified(intent, "Immutable", "bytes"), pipeline_fingerprint=fingerprint
+    )
+    conn = connect()
+    try:
+        with pytest.raises(psycopg.errors.RaiseException), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "UPDATE revisions SET content_hash=%s WHERE document_id=%s AND revision_id=%s",
+                ("0" * 64, doc_id, intent.revision_id),
+            )
+        with pytest.raises(psycopg.errors.RaiseException), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "DELETE FROM revisions WHERE document_id=%s AND revision_id=%s",
+                (doc_id, intent.revision_id),
+            )
+
+        with pytest.raises(psycopg.errors.CheckViolation), conn.transaction(), conn.cursor() as cur:
+            cur.execute("UPDATE documents SET category='invalid' WHERE id=%s", (doc_id,))
+        with pytest.raises(psycopg.errors.CheckViolation), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "UPDATE processing_jobs SET state='NOT_A_STATE' WHERE document_id=%s", (doc_id,)
+            )
+        with pytest.raises(psycopg.errors.CheckViolation), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "UPDATE processing_jobs SET attempt_count=-1 WHERE document_id=%s", (doc_id,)
+            )
+        with pytest.raises(psycopg.errors.CheckViolation), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO processing_attempts(job_id,attempt_number,started_at,embedding_dimensions) "
+                "SELECT id,99,now(),0 FROM processing_jobs WHERE document_id=%s LIMIT 1",
+                (doc_id,),
+            )
+
+        with pytest.raises(
+            psycopg.errors.ForeignKeyViolation
+        ), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO processing_jobs(id,document_id,revision_id,pipeline_fingerprint,state) "
+                "VALUES (%s,%s,%s,%s,'QUEUED')",
+                (uuid.uuid4(), doc_id, "f" * 64, fingerprint),
+            )
+        missing_doc_id = "c" * 64
+        missing_revision_id = "d" * 64
+        with pytest.raises(
+            psycopg.errors.ForeignKeyViolation
+        ), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO revisions(document_id,revision_id,content_hash,byte_length,source_object_key,"
+                "manifest_object_key,manifest_hash,mime_type,metadata_snapshot,manifest_schema_version,registered_at) "
+                "VALUES (%s,%s,%s,1,%s,%s,%s,'text/markdown',%s::jsonb,1,now())",
+                (
+                    missing_doc_id,
+                    missing_revision_id,
+                    "1" * 64,
+                    f"knowledge/{missing_doc_id}/revisions/{missing_revision_id}/source.md",
+                    f"knowledge/{missing_doc_id}/revisions/{missing_revision_id}/manifest.json",
+                    "2" * 64,
+                    json.dumps(
+                        {"title": "Missing", "category": "ai", "visibility": "private", "tags": []}
+                    ),
+                ),
+            )
+        with pytest.raises(
+            psycopg.errors.ForeignKeyViolation
+        ), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO processing_attempts(job_id,attempt_number,started_at) VALUES (%s,1,now())",
+                (uuid.uuid4(),),
+            )
+        with pytest.raises(
+            psycopg.errors.UniqueViolation
+        ), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO processing_jobs(id,document_id,revision_id,pipeline_fingerprint,state) "
+                "SELECT %s,document_id,revision_id,pipeline_fingerprint,'QUEUED' FROM processing_jobs "
+                "WHERE document_id=%s",
+                (uuid.uuid4(), doc_id),
+            )
+        with pytest.raises(
+            psycopg.errors.UniqueViolation
+        ), conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO revision_write_intents(id,idempotency_key,request_digest,document_id,revision_id,"
+                "source_object_key,manifest_object_key,content_hash,metadata_snapshot,state) "
+                "SELECT %s,idempotency_key,request_digest,document_id,%s,%s,%s,content_hash,metadata_snapshot,'PREPARED' "
+                "FROM revision_write_intents WHERE id=%s",
+                (
+                    uuid.uuid4(),
+                    "e" * 64,
+                    f"knowledge/{doc_id}/revisions/{'e' * 64}/source.md",
+                    f"knowledge/{doc_id}/revisions/{'e' * 64}/manifest.json",
+                    intent.id,
+                ),
+            )
+
+        # Valid transition and a valid attempt with retry/lease fields.
+        with conn.transaction(), conn.cursor() as cur:
+            cur.execute(
+                "UPDATE processing_jobs SET state='RUNNING',lease_owner='integration-test',"
+                "lease_expires_at=now()+interval '1 minute',heartbeat_at=now() WHERE document_id=%s",
+                (doc_id,),
+            )
+            cur.execute(
+                "INSERT INTO processing_attempts(job_id,attempt_number,started_at,source_content_hash) "
+                "SELECT id,1,now(),%s FROM processing_jobs WHERE document_id=%s",
+                (hashlib.sha256(_source(doc_id, "Immutable", "bytes")).hexdigest(), doc_id),
+            )
+            cur.execute(
+                "UPDATE processing_jobs SET state='RETRY_WAIT',attempt_count=1,max_attempts=3,"
+                "next_attempt_at=now()+interval '5 seconds',lease_owner=NULL,lease_expires_at=NULL "
+                "WHERE document_id=%s",
+                (doc_id,),
+            )
+            cur.execute(
+                "UPDATE processing_jobs SET state='SUCCEEDED',lease_owner=NULL,lease_expires_at=NULL "
+                "WHERE document_id=%s",
+                (doc_id,),
+            )
+            cur.execute(
+                "SELECT state,attempt_count FROM processing_jobs WHERE document_id=%s", (doc_id,)
+            )
+            assert cur.fetchone() == ("SUCCEEDED", 1)
+    finally:
+        conn.close()
+
+
+def test_tombstone_retains_current_revision_without_external_storage(pg_store):
+    store, connect = pg_store
+    doc_id = uuid.uuid4().hex + uuid.uuid4().hex
+    intent = store.reserve_intent(_request(doc_id, "tombstone", None, "Keep", "content"))
+    fingerprint = hashlib.sha256(b"pipeline-tombstone").hexdigest()
+    store.finalize_verified_revision(
+        intent, _verified(intent, "Keep", "content"), pipeline_fingerprint=fingerprint
+    )
+    store.tombstone_document(doc_id, intent.revision_id)
+    conn = connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT state,current_revision_id,deleted_at FROM documents WHERE id=%s", (doc_id,)
+            )
+            state, current_revision_id, deleted_at = cur.fetchone()
+            assert state == "DELETED"
+            assert current_revision_id == intent.revision_id
+            assert deleted_at is not None
+            cur.execute("SELECT count(*) FROM revisions WHERE document_id=%s", (doc_id,))
             assert cur.fetchone()[0] == 1
     finally:
         conn.close()
