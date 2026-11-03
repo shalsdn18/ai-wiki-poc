@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini는 이제 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집할 수 있는 기능을 제공합니다. 또한 이력서 업데이트를 돕는 기능도 추가되었습니다.",
+  "current_state": "Google은 2026년 10월에 발표된 최신 AI 소식을 공유했습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -173,14 +173,27 @@
         "gemini-e8b654ca9543c3054765"
       ],
       "summary": "최근 업데이트를 통해 Gemini는 문서 편집 및 이력서 작성 지원과 같은 새로운 기능을 통합하여 사용자에게 더 다양한 생산성 도구를 제공하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-02T17:45:00+00:00",
+      "source_ids": [
+        "gemini-996c88dfa31d64c0a9d6"
+      ],
+      "summary": "Google은 정기적으로 AI 관련 소식을 발표해왔으며, 이 소스는 2026년 10월에 발표된 최신 AI 업데이트를 요약합니다."
     }
   ],
   "key_facts": [
-    "Gemini에서 PDF 또는 문서를 직접 생성, 편집 및 미리 볼 수 있습니다.",
-    "새로운 전체 화면 편집기를 사용하여 파일을 다듬을 수 있습니다.",
-    "Gemini를 사용하여 원시 메모를 영향력 있고 ATS 친화적인 이력서 항목으로 전환할 수 있습니다."
+    "Google은 2026년 10월에 AI 관련 업데이트를 발표했습니다.",
+    "이 업데이트는 \"The latest AI news we announced in October 2026\"이라는 제목의 블로그 게시물을 통해 공개되었으며, 10월 AI 게시물에서 가져온 이미지의 애니메이션 캐러셀을 포함합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-02T17:45:00+00:00",
+      "source_ids": [
+        "gemini-996c88dfa31d64c0a9d6"
+      ],
+      "summary": "Google은 2026년 10월에 다양한 AI 관련 업데이트를 발표했습니다."
+    },
     {
       "published_at": "2026-10-29T16:15:00+00:00",
       "source_ids": [
@@ -214,16 +227,6 @@
         "gemini-a128891378e42ce095b4"
       ],
       "summary": "차세대 모델인 Gemini 4 Carbon이 공개되었습니다."
-    },
-    {
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "source_ids": [
-        "gemini-f1b1625f67db9cc81d99",
-        "gemini-a92d7b7ef0e2da4d5922",
-        "gemini-370e028ff47ae5fef76a",
-        "gemini-a128891378e42ce095b4"
-      ],
-      "summary": "XREAL AURA 유선 XR 안경이 출시되었습니다."
     }
   ],
   "seen_hashes": [
@@ -259,6 +262,7 @@
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
+    "ad88486afcb221923120c26f806fc05ecd66d7d6729a01ebb10639a9ed4306bb",
     "d149410c20ac0c3373c340018eb404e9a0d4def7d5b2446e545b861975aa4ee5",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
@@ -275,21 +279,20 @@
 
 ## 현재 상태
 
-Gemini는 이제 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집할 수 있는 기능을 제공합니다. 또한 이력서 업데이트를 돕는 기능도 추가되었습니다.
+Google은 2026년 10월에 발표된 최신 AI 소식을 공유했습니다.
 
 ## 핵심 정보
 
-- Gemini에서 PDF 또는 문서를 직접 생성, 편집 및 미리 볼 수 있습니다.
-- 새로운 전체 화면 편집기를 사용하여 파일을 다듬을 수 있습니다.
-- Gemini를 사용하여 원시 메모를 영향력 있고 ATS 친화적인 이력서 항목으로 전환할 수 있습니다.
+- Google은 2026년 10월에 AI 관련 업데이트를 발표했습니다.
+- 이 업데이트는 "The latest AI news we announced in October 2026"이라는 제목의 블로그 게시물을 통해 공개되었으며, 10월 AI 게시물에서 가져온 이미지의 애니메이션 캐러셀을 포함합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 3일 02:45 — Google은 2026년 10월에 다양한 AI 관련 업데이트를 발표했습니다. (출처: gemini-996c88dfa31d64c0a9d6)
 - 2026년 10월 30일 01:15 — 파일을 다듬기 위한 새로운 전체 화면 편집기가 도입되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 10월 30일 01:15 — 이력서 업데이트를 위해 Gemini를 사용하여 메모를 이력서 항목으로 변환하는 기능이 제공됩니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 10월 30일 01:15 — Gemini 내에서 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집하는 기능이 추가되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 10월 29일 03:00 — 차세대 모델인 Gemini 4 Carbon이 공개되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
-- 2026년 10월 29일 03:00 — XREAL AURA 유선 XR 안경이 출시되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 
 ## 변경 이력
 
@@ -315,3 +318,4 @@ Gemini는 이제 문서, PDF, 프레젠테이션, 스프레드시트 등을 직�
 - 2026년 10월 28일 00:00 — 2026년 10월 27일, Google Gemini 공식 블로그에 '8 examples of Gemini 4 Argon in action'이라는 제목으로 Gemini 4 Argon의 다양한 활용 사례를 보여주는 콜라주가 게시되었습니다. (출처: gemini-6465e0c566e45f98f2ac)
 - 2026년 10월 29일 03:00 — 이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 - 2026년 10월 30일 01:15 — 최근 업데이트를 통해 Gemini는 문서 편집 및 이력서 작성 지원과 같은 새로운 기능을 통합하여 사용자에게 더 다양한 생산성 도구를 제공하고 있습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
+- 2026년 11월 3일 02:45 — Google은 정기적으로 AI 관련 소식을 발표해왔으며, 이 소스는 2026년 10월에 발표된 최신 AI 업데이트를 요약합니다. (출처: gemini-996c88dfa31d64c0a9d6)

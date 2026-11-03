@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 폭력 예방 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성 강조 등 여러 분야에서 활동하고 있습니다.",
+  "current_state": "OpenAI는 보안, 인프라, 에너지, AI 평가 등 다양한 분야에서 새로운 이니셔티브를 적극적으로 개발하고 도입하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -384,64 +384,88 @@
         "openai-574dbaf7fc8731e40575"
       ],
       "summary": "OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 안전 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성을 강조하는 등 다양한 정책 및 안전 관련 업데이트를 발표했습니다."
+    },
+    {
+      "published_at": "2026-11-02T18:00:00+00:00",
+      "source_ids": [
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
+      ],
+      "summary": "OpenAI는 최근 보안 강화를 위해 버그 바운티 보상을 인상하고 내부 보안 스프린트를 준비하고 있습니다. 또한, Codex 개발 규모에 맞는 Git 호환 백엔드 Pando를 구축했으며, 전력망 안정성을 위한 Grid Protectors Program과 AI의 일상 업무 지원 능력을 측정하는 LifeVal 벤치마크를 도입했습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 것입니다.",
-    "OpenAI는 ChatGPT에서 폭력 예방을 강화하기 위해 보호 조치를 확대하고 조기 개입하며 공공 안전 보고에 대한 새로운 약속을 하고 있습니다.",
-    "OpenAI는 공정 사용이 AI 훈련과 혁신을 어떻게 지원하는지에 대한 창작자, 학자, 접근성 옹호자 및 법률 전문가들의 법원 서류 발췌문을 공유했습니다."
+    "OpenAI는 독립 보안 연구원들을 위한 버그 바운티 보상을 인상하고 보고서 품질, 충성도, 우선순위 캠페인 보너스를 도입했습니다.",
+    "OpenAI는 Cathedral Systems와 함께 AI를 사용하여 방어를 테스트하고 강화하기 위한 다음 내부 보안 스프린트를 준비하고 있습니다.",
+    "OpenAI는 Codex가 가능하게 하는 개발 규모를 위해 Git 호환 백엔드인 Pando를 구축했습니다.",
+    "OpenAI의 Grid Protectors Program은 미래 컴퓨팅 캠퍼스가 전력망 안정성을 지원하고 소비자 전기 요금을 보호하도록 돕기 위해 유틸리티 회사와 협력할 것입니다.",
+    "OpenAI는 육아부터 재정 관리 및 정부 서류 작업에 이르기까지 AI가 일상 업무를 얼마나 잘 돕는지 측정하는 벤치마크인 LifeVal을 도입했습니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-10-30T09:30:00+00:00",
+      "published_at": "2026-11-02T18:00:00+00:00",
       "source_ids": [
-        "openai-84abd1857de5dfd951d9",
-        "openai-a86d24c59c826150d16d",
-        "openai-574dbaf7fc8731e40575"
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
       ],
-      "summary": "OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 예정입니다."
+      "summary": "미래 컴퓨팅 캠퍼스의 전력망 안정성 지원 및 소비자 전기 요금 보호를 위한 Grid Protectors Program 도입"
     },
     {
-      "published_at": "2026-10-30T09:30:00+00:00",
+      "published_at": "2026-11-02T18:00:00+00:00",
       "source_ids": [
-        "openai-84abd1857de5dfd951d9",
-        "openai-a86d24c59c826150d16d",
-        "openai-574dbaf7fc8731e40575"
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
       ],
-      "summary": "ChatGPT에서 폭력 예방을 위한 보호 조치가 확대되고 조기 개입이 이루어지며 공공 안전 보고에 대한 새로운 약속이 추가되었습니다."
+      "summary": "독립 보안 연구원들을 위한 보안 버그 바운티 보상 인상 및 새로운 보너스 도입"
     },
     {
-      "published_at": "2026-10-29T17:00:00+00:00",
+      "published_at": "2026-11-02T18:00:00+00:00",
       "source_ids": [
-        "openai-9349f418e7bc7ab45091",
-        "openai-0f01adb2acab0a67ba71",
-        "openai-d948735545c20cf30721"
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
       ],
-      "summary": "Ropes & Gray는 OpenAI와 함께 거래 실사를 위한 AI를 개발 중이며, 변호사들은 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다."
+      "summary": "Codex 개발 규모에 맞춰 설계된 Git 호환 백엔드 Pando 구축"
     },
     {
-      "published_at": "2026-10-29T17:00:00+00:00",
+      "published_at": "2026-11-02T18:00:00+00:00",
       "source_ids": [
-        "openai-9349f418e7bc7ab45091",
-        "openai-0f01adb2acab0a67ba71",
-        "openai-d948735545c20cf30721"
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
       ],
-      "summary": "OpenAI는 사건이 확대되기 전에 대응자가 개입할 수 있도록 최첨단 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링을 사용합니다."
+      "summary": "Cathedral Systems와 함께 AI를 활용하여 방어를 강화하기 위한 다음 내부 보안 스프린트 준비"
     },
     {
-      "published_at": "2026-10-29T17:00:00+00:00",
+      "published_at": "2026-11-02T18:00:00+00:00",
       "source_ids": [
-        "openai-9349f418e7bc7ab45091",
-        "openai-0f01adb2acab0a67ba71",
-        "openai-d948735545c20cf30721"
+        "openai-bca108e4c77bd86b238b",
+        "openai-0d297090385ad5a72451",
+        "openai-277870ffc8d71544c046",
+        "openai-5d33ed0c66ace544e65f",
+        "openai-5a014341bc3fc0f1d8b6"
       ],
-      "summary": "OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다."
+      "summary": "AI의 일상 업무 지원 능력을 측정하는 벤치마크 LifeVal 도입"
     }
   ],
   "seen_hashes": [
     "0045c1c78b9c2e9af11bca6c8aa443067038ed194639cbc741716651d8b432e6",
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
+    "035c9ef70692b5cc7049e1d3b5144ddf89b5b9a4c3c40197f3ce2f3f0401615b",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
     "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
@@ -526,10 +550,13 @@
     "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
     "a714a8c6db9ff916dc060b2d218b6e1e3ca55479c6a675cc47a521d88acf9511",
+    "a83d932617d56710902509a0160e38dfe7e74c1baf3b295a61a05da82b45d9ae",
     "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
+    "aaeff6aff65867f4588251d5b604c28c96a333b2dcf6f27c3d0283eb5c8b1eb5",
     "ab7c4914332df1d16fac5827f6e61dc697a1c891f5ec6cafcfc8af95c63edec3",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
+    "b1c9bb0b0240f477bc33f5c7b8151c7b71103dc0fb03d2cdba5b891c18a94f30",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
@@ -538,6 +565,7 @@
     "bc06389219fd2549b37626c6e43340c0a719b49b7c8a23f1f65a623f26243bd7",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
+    "bfbf01a8eaa0c1296a9af505e066f0d04ec7a38f90b06eb0a7ba683b61f9b6d0",
     "c0dc68eeb296e49c98d35f4c8a069fbd3885cf3e16cf9a090081311a84d1bdad",
     "c0ebde0b8212cd6c3a08ae2b1f32fe40fe103060ccb4723243c8556057a32f38",
     "c1d7114bbfc38d3b425085fc94225bb06c09977e14f6054efca349182b339596",
@@ -578,21 +606,23 @@
 
 ## 현재 상태
 
-OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 폭력 예방 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성 강조 등 여러 분야에서 활동하고 있습니다.
+OpenAI는 보안, 인프라, 에너지, AI 평가 등 다양한 분야에서 새로운 이니셔티브를 적극적으로 개발하고 도입하고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 것입니다.
-- OpenAI는 ChatGPT에서 폭력 예방을 강화하기 위해 보호 조치를 확대하고 조기 개입하며 공공 안전 보고에 대한 새로운 약속을 하고 있습니다.
-- OpenAI는 공정 사용이 AI 훈련과 혁신을 어떻게 지원하는지에 대한 창작자, 학자, 접근성 옹호자 및 법률 전문가들의 법원 서류 발췌문을 공유했습니다.
+- OpenAI는 독립 보안 연구원들을 위한 버그 바운티 보상을 인상하고 보고서 품질, 충성도, 우선순위 캠페인 보너스를 도입했습니다.
+- OpenAI는 Cathedral Systems와 함께 AI를 사용하여 방어를 테스트하고 강화하기 위한 다음 내부 보안 스프린트를 준비하고 있습니다.
+- OpenAI는 Codex가 가능하게 하는 개발 규모를 위해 Git 호환 백엔드인 Pando를 구축했습니다.
+- OpenAI의 Grid Protectors Program은 미래 컴퓨팅 캠퍼스가 전력망 안정성을 지원하고 소비자 전기 요금을 보호하도록 돕기 위해 유틸리티 회사와 협력할 것입니다.
+- OpenAI는 육아부터 재정 관리 및 정부 서류 작업에 이르기까지 AI가 일상 업무를 얼마나 잘 돕는지 측정하는 벤치마크인 LifeVal을 도입했습니다.
 
 ## 최근 변경 사항
 
-- 2026년 10월 30일 18:30 — OpenAI는 웹사이트 운영자가 AI 훈련 선호도를 전달할 수 있도록 공유 robots.txt 신호를 존중할 예정입니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
-- 2026년 10월 30일 18:30 — ChatGPT에서 폭력 예방을 위한 보호 조치가 확대되고 조기 개입이 이루어지며 공공 안전 보고에 대한 새로운 약속이 추가되었습니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
-- 2026년 10월 30일 02:00 — Ropes & Gray는 OpenAI와 함께 거래 실사를 위한 AI를 개발 중이며, 변호사들은 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
-- 2026년 10월 30일 02:00 — OpenAI는 사건이 확대되기 전에 대응자가 개입할 수 있도록 최첨단 모델 오정렬 및 무단 에이전트 행동을 감지하기 위한 계층화된 모니터링을 사용합니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
-- 2026년 10월 30일 02:00 — OpenAI는 AI의 건전한 판단, 인간의 주체성, 인간 의도에 대한 충실성을 안내하는 5가지 핵심 가치를 포함하는 업데이트된 Model Spec을 공개했습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
+- 2026년 11월 3일 03:00 — 미래 컴퓨팅 캠퍼스의 전력망 안정성 지원 및 소비자 전기 요금 보호를 위한 Grid Protectors Program 도입 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
+- 2026년 11월 3일 03:00 — 독립 보안 연구원들을 위한 보안 버그 바운티 보상 인상 및 새로운 보너스 도입 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
+- 2026년 11월 3일 03:00 — Codex 개발 규모에 맞춰 설계된 Git 호환 백엔드 Pando 구축 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
+- 2026년 11월 3일 03:00 — Cathedral Systems와 함께 AI를 활용하여 방어를 강화하기 위한 다음 내부 보안 스프린트 준비 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
+- 2026년 11월 3일 03:00 — AI의 일상 업무 지원 능력을 측정하는 벤치마크 LifeVal 도입 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
 
 ## 변경 이력
 
@@ -638,3 +668,4 @@ OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 폭력 예방 �
 - 2026년 10월 28일 22:15 — OpenAI는 ServiceNow와의 파트너십을 확장하여 자사 모델과 에이전트를 ServiceNow에 통합하고, ServiceNow 워크플로우를 ChatGPT 및 Codex에 통합하고 있습니다. 또한, AI가 기업 조직 구조에 통합될 수 있는 방안을 모색하고 있으며, Legora와 같은 기업은 OpenAI 모델을 활용하여 법률 워크플로우를 혁신하고 있습니다. (출처: openai-a395c7da350b5086cc15, openai-e2ed7680c50ae3f074e0, openai-709cc8e2bd467b791689)
 - 2026년 10월 30일 02:00 — OpenAI는 AI 개발 및 배포에 있어 안전과 유익성을 강조하며, 이를 위해 Model Spec을 업데이트하고 모델 오정렬 감지 시스템을 구축했습니다. 또한, 실제 적용 사례로 Ropes & Gray와의 협력을 통해 법률 분야에서 AI 활용을 모색하고 있습니다. (출처: openai-9349f418e7bc7ab45091, openai-0f01adb2acab0a67ba71, openai-d948735545c20cf30721)
 - 2026년 10월 30일 18:30 — OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 안전 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성을 강조하는 등 다양한 정책 및 안전 관련 업데이트를 발표했습니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
+- 2026년 11월 3일 03:00 — OpenAI는 최근 보안 강화를 위해 버그 바운티 보상을 인상하고 내부 보안 스프린트를 준비하고 있습니다. 또한, Codex 개발 규모에 맞는 Git 호환 백엔드 Pando를 구축했으며, 전력망 안정성을 위한 Grid Protectors Program과 AI의 일상 업무 지원 능력을 측정하는 LifeVal 벤치마크를 도입했습니다. (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
