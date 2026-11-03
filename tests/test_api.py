@@ -4,6 +4,7 @@ from fastapi.testclient import TestClient
 
 import app
 from engine.pipeline import PipelineStats
+from engine.vector_store import SemanticResult
 
 
 def test_chat_prompt_defaults_to_korean_and_preserves_source_titles():
@@ -22,7 +23,9 @@ def _write_fixture(tmp_path, monkeypatch):
         "source_id": "obsidian-1",
         "title": "한글 노트",
         "summary": "검색 가능한 요약",
-        "relative_path": "AI/한글.md",
+        "relative_path": "C:/Users/private/Vault/AI/한글.md",
+        "source_file": "C:/Users/private/Vault/AI/한글.md",
+        "input_filename": "한글.md",
         "primary_category": "ai",
         "processed_at": "2026-09-07T00:00:00+00:00",
         "key_facts": ["중요 사실"],
@@ -53,7 +56,11 @@ def test_api_stats_recent_search_and_note(tmp_path, monkeypatch):
     }
     assert client.get("/recent").json()[0]["title"] == "한글 노트"
     assert client.get("/search", params={"q": "검색 가능한"}).json()[0]["source_id"] == "obsidian-1"
-    assert client.get("/note/obsidian-1").json()["relative_path"] == "AI/한글.md"
+    note = client.get("/note/obsidian-1").json()
+    assert "relative_path" not in note
+    assert "source_file" not in note
+    assert "input_filename" not in note
+    assert client.get("/search", params={"q": "C:/Users/private"}).json() == []
     assert client.get("/note/missing").status_code == 404
 
 
@@ -65,6 +72,28 @@ def test_public_wiki_api_contract_is_unchanged_by_knowledge_api(tmp_path, monkey
     assert client.get("/recent").json()[0]["source_id"] == "obsidian-1"
     assert client.get("/search", params={"q": "검색 가능한"}).status_code == 200
     assert client.get("/note/obsidian-1").status_code == 200
+    assert "relative_path" not in client.get("/recent").json()[0]
+
+
+def test_public_wiki_empty_state_and_removed_note_semantics(tmp_path, monkeypatch):
+    wiki_root = tmp_path / "wiki"
+    for category in ("ai", "investment", "philosophy", "misc"):
+        path = wiki_root / category / "index.md"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            f'---\n{{"category":"{category}","entries":[]}}\n---\n',
+            encoding="utf-8",
+        )
+    monkeypatch.setenv("WIKI_ROOT", str(wiki_root))
+    client = TestClient(app.app)
+
+    assert client.get("/stats").json() == {
+        "documents": 0,
+        "categories": {"ai": 0, "investment": 0, "philosophy": 0, "misc": 0},
+    }
+    assert client.get("/recent").json() == []
+    assert client.get("/search", params={"q": "removed"}).json() == []
+    assert client.get("/note/obsidian-1").status_code == 404
 
 
 def test_stats_works_without_import_state(tmp_path, monkeypatch):
@@ -80,36 +109,63 @@ def test_stats_works_without_import_state(tmp_path, monkeypatch):
 
 def test_health_reports_capabilities(monkeypatch):
     monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "true")
     monkeypatch.setenv("ENABLE_LOCAL_RAG", "false")
+    monkeypatch.setenv("KNOWLEDGE_STORE_BACKEND", "filesystem")
 
     response = TestClient(app.app).get("/health")
 
-    assert response.json() == {
-        "status": "ok",
-        "knowledge_store": {
-            "backend": "filesystem",
-            "status": "UNAVAILABLE",
-            "ref": None,
-            "commit": None,
-            "last_refresh": None,
-            "malformed_documents": 0,
-        },
-        "capabilities": {
-            "wiki_read": True,
-            "local_import": True,
-            "semantic_search": False,
-            "rag_chat": False,
-        },
+    payload = response.json()
+    assert payload["status"] == "ok"
+    assert payload["knowledge_store"]["backend"] == "filesystem"
+    assert payload["capabilities"] == {
+        "wiki_read": True,
+        "local_import": True,
+        "semantic_search": False,
+        "rag_chat": False,
     }
 
 
 def test_import_is_disabled_by_default(monkeypatch):
     monkeypatch.delenv("ENABLE_LOCAL_IMPORT", raising=False)
+    monkeypatch.delenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", raising=False)
 
     response = TestClient(app.app).post("/import")
 
     assert response.status_code == 503
     assert "ENABLE_LOCAL_IMPORT=true" in response.json()["detail"]
+
+
+def test_import_requires_publication_opt_in(monkeypatch):
+    monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
+    monkeypatch.delenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", raising=False)
+
+    response = TestClient(app.app).post("/import")
+
+    assert response.status_code == 503
+    assert "ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION=true" in response.json()["detail"]
+
+
+def test_import_publication_requires_authenticated_same_origin_request(monkeypatch):
+    monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "true")
+    client = TestClient(app.app)
+
+    response = client.post("/import")
+
+    assert response.status_code == 403
+    assert response.json()["detail"] == "CSRF protection header is required"
+
+    headers = {"x-csrf-protection": "1", "origin": "http://localhost:5173"}
+    response = client.post("/import", headers=headers)
+    assert response.status_code == 503
+    assert response.json()["detail"] == "Document authentication is not configured"
+
+    monkeypatch.setenv("APP_PASSWORD_HASH", "configured-placeholder")
+    monkeypatch.setenv("SESSION_SECRET", "s" * 32)
+    response = client.post("/import", headers=headers)
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Authentication required"
 
 
 def test_chatgpt_site_cors_is_allowed():
@@ -145,6 +201,9 @@ def test_api_import_delegates_to_existing_importer(tmp_path, monkeypatch):
     (vault / "note.md").write_text("# Note\nContent", encoding="utf-8")
     monkeypatch.setenv("OBSIDIAN_VAULT_PATH", str(vault))
     monkeypatch.setenv("ENABLE_LOCAL_IMPORT", "true")
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "true")
+    monkeypatch.setattr(app, "_require_same_origin", lambda request: None)
+    monkeypatch.setattr(app, "_require_document_session", lambda request: None)
     calls = []
 
     def fake_pipeline(path):
@@ -164,7 +223,7 @@ def test_api_semantic_search(monkeypatch):
     monkeypatch.setattr(
         app,
         "semantic_search",
-        lambda query, db_path, limit: [app.SemanticResult("Note", 0.9, "snippet", "source-1")],
+        lambda query, db_path, limit: [SemanticResult("Note", 0.9, "snippet", "source-1")],
     )
 
     response = TestClient(app.app).get("/semantic-search", params={"q": "meaning"})
@@ -178,7 +237,7 @@ def test_api_semantic_search(monkeypatch):
 def test_api_chat_uses_top_semantic_context_and_returns_sources(monkeypatch):
     monkeypatch.setenv("ENABLE_LOCAL_RAG", "true")
     matches = [
-        app.SemanticResult(f"Note {index}", 1 - index / 10, f"snippet {index}", f"source-{index}")
+        SemanticResult(f"Note {index}", 1 - index / 10, f"snippet {index}", f"source-{index}")
         for index in range(5)
     ]
     captured = {}

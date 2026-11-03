@@ -9,19 +9,21 @@ import os
 import re
 import stat
 import time
+import uuid
 from collections.abc import Callable, Iterator
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
 from urllib.parse import quote
 
-import engine.config
+import engine.config  # noqa: F401 - loads environment configuration
 from engine.cache import DEFAULT_CACHE_PATH, get_cached_payload, save_cached_payload
 from engine.inbox_wiki import (
     DEFAULT_WIKI_ROOT,
     GeminiInboxClassifier,
     _category_path,
+    _legacy_publication_enabled,
     _load_category_entries,
     _render_category,
     _validated_payload,
@@ -117,7 +119,7 @@ def _source_from_file(path: Path, vault_path: Path) -> tuple[SourceRecord, str, 
             title=heading.group(1).strip() if heading else path.stem,
             content=content,
             url=f"obsidian:///{quote(relative_path)}",
-            published_at=datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc),
+            published_at=datetime.fromtimestamp(path.stat().st_mtime, tz=UTC),
             source_tier="user-obsidian-vault",
             source_type="obsidian",
         ),
@@ -219,7 +221,7 @@ def process_markdown_file(
     classifier: GeminiInboxClassifier,
     wiki_root: Path,
     state_path: Path,
-    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    now: Callable[[], datetime] = lambda: datetime.now(UTC),
     delay_seconds: float = 0.0,
     max_retries: int = DEFAULT_MAX_RETRIES,
     delay_before: bool = False,
@@ -227,6 +229,8 @@ def process_markdown_file(
     force_reprocess: bool = False,
 ) -> ImportStats:
     """Process one Markdown file and persist the updated import state."""
+    if not _legacy_publication_enabled():
+        return ImportStats(skipped=1)
     source, relative_path, content_hash = _source_from_file(path, vault_path)
     previous = state["documents"].get(relative_path)
     if previous and previous.get("content_hash") == content_hash and not force_reprocess:
@@ -236,7 +240,7 @@ def process_markdown_file(
     if payload is not None:
         try:
             payload = _validated_payload(payload, None)
-        except Exception:
+        except Exception:  # noqa: BLE001 - discard invalid cached classifier output
             LOGGER.warning("Ignoring invalid cached payload for %s", relative_path)
             payload = None
     gemini_calls = 0
@@ -248,9 +252,12 @@ def process_markdown_file(
         payload = _classify_with_retry(classifier, source, hint, max_retries)
         save_cached_payload(content_hash, model, payload, cache_path)
         gemini_calls = 1
-    processed_at = now().astimezone(timezone.utc).isoformat()
+    processed_at = now().astimezone(UTC).isoformat()
+    public_id = (previous or {}).get("public_id") or uuid.uuid4().hex
     entry = {
         "source_id": source.source_id,
+        "source_type": "obsidian",
+        "_public_id": public_id,
         "source_url": None,
         "input_filename": path.name,
         "source_file": str(path),
@@ -262,7 +269,7 @@ def process_markdown_file(
     entries = [
         item
         for item in _load_category_entries(category_path)
-        if item["source_id"] != source.source_id
+        if item["source_id"] not in {source.source_id, public_id}
     ]
     entries.append(entry)
     category_path.parent.mkdir(parents=True, exist_ok=True)
@@ -273,6 +280,7 @@ def process_markdown_file(
     )
     state["documents"][relative_path] = {
         "source_id": source.source_id,
+        "public_id": public_id,
         "source_type": "obsidian",
         "source_file": str(path),
         "relative_path": relative_path,
@@ -304,7 +312,7 @@ def import_file(
     classifier: GeminiInboxClassifier | None = None,
     wiki_root: Path = DEFAULT_WIKI_ROOT,
     state_path: Path = DEFAULT_STATE_PATH,
-    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    now: Callable[[], datetime] = lambda: datetime.now(UTC),
     delay_seconds: float | None = None,
     max_retries: int | None = None,
     cache_path: Path | None = None,
@@ -318,6 +326,8 @@ def import_file(
         raise ValueError(f"File is outside the Obsidian Vault: {path}")
     if target.suffix.casefold() != ".md":
         raise ValueError(f"Not a Markdown file: {path}")
+    if not _legacy_publication_enabled():
+        return ImportStats(skipped=1)
     state = load_import_state(state_path)
     resolved_delay = _setting_float(
         (
@@ -351,12 +361,15 @@ def import_vault(
     vault_path: Path | None = None,
     wiki_root: Path = DEFAULT_WIKI_ROOT,
     state_path: Path = DEFAULT_STATE_PATH,
-    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    now: Callable[[], datetime] = lambda: datetime.now(UTC),
     delay_seconds: float | None = None,
     max_retries: int | None = None,
     cache_path: Path | None = None,
     rebuild_invalid: bool = False,
 ) -> ImportStats:
+    if not _legacy_publication_enabled():
+        LOGGER.info("Legacy Obsidian publication is disabled")
+        return ImportStats()
     configured_path = _resolve_vault_path(vault_path)
 
     state = load_import_state(state_path)
@@ -392,13 +405,18 @@ def import_vault(
                 max_retries,
                 delay_before=calls > 0,
                 cache_path=resolved_cache_path,
-                force_reprocess=source_id_for_path(path, configured_path) in invalid_source_ids,
+                force_reprocess=(
+                    state["documents"]
+                    .get(path.relative_to(configured_path).as_posix(), {})
+                    .get("public_id", source_id_for_path(path, configured_path))
+                    in invalid_source_ids
+                ),
             )
             read_count += result.read_markdown
             calls += result.gemini_calls
             processed += result.processed
             skipped += result.skipped
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - isolate a failed source file
             failed += 1
             LOGGER.error("Obsidian document %s failed and was not marked processed: %s", path, exc)
     return ImportStats(read_count, calls, processed, skipped, failed)
@@ -423,7 +441,7 @@ def _invalid_source_ids(wiki_root: Path) -> set[str]:
                 if entry.get("primary_category") != category:
                     raise ValueError("Wiki index category does not match primary_category")
                 _validated_payload(entry, entry.get("source_url"))
-            except Exception as exc:
+            except Exception as exc:  # noqa: BLE001 - mark malformed index entries
                 source_id = entry.get("source_id")
                 if source_id:
                     invalid.add(source_id)

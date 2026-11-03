@@ -160,7 +160,6 @@ function LegacyNotePreview({ note }) {
       {blocks.map((block, index) => <p key={index}>{block}</p>)}
       {note.key_facts?.length > 0 && <><h3>{t('keyFacts')}</h3><ul>{note.key_facts.map(fact => <li key={fact}>{fact}</li>)}</ul></>}
       {note.processed_at && <p className="muted">{formatDateTime(note.processed_at)}</p>}
-      <p className="muted document-path">{note.relative_path}</p>
     </article>
   )
 }
@@ -243,7 +242,7 @@ function DashboardScreen() {
           <form onSubmit={semanticSearch} className="semantic-form"><p className="eyebrow">{t('semanticSearch')}</p><div className="form-row"><input aria-label={t('semanticSearchAria')} value={semanticQuery} onChange={e => setSemanticQuery(e.target.value)} placeholder={t('askByMeaning')} /><button type="submit">{t('find')}</button></div></form>
           {semanticResults && <div className="result-group"><div className="group-heading"><p className="eyebrow">{t('similarNotes')}</p><button className="text-button" onClick={() => setSemanticResults(null)}>{t('clear')}</button></div>{semanticResults.length === 0 ? <p className="muted">{t('noSemanticMatches')}</p> : semanticResults.map(item => <button className="note-row" key={item.id} onClick={() => openNote(item)}><strong>{item.title}</strong><small>{Math.round(item.score * 100)}% {t('match')} · {item.snippet}</small></button>)}</div>}
           <div className="group-heading"><p className="eyebrow">{results ? t('searchResults') : t('recentDocuments')}</p>{results && <button className="text-button" onClick={() => setResults(null)}>{t('clear')}</button>}</div>
-          {loading ? <Loading label={t('loadingDocuments')} /> : list.length === 0 ? <p className="muted">{results ? t('noSearchResults') : t('noDocumentsFound')}</p> : list.map(note => <button className={`note-row ${selected?.source_id === note.source_id ? 'selected' : ''}`} key={note.source_id} onClick={() => openNote(note)}><strong>{note.title}</strong><small>{note.relative_path}{note.processed_at ? ` · ${formatDateTime(note.processed_at)}` : ''}</small></button>)}
+          {loading ? <Loading label={t('loadingDocuments')} /> : list.length === 0 ? <p className="muted">{results ? t('noSearchResults') : t('noDocumentsFound')}</p> : list.map(note => <button className={`note-row ${selected?.source_id === note.source_id ? 'selected' : ''}`} key={note.source_id} onClick={() => openNote(note)}><strong>{note.title}</strong><small>{note.processed_at ? formatDateTime(note.processed_at) : ''}</small></button>)}
         </div>
         <div className="panel dashboard-preview">{selected ? <LegacyNotePreview note={selected} /> : <div className="empty-state"><span>↗</span><h2>{t('selectDocument')}</h2><p>{t('selectDocumentDescription')}</p></div>}</div>
       </section>

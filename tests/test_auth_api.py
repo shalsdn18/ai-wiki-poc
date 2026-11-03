@@ -105,6 +105,7 @@ def test_authenticated_knowledge_api_can_read_private_document(tmp_path, monkeyp
         encoding="utf-8",
     )
     monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path / "knowledge"))
+    monkeypatch.setenv("KNOWLEDGE_STORE_BACKEND", "filesystem")
     _configure_auth(monkeypatch)
     client = TestClient(app.app)
     assert (

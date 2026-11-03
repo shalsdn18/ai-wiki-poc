@@ -1,7 +1,9 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
+
+import pytest
 
 from engine import obsidian_import
 from engine.obsidian_import import (
@@ -12,6 +14,11 @@ from engine.obsidian_import import (
     load_import_state,
 )
 from engine.schemas import InboxKnowledgePayload
+
+
+@pytest.fixture(autouse=True)
+def allow_legacy_publication_for_explicit_unit_cases(monkeypatch):
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "true")
 
 
 class FakeClassifier:
@@ -103,7 +110,7 @@ def test_import_routes_nested_notes_and_preserves_originals(tmp_path):
         vault,
         wiki,
         tmp_path / ".obsidian_import_state.json",
-        now=lambda: datetime(2026, 9, 2, tzinfo=timezone.utc),
+        now=lambda: datetime(2026, 9, 2, tzinfo=UTC),
     )
 
     assert stats.read_markdown == 2
@@ -154,6 +161,22 @@ def test_state_is_outside_vault(tmp_path):
     assert document["processed_at"]
 
 
+def test_obsidian_publication_requires_explicit_opt_in(tmp_path, monkeypatch):
+    vault = tmp_path / "Vault"
+    vault.mkdir()
+    (vault / "note.md").write_text("# Private note\nPrivate body", encoding="utf-8")
+    wiki = tmp_path / "wiki"
+    classifier = FakeClassifier()
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "false")
+
+    stats = import_vault(classifier, vault, wiki, tmp_path / "state.json")
+
+    assert stats == obsidian_import.ImportStats()
+    assert classifier.calls == 0
+    assert not wiki.exists()
+    assert not (tmp_path / "state.json").exists()
+
+
 def test_reads_vault_path_from_environment(tmp_path, monkeypatch):
     vault = tmp_path / "Vault"
     vault.mkdir()
@@ -189,7 +212,7 @@ def test_import_skips_moc_readme_and_template_markdown(tmp_path):
         vault,
         wiki,
         tmp_path / ".obsidian_import_state.json",
-        now=lambda: datetime(2026, 9, 2, tzinfo=timezone.utc),
+        now=lambda: datetime(2026, 9, 2, tzinfo=UTC),
     )
 
     assert stats.read_markdown == 1
@@ -235,6 +258,12 @@ def test_import_preserves_korean_filename_content_and_bom(tmp_path):
     rendered = (wiki / "misc" / "index.md").read_text(encoding="utf-8")
     assert "## GPT-5.6 사이버 및 데이브레이크" in rendered
     assert "한글 본문입니다." in rendered
+    assert "source_file" not in rendered
+    assert "input_filename" not in rendered
+    assert "relative_path" not in rendered
+    assert str(vault) not in rendered
+    assert '"source_type": "obsidian"' in rendered
+    assert '"source_id": "obsidian-' not in rendered
 
 
 class GeminiError(RuntimeError):
@@ -385,9 +414,11 @@ def test_rebuild_invalid_reprocesses_only_invalid_entries_and_preserves_source_i
     wiki = tmp_path / "wiki"
     wiki.mkdir()
 
-    def entry(source_id, relative_path, title, summary):
+    def entry(source_id, public_id, relative_path, title, summary):
         return {
-            "source_id": source_id,
+            "source_id": public_id,
+            "source_type": "obsidian",
+            "_public_id": public_id,
             "source_url": None,
             "input_filename": Path(relative_path).name,
             "source_file": str(vault / relative_path),
@@ -408,11 +439,12 @@ def test_rebuild_invalid_reprocesses_only_invalid_entries_and_preserves_source_i
 
     valid_id = source_id_for_path(valid_note, vault)
     invalid_id = source_id_for_path(invalid_note, vault)
+    valid_public_id, invalid_public_id = "valid-public-id", "invalid-public-id"
     frontmatter = {
         "category": "misc",
         "entries": [
-            entry(valid_id, "valid.md", "정상 문서", "정상 요약"),
-            entry(invalid_id, "invalid.md", "invalid", "ìž˜ëª»ë'œ 요약"),
+            entry(valid_id, valid_public_id, "valid.md", "정상 문서", "정상 요약"),
+            entry(invalid_id, invalid_public_id, "invalid.md", "invalid", "ìž˜ëª»ë'œ 요약"),
         ],
     }
     (wiki / "misc").mkdir()
@@ -428,13 +460,14 @@ def test_rebuild_invalid_reprocesses_only_invalid_entries_and_preserves_source_i
                 "documents": {
                     name: {
                         "source_id": source_id,
+                        "public_id": public_id,
                         "content_hash": sha256(
                             path.read_text(encoding="utf-8").encode("utf-8")
                         ).hexdigest(),
                     }
-                    for name, path, source_id in (
-                        ("valid.md", valid_note, valid_id),
-                        ("invalid.md", invalid_note, invalid_id),
+                    for name, path, source_id, public_id in (
+                        ("valid.md", valid_note, valid_id, valid_public_id),
+                        ("invalid.md", invalid_note, invalid_id, invalid_public_id),
                     )
                 },
             }
@@ -456,4 +489,5 @@ def test_rebuild_invalid_reprocesses_only_invalid_entries_and_preserves_source_i
     assert classifier.calls == 1
     rebuilt = json.loads((wiki / "misc" / "index.md").read_text(encoding="utf-8").split("---")[1])
     ids = {item["source_id"] for item in rebuilt["entries"]}
-    assert {invalid_id, valid_id} <= ids
+    assert {invalid_public_id, valid_public_id} <= ids
+    assert not any(value.startswith("obsidian-") for value in ids)

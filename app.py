@@ -16,7 +16,7 @@ from fastapi import FastAPI, HTTPException, Query, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-import engine.config
+import engine.config  # noqa: F401 - loads environment configuration
 from engine import document_store
 from engine.inbox_wiki import CATEGORIES
 from engine.knowledge_store import (
@@ -30,8 +30,6 @@ from engine.knowledge_store import (
 from engine.obsidian_import import discover_markdown
 from engine.pipeline import PipelineStats, run_pipeline
 from engine.vector_store import (
-    DEFAULT_VECTOR_DB,
-    SemanticResult,
     get_documents,
     semantic_search,
 )
@@ -224,7 +222,8 @@ def health() -> dict[str, object]:
         "knowledge_store": knowledge_store,
         "capabilities": {
             "wiki_read": True,
-            "local_import": _enabled("ENABLE_LOCAL_IMPORT"),
+            "local_import": _enabled("ENABLE_LOCAL_IMPORT")
+            and _enabled("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION"),
             "semantic_search": _enabled("ENABLE_LOCAL_RAG"),
             "rag_chat": _enabled("ENABLE_LOCAL_RAG"),
         },
@@ -240,7 +239,6 @@ class NoteResponse(BaseModel):
     source_id: str
     title: str
     summary: str
-    relative_path: str
     primary_category: str
     processed_at: str
     key_facts: list[str] = Field(default_factory=list)
@@ -479,7 +477,6 @@ def _note(entry: dict[str, Any]) -> NoteResponse:
         source_id=entry["source_id"],
         title=entry["title"],
         summary=entry["summary"],
-        relative_path=entry["relative_path"],
         primary_category=entry["primary_category"],
         processed_at=entry["processed_at"],
         key_facts=entry.get("key_facts", []),
@@ -515,7 +512,6 @@ def search(
             for field in (
                 "title",
                 "summary",
-                "relative_path",
                 "topic",
                 "tags",
                 "key_facts",
@@ -553,12 +549,22 @@ def semantic(
 
 
 @app.post("/import", response_model=ImportResponse)
-def run_import() -> ImportResponse:
+def run_import(request: Request) -> ImportResponse:
     if not _enabled("ENABLE_LOCAL_IMPORT"):
         raise HTTPException(
             status_code=503,
             detail="Local import is disabled. Set ENABLE_LOCAL_IMPORT=true to enable it.",
         )
+    if not _enabled("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION"):
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Legacy public Wiki publication is disabled. Set "
+                "ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION=true to enable it."
+            ),
+        )
+    _require_same_origin(request)
+    _require_document_session(request)
     vault = _vault_path()
     totals = {
         field: 0 for field in ("read_markdown", "gemini_calls", "processed", "skipped", "failed")
@@ -568,7 +574,7 @@ def run_import() -> ImportResponse:
             result: PipelineStats = run_pipeline(path)
             for field in totals:
                 totals[field] += getattr(result, field)
-        except Exception:
+        except Exception:  # noqa: BLE001 - continue importing remaining files
             totals["failed"] += 1
     return ImportResponse(**totals)
 

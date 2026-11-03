@@ -8,13 +8,13 @@ import logging
 import os
 import re
 from collections.abc import Callable, Sequence
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
 from typing import Protocol
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
-import engine.config
+import engine.config  # noqa: F401 - loads environment configuration
 from engine.localization import category_label, format_datetime_ko
 from engine.schemas import InboxKnowledgePayload, KnowledgeCategory, SourceRecord
 from engine.wiki_poc import DEFAULT_MODEL
@@ -25,9 +25,7 @@ DEFAULT_WIKI_ROOT = Path("wiki")
 DEFAULT_STATE = DEFAULT_INBOX / ".processed.json"
 CATEGORIES: tuple[KnowledgeCategory, ...] = ("ai", "investment", "philosophy", "misc")
 _SUSPICIOUS_MOJIBAKE = re.compile(r"[\ufffdÃÂÐÑ]|(?:ì|ë|ê|í|ï»¿)[\x80-\xff]")
-_JSON_FIELD_FRAGMENT = re.compile(
-    r'[`{}]|"(?:title|summary|key_facts|topic|primary_category)"\s*:'
-)
+_JSON_FIELD_FRAGMENT = re.compile(r'[`{}]|"(?:title|summary|key_facts|topic|primary_category)"\s*:')
 _REPEATED_TOKEN = re.compile(r"(.)\1{4,}")
 
 
@@ -113,9 +111,7 @@ def _parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
     if not lines or lines[0].strip() != "---":
         return {}, text.strip()
     try:
-        end = next(
-            index for index in range(1, len(lines)) if lines[index].strip() == "---"
-        )
+        end = next(index for index in range(1, len(lines)) if lines[index].strip() == "---")
     except StopIteration as exc:
         raise ValueError("Unclosed inbox frontmatter") from exc
     metadata: dict[str, str] = {}
@@ -133,9 +129,7 @@ def read_inbox_source(path: Path) -> tuple[SourceRecord, str | None, str]:
     metadata, content = _parse_frontmatter(path.read_text(encoding="utf-8"))
     if not content:
         raise ValueError("Inbox document content is empty")
-    source_url = (
-        normalize_url(metadata["source_url"]) if metadata.get("source_url") else None
-    )
+    source_url = normalize_url(metadata["source_url"]) if metadata.get("source_url") else None
     content_hash = sha256(content.encode("utf-8")).hexdigest()
     identity = source_url or f"content:{content_hash}"
     source_id = f"inbox-{sha256(identity.encode('utf-8')).hexdigest()[:20]}"
@@ -146,7 +140,7 @@ def read_inbox_source(path: Path) -> tuple[SourceRecord, str | None, str]:
             title=metadata.get("title") or path.stem,
             content=content,
             url=source_url or local_url,
-            published_at=datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc),
+            published_at=datetime.fromtimestamp(path.stat().st_mtime, tz=UTC),
             source_tier=f"user-inbox:{metadata.get('type', 'document')}",
         ),
         source_url,
@@ -178,6 +172,42 @@ def _category_path(root: Path, category: KnowledgeCategory) -> Path:
     return root / category / "index.md"
 
 
+def _public_entry(entry: dict) -> dict:
+    """Project internal ingestion records onto the public Wiki contract."""
+    source_type = entry.get("source_type")
+    raw_source_id = entry.get("source_id")
+    is_legacy_path_id = str(raw_source_id or "").startswith("obsidian-")
+    is_obsidian = source_type == "obsidian" or is_legacy_path_id
+    if is_obsidian:
+        source_type = "obsidian"
+    if is_legacy_path_id:
+        source_id = entry.get("_public_id")
+    elif is_obsidian:
+        source_id = entry.get("_public_id") or raw_source_id
+    else:
+        source_id = raw_source_id
+    if not isinstance(source_id, str) or not source_id:
+        raise ValueError("Public Wiki entry requires an opaque source ID")
+    fields = (
+        "source_url",
+        "processed_at",
+        "title",
+        "summary",
+        "key_facts",
+        "primary_category",
+        "categories",
+        "tags",
+        "importance",
+        "topic",
+        "related_topics",
+    )
+    public = {"source_id": source_id}
+    if source_type in {"obsidian", "inbox"}:
+        public["source_type"] = source_type
+    public.update({field: entry[field] for field in fields if field in entry})
+    return public
+
+
 def _load_category_entries(path: Path) -> list[dict]:
     if not path.exists():
         return []
@@ -193,7 +223,9 @@ def _load_category_entries(path: Path) -> list[dict]:
 
 def _render_category(category: KnowledgeCategory, entries: Sequence[dict]) -> str:
     ordered = sorted(
-        entries, key=lambda item: (item["processed_at"], item["title"]), reverse=True
+        (_public_entry(item) for item in entries),
+        key=lambda item: (item["processed_at"], item["title"]),
+        reverse=True,
     )
     frontmatter = json.dumps(
         {"category": category, "entries": ordered},
@@ -220,29 +252,20 @@ def _render_category(category: KnowledgeCategory, entries: Sequence[dict]) -> st
             f"- 카테고리: {', '.join(category_label(category) for category in entry['categories'])}\n"
             f"- 태그: {tags}\n"
             f"- 출처: {source}\n"
-            f"- 입력 파일: `{entry['input_filename']}`\n"
             f"- 처리 시각: {format_datetime_ko(entry['processed_at'])}\n\n"
             f"### 핵심 정보\n\n{facts}"
         )
     body = "\n\n".join(sections) if sections else "_아직 저장된 지식이 없습니다._"
-    return (
-        f"---\n{frontmatter}\n---\n\n# {category_label(category)} 지식 위키\n\n{body}\n"
-    )
+    return f"---\n{frontmatter}\n---\n\n# {category_label(category)} 지식 위키\n\n{body}\n"
 
 
-def _validated_payload(
-    payload: object, source_url: str | None
-) -> InboxKnowledgePayload:
+def _validated_payload(payload: object, source_url: str | None) -> InboxKnowledgePayload:
     validated = InboxKnowledgePayload.model_validate(payload)
     categories = list(dict.fromkeys(validated.categories))
     tags = list(dict.fromkeys(tag.strip() for tag in validated.tags if tag.strip()))
-    facts = list(
-        dict.fromkeys(fact.strip() for fact in validated.key_facts if fact.strip())
-    )
+    facts = list(dict.fromkeys(fact.strip() for fact in validated.key_facts if fact.strip()))
     related_topics = list(
-        dict.fromkeys(
-            topic.strip() for topic in validated.related_topics if topic.strip()
-        )
+        dict.fromkeys(topic.strip() for topic in validated.related_topics if topic.strip())
     )
     normalized = validated.model_copy(
         update={
@@ -284,8 +307,10 @@ def process_inbox(
     inbox_dir: Path = DEFAULT_INBOX,
     wiki_root: Path = DEFAULT_WIKI_ROOT,
     state_path: Path | None = None,
-    now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
+    now: Callable[[], datetime] = lambda: datetime.now(UTC),
 ) -> dict[str, str]:
+    if not _legacy_publication_enabled():
+        return {path.name: "publication_disabled" for path in inbox_dir.glob("*.md")}
     state_path = state_path or inbox_dir / ".processed.json"
     state = load_processed_state(state_path)
     results: dict[str, str] = {}
@@ -299,9 +324,10 @@ def process_inbox(
             if shared_classifier is None:
                 shared_classifier = GeminiInboxClassifier()
             payload = _validated_payload(shared_classifier.classify(source), source_url)
-            processed_at = now().astimezone(timezone.utc).isoformat()
+            processed_at = now().astimezone(UTC).isoformat()
             entry = {
                 "source_id": source.source_id,
+                "source_type": "inbox",
                 "source_url": source_url,
                 "input_filename": path.name,
                 "processed_at": processed_at,
@@ -335,12 +361,19 @@ def process_inbox(
                 newline="\n",
             )
             results[path.name] = "processed"
-        except Exception as exc:
-            LOGGER.error(
-                "Inbox item %s failed and was not marked processed: %s", path.name, exc
-            )
+        except Exception as exc:  # noqa: BLE001 - isolate a malformed inbox item
+            LOGGER.error("Inbox item %s failed and was not marked processed: %s", path.name, exc)
             results[path.name] = "failed"
     return results
+
+
+def _legacy_publication_enabled() -> bool:
+    return os.getenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "false").strip().casefold() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
 
 
 def main() -> int:

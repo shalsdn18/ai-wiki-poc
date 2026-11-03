@@ -1,10 +1,15 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 from pydantic import ValidationError
 
-from engine.inbox_wiki import _classification_prompt, _validated_payload, process_inbox
+from engine.inbox_wiki import (
+    _classification_prompt,
+    _render_category,
+    _validated_payload,
+    process_inbox,
+)
 from engine.schemas import InboxKnowledgePayload, SourceRecord
 
 
@@ -19,6 +24,11 @@ class FakeClassifier:
         if self.error:
             raise self.error
         return self.payload
+
+
+@pytest.fixture(autouse=True)
+def allow_legacy_publication_for_explicit_unit_cases(monkeypatch):
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "true")
 
 
 def payload(primary, categories=None):
@@ -36,9 +46,7 @@ def payload(primary, categories=None):
     )
 
 
-def write_inbox(
-    root, name="item.md", url="https://example.com/article", body="Saved article text"
-):
+def write_inbox(root, name="item.md", url="https://example.com/article", body="Saved article text"):
     root.mkdir(parents=True, exist_ok=True)
     path = root / name
     path.write_text(
@@ -66,9 +74,7 @@ def test_single_category_routes_to_category_wiki(category, tmp_path):
 def test_ai_and_investment_keeps_one_primary_and_multiple_categories(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    process_inbox(
-        FakeClassifier(payload("investment", ["investment", "ai"])), inbox, wiki
-    )
+    process_inbox(FakeClassifier(payload("investment", ["investment", "ai"])), inbox, wiki)
     text = (wiki / "investment" / "index.md").read_text(encoding="utf-8")
     assert "카테고리: 투자, AI" in text
     assert not (wiki / "ai" / "index.md").exists()
@@ -169,7 +175,7 @@ def test_classification_prompt_defaults_to_korean_and_preserves_source_metadata(
         title="Original English Source Title",
         content="An English source with OpenAI and GPT-5 details.",
         url="https://example.com/source",
-        published_at=datetime(2026, 9, 2, tzinfo=timezone.utc),
+        published_at=datetime(2026, 9, 2, tzinfo=UTC),
         source_tier="official",
     )
     prompt = _classification_prompt(source)
@@ -184,7 +190,7 @@ def test_wiki_display_uses_korean_labels_and_kst_without_changing_iso_metadata(
 ):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    fixed = datetime(2026, 9, 2, 1, 2, 3, tzinfo=timezone.utc)
+    fixed = datetime(2026, 9, 2, 1, 2, 3, tzinfo=UTC)
     process_inbox(
         FakeClassifier(payload("investment", ["investment", "ai"])),
         inbox,
@@ -195,18 +201,13 @@ def test_wiki_display_uses_korean_labels_and_kst_without_changing_iso_metadata(
     state = json.loads((inbox / ".processed.json").read_text(encoding="utf-8"))
     assert "## 핵심 정보" in text
     assert "처리 시각: 2026년 9월 2일 10:02" in text
-    assert (
-        next(iter(state["processed_sources"].values()))["processed_at"]
-        == fixed.isoformat()
-    )
+    assert next(iter(state["processed_sources"].values()))["processed_at"] == fixed.isoformat()
 
 
 def test_gemini_failure_does_not_mark_processed(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    result = process_inbox(
-        FakeClassifier(error=RuntimeError("Gemini unavailable")), inbox, wiki
-    )
+    result = process_inbox(FakeClassifier(error=RuntimeError("Gemini unavailable")), inbox, wiki)
     assert result == {"item.md": "failed"}
     assert not (inbox / ".processed.json").exists()
     assert not (wiki / "ai" / "index.md").exists()
@@ -215,7 +216,7 @@ def test_gemini_failure_does_not_mark_processed(tmp_path):
 def test_provenance_preserved_but_internal_hash_not_rendered(tmp_path):
     inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
     write_inbox(inbox)
-    fixed = datetime(2026, 9, 2, 1, 2, 3, tzinfo=timezone.utc)
+    fixed = datetime(2026, 9, 2, 1, 2, 3, tzinfo=UTC)
     process_inbox(FakeClassifier(payload("ai")), inbox, wiki, now=lambda: fixed)
     text = (wiki / "ai" / "index.md").read_text(encoding="utf-8")
     state = json.loads((inbox / ".processed.json").read_text(encoding="utf-8"))
@@ -226,3 +227,56 @@ def test_provenance_preserved_but_internal_hash_not_rendered(tmp_path):
     assert item["content_hash"] not in text
     assert "https://llm-invented.example/wrong" not in text
     assert "https://example.com/article" in text
+
+
+def test_public_renderer_removes_local_filesystem_metadata():
+    entry = {
+        "source_id": "inbox-opaque-id",
+        "source_type": "inbox",
+        "source_url": "https://example.com/article",
+        "processed_at": "2026-09-02T01:02:03+00:00",
+        "title": "Safe title",
+        "summary": "Safe summary",
+        "key_facts": [],
+        "primary_category": "ai",
+        "categories": ["ai"],
+        "tags": [],
+        "importance": 3,
+        "topic": "Safe topic",
+        "related_topics": [],
+        "source_file": "C:/Users/private/Vault/secret.md",
+        "input_filename": "secret.md",
+        "relative_path": "AI/secret.md",
+        "absolute_path": "C:/Users/private/Vault/secret.md",
+        "local_path": "C:/Users/private/Vault/secret.md",
+        "vault_path": "C:/Users/private/Vault",
+    }
+
+    rendered = _render_category("ai", [entry])
+
+    for private_value in (
+        "source_file",
+        "input_filename",
+        "relative_path",
+        "absolute_path",
+        "local_path",
+        "vault_path",
+        "C:/Users/private",
+        "secret.md",
+    ):
+        assert private_value not in rendered
+    assert '"source_type": "inbox"' in rendered
+
+
+def test_inbox_publication_requires_explicit_opt_in(tmp_path, monkeypatch):
+    inbox, wiki = tmp_path / "inbox", tmp_path / "wiki"
+    write_inbox(inbox)
+    monkeypatch.setenv("ENABLE_LEGACY_PUBLIC_WIKI_PUBLICATION", "false")
+    classifier = FakeClassifier(payload("ai"))
+
+    result = process_inbox(classifier, inbox, wiki)
+
+    assert result == {"item.md": "publication_disabled"}
+    assert classifier.calls == 0
+    assert not (wiki / "ai" / "index.md").exists()
+    assert not (inbox / ".processed.json").exists()
