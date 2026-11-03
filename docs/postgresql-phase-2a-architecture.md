@@ -1,6 +1,6 @@
 # PostgreSQL Phase 2A: Operational State Architecture
 
-**Status:** design; no runtime code, database, deployment, or user data changed.
+**Status:** canonical Phase 2A architecture and consistency contract. The opt-in persistence foundation is implemented in `engine/postgres_operational.py` with migration `migrations/001_phase_2a_operational_state.sql`; no production database or deployment has been enabled.
 
 ## 1. Scope and repository evidence
 
@@ -101,7 +101,7 @@ This ensures the pointer, when non-null, targets a revision belonging to that do
 
 ### Migration foundation
 
-No migration tooling exists in the inspected dependency/config files. Phase 2A implementation should use a small versioned plain-SQL migration set and `schema_migrations(version, checksum, applied_at)`, guarded by a PostgreSQL advisory lock. Apply each migration transactionally; fail closed on checksum mismatch or unknown newer version. Use `psycopg` v3 unless a later codebase decision justifies an ORM. Keep DSN in deployment secrets/environment, never source. This is a future implementation choice, not a dependency or environment change in this design task.
+The implementation uses a small versioned plain-SQL migration set and `schema_migrations(version, checksum, applied_at)`, guarded by a PostgreSQL advisory lock. Each migration applies transactionally; the runner fails closed on checksum mismatch or unknown newer version. `psycopg` v3 is the only new database dependency. There is no automatic downgrade: schema changes are forward-only; rollback uses an application version rollback while retaining schema/state, or a tested database restore before any stateful write cutover. Keep DSNs in deployment secrets/environment, never source.
 
 ## 5. Recommended write/commit protocol
 
@@ -213,11 +213,11 @@ This extends the old GitHub write plan's optimistic base version/no merge behavi
 
 ## 12. Migration and rollout plan
 
-1. **Schema foundation (Phase 2A):** add versioned migrations, connection/config validation, repository/catalog protocol and PostgreSQL schema behind an off-by-default selector. Preserve filesystem, GitHub and R2 adapters; preserve all existing endpoints, provider snapshot, `/documents`, watcher/import, and local RAG behavior.
+1. **Schema foundation (Phase 2A):** versioned migrations and an opt-in operational repository now exist. `POSTGRES_DATABASE_URL` is optional and is not consulted by current API routes. Preserve filesystem, GitHub and R2 adapters; preserve all existing endpoints, provider snapshot, `/documents`, watcher/import, and local RAG behavior.
 2. **Read-only bootstrap dry run:** enumerate all valid R2 manifests and verify exact source bytes, SHA-256, frontmatter and metadata. Produce a report only. Group by document ID. If a single latest revision is unambiguous under dates, propose it; timestamp ties or conflicting metadata become `NEEDS_REVIEW`, not silent lexical selection. No production writes in the dry run.
 3. **Shadow catalog validation:** import operational rows in a non-serving environment, compare document/revision counts, IDs, current metadata, hashes and object availability against R2. Re-run and prove idempotence; test restoring a backup. Do not change production reads.
 4. **Read cutover (separate approval/deployment):** serve catalog and current pointers from PostgreSQL while hydrating canonical bytes from R2. Keep old adapters selectable for rollback/reference. Watch parity and availability.
-5. **Write enablement (later separately approved phase):** use the intent-first protocol and R2 immutable keys. Once a PostgreSQL pointer has been promoted by the new writer, timestamp-only R2 reader is not a safe source of current state. Rollback means reverting application version while retaining PostgreSQL state, not switching back to legacy date selection.
+5. **Write endpoint enablement (later separately approved phase):** connect an R2 verifier/upload orchestrator to `reserve_intent` and `finalize_verified_revision`. This implementation intentionally exposes no Knowledge write endpoint and performs no R2 I/O. Once a PostgreSQL pointer has been promoted by the new writer, timestamp-only R2 reader is not a safe source of current state. Rollback means reverting application version while retaining PostgreSQL state, not switching back to legacy date selection.
 6. **Phase 2B:** add chunks, FTS, pgvector and indexing pipeline only after content-current and indexed-current semantics are operationally proven.
 
 Do not migrate `/documents` into this catalog as a side effect. Do not remove GitHub/filesystem adapters until their datasets and rollback path are explicitly retired in a later task. The existing GitHub-oriented `docs/knowledge-write-phase-3.md` must be marked superseded or updated before a future write implementation to avoid contradictory write contracts.
@@ -241,6 +241,10 @@ Do not migrate `/documents` into this catalog as a side effect. Do not remove Gi
 | Personal system fit | Fine for prototype with accepted manual recovery | Best balance for long-lived private knowledge and recoverability |
 
 **Recommendation:** adopt the durable intent-first design, but keep the runtime narrow: no broker, no worker implementation, no vector/FTS, no cross-user abstraction, no physical canonical revision deletion. Use PostgreSQL for operational truth and R2 for immutable bytes. Keep content pointer transition and durable job creation in one DB transaction, and treat every cross-store uncertainty as an explicit intent for retry/reconciliation.
+
+### Implemented foundation and local validation
+
+The separate repository layer provides deterministic request digests, validated immutable R2 key construction, durable intent reservation/replay, verified-object finalization, same-document CAS, atomic revision/pointer/intent/job/tag updates, job state transition validation, and non-destructive reconciliation classifications. The integration suite is separate under `tests/integration/` and requires `POSTGRES_TEST_DATABASE_URL`. Local setup, migration and test commands are documented in [`postgresql-phase-2a-operations.md`](postgresql-phase-2a-operations.md). None of this changes existing KnowledgeStore selection or public endpoints.
 
 ## References
 
