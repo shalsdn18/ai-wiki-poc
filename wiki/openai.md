@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 자사의 AI 모델(ChatGPT, Codex 등)을 다양한 산업 분야에 걸쳐 확장 적용하고 있으며, 동시에 주요 인사를 영입하여 기업의 커뮤니케이션 및 포지셔닝 역량을 강화하고 있습니다.",
+  "current_state": "OpenAI는 Pierre Computer Company를 인수하고, Images 2.6을 출시하며, Linux 커널 취약점을 해결하고, AWS GovCloud에 Daybreak Red를 제공하며, DevRev가 GPT-6.1 Sol을 활용하는 등 다양한 분야에서 확장을 진행하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -405,67 +405,81 @@
         "openai-019edb616369c3322f4c"
       ],
       "summary": "2026년 11월 3일, OpenAI는 ChatGPT와 Codex가 엔지니어링 및 부동산 관리 분야에서 워크플로우를 가속화하고 혁신하는 데 사용되고 있음을 발표했습니다. 같은 날, Cisco가 OpenAI 모델을 사용하여 기업 보안을 강화하고 있다는 소식도 전해졌습니다. 또한, OpenAI는 Jill Hazelbaker를 최고 기업 업무 책임자로 임명하여 글로벌 커뮤니케이션을 강화할 계획을 밝혔습니다."
+    },
+    {
+      "published_at": "2026-11-04T14:30:00+00:00",
+      "source_ids": [
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
+      ],
+      "summary": "2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다."
     }
   ],
   "key_facts": [
-    "ChatGPT와 Codex는 CAD, PCB 설계, 시뮬레이션 등 물리적 세계의 엔지니어링 워크플로우를 가속화하는 데 기여하고 있습니다.",
-    "Cisco는 네트워크 인텔리전스와 OpenAI 모델을 결합하여 기업 보안을 강화하고 적응형 방어를 구축하고 있습니다.",
-    "Heimstaden은 OpenAI의 ChatGPT Enterprise 및 Codex를 활용하여 부동산 관리를 혁신하고, 비용을 절감하며, 유럽 전역의 직원 역량을 강화하고 있습니다.",
-    "Jill Hazelbaker가 OpenAI의 최고 기업 업무 책임자(Chief Corporate Affairs Officer)로 임명되어 글로벌 커뮤니케이션 및 기업 포지셔닝을 이끌 예정입니다."
+    "OpenAI는 Pierre Computer Company, Inc.를 인수하여 Codex의 코드 관련 도구를 확장할 예정입니다.",
+    "OpenAI는 Linux 커널에서 948개의 로컬 권한 상승 취약점을 발견하고 패치를 생성하는 자율 파이프라인을 구축했습니다.",
+    "Daybreak Red는 GPT-5.6 Cyber를 통해 AWS GovCloud (US-East)에서 승인된 사이버 보안 작업에 사용할 수 있습니다.",
+    "Images 2.6은 ChatGPT, Codex 및 API 전반에 걸쳐 더 빠른 이미지 생성, GIF 생성, 정밀한 편집 및 새로운 API 제어 기능을 제공합니다.",
+    "DevRev는 GPT-6.1 Sol을 사용하여 기업 서비스의 균형 잡힌 추론, 속도 및 비용을 위해 Computer 및 Operator를 구동합니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-11-03T12:00:00+00:00",
+      "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
-        "openai-25493a43cba550c7fe81",
-        "openai-34e7d62615202d0de65f",
-        "openai-fc87a45dcfbf03d41725",
-        "openai-019edb616369c3322f4c"
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
       ],
-      "summary": "OpenAI의 AI 모델(ChatGPT, Codex)이 엔지니어링, 사이버 보안, 부동산 관리 등 다양한 산업 분야에서 새로운 활용 사례를 창출하고 있습니다."
+      "summary": "OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다."
     },
     {
-      "published_at": "2026-11-03T12:00:00+00:00",
+      "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
-        "openai-25493a43cba550c7fe81",
-        "openai-34e7d62615202d0de65f",
-        "openai-fc87a45dcfbf03d41725",
-        "openai-019edb616369c3322f4c"
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
       ],
-      "summary": "Jill Hazelbaker가 OpenAI의 최고 기업 업무 책임자로 합류하여 회사의 기업 커뮤니케이션 및 포지셔닝을 이끌게 됩니다."
+      "summary": "OpenAI가 Pierre Computer Company, Inc.를 인수했습니다."
     },
     {
-      "published_at": "2026-11-02T18:00:00+00:00",
+      "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
-        "openai-bca108e4c77bd86b238b",
-        "openai-0d297090385ad5a72451",
-        "openai-277870ffc8d71544c046",
-        "openai-5d33ed0c66ace544e65f",
-        "openai-5a014341bc3fc0f1d8b6"
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
       ],
-      "summary": "미래 컴퓨팅 캠퍼스의 전력망 안정성 지원 및 소비자 전기 요금 보호를 위한 Grid Protectors Program 도입"
+      "summary": "Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다."
     },
     {
-      "published_at": "2026-11-02T18:00:00+00:00",
+      "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
-        "openai-bca108e4c77bd86b238b",
-        "openai-0d297090385ad5a72451",
-        "openai-277870ffc8d71544c046",
-        "openai-5d33ed0c66ace544e65f",
-        "openai-5a014341bc3fc0f1d8b6"
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
       ],
-      "summary": "독립 보안 연구원들을 위한 보안 버그 바운티 보상 인상 및 새로운 보너스 도입"
+      "summary": "DevRev는 GPT-6.1 Sol을 활용하여 기업 자율 서비스를 제공합니다."
     },
     {
-      "published_at": "2026-11-02T18:00:00+00:00",
+      "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
-        "openai-bca108e4c77bd86b238b",
-        "openai-0d297090385ad5a72451",
-        "openai-277870ffc8d71544c046",
-        "openai-5d33ed0c66ace544e65f",
-        "openai-5a014341bc3fc0f1d8b6"
+        "openai-1be4fdd8e6ca80f0ec01",
+        "openai-fbaa86a829ad59fd10c5",
+        "openai-a3433e936d2c04bfa772",
+        "openai-295354ff422b0d4db922",
+        "openai-981785a01550309d0739"
       ],
-      "summary": "Codex 개발 규모에 맞춰 설계된 Git 호환 백엔드 Pando 구축"
+      "summary": "Daybreak Red (GPT-5.6 Cyber 포함)가 AWS GovCloud (US-East)에서 사용 가능해졌습니다."
     }
   ],
   "seen_hashes": [
@@ -492,6 +506,7 @@
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "3006e2562ed6d9b0ab928737199eb7df315b3d61251113325a29287808cac940",
     "32e75dfd7173585cca708dfb323e63df860f91fe82a2ba9f80f7431b00c20bac",
+    "33297446ed46b3f83fd1bba9a83c0d75e5d1089bdff3ec66273c1ddf339188a1",
     "34d84c354ab85428b75ece3d9eb323f416e40efe7d8c17d0201b2e88ef2f4cbd",
     "36b090d17a8d01cab29206c9dcde654276cbc2be9a189043824232001d86ca14",
     "375e8c7c27106cc7dde8515b67f64d8ea524ec39d1c1adfdb8a24db05c19d0b1",
@@ -499,6 +514,7 @@
     "38778e26f8c935f631d92adb15f7d0fdca99fbb1a7b82119ad15359ca8cac840",
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
+    "3ef898e58e738e8ff03c8130399b584472c5f779c6f1cddd939c6c5a3b61572e",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
     "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
@@ -582,8 +598,10 @@
     "c1d7114bbfc38d3b425085fc94225bb06c09977e14f6054efca349182b339596",
     "c2173aac4050b98deb200ce550d4b6e6f7df3d1324808ef18be2f837e3be172f",
     "c597f9098b7c0c0a6f51a3f3baa6bbe46a9766ebbfe2882e5281f0e9869dd7b3",
+    "ca132ab622250535a56242db73f75e73d7d3d571b59942c802d2c061b82f18f0",
     "cdb1f58bcbc6981aa685f3d301e1500d122a21b9f439ace0b50d7a3379094efe",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
+    "ceeb0818d1d3f99857bc04f3c702fb9e46be74ede59da5e3f7420a0a071b735c",
     "d1b894933eb5d1a9bec0326fd2dc41cefac13edc75a9651a5154a2afff65bc39",
     "d1e0b89e34a843e87343fdd783ed56a84c48cbb9cbce13c10458d28ad212f780",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
@@ -595,6 +613,7 @@
     "d7f8032b38e26b89c89a0233416b59860aa6c83f5a6dbb7897fd191fbb5d4386",
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
+    "de3e1b54247f89cfd994f7b4750be9d124a50810fc85e87f2130ddf4688f7761",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
     "e23ad90c8ce1792be439c2bff042012a77702b8956910b97f8948b3c3c971a63",
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
@@ -617,22 +636,23 @@
 
 ## 현재 상태
 
-OpenAI는 자사의 AI 모델(ChatGPT, Codex 등)을 다양한 산업 분야에 걸쳐 확장 적용하고 있으며, 동시에 주요 인사를 영입하여 기업의 커뮤니케이션 및 포지셔닝 역량을 강화하고 있습니다.
+OpenAI는 Pierre Computer Company를 인수하고, Images 2.6을 출시하며, Linux 커널 취약점을 해결하고, AWS GovCloud에 Daybreak Red를 제공하며, DevRev가 GPT-6.1 Sol을 활용하는 등 다양한 분야에서 확장을 진행하고 있습니다.
 
 ## 핵심 정보
 
-- ChatGPT와 Codex는 CAD, PCB 설계, 시뮬레이션 등 물리적 세계의 엔지니어링 워크플로우를 가속화하는 데 기여하고 있습니다.
-- Cisco는 네트워크 인텔리전스와 OpenAI 모델을 결합하여 기업 보안을 강화하고 적응형 방어를 구축하고 있습니다.
-- Heimstaden은 OpenAI의 ChatGPT Enterprise 및 Codex를 활용하여 부동산 관리를 혁신하고, 비용을 절감하며, 유럽 전역의 직원 역량을 강화하고 있습니다.
-- Jill Hazelbaker가 OpenAI의 최고 기업 업무 책임자(Chief Corporate Affairs Officer)로 임명되어 글로벌 커뮤니케이션 및 기업 포지셔닝을 이끌 예정입니다.
+- OpenAI는 Pierre Computer Company, Inc.를 인수하여 Codex의 코드 관련 도구를 확장할 예정입니다.
+- OpenAI는 Linux 커널에서 948개의 로컬 권한 상승 취약점을 발견하고 패치를 생성하는 자율 파이프라인을 구축했습니다.
+- Daybreak Red는 GPT-5.6 Cyber를 통해 AWS GovCloud (US-East)에서 승인된 사이버 보안 작업에 사용할 수 있습니다.
+- Images 2.6은 ChatGPT, Codex 및 API 전반에 걸쳐 더 빠른 이미지 생성, GIF 생성, 정밀한 편집 및 새로운 API 제어 기능을 제공합니다.
+- DevRev는 GPT-6.1 Sol을 사용하여 기업 서비스의 균형 잡힌 추론, 속도 및 비용을 위해 Computer 및 Operator를 구동합니다.
 
 ## 최근 변경 사항
 
-- 2026년 11월 3일 21:00 — OpenAI의 AI 모델(ChatGPT, Codex)이 엔지니어링, 사이버 보안, 부동산 관리 등 다양한 산업 분야에서 새로운 활용 사례를 창출하고 있습니다. (출처: openai-25493a43cba550c7fe81, openai-34e7d62615202d0de65f, openai-fc87a45dcfbf03d41725, openai-019edb616369c3322f4c)
-- 2026년 11월 3일 21:00 — Jill Hazelbaker가 OpenAI의 최고 기업 업무 책임자로 합류하여 회사의 기업 커뮤니케이션 및 포지셔닝을 이끌게 됩니다. (출처: openai-25493a43cba550c7fe81, openai-34e7d62615202d0de65f, openai-fc87a45dcfbf03d41725, openai-019edb616369c3322f4c)
-- 2026년 11월 3일 03:00 — 미래 컴퓨팅 캠퍼스의 전력망 안정성 지원 및 소비자 전기 요금 보호를 위한 Grid Protectors Program 도입 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
-- 2026년 11월 3일 03:00 — 독립 보안 연구원들을 위한 보안 버그 바운티 보상 인상 및 새로운 보너스 도입 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
-- 2026년 11월 3일 03:00 — Codex 개발 규모에 맞춰 설계된 Git 호환 백엔드 Pando 구축 (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
+- 2026년 11월 4일 23:30 — OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
+- 2026년 11월 4일 23:30 — OpenAI가 Pierre Computer Company, Inc.를 인수했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
+- 2026년 11월 4일 23:30 — Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
+- 2026년 11월 4일 23:30 — DevRev는 GPT-6.1 Sol을 활용하여 기업 자율 서비스를 제공합니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
+- 2026년 11월 4일 23:30 — Daybreak Red (GPT-5.6 Cyber 포함)가 AWS GovCloud (US-East)에서 사용 가능해졌습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 
 ## 변경 이력
 
@@ -680,3 +700,4 @@ OpenAI는 자사의 AI 모델(ChatGPT, Codex 등)을 다양한 산업 분야에 
 - 2026년 10월 30일 18:30 — OpenAI는 웹사이트의 AI 훈련 선호도 존중, ChatGPT의 안전 강화, 그리고 AI 혁신을 위한 공정 사용의 중요성을 강조하는 등 다양한 정책 및 안전 관련 업데이트를 발표했습니다. (출처: openai-84abd1857de5dfd951d9, openai-a86d24c59c826150d16d, openai-574dbaf7fc8731e40575)
 - 2026년 11월 3일 03:00 — OpenAI는 최근 보안 강화를 위해 버그 바운티 보상을 인상하고 내부 보안 스프린트를 준비하고 있습니다. 또한, Codex 개발 규모에 맞는 Git 호환 백엔드 Pando를 구축했으며, 전력망 안정성을 위한 Grid Protectors Program과 AI의 일상 업무 지원 능력을 측정하는 LifeVal 벤치마크를 도입했습니다. (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
 - 2026년 11월 3일 21:00 — 2026년 11월 3일, OpenAI는 ChatGPT와 Codex가 엔지니어링 및 부동산 관리 분야에서 워크플로우를 가속화하고 혁신하는 데 사용되고 있음을 발표했습니다. 같은 날, Cisco가 OpenAI 모델을 사용하여 기업 보안을 강화하고 있다는 소식도 전해졌습니다. 또한, OpenAI는 Jill Hazelbaker를 최고 기업 업무 책임자로 임명하여 글로벌 커뮤니케이션을 강화할 계획을 밝혔습니다. (출처: openai-25493a43cba550c7fe81, openai-34e7d62615202d0de65f, openai-fc87a45dcfbf03d41725, openai-019edb616369c3322f4c)
+- 2026년 11월 4일 23:30 — 2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
