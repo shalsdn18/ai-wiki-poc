@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google은 2026년 10월에 발표된 최신 AI 소식을 공유했습니다.",
+  "current_state": "Gemini는 스케치를 기능적인 앱으로 변환할 수 있으며, Gemini Omni 1.2 Flash를 통해 빠르고 비용 효율적인 긴 클립 처리를 제공합니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -180,13 +180,38 @@
         "gemini-996c88dfa31d64c0a9d6"
       ],
       "summary": "Google은 정기적으로 AI 관련 소식을 발표해왔으며, 이 소스는 2026년 10월에 발표된 최신 AI 업데이트를 요약합니다."
+    },
+    {
+      "published_at": "2026-11-05T17:00:00+00:00",
+      "source_ids": [
+        "gemini-485654c1f98a7cdcb606",
+        "gemini-502c395cb72e52281f58"
+      ],
+      "summary": "Gemini는 최근 Gemini Omni 1.2 Flash를 도입하여 긴 클립 처리를 개선하고, 스케치를 기능적인 앱으로 변환하는 새로운 기능을 선보였습니다."
     }
   ],
   "key_facts": [
-    "Google은 2026년 10월에 AI 관련 업데이트를 발표했습니다.",
-    "이 업데이트는 \"The latest AI news we announced in October 2026\"이라는 제목의 블로그 게시물을 통해 공개되었으며, 10월 AI 게시물에서 가져온 이미지의 애니메이션 캐러셀을 포함합니다."
+    "Gemini Omni 1.2 Flash는 빠르고 비용 효율적이며 더 긴 클립을 처리할 수 있습니다.",
+    "Gemini는 스케치를 기능적인 앱으로 변환할 수 있습니다.",
+    "스케치를 앱으로 변환하는 과정에서 Canvas 도구를 사용하여 코드를 즉시 생성하고 개선합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-05T17:00:00+00:00",
+      "source_ids": [
+        "gemini-485654c1f98a7cdcb606",
+        "gemini-502c395cb72e52281f58"
+      ],
+      "summary": "Gemini가 빠른 스케치를 라이브 앱으로 변환하는 기능이 추가되었습니다."
+    },
+    {
+      "published_at": "2026-11-05T17:00:00+00:00",
+      "source_ids": [
+        "gemini-485654c1f98a7cdcb606",
+        "gemini-502c395cb72e52281f58"
+      ],
+      "summary": "Gemini Omni 1.2 Flash가 도입되었습니다."
+    },
     {
       "published_at": "2026-11-02T17:45:00+00:00",
       "source_ids": [
@@ -209,24 +234,6 @@
         "gemini-e8b654ca9543c3054765"
       ],
       "summary": "이력서 업데이트를 위해 Gemini를 사용하여 메모를 이력서 항목으로 변환하는 기능이 제공됩니다."
-    },
-    {
-      "published_at": "2026-10-29T16:15:00+00:00",
-      "source_ids": [
-        "gemini-7ff097b88dbb7fb2e75d",
-        "gemini-e8b654ca9543c3054765"
-      ],
-      "summary": "Gemini 내에서 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집하는 기능이 추가되었습니다."
-    },
-    {
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "source_ids": [
-        "gemini-f1b1625f67db9cc81d99",
-        "gemini-a92d7b7ef0e2da4d5922",
-        "gemini-370e028ff47ae5fef76a",
-        "gemini-a128891378e42ce095b4"
-      ],
-      "summary": "차세대 모델인 Gemini 4 Carbon이 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -263,6 +270,7 @@
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "ad88486afcb221923120c26f806fc05ecd66d7d6729a01ebb10639a9ed4306bb",
+    "d0661df8d48a2cd1946155efcefb44417681c65ad43e71dd4c305b4b53f23152",
     "d149410c20ac0c3373c340018eb404e9a0d4def7d5b2446e545b861975aa4ee5",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
@@ -270,6 +278,7 @@
     "e2885b8a993bc904afd97781e9e23a8f980fecfe83857a76d60570e3732563d8",
     "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172",
     "e73e9f12bfe22a4cb06a5ba8177ee4e55a51d7e572241d4e07c36448c3259aed",
+    "fb296aa4f93995688c98311b004e45b979e3ae71598a46d6aedc4173091a32db",
     "fc1da21d313c01663c99f490192fb014a1cc764e462fd08dc30978a8660ab741"
   ]
 }
@@ -279,20 +288,21 @@
 
 ## 현재 상태
 
-Google은 2026년 10월에 발표된 최신 AI 소식을 공유했습니다.
+Gemini는 스케치를 기능적인 앱으로 변환할 수 있으며, Gemini Omni 1.2 Flash를 통해 빠르고 비용 효율적인 긴 클립 처리를 제공합니다.
 
 ## 핵심 정보
 
-- Google은 2026년 10월에 AI 관련 업데이트를 발표했습니다.
-- 이 업데이트는 "The latest AI news we announced in October 2026"이라는 제목의 블로그 게시물을 통해 공개되었으며, 10월 AI 게시물에서 가져온 이미지의 애니메이션 캐러셀을 포함합니다.
+- Gemini Omni 1.2 Flash는 빠르고 비용 효율적이며 더 긴 클립을 처리할 수 있습니다.
+- Gemini는 스케치를 기능적인 앱으로 변환할 수 있습니다.
+- 스케치를 앱으로 변환하는 과정에서 Canvas 도구를 사용하여 코드를 즉시 생성하고 개선합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 6일 02:00 — Gemini가 빠른 스케치를 라이브 앱으로 변환하는 기능이 추가되었습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)
+- 2026년 11월 6일 02:00 — Gemini Omni 1.2 Flash가 도입되었습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)
 - 2026년 11월 3일 02:45 — Google은 2026년 10월에 다양한 AI 관련 업데이트를 발표했습니다. (출처: gemini-996c88dfa31d64c0a9d6)
 - 2026년 10월 30일 01:15 — 파일을 다듬기 위한 새로운 전체 화면 편집기가 도입되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 10월 30일 01:15 — 이력서 업데이트를 위해 Gemini를 사용하여 메모를 이력서 항목으로 변환하는 기능이 제공됩니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
-- 2026년 10월 30일 01:15 — Gemini 내에서 문서, PDF, 프레젠테이션, 스프레드시트 등을 직접 생성, 미리보기 및 편집하는 기능이 추가되었습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
-- 2026년 10월 29일 03:00 — 차세대 모델인 Gemini 4 Carbon이 공개되었습니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 
 ## 변경 이력
 
@@ -319,3 +329,4 @@ Google은 2026년 10월에 발표된 최신 AI 소식을 공유했습니다.
 - 2026년 10월 29일 03:00 — 이 업데이트들은 Gemini 앱의 새로운 기능, 차세대 Gemini 모델, 새로운 XR 안경, 그리고 연결된 앱 관리 플랫폼을 포함하여 Google의 다양한 제품 및 기술 혁신을 보여줍니다. (출처: gemini-f1b1625f67db9cc81d99, gemini-a92d7b7ef0e2da4d5922, gemini-370e028ff47ae5fef76a, gemini-a128891378e42ce095b4)
 - 2026년 10월 30일 01:15 — 최근 업데이트를 통해 Gemini는 문서 편집 및 이력서 작성 지원과 같은 새로운 기능을 통합하여 사용자에게 더 다양한 생산성 도구를 제공하고 있습니다. (출처: gemini-7ff097b88dbb7fb2e75d, gemini-e8b654ca9543c3054765)
 - 2026년 11월 3일 02:45 — Google은 정기적으로 AI 관련 소식을 발표해왔으며, 이 소스는 2026년 10월에 발표된 최신 AI 업데이트를 요약합니다. (출처: gemini-996c88dfa31d64c0a9d6)
+- 2026년 11월 6일 02:00 — Gemini는 최근 Gemini Omni 1.2 Flash를 도입하여 긴 클립 처리를 개선하고, 스케치를 기능적인 앱으로 변환하는 새로운 기능을 선보였습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)

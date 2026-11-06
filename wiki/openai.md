@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 Pierre Computer Company를 인수하고, Images 2.6을 출시하며, Linux 커널 취약점을 해결하고, AWS GovCloud에 Daybreak Red를 제공하며, DevRev가 GPT-6.1 Sol을 활용하는 등 다양한 분야에서 확장을 진행하고 있습니다.",
+  "current_state": "OpenAI는 새로운 AI 모델을 출시하고 책임감 있는 AI 인프라 개발을 추진하며, 기존 모델들이 다양한 분야에서 활용되고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -416,16 +416,48 @@
         "openai-981785a01550309d0739"
       ],
       "summary": "2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다."
+    },
+    {
+      "published_at": "2026-11-05T20:00:00+00:00",
+      "source_ids": [
+        "openai-bbd492caba72ca544b8b",
+        "openai-616c68177b707eae60eb",
+        "openai-14e90e72d3401ddf817f",
+        "openai-db9792e954d447010915",
+        "openai-25fa4dd18ec78a48a923"
+      ],
+      "summary": "2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 Pierre Computer Company, Inc.를 인수하여 Codex의 코드 관련 도구를 확장할 예정입니다.",
-    "OpenAI는 Linux 커널에서 948개의 로컬 권한 상승 취약점을 발견하고 패치를 생성하는 자율 파이프라인을 구축했습니다.",
-    "Daybreak Red는 GPT-5.6 Cyber를 통해 AWS GovCloud (US-East)에서 승인된 사이버 보안 작업에 사용할 수 있습니다.",
-    "Images 2.6은 ChatGPT, Codex 및 API 전반에 걸쳐 더 빠른 이미지 생성, GIF 생성, 정밀한 편집 및 새로운 API 제어 기능을 제공합니다.",
-    "DevRev는 GPT-6.1 Sol을 사용하여 기업 서비스의 균형 잡힌 추론, 속도 및 비용을 위해 Computer 및 Operator를 구동합니다."
+    "Cult.fit은 Codex를 활용하여 팀 전반의 도구 구축, 업무 속도 향상 및 작업 방식 변화를 돕고 있습니다.",
+    "호주 대학들은 ChatGPT 접근성을 확대하고 AI를 교육 및 학습에 도입하여 AI 기반 인력을 준비시키고 있습니다.",
+    "Merge는 GPT-6 Astra, ChatGPT, Codex를 사용하여 제품 코드 검토, 마케팅 지원, 임원 만찬 계획 및 영업 업데이트 준비를 수행합니다.",
+    "OpenAI는 지역 자원 보호, 일자리 창출 및 책임감 있는 AI 인프라 개발을 안내하기 위해 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-05T20:00:00+00:00",
+      "source_ids": [
+        "openai-bbd492caba72ca544b8b",
+        "openai-616c68177b707eae60eb",
+        "openai-14e90e72d3401ddf817f",
+        "openai-db9792e954d447010915",
+        "openai-25fa4dd18ec78a48a923"
+      ],
+      "summary": "OpenAI는 책임감 있는 AI 인프라 개발을 위한 새로운 표준을 제시하며 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다."
+    },
+    {
+      "published_at": "2026-11-05T20:00:00+00:00",
+      "source_ids": [
+        "openai-bbd492caba72ca544b8b",
+        "openai-616c68177b707eae60eb",
+        "openai-14e90e72d3401ddf817f",
+        "openai-db9792e954d447010915",
+        "openai-25fa4dd18ec78a48a923"
+      ],
+      "summary": "OpenAI는 악용 가능한 취약점을 찾아내고 수정 사항을 개발하도록 훈련된 사이버 보안 모델인 GPT-6 Cyber를 소개했습니다."
+    },
     {
       "published_at": "2026-11-04T14:30:00+00:00",
       "source_ids": [
@@ -458,28 +490,6 @@
         "openai-981785a01550309d0739"
       ],
       "summary": "Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다."
-    },
-    {
-      "published_at": "2026-11-04T14:30:00+00:00",
-      "source_ids": [
-        "openai-1be4fdd8e6ca80f0ec01",
-        "openai-fbaa86a829ad59fd10c5",
-        "openai-a3433e936d2c04bfa772",
-        "openai-295354ff422b0d4db922",
-        "openai-981785a01550309d0739"
-      ],
-      "summary": "DevRev는 GPT-6.1 Sol을 활용하여 기업 자율 서비스를 제공합니다."
-    },
-    {
-      "published_at": "2026-11-04T14:30:00+00:00",
-      "source_ids": [
-        "openai-1be4fdd8e6ca80f0ec01",
-        "openai-fbaa86a829ad59fd10c5",
-        "openai-a3433e936d2c04bfa772",
-        "openai-295354ff422b0d4db922",
-        "openai-981785a01550309d0739"
-      ],
-      "summary": "Daybreak Red (GPT-5.6 Cyber 포함)가 AWS GovCloud (US-East)에서 사용 가능해졌습니다."
     }
   ],
   "seen_hashes": [
@@ -493,6 +503,7 @@
     "0bc370d842d0a2a612efa97faefd4e3974ec5e780fe8a34b57833918062b066d",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1477e2be2f982234bdfc7f85f8caa7dc8e4220ad8cb53ea0e023b48a05224d2f",
+    "14a52eb3aae43d3bfacdfa43fe628b24e133cda3cc58b440125912a4994cf4b7",
     "1b77faba4c30b58e82f2da3754c58acd99626bfc62578ea8c8406cc352932945",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
@@ -556,6 +567,7 @@
     "7e2cea82fc626b90fef309e59b73e5270efaa62f50d402768d1089b7be5d92df",
     "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
     "8539e273b47da9492f120888e827cf67641389605e550587344ee150a2e3b570",
+    "85d953a63c4281f0caa98bc15c1774c8bec272cb7e6f1d5029feec8b11588d47",
     "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
     "8740ad58255f90886ffa9f687077ed6d2e2b8d7c70bb86a33ebbf8ba827350a9",
     "8891809adc5d5ee604ada9201859f831138e354e7e7027fddc7d74f9e8c66df9",
@@ -566,6 +578,7 @@
     "8c03cb9aa30759adcacca7f99dc89771050a03d48826a74f409b48810a219d5e",
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
+    "95e94d6b252d142b0a5165dd3f327fe52c2d920c0c725c016bbad224ef375ed5",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "9b12f5bcdc9230c49a50baae037dbb81e606ae036219b6db7cfeeb6c6c4dff82",
     "9df5b494bfb05b19513a2ffeee554d3023bf8ee974570091efa8f9693a013eb2",
@@ -583,6 +596,7 @@
     "ac08cc6d3755bd7519e29a514c269b7d2462c6d2b1a3a3de972a603f4bc03f8f",
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
+    "b0a77a64cbbe0ca1ce3d49be40429f75bc825a31adcf9dc0a856396e4fd84e44",
     "b1c9bb0b0240f477bc33f5c7b8151c7b71103dc0fb03d2cdba5b891c18a94f30",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
@@ -621,6 +635,7 @@
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
+    "eb59f9cb18aebcb0f5a91c130a8ede4802994a367f45a02cbd135f9ad19a4a9c",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "ef79659560ea9899919398cb126cfad5e231b632fefd72f519f5dd67414a6970",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
@@ -636,23 +651,22 @@
 
 ## 현재 상태
 
-OpenAI는 Pierre Computer Company를 인수하고, Images 2.6을 출시하며, Linux 커널 취약점을 해결하고, AWS GovCloud에 Daybreak Red를 제공하며, DevRev가 GPT-6.1 Sol을 활용하는 등 다양한 분야에서 확장을 진행하고 있습니다.
+OpenAI는 새로운 AI 모델을 출시하고 책임감 있는 AI 인프라 개발을 추진하며, 기존 모델들이 다양한 분야에서 활용되고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 Pierre Computer Company, Inc.를 인수하여 Codex의 코드 관련 도구를 확장할 예정입니다.
-- OpenAI는 Linux 커널에서 948개의 로컬 권한 상승 취약점을 발견하고 패치를 생성하는 자율 파이프라인을 구축했습니다.
-- Daybreak Red는 GPT-5.6 Cyber를 통해 AWS GovCloud (US-East)에서 승인된 사이버 보안 작업에 사용할 수 있습니다.
-- Images 2.6은 ChatGPT, Codex 및 API 전반에 걸쳐 더 빠른 이미지 생성, GIF 생성, 정밀한 편집 및 새로운 API 제어 기능을 제공합니다.
-- DevRev는 GPT-6.1 Sol을 사용하여 기업 서비스의 균형 잡힌 추론, 속도 및 비용을 위해 Computer 및 Operator를 구동합니다.
+- Cult.fit은 Codex를 활용하여 팀 전반의 도구 구축, 업무 속도 향상 및 작업 방식 변화를 돕고 있습니다.
+- 호주 대학들은 ChatGPT 접근성을 확대하고 AI를 교육 및 학습에 도입하여 AI 기반 인력을 준비시키고 있습니다.
+- Merge는 GPT-6 Astra, ChatGPT, Codex를 사용하여 제품 코드 검토, 마케팅 지원, 임원 만찬 계획 및 영업 업데이트 준비를 수행합니다.
+- OpenAI는 지역 자원 보호, 일자리 창출 및 책임감 있는 AI 인프라 개발을 안내하기 위해 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 6일 05:00 — OpenAI는 책임감 있는 AI 인프라 개발을 위한 새로운 표준을 제시하며 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
+- 2026년 11월 6일 05:00 — OpenAI는 악용 가능한 취약점을 찾아내고 수정 사항을 개발하도록 훈련된 사이버 보안 모델인 GPT-6 Cyber를 소개했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
 - 2026년 11월 4일 23:30 — OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 - 2026년 11월 4일 23:30 — OpenAI가 Pierre Computer Company, Inc.를 인수했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 - 2026년 11월 4일 23:30 — Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
-- 2026년 11월 4일 23:30 — DevRev는 GPT-6.1 Sol을 활용하여 기업 자율 서비스를 제공합니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
-- 2026년 11월 4일 23:30 — Daybreak Red (GPT-5.6 Cyber 포함)가 AWS GovCloud (US-East)에서 사용 가능해졌습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 
 ## 변경 이력
 
@@ -701,3 +715,4 @@ OpenAI는 Pierre Computer Company를 인수하고, Images 2.6을 출시하며, L
 - 2026년 11월 3일 03:00 — OpenAI는 최근 보안 강화를 위해 버그 바운티 보상을 인상하고 내부 보안 스프린트를 준비하고 있습니다. 또한, Codex 개발 규모에 맞는 Git 호환 백엔드 Pando를 구축했으며, 전력망 안정성을 위한 Grid Protectors Program과 AI의 일상 업무 지원 능력을 측정하는 LifeVal 벤치마크를 도입했습니다. (출처: openai-bca108e4c77bd86b238b, openai-0d297090385ad5a72451, openai-277870ffc8d71544c046, openai-5d33ed0c66ace544e65f, openai-5a014341bc3fc0f1d8b6)
 - 2026년 11월 3일 21:00 — 2026년 11월 3일, OpenAI는 ChatGPT와 Codex가 엔지니어링 및 부동산 관리 분야에서 워크플로우를 가속화하고 혁신하는 데 사용되고 있음을 발표했습니다. 같은 날, Cisco가 OpenAI 모델을 사용하여 기업 보안을 강화하고 있다는 소식도 전해졌습니다. 또한, OpenAI는 Jill Hazelbaker를 최고 기업 업무 책임자로 임명하여 글로벌 커뮤니케이션을 강화할 계획을 밝혔습니다. (출처: openai-25493a43cba550c7fe81, openai-34e7d62615202d0de65f, openai-fc87a45dcfbf03d41725, openai-019edb616369c3322f4c)
 - 2026년 11월 4일 23:30 — 2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
+- 2026년 11월 6일 05:00 — 2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
