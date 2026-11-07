@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 새로운 AI 모델을 출시하고 책임감 있는 AI 인프라 개발을 추진하며, 기존 모델들이 다양한 분야에서 활용되고 있습니다.",
+  "current_state": "OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고 방어를 강화하고 있으며, AI 에이전트가 일상적인 wet-lab science를 처리하는 능력을 측정하기 위한 BioBasicsBench를 도입했습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -427,15 +427,37 @@
         "openai-25fa4dd18ec78a48a923"
       ],
       "summary": "2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-06T08:00:00+00:00",
+      "source_ids": [
+        "openai-a0a44ed09dc9a1089b4e",
+        "openai-5f721228af3682c2417b"
+      ],
+      "summary": "OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다."
     }
   ],
   "key_facts": [
-    "Cult.fit은 Codex를 활용하여 팀 전반의 도구 구축, 업무 속도 향상 및 작업 방식 변화를 돕고 있습니다.",
-    "호주 대학들은 ChatGPT 접근성을 확대하고 AI를 교육 및 학습에 도입하여 AI 기반 인력을 준비시키고 있습니다.",
-    "Merge는 GPT-6 Astra, ChatGPT, Codex를 사용하여 제품 코드 검토, 마케팅 지원, 임원 만찬 계획 및 영업 업데이트 준비를 수행합니다.",
-    "OpenAI는 지역 자원 보호, 일자리 창출 및 책임감 있는 AI 인프라 개발을 안내하기 위해 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다."
+    "OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고, 타사 서비스와의 연결을 테스트하며, frontier AI로 방어를 강화하고 있습니다.",
+    "OpenAI는 AI 에이전트가 원시 실험 데이터를 얼마나 잘 해석하고 일상적인 wet-lab science를 처리하는지 측정하는 100가지 작업 벤치마크인 BioBasicsBench를 도입했습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-06T08:00:00+00:00",
+      "source_ids": [
+        "openai-a0a44ed09dc9a1089b4e",
+        "openai-5f721228af3682c2417b"
+      ],
+      "summary": "OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-06T08:00:00+00:00",
+      "source_ids": [
+        "openai-a0a44ed09dc9a1089b4e",
+        "openai-5f721228af3682c2417b"
+      ],
+      "summary": "OpenAI는 AI 에이전트의 wet-lab science 처리 능력을 평가하기 위한 새로운 벤치마크인 BioBasicsBench를 출시했습니다."
+    },
     {
       "published_at": "2026-11-05T20:00:00+00:00",
       "source_ids": [
@@ -468,28 +490,6 @@
         "openai-981785a01550309d0739"
       ],
       "summary": "OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다."
-    },
-    {
-      "published_at": "2026-11-04T14:30:00+00:00",
-      "source_ids": [
-        "openai-1be4fdd8e6ca80f0ec01",
-        "openai-fbaa86a829ad59fd10c5",
-        "openai-a3433e936d2c04bfa772",
-        "openai-295354ff422b0d4db922",
-        "openai-981785a01550309d0739"
-      ],
-      "summary": "OpenAI가 Pierre Computer Company, Inc.를 인수했습니다."
-    },
-    {
-      "published_at": "2026-11-04T14:30:00+00:00",
-      "source_ids": [
-        "openai-1be4fdd8e6ca80f0ec01",
-        "openai-fbaa86a829ad59fd10c5",
-        "openai-a3433e936d2c04bfa772",
-        "openai-295354ff422b0d4db922",
-        "openai-981785a01550309d0739"
-      ],
-      "summary": "Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다."
     }
   ],
   "seen_hashes": [
@@ -599,6 +599,7 @@
     "b0a77a64cbbe0ca1ce3d49be40429f75bc825a31adcf9dc0a856396e4fd84e44",
     "b1c9bb0b0240f477bc33f5c7b8151c7b71103dc0fb03d2cdba5b891c18a94f30",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
+    "b7a0406a5e69feb2f4aa2b8cdc049cfa358b04dace8a44741de523fccd2b770c",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
     "b930a50cd24995813279fdc9e45c5c625fb2cf579ef3e09338f3ec19ca3a2609",
@@ -633,6 +634,7 @@
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
+    "e9e5d34bef70c7f55ca1090cab940ded57f4de2bde9e6af037a38dbf666caa21",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
     "eb59f9cb18aebcb0f5a91c130a8ede4802994a367f45a02cbd135f9ad19a4a9c",
@@ -651,22 +653,20 @@
 
 ## 현재 상태
 
-OpenAI는 새로운 AI 모델을 출시하고 책임감 있는 AI 인프라 개발을 추진하며, 기존 모델들이 다양한 분야에서 활용되고 있습니다.
+OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고 방어를 강화하고 있으며, AI 에이전트가 일상적인 wet-lab science를 처리하는 능력을 측정하기 위한 BioBasicsBench를 도입했습니다.
 
 ## 핵심 정보
 
-- Cult.fit은 Codex를 활용하여 팀 전반의 도구 구축, 업무 속도 향상 및 작업 방식 변화를 돕고 있습니다.
-- 호주 대학들은 ChatGPT 접근성을 확대하고 AI를 교육 및 학습에 도입하여 AI 기반 인력을 준비시키고 있습니다.
-- Merge는 GPT-6 Astra, ChatGPT, Codex를 사용하여 제품 코드 검토, 마케팅 지원, 임원 만찬 계획 및 영업 업데이트 준비를 수행합니다.
-- OpenAI는 지역 자원 보호, 일자리 창출 및 책임감 있는 AI 인프라 개발을 안내하기 위해 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다.
+- OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고, 타사 서비스와의 연결을 테스트하며, frontier AI로 방어를 강화하고 있습니다.
+- OpenAI는 AI 에이전트가 원시 실험 데이터를 얼마나 잘 해석하고 일상적인 wet-lab science를 처리하는지 측정하는 100가지 작업 벤치마크인 BioBasicsBench를 도입했습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 6일 17:00 — OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
+- 2026년 11월 6일 17:00 — OpenAI는 AI 에이전트의 wet-lab science 처리 능력을 평가하기 위한 새로운 벤치마크인 BioBasicsBench를 출시했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
 - 2026년 11월 6일 05:00 — OpenAI는 책임감 있는 AI 인프라 개발을 위한 새로운 표준을 제시하며 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
 - 2026년 11월 6일 05:00 — OpenAI는 악용 가능한 취약점을 찾아내고 수정 사항을 개발하도록 훈련된 사이버 보안 모델인 GPT-6 Cyber를 소개했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
 - 2026년 11월 4일 23:30 — OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
-- 2026년 11월 4일 23:30 — OpenAI가 Pierre Computer Company, Inc.를 인수했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
-- 2026년 11월 4일 23:30 — Images 2.6이 출시되어 이미지 생성 기능이 향상되었습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 
 ## 변경 이력
 
@@ -716,3 +716,4 @@ OpenAI는 새로운 AI 모델을 출시하고 책임감 있는 AI 인프라 개�
 - 2026년 11월 3일 21:00 — 2026년 11월 3일, OpenAI는 ChatGPT와 Codex가 엔지니어링 및 부동산 관리 분야에서 워크플로우를 가속화하고 혁신하는 데 사용되고 있음을 발표했습니다. 같은 날, Cisco가 OpenAI 모델을 사용하여 기업 보안을 강화하고 있다는 소식도 전해졌습니다. 또한, OpenAI는 Jill Hazelbaker를 최고 기업 업무 책임자로 임명하여 글로벌 커뮤니케이션을 강화할 계획을 밝혔습니다. (출처: openai-25493a43cba550c7fe81, openai-34e7d62615202d0de65f, openai-fc87a45dcfbf03d41725, openai-019edb616369c3322f4c)
 - 2026년 11월 4일 23:30 — 2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 - 2026년 11월 6일 05:00 — 2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
+- 2026년 11월 6일 17:00 — OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
