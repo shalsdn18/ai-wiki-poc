@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고 방어를 강화하고 있으며, AI 에이전트가 일상적인 wet-lab science를 처리하는 능력을 측정하기 위한 BioBasicsBench를 도입했습니다.",
+  "current_state": "OpenAI는 AWS Marketplace를 통해 ChatGPT Enterprise를 제공하여 조직의 조달을 간소화하고 있으며, 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 이를 신속하게 중단할 수 있는 Control Room을 운영하고 있습니다. 또한, CodeRabbit과 Kuken Industries와 같은 기업들이 OpenAI 기술을 활용하여 소프트웨어 개발 및 도면 검색 효율성을 크게 향상시키고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -435,13 +435,65 @@
         "openai-5f721228af3682c2417b"
       ],
       "summary": "OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다."
+    },
+    {
+      "published_at": "2026-11-09T19:00:00+00:00",
+      "source_ids": [
+        "openai-caa9073cefb43725f1a5",
+        "openai-952d2516af2e905436ad",
+        "openai-02e9abf47eaf3fa01f98",
+        "openai-2e34e84f0999c607fcd0"
+      ],
+      "summary": "OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고, 타사 서비스와의 연결을 테스트하며, frontier AI로 방어를 강화하고 있습니다.",
-    "OpenAI는 AI 에이전트가 원시 실험 데이터를 얼마나 잘 해석하고 일상적인 wet-lab science를 처리하는지 측정하는 100가지 작업 벤치마크인 BioBasicsBench를 도입했습니다."
+    "ChatGPT Enterprise가 AWS Marketplace에서 제공되어 기존 AWS 구매 및 청구 관계를 통해 조달이 간소화됩니다.",
+    "OpenAI의 Control Room은 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 신속하게 중단할 수 있습니다.",
+    "CodeRabbit은 OpenAI 모델을 사용하여 AI 생성 코드를 관리하고 Codex를 통해 동일한 엔지니어링 팀으로 20배 더 많은 소프트웨어를 출시합니다.",
+    "Kuken Industries는 OpenAI API를 사용하여 70년치 냉각탑 도면을 몇 분 만에 검색하며, 검색 시간이 거의 한 시간에서 4.5분으로 단축되었습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-09T19:00:00+00:00",
+      "source_ids": [
+        "openai-caa9073cefb43725f1a5",
+        "openai-952d2516af2e905436ad",
+        "openai-02e9abf47eaf3fa01f98",
+        "openai-2e34e84f0999c607fcd0"
+      ],
+      "summary": "OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다."
+    },
+    {
+      "published_at": "2026-11-09T19:00:00+00:00",
+      "source_ids": [
+        "openai-caa9073cefb43725f1a5",
+        "openai-952d2516af2e905436ad",
+        "openai-02e9abf47eaf3fa01f98",
+        "openai-2e34e84f0999c607fcd0"
+      ],
+      "summary": "Kuken Industries가 OpenAI API를 사용하여 도면 검색 시간을 크게 단축했습니다."
+    },
+    {
+      "published_at": "2026-11-09T19:00:00+00:00",
+      "source_ids": [
+        "openai-caa9073cefb43725f1a5",
+        "openai-952d2516af2e905436ad",
+        "openai-02e9abf47eaf3fa01f98",
+        "openai-2e34e84f0999c607fcd0"
+      ],
+      "summary": "CodeRabbit이 OpenAI 모델을 활용하여 소프트웨어 개발을 20배 가속화했습니다."
+    },
+    {
+      "published_at": "2026-11-09T19:00:00+00:00",
+      "source_ids": [
+        "openai-caa9073cefb43725f1a5",
+        "openai-952d2516af2e905436ad",
+        "openai-02e9abf47eaf3fa01f98",
+        "openai-2e34e84f0999c607fcd0"
+      ],
+      "summary": "ChatGPT Enterprise가 AWS Marketplace에 출시되었습니다."
+    },
     {
       "published_at": "2026-11-06T08:00:00+00:00",
       "source_ids": [
@@ -449,47 +501,6 @@
         "openai-5f721228af3682c2417b"
       ],
       "summary": "OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다."
-    },
-    {
-      "published_at": "2026-11-06T08:00:00+00:00",
-      "source_ids": [
-        "openai-a0a44ed09dc9a1089b4e",
-        "openai-5f721228af3682c2417b"
-      ],
-      "summary": "OpenAI는 AI 에이전트의 wet-lab science 처리 능력을 평가하기 위한 새로운 벤치마크인 BioBasicsBench를 출시했습니다."
-    },
-    {
-      "published_at": "2026-11-05T20:00:00+00:00",
-      "source_ids": [
-        "openai-bbd492caba72ca544b8b",
-        "openai-616c68177b707eae60eb",
-        "openai-14e90e72d3401ddf817f",
-        "openai-db9792e954d447010915",
-        "openai-25fa4dd18ec78a48a923"
-      ],
-      "summary": "OpenAI는 책임감 있는 AI 인프라 개발을 위한 새로운 표준을 제시하며 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다."
-    },
-    {
-      "published_at": "2026-11-05T20:00:00+00:00",
-      "source_ids": [
-        "openai-bbd492caba72ca544b8b",
-        "openai-616c68177b707eae60eb",
-        "openai-14e90e72d3401ddf817f",
-        "openai-db9792e954d447010915",
-        "openai-25fa4dd18ec78a48a923"
-      ],
-      "summary": "OpenAI는 악용 가능한 취약점을 찾아내고 수정 사항을 개발하도록 훈련된 사이버 보안 모델인 GPT-6 Cyber를 소개했습니다."
-    },
-    {
-      "published_at": "2026-11-04T14:30:00+00:00",
-      "source_ids": [
-        "openai-1be4fdd8e6ca80f0ec01",
-        "openai-fbaa86a829ad59fd10c5",
-        "openai-a3433e936d2c04bfa772",
-        "openai-295354ff422b0d4db922",
-        "openai-981785a01550309d0739"
-      ],
-      "summary": "OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다."
     }
   ],
   "seen_hashes": [
@@ -501,6 +512,7 @@
     "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
     "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
     "0bc370d842d0a2a612efa97faefd4e3974ec5e780fe8a34b57833918062b066d",
+    "138253af39dc25959c8893f6bf65dcb259e5686ab5339ec266d045195905ef6d",
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1477e2be2f982234bdfc7f85f8caa7dc8e4220ad8cb53ea0e023b48a05224d2f",
     "14a52eb3aae43d3bfacdfa43fe628b24e133cda3cc58b440125912a4994cf4b7",
@@ -546,6 +558,7 @@
     "574b4d4c1ce3829da7135435072e7376d7a23d00e77d793f9b7262d1434ee105",
     "5cf1939b69a9e8ac8fad4ac5a865b879c2ad772f1da2b42240d1df12f72c9718",
     "5d8c179f4be0e2066d5cd0cea0ca7c77af707e1b85bedc225adda1b08cf9e398",
+    "5dcfbcaafa7dd597ba2b0c966f4c162ed89dde3a872ac3861c62f1451830b336",
     "5de646b3ab370caa077a7cdc3e9b4bdea68367c77b722277fb1a8cd8815c67c5",
     "5ea94e4c4286a114581885473e04bf635cbaab0c1e61cf3ea7ccf8ff3f837ddb",
     "6088f4ea402783e64d6b87f81ec3f492eef9ec1ac39df0eefe939a28f93c5c4a",
@@ -627,6 +640,7 @@
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
     "d7f8032b38e26b89c89a0233416b59860aa6c83f5a6dbb7897fd191fbb5d4386",
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
+    "dd03698cbb05c4a6d464f06061557b347e750b0c9c783cfb4d30ca95e0479aad",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "de3e1b54247f89cfd994f7b4750be9d124a50810fc85e87f2130ddf4688f7761",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
@@ -639,6 +653,7 @@
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
     "eb59f9cb18aebcb0f5a91c130a8ede4802994a367f45a02cbd135f9ad19a4a9c",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
+    "ef081bcec3f35b549af9d7f78ed0dc9079ad0c7e05105ab5a264ebadc6ad9e1b",
     "ef79659560ea9899919398cb126cfad5e231b632fefd72f519f5dd67414a6970",
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
     "f1203858b890adf5adc2d2fb0c619c62f9ef8f07916dc1416021988a53019093",
@@ -653,20 +668,22 @@
 
 ## 현재 상태
 
-OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고 방어를 강화하고 있으며, AI 에이전트가 일상적인 wet-lab science를 처리하는 능력을 측정하기 위한 BioBasicsBench를 도입했습니다.
+OpenAI는 AWS Marketplace를 통해 ChatGPT Enterprise를 제공하여 조직의 조달을 간소화하고 있으며, 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 이를 신속하게 중단할 수 있는 Control Room을 운영하고 있습니다. 또한, CodeRabbit과 Kuken Industries와 같은 기업들이 OpenAI 기술을 활용하여 소프트웨어 개발 및 도면 검색 효율성을 크게 향상시키고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고, 타사 서비스와의 연결을 테스트하며, frontier AI로 방어를 강화하고 있습니다.
-- OpenAI는 AI 에이전트가 원시 실험 데이터를 얼마나 잘 해석하고 일상적인 wet-lab science를 처리하는지 측정하는 100가지 작업 벤치마크인 BioBasicsBench를 도입했습니다.
+- ChatGPT Enterprise가 AWS Marketplace에서 제공되어 기존 AWS 구매 및 청구 관계를 통해 조달이 간소화됩니다.
+- OpenAI의 Control Room은 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 신속하게 중단할 수 있습니다.
+- CodeRabbit은 OpenAI 모델을 사용하여 AI 생성 코드를 관리하고 Codex를 통해 동일한 엔지니어링 팀으로 20배 더 많은 소프트웨어를 출시합니다.
+- Kuken Industries는 OpenAI API를 사용하여 70년치 냉각탑 도면을 몇 분 만에 검색하며, 검색 시간이 거의 한 시간에서 4.5분으로 단축되었습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 10일 04:00 — OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
+- 2026년 11월 10일 04:00 — Kuken Industries가 OpenAI API를 사용하여 도면 검색 시간을 크게 단축했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
+- 2026년 11월 10일 04:00 — CodeRabbit이 OpenAI 모델을 활용하여 소프트웨어 개발을 20배 가속화했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
+- 2026년 11월 10일 04:00 — ChatGPT Enterprise가 AWS Marketplace에 출시되었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
 - 2026년 11월 6일 17:00 — OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
-- 2026년 11월 6일 17:00 — OpenAI는 AI 에이전트의 wet-lab science 처리 능력을 평가하기 위한 새로운 벤치마크인 BioBasicsBench를 출시했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
-- 2026년 11월 6일 05:00 — OpenAI는 책임감 있는 AI 인프라 개발을 위한 새로운 표준을 제시하며 National Community Compact 및 Compute Campus Policy Blueprint를 도입했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
-- 2026년 11월 6일 05:00 — OpenAI는 악용 가능한 취약점을 찾아내고 수정 사항을 개발하도록 훈련된 사이버 보안 모델인 GPT-6 Cyber를 소개했습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
-- 2026년 11월 4일 23:30 — OpenAI는 Linux 커널의 948개 취약점에 대한 패치를 생성하는 자율 파이프라인을 개발했습니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 
 ## 변경 이력
 
@@ -717,3 +734,4 @@ OpenAI는 Hacktron과 협력하여 시스템 취약점을 찾고 방어를 강�
 - 2026년 11월 4일 23:30 — 2026년 11월 4일, OpenAI는 Images 2.6 출시, Linux 커널 취약점 해결 파이프라인 구축, AWS GovCloud (US-East)에 Daybreak Red (GPT-5.6 Cyber) 제공, DevRev의 GPT-6.1 Sol 활용 발표, 그리고 Pierre Computer Company, Inc. 인수 계획을 포함한 여러 중요한 업데이트를 발표했습니다. 이러한 발표들은 OpenAI의 코드 도구 확장, 보안 강화, 이미지 생성 개선, 클라우드 서비스 확장 및 기업 솔루션 강화를 보여줍니다. (출처: openai-1be4fdd8e6ca80f0ec01, openai-fbaa86a829ad59fd10c5, openai-a3433e936d2c04bfa772, openai-295354ff422b0d4db922, openai-981785a01550309d0739)
 - 2026년 11월 6일 05:00 — 2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
 - 2026년 11월 6일 17:00 — OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
+- 2026년 11월 10일 04:00 — OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
