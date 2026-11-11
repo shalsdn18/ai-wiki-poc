@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 AWS Marketplace를 통해 ChatGPT Enterprise를 제공하여 조직의 조달을 간소화하고 있으며, 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 이를 신속하게 중단할 수 있는 Control Room을 운영하고 있습니다. 또한, CodeRabbit과 Kuken Industries와 같은 기업들이 OpenAI 기술을 활용하여 소프트웨어 개발 및 도면 검색 효율성을 크게 향상시키고 있습니다.",
+  "current_state": "OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서 AI의 적용을 확대하고 있습니다. 특히, 참전용사와 간병인 같은 특정 집단을 위한 지원 프로그램과 교육 이니셔티브를 통해 AI 접근성을 높이고 있으며, ChatGPT에 비즈니스 기능을 도입하여 기업의 활용도를 높이고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -445,15 +445,71 @@
         "openai-2e34e84f0999c607fcd0"
       ],
       "summary": "OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다."
+    },
+    {
+      "published_at": "2026-11-12T00:00:00+00:00",
+      "source_ids": [
+        "openai-65b96c238445cdedc96b",
+        "openai-ac94b61a25ade5edbf71",
+        "openai-0f0020abcf733229d29f",
+        "openai-991ad48e8559b2fefa9f",
+        "openai-69d4d9d74efa01629a6c"
+      ],
+      "summary": "최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다."
     }
   ],
   "key_facts": [
-    "ChatGPT Enterprise가 AWS Marketplace에서 제공되어 기존 AWS 구매 및 청구 관계를 통해 조달이 간소화됩니다.",
-    "OpenAI의 Control Room은 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 신속하게 중단할 수 있습니다.",
-    "CodeRabbit은 OpenAI 모델을 사용하여 AI 생성 코드를 관리하고 Codex를 통해 동일한 엔지니어링 팀으로 20배 더 많은 소프트웨어를 출시합니다.",
-    "Kuken Industries는 OpenAI API를 사용하여 70년치 냉각탑 도면을 몇 분 만에 검색하며, 검색 시간이 거의 한 시간에서 4.5분으로 단축되었습니다."
+    "Gilbert + Tobin은 AI를 활용하여 법률 비즈니스를 재고하고 있습니다. (openai-65b96c238445cdedc96b)",
+    "20,000명 이상의 참전용사와 현역 군인들이 ChatGPT Plus 1년 무료 이용권을 신청하여 민간 직업 준비에 활용하고 있습니다. (openai-ac94b61a25ade5edbf71)",
+    "OpenAI Academy는 미국 5개 도시에서 간병인들을 위한 무료 ChatGPT 워크숍을 개최하여 일상생활에서 AI 기술을 활용하도록 돕고 있습니다. (openai-0f0020abcf733229d29f)",
+    "ChatGPT에 비즈니스 기능이 도입되어 기업이 비즈니스 정보를 관리하고, 통찰력을 얻으며, 관심을 행동으로 전환할 수 있게 되었습니다. (openai-991ad48e8559b2fefa9f)",
+    "교육 분야의 AI 지침 격차를 해소하기 위한 ThinkYoung 연구와 OpenAI의 EMEA 교육 파트너십 교훈이 발표되었으며, 이는 교사 지원, AI 리터러시, 독립 학습에 중점을 둡니다. (openai-69d4d9d74efa01629a6c)"
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-12T00:00:00+00:00",
+      "source_ids": [
+        "openai-65b96c238445cdedc96b",
+        "openai-ac94b61a25ade5edbf71",
+        "openai-0f0020abcf733229d29f",
+        "openai-991ad48e8559b2fefa9f",
+        "openai-69d4d9d74efa01629a6c"
+      ],
+      "summary": "교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다."
+    },
+    {
+      "published_at": "2026-11-12T00:00:00+00:00",
+      "source_ids": [
+        "openai-65b96c238445cdedc96b",
+        "openai-ac94b61a25ade5edbf71",
+        "openai-0f0020abcf733229d29f",
+        "openai-991ad48e8559b2fefa9f",
+        "openai-69d4d9d74efa01629a6c"
+      ],
+      "summary": "OpenAI Academy가 간병인을 위한 무료 ChatGPT 워크숍을 미국 5개 도시에서 시작했습니다."
+    },
+    {
+      "published_at": "2026-11-12T00:00:00+00:00",
+      "source_ids": [
+        "openai-65b96c238445cdedc96b",
+        "openai-ac94b61a25ade5edbf71",
+        "openai-0f0020abcf733229d29f",
+        "openai-991ad48e8559b2fefa9f",
+        "openai-69d4d9d74efa01629a6c"
+      ],
+      "summary": "ChatGPT에 비즈니스 정보 관리 및 통찰력 제공 기능을 포함하는 'Businesses in ChatGPT'가 도입되었습니다."
+    },
+    {
+      "published_at": "2026-11-12T00:00:00+00:00",
+      "source_ids": [
+        "openai-65b96c238445cdedc96b",
+        "openai-ac94b61a25ade5edbf71",
+        "openai-0f0020abcf733229d29f",
+        "openai-991ad48e8559b2fefa9f",
+        "openai-69d4d9d74efa01629a6c"
+      ],
+      "summary": "ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다."
+    },
     {
       "published_at": "2026-11-09T19:00:00+00:00",
       "source_ids": [
@@ -463,44 +519,6 @@
         "openai-2e34e84f0999c607fcd0"
       ],
       "summary": "OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다."
-    },
-    {
-      "published_at": "2026-11-09T19:00:00+00:00",
-      "source_ids": [
-        "openai-caa9073cefb43725f1a5",
-        "openai-952d2516af2e905436ad",
-        "openai-02e9abf47eaf3fa01f98",
-        "openai-2e34e84f0999c607fcd0"
-      ],
-      "summary": "Kuken Industries가 OpenAI API를 사용하여 도면 검색 시간을 크게 단축했습니다."
-    },
-    {
-      "published_at": "2026-11-09T19:00:00+00:00",
-      "source_ids": [
-        "openai-caa9073cefb43725f1a5",
-        "openai-952d2516af2e905436ad",
-        "openai-02e9abf47eaf3fa01f98",
-        "openai-2e34e84f0999c607fcd0"
-      ],
-      "summary": "CodeRabbit이 OpenAI 모델을 활용하여 소프트웨어 개발을 20배 가속화했습니다."
-    },
-    {
-      "published_at": "2026-11-09T19:00:00+00:00",
-      "source_ids": [
-        "openai-caa9073cefb43725f1a5",
-        "openai-952d2516af2e905436ad",
-        "openai-02e9abf47eaf3fa01f98",
-        "openai-2e34e84f0999c607fcd0"
-      ],
-      "summary": "ChatGPT Enterprise가 AWS Marketplace에 출시되었습니다."
-    },
-    {
-      "published_at": "2026-11-06T08:00:00+00:00",
-      "source_ids": [
-        "openai-a0a44ed09dc9a1089b4e",
-        "openai-5f721228af3682c2417b"
-      ],
-      "summary": "OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다."
     }
   ],
   "seen_hashes": [
@@ -576,6 +594,7 @@
     "792ad46774cb8b2bca6a0792f965672c9220429163e6cdfd36ab1b2270655765",
     "7a3b160516d339624806bb902f8da225cabf550e6a464a5e11f3db58fad4fc7d",
     "7b0998feb986630c353ea69fc70f9eae3419419719ce9571158a4083031e1a8a",
+    "7c8932bb544e4d56c9887104de9351f5fa07a22ba815208730bc6aaab8e62875",
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
     "7e2cea82fc626b90fef309e59b73e5270efaa62f50d402768d1089b7be5d92df",
     "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
@@ -593,6 +612,7 @@
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "95e94d6b252d142b0a5165dd3f327fe52c2d920c0c725c016bbad224ef375ed5",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
+    "98ff53fe555208d62d111c37eb75ef4144bae6492b6709dd99501ad89e1079d1",
     "9b12f5bcdc9230c49a50baae037dbb81e606ae036219b6db7cfeeb6c6c4dff82",
     "9df5b494bfb05b19513a2ffeee554d3023bf8ee974570091efa8f9693a013eb2",
     "9e4b2c83a815aa182fe45c8a44cbb1859260f2fa6ae0e170f57bfacd62f0df4f",
@@ -612,6 +632,7 @@
     "b0a77a64cbbe0ca1ce3d49be40429f75bc825a31adcf9dc0a856396e4fd84e44",
     "b1c9bb0b0240f477bc33f5c7b8151c7b71103dc0fb03d2cdba5b891c18a94f30",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
+    "b5805270b7462531537a8af7913816a5bf5ffc21d7bd592b82e85ed379673b78",
     "b7a0406a5e69feb2f4aa2b8cdc049cfa358b04dace8a44741de523fccd2b770c",
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
@@ -646,10 +667,12 @@
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
     "e23ad90c8ce1792be439c2bff042012a77702b8956910b97f8948b3c3c971a63",
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
+    "e6187f0229e7fa58cbf9c05c6bf38f25b1650c137c6d579021ba710b71e4b52c",
     "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
     "e9e5d34bef70c7f55ca1090cab940ded57f4de2bde9e6af037a38dbf666caa21",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
+    "ea9bbe1eca228194ccf1e8c8ecf200c429edddb8fedd84ff577bbc379a86c1f4",
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
     "eb59f9cb18aebcb0f5a91c130a8ede4802994a367f45a02cbd135f9ad19a4a9c",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
@@ -668,22 +691,23 @@
 
 ## 현재 상태
 
-OpenAI는 AWS Marketplace를 통해 ChatGPT Enterprise를 제공하여 조직의 조달을 간소화하고 있으며, 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 이를 신속하게 중단할 수 있는 Control Room을 운영하고 있습니다. 또한, CodeRabbit과 Kuken Industries와 같은 기업들이 OpenAI 기술을 활용하여 소프트웨어 개발 및 도면 검색 효율성을 크게 향상시키고 있습니다.
+OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서 AI의 적용을 확대하고 있습니다. 특히, 참전용사와 간병인 같은 특정 집단을 위한 지원 프로그램과 교육 이니셔티브를 통해 AI 접근성을 높이고 있으며, ChatGPT에 비즈니스 기능을 도입하여 기업의 활용도를 높이고 있습니다.
 
 ## 핵심 정보
 
-- ChatGPT Enterprise가 AWS Marketplace에서 제공되어 기존 AWS 구매 및 청구 관계를 통해 조달이 간소화됩니다.
-- OpenAI의 Control Room은 연구 인프라 전반의 모델 워크로드를 추적하고 안전 또는 보안 문제가 발생할 경우 신속하게 중단할 수 있습니다.
-- CodeRabbit은 OpenAI 모델을 사용하여 AI 생성 코드를 관리하고 Codex를 통해 동일한 엔지니어링 팀으로 20배 더 많은 소프트웨어를 출시합니다.
-- Kuken Industries는 OpenAI API를 사용하여 70년치 냉각탑 도면을 몇 분 만에 검색하며, 검색 시간이 거의 한 시간에서 4.5분으로 단축되었습니다.
+- Gilbert + Tobin은 AI를 활용하여 법률 비즈니스를 재고하고 있습니다. (openai-65b96c238445cdedc96b)
+- 20,000명 이상의 참전용사와 현역 군인들이 ChatGPT Plus 1년 무료 이용권을 신청하여 민간 직업 준비에 활용하고 있습니다. (openai-ac94b61a25ade5edbf71)
+- OpenAI Academy는 미국 5개 도시에서 간병인들을 위한 무료 ChatGPT 워크숍을 개최하여 일상생활에서 AI 기술을 활용하도록 돕고 있습니다. (openai-0f0020abcf733229d29f)
+- ChatGPT에 비즈니스 기능이 도입되어 기업이 비즈니스 정보를 관리하고, 통찰력을 얻으며, 관심을 행동으로 전환할 수 있게 되었습니다. (openai-991ad48e8559b2fefa9f)
+- 교육 분야의 AI 지침 격차를 해소하기 위한 ThinkYoung 연구와 OpenAI의 EMEA 교육 파트너십 교훈이 발표되었으며, 이는 교사 지원, AI 리터러시, 독립 학습에 중점을 둡니다. (openai-69d4d9d74efa01629a6c)
 
 ## 최근 변경 사항
 
+- 2026년 11월 12일 09:00 — 교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
+- 2026년 11월 12일 09:00 — OpenAI Academy가 간병인을 위한 무료 ChatGPT 워크숍을 미국 5개 도시에서 시작했습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
+- 2026년 11월 12일 09:00 — ChatGPT에 비즈니스 정보 관리 및 통찰력 제공 기능을 포함하는 'Businesses in ChatGPT'가 도입되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
+- 2026년 11월 12일 09:00 — ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 - 2026년 11월 10일 04:00 — OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
-- 2026년 11월 10일 04:00 — Kuken Industries가 OpenAI API를 사용하여 도면 검색 시간을 크게 단축했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
-- 2026년 11월 10일 04:00 — CodeRabbit이 OpenAI 모델을 활용하여 소프트웨어 개발을 20배 가속화했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
-- 2026년 11월 10일 04:00 — ChatGPT Enterprise가 AWS Marketplace에 출시되었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
-- 2026년 11월 6일 17:00 — OpenAI는 Hacktron과의 새로운 파트너십을 통해 시스템 보안을 강화하고 있습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
 
 ## 변경 이력
 
@@ -735,3 +759,4 @@ OpenAI는 AWS Marketplace를 통해 ChatGPT Enterprise를 제공하여 조직의
 - 2026년 11월 6일 05:00 — 2026년 11월 5일, OpenAI는 사이버 보안 모델 GPT-6 Cyber를 출시하고 책임감 있는 AI 인프라 개발을 위한 정책을 발표했습니다. 동시에 Cult.fit과 Merge는 OpenAI 기술을 활용하여 운영 효율성을 높이고 있으며, 호주 대학들은 AI를 교육에 통합하여 미래 인력을 양성하고 있습니다. (출처: openai-bbd492caba72ca544b8b, openai-616c68177b707eae60eb, openai-14e90e72d3401ddf817f, openai-db9792e954d447010915, openai-25fa4dd18ec78a48a923)
 - 2026년 11월 6일 17:00 — OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
 - 2026년 11월 10일 04:00 — OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
+- 2026년 11월 12일 09:00 — 최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
