@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서 AI의 적용을 확대하고 있습니다. 특히, 참전용사와 간병인 같은 특정 집단을 위한 지원 프로그램과 교육 이니셔티브를 통해 AI 접근성을 높이고 있으며, ChatGPT에 비즈니스 기능을 도입하여 기업의 활용도를 높이고 있습니다.",
+  "current_state": "JioStar의 최고 설계자인 Vijay Seshadri가 5억 사용자 규모의 AI 발견에 대해 설명했습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -456,14 +456,18 @@
         "openai-69d4d9d74efa01629a6c"
       ],
       "summary": "최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다."
+    },
+    {
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source_ids": [
+        "openai-55ff14dc4213127df72a"
+      ],
+      "summary": "JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다."
     }
   ],
   "key_facts": [
-    "Gilbert + Tobin은 AI를 활용하여 법률 비즈니스를 재고하고 있습니다. (openai-65b96c238445cdedc96b)",
-    "20,000명 이상의 참전용사와 현역 군인들이 ChatGPT Plus 1년 무료 이용권을 신청하여 민간 직업 준비에 활용하고 있습니다. (openai-ac94b61a25ade5edbf71)",
-    "OpenAI Academy는 미국 5개 도시에서 간병인들을 위한 무료 ChatGPT 워크숍을 개최하여 일상생활에서 AI 기술을 활용하도록 돕고 있습니다. (openai-0f0020abcf733229d29f)",
-    "ChatGPT에 비즈니스 기능이 도입되어 기업이 비즈니스 정보를 관리하고, 통찰력을 얻으며, 관심을 행동으로 전환할 수 있게 되었습니다. (openai-991ad48e8559b2fefa9f)",
-    "교육 분야의 AI 지침 격차를 해소하기 위한 ThinkYoung 연구와 OpenAI의 EMEA 교육 파트너십 교훈이 발표되었으며, 이는 교사 지원, AI 리터러시, 독립 학습에 중점을 둡니다. (openai-69d4d9d74efa01629a6c)"
+    "JioStar의 Vijay Seshadri가 5억 사용자 규모에서 AI를 발견한 경험을 설명했습니다.",
+    "그는 평가(evals), 가드레일(guardrails), AI를 프로덕션에 적용하는 방법에 대한 교훈을 공유했습니다."
   ],
   "recent_changes": [
     {
@@ -511,14 +515,11 @@
       "summary": "ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다."
     },
     {
-      "published_at": "2026-11-09T19:00:00+00:00",
+      "published_at": "2026-11-11T00:00:00+00:00",
       "source_ids": [
-        "openai-caa9073cefb43725f1a5",
-        "openai-952d2516af2e905436ad",
-        "openai-02e9abf47eaf3fa01f98",
-        "openai-2e34e84f0999c607fcd0"
+        "openai-55ff14dc4213127df72a"
       ],
-      "summary": "OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다."
+      "summary": "JioStar의 Vijay Seshadri가 5억 사용자 규모의 AI 발견 및 운영에 대한 새로운 통찰력과 교훈을 공개했습니다."
     }
   ],
   "seen_hashes": [
@@ -558,6 +559,7 @@
     "3ef898e58e738e8ff03c8130399b584472c5f779c6f1cddd939c6c5a3b61572e",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
+    "434ad442e52bc653da0a3f190c8076d2cc235adc6b1eb686227c815720ae2f3e",
     "439ed7efcb86b685d35383cc69408f36ecbf0409b3e4f15703aeda1d1cfb3d7a",
     "4485911e5bff8a142bffb59dfefccf91f768ed7ba6e2531413530eb424fbe24b",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
@@ -691,15 +693,12 @@
 
 ## 현재 상태
 
-OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서 AI의 적용을 확대하고 있습니다. 특히, 참전용사와 간병인 같은 특정 집단을 위한 지원 프로그램과 교육 이니셔티브를 통해 AI 접근성을 높이고 있으며, ChatGPT에 비즈니스 기능을 도입하여 기업의 활용도를 높이고 있습니다.
+JioStar의 최고 설계자인 Vijay Seshadri가 5억 사용자 규모의 AI 발견에 대해 설명했습니다.
 
 ## 핵심 정보
 
-- Gilbert + Tobin은 AI를 활용하여 법률 비즈니스를 재고하고 있습니다. (openai-65b96c238445cdedc96b)
-- 20,000명 이상의 참전용사와 현역 군인들이 ChatGPT Plus 1년 무료 이용권을 신청하여 민간 직업 준비에 활용하고 있습니다. (openai-ac94b61a25ade5edbf71)
-- OpenAI Academy는 미국 5개 도시에서 간병인들을 위한 무료 ChatGPT 워크숍을 개최하여 일상생활에서 AI 기술을 활용하도록 돕고 있습니다. (openai-0f0020abcf733229d29f)
-- ChatGPT에 비즈니스 기능이 도입되어 기업이 비즈니스 정보를 관리하고, 통찰력을 얻으며, 관심을 행동으로 전환할 수 있게 되었습니다. (openai-991ad48e8559b2fefa9f)
-- 교육 분야의 AI 지침 격차를 해소하기 위한 ThinkYoung 연구와 OpenAI의 EMEA 교육 파트너십 교훈이 발표되었으며, 이는 교사 지원, AI 리터러시, 독립 학습에 중점을 둡니다. (openai-69d4d9d74efa01629a6c)
+- JioStar의 Vijay Seshadri가 5억 사용자 규모에서 AI를 발견한 경험을 설명했습니다.
+- 그는 평가(evals), 가드레일(guardrails), AI를 프로덕션에 적용하는 방법에 대한 교훈을 공유했습니다.
 
 ## 최근 변경 사항
 
@@ -707,7 +706,7 @@ OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서
 - 2026년 11월 12일 09:00 — OpenAI Academy가 간병인을 위한 무료 ChatGPT 워크숍을 미국 5개 도시에서 시작했습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 - 2026년 11월 12일 09:00 — ChatGPT에 비즈니스 정보 관리 및 통찰력 제공 기능을 포함하는 'Businesses in ChatGPT'가 도입되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 - 2026년 11월 12일 09:00 — ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
-- 2026년 11월 10일 04:00 — OpenAI는 연구 인프라의 모델 워크로드 추적 및 중단을 위한 Control Room을 공개했습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
+- 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri가 5억 사용자 규모의 AI 발견 및 운영에 대한 새로운 통찰력과 교훈을 공개했습니다. (출처: openai-55ff14dc4213127df72a)
 
 ## 변경 이력
 
@@ -760,3 +759,4 @@ OpenAI는 법률, 교육, 비즈니스, 사회 지원 등 다양한 분야에서
 - 2026년 11월 6일 17:00 — OpenAI는 최근 Hacktron과의 파트너십을 발표하여 시스템 취약점 발견 및 방어 강화를 목표로 하고 있습니다. 또한, AI 에이전트의 wet-lab science 처리 능력을 측정하기 위한 새로운 벤치마크인 BioBasicsBench를 도입했습니다. (출처: openai-a0a44ed09dc9a1089b4e, openai-5f721228af3682c2417b)
 - 2026년 11월 10일 04:00 — OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
 - 2026년 11월 12일 09:00 — 최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
+- 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다. (출처: openai-55ff14dc4213127df72a)

@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했으며, 여기에는 새로운 모델 출시, 벤치마크 도입, 기능 확장 및 Adobe와의 파트너십을 통한 통합이 포함됩니다.",
+  "current_state": "Gemini는 이제 Apple CarPlay에서 사용할 수 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -198,15 +198,27 @@
         "gemini-e192e4f92a704298f96f"
       ],
       "summary": "최근 Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했습니다. 여기에는 새로운 Gemini 4 Carbon 모델의 출시, Multimodal Knowledge Agent 벤치마크의 도입, 그리고 Gemini Intelligence의 기능 확장 및 지원 기기 확대가 포함됩니다. 또한, Google은 Adobe와의 파트너십을 통해 Adobe의 크리에이티브 및 생산성 도구를 Google 앱과 통합하여 Google Drive에서 PDF 편집 및 Gemini에서 Adobe AI 사용이 가능해졌습니다."
+    },
+    {
+      "published_at": "2026-11-11T17:00:00+00:00",
+      "source_ids": [
+        "gemini-b675b12cfc53ea49f00e"
+      ],
+      "summary": "Gemini가 Apple CarPlay에 새롭게 추가되었습니다."
     }
   ],
   "key_facts": [
-    "Gemini 4 Carbon 모델이 출시되었습니다.",
-    "Multimodal Knowledge Agent 벤치마크가 소개되었습니다.",
-    "Google과 Adobe는 크리에이티브 및 생산성 도구를 통합하고 있습니다.",
-    "Gemini Intelligence는 새로운 기능과 더 많은 기기에서 제공됩니다."
+    "Gemini가 Apple CarPlay에 출시되었습니다.",
+    "이 소식은 2026년 11월 11일에 Google 공식 블로그를 통해 발표되었습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-11T17:00:00+00:00",
+      "source_ids": [
+        "gemini-b675b12cfc53ea49f00e"
+      ],
+      "summary": "Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다."
+    },
     {
       "published_at": "2026-11-10T19:00:00+00:00",
       "source_ids": [
@@ -246,14 +258,6 @@
         "gemini-e192e4f92a704298f96f"
       ],
       "summary": "Gemini 4 Carbon 모델이 출시되었습니다."
-    },
-    {
-      "published_at": "2026-11-05T17:00:00+00:00",
-      "source_ids": [
-        "gemini-485654c1f98a7cdcb606",
-        "gemini-502c395cb72e52281f58"
-      ],
-      "summary": "Gemini가 빠른 스케치를 라이브 앱으로 변환하는 기능이 추가되었습니다."
     }
   ],
   "seen_hashes": [
@@ -274,6 +278,7 @@
     "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
     "43483c34fedc144e145b0b2ea70a2b945f84f388e7aadef8f15c226dcf7e9a75",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
+    "51f6b669c3bafd1057984d5ee046d4a3c16dab581bf2416da390d014fa036d5f",
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
@@ -312,22 +317,20 @@
 
 ## 현재 상태
 
-Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했으며, 여기에는 새로운 모델 출시, 벤치마크 도입, 기능 확장 및 Adobe와의 파트너십을 통한 통합이 포함됩니다.
+Gemini는 이제 Apple CarPlay에서 사용할 수 있습니다.
 
 ## 핵심 정보
 
-- Gemini 4 Carbon 모델이 출시되었습니다.
-- Multimodal Knowledge Agent 벤치마크가 소개되었습니다.
-- Google과 Adobe는 크리에이티브 및 생산성 도구를 통합하고 있습니다.
-- Gemini Intelligence는 새로운 기능과 더 많은 기기에서 제공됩니다.
+- Gemini가 Apple CarPlay에 출시되었습니다.
+- 이 소식은 2026년 11월 11일에 Google 공식 블로그를 통해 발표되었습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
 - 2026년 11월 11일 04:00 — Multimodal Knowledge Agent 벤치마크가 도입되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 - 2026년 11월 11일 04:00 — Google Drive에서 PDF를 편집하고 Gemini에서 Adobe AI를 사용할 수 있게 됩니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 - 2026년 11월 11일 04:00 — Gemini Intelligence에 새로운 기능이 추가되고 더 많은 기기에서 사용할 수 있게 되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 - 2026년 11월 11일 04:00 — Gemini 4 Carbon 모델이 출시되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
-- 2026년 11월 6일 02:00 — Gemini가 빠른 스케치를 라이브 앱으로 변환하는 기능이 추가되었습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)
 
 ## 변경 이력
 
@@ -356,3 +359,4 @@ Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했�
 - 2026년 11월 3일 02:45 — Google은 정기적으로 AI 관련 소식을 발표해왔으며, 이 소스는 2026년 10월에 발표된 최신 AI 업데이트를 요약합니다. (출처: gemini-996c88dfa31d64c0a9d6)
 - 2026년 11월 6일 02:00 — Gemini는 최근 Gemini Omni 1.2 Flash를 도입하여 긴 클립 처리를 개선하고, 스케치를 기능적인 앱으로 변환하는 새로운 기능을 선보였습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)
 - 2026년 11월 11일 04:00 — 최근 Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했습니다. 여기에는 새로운 Gemini 4 Carbon 모델의 출시, Multimodal Knowledge Agent 벤치마크의 도입, 그리고 Gemini Intelligence의 기능 확장 및 지원 기기 확대가 포함됩니다. 또한, Google은 Adobe와의 파트너십을 통해 Adobe의 크리에이티브 및 생산성 도구를 Google 앱과 통합하여 Google Drive에서 PDF 편집 및 Gemini에서 Adobe AI 사용이 가능해졌습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
+- 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 새롭게 추가되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
