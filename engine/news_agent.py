@@ -52,8 +52,11 @@ def _published(value: str) -> datetime:
     try:
         result = parsedate_to_datetime(value)
     except (TypeError, ValueError):
-        result = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    return result.replace(tzinfo=result.tzinfo or timezone.utc)
+        iso_value = f"{value[:-1]}+00:00" if value.endswith("Z") else value
+        result = datetime.fromisoformat(iso_value)
+    return result.replace(
+        tzinfo=result.tzinfo or timezone.utc  # noqa: UP017 - retain Python 3.10 support
+    )
 
 
 def _text(element: ElementTree.Element, names: tuple[str, ...]) -> str:
@@ -63,9 +66,7 @@ def _text(element: ElementTree.Element, names: tuple[str, ...]) -> str:
     return ""
 
 
-def parse_feed(
-    data: bytes, provider: str, base_url: str, limit: int = 20
-) -> list[NewsItem]:
+def parse_feed(data: bytes, provider: str, base_url: str, limit: int = 20) -> list[NewsItem]:
     root = ElementTree.fromstring(data)
     items: list[NewsItem] = []
     for element in root.iter():
@@ -112,8 +113,7 @@ def _source_id(url: str) -> str:
 
 def _already_seen(connection: sqlite3.Connection, url: str) -> bool:
     return (
-        connection.execute("SELECT 1 FROM seen_urls WHERE url = ?", (url,)).fetchone()
-        is not None
+        connection.execute("SELECT 1 FROM seen_urls WHERE url = ?", (url,)).fetchone() is not None
     )
 
 
@@ -133,17 +133,11 @@ def collect_once(
     sleep=time.sleep,
 ) -> int:
     """Fetch feeds once and write only URLs not previously recorded."""
-    vault = (
-        (vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", "")))
-        .expanduser()
-        .resolve()
-    )
+    vault = (vault_path or Path(os.environ.get("OBSIDIAN_VAULT_PATH", ""))).expanduser().resolve()
     if not vault.is_dir():
         raise RuntimeError(f"Obsidian Vault directory does not exist: {vault}")
     inbox = vault / os.environ.get("NEWS_INBOX_SUBDIR", "Inbox")
-    resolved_db = db_path or Path(
-        os.environ.get("NEWS_AGENT_DB_PATH", str(DEFAULT_DB_PATH))
-    )
+    resolved_db = db_path or Path(os.environ.get("NEWS_AGENT_DB_PATH", str(DEFAULT_DB_PATH)))
     created = 0
     with _connect(resolved_db) as connection:
         for provider, url in FEEDS.items():
@@ -184,12 +178,13 @@ def collect_once(
                 source_id = _source_id(item.url)
                 filename = f"{item.published_at:%Y%m%d}-{source_id}.md"
                 inbox.mkdir(parents=True, exist_ok=True)
-                (inbox / filename).write_text(
-                    _markdown(item), encoding="utf-8", newline="\n"
-                )
+                (inbox / filename).write_text(_markdown(item), encoding="utf-8", newline="\n")
+                seen_at = datetime.now(
+                    timezone.utc  # noqa: UP017 - retain Python 3.10 support
+                ).isoformat()
                 connection.execute(
                     "INSERT INTO seen_urls(url, source_id, seen_at) VALUES (?, ?, ?)",
-                    (item.url, source_id, datetime.now(timezone.utc).isoformat()),
+                    (item.url, source_id, seen_at),
                 )
                 created += 1
     return created

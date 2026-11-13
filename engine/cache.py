@@ -62,6 +62,6 @@ def save_cached_payload(
                 content_hash,
                 model,
                 payload.model_dump_json(),
-                datetime.now(timezone.utc).isoformat(),
+                datetime.now(timezone.utc).isoformat(),  # noqa: UP017 - retain Python 3.10 support
             ),
         )
