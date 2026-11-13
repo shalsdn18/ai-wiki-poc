@@ -1,9 +1,36 @@
+from datetime import datetime, timedelta, timezone
+
+import pytest
+
 from engine import news_agent
+
+UTC = timezone.utc  # noqa: UP017 - retain Python 3.10 test compatibility
 
 RSS = b"""<?xml version="1.0"?><rss><channel><item>
 <title>New AI release</title><link>https://example.com/new</link>
 <description>Useful release details.</description><pubDate>Mon, 01 Sep 2026 12:00:00 GMT</pubDate>
 </item></channel></rss>"""
+
+
+@pytest.mark.parametrize(
+    ("value", "expected"),
+    [
+        (
+            "2026-09-01T12:00:00Z",
+            datetime(2026, 9, 1, 12, 0, tzinfo=UTC),
+        ),
+        (
+            "2026-09-01T12:00:00+05:30",
+            datetime(2026, 9, 1, 12, 0, tzinfo=timezone(timedelta(hours=5, minutes=30))),
+        ),
+        (
+            "2026-09-01T12:00:00",
+            datetime(2026, 9, 1, 12, 0, tzinfo=UTC),
+        ),
+    ],
+)
+def test_published_iso_dates_preserve_timezone_semantics(value, expected):
+    assert news_agent._published(value) == expected
 
 
 def test_parse_feed_and_collect_once_deduplicates_urls(tmp_path):
@@ -49,9 +76,7 @@ def test_collect_once_retries_failed_feed(tmp_path):
 
         delays = []
         assert (
-            news_agent.collect_once(
-                vault, tmp_path / "news.db", fetch=fetch, sleep=delays.append
-            )
+            news_agent.collect_once(vault, tmp_path / "news.db", fetch=fetch, sleep=delays.append)
             == 1
         )
         assert len(attempts) == 2

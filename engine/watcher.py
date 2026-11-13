@@ -105,19 +105,20 @@ class SingleInstanceLock:
     def release(self) -> None:
         if self._handle is None:
             return
+        handle = self._handle
         try:
             if os.name == "nt":
-                self._kernel32.CloseHandle(self._handle)
+                self._kernel32.CloseHandle(handle)
             else:
                 import fcntl
 
-                fcntl.flock(self._handle.fileno(), fcntl.LOCK_UN)
+                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
         finally:
             self._handle = None
             self._kernel32 = None
             if os.name != "nt":
                 # POSIX keeps the Python file object as the flock owner.
-                self._handle.close()
+                handle.close()
 
     def __enter__(self) -> SingleInstanceLock:  # noqa: PYI034
         if not self.acquire():
