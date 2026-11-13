@@ -60,6 +60,29 @@ def _enabled(name: str) -> bool:
     return os.getenv(name, "false").strip().casefold() in {"1", "true", "yes", "on"}
 
 
+def _postgres_diagnostics_configured() -> bool:
+    admin_token = os.getenv("POSTGRES_DIAGNOSTICS_ADMIN_TOKEN", "")
+    return (
+        _enabled("POSTGRES_DIAGNOSTICS_ENABLED")
+        and 32 <= len(admin_token) <= 128
+        and admin_token.isascii()
+        and all(character.isalnum() or character in "-_" for character in admin_token)
+    )
+
+
+def _require_postgres_diagnostic_admin(token: str | None) -> None:
+    expected = os.getenv("POSTGRES_DIAGNOSTICS_ADMIN_TOKEN", "")
+    if (
+        not 32 <= len(expected) <= 128
+        or not token
+        or len(token) > 128
+        or len(token) != len(expected)
+        or not token.isascii()
+        or not hmac.compare_digest(expected, token)
+    ):
+        raise HTTPException(status_code=403, detail="Diagnostic administrator capability required")
+
+
 def _auth_configured() -> bool:
     return bool(_password_hash() and len(_session_secret()) >= 32)
 
@@ -461,6 +484,31 @@ def _write_update(writer, document_id: str, payload: KnowledgeWriteRequest, idem
             payload.operation_date,
         ),
     )
+
+
+@app.post("/admin/diagnostics/postgres")
+def postgres_runtime_diagnostic(
+    request: Request,
+    admin_token: str | None = Header(default=None, alias="X-Postgres-Diagnostic-Admin-Token"),
+) -> dict[str, object]:
+    if not _postgres_diagnostics_configured():
+        raise HTTPException(status_code=404, detail="Not found")
+    _require_knowledge_session(request)
+    _require_same_origin(request)
+    _require_postgres_diagnostic_admin(admin_token)
+
+    try:
+        from engine.postgres_operational import (
+            OperationalStoreTimeout,
+            diagnose_postgres_connection_read_only,
+        )
+
+        version_num = diagnose_postgres_connection_read_only()
+    except OperationalStoreTimeout:
+        raise HTTPException(status_code=504, detail="PostgreSQL diagnostic timed out") from None
+    except Exception:  # noqa: BLE001 - never expose or log DSN, role, or SQL error details
+        raise HTTPException(status_code=503, detail="PostgreSQL diagnostic unavailable") from None
+    return {"status": "connected", "server_version_num": version_num}
 
 
 @app.get("/knowledge/documents", response_model=list[KnowledgeResponse])

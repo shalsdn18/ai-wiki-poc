@@ -1,7 +1,8 @@
 """Opt-in PostgreSQL persistence for Knowledge operational state.
 
 R2 remains the canonical source store. This module never performs R2 I/O and
-is not selected by the existing KnowledgeStore or API routes.
+is not selected by the existing KnowledgeStore. The API uses it only for the
+explicitly enabled, read-only runtime diagnostic or the opt-in Knowledge writer.
 """
 
 from __future__ import annotations
@@ -28,6 +29,10 @@ ADVISORY_LOCK_ID = 721904231
 
 class OperationalStoreError(RuntimeError):
     """Base error with safe, non-secret messages."""
+
+
+class OperationalStoreTimeout(OperationalStoreError):
+    """A bounded PostgreSQL diagnostic exceeded its configured time limit."""
 
 
 class IdempotencyConflict(OperationalStoreError):
@@ -178,7 +183,7 @@ def transition_intent(state: str, target: str) -> str:
     return target
 
 
-def connect_from_environment() -> Any:
+def connect_from_environment(connect_timeout: int = 5) -> Any:
     from dotenv import load_dotenv
 
     load_dotenv(override=False)
@@ -187,11 +192,46 @@ def connect_from_environment() -> Any:
         raise OperationalStoreError("PostgreSQL operational storage is not configured")
     try:
         import psycopg
-
-        return psycopg.connect(dsn, connect_timeout=5)
+    except Exception:  # noqa: BLE001 - keep optional driver import failures sanitized
+        raise OperationalStoreError("PostgreSQL operational storage is unavailable") from None
+    try:
+        return psycopg.connect(dsn, connect_timeout=connect_timeout)
+    except psycopg.errors.ConnectionTimeout:
+        raise OperationalStoreTimeout("PostgreSQL connection timed out") from None
     except Exception:  # noqa: BLE001 - normalize driver errors that may contain the DSN
         # Do not forward driver exceptions: they can contain the DSN.
         raise OperationalStoreError("PostgreSQL operational storage is unavailable") from None
+
+
+def diagnose_postgres_connection_read_only() -> int:
+    """Return only the numeric server version after a bounded read-only query."""
+    try:
+        import psycopg
+    except Exception:  # noqa: BLE001 - keep driver import failures sanitized
+        raise OperationalStoreError("PostgreSQL diagnostic is unavailable") from None
+
+    connection = connect_from_environment(connect_timeout=3)
+    try:
+        with connection.transaction():
+            with connection.cursor() as cursor:
+                cursor.execute("SET TRANSACTION READ ONLY")
+                cursor.execute("SET LOCAL statement_timeout = '3000ms'")
+                cursor.execute("SELECT current_setting('server_version_num')")
+                row = cursor.fetchone()
+        if not row or not isinstance(row[0], str) or not row[0].isdecimal():
+            raise OperationalStoreError("PostgreSQL diagnostic returned an invalid result")
+        return int(row[0])
+    except OperationalStoreTimeout:
+        raise
+    except Exception as exc:  # noqa: BLE001 - never forward SQL or driver error details
+        if isinstance(exc, psycopg.errors.QueryCanceled):
+            raise OperationalStoreTimeout("PostgreSQL diagnostic timed out") from None
+        raise OperationalStoreError("PostgreSQL diagnostic is unavailable") from None
+    finally:
+        try:
+            connection.close()
+        except Exception:  # noqa: BLE001 - cleanup errors may contain connection details
+            pass
 
 
 def _migration_files() -> list[tuple[int, Path, str]]:
