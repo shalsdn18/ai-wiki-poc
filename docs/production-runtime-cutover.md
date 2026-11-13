@@ -8,7 +8,7 @@ The request also requires a valid existing `ai_wiki_session`, the existing CSRF/
 
 The diagnostic passes `connect_timeout=3` to psycopg and uses a read-only transaction with a three-second PostgreSQL statement timeout. The connection timeout applies per resolved host/address, so it is not a strict three-second total-request deadline when multiple addresses are tried. The statement timeout applies to SQL execution; the route has no separate total wall-clock deadline. It only reads PostgreSQL's numeric `server_version_num`. The response contains connection status and that version number; it never returns the database name, role, DSN, credential, or SQL error. Driver failures are converted to generic 503/504 responses and are not logged by the application.
 
-There is no diagnostic-specific application rate limiter. Keep the flag off except for a short, operator-controlled verification window, use a high-entropy one-time capability token, perform only the needed check, then disable the flag and revoke the token. Application code does not log request headers; upstream log/trace header capture was not independently verified, so confirm redaction before enabling the capability.
+There is no diagnostic-specific application rate limiter. Keep the flag off except for a short, operator-controlled verification window, use a high-entropy temporary capability token, perform only the needed check, then disable the flag and revoke the token. Application code does not log request headers; upstream log/trace header capture was not independently verified, so confirm redaction before enabling the capability.
 
 | Condition | Response |
 | --- | --- |
