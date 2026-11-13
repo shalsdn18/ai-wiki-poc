@@ -506,7 +506,7 @@ def postgres_runtime_diagnostic(
         version_num = diagnose_postgres_connection_read_only()
     except OperationalStoreTimeout:
         raise HTTPException(status_code=504, detail="PostgreSQL diagnostic timed out") from None
-    except Exception:  # noqa: BLE001 - never expose or log DSN, role, or SQL error details
+    except Exception:
         raise HTTPException(status_code=503, detail="PostgreSQL diagnostic unavailable") from None
     return {"status": "connected", "server_version_num": version_num}
 
