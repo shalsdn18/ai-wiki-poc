@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini는 이제 Apple CarPlay에서 사용할 수 있습니다.",
+  "current_state": "Google은 새로운 모델인 Gemini 4 Hydrogen을 출시했으며, 이는 Google 검색에 통합되고 개발자를 위한 에이전트 코딩 및 디버깅에 사용될 수 있습니다. 또한, Gemini는 Chrome 브라우저에 통합되어 웹사이트에서 빠른 답변, 요약, 비교 등의 기능을 제공합니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -205,59 +205,72 @@
         "gemini-b675b12cfc53ea49f00e"
       ],
       "summary": "Gemini가 Apple CarPlay에 새롭게 추가되었습니다."
+    },
+    {
+      "published_at": "2026-11-12T18:00:00+00:00",
+      "source_ids": [
+        "gemini-d6d23163b98ddfa1ea7a",
+        "gemini-7ed04b33e97e89aa07c0",
+        "gemini-d7c21c501eb23f12ba47",
+        "gemini-948927f31dd46df37176"
+      ],
+      "summary": "최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다."
     }
   ],
   "key_facts": [
-    "Gemini가 Apple CarPlay에 출시되었습니다.",
-    "이 소식은 2026년 11월 11일에 Google 공식 블로그를 통해 발표되었습니다."
+    "Gemini 4 Hydrogen은 Google의 새로운 모델입니다.",
+    "Gemini 4 Hydrogen은 Google 검색에 주요 업그레이드로 통합되었습니다.",
+    "개발자는 Gemini 4 Hydrogen을 사용하여 비용 효율적인 에이전트 코딩 및 디버깅을 할 수 있으며, Google AI Studio에서 빌드를 시작할 수 있습니다.",
+    "Gemini는 Chrome 브라우저에 통합되어 어떤 웹사이트에서든 빠른 답변을 제공합니다.",
+    "Chrome의 Gemini는 기사 요약, 제품 비교, 복잡한 주제 설명 기능을 사이드 패널에서 직접 제공합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-12T18:00:00+00:00",
+      "source_ids": [
+        "gemini-d6d23163b98ddfa1ea7a",
+        "gemini-7ed04b33e97e89aa07c0",
+        "gemini-d7c21c501eb23f12ba47",
+        "gemini-948927f31dd46df37176"
+      ],
+      "summary": "개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다."
+    },
+    {
+      "published_at": "2026-11-12T18:00:00+00:00",
+      "source_ids": [
+        "gemini-d6d23163b98ddfa1ea7a",
+        "gemini-7ed04b33e97e89aa07c0",
+        "gemini-d7c21c501eb23f12ba47",
+        "gemini-948927f31dd46df37176"
+      ],
+      "summary": "Google 검색에 Gemini 4 Hydrogen이 통합되었습니다."
+    },
+    {
+      "published_at": "2026-11-12T18:00:00+00:00",
+      "source_ids": [
+        "gemini-d6d23163b98ddfa1ea7a",
+        "gemini-7ed04b33e97e89aa07c0",
+        "gemini-d7c21c501eb23f12ba47",
+        "gemini-948927f31dd46df37176"
+      ],
+      "summary": "Gemini 4 Hydrogen 모델이 소개되었습니다."
+    },
+    {
+      "published_at": "2026-11-12T18:00:00+00:00",
+      "source_ids": [
+        "gemini-d6d23163b98ddfa1ea7a",
+        "gemini-7ed04b33e97e89aa07c0",
+        "gemini-d7c21c501eb23f12ba47",
+        "gemini-948927f31dd46df37176"
+      ],
+      "summary": "Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다."
+    },
     {
       "published_at": "2026-11-11T17:00:00+00:00",
       "source_ids": [
         "gemini-b675b12cfc53ea49f00e"
       ],
       "summary": "Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다."
-    },
-    {
-      "published_at": "2026-11-10T19:00:00+00:00",
-      "source_ids": [
-        "gemini-fafff4292c09fd9370c5",
-        "gemini-2ffd7e8cb1f550c679e6",
-        "gemini-5b4c18faabadfb3802c4",
-        "gemini-e192e4f92a704298f96f"
-      ],
-      "summary": "Multimodal Knowledge Agent 벤치마크가 도입되었습니다."
-    },
-    {
-      "published_at": "2026-11-10T19:00:00+00:00",
-      "source_ids": [
-        "gemini-fafff4292c09fd9370c5",
-        "gemini-2ffd7e8cb1f550c679e6",
-        "gemini-5b4c18faabadfb3802c4",
-        "gemini-e192e4f92a704298f96f"
-      ],
-      "summary": "Google Drive에서 PDF를 편집하고 Gemini에서 Adobe AI를 사용할 수 있게 됩니다."
-    },
-    {
-      "published_at": "2026-11-10T19:00:00+00:00",
-      "source_ids": [
-        "gemini-fafff4292c09fd9370c5",
-        "gemini-2ffd7e8cb1f550c679e6",
-        "gemini-5b4c18faabadfb3802c4",
-        "gemini-e192e4f92a704298f96f"
-      ],
-      "summary": "Gemini Intelligence에 새로운 기능이 추가되고 더 많은 기기에서 사용할 수 있게 되었습니다."
-    },
-    {
-      "published_at": "2026-11-10T19:00:00+00:00",
-      "source_ids": [
-        "gemini-fafff4292c09fd9370c5",
-        "gemini-2ffd7e8cb1f550c679e6",
-        "gemini-5b4c18faabadfb3802c4",
-        "gemini-e192e4f92a704298f96f"
-      ],
-      "summary": "Gemini 4 Carbon 모델이 출시되었습니다."
     }
   ],
   "seen_hashes": [
@@ -265,6 +278,7 @@
     "0615b82fc1c8ac95c6af73bca62266ffba278fc90b657f8d2f77e51f848c4319",
     "0717f46c5acd4ba389433fd6b8fbae54bd24065bccc098cb1dcf184dcbf948e2",
     "0e429b97e6110b86214d4b116a195b2e5e255efdb31e8b27a10d1c3fc92cd559",
+    "0fad144de30839477cadd31e4f34e7e5c52b27c5a2a27564abe50dafe17ae2e1",
     "0fad29ea3ad78fa0535e03e17553c2f6f057483f2b8e6fedf08292cf6a9ad37d",
     "1271c9e586091565823bd00c10965cb0e6f897e428aafcc8f132a0fe8d8025ea",
     "132301249d811076bce85255753d9a5eb8e4f435965538f8d63e40fe65782e4d",
@@ -288,16 +302,19 @@
     "71dcf779c2201e303f5b6cfb2f582085d6a65e03a5ca0b9a85658599dc4ea51b",
     "770a94f1c51cff98767321e4e2bca289def95eeb50f46948d4b9b1b1a0b678eb",
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
+    "79eeed36296fbc9a422ad5aaf7d249edf910ef54e00fba0bb8dee0d95b129be0",
     "7a5d5a2acef7650d6516ebbe7b25b33fb17e2f5484c2d94ebd5ac2db18cee0ac",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "90428287e7330dda1013088381e0035cd878f0020ba20bc9f71cbb464e22c6e5",
     "91b56b078f203bca809dfbced405ced142c3f13c463331bd2d561b0d3ecdbc53",
+    "9aaac088c7bb06422fc5e9dd70d5cea81a42c1a3e4c925aacaee0b20c74adb43",
     "9c4cb20f07b4f41261caa5354a0df199b53a536fc5284243f36041924282386c",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "ad88486afcb221923120c26f806fc05ecd66d7d6729a01ebb10639a9ed4306bb",
+    "c9e7118463e0ff2f986200a7f648f354a2e9d5d6108b67d2d597f6406e9d8403",
     "d0661df8d48a2cd1946155efcefb44417681c65ad43e71dd4c305b4b53f23152",
     "d149410c20ac0c3373c340018eb404e9a0d4def7d5b2446e545b861975aa4ee5",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
@@ -317,20 +334,23 @@
 
 ## 현재 상태
 
-Gemini는 이제 Apple CarPlay에서 사용할 수 있습니다.
+Google은 새로운 모델인 Gemini 4 Hydrogen을 출시했으며, 이는 Google 검색에 통합되고 개발자를 위한 에이전트 코딩 및 디버깅에 사용될 수 있습니다. 또한, Gemini는 Chrome 브라우저에 통합되어 웹사이트에서 빠른 답변, 요약, 비교 등의 기능을 제공합니다.
 
 ## 핵심 정보
 
-- Gemini가 Apple CarPlay에 출시되었습니다.
-- 이 소식은 2026년 11월 11일에 Google 공식 블로그를 통해 발표되었습니다.
+- Gemini 4 Hydrogen은 Google의 새로운 모델입니다.
+- Gemini 4 Hydrogen은 Google 검색에 주요 업그레이드로 통합되었습니다.
+- 개발자는 Gemini 4 Hydrogen을 사용하여 비용 효율적인 에이전트 코딩 및 디버깅을 할 수 있으며, Google AI Studio에서 빌드를 시작할 수 있습니다.
+- Gemini는 Chrome 브라우저에 통합되어 어떤 웹사이트에서든 빠른 답변을 제공합니다.
+- Chrome의 Gemini는 기사 요약, 제품 비교, 복잡한 주제 설명 기능을 사이드 패널에서 직접 제공합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 13일 03:00 — 개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
+- 2026년 11월 13일 03:00 — Google 검색에 Gemini 4 Hydrogen이 통합되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
+- 2026년 11월 13일 03:00 — Gemini 4 Hydrogen 모델이 소개되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
+- 2026년 11월 13일 03:00 — Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
-- 2026년 11월 11일 04:00 — Multimodal Knowledge Agent 벤치마크가 도입되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
-- 2026년 11월 11일 04:00 — Google Drive에서 PDF를 편집하고 Gemini에서 Adobe AI를 사용할 수 있게 됩니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
-- 2026년 11월 11일 04:00 — Gemini Intelligence에 새로운 기능이 추가되고 더 많은 기기에서 사용할 수 있게 되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
-- 2026년 11월 11일 04:00 — Gemini 4 Carbon 모델이 출시되었습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 
 ## 변경 이력
 
@@ -360,3 +380,4 @@ Gemini는 이제 Apple CarPlay에서 사용할 수 있습니다.
 - 2026년 11월 6일 02:00 — Gemini는 최근 Gemini Omni 1.2 Flash를 도입하여 긴 클립 처리를 개선하고, 스케치를 기능적인 앱으로 변환하는 새로운 기능을 선보였습니다. (출처: gemini-485654c1f98a7cdcb606, gemini-502c395cb72e52281f58)
 - 2026년 11월 11일 04:00 — 최근 Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했습니다. 여기에는 새로운 Gemini 4 Carbon 모델의 출시, Multimodal Knowledge Agent 벤치마크의 도입, 그리고 Gemini Intelligence의 기능 확장 및 지원 기기 확대가 포함됩니다. 또한, Google은 Adobe와의 파트너십을 통해 Adobe의 크리에이티브 및 생산성 도구를 Google 앱과 통합하여 Google Drive에서 PDF 편집 및 Gemini에서 Adobe AI 사용이 가능해졌습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 - 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 새롭게 추가되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
+- 2026년 11월 13일 03:00 — 최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)

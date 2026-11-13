@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "JioStar의 최고 설계자인 Vijay Seshadri가 5억 사용자 규모의 AI 발견에 대해 설명했습니다.",
+  "current_state": "OpenAI는 다양한 기업들이 자사 모델(Codex, ChatGPT)을 활용하여 제품 개발, 생산성 향상, 수익 증대 및 고객 경험 개선을 이루도록 돕고 있으며, 동시에 AI와 어린이 안전 연구에 200만 달러를 지원하며 사회적 책임도 다하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -463,13 +463,65 @@
         "openai-55ff14dc4213127df72a"
       ],
       "summary": "JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다."
+    },
+    {
+      "published_at": "2026-11-12T20:00:00+00:00",
+      "source_ids": [
+        "openai-67672a694e389b29af55",
+        "openai-b9840fd67063a36a400d",
+        "openai-4922ca6fb0dd92994c34",
+        "openai-d7c1da8cb7dc41da688b"
+      ],
+      "summary": "OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다."
     }
   ],
   "key_facts": [
-    "JioStar의 Vijay Seshadri가 5억 사용자 규모에서 AI를 발견한 경험을 설명했습니다.",
-    "그는 평가(evals), 가드레일(guardrails), AI를 프로덕션에 적용하는 방법에 대한 교훈을 공유했습니다."
+    "Amplitude는 OpenAI 모델 기반의 Wave 에이전트를 사용하여 제품 개선을 1-2일 내에 출시합니다.",
+    "Gondola는 Codex를 통해 리드 엔지니어의 생산성을 50% 높이고 ChatGPT로 업무를 간소화하여 수익을 두 배로 늘렸습니다.",
+    "Holiday Extras는 Codex를 활용하여 고객 전문 지식을 앱 개선, 예약 전환율 증가 및 새로운 성장 기회로 전환하고 있습니다.",
+    "OpenAI는 AI와 어린이 안전 연구에 200만 달러를 지원하여 젊은이들을 위한 위험과 기회를 측정하는 도구를 개발합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-12T20:00:00+00:00",
+      "source_ids": [
+        "openai-67672a694e389b29af55",
+        "openai-b9840fd67063a36a400d",
+        "openai-4922ca6fb0dd92994c34",
+        "openai-d7c1da8cb7dc41da688b"
+      ],
+      "summary": "OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다."
+    },
+    {
+      "published_at": "2026-11-12T20:00:00+00:00",
+      "source_ids": [
+        "openai-67672a694e389b29af55",
+        "openai-b9840fd67063a36a400d",
+        "openai-4922ca6fb0dd92994c34",
+        "openai-d7c1da8cb7dc41da688b"
+      ],
+      "summary": "Holiday Extras는 Codex를 활용하여 고객 경험과 비즈니스 성장을 위한 새로운 가능성을 모색하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-12T20:00:00+00:00",
+      "source_ids": [
+        "openai-67672a694e389b29af55",
+        "openai-b9840fd67063a36a400d",
+        "openai-4922ca6fb0dd92994c34",
+        "openai-d7c1da8cb7dc41da688b"
+      ],
+      "summary": "Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다."
+    },
+    {
+      "published_at": "2026-11-12T20:00:00+00:00",
+      "source_ids": [
+        "openai-67672a694e389b29af55",
+        "openai-b9840fd67063a36a400d",
+        "openai-4922ca6fb0dd92994c34",
+        "openai-d7c1da8cb7dc41da688b"
+      ],
+      "summary": "Amplitude는 OpenAI 모델 기반의 Wave를 통해 제품 개선 프로세스를 가속화했습니다."
+    },
     {
       "published_at": "2026-11-12T00:00:00+00:00",
       "source_ids": [
@@ -480,55 +532,17 @@
         "openai-69d4d9d74efa01629a6c"
       ],
       "summary": "교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다."
-    },
-    {
-      "published_at": "2026-11-12T00:00:00+00:00",
-      "source_ids": [
-        "openai-65b96c238445cdedc96b",
-        "openai-ac94b61a25ade5edbf71",
-        "openai-0f0020abcf733229d29f",
-        "openai-991ad48e8559b2fefa9f",
-        "openai-69d4d9d74efa01629a6c"
-      ],
-      "summary": "OpenAI Academy가 간병인을 위한 무료 ChatGPT 워크숍을 미국 5개 도시에서 시작했습니다."
-    },
-    {
-      "published_at": "2026-11-12T00:00:00+00:00",
-      "source_ids": [
-        "openai-65b96c238445cdedc96b",
-        "openai-ac94b61a25ade5edbf71",
-        "openai-0f0020abcf733229d29f",
-        "openai-991ad48e8559b2fefa9f",
-        "openai-69d4d9d74efa01629a6c"
-      ],
-      "summary": "ChatGPT에 비즈니스 정보 관리 및 통찰력 제공 기능을 포함하는 'Businesses in ChatGPT'가 도입되었습니다."
-    },
-    {
-      "published_at": "2026-11-12T00:00:00+00:00",
-      "source_ids": [
-        "openai-65b96c238445cdedc96b",
-        "openai-ac94b61a25ade5edbf71",
-        "openai-0f0020abcf733229d29f",
-        "openai-991ad48e8559b2fefa9f",
-        "openai-69d4d9d74efa01629a6c"
-      ],
-      "summary": "ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다."
-    },
-    {
-      "published_at": "2026-11-11T00:00:00+00:00",
-      "source_ids": [
-        "openai-55ff14dc4213127df72a"
-      ],
-      "summary": "JioStar의 Vijay Seshadri가 5억 사용자 규모의 AI 발견 및 운영에 대한 새로운 통찰력과 교훈을 공개했습니다."
     }
   ],
   "seen_hashes": [
     "0045c1c78b9c2e9af11bca6c8aa443067038ed194639cbc741716651d8b432e6",
+    "0080141cd7a746c84321da03fc42438aa7b6cb4d0499617f10adc1479b509f6b",
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "035c9ef70692b5cc7049e1d3b5144ddf89b5b9a4c3c40197f3ce2f3f0401615b",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
+    "07ed561135373f0b05d34c08a2bbba7ec0f12731b08011acc95266a10b1e78af",
     "0bc032b00450588ff42a0b6b586fdbf3c9ef827a597df576bef5e3185b2ed53a",
     "0bc370d842d0a2a612efa97faefd4e3974ec5e780fe8a34b57833918062b066d",
     "138253af39dc25959c8893f6bf65dcb259e5686ab5339ec266d045195905ef6d",
@@ -639,6 +653,7 @@
     "b7de8fc9f5ae8be37ca27760f04748e34ecbe05e240b0b896b85059bbbf19c9b",
     "b8289508936a791b1b78531367ff5d1edb96caa472d7c20ed1c791a6e8e2dc15",
     "b930a50cd24995813279fdc9e45c5c625fb2cf579ef3e09338f3ec19ca3a2609",
+    "ba704cb5a556833ff3dec6b688ae417391083d43ae5c4ecdb64bd99a927854b9",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "bc06389219fd2549b37626c6e43340c0a719b49b7c8a23f1f65a623f26243bd7",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
@@ -684,7 +699,8 @@
     "f1203858b890adf5adc2d2fb0c619c62f9ef8f07916dc1416021988a53019093",
     "f4e8f2cb9187d027e6529329f0206b5ab53c81b7a10ba3d5cc0b90335709ae62",
     "fc2fed5c6a1e07a24f916ab4fa8d1f4d60fb73d96e3dad3fa3012f743c058b3e",
-    "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72"
+    "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72",
+    "fe9619587b6d2d37b0d86bf470b158848edbfd8fab9a7f0eddc0a754e6503828"
   ]
 }
 ---
@@ -693,20 +709,22 @@
 
 ## 현재 상태
 
-JioStar의 최고 설계자인 Vijay Seshadri가 5억 사용자 규모의 AI 발견에 대해 설명했습니다.
+OpenAI는 다양한 기업들이 자사 모델(Codex, ChatGPT)을 활용하여 제품 개발, 생산성 향상, 수익 증대 및 고객 경험 개선을 이루도록 돕고 있으며, 동시에 AI와 어린이 안전 연구에 200만 달러를 지원하며 사회적 책임도 다하고 있습니다.
 
 ## 핵심 정보
 
-- JioStar의 Vijay Seshadri가 5억 사용자 규모에서 AI를 발견한 경험을 설명했습니다.
-- 그는 평가(evals), 가드레일(guardrails), AI를 프로덕션에 적용하는 방법에 대한 교훈을 공유했습니다.
+- Amplitude는 OpenAI 모델 기반의 Wave 에이전트를 사용하여 제품 개선을 1-2일 내에 출시합니다.
+- Gondola는 Codex를 통해 리드 엔지니어의 생산성을 50% 높이고 ChatGPT로 업무를 간소화하여 수익을 두 배로 늘렸습니다.
+- Holiday Extras는 Codex를 활용하여 고객 전문 지식을 앱 개선, 예약 전환율 증가 및 새로운 성장 기회로 전환하고 있습니다.
+- OpenAI는 AI와 어린이 안전 연구에 200만 달러를 지원하여 젊은이들을 위한 위험과 기회를 측정하는 도구를 개발합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 13일 05:00 — OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
+- 2026년 11월 13일 05:00 — Holiday Extras는 Codex를 활용하여 고객 경험과 비즈니스 성장을 위한 새로운 가능성을 모색하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
+- 2026년 11월 13일 05:00 — Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
+- 2026년 11월 13일 05:00 — Amplitude는 OpenAI 모델 기반의 Wave를 통해 제품 개선 프로세스를 가속화했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 - 2026년 11월 12일 09:00 — 교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
-- 2026년 11월 12일 09:00 — OpenAI Academy가 간병인을 위한 무료 ChatGPT 워크숍을 미국 5개 도시에서 시작했습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
-- 2026년 11월 12일 09:00 — ChatGPT에 비즈니스 정보 관리 및 통찰력 제공 기능을 포함하는 'Businesses in ChatGPT'가 도입되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
-- 2026년 11월 12일 09:00 — ChatGPT Plus의 1년 무료 이용권이 20,000명 이상의 참전용사와 현역 군인에게 제공되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
-- 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri가 5억 사용자 규모의 AI 발견 및 운영에 대한 새로운 통찰력과 교훈을 공개했습니다. (출처: openai-55ff14dc4213127df72a)
 
 ## 변경 이력
 
@@ -760,3 +778,4 @@ JioStar의 최고 설계자인 Vijay Seshadri가 5억 사용자 규모의 AI 발
 - 2026년 11월 10일 04:00 — OpenAI는 최근 여러 발표를 통해 자사 기술의 상업적 확장과 내부 안전 메커니즘, 그리고 기업 고객의 생산성 향상 사례를 보여주었습니다. (출처: openai-caa9073cefb43725f1a5, openai-952d2516af2e905436ad, openai-02e9abf47eaf3fa01f98, openai-2e34e84f0999c607fcd0)
 - 2026년 11월 12일 09:00 — 최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 - 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다. (출처: openai-55ff14dc4213127df72a)
+- 2026년 11월 13일 05:00 — OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
