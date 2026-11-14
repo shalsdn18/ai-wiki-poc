@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 다양한 기업들이 자사 모델(Codex, ChatGPT)을 활용하여 제품 개발, 생산성 향상, 수익 증대 및 고객 경험 개선을 이루도록 돕고 있으며, 동시에 AI와 어린이 안전 연구에 200만 달러를 지원하며 사회적 책임도 다하고 있습니다.",
+  "current_state": "OpenAI는 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 ChatGPT Wallet을 도입했습니다. 또한, Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕고, Forge 에이전트가 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -473,15 +473,38 @@
         "openai-d7c1da8cb7dc41da688b"
       ],
       "summary": "OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-13T15:00:00+00:00",
+      "source_ids": [
+        "openai-7d4d71d056da02862d0b",
+        "openai-a99dfdd20d85acbbb850"
+      ],
+      "summary": "OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다."
     }
   ],
   "key_facts": [
-    "Amplitude는 OpenAI 모델 기반의 Wave 에이전트를 사용하여 제품 개선을 1-2일 내에 출시합니다.",
-    "Gondola는 Codex를 통해 리드 엔지니어의 생산성을 50% 높이고 ChatGPT로 업무를 간소화하여 수익을 두 배로 늘렸습니다.",
-    "Holiday Extras는 Codex를 활용하여 고객 전문 지식을 앱 개선, 예약 전환율 증가 및 새로운 성장 기회로 전환하고 있습니다.",
-    "OpenAI는 AI와 어린이 안전 연구에 200만 달러를 지원하여 젊은이들을 위한 위험과 기회를 측정하는 도구를 개발합니다."
+    "ChatGPT Wallet은 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 합니다.",
+    "Shield는 OpenAI를 사용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕습니다.",
+    "Shield의 Forge 에이전트는 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-13T15:00:00+00:00",
+      "source_ids": [
+        "openai-7d4d71d056da02862d0b",
+        "openai-a99dfdd20d85acbbb850"
+      ],
+      "summary": "Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 효율적으로 처리하고 중요한 문제에 집중할 수 있도록 지원합니다."
+    },
+    {
+      "published_at": "2026-11-13T15:00:00+00:00",
+      "source_ids": [
+        "openai-7d4d71d056da02862d0b",
+        "openai-a99dfdd20d85acbbb850"
+      ],
+      "summary": "ChatGPT Wallet이 도입되어 ChatGPT Work, Codex, dots의 에이전트가 안전하게 구매를 처리할 수 있게 되었습니다."
+    },
     {
       "published_at": "2026-11-12T20:00:00+00:00",
       "source_ids": [
@@ -511,27 +534,6 @@
         "openai-d7c1da8cb7dc41da688b"
       ],
       "summary": "Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다."
-    },
-    {
-      "published_at": "2026-11-12T20:00:00+00:00",
-      "source_ids": [
-        "openai-67672a694e389b29af55",
-        "openai-b9840fd67063a36a400d",
-        "openai-4922ca6fb0dd92994c34",
-        "openai-d7c1da8cb7dc41da688b"
-      ],
-      "summary": "Amplitude는 OpenAI 모델 기반의 Wave를 통해 제품 개선 프로세스를 가속화했습니다."
-    },
-    {
-      "published_at": "2026-11-12T00:00:00+00:00",
-      "source_ids": [
-        "openai-65b96c238445cdedc96b",
-        "openai-ac94b61a25ade5edbf71",
-        "openai-0f0020abcf733229d29f",
-        "openai-991ad48e8559b2fefa9f",
-        "openai-69d4d9d74efa01629a6c"
-      ],
-      "summary": "교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -614,6 +616,7 @@
     "7e0d43fccd20430eeec388f37f6bde346aa90195b58c9e254ecdcc7a71681bbb",
     "7e2cea82fc626b90fef309e59b73e5270efaa62f50d402768d1089b7be5d92df",
     "7e4e59a3655dae787f875eed162c45d1b8165d9edb25678cd917082c39da6242",
+    "80bb9ce908f57e4ec0dbef6e830ab0f0aeaf05c75d3318d110fac549d2f0f8bc",
     "8539e273b47da9492f120888e827cf67641389605e550587344ee150a2e3b570",
     "85d953a63c4281f0caa98bc15c1774c8bec272cb7e6f1d5029feec8b11588d47",
     "871d82bfdb087d7f4fb90fbc2211fba2eaa482e1d78218d33dcd5a2ad005230e",
@@ -626,6 +629,7 @@
     "8c03cb9aa30759adcacca7f99dc89771050a03d48826a74f409b48810a219d5e",
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
+    "8f9b60dabe8f29402f9e09bd87ac7f24b371bf54a862ec3e8b205fb2c92f61fb",
     "95e94d6b252d142b0a5165dd3f327fe52c2d920c0c725c016bbad224ef375ed5",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "98ff53fe555208d62d111c37eb75ef4144bae6492b6709dd99501ad89e1079d1",
@@ -709,22 +713,21 @@
 
 ## 현재 상태
 
-OpenAI는 다양한 기업들이 자사 모델(Codex, ChatGPT)을 활용하여 제품 개발, 생산성 향상, 수익 증대 및 고객 경험 개선을 이루도록 돕고 있으며, 동시에 AI와 어린이 안전 연구에 200만 달러를 지원하며 사회적 책임도 다하고 있습니다.
+OpenAI는 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 ChatGPT Wallet을 도입했습니다. 또한, Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕고, Forge 에이전트가 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.
 
 ## 핵심 정보
 
-- Amplitude는 OpenAI 모델 기반의 Wave 에이전트를 사용하여 제품 개선을 1-2일 내에 출시합니다.
-- Gondola는 Codex를 통해 리드 엔지니어의 생산성을 50% 높이고 ChatGPT로 업무를 간소화하여 수익을 두 배로 늘렸습니다.
-- Holiday Extras는 Codex를 활용하여 고객 전문 지식을 앱 개선, 예약 전환율 증가 및 새로운 성장 기회로 전환하고 있습니다.
-- OpenAI는 AI와 어린이 안전 연구에 200만 달러를 지원하여 젊은이들을 위한 위험과 기회를 측정하는 도구를 개발합니다.
+- ChatGPT Wallet은 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 합니다.
+- Shield는 OpenAI를 사용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕습니다.
+- Shield의 Forge 에이전트는 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 14일 00:00 — Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 효율적으로 처리하고 중요한 문제에 집중할 수 있도록 지원합니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
+- 2026년 11월 14일 00:00 — ChatGPT Wallet이 도입되어 ChatGPT Work, Codex, dots의 에이전트가 안전하게 구매를 처리할 수 있게 되었습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
 - 2026년 11월 13일 05:00 — OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 - 2026년 11월 13일 05:00 — Holiday Extras는 Codex를 활용하여 고객 경험과 비즈니스 성장을 위한 새로운 가능성을 모색하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 - 2026년 11월 13일 05:00 — Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
-- 2026년 11월 13일 05:00 — Amplitude는 OpenAI 모델 기반의 Wave를 통해 제품 개선 프로세스를 가속화했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
-- 2026년 11월 12일 09:00 — 교육 분야의 AI 지침 격차 해소를 위한 새로운 ThinkYoung 연구 결과와 OpenAI의 EMEA 교육 파트너십을 통한 교훈이 공개되었습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 
 ## 변경 이력
 
@@ -779,3 +782,4 @@ OpenAI는 다양한 기업들이 자사 모델(Codex, ChatGPT)을 활용하여 �
 - 2026년 11월 12일 09:00 — 최근 OpenAI는 AI 기술의 사회적 적용을 확대하고 다양한 사용자층의 접근성을 높이는 데 주력하고 있습니다. 법률 분야의 혁신부터 참전용사 및 간병인 지원, 교육 분야의 AI 리터러시 증진, 그리고 ChatGPT 내 비즈니스 기능 도입에 이르기까지, AI의 실용적 활용과 사회적 영향력을 넓히기 위한 다각적인 노력을 기울이고 있습니다. (출처: openai-65b96c238445cdedc96b, openai-ac94b61a25ade5edbf71, openai-0f0020abcf733229d29f, openai-991ad48e8559b2fefa9f, openai-69d4d9d74efa01629a6c)
 - 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다. (출처: openai-55ff14dc4213127df72a)
 - 2026년 11월 13일 05:00 — OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
+- 2026년 11월 14일 00:00 — OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)

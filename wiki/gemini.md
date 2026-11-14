@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google은 새로운 모델인 Gemini 4 Hydrogen을 출시했으며, 이는 Google 검색에 통합되고 개발자를 위한 에이전트 코딩 및 디버깅에 사용될 수 있습니다. 또한, Gemini는 Chrome 브라우저에 통합되어 웹사이트에서 빠른 답변, 요약, 비교 등의 기능을 제공합니다.",
+  "current_state": "Google Wallet을 Gemini에 연결하여 개인 금융 통찰력을 얻을 수 있게 되었습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -215,16 +215,27 @@
         "gemini-948927f31dd46df37176"
       ],
       "summary": "최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다."
+    },
+    {
+      "published_at": "2026-11-13T17:00:00+00:00",
+      "source_ids": [
+        "gemini-d2a87e2f3ff3ae0e50e6"
+      ],
+      "summary": "Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다."
     }
   ],
   "key_facts": [
-    "Gemini 4 Hydrogen은 Google의 새로운 모델입니다.",
-    "Gemini 4 Hydrogen은 Google 검색에 주요 업그레이드로 통합되었습니다.",
-    "개발자는 Gemini 4 Hydrogen을 사용하여 비용 효율적인 에이전트 코딩 및 디버깅을 할 수 있으며, Google AI Studio에서 빌드를 시작할 수 있습니다.",
-    "Gemini는 Chrome 브라우저에 통합되어 어떤 웹사이트에서든 빠른 답변을 제공합니다.",
-    "Chrome의 Gemini는 기사 요약, 제품 비교, 복잡한 주제 설명 기능을 사이드 패널에서 직접 제공합니다."
+    "Google Wallet과 Gemini가 연결됩니다.",
+    "이 연결은 개인 금융 통찰력을 제공합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-13T17:00:00+00:00",
+      "source_ids": [
+        "gemini-d2a87e2f3ff3ae0e50e6"
+      ],
+      "summary": "Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다."
+    },
     {
       "published_at": "2026-11-12T18:00:00+00:00",
       "source_ids": [
@@ -264,13 +275,6 @@
         "gemini-948927f31dd46df37176"
       ],
       "summary": "Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다."
-    },
-    {
-      "published_at": "2026-11-11T17:00:00+00:00",
-      "source_ids": [
-        "gemini-b675b12cfc53ea49f00e"
-      ],
-      "summary": "Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다."
     }
   ],
   "seen_hashes": [
@@ -304,6 +308,7 @@
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "79eeed36296fbc9a422ad5aaf7d249edf910ef54e00fba0bb8dee0d95b129be0",
     "7a5d5a2acef7650d6516ebbe7b25b33fb17e2f5484c2d94ebd5ac2db18cee0ac",
+    "87640befa7b2b5323e0d649508df6e35869e587e9ac0961ca6ddabf6b1707f1d",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "90428287e7330dda1013088381e0035cd878f0020ba20bc9f71cbb464e22c6e5",
     "91b56b078f203bca809dfbced405ced142c3f13c463331bd2d561b0d3ecdbc53",
@@ -334,23 +339,20 @@
 
 ## 현재 상태
 
-Google은 새로운 모델인 Gemini 4 Hydrogen을 출시했으며, 이는 Google 검색에 통합되고 개발자를 위한 에이전트 코딩 및 디버깅에 사용될 수 있습니다. 또한, Gemini는 Chrome 브라우저에 통합되어 웹사이트에서 빠른 답변, 요약, 비교 등의 기능을 제공합니다.
+Google Wallet을 Gemini에 연결하여 개인 금융 통찰력을 얻을 수 있게 되었습니다.
 
 ## 핵심 정보
 
-- Gemini 4 Hydrogen은 Google의 새로운 모델입니다.
-- Gemini 4 Hydrogen은 Google 검색에 주요 업그레이드로 통합되었습니다.
-- 개발자는 Gemini 4 Hydrogen을 사용하여 비용 효율적인 에이전트 코딩 및 디버깅을 할 수 있으며, Google AI Studio에서 빌드를 시작할 수 있습니다.
-- Gemini는 Chrome 브라우저에 통합되어 어떤 웹사이트에서든 빠른 답변을 제공합니다.
-- Chrome의 Gemini는 기사 요약, 제품 비교, 복잡한 주제 설명 기능을 사이드 패널에서 직접 제공합니다.
+- Google Wallet과 Gemini가 연결됩니다.
+- 이 연결은 개인 금융 통찰력을 제공합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 14일 02:00 — Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
 - 2026년 11월 13일 03:00 — 개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 13일 03:00 — Google 검색에 Gemini 4 Hydrogen이 통합되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 13일 03:00 — Gemini 4 Hydrogen 모델이 소개되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 13일 03:00 — Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
-- 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 통합되어 사용자들이 차량 내에서 Gemini와 상호작용할 수 있게 되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
 
 ## 변경 이력
 
@@ -381,3 +383,4 @@ Google은 새로운 모델인 Gemini 4 Hydrogen을 출시했으며, 이는 Googl
 - 2026년 11월 11일 04:00 — 최근 Google은 Gemini 모델과 관련된 여러 중요한 업데이트를 발표했습니다. 여기에는 새로운 Gemini 4 Carbon 모델의 출시, Multimodal Knowledge Agent 벤치마크의 도입, 그리고 Gemini Intelligence의 기능 확장 및 지원 기기 확대가 포함됩니다. 또한, Google은 Adobe와의 파트너십을 통해 Adobe의 크리에이티브 및 생산성 도구를 Google 앱과 통합하여 Google Drive에서 PDF 편집 및 Gemini에서 Adobe AI 사용이 가능해졌습니다. (출처: gemini-fafff4292c09fd9370c5, gemini-2ffd7e8cb1f550c679e6, gemini-5b4c18faabadfb3802c4, gemini-e192e4f92a704298f96f)
 - 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 새롭게 추가되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
 - 2026년 11월 13일 03:00 — 최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
+- 2026년 11월 14일 02:00 — Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
