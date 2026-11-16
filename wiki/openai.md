@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 ChatGPT Wallet을 도입했습니다. 또한, Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕고, Forge 에이전트가 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.",
+  "current_state": "OpenAI는 새로운 과학 블로그를 시작했으며, GPT-6 Astra를 활용하여 표준 모델의 격자 정의에 대한 연구를 진행하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -481,14 +481,39 @@
         "openai-a99dfdd20d85acbbb850"
       ],
       "summary": "OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-15T22:00:01+00:00",
+      "source_ids": [
+        "openai-2e8f421d2ee2a3dfd36b",
+        "openai-33b95c2112c46efd0955"
+      ],
+      "summary": "OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다."
     }
   ],
   "key_facts": [
-    "ChatGPT Wallet은 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 합니다.",
-    "Shield는 OpenAI를 사용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕습니다.",
-    "Shield의 Forge 에이전트는 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다."
+    "OpenAI는 표준 모델의 비섭동 격자 정의 후보를 탐구하고 있습니다.",
+    "GPT-6 Astra는 이 아이디어를 상세한 증명으로 바꾸는 데 도움을 주었습니다.",
+    "OpenAI는 과학 분야를 위한 새로운 블로그를 시작했습니다.",
+    "이 과학 블로그는 AI를 사용하여 과학적 발견을 발전시키는 연구원들의 새로운 발견, 실용적인 방법 및 직접 경험한 이야기를 공유합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-15T22:00:01+00:00",
+      "source_ids": [
+        "openai-2e8f421d2ee2a3dfd36b",
+        "openai-33b95c2112c46efd0955"
+      ],
+      "summary": "OpenAI는 표준 모델의 격자 정의를 향한 한 걸음을 내디뎠습니다."
+    },
+    {
+      "published_at": "2026-11-15T22:00:01+00:00",
+      "source_ids": [
+        "openai-2e8f421d2ee2a3dfd36b",
+        "openai-33b95c2112c46efd0955"
+      ],
+      "summary": "OpenAI는 과학 분야의 새로운 발견, 방법 및 연구원 이야기를 공유하기 위한 과학 블로그를 개설했습니다."
+    },
     {
       "published_at": "2026-11-13T15:00:00+00:00",
       "source_ids": [
@@ -514,26 +539,6 @@
         "openai-d7c1da8cb7dc41da688b"
       ],
       "summary": "OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다."
-    },
-    {
-      "published_at": "2026-11-12T20:00:00+00:00",
-      "source_ids": [
-        "openai-67672a694e389b29af55",
-        "openai-b9840fd67063a36a400d",
-        "openai-4922ca6fb0dd92994c34",
-        "openai-d7c1da8cb7dc41da688b"
-      ],
-      "summary": "Holiday Extras는 Codex를 활용하여 고객 경험과 비즈니스 성장을 위한 새로운 가능성을 모색하고 있습니다."
-    },
-    {
-      "published_at": "2026-11-12T20:00:00+00:00",
-      "source_ids": [
-        "openai-67672a694e389b29af55",
-        "openai-b9840fd67063a36a400d",
-        "openai-4922ca6fb0dd92994c34",
-        "openai-d7c1da8cb7dc41da688b"
-      ],
-      "summary": "Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다."
     }
   ],
   "seen_hashes": [
@@ -551,6 +556,7 @@
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1477e2be2f982234bdfc7f85f8caa7dc8e4220ad8cb53ea0e023b48a05224d2f",
     "14a52eb3aae43d3bfacdfa43fe628b24e133cda3cc58b440125912a4994cf4b7",
+    "1b1b58abf7577a7bf2cfa177b34e329113b75b44bffec8db705fb276bf830e6e",
     "1b77faba4c30b58e82f2da3754c58acd99626bfc62578ea8c8406cc352932945",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
     "20a9daea4b7650549abf6ac58a480652fb0e7dfe1dc24bbb0d1a3850ed9ad3c5",
@@ -671,6 +677,7 @@
     "ca132ab622250535a56242db73f75e73d7d3d571b59942c802d2c061b82f18f0",
     "cdb1f58bcbc6981aa685f3d301e1500d122a21b9f439ace0b50d7a3379094efe",
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
+    "ceb9c9ce83118afc0ee1368f7a4098dfd98990f56ef520825b407c617e96711d",
     "ceeb0818d1d3f99857bc04f3c702fb9e46be74ede59da5e3f7420a0a071b735c",
     "d1b894933eb5d1a9bec0326fd2dc41cefac13edc75a9651a5154a2afff65bc39",
     "d1e0b89e34a843e87343fdd783ed56a84c48cbb9cbce13c10458d28ad212f780",
@@ -713,21 +720,22 @@
 
 ## 현재 상태
 
-OpenAI는 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 ChatGPT Wallet을 도입했습니다. 또한, Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕고, Forge 에이전트가 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.
+OpenAI는 새로운 과학 블로그를 시작했으며, GPT-6 Astra를 활용하여 표준 모델의 격자 정의에 대한 연구를 진행하고 있습니다.
 
 ## 핵심 정보
 
-- ChatGPT Wallet은 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기존 카드 보호 기능을 통해 안전하게 구매를 완료할 수 있도록 합니다.
-- Shield는 OpenAI를 사용하여 IT 기술자들이 레거시 포털 작업을 인계하는 것을 돕습니다.
-- Shield의 Forge 에이전트는 시스템을 탐색하여 기술자들이 판단이 필요한 문제에 집중할 수 있도록 지원합니다.
+- OpenAI는 표준 모델의 비섭동 격자 정의 후보를 탐구하고 있습니다.
+- GPT-6 Astra는 이 아이디어를 상세한 증명으로 바꾸는 데 도움을 주었습니다.
+- OpenAI는 과학 분야를 위한 새로운 블로그를 시작했습니다.
+- 이 과학 블로그는 AI를 사용하여 과학적 발견을 발전시키는 연구원들의 새로운 발견, 실용적인 방법 및 직접 경험한 이야기를 공유합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 16일 07:00 — OpenAI는 표준 모델의 격자 정의를 향한 한 걸음을 내디뎠습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
+- 2026년 11월 16일 07:00 — OpenAI는 과학 분야의 새로운 발견, 방법 및 연구원 이야기를 공유하기 위한 과학 블로그를 개설했습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
 - 2026년 11월 14일 00:00 — Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 효율적으로 처리하고 중요한 문제에 집중할 수 있도록 지원합니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
 - 2026년 11월 14일 00:00 — ChatGPT Wallet이 도입되어 ChatGPT Work, Codex, dots의 에이전트가 안전하게 구매를 처리할 수 있게 되었습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
 - 2026년 11월 13일 05:00 — OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
-- 2026년 11월 13일 05:00 — Holiday Extras는 Codex를 활용하여 고객 경험과 비즈니스 성장을 위한 새로운 가능성을 모색하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
-- 2026년 11월 13일 05:00 — Gondola는 Codex와 ChatGPT를 사용하여 팀의 생산성과 수익을 크게 향상시켰습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 
 ## 변경 이력
 
@@ -783,3 +791,4 @@ OpenAI는 ChatGPT Work, Codex, dots의 에이전트가 사용자 승인 및 기�
 - 2026년 11월 11일 09:00 — JioStar의 Vijay Seshadri는 5억 사용자 규모에서 AI를 발견하고 프로덕션에 적용하는 과정에서 얻은 경험과 교훈을 설명했습니다. (출처: openai-55ff14dc4213127df72a)
 - 2026년 11월 13일 05:00 — OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 - 2026년 11월 14일 00:00 — OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
+- 2026년 11월 16일 07:00 — OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
