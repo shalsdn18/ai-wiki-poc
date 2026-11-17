@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 새로운 과학 블로그를 시작했으며, GPT-6 Astra를 활용하여 표준 모델의 격자 정의에 대한 연구를 진행하고 있습니다.",
+  "current_state": "OpenAI는 사이버 방어 강화, 과학자들을 위한 AI 접근성 확대, 온라인 아동 성 착취 및 학대 방지 노력, 그리고 기업의 효율성 증진 등 다양한 분야에서 새로운 이니셔티브와 협력을 진행하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -489,56 +489,81 @@
         "openai-33b95c2112c46efd0955"
       ],
       "summary": "OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-17T00:00:00+00:00",
+      "source_ids": [
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
+      ],
+      "summary": "OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 표준 모델의 비섭동 격자 정의 후보를 탐구하고 있습니다.",
-    "GPT-6 Astra는 이 아이디어를 상세한 증명으로 바꾸는 데 도움을 주었습니다.",
-    "OpenAI는 과학 분야를 위한 새로운 블로그를 시작했습니다.",
-    "이 과학 블로그는 AI를 사용하여 과학적 발견을 발전시키는 연구원들의 새로운 발견, 실용적인 방법 및 직접 경험한 이야기를 공유합니다."
+    "OpenAI는 NATO 및 동맹국 사이버 기관과 협력하여 AI를 통해 취약점을 찾고 시스템을 보호합니다.",
+    "OpenAI는 전 세계 20만 명의 학술 연구자에게 최첨단 모델에 대한 무료 액세스를 제공하기 위해 ChatGPT for Academic Researchers 프로그램을 확장하고 있습니다.",
+    "OpenAI는 온라인 아동 성 착취 및 학대에 맞서 싸우기 위한 새로운 도구, 실용적인 지침 및 파트너십을 도입했습니다.",
+    "1,800명 이상의 과학자들이 연구에 ChatGPT를 어떻게 사용하는지에 대한 보고서가 발표되었습니다.",
+    "Revolut은 OpenAI 모델과 Codex를 사용하여 코딩 시간을 30-60% 단축하고 금융 범죄 조사를 확장하며 보안을 유지하면서 혁신하고 있습니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-11-15T22:00:01+00:00",
+      "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
-        "openai-2e8f421d2ee2a3dfd36b",
-        "openai-33b95c2112c46efd0955"
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
       ],
-      "summary": "OpenAI는 표준 모델의 격자 정의를 향한 한 걸음을 내디뎠습니다."
+      "summary": "온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입."
     },
     {
-      "published_at": "2026-11-15T22:00:01+00:00",
+      "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
-        "openai-2e8f421d2ee2a3dfd36b",
-        "openai-33b95c2112c46efd0955"
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
       ],
-      "summary": "OpenAI는 과학 분야의 새로운 발견, 방법 및 연구원 이야기를 공유하기 위한 과학 블로그를 개설했습니다."
+      "summary": "과학자들이 ChatGPT를 연구에 활용하는 방식에 대한 새로운 통찰력 공개."
     },
     {
-      "published_at": "2026-11-13T15:00:00+00:00",
+      "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
-        "openai-7d4d71d056da02862d0b",
-        "openai-a99dfdd20d85acbbb850"
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
       ],
-      "summary": "Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 효율적으로 처리하고 중요한 문제에 집중할 수 있도록 지원합니다."
+      "summary": "Revolut이 OpenAI 모델을 활용하여 효율성과 보안을 개선한 사례 발표."
     },
     {
-      "published_at": "2026-11-13T15:00:00+00:00",
+      "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
-        "openai-7d4d71d056da02862d0b",
-        "openai-a99dfdd20d85acbbb850"
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
       ],
-      "summary": "ChatGPT Wallet이 도입되어 ChatGPT Work, Codex, dots의 에이전트가 안전하게 구매를 처리할 수 있게 되었습니다."
+      "summary": "NATO 및 동맹국 사이버 방어 강화를 위한 AI 협력 시작."
     },
     {
-      "published_at": "2026-11-12T20:00:00+00:00",
+      "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
-        "openai-67672a694e389b29af55",
-        "openai-b9840fd67063a36a400d",
-        "openai-4922ca6fb0dd92994c34",
-        "openai-d7c1da8cb7dc41da688b"
+        "openai-0e7f690aa4ff229bd2e8",
+        "openai-2d7a5d6b20fff3cd431e",
+        "openai-dd659f011024f04f24b0",
+        "openai-d91fd06de7b8771ee8ad",
+        "openai-b82b64ef90f76e66fb00"
       ],
-      "summary": "OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다."
+      "summary": "ChatGPT for Academic Researchers 프로그램 확장으로 20만 명의 연구자에게 무료 최첨단 모델 접근 제공."
     }
   ],
   "seen_hashes": [
@@ -547,6 +572,7 @@
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "035c9ef70692b5cc7049e1d3b5144ddf89b5b9a4c3c40197f3ce2f3f0401615b",
+    "04ecea2d0f5a1f2d26e9a1a15cc669c9efdaa9f5894e9d429f9d9c49a7558fce",
     "04f80490a730ea3245d1767bbe6cb5bcb56a4e1735c54cc07d56a5ec3e34dea4",
     "07dc3fe0cf4cc3969dfbe8e4d0e460b1e2f2d334751c8881a2b8b21a8376b55d",
     "07ed561135373f0b05d34c08a2bbba7ec0f12731b08011acc95266a10b1e78af",
@@ -593,6 +619,7 @@
     "4b90a5b89b816077a0f4b6fa7641f1a463066e94eacf383c9088461628d20e11",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
+    "4df24210d915f07b3f95e97cc2fd8eeec4e364d6b04f4d2cdf0fa32640b66bd7",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
     "55aec7ef55bea20edbf665e9b0dcccfd62d29036214e0416686e3072c661866f",
     "5628a918bade6a5b1d611ba386b7c82d0bcf66ed66a0e9af119fb3cc01d684c9",
@@ -688,12 +715,15 @@
     "d638c41069a1799dcc0821de46cf79b3cb9b24bb3409a0a81e08dcb6acc14a28",
     "d756c85c743d57a36f01fba2eeff040c17ecdc657c5f3b4a5e25073b54ef5d3a",
     "d7f8032b38e26b89c89a0233416b59860aa6c83f5a6dbb7897fd191fbb5d4386",
+    "db7a12eeab5c164d8191e9b6c05bce034e18ddf4c5b72b9ef013ee717be76787",
     "dc6f9c179d0b0edc3a1c1ee927123c991de436c011adc9dc3d851f09cba4382a",
     "dd03698cbb05c4a6d464f06061557b347e750b0c9c783cfb4d30ca95e0479aad",
     "de14aa574644e862895a7973a2a88dae79c383d09dbae8e1c1070e991ee59f84",
     "de3e1b54247f89cfd994f7b4750be9d124a50810fc85e87f2130ddf4688f7761",
     "de84fe667c3ab55405470fddfd3d1c88c142415d1df891e9a23809ab9dbb3d42",
+    "e2089cedbcfd4ee7cb30941703f10acef46afb016c173f1518dc96bb8d04e50d",
     "e23ad90c8ce1792be439c2bff042012a77702b8956910b97f8948b3c3c971a63",
+    "e2cec5fe08011f7694a7fa4b3dec9d5a1b05c47c9842dbf3185a2c7fa9d6e7af",
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "e6187f0229e7fa58cbf9c05c6bf38f25b1650c137c6d579021ba710b71e4b52c",
     "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
@@ -720,22 +750,23 @@
 
 ## 현재 상태
 
-OpenAI는 새로운 과학 블로그를 시작했으며, GPT-6 Astra를 활용하여 표준 모델의 격자 정의에 대한 연구를 진행하고 있습니다.
+OpenAI는 사이버 방어 강화, 과학자들을 위한 AI 접근성 확대, 온라인 아동 성 착취 및 학대 방지 노력, 그리고 기업의 효율성 증진 등 다양한 분야에서 새로운 이니셔티브와 협력을 진행하고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 표준 모델의 비섭동 격자 정의 후보를 탐구하고 있습니다.
-- GPT-6 Astra는 이 아이디어를 상세한 증명으로 바꾸는 데 도움을 주었습니다.
-- OpenAI는 과학 분야를 위한 새로운 블로그를 시작했습니다.
-- 이 과학 블로그는 AI를 사용하여 과학적 발견을 발전시키는 연구원들의 새로운 발견, 실용적인 방법 및 직접 경험한 이야기를 공유합니다.
+- OpenAI는 NATO 및 동맹국 사이버 기관과 협력하여 AI를 통해 취약점을 찾고 시스템을 보호합니다.
+- OpenAI는 전 세계 20만 명의 학술 연구자에게 최첨단 모델에 대한 무료 액세스를 제공하기 위해 ChatGPT for Academic Researchers 프로그램을 확장하고 있습니다.
+- OpenAI는 온라인 아동 성 착취 및 학대에 맞서 싸우기 위한 새로운 도구, 실용적인 지침 및 파트너십을 도입했습니다.
+- 1,800명 이상의 과학자들이 연구에 ChatGPT를 어떻게 사용하는지에 대한 보고서가 발표되었습니다.
+- Revolut은 OpenAI 모델과 Codex를 사용하여 코딩 시간을 30-60% 단축하고 금융 범죄 조사를 확장하며 보안을 유지하면서 혁신하고 있습니다.
 
 ## 최근 변경 사항
 
-- 2026년 11월 16일 07:00 — OpenAI는 표준 모델의 격자 정의를 향한 한 걸음을 내디뎠습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
-- 2026년 11월 16일 07:00 — OpenAI는 과학 분야의 새로운 발견, 방법 및 연구원 이야기를 공유하기 위한 과학 블로그를 개설했습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
-- 2026년 11월 14일 00:00 — Shield는 OpenAI를 활용하여 IT 기술자들이 레거시 포털 작업을 효율적으로 처리하고 중요한 문제에 집중할 수 있도록 지원합니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
-- 2026년 11월 14일 00:00 — ChatGPT Wallet이 도입되어 ChatGPT Work, Codex, dots의 에이전트가 안전하게 구매를 처리할 수 있게 되었습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
-- 2026년 11월 13일 05:00 — OpenAI는 AI와 어린이 안전 연구를 위해 200만 달러를 기부했습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
+- 2026년 11월 17일 09:00 — 온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 17일 09:00 — 과학자들이 ChatGPT를 연구에 활용하는 방식에 대한 새로운 통찰력 공개. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 17일 09:00 — Revolut이 OpenAI 모델을 활용하여 효율성과 보안을 개선한 사례 발표. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 17일 09:00 — NATO 및 동맹국 사이버 방어 강화를 위한 AI 협력 시작. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 17일 09:00 — ChatGPT for Academic Researchers 프로그램 확장으로 20만 명의 연구자에게 무료 최첨단 모델 접근 제공. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
 
 ## 변경 이력
 
@@ -792,3 +823,4 @@ OpenAI는 새로운 과학 블로그를 시작했으며, GPT-6 Astra를 활용�
 - 2026년 11월 13일 05:00 — OpenAI는 자사의 AI 모델(Codex, ChatGPT 등)을 통해 기업들이 제품 개발, 생산성 및 수익성을 향상시키도록 지원해왔으며, 최근에는 AI의 사회적 영향, 특히 어린이 안전에 대한 연구 지원을 확대하고 있습니다. (출처: openai-67672a694e389b29af55, openai-b9840fd67063a36a400d, openai-4922ca6fb0dd92994c34, openai-d7c1da8cb7dc41da688b)
 - 2026년 11월 14일 00:00 — OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
 - 2026년 11월 16일 07:00 — OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
+- 2026년 11월 17일 09:00 — OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)

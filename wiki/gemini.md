@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google Wallet을 Gemini에 연결하여 개인 금융 통찰력을 얻을 수 있게 되었습니다.",
+  "current_state": "Gemini 앱은 현재 Android 및 iOS 기기에서 66개의 지역별 음성을 제공합니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -222,13 +222,34 @@
         "gemini-d2a87e2f3ff3ae0e50e6"
       ],
       "summary": "Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다."
+    },
+    {
+      "published_at": "2026-11-16T18:45:00+00:00",
+      "source_ids": [
+        "gemini-025d8baefe51f5051ea2"
+      ],
+      "summary": "Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다."
     }
   ],
   "key_facts": [
-    "Google Wallet과 Gemini가 연결됩니다.",
-    "이 연결은 개인 금융 통찰력을 제공합니다."
+    "Gemini 앱은 Android 및 iOS에서 66개의 지역별 음성을 제공합니다.",
+    "사용자는 앱 상호작용을 위해 자연스러운 현지 방언을 선택할 수 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-16T18:45:00+00:00",
+      "source_ids": [
+        "gemini-025d8baefe51f5051ea2"
+      ],
+      "summary": "사용자는 이제 Android 및 iOS 기기에서 앱 상호작용을 위한 선호하는 현지 방언 음성을 선택할 수 있습니다."
+    },
+    {
+      "published_at": "2026-11-16T18:45:00+00:00",
+      "source_ids": [
+        "gemini-025d8baefe51f5051ea2"
+      ],
+      "summary": "Gemini 앱에 66개의 새로운 지역별 음성이 추가되었습니다."
+    },
     {
       "published_at": "2026-11-13T17:00:00+00:00",
       "source_ids": [
@@ -255,26 +276,6 @@
         "gemini-948927f31dd46df37176"
       ],
       "summary": "Google 검색에 Gemini 4 Hydrogen이 통합되었습니다."
-    },
-    {
-      "published_at": "2026-11-12T18:00:00+00:00",
-      "source_ids": [
-        "gemini-d6d23163b98ddfa1ea7a",
-        "gemini-7ed04b33e97e89aa07c0",
-        "gemini-d7c21c501eb23f12ba47",
-        "gemini-948927f31dd46df37176"
-      ],
-      "summary": "Gemini 4 Hydrogen 모델이 소개되었습니다."
-    },
-    {
-      "published_at": "2026-11-12T18:00:00+00:00",
-      "source_ids": [
-        "gemini-d6d23163b98ddfa1ea7a",
-        "gemini-7ed04b33e97e89aa07c0",
-        "gemini-d7c21c501eb23f12ba47",
-        "gemini-948927f31dd46df37176"
-      ],
-      "summary": "Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다."
     }
   ],
   "seen_hashes": [
@@ -320,6 +321,7 @@
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "ad88486afcb221923120c26f806fc05ecd66d7d6729a01ebb10639a9ed4306bb",
     "c9e7118463e0ff2f986200a7f648f354a2e9d5d6108b67d2d597f6406e9d8403",
+    "d02b808db647b483bc4116f28e05fa3c286f047a06c8d055c7a41d76df13b185",
     "d0661df8d48a2cd1946155efcefb44417681c65ad43e71dd4c305b4b53f23152",
     "d149410c20ac0c3373c340018eb404e9a0d4def7d5b2446e545b861975aa4ee5",
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
@@ -339,20 +341,20 @@
 
 ## 현재 상태
 
-Google Wallet을 Gemini에 연결하여 개인 금융 통찰력을 얻을 수 있게 되었습니다.
+Gemini 앱은 현재 Android 및 iOS 기기에서 66개의 지역별 음성을 제공합니다.
 
 ## 핵심 정보
 
-- Google Wallet과 Gemini가 연결됩니다.
-- 이 연결은 개인 금융 통찰력을 제공합니다.
+- Gemini 앱은 Android 및 iOS에서 66개의 지역별 음성을 제공합니다.
+- 사용자는 앱 상호작용을 위해 자연스러운 현지 방언을 선택할 수 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 17일 03:45 — 사용자는 이제 Android 및 iOS 기기에서 앱 상호작용을 위한 선호하는 현지 방언 음성을 선택할 수 있습니다. (출처: gemini-025d8baefe51f5051ea2)
+- 2026년 11월 17일 03:45 — Gemini 앱에 66개의 새로운 지역별 음성이 추가되었습니다. (출처: gemini-025d8baefe51f5051ea2)
 - 2026년 11월 14일 02:00 — Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
 - 2026년 11월 13일 03:00 — 개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 13일 03:00 — Google 검색에 Gemini 4 Hydrogen이 통합되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
-- 2026년 11월 13일 03:00 — Gemini 4 Hydrogen 모델이 소개되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
-- 2026년 11월 13일 03:00 — Chrome 브라우저에 Gemini가 통합되어 웹사이트에서 직접 정보를 얻을 수 있게 되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 
 ## 변경 이력
 
@@ -384,3 +386,4 @@ Google Wallet을 Gemini에 연결하여 개인 금융 통찰력을 얻을 수 �
 - 2026년 11월 12일 02:00 — Gemini가 Apple CarPlay에 새롭게 추가되었습니다. (출처: gemini-b675b12cfc53ea49f00e)
 - 2026년 11월 13일 03:00 — 최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 14일 02:00 — Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
+- 2026년 11월 17일 03:45 — Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다. (출처: gemini-025d8baefe51f5051ea2)
