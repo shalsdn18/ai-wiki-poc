@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 사이버 방어 강화, 과학자들을 위한 AI 접근성 확대, 온라인 아동 성 착취 및 학대 방지 노력, 그리고 기업의 효율성 증진 등 다양한 분야에서 새로운 이니셔티브와 협력을 진행하고 있습니다.",
+  "current_state": "OpenAI는 새로운 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업용 플러그인을 도입했으며, 법률 분야에서 Astra for Law의 우수성을 입증하고, 칠레 정부와 파트너십을 맺는 등 다양한 분야에서 확장을 진행하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -500,16 +500,65 @@
         "openai-b82b64ef90f76e66fb00"
       ],
       "summary": "OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-17T17:45:00+00:00",
+      "source_ids": [
+        "openai-8f6af8c44a4a1bfb5de3",
+        "openai-3047d7657748ea760feb",
+        "openai-b43ef08ac3ed4f7af6f4",
+        "openai-3b3be741a87f5e2153e6"
+      ],
+      "summary": "OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 NATO 및 동맹국 사이버 기관과 협력하여 AI를 통해 취약점을 찾고 시스템을 보호합니다.",
-    "OpenAI는 전 세계 20만 명의 학술 연구자에게 최첨단 모델에 대한 무료 액세스를 제공하기 위해 ChatGPT for Academic Researchers 프로그램을 확장하고 있습니다.",
-    "OpenAI는 온라인 아동 성 착취 및 학대에 맞서 싸우기 위한 새로운 도구, 실용적인 지침 및 파트너십을 도입했습니다.",
-    "1,800명 이상의 과학자들이 연구에 ChatGPT를 어떻게 사용하는지에 대한 보고서가 발표되었습니다.",
-    "Revolut은 OpenAI 모델과 Codex를 사용하여 코딩 시간을 30-60% 단축하고 금융 범죄 조사를 확장하며 보안을 유지하면서 혁신하고 있습니다."
+    "GPT-6.2 Astra 및 Sol은 ChatGPT Work, Codex, API에서 더 나은 전문적인 결과물, 코딩, 컴퓨터 사용 및 효율성을 더 낮은 비용으로 제공합니다.",
+    "ChatGPT에 새로운 영업 플러그인과 30개 이상의 파트너 플러그인이 추가되어 잠재 고객 조사, 제안서 준비, CRM 업데이트 등 영업 활동을 지원합니다.",
+    "Astra for Law는 24개 법률 분야에 걸친 출시 평가에서 1위를 차지했으며, 모든 ChatGPT Enterprise 고객이 접근을 요청할 수 있습니다.",
+    "OpenAI는 칠레 정부와 협력하여 책임감 있는 AI 도입을 지원하고, 공공 부문 기술을 구축하며, 현지 스타트업의 AI 애플리케이션 개발을 돕습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-17T17:45:00+00:00",
+      "source_ids": [
+        "openai-8f6af8c44a4a1bfb5de3",
+        "openai-3047d7657748ea760feb",
+        "openai-b43ef08ac3ed4f7af6f4",
+        "openai-3b3be741a87f5e2153e6"
+      ],
+      "summary": "OpenAI가 칠레 정부와 파트너십을 맺고 칠레 내 AI 생태계 발전을 지원합니다."
+    },
+    {
+      "published_at": "2026-11-17T17:45:00+00:00",
+      "source_ids": [
+        "openai-8f6af8c44a4a1bfb5de3",
+        "openai-3047d7657748ea760feb",
+        "openai-b43ef08ac3ed4f7af6f4",
+        "openai-3b3be741a87f5e2153e6"
+      ],
+      "summary": "GPT-6.2 Astra 및 Sol 모델이 출시되어 성능과 효율성이 향상되었습니다."
+    },
+    {
+      "published_at": "2026-11-17T17:45:00+00:00",
+      "source_ids": [
+        "openai-8f6af8c44a4a1bfb5de3",
+        "openai-3047d7657748ea760feb",
+        "openai-b43ef08ac3ed4f7af6f4",
+        "openai-3b3be741a87f5e2153e6"
+      ],
+      "summary": "ChatGPT에 영업 전용 플러그인과 확장된 파트너 플러그인이 도입되었습니다."
+    },
+    {
+      "published_at": "2026-11-17T17:45:00+00:00",
+      "source_ids": [
+        "openai-8f6af8c44a4a1bfb5de3",
+        "openai-3047d7657748ea760feb",
+        "openai-b43ef08ac3ed4f7af6f4",
+        "openai-3b3be741a87f5e2153e6"
+      ],
+      "summary": "Astra for Law가 법률 인텔리전스 분야에서 선두를 차지하며 ChatGPT Enterprise 고객에게 제공됩니다."
+    },
     {
       "published_at": "2026-11-17T00:00:00+00:00",
       "source_ids": [
@@ -520,50 +569,6 @@
         "openai-b82b64ef90f76e66fb00"
       ],
       "summary": "온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입."
-    },
-    {
-      "published_at": "2026-11-17T00:00:00+00:00",
-      "source_ids": [
-        "openai-0e7f690aa4ff229bd2e8",
-        "openai-2d7a5d6b20fff3cd431e",
-        "openai-dd659f011024f04f24b0",
-        "openai-d91fd06de7b8771ee8ad",
-        "openai-b82b64ef90f76e66fb00"
-      ],
-      "summary": "과학자들이 ChatGPT를 연구에 활용하는 방식에 대한 새로운 통찰력 공개."
-    },
-    {
-      "published_at": "2026-11-17T00:00:00+00:00",
-      "source_ids": [
-        "openai-0e7f690aa4ff229bd2e8",
-        "openai-2d7a5d6b20fff3cd431e",
-        "openai-dd659f011024f04f24b0",
-        "openai-d91fd06de7b8771ee8ad",
-        "openai-b82b64ef90f76e66fb00"
-      ],
-      "summary": "Revolut이 OpenAI 모델을 활용하여 효율성과 보안을 개선한 사례 발표."
-    },
-    {
-      "published_at": "2026-11-17T00:00:00+00:00",
-      "source_ids": [
-        "openai-0e7f690aa4ff229bd2e8",
-        "openai-2d7a5d6b20fff3cd431e",
-        "openai-dd659f011024f04f24b0",
-        "openai-d91fd06de7b8771ee8ad",
-        "openai-b82b64ef90f76e66fb00"
-      ],
-      "summary": "NATO 및 동맹국 사이버 방어 강화를 위한 AI 협력 시작."
-    },
-    {
-      "published_at": "2026-11-17T00:00:00+00:00",
-      "source_ids": [
-        "openai-0e7f690aa4ff229bd2e8",
-        "openai-2d7a5d6b20fff3cd431e",
-        "openai-dd659f011024f04f24b0",
-        "openai-d91fd06de7b8771ee8ad",
-        "openai-b82b64ef90f76e66fb00"
-      ],
-      "summary": "ChatGPT for Academic Researchers 프로그램 확장으로 20만 명의 연구자에게 무료 최첨단 모델 접근 제공."
     }
   ],
   "seen_hashes": [
@@ -625,6 +630,7 @@
     "5628a918bade6a5b1d611ba386b7c82d0bcf66ed66a0e9af119fb3cc01d684c9",
     "56307478c67c59a03f8534f5c9c2306837c19ec3436b5e7f7dbaa806119f1879",
     "574b4d4c1ce3829da7135435072e7376d7a23d00e77d793f9b7262d1434ee105",
+    "5b6a0f3717d1769b9436e904219159c186da97629dbaa51015181ddb1e15dbf7",
     "5cf1939b69a9e8ac8fad4ac5a865b879c2ad772f1da2b42240d1df12f72c9718",
     "5d8c179f4be0e2066d5cd0cea0ca7c77af707e1b85bedc225adda1b08cf9e398",
     "5dcfbcaafa7dd597ba2b0c966f4c162ed89dde3a872ac3861c62f1451830b336",
@@ -634,6 +640,7 @@
     "6429b089931a3307ad72dd771de49905ed9a74fc2e9e06927fc0537f5d18fd1e",
     "6435c17b701b1041cc77f5d0353c4bc8d38231335d631af44f00fc678a5c11a0",
     "65322153b065b705eb6e93782347927c97a5bd1bb3bf0c44d476a4ef9322e8af",
+    "65ed9d04b019bc46a3c647a079a2a7f28ced222acf1d2123ddd84a6fee0380e1",
     "68c690783cb6c4a253cedadebed57c7021fbd07c74f77bd66cc902d36beb71d5",
     "6d4b5435963ed5834446c905ecffdc9f523c8b8630467cbe5d445531e4d54bcb",
     "6d9fb8113e3730b8a6bf95ce8d67d4f73348fbaf8a8de73f6270714658c0fd2e",
@@ -663,6 +670,7 @@
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
     "8f9b60dabe8f29402f9e09bd87ac7f24b371bf54a862ec3e8b205fb2c92f61fb",
+    "94b8084ecab5d1092c4ac4d5212173aee2844ececa0ccf99581bf1201139987e",
     "95e94d6b252d142b0a5165dd3f327fe52c2d920c0c725c016bbad224ef375ed5",
     "98763c378d4e8903722ba43e18bf8db6e9faf7666ca9bdbe8f153d7c717019fd",
     "98ff53fe555208d62d111c37eb75ef4144bae6492b6709dd99501ad89e1079d1",
@@ -727,6 +735,7 @@
     "e3280aaa05a46948e875aa6267d0b835044b48609ca33d56b422dda3d34a557b",
     "e6187f0229e7fa58cbf9c05c6bf38f25b1650c137c6d579021ba710b71e4b52c",
     "e628fd9d7bae997bf3cbbe74bc93be5c6fab19b78f3a1e680e55edf7f23ad69c",
+    "e6e16286ffc40c354c1fcee8a3ba9bd56af0cdbb683ad5333a596e134f74d425",
     "e898a768fb2301dc59e98fbb426fc73070164be7d62e352bf9489587d89c3570",
     "e9e5d34bef70c7f55ca1090cab940ded57f4de2bde9e6af037a38dbf666caa21",
     "ea479a96ff9d73f3a329f46c9286644dca6e79a4eb1a7333b82054a04eab6959",
@@ -750,23 +759,22 @@
 
 ## 현재 상태
 
-OpenAI는 사이버 방어 강화, 과학자들을 위한 AI 접근성 확대, 온라인 아동 성 착취 및 학대 방지 노력, 그리고 기업의 효율성 증진 등 다양한 분야에서 새로운 이니셔티브와 협력을 진행하고 있습니다.
+OpenAI는 새로운 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업용 플러그인을 도입했으며, 법률 분야에서 Astra for Law의 우수성을 입증하고, 칠레 정부와 파트너십을 맺는 등 다양한 분야에서 확장을 진행하고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI는 NATO 및 동맹국 사이버 기관과 협력하여 AI를 통해 취약점을 찾고 시스템을 보호합니다.
-- OpenAI는 전 세계 20만 명의 학술 연구자에게 최첨단 모델에 대한 무료 액세스를 제공하기 위해 ChatGPT for Academic Researchers 프로그램을 확장하고 있습니다.
-- OpenAI는 온라인 아동 성 착취 및 학대에 맞서 싸우기 위한 새로운 도구, 실용적인 지침 및 파트너십을 도입했습니다.
-- 1,800명 이상의 과학자들이 연구에 ChatGPT를 어떻게 사용하는지에 대한 보고서가 발표되었습니다.
-- Revolut은 OpenAI 모델과 Codex를 사용하여 코딩 시간을 30-60% 단축하고 금융 범죄 조사를 확장하며 보안을 유지하면서 혁신하고 있습니다.
+- GPT-6.2 Astra 및 Sol은 ChatGPT Work, Codex, API에서 더 나은 전문적인 결과물, 코딩, 컴퓨터 사용 및 효율성을 더 낮은 비용으로 제공합니다.
+- ChatGPT에 새로운 영업 플러그인과 30개 이상의 파트너 플러그인이 추가되어 잠재 고객 조사, 제안서 준비, CRM 업데이트 등 영업 활동을 지원합니다.
+- Astra for Law는 24개 법률 분야에 걸친 출시 평가에서 1위를 차지했으며, 모든 ChatGPT Enterprise 고객이 접근을 요청할 수 있습니다.
+- OpenAI는 칠레 정부와 협력하여 책임감 있는 AI 도입을 지원하고, 공공 부문 기술을 구축하며, 현지 스타트업의 AI 애플리케이션 개발을 돕습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 18일 02:45 — OpenAI가 칠레 정부와 파트너십을 맺고 칠레 내 AI 생태계 발전을 지원합니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
+- 2026년 11월 18일 02:45 — GPT-6.2 Astra 및 Sol 모델이 출시되어 성능과 효율성이 향상되었습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
+- 2026년 11월 18일 02:45 — ChatGPT에 영업 전용 플러그인과 확장된 파트너 플러그인이 도입되었습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
+- 2026년 11월 18일 02:45 — Astra for Law가 법률 인텔리전스 분야에서 선두를 차지하며 ChatGPT Enterprise 고객에게 제공됩니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
 - 2026년 11월 17일 09:00 — 온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
-- 2026년 11월 17일 09:00 — 과학자들이 ChatGPT를 연구에 활용하는 방식에 대한 새로운 통찰력 공개. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
-- 2026년 11월 17일 09:00 — Revolut이 OpenAI 모델을 활용하여 효율성과 보안을 개선한 사례 발표. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
-- 2026년 11월 17일 09:00 — NATO 및 동맹국 사이버 방어 강화를 위한 AI 협력 시작. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
-- 2026년 11월 17일 09:00 — ChatGPT for Academic Researchers 프로그램 확장으로 20만 명의 연구자에게 무료 최첨단 모델 접근 제공. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
 
 ## 변경 이력
 
@@ -824,3 +832,4 @@ OpenAI는 사이버 방어 강화, 과학자들을 위한 AI 접근성 확대, �
 - 2026년 11월 14일 00:00 — OpenAI는 에이전트의 안전한 구매를 위한 ChatGPT Wallet을 출시했으며, IT 기술자들의 레거시 포털 작업 효율성을 높이기 위해 Shield가 OpenAI를 활용하는 솔루션을 제공하고 있습니다. (출처: openai-7d4d71d056da02862d0b, openai-a99dfdd20d85acbbb850)
 - 2026년 11월 16일 07:00 — OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
 - 2026년 11월 17일 09:00 — OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 18일 02:45 — OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)

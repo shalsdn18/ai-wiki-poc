@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini 앱은 현재 Android 및 iOS 기기에서 66개의 지역별 음성을 제공합니다.",
+  "current_state": "Gemini는 빌더들이 'Gemini 4 Carbon'을 활용하여 다양한 프로젝트를 만들고 있으며, 사용자들은 Gemini를 통해 작업을 수행할 수 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -229,13 +229,37 @@
         "gemini-025d8baefe51f5051ea2"
       ],
       "summary": "Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다."
+    },
+    {
+      "published_at": "2026-11-17T21:00:00+00:00",
+      "source_ids": [
+        "gemini-73687e4d2d12cc3c627a",
+        "gemini-830da74434e8505c737e"
+      ],
+      "summary": "최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다."
     }
   ],
   "key_facts": [
-    "Gemini 앱은 Android 및 iOS에서 66개의 지역별 음성을 제공합니다.",
-    "사용자는 앱 상호작용을 위해 자연스러운 현지 방언을 선택할 수 있습니다."
+    "빌더들은 'Gemini 4 Carbon'을 사용하여 다양한 프로젝트를 만들고 있습니다.",
+    "Gemini는 '무엇을 도와드릴까요?'라는 프롬프트와 '작업을 설명하세요'라는 입력 상자가 있는 사용자 인터페이스를 통해 작업을 수행할 수 있도록 지원합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-17T21:00:00+00:00",
+      "source_ids": [
+        "gemini-73687e4d2d12cc3c627a",
+        "gemini-830da74434e8505c737e"
+      ],
+      "summary": "사용자가 '무엇을 도와드릴까요?'라는 프롬프트와 함께 작업을 입력할 수 있는 Gemini의 사용자 인터페이스가 공개되었습니다."
+    },
+    {
+      "published_at": "2026-11-17T21:00:00+00:00",
+      "source_ids": [
+        "gemini-73687e4d2d12cc3c627a",
+        "gemini-830da74434e8505c737e"
+      ],
+      "summary": "빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다."
+    },
     {
       "published_at": "2026-11-16T18:45:00+00:00",
       "source_ids": [
@@ -256,26 +280,6 @@
         "gemini-d2a87e2f3ff3ae0e50e6"
       ],
       "summary": "Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다."
-    },
-    {
-      "published_at": "2026-11-12T18:00:00+00:00",
-      "source_ids": [
-        "gemini-d6d23163b98ddfa1ea7a",
-        "gemini-7ed04b33e97e89aa07c0",
-        "gemini-d7c21c501eb23f12ba47",
-        "gemini-948927f31dd46df37176"
-      ],
-      "summary": "개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다."
-    },
-    {
-      "published_at": "2026-11-12T18:00:00+00:00",
-      "source_ids": [
-        "gemini-d6d23163b98ddfa1ea7a",
-        "gemini-7ed04b33e97e89aa07c0",
-        "gemini-d7c21c501eb23f12ba47",
-        "gemini-948927f31dd46df37176"
-      ],
-      "summary": "Google 검색에 Gemini 4 Hydrogen이 통합되었습니다."
     }
   ],
   "seen_hashes": [
@@ -301,6 +305,7 @@
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
+    "5fde5c050707497c9bfb290ac8d493ffb701933fc665050b777d1a649ef8233b",
     "6290f120c907c4ef3cd0dbdb3232b3832a61542b88fea6550f907016673aab35",
     "6ca33a117966ec71b773cbf35ff7d9a35f52c8e28a7e30d58d0f9e7082430dea",
     "6d3297c446abf4055cffdfd7da5f6b360c6fec29aea24f1d57930637d104c4d3",
@@ -316,6 +321,7 @@
     "9aaac088c7bb06422fc5e9dd70d5cea81a42c1a3e4c925aacaee0b20c74adb43",
     "9c4cb20f07b4f41261caa5354a0df199b53a536fc5284243f36041924282386c",
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
+    "a0a65f60417ae57b92c0f97917dff28b8f2b51d10d439fc9a8b8bf0db1e4981b",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
@@ -341,20 +347,20 @@
 
 ## 현재 상태
 
-Gemini 앱은 현재 Android 및 iOS 기기에서 66개의 지역별 음성을 제공합니다.
+Gemini는 빌더들이 'Gemini 4 Carbon'을 활용하여 다양한 프로젝트를 만들고 있으며, 사용자들은 Gemini를 통해 작업을 수행할 수 있습니다.
 
 ## 핵심 정보
 
-- Gemini 앱은 Android 및 iOS에서 66개의 지역별 음성을 제공합니다.
-- 사용자는 앱 상호작용을 위해 자연스러운 현지 방언을 선택할 수 있습니다.
+- 빌더들은 'Gemini 4 Carbon'을 사용하여 다양한 프로젝트를 만들고 있습니다.
+- Gemini는 '무엇을 도와드릴까요?'라는 프롬프트와 '작업을 설명하세요'라는 입력 상자가 있는 사용자 인터페이스를 통해 작업을 수행할 수 있도록 지원합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 18일 06:00 — 사용자가 '무엇을 도와드릴까요?'라는 프롬프트와 함께 작업을 입력할 수 있는 Gemini의 사용자 인터페이스가 공개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
+- 2026년 11월 18일 06:00 — 빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
 - 2026년 11월 17일 03:45 — 사용자는 이제 Android 및 iOS 기기에서 앱 상호작용을 위한 선호하는 현지 방언 음성을 선택할 수 있습니다. (출처: gemini-025d8baefe51f5051ea2)
 - 2026년 11월 17일 03:45 — Gemini 앱에 66개의 새로운 지역별 음성이 추가되었습니다. (출처: gemini-025d8baefe51f5051ea2)
 - 2026년 11월 14일 02:00 — Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
-- 2026년 11월 13일 03:00 — 개발자를 위한 Gemini 4 Hydrogen이 Google AI Studio에서 제공됩니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
-- 2026년 11월 13일 03:00 — Google 검색에 Gemini 4 Hydrogen이 통합되었습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 
 ## 변경 이력
 
@@ -387,3 +393,4 @@ Gemini 앱은 현재 Android 및 iOS 기기에서 66개의 지역별 음성을 �
 - 2026년 11월 13일 03:00 — 최근 Google은 새로운 모델인 Gemini 4 Hydrogen을 발표했으며, 이를 Google 검색에 통합하고 개발자들이 Google AI Studio에서 에이전트 코딩 및 디버깅에 활용할 수 있도록 했습니다. 또한, Google은 Chrome 브라우저에 Gemini를 도입하여 사용자들이 웹사이트에서 기사 요약, 제품 비교, 복잡한 주제 설명 등 다양한 기능을 사이드 패널을 통해 직접 이용할 수 있도록 했습니다. (출처: gemini-d6d23163b98ddfa1ea7a, gemini-7ed04b33e97e89aa07c0, gemini-d7c21c501eb23f12ba47, gemini-948927f31dd46df37176)
 - 2026년 11월 14일 02:00 — Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
 - 2026년 11월 17일 03:45 — Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다. (출처: gemini-025d8baefe51f5051ea2)
+- 2026년 11월 18일 06:00 — 최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
