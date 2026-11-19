@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 새로운 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업용 플러그인을 도입했으며, 법률 분야에서 Astra for Law의 우수성을 입증하고, 칠레 정부와 파트너십을 맺는 등 다양한 분야에서 확장을 진행하고 있습니다.",
+  "current_state": "OpenAI는 강력한 AI가 사회에 미칠 영향과 인간의 통제 유지 방안을 탐구하고 있으며, AI 연구 가속화를 위한 코딩 에이전트의 활용 및 그 성능을 측정하고 있습니다. 또한, 기업 고객의 ChatGPT Enterprise 도입 성공 사례를 공유하고, AI 위험 관리 전략과 Codex 샌드박스 기술에 대한 정보를 제공하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -510,71 +510,88 @@
         "openai-3b3be741a87f5e2153e6"
       ],
       "summary": "OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다."
+    },
+    {
+      "published_at": "2026-11-18T10:00:00+00:00",
+      "source_ids": [
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
+      ],
+      "summary": "최근 OpenAI는 AI의 사회적 영향과 인간 통제 유지 방안, AI 연구 가속화에 기여하는 코딩 에이전트의 역할, 기업 고객의 AI 솔루션 도입 사례, 그리고 AI 위험 관리 및 보안 기술에 대한 다양한 업데이트를 발표했습니다. 이는 AI의 발전과 그에 따른 사회적, 기술적 과제에 대한 OpenAI의 지속적인 노력을 보여줍니다."
     }
   ],
   "key_facts": [
-    "GPT-6.2 Astra 및 Sol은 ChatGPT Work, Codex, API에서 더 나은 전문적인 결과물, 코딩, 컴퓨터 사용 및 효율성을 더 낮은 비용으로 제공합니다.",
-    "ChatGPT에 새로운 영업 플러그인과 30개 이상의 파트너 플러그인이 추가되어 잠재 고객 조사, 제안서 준비, CRM 업데이트 등 영업 활동을 지원합니다.",
-    "Astra for Law는 24개 법률 분야에 걸친 출시 평가에서 1위를 차지했으며, 모든 ChatGPT Enterprise 고객이 접근을 요청할 수 있습니다.",
-    "OpenAI는 칠레 정부와 협력하여 책임감 있는 AI 도입을 지원하고, 공공 부문 기술을 구축하며, 현지 스타트업의 AI 애플리케이션 개발을 돕습니다."
+    "OpenAI의 전략적 미래 책임자인 Dean Ball은 더 강력한 AI가 사회를 어떻게 재편할 수 있는지, 그리고 사람들이 기관에 대한 통제권을 어떻게 유지할 수 있는지 검토합니다.",
+    "OpenAI는 코딩 에이전트가 AI 연구를 가속화하는 방식, 성능의 불균형, 그리고 재귀적 자기 개선에 대한 시사점을 측정합니다.",
+    "Sumitomo Life는 ChatGPT Enterprise를 사용하여 보험사 연구, 제안서 준비, 투자 분석을 위한 코드 초안 작성을 수행하며, 경영진의 초기 사용이 도입을 촉진했습니다.",
+    "Codex 샌드박스는 macOS, Linux, Windows에서 사용자가 제어하는 파일 시스템 및 네트워크 제한을 적용하면서 머신에서 명령을 실행하는 방법을 보여줍니다.",
+    "OpenAI는 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 통해 훈련부터 배포까지 최첨단 AI 위험을 관리하는 방법을 설명합니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-11-17T17:45:00+00:00",
+      "published_at": "2026-11-18T10:00:00+00:00",
       "source_ids": [
-        "openai-8f6af8c44a4a1bfb5de3",
-        "openai-3047d7657748ea760feb",
-        "openai-b43ef08ac3ed4f7af6f4",
-        "openai-3b3be741a87f5e2153e6"
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
       ],
-      "summary": "OpenAI가 칠레 정부와 파트너십을 맺고 칠레 내 AI 생태계 발전을 지원합니다."
+      "summary": "Sumitomo Life가 경영진의 주도로 ChatGPT Enterprise를 성공적으로 도입하여 연구, 제안서 작성, 코드 초안 작성에 활용한 사례가 소개되었습니다."
     },
     {
-      "published_at": "2026-11-17T17:45:00+00:00",
+      "published_at": "2026-11-18T10:00:00+00:00",
       "source_ids": [
-        "openai-8f6af8c44a4a1bfb5de3",
-        "openai-3047d7657748ea760feb",
-        "openai-b43ef08ac3ed4f7af6f4",
-        "openai-3b3be741a87f5e2153e6"
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
       ],
-      "summary": "GPT-6.2 Astra 및 Sol 모델이 출시되어 성능과 효율성이 향상되었습니다."
+      "summary": "OpenAI는 훈련부터 배포까지 최첨단 AI 위험을 관리하기 위한 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 포함한 포괄적인 접근 방식을 설명했습니다."
     },
     {
-      "published_at": "2026-11-17T17:45:00+00:00",
+      "published_at": "2026-11-18T10:00:00+00:00",
       "source_ids": [
-        "openai-8f6af8c44a4a1bfb5de3",
-        "openai-3047d7657748ea760feb",
-        "openai-b43ef08ac3ed4f7af6f4",
-        "openai-3b3be741a87f5e2153e6"
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
       ],
-      "summary": "ChatGPT에 영업 전용 플러그인과 확장된 파트너 플러그인이 도입되었습니다."
+      "summary": "OpenAI는 더 강력한 AI가 사회를 재편할 수 있는 방식과 사람들이 기관에 대한 통제권을 유지하는 방법에 대한 분석을 발표했습니다."
     },
     {
-      "published_at": "2026-11-17T17:45:00+00:00",
+      "published_at": "2026-11-18T10:00:00+00:00",
       "source_ids": [
-        "openai-8f6af8c44a4a1bfb5de3",
-        "openai-3047d7657748ea760feb",
-        "openai-b43ef08ac3ed4f7af6f4",
-        "openai-3b3be741a87f5e2153e6"
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
       ],
-      "summary": "Astra for Law가 법률 인텔리전스 분야에서 선두를 차지하며 ChatGPT Enterprise 고객에게 제공됩니다."
+      "summary": "Codex 샌드박스가 macOS, Linux, Windows 환경에서 파일 시스템 및 네트워크 제한을 제어하며 명령을 실행하는 방식에 대한 상세 정보가 제공되었습니다."
     },
     {
-      "published_at": "2026-11-17T00:00:00+00:00",
+      "published_at": "2026-11-18T10:00:00+00:00",
       "source_ids": [
-        "openai-0e7f690aa4ff229bd2e8",
-        "openai-2d7a5d6b20fff3cd431e",
-        "openai-dd659f011024f04f24b0",
-        "openai-d91fd06de7b8771ee8ad",
-        "openai-b82b64ef90f76e66fb00"
+        "openai-184d931227f2504de1a3",
+        "openai-58da586369f33999eb92",
+        "openai-53d809d7420a3923e8ba",
+        "openai-67952d9a918d2536a7bf",
+        "openai-99be0c0a7e074380d1a5"
       ],
-      "summary": "온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입."
+      "summary": "AI 연구 가속화에 기여하는 코딩 에이전트의 성능 측정 결과와 재귀적 자기 개선에 대한 시사점이 공개되었습니다."
     }
   ],
   "seen_hashes": [
     "0045c1c78b9c2e9af11bca6c8aa443067038ed194639cbc741716651d8b432e6",
     "0080141cd7a746c84321da03fc42438aa7b6cb4d0499617f10adc1479b509f6b",
     "008f092f322a1bb9593f99110c1b5af504512febb1e6e9909bb67c4cfb45e760",
+    "01d8753aabe4c1d1d45c0e7471bfba9aa56365d78bb13953798a9ecd11f434a9",
     "023e267cd63982c5f8626aed53279f81c1ae452a6e8b7261dd8787704424892d",
     "035c9ef70692b5cc7049e1d3b5144ddf89b5b9a4c3c40197f3ce2f3f0401615b",
     "04ecea2d0f5a1f2d26e9a1a15cc669c9efdaa9f5894e9d429f9d9c49a7558fce",
@@ -610,6 +627,7 @@
     "3c316bd8fe17537c69d2dea5517e6f24c8a49d170514b988d86b9745c8b4e8e1",
     "3eeb54801d70b48650e4be9113595f420fc51266139d503d82c32d4ab2ab0c68",
     "3ef898e58e738e8ff03c8130399b584472c5f779c6f1cddd939c6c5a3b61572e",
+    "40fe4df18fa8f4b3f81b1b900ac4a2d82a97ca6ef8e3825eb319f1f279c4f421",
     "41c44dd9c9cbf81ec78ea14ca2e16291027db763a2753e8c902739f58ecfd872",
     "421fe0926ad6fab116baa772b585a66637b6bf4c51b40183032e21ad51f59da9",
     "434ad442e52bc653da0a3f190c8076d2cc235adc6b1eb686227c815720ae2f3e",
@@ -617,6 +635,7 @@
     "4485911e5bff8a142bffb59dfefccf91f768ed7ba6e2531413530eb424fbe24b",
     "455cbcb394534fa38d4bea630050a7f1289256404172220b7f8e3d6c8ac9f21a",
     "4861198fb158097b67e623050039af877657077d2935f9b558c1fea0c036d5e2",
+    "4a712299f42c3f2daec11a1b03bc28760666e53967a93d9ae18ea1befaccf913",
     "4b13441179035d64e85063fee39cc3cc3bb4797ed55c0cdcd5cd08e8cd4de986",
     "4b460fb8393151b71252b179d9855afd9c3effcb0a10dee0d79f3aa5e8f0d66a",
     "4b58459af7180df9bce090ffcc756d78ea1ce130bb5001623b56c5d70dd47fef",
@@ -669,6 +688,7 @@
     "8c03cb9aa30759adcacca7f99dc89771050a03d48826a74f409b48810a219d5e",
     "8c091123bdd713e69f9b1bfdbd84d3c354f048b4f1bdee1cecdf95353de971f9",
     "8c241b2bedccb3e08a0ed89ef779eb1186ea96468904cabb7560dbbc3c1ad166",
+    "8d12092b68bfc1ab466608b0125e1d38887ab520be32ed6edccd79442e6be4b5",
     "8f9b60dabe8f29402f9e09bd87ac7f24b371bf54a862ec3e8b205fb2c92f61fb",
     "94b8084ecab5d1092c4ac4d5212173aee2844ececa0ccf99581bf1201139987e",
     "95e94d6b252d142b0a5165dd3f327fe52c2d920c0c725c016bbad224ef375ed5",
@@ -682,6 +702,7 @@
     "a25b8961522e5a113e822d8feffe947d2d0f0a7461fa6851343ce2bb799cb2c3",
     "a3dbe93d4c009e4fd4cecf323a430748eda26451f411473d6074a4877bf26dba",
     "a42228caaad189441381fde895f360b0c95de403d0b41a47a65dec38ef4a855c",
+    "a463b53d11803f081d3a0e26f8e308cafac8fe27d6160726c8c4f778ffbf7ab0",
     "a714a8c6db9ff916dc060b2d218b6e1e3ca55479c6a675cc47a521d88acf9511",
     "a83d932617d56710902509a0160e38dfe7e74c1baf3b295a61a05da82b45d9ae",
     "a97cca53921476f73e640640ab87553ab40ee9ce86605d72180d35abadd44838",
@@ -759,22 +780,23 @@
 
 ## 현재 상태
 
-OpenAI는 새로운 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업용 플러그인을 도입했으며, 법률 분야에서 Astra for Law의 우수성을 입증하고, 칠레 정부와 파트너십을 맺는 등 다양한 분야에서 확장을 진행하고 있습니다.
+OpenAI는 강력한 AI가 사회에 미칠 영향과 인간의 통제 유지 방안을 탐구하고 있으며, AI 연구 가속화를 위한 코딩 에이전트의 활용 및 그 성능을 측정하고 있습니다. 또한, 기업 고객의 ChatGPT Enterprise 도입 성공 사례를 공유하고, AI 위험 관리 전략과 Codex 샌드박스 기술에 대한 정보를 제공하고 있습니다.
 
 ## 핵심 정보
 
-- GPT-6.2 Astra 및 Sol은 ChatGPT Work, Codex, API에서 더 나은 전문적인 결과물, 코딩, 컴퓨터 사용 및 효율성을 더 낮은 비용으로 제공합니다.
-- ChatGPT에 새로운 영업 플러그인과 30개 이상의 파트너 플러그인이 추가되어 잠재 고객 조사, 제안서 준비, CRM 업데이트 등 영업 활동을 지원합니다.
-- Astra for Law는 24개 법률 분야에 걸친 출시 평가에서 1위를 차지했으며, 모든 ChatGPT Enterprise 고객이 접근을 요청할 수 있습니다.
-- OpenAI는 칠레 정부와 협력하여 책임감 있는 AI 도입을 지원하고, 공공 부문 기술을 구축하며, 현지 스타트업의 AI 애플리케이션 개발을 돕습니다.
+- OpenAI의 전략적 미래 책임자인 Dean Ball은 더 강력한 AI가 사회를 어떻게 재편할 수 있는지, 그리고 사람들이 기관에 대한 통제권을 어떻게 유지할 수 있는지 검토합니다.
+- OpenAI는 코딩 에이전트가 AI 연구를 가속화하는 방식, 성능의 불균형, 그리고 재귀적 자기 개선에 대한 시사점을 측정합니다.
+- Sumitomo Life는 ChatGPT Enterprise를 사용하여 보험사 연구, 제안서 준비, 투자 분석을 위한 코드 초안 작성을 수행하며, 경영진의 초기 사용이 도입을 촉진했습니다.
+- Codex 샌드박스는 macOS, Linux, Windows에서 사용자가 제어하는 파일 시스템 및 네트워크 제한을 적용하면서 머신에서 명령을 실행하는 방법을 보여줍니다.
+- OpenAI는 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 통해 훈련부터 배포까지 최첨단 AI 위험을 관리하는 방법을 설명합니다.
 
 ## 최근 변경 사항
 
-- 2026년 11월 18일 02:45 — OpenAI가 칠레 정부와 파트너십을 맺고 칠레 내 AI 생태계 발전을 지원합니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
-- 2026년 11월 18일 02:45 — GPT-6.2 Astra 및 Sol 모델이 출시되어 성능과 효율성이 향상되었습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
-- 2026년 11월 18일 02:45 — ChatGPT에 영업 전용 플러그인과 확장된 파트너 플러그인이 도입되었습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
-- 2026년 11월 18일 02:45 — Astra for Law가 법률 인텔리전스 분야에서 선두를 차지하며 ChatGPT Enterprise 고객에게 제공됩니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
-- 2026년 11월 17일 09:00 — 온라인 아동 성 착취 및 학대 방지를 위한 새로운 도구, 지침 및 파트너십 도입. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
+- 2026년 11월 18일 19:00 — Sumitomo Life가 경영진의 주도로 ChatGPT Enterprise를 성공적으로 도입하여 연구, 제안서 작성, 코드 초안 작성에 활용한 사례가 소개되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 18일 19:00 — OpenAI는 훈련부터 배포까지 최첨단 AI 위험을 관리하기 위한 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 포함한 포괄적인 접근 방식을 설명했습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 18일 19:00 — OpenAI는 더 강력한 AI가 사회를 재편할 수 있는 방식과 사람들이 기관에 대한 통제권을 유지하는 방법에 대한 분석을 발표했습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 18일 19:00 — Codex 샌드박스가 macOS, Linux, Windows 환경에서 파일 시스템 및 네트워크 제한을 제어하며 명령을 실행하는 방식에 대한 상세 정보가 제공되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 18일 19:00 — AI 연구 가속화에 기여하는 코딩 에이전트의 성능 측정 결과와 재귀적 자기 개선에 대한 시사점이 공개되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
 
 ## 변경 이력
 
@@ -833,3 +855,4 @@ OpenAI는 새로운 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영
 - 2026년 11월 16일 07:00 — OpenAI는 AI를 활용한 과학 연구를 진행하며, 특히 GPT-6 Astra를 사용하여 표준 모델의 격자 정의에 대한 상세한 증명을 개발하는 데 기여했습니다. 또한, 과학적 발견을 촉진하기 위해 새로운 과학 블로그를 개설하여 연구 결과와 경험을 공유하고 있습니다. (출처: openai-2e8f421d2ee2a3dfd36b, openai-33b95c2112c46efd0955)
 - 2026년 11월 17일 09:00 — OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
 - 2026년 11월 18일 02:45 — OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
+- 2026년 11월 18일 19:00 — 최근 OpenAI는 AI의 사회적 영향과 인간 통제 유지 방안, AI 연구 가속화에 기여하는 코딩 에이전트의 역할, 기업 고객의 AI 솔루션 도입 사례, 그리고 AI 위험 관리 및 보안 기술에 대한 다양한 업데이트를 발표했습니다. 이는 AI의 발전과 그에 따른 사회적, 기술적 과제에 대한 OpenAI의 지속적인 노력을 보여줍니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)

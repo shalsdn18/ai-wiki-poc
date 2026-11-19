@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini는 빌더들이 'Gemini 4 Carbon'을 활용하여 다양한 프로젝트를 만들고 있으며, 사용자들은 Gemini를 통해 작업을 수행할 수 있습니다.",
+  "current_state": "Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했으며, Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -237,13 +237,51 @@
         "gemini-830da74434e8505c737e"
       ],
       "summary": "최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다."
+    },
+    {
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "source_ids": [
+        "gemini-be0aed2f51056a6d6c6f",
+        "gemini-a261d2eee241a886eda0",
+        "gemini-0191a8cf5007a7e305ee"
+      ],
+      "summary": "최근 Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했습니다. 또한, Google Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있게 되어, 더 많은 사용자가 Gemini Live 및 맞춤 이미지 생성 기능을 이용할 수 있게 되었습니다."
     }
   ],
   "key_facts": [
-    "빌더들은 'Gemini 4 Carbon'을 사용하여 다양한 프로젝트를 만들고 있습니다.",
-    "Gemini는 '무엇을 도와드릴까요?'라는 프롬프트와 '작업을 설명하세요'라는 입력 상자가 있는 사용자 인터페이스를 통해 작업을 수행할 수 있도록 지원합니다."
+    "Gemini 4 Neon이 소개되었습니다.",
+    "Genie 4가 출시되었습니다.",
+    "Google Gemini 앱이 저사양 Android 기기를 지원합니다.",
+    "저사양 Android 기기에서 Gemini Live 및 맞춤 이미지 생성을 이용할 수 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "source_ids": [
+        "gemini-be0aed2f51056a6d6c6f",
+        "gemini-a261d2eee241a886eda0",
+        "gemini-0191a8cf5007a7e305ee"
+      ],
+      "summary": "Genie 4가 출시되었습니다."
+    },
+    {
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "source_ids": [
+        "gemini-be0aed2f51056a6d6c6f",
+        "gemini-a261d2eee241a886eda0",
+        "gemini-0191a8cf5007a7e305ee"
+      ],
+      "summary": "Gemini 앱이 저사양 Android 기기에서 사용 가능해졌습니다."
+    },
+    {
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "source_ids": [
+        "gemini-be0aed2f51056a6d6c6f",
+        "gemini-a261d2eee241a886eda0",
+        "gemini-0191a8cf5007a7e305ee"
+      ],
+      "summary": "Gemini 4 Neon이 소개되었습니다."
+    },
     {
       "published_at": "2026-11-17T21:00:00+00:00",
       "source_ids": [
@@ -259,27 +297,6 @@
         "gemini-830da74434e8505c737e"
       ],
       "summary": "빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다."
-    },
-    {
-      "published_at": "2026-11-16T18:45:00+00:00",
-      "source_ids": [
-        "gemini-025d8baefe51f5051ea2"
-      ],
-      "summary": "사용자는 이제 Android 및 iOS 기기에서 앱 상호작용을 위한 선호하는 현지 방언 음성을 선택할 수 있습니다."
-    },
-    {
-      "published_at": "2026-11-16T18:45:00+00:00",
-      "source_ids": [
-        "gemini-025d8baefe51f5051ea2"
-      ],
-      "summary": "Gemini 앱에 66개의 새로운 지역별 음성이 추가되었습니다."
-    },
-    {
-      "published_at": "2026-11-13T17:00:00+00:00",
-      "source_ids": [
-        "gemini-d2a87e2f3ff3ae0e50e6"
-      ],
-      "summary": "Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다."
     }
   ],
   "seen_hashes": [
@@ -299,10 +316,12 @@
     "25a006db28eb2cb6b57ad593e2de393aff31ddddde30c531cd65191f0a3eb10c",
     "319df7fecd10f82839948a83de55440289ded38a0c05115f792220c51f439f74",
     "32fd750cc355ba3b8aa1bb2402d34714f57cc7d1f267f79bb80a7c504bd6c2d1",
+    "3d93dab456ecb9c85f4de042ff22008afa1af046501d9905276a95eec267c5cd",
     "43483c34fedc144e145b0b2ea70a2b945f84f388e7aadef8f15c226dcf7e9a75",
     "4f860df200931a6dbf6b7c0616102ed714a7353aa41062c49df68b91c4a7c807",
     "51f6b669c3bafd1057984d5ee046d4a3c16dab581bf2416da390d014fa036d5f",
     "5401e34114e1aa83feafb30fcac5e682adbfa55e4d3235b7595b981399cf5693",
+    "5a26b8aac85c8499682844f2409d7d4a427df04c1fca65f707f74514947d0061",
     "5af6fc2977c11bf29bbf373fd3e5c39e1ec2ac0e89296d92aec4e25450430a5d",
     "5b2c9b8c4b0166a6cd74601a369d927ac84c5d5e1450b0dd35a56d9d86de8a77",
     "5fde5c050707497c9bfb290ac8d493ffb701933fc665050b777d1a649ef8233b",
@@ -314,6 +333,7 @@
     "79ae93cd4800f6d7809d07bd99b1f1194d71db6d2da39c3bb607fdd4190cf18d",
     "79eeed36296fbc9a422ad5aaf7d249edf910ef54e00fba0bb8dee0d95b129be0",
     "7a5d5a2acef7650d6516ebbe7b25b33fb17e2f5484c2d94ebd5ac2db18cee0ac",
+    "7d75fe3aad8d72a1bd08a31ea1892e11e1869a4344d00d0873d8a9084880a871",
     "87640befa7b2b5323e0d649508df6e35869e587e9ac0961ca6ddabf6b1707f1d",
     "8db64e32da73abd6e8a11ec574f2c8b0870d3b54a1202b2aaec763612105a77e",
     "90428287e7330dda1013088381e0035cd878f0020ba20bc9f71cbb464e22c6e5",
@@ -347,20 +367,22 @@
 
 ## 현재 상태
 
-Gemini는 빌더들이 'Gemini 4 Carbon'을 활용하여 다양한 프로젝트를 만들고 있으며, 사용자들은 Gemini를 통해 작업을 수행할 수 있습니다.
+Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했으며, Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있습니다.
 
 ## 핵심 정보
 
-- 빌더들은 'Gemini 4 Carbon'을 사용하여 다양한 프로젝트를 만들고 있습니다.
-- Gemini는 '무엇을 도와드릴까요?'라는 프롬프트와 '작업을 설명하세요'라는 입력 상자가 있는 사용자 인터페이스를 통해 작업을 수행할 수 있도록 지원합니다.
+- Gemini 4 Neon이 소개되었습니다.
+- Genie 4가 출시되었습니다.
+- Google Gemini 앱이 저사양 Android 기기를 지원합니다.
+- 저사양 Android 기기에서 Gemini Live 및 맞춤 이미지 생성을 이용할 수 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 19일 06:00 — Genie 4가 출시되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
+- 2026년 11월 19일 06:00 — Gemini 앱이 저사양 Android 기기에서 사용 가능해졌습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
+- 2026년 11월 19일 06:00 — Gemini 4 Neon이 소개되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 - 2026년 11월 18일 06:00 — 사용자가 '무엇을 도와드릴까요?'라는 프롬프트와 함께 작업을 입력할 수 있는 Gemini의 사용자 인터페이스가 공개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
 - 2026년 11월 18일 06:00 — 빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
-- 2026년 11월 17일 03:45 — 사용자는 이제 Android 및 iOS 기기에서 앱 상호작용을 위한 선호하는 현지 방언 음성을 선택할 수 있습니다. (출처: gemini-025d8baefe51f5051ea2)
-- 2026년 11월 17일 03:45 — Gemini 앱에 66개의 새로운 지역별 음성이 추가되었습니다. (출처: gemini-025d8baefe51f5051ea2)
-- 2026년 11월 14일 02:00 — Google Wallet을 Gemini 앱에 연결하여 개인 금융 통찰력을 얻는 기능이 도입되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
 
 ## 변경 이력
 
@@ -394,3 +416,4 @@ Gemini는 빌더들이 'Gemini 4 Carbon'을 활용하여 다양한 프로젝트�
 - 2026년 11월 14일 02:00 — Google Wallet과 Gemini 앱을 연결하여 개인 금융 통찰력을 제공하는 새로운 기능이 발표되었습니다. (출처: gemini-d2a87e2f3ff3ae0e50e6)
 - 2026년 11월 17일 03:45 — Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다. (출처: gemini-025d8baefe51f5051ea2)
 - 2026년 11월 18일 06:00 — 최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
+- 2026년 11월 19일 06:00 — 최근 Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했습니다. 또한, Google Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있게 되어, 더 많은 사용자가 Gemini Live 및 맞춤 이미지 생성 기능을 이용할 수 있게 되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
