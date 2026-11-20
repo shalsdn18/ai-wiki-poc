@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 강력한 AI가 사회에 미칠 영향과 인간의 통제 유지 방안을 탐구하고 있으며, AI 연구 가속화를 위한 코딩 에이전트의 활용 및 그 성능을 측정하고 있습니다. 또한, 기업 고객의 ChatGPT Enterprise 도입 성공 사례를 공유하고, AI 위험 관리 전략과 Codex 샌드박스 기술에 대한 정보를 제공하고 있습니다.",
+  "current_state": "OpenAI는 ChatGPT의 성능 유지 시스템인 Performance Factory와 Daybreak Red, Daybreak Blue, PR 스캔, Codex Security Plugin과 같은 다양한 보안 및 개발 워크플로우 도구에 대한 정보를 공개하고 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -521,70 +521,81 @@
         "openai-99be0c0a7e074380d1a5"
       ],
       "summary": "최근 OpenAI는 AI의 사회적 영향과 인간 통제 유지 방안, AI 연구 가속화에 기여하는 코딩 에이전트의 역할, 기업 고객의 AI 솔루션 도입 사례, 그리고 AI 위험 관리 및 보안 기술에 대한 다양한 업데이트를 발표했습니다. 이는 AI의 발전과 그에 따른 사회적, 기술적 과제에 대한 OpenAI의 지속적인 노력을 보여줍니다."
+    },
+    {
+      "published_at": "2026-11-19T08:00:00+00:00",
+      "source_ids": [
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
+      ],
+      "summary": "제공된 정보는 OpenAI의 최근 발표 및 시연에 기반합니다."
     }
   ],
   "key_facts": [
-    "OpenAI의 전략적 미래 책임자인 Dean Ball은 더 강력한 AI가 사회를 어떻게 재편할 수 있는지, 그리고 사람들이 기관에 대한 통제권을 어떻게 유지할 수 있는지 검토합니다.",
-    "OpenAI는 코딩 에이전트가 AI 연구를 가속화하는 방식, 성능의 불균형, 그리고 재귀적 자기 개선에 대한 시사점을 측정합니다.",
-    "Sumitomo Life는 ChatGPT Enterprise를 사용하여 보험사 연구, 제안서 준비, 투자 분석을 위한 코드 초안 작성을 수행하며, 경영진의 초기 사용이 도입을 촉진했습니다.",
-    "Codex 샌드박스는 macOS, Linux, Windows에서 사용자가 제어하는 파일 시스템 및 네트워크 제한을 적용하면서 머신에서 명령을 실행하는 방법을 보여줍니다.",
-    "OpenAI는 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 통해 훈련부터 배포까지 최첨단 AI 위험을 관리하는 방법을 설명합니다."
+    "OpenAI는 ChatGPT의 속도를 유지하기 위해 Codex 기반의 Performance Factory 시스템을 구축했습니다.",
+    "Daybreak Red는 안전 제어, 설정 및 모니터링을 포함한 감독 보안 조사를 위한 참조 아키텍처를 제공합니다.",
+    "PR 스캔은 풀 리퀘스트 워크플로우에서 스캔 결과를 검토하는 과정을 시연합니다.",
+    "Codex Security Plugin은 시작부터 결과 검토까지의 워크플로우를 데모로 보여줍니다.",
+    "Daybreak Blue는 온보딩 및 설정 경험에 대한 자세한 안내를 제공합니다."
   ],
   "recent_changes": [
     {
-      "published_at": "2026-11-18T10:00:00+00:00",
+      "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
-        "openai-184d931227f2504de1a3",
-        "openai-58da586369f33999eb92",
-        "openai-53d809d7420a3923e8ba",
-        "openai-67952d9a918d2536a7bf",
-        "openai-99be0c0a7e074380d1a5"
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
       ],
-      "summary": "Sumitomo Life가 경영진의 주도로 ChatGPT Enterprise를 성공적으로 도입하여 연구, 제안서 작성, 코드 초안 작성에 활용한 사례가 소개되었습니다."
+      "summary": "풀 리퀘스트 워크플로우에서 PR 스캔 결과를 검토하는 시연이 제공되었습니다."
     },
     {
-      "published_at": "2026-11-18T10:00:00+00:00",
+      "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
-        "openai-184d931227f2504de1a3",
-        "openai-58da586369f33999eb92",
-        "openai-53d809d7420a3923e8ba",
-        "openai-67952d9a918d2536a7bf",
-        "openai-99be0c0a7e074380d1a5"
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
       ],
-      "summary": "OpenAI는 훈련부터 배포까지 최첨단 AI 위험을 관리하기 위한 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 포함한 포괄적인 접근 방식을 설명했습니다."
+      "summary": "감독 보안 조사를 위한 Daybreak Red의 배포 참조 아키텍처가 공개되었습니다."
     },
     {
-      "published_at": "2026-11-18T10:00:00+00:00",
+      "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
-        "openai-184d931227f2504de1a3",
-        "openai-58da586369f33999eb92",
-        "openai-53d809d7420a3923e8ba",
-        "openai-67952d9a918d2536a7bf",
-        "openai-99be0c0a7e074380d1a5"
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
       ],
-      "summary": "OpenAI는 더 강력한 AI가 사회를 재편할 수 있는 방식과 사람들이 기관에 대한 통제권을 유지하는 방법에 대한 분석을 발표했습니다."
+      "summary": "OpenAI는 ChatGPT의 성능을 유지하는 데 사용되는 Codex 기반의 Performance Factory 시스템을 소개했습니다."
     },
     {
-      "published_at": "2026-11-18T10:00:00+00:00",
+      "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
-        "openai-184d931227f2504de1a3",
-        "openai-58da586369f33999eb92",
-        "openai-53d809d7420a3923e8ba",
-        "openai-67952d9a918d2536a7bf",
-        "openai-99be0c0a7e074380d1a5"
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
       ],
-      "summary": "Codex 샌드박스가 macOS, Linux, Windows 환경에서 파일 시스템 및 네트워크 제한을 제어하며 명령을 실행하는 방식에 대한 상세 정보가 제공되었습니다."
+      "summary": "Daybreak Blue 온보딩 및 설정 경험에 대한 안내가 제공되었습니다."
     },
     {
-      "published_at": "2026-11-18T10:00:00+00:00",
+      "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
-        "openai-184d931227f2504de1a3",
-        "openai-58da586369f33999eb92",
-        "openai-53d809d7420a3923e8ba",
-        "openai-67952d9a918d2536a7bf",
-        "openai-99be0c0a7e074380d1a5"
+        "openai-9342dbf934e428aa00c1",
+        "openai-a890a236270cc5e31862",
+        "openai-17b7a2b39f098895a220",
+        "openai-82fe289fe466dcc1d4f7",
+        "openai-da30645137037f0052cd"
       ],
-      "summary": "AI 연구 가속화에 기여하는 코딩 에이전트의 성능 측정 결과와 재귀적 자기 개선에 대한 시사점이 공개되었습니다."
+      "summary": "Codex Security Plugin의 작동 방식에 대한 데모가 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -604,6 +615,7 @@
     "1403063a806419fe14a158be44be99fc954e39f2e996a0b6a56c20962435de24",
     "1477e2be2f982234bdfc7f85f8caa7dc8e4220ad8cb53ea0e023b48a05224d2f",
     "14a52eb3aae43d3bfacdfa43fe628b24e133cda3cc58b440125912a4994cf4b7",
+    "1668110c8b0aacf22e2d0040e5b9744cce649a3e3274053be89ca56e12daa295",
     "1b1b58abf7577a7bf2cfa177b34e329113b75b44bffec8db705fb276bf830e6e",
     "1b77faba4c30b58e82f2da3754c58acd99626bfc62578ea8c8406cc352932945",
     "1eb5799e1e866ba8be335b55be17af2a83c3d39f1b4179181014d4bcc592f94a",
@@ -642,6 +654,7 @@
     "4b70b6f7621f6aaad76dfb1e5ec6e1d956d0e3dbcae95cc99fe010f5d3d4a480",
     "4b90a5b89b816077a0f4b6fa7641f1a463066e94eacf383c9088461628d20e11",
     "4cc8c1bf009a00087f63be430507fb1bb20ea0c50c2a0f0e5c4786cdb7861402",
+    "4dd634b4dd1c270ec32fe7599b5de7ab082e41211fda47ff7c348c2f2c090297",
     "4de0242c59f4534b6ee8d39450f01490324a7a7177a1a49d534a3ecc40b63781",
     "4df24210d915f07b3f95e97cc2fd8eeec4e364d6b04f4d2cdf0fa32640b66bd7",
     "4f1623e93f581265bed56aedf2086f73e32ee9937113f17390443eea8a921994",
@@ -712,6 +725,7 @@
     "aec25ffd9e3c32072bb6c9f19f12f158cbcf286c44bd2522df1b0a1fa55b3423",
     "af232761343ad3368fb104e6964ed0bf473ee97b3ec8e3a0d1a5b132a09ee7ca",
     "b0a77a64cbbe0ca1ce3d49be40429f75bc825a31adcf9dc0a856396e4fd84e44",
+    "b15c49f1c74b12d7a75d75c264df14750c877e0981bb6e009a0e2b34190d11f0",
     "b1c9bb0b0240f477bc33f5c7b8151c7b71103dc0fb03d2cdba5b891c18a94f30",
     "b470417c5e2e8e28fca2c57e8267a93466a49ff743d0209fc88aa1f1bfd68c0d",
     "b5805270b7462531537a8af7913816a5bf5ffc21d7bd592b82e85ed379673b78",
@@ -722,6 +736,7 @@
     "ba704cb5a556833ff3dec6b688ae417391083d43ae5c4ecdb64bd99a927854b9",
     "bb43e23de316c9140fad90bbf40ec57f1d4460f6a719ff1a2348b29514f83272",
     "bc06389219fd2549b37626c6e43340c0a719b49b7c8a23f1f65a623f26243bd7",
+    "bc0ccd3b8aa699faf6f488bc0900e940ca77224924f9b51a5688d04a33e43579",
     "bcf634010cd6e3fdbe9a4bd8c87edcdda209d5da6dc6909c91b41bef72d21853",
     "be6118f16e54d4460aa0e31b788785d1aeb9e30864ab14567b23ee9e85ca7281",
     "bfbf01a8eaa0c1296a9af505e066f0d04ec7a38f90b06eb0a7ba683b61f9b6d0",
@@ -763,6 +778,7 @@
     "ea9bbe1eca228194ccf1e8c8ecf200c429edddb8fedd84ff577bbc379a86c1f4",
     "eb17fe07518f97a86e0e8b8708515a2be82bc5b3800709ffc79a7c9fd3ef720e",
     "eb59f9cb18aebcb0f5a91c130a8ede4802994a367f45a02cbd135f9ad19a4a9c",
+    "ebd9306d522aa882184458af22b45b8d8ff28d19335141992ad87099e7d40f76",
     "ee9024d18999f55c175decf5feb209a6dcdd6df004f9b3f4c30876b36cebe882",
     "ef081bcec3f35b549af9d7f78ed0dc9079ad0c7e05105ab5a264ebadc6ad9e1b",
     "ef79659560ea9899919398cb126cfad5e231b632fefd72f519f5dd67414a6970",
@@ -780,23 +796,23 @@
 
 ## 현재 상태
 
-OpenAI는 강력한 AI가 사회에 미칠 영향과 인간의 통제 유지 방안을 탐구하고 있으며, AI 연구 가속화를 위한 코딩 에이전트의 활용 및 그 성능을 측정하고 있습니다. 또한, 기업 고객의 ChatGPT Enterprise 도입 성공 사례를 공유하고, AI 위험 관리 전략과 Codex 샌드박스 기술에 대한 정보를 제공하고 있습니다.
+OpenAI는 ChatGPT의 성능 유지 시스템인 Performance Factory와 Daybreak Red, Daybreak Blue, PR 스캔, Codex Security Plugin과 같은 다양한 보안 및 개발 워크플로우 도구에 대한 정보를 공개하고 있습니다.
 
 ## 핵심 정보
 
-- OpenAI의 전략적 미래 책임자인 Dean Ball은 더 강력한 AI가 사회를 어떻게 재편할 수 있는지, 그리고 사람들이 기관에 대한 통제권을 어떻게 유지할 수 있는지 검토합니다.
-- OpenAI는 코딩 에이전트가 AI 연구를 가속화하는 방식, 성능의 불균형, 그리고 재귀적 자기 개선에 대한 시사점을 측정합니다.
-- Sumitomo Life는 ChatGPT Enterprise를 사용하여 보험사 연구, 제안서 준비, 투자 분석을 위한 코드 초안 작성을 수행하며, 경영진의 초기 사용이 도입을 촉진했습니다.
-- Codex 샌드박스는 macOS, Linux, Windows에서 사용자가 제어하는 파일 시스템 및 네트워크 제한을 적용하면서 머신에서 명령을 실행하는 방법을 보여줍니다.
-- OpenAI는 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 통해 훈련부터 배포까지 최첨단 AI 위험을 관리하는 방법을 설명합니다.
+- OpenAI는 ChatGPT의 속도를 유지하기 위해 Codex 기반의 Performance Factory 시스템을 구축했습니다.
+- Daybreak Red는 안전 제어, 설정 및 모니터링을 포함한 감독 보안 조사를 위한 참조 아키텍처를 제공합니다.
+- PR 스캔은 풀 리퀘스트 워크플로우에서 스캔 결과를 검토하는 과정을 시연합니다.
+- Codex Security Plugin은 시작부터 결과 검토까지의 워크플로우를 데모로 보여줍니다.
+- Daybreak Blue는 온보딩 및 설정 경험에 대한 자세한 안내를 제공합니다.
 
 ## 최근 변경 사항
 
-- 2026년 11월 18일 19:00 — Sumitomo Life가 경영진의 주도로 ChatGPT Enterprise를 성공적으로 도입하여 연구, 제안서 작성, 코드 초안 작성에 활용한 사례가 소개되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
-- 2026년 11월 18일 19:00 — OpenAI는 훈련부터 배포까지 최첨단 AI 위험을 관리하기 위한 모델 정렬, 샌드박싱, 차단 보호 장치 및 모니터링을 포함한 포괄적인 접근 방식을 설명했습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
-- 2026년 11월 18일 19:00 — OpenAI는 더 강력한 AI가 사회를 재편할 수 있는 방식과 사람들이 기관에 대한 통제권을 유지하는 방법에 대한 분석을 발표했습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
-- 2026년 11월 18일 19:00 — Codex 샌드박스가 macOS, Linux, Windows 환경에서 파일 시스템 및 네트워크 제한을 제어하며 명령을 실행하는 방식에 대한 상세 정보가 제공되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
-- 2026년 11월 18일 19:00 — AI 연구 가속화에 기여하는 코딩 에이전트의 성능 측정 결과와 재귀적 자기 개선에 대한 시사점이 공개되었습니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 19일 17:00 — 풀 리퀘스트 워크플로우에서 PR 스캔 결과를 검토하는 시연이 제공되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
+- 2026년 11월 19일 17:00 — 감독 보안 조사를 위한 Daybreak Red의 배포 참조 아키텍처가 공개되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
+- 2026년 11월 19일 17:00 — OpenAI는 ChatGPT의 성능을 유지하는 데 사용되는 Codex 기반의 Performance Factory 시스템을 소개했습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
+- 2026년 11월 19일 17:00 — Daybreak Blue 온보딩 및 설정 경험에 대한 안내가 제공되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
+- 2026년 11월 19일 17:00 — Codex Security Plugin의 작동 방식에 대한 데모가 공개되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
 
 ## 변경 이력
 
@@ -856,3 +872,4 @@ OpenAI는 강력한 AI가 사회에 미칠 영향과 인간의 통제 유지 방
 - 2026년 11월 17일 09:00 — OpenAI는 최근 인공지능 기술을 활용하여 사이버 보안을 강화하고, 학술 연구 분야에서 AI 접근성을 확대하며, 온라인 아동 안전을 위한 노력을 기울이고 있습니다. 또한, 기업들이 AI를 통해 운영 효율성을 높이는 성공 사례를 공유하고 있습니다. (출처: openai-0e7f690aa4ff229bd2e8, openai-2d7a5d6b20fff3cd431e, openai-dd659f011024f04f24b0, openai-d91fd06de7b8771ee8ad, openai-b82b64ef90f76e66fb00)
 - 2026년 11월 18일 02:45 — OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
 - 2026년 11월 18일 19:00 — 최근 OpenAI는 AI의 사회적 영향과 인간 통제 유지 방안, AI 연구 가속화에 기여하는 코딩 에이전트의 역할, 기업 고객의 AI 솔루션 도입 사례, 그리고 AI 위험 관리 및 보안 기술에 대한 다양한 업데이트를 발표했습니다. 이는 AI의 발전과 그에 따른 사회적, 기술적 과제에 대한 OpenAI의 지속적인 노력을 보여줍니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
+- 2026년 11월 19일 17:00 — 제공된 정보는 OpenAI의 최근 발표 및 시연에 기반합니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)

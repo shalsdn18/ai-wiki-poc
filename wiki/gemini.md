@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했으며, Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있습니다.",
+  "current_state": "Gemini는 이제 다른 AI 앱에서 채팅 기록을 전송할 수 있으며, Mac에서 반복적인 작업을 처리할 수 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -246,15 +246,39 @@
         "gemini-0191a8cf5007a7e305ee"
       ],
       "summary": "최근 Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했습니다. 또한, Google Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있게 되어, 더 많은 사용자가 Gemini Live 및 맞춤 이미지 생성 기능을 이용할 수 있게 되었습니다."
+    },
+    {
+      "published_at": "2026-11-19T20:30:00+00:00",
+      "source_ids": [
+        "gemini-a89c20fefc5a11322a22",
+        "gemini-efdbd6c83627cffee94d"
+      ],
+      "summary": "Gemini는 다른 AI 앱과의 상호 운용성을 개선하여 채팅 기록 전송 기능을 도입했으며, Mac 사용자를 위해 반복적인 작업을 자동화하는 기능을 확장했습니다."
     }
   ],
   "key_facts": [
-    "Gemini 4 Neon이 소개되었습니다.",
-    "Genie 4가 출시되었습니다.",
-    "Google Gemini 앱이 저사양 Android 기기를 지원합니다.",
-    "저사양 Android 기기에서 Gemini Live 및 맞춤 이미지 생성을 이용할 수 있습니다."
+    "사용자는 다른 AI 앱의 채팅 기록을 Gemini로 전송할 수 있습니다.",
+    "ZIP 파일과 AI 요약을 가져와 대화를 원활하게 이어갈 수 있습니다.",
+    "Gemini는 Mac에서 반복적인 작업을 처리할 수 있습니다.",
+    "예시로, Gemini는 아이의 나비 스케치를 모델링하고 Blender에서 리깅하는 데 사용될 수 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-19T20:30:00+00:00",
+      "source_ids": [
+        "gemini-a89c20fefc5a11322a22",
+        "gemini-efdbd6c83627cffee94d"
+      ],
+      "summary": "다른 AI 앱에서 Gemini로 채팅 기록을 전송하는 기능이 추가되었습니다."
+    },
+    {
+      "published_at": "2026-11-19T20:30:00+00:00",
+      "source_ids": [
+        "gemini-a89c20fefc5a11322a22",
+        "gemini-efdbd6c83627cffee94d"
+      ],
+      "summary": "Mac에서 Gemini를 사용하여 반복적인 작업을 처리할 수 있게 되었습니다."
+    },
     {
       "published_at": "2026-11-18T21:00:00+00:00",
       "source_ids": [
@@ -281,22 +305,6 @@
         "gemini-0191a8cf5007a7e305ee"
       ],
       "summary": "Gemini 4 Neon이 소개되었습니다."
-    },
-    {
-      "published_at": "2026-11-17T21:00:00+00:00",
-      "source_ids": [
-        "gemini-73687e4d2d12cc3c627a",
-        "gemini-830da74434e8505c737e"
-      ],
-      "summary": "사용자가 '무엇을 도와드릴까요?'라는 프롬프트와 함께 작업을 입력할 수 있는 Gemini의 사용자 인터페이스가 공개되었습니다."
-    },
-    {
-      "published_at": "2026-11-17T21:00:00+00:00",
-      "source_ids": [
-        "gemini-73687e4d2d12cc3c627a",
-        "gemini-830da74434e8505c737e"
-      ],
-      "summary": "빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -343,9 +351,11 @@
     "9f824760b9154289f1664ddf9907bbec54c501949a6bef878284dbd17de09cd0",
     "a0a65f60417ae57b92c0f97917dff28b8f2b51d10d439fc9a8b8bf0db1e4981b",
     "a4ae59de1aa6058b3218dca01912a66f8562477f0c1685e35da525d1610b06a2",
+    "ab35c6c99ff4c7ff2451b64f4d658516d56224d88f7d7b4269bbf7738830d387",
     "ab5cf89a39fd6f0c46224a6c910638bcc1b45ac2c85c2b2994785db91fe414fe",
     "ab6cc8322d79d4a34e66f4fc65c096f3bae411d06b64b5214bc26513cdd33e40",
     "ad88486afcb221923120c26f806fc05ecd66d7d6729a01ebb10639a9ed4306bb",
+    "af6aa4ad3655e3844d5e397396360c6047b28e482bfc038c8f9a1a3ad74f8dad",
     "c9e7118463e0ff2f986200a7f648f354a2e9d5d6108b67d2d597f6406e9d8403",
     "d02b808db647b483bc4116f28e05fa3c286f047a06c8d055c7a41d76df13b185",
     "d0661df8d48a2cd1946155efcefb44417681c65ad43e71dd4c305b4b53f23152",
@@ -367,22 +377,22 @@
 
 ## 현재 상태
 
-Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했으며, Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있습니다.
+Gemini는 이제 다른 AI 앱에서 채팅 기록을 전송할 수 있으며, Mac에서 반복적인 작업을 처리할 수 있습니다.
 
 ## 핵심 정보
 
-- Gemini 4 Neon이 소개되었습니다.
-- Genie 4가 출시되었습니다.
-- Google Gemini 앱이 저사양 Android 기기를 지원합니다.
-- 저사양 Android 기기에서 Gemini Live 및 맞춤 이미지 생성을 이용할 수 있습니다.
+- 사용자는 다른 AI 앱의 채팅 기록을 Gemini로 전송할 수 있습니다.
+- ZIP 파일과 AI 요약을 가져와 대화를 원활하게 이어갈 수 있습니다.
+- Gemini는 Mac에서 반복적인 작업을 처리할 수 있습니다.
+- 예시로, Gemini는 아이의 나비 스케치를 모델링하고 Blender에서 리깅하는 데 사용될 수 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 20일 05:30 — 다른 AI 앱에서 Gemini로 채팅 기록을 전송하는 기능이 추가되었습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
+- 2026년 11월 20일 05:30 — Mac에서 Gemini를 사용하여 반복적인 작업을 처리할 수 있게 되었습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
 - 2026년 11월 19일 06:00 — Genie 4가 출시되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 - 2026년 11월 19일 06:00 — Gemini 앱이 저사양 Android 기기에서 사용 가능해졌습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 - 2026년 11월 19일 06:00 — Gemini 4 Neon이 소개되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
-- 2026년 11월 18일 06:00 — 사용자가 '무엇을 도와드릴까요?'라는 프롬프트와 함께 작업을 입력할 수 있는 Gemini의 사용자 인터페이스가 공개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
-- 2026년 11월 18일 06:00 — 빌더들이 'Gemini 4 Carbon'을 활용하여 프로젝트를 만드는 사례가 소개되었습니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
 
 ## 변경 이력
 
@@ -417,3 +427,4 @@ Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했으며, Gemini 앱�
 - 2026년 11월 17일 03:45 — Gemini 앱은 최근 Android 및 iOS 플랫폼에서 66개의 지역별 음성을 도입하여 사용자가 앱 상호작용을 위한 자연스러운 현지 방언을 선택할 수 있도록 기능을 확장했습니다. (출처: gemini-025d8baefe51f5051ea2)
 - 2026년 11월 18일 06:00 — 최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
 - 2026년 11월 19일 06:00 — 최근 Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했습니다. 또한, Google Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있게 되어, 더 많은 사용자가 Gemini Live 및 맞춤 이미지 생성 기능을 이용할 수 있게 되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
+- 2026년 11월 20일 05:30 — Gemini는 다른 AI 앱과의 상호 운용성을 개선하여 채팅 기록 전송 기능을 도입했으며, Mac 사용자를 위해 반복적인 작업을 자동화하는 기능을 확장했습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
