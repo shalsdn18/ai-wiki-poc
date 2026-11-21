@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "Gemini는 이제 다른 AI 앱에서 채팅 기록을 전송할 수 있으며, Mac에서 반복적인 작업을 처리할 수 있습니다.",
+  "current_state": "Google Connected Apps는 연말 작업을 간소화하기 위해 출시되었으며, 사용자는 검색에서 식료품, 신용 점수, 주택 서비스를 직접 관리할 수 있습니다.",
   "history_log": [
     {
       "published_at": "2026-08-27T16:00:00+00:00",
@@ -254,15 +254,29 @@
         "gemini-efdbd6c83627cffee94d"
       ],
       "summary": "Gemini는 다른 AI 앱과의 상호 운용성을 개선하여 채팅 기록 전송 기능을 도입했으며, Mac 사용자를 위해 반복적인 작업을 자동화하는 기능을 확장했습니다."
+    },
+    {
+      "published_at": "2026-11-20T18:00:00+00:00",
+      "source_ids": [
+        "gemini-e75dee93f69f4b7eaa0f"
+      ],
+      "summary": "이 기능은 2026년 11월에 세부 정보가 공개되었습니다."
     }
   ],
   "key_facts": [
-    "사용자는 다른 AI 앱의 채팅 기록을 Gemini로 전송할 수 있습니다.",
-    "ZIP 파일과 AI 요약을 가져와 대화를 원활하게 이어갈 수 있습니다.",
-    "Gemini는 Mac에서 반복적인 작업을 처리할 수 있습니다.",
-    "예시로, Gemini는 아이의 나비 스케치를 모델링하고 Blender에서 리깅하는 데 사용될 수 있습니다."
+    "Google Connected Apps는 연말 작업을 간소화합니다.",
+    "사용자는 검색에서 식료품을 관리할 수 있습니다.",
+    "사용자는 검색에서 신용 점수를 관리할 수 있습니다.",
+    "사용자는 검색에서 주택 서비스를 관리할 수 있습니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-20T18:00:00+00:00",
+      "source_ids": [
+        "gemini-e75dee93f69f4b7eaa0f"
+      ],
+      "summary": "Google Connected Apps가 새로 출시되어 검색 내에서 연말 작업을 처리하는 새로운 방법을 제공합니다."
+    },
     {
       "published_at": "2026-11-19T20:30:00+00:00",
       "source_ids": [
@@ -296,15 +310,6 @@
         "gemini-0191a8cf5007a7e305ee"
       ],
       "summary": "Gemini 앱이 저사양 Android 기기에서 사용 가능해졌습니다."
-    },
-    {
-      "published_at": "2026-11-18T21:00:00+00:00",
-      "source_ids": [
-        "gemini-be0aed2f51056a6d6c6f",
-        "gemini-a261d2eee241a886eda0",
-        "gemini-0191a8cf5007a7e305ee"
-      ],
-      "summary": "Gemini 4 Neon이 소개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -363,6 +368,7 @@
     "d827130651ef7ee8d2e0f48c29c8d7080eeabe79f690167b6eb4f2c2cb350008",
     "d84ef94432f2e1767f874cc1648f1406aecac3deccef21a66bb841f74f98dbc2",
     "dd783fa7ec480febc8aa2651991add0ffeddea32085f84802dfad598d79cc70e",
+    "e24c9beb1a45273c75db825b4c9ce0c15e78257cda782c391f7327e50fb92371",
     "e2885b8a993bc904afd97781e9e23a8f980fecfe83857a76d60570e3732563d8",
     "e70c4edc61206ec270998a84ecddb7db0eae932d5c8b20901f6e118bf3cdd172",
     "e73e9f12bfe22a4cb06a5ba8177ee4e55a51d7e572241d4e07c36448c3259aed",
@@ -377,22 +383,22 @@
 
 ## 현재 상태
 
-Gemini는 이제 다른 AI 앱에서 채팅 기록을 전송할 수 있으며, Mac에서 반복적인 작업을 처리할 수 있습니다.
+Google Connected Apps는 연말 작업을 간소화하기 위해 출시되었으며, 사용자는 검색에서 식료품, 신용 점수, 주택 서비스를 직접 관리할 수 있습니다.
 
 ## 핵심 정보
 
-- 사용자는 다른 AI 앱의 채팅 기록을 Gemini로 전송할 수 있습니다.
-- ZIP 파일과 AI 요약을 가져와 대화를 원활하게 이어갈 수 있습니다.
-- Gemini는 Mac에서 반복적인 작업을 처리할 수 있습니다.
-- 예시로, Gemini는 아이의 나비 스케치를 모델링하고 Blender에서 리깅하는 데 사용될 수 있습니다.
+- Google Connected Apps는 연말 작업을 간소화합니다.
+- 사용자는 검색에서 식료품을 관리할 수 있습니다.
+- 사용자는 검색에서 신용 점수를 관리할 수 있습니다.
+- 사용자는 검색에서 주택 서비스를 관리할 수 있습니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 21일 03:00 — Google Connected Apps가 새로 출시되어 검색 내에서 연말 작업을 처리하는 새로운 방법을 제공합니다. (출처: gemini-e75dee93f69f4b7eaa0f)
 - 2026년 11월 20일 05:30 — 다른 AI 앱에서 Gemini로 채팅 기록을 전송하는 기능이 추가되었습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
 - 2026년 11월 20일 05:30 — Mac에서 Gemini를 사용하여 반복적인 작업을 처리할 수 있게 되었습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
 - 2026년 11월 19일 06:00 — Genie 4가 출시되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 - 2026년 11월 19일 06:00 — Gemini 앱이 저사양 Android 기기에서 사용 가능해졌습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
-- 2026년 11월 19일 06:00 — Gemini 4 Neon이 소개되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 
 ## 변경 이력
 
@@ -428,3 +434,4 @@ Gemini는 이제 다른 AI 앱에서 채팅 기록을 전송할 수 있으며, M
 - 2026년 11월 18일 06:00 — 최근 정보에 따르면, 'Gemini 4 Carbon'은 빌더들이 프로젝트를 만드는 데 사용되고 있으며, Gemini는 사용자가 작업을 설명하고 수행할 수 있는 인터페이스를 제공합니다. (출처: gemini-73687e4d2d12cc3c627a, gemini-830da74434e8505c737e)
 - 2026년 11월 19일 06:00 — 최근 Google은 Gemini 4 Neon을 소개하고 Genie 4를 출시했습니다. 또한, Google Gemini 앱은 이제 저사양 Android 기기에서도 사용할 수 있게 되어, 더 많은 사용자가 Gemini Live 및 맞춤 이미지 생성 기능을 이용할 수 있게 되었습니다. (출처: gemini-be0aed2f51056a6d6c6f, gemini-a261d2eee241a886eda0, gemini-0191a8cf5007a7e305ee)
 - 2026년 11월 20일 05:30 — Gemini는 다른 AI 앱과의 상호 운용성을 개선하여 채팅 기록 전송 기능을 도입했으며, Mac 사용자를 위해 반복적인 작업을 자동화하는 기능을 확장했습니다. (출처: gemini-a89c20fefc5a11322a22, gemini-efdbd6c83627cffee94d)
+- 2026년 11월 21일 03:00 — 이 기능은 2026년 11월에 세부 정보가 공개되었습니다. (출처: gemini-e75dee93f69f4b7eaa0f)

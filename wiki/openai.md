@@ -1,6 +1,6 @@
 ---
 {
-  "current_state": "OpenAI는 ChatGPT의 성능 유지 시스템인 Performance Factory와 Daybreak Red, Daybreak Blue, PR 스캔, Codex Security Plugin과 같은 다양한 보안 및 개발 워크플로우 도구에 대한 정보를 공개하고 있습니다.",
+  "current_state": "OpenAI는 AI 모델의 역량 추출을 방지하기 위한 다층적 접근 방식을 개발하고 있으며, GPT-6 Astra 모델은 금융 연구에서 향상된 성능을 보였습니다. 또한, 초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench를 도입했습니다.",
   "history_log": [
     {
       "published_at": "2026-08-31T07:00:00+00:00",
@@ -532,16 +532,50 @@
         "openai-da30645137037f0052cd"
       ],
       "summary": "제공된 정보는 OpenAI의 최근 발표 및 시연에 기반합니다."
+    },
+    {
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "source_ids": [
+        "openai-7ad44f990f0c53ef2e2a",
+        "openai-8145fefb47ff1ca9fa55",
+        "openai-c1a2af93db54bfcf7c21"
+      ],
+      "summary": "OpenAI는 최근 AI 모델의 역량 추출을 방지하기 위한 새로운 보안 접근 방식을 발표했으며, 금융 연구 분야에서 GPT-6 Astra의 개선된 성능을 확인했습니다. 또한, 초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench를 소개했습니다."
     }
   ],
   "key_facts": [
-    "OpenAI는 ChatGPT의 속도를 유지하기 위해 Codex 기반의 Performance Factory 시스템을 구축했습니다.",
-    "Daybreak Red는 안전 제어, 설정 및 모니터링을 포함한 감독 보안 조사를 위한 참조 아키텍처를 제공합니다.",
-    "PR 스캔은 풀 리퀘스트 워크플로우에서 스캔 결과를 검토하는 과정을 시연합니다.",
-    "Codex Security Plugin은 시작부터 결과 검토까지의 워크플로우를 데모로 보여줍니다.",
-    "Daybreak Blue는 온보딩 및 설정 경험에 대한 자세한 안내를 제공합니다."
+    "OpenAI는 적대적 증류(adversarial distillation)에 맞서기 위해 모델 훈련, 보호 조치, 탐지 및 집행을 결합한 다층적 접근 방식을 사용합니다.",
+    "Hebbia는 GPT-6 Astra를 금융 연구에 테스트했으며, 소스 범위, 인용 관련성 및 발표 품질에서 개선을 확인했습니다.",
+    "MedChemBench는 AI 모델이 분자 구조를 해석하고, 실험적 증거를 추론하며, 초기 신약 개발에서 화합물을 선택하는 능력을 평가합니다."
   ],
   "recent_changes": [
+    {
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "source_ids": [
+        "openai-7ad44f990f0c53ef2e2a",
+        "openai-8145fefb47ff1ca9fa55",
+        "openai-c1a2af93db54bfcf7c21"
+      ],
+      "summary": "초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench가 소개되었습니다."
+    },
+    {
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "source_ids": [
+        "openai-7ad44f990f0c53ef2e2a",
+        "openai-8145fefb47ff1ca9fa55",
+        "openai-c1a2af93db54bfcf7c21"
+      ],
+      "summary": "OpenAI는 적대적 증류에 대응하기 위한 새로운 다층적 보안 접근 방식을 도입했습니다."
+    },
+    {
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "source_ids": [
+        "openai-7ad44f990f0c53ef2e2a",
+        "openai-8145fefb47ff1ca9fa55",
+        "openai-c1a2af93db54bfcf7c21"
+      ],
+      "summary": "GPT-6 Astra 모델이 금융 연구에서 소스 범위, 인용 관련성, 발표 품질 면에서 개선된 성능을 보였습니다."
+    },
     {
       "published_at": "2026-11-19T08:00:00+00:00",
       "source_ids": [
@@ -563,39 +597,6 @@
         "openai-da30645137037f0052cd"
       ],
       "summary": "감독 보안 조사를 위한 Daybreak Red의 배포 참조 아키텍처가 공개되었습니다."
-    },
-    {
-      "published_at": "2026-11-19T08:00:00+00:00",
-      "source_ids": [
-        "openai-9342dbf934e428aa00c1",
-        "openai-a890a236270cc5e31862",
-        "openai-17b7a2b39f098895a220",
-        "openai-82fe289fe466dcc1d4f7",
-        "openai-da30645137037f0052cd"
-      ],
-      "summary": "OpenAI는 ChatGPT의 성능을 유지하는 데 사용되는 Codex 기반의 Performance Factory 시스템을 소개했습니다."
-    },
-    {
-      "published_at": "2026-11-19T08:00:00+00:00",
-      "source_ids": [
-        "openai-9342dbf934e428aa00c1",
-        "openai-a890a236270cc5e31862",
-        "openai-17b7a2b39f098895a220",
-        "openai-82fe289fe466dcc1d4f7",
-        "openai-da30645137037f0052cd"
-      ],
-      "summary": "Daybreak Blue 온보딩 및 설정 경험에 대한 안내가 제공되었습니다."
-    },
-    {
-      "published_at": "2026-11-19T08:00:00+00:00",
-      "source_ids": [
-        "openai-9342dbf934e428aa00c1",
-        "openai-a890a236270cc5e31862",
-        "openai-17b7a2b39f098895a220",
-        "openai-82fe289fe466dcc1d4f7",
-        "openai-da30645137037f0052cd"
-      ],
-      "summary": "Codex Security Plugin의 작동 방식에 대한 데모가 공개되었습니다."
     }
   ],
   "seen_hashes": [
@@ -626,6 +627,7 @@
     "259a2243152e8a5ec288be2ba0d58a0a22fca199f80b39aff6cdc83039edb4a5",
     "264fe298791a212010758fa180003ed4e9f798079c3039607494e90c3a12f9eb",
     "28dfe1fc07b1686164cf6c6ecb2802cb3e0abde61e25422442e5a04d7e6f8537",
+    "2aac48a05cd79ccc46d75205d8e904d647e03e69ff89da11809cb3c556201abf",
     "2b3e12cb9d7455307ac91c9cf4693b41b8e4bd861a9c045711a6184d48259f50",
     "2b9c9d3e5c26e06da1cd132d3a69c40bd28215ccca0db48b8006c6faa7ce12e1",
     "3006e2562ed6d9b0ab928737199eb7df315b3d61251113325a29287808cac940",
@@ -750,6 +752,7 @@
     "ce04fd7a964d5d596076b142987bc6215c70c83d85f26d0c2ad37cafcd2ec139",
     "ceb9c9ce83118afc0ee1368f7a4098dfd98990f56ef520825b407c617e96711d",
     "ceeb0818d1d3f99857bc04f3c702fb9e46be74ede59da5e3f7420a0a071b735c",
+    "d0ad00f6ddc85b8daa7351c84e75b15be5c6765fcdea3cb0882a864fb51fb52c",
     "d1b894933eb5d1a9bec0326fd2dc41cefac13edc75a9651a5154a2afff65bc39",
     "d1e0b89e34a843e87343fdd783ed56a84c48cbb9cbce13c10458d28ad212f780",
     "d3f7ab77248681b650d815a56097fc612373afe2111693f88ab14b8e52f0ced0",
@@ -785,6 +788,7 @@
     "f0750e2610bf72b3c7c3bece8589cd8ea996d830c646e56074659c8dc51b8277",
     "f1203858b890adf5adc2d2fb0c619c62f9ef8f07916dc1416021988a53019093",
     "f4e8f2cb9187d027e6529329f0206b5ab53c81b7a10ba3d5cc0b90335709ae62",
+    "f5d2e2b9672fadeee438d67ea61f06047b77cacddf53fd14f1ed2b93915b35c1",
     "fc2fed5c6a1e07a24f916ab4fa8d1f4d60fb73d96e3dad3fa3012f743c058b3e",
     "fc636488a74fcc4504635f848a1f8cfa0dea8c841c79458eb4960c8858b1ed72",
     "fe9619587b6d2d37b0d86bf470b158848edbfd8fab9a7f0eddc0a754e6503828"
@@ -796,23 +800,21 @@
 
 ## 현재 상태
 
-OpenAI는 ChatGPT의 성능 유지 시스템인 Performance Factory와 Daybreak Red, Daybreak Blue, PR 스캔, Codex Security Plugin과 같은 다양한 보안 및 개발 워크플로우 도구에 대한 정보를 공개하고 있습니다.
+OpenAI는 AI 모델의 역량 추출을 방지하기 위한 다층적 접근 방식을 개발하고 있으며, GPT-6 Astra 모델은 금융 연구에서 향상된 성능을 보였습니다. 또한, 초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench를 도입했습니다.
 
 ## 핵심 정보
 
-- OpenAI는 ChatGPT의 속도를 유지하기 위해 Codex 기반의 Performance Factory 시스템을 구축했습니다.
-- Daybreak Red는 안전 제어, 설정 및 모니터링을 포함한 감독 보안 조사를 위한 참조 아키텍처를 제공합니다.
-- PR 스캔은 풀 리퀘스트 워크플로우에서 스캔 결과를 검토하는 과정을 시연합니다.
-- Codex Security Plugin은 시작부터 결과 검토까지의 워크플로우를 데모로 보여줍니다.
-- Daybreak Blue는 온보딩 및 설정 경험에 대한 자세한 안내를 제공합니다.
+- OpenAI는 적대적 증류(adversarial distillation)에 맞서기 위해 모델 훈련, 보호 조치, 탐지 및 집행을 결합한 다층적 접근 방식을 사용합니다.
+- Hebbia는 GPT-6 Astra를 금융 연구에 테스트했으며, 소스 범위, 인용 관련성 및 발표 품질에서 개선을 확인했습니다.
+- MedChemBench는 AI 모델이 분자 구조를 해석하고, 실험적 증거를 추론하며, 초기 신약 개발에서 화합물을 선택하는 능력을 평가합니다.
 
 ## 최근 변경 사항
 
+- 2026년 11월 20일 19:00 — 초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench가 소개되었습니다. (출처: openai-7ad44f990f0c53ef2e2a, openai-8145fefb47ff1ca9fa55, openai-c1a2af93db54bfcf7c21)
+- 2026년 11월 20일 19:00 — OpenAI는 적대적 증류에 대응하기 위한 새로운 다층적 보안 접근 방식을 도입했습니다. (출처: openai-7ad44f990f0c53ef2e2a, openai-8145fefb47ff1ca9fa55, openai-c1a2af93db54bfcf7c21)
+- 2026년 11월 20일 19:00 — GPT-6 Astra 모델이 금융 연구에서 소스 범위, 인용 관련성, 발표 품질 면에서 개선된 성능을 보였습니다. (출처: openai-7ad44f990f0c53ef2e2a, openai-8145fefb47ff1ca9fa55, openai-c1a2af93db54bfcf7c21)
 - 2026년 11월 19일 17:00 — 풀 리퀘스트 워크플로우에서 PR 스캔 결과를 검토하는 시연이 제공되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
 - 2026년 11월 19일 17:00 — 감독 보안 조사를 위한 Daybreak Red의 배포 참조 아키텍처가 공개되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
-- 2026년 11월 19일 17:00 — OpenAI는 ChatGPT의 성능을 유지하는 데 사용되는 Codex 기반의 Performance Factory 시스템을 소개했습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
-- 2026년 11월 19일 17:00 — Daybreak Blue 온보딩 및 설정 경험에 대한 안내가 제공되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
-- 2026년 11월 19일 17:00 — Codex Security Plugin의 작동 방식에 대한 데모가 공개되었습니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
 
 ## 변경 이력
 
@@ -873,3 +875,4 @@ OpenAI는 ChatGPT의 성능 유지 시스템인 Performance Factory와 Daybreak 
 - 2026년 11월 18일 02:45 — OpenAI는 최근 GPT-6.2 Astra 및 Sol 모델을 출시하고, ChatGPT에 영업 기능을 강화하며, 법률 분야의 AI 솔루션을 확장하고, 칠레와의 국제적 협력을 시작하는 등 다양한 신제품 출시 및 파트너십을 통해 기술 및 시장 확장을 지속하고 있습니다. (출처: openai-8f6af8c44a4a1bfb5de3, openai-3047d7657748ea760feb, openai-b43ef08ac3ed4f7af6f4, openai-3b3be741a87f5e2153e6)
 - 2026년 11월 18일 19:00 — 최근 OpenAI는 AI의 사회적 영향과 인간 통제 유지 방안, AI 연구 가속화에 기여하는 코딩 에이전트의 역할, 기업 고객의 AI 솔루션 도입 사례, 그리고 AI 위험 관리 및 보안 기술에 대한 다양한 업데이트를 발표했습니다. 이는 AI의 발전과 그에 따른 사회적, 기술적 과제에 대한 OpenAI의 지속적인 노력을 보여줍니다. (출처: openai-184d931227f2504de1a3, openai-58da586369f33999eb92, openai-53d809d7420a3923e8ba, openai-67952d9a918d2536a7bf, openai-99be0c0a7e074380d1a5)
 - 2026년 11월 19일 17:00 — 제공된 정보는 OpenAI의 최근 발표 및 시연에 기반합니다. (출처: openai-9342dbf934e428aa00c1, openai-a890a236270cc5e31862, openai-17b7a2b39f098895a220, openai-82fe289fe466dcc1d4f7, openai-da30645137037f0052cd)
+- 2026년 11월 20일 19:00 — OpenAI는 최근 AI 모델의 역량 추출을 방지하기 위한 새로운 보안 접근 방식을 발표했으며, 금융 연구 분야에서 GPT-6 Astra의 개선된 성능을 확인했습니다. 또한, 초기 신약 개발에서 AI 모델의 능력을 평가하는 MedChemBench를 소개했습니다. (출처: openai-7ad44f990f0c53ef2e2a, openai-8145fefb47ff1ca9fa55, openai-c1a2af93db54bfcf7c21)
